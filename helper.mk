@@ -105,7 +105,7 @@ zpc/configure: CMakeLists.txt
 		-B ${build_dir} \
 		-DBUILD_AOXPC=OFF \
 		-DBUILD_CPCD=OFF \
-		-DBUILD_DEV_GUI=OFF \
+		-DBUILD_DEV_GUI=ON \
 		-DBUILD_EMD=OFF \
 		-DBUILD_EPC=OFF \
 		-DBUILD_GMS=OFF \
