@@ -20,6 +20,7 @@ packages+=git-lfs unp time file
 packages+=nlohmann-json3-dev
 # TODO: remove for offline build
 packages+=curl wget python3-pip
+packages+=npm
 
 RUST_VERSION?=1.64.0
 export PATH := ${HOME}/.cargo/bin:${PATH}
