@@ -59,7 +59,7 @@ find_package(Python3 REQUIRED)
 # Rust #
 ########
 enable_language(Rust)
-set(RUST_MIN_VERSION 1.64)
+set(RUST_MIN_VERSION 1.63)
 if(CMAKE_Rust_COMPILER_VERSION VERSION_LESS RUST_MIN_VERSION)
   message(
     FATAL_ERROR
