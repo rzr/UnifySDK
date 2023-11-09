@@ -25,8 +25,9 @@ packages+=nlohmann-json3-dev
 # TODO: remove for offline build
 packages+=curl wget python3-pip
 packages+=time
+packages+=npm
 
-RUST_VERSION?=1.65.0
+RUST_VERSION?=1.64.0
 export PATH := ${HOME}/.cargo/bin:${PATH}
 
 zpc_exe?=${build_dir}/applications/zpc/zpc
