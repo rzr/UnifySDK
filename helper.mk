@@ -10,14 +10,13 @@ default: help zpc/default
 SELF?=${CURDIR}/helper.mk
 
 project?=unifysdk
-
 CMAKE_GENERATOR?=Ninja
 export CMAKE_GENERATOR
 
 build_dir?=build
 sudo?=sudo
 
-debian_codename?=bullseye
+debian_codename?=bookworm
 
 packages?=cmake ninja-build build-essential python3-full ruby clang
 packages+=git-lfs unp time file
@@ -80,7 +79,8 @@ setup/rust:
 setup/python:
 	@echo "$@: TODO: https://github.com/wbond/pybars3/issues/82"
 	pip3 --version || echo "warning: Please install pip"
-	pip3 install pybars3
+	pip3 install pybars3 \
+		|| pip3 install --break-system-packages pybars3
 
 cmake_url?=https://github.com/Kitware/CMake/releases/download/v3.21.6/cmake-3.21.6-Linux-x86_64.sh
 cmake_filename?=$(shell basename -- "${cmake_url}")
