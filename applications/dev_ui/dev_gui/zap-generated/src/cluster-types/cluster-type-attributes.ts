@@ -15612,4 +15612,32 @@ export let ClusterTypeAttrs: any = {
         ] 
       }
     },
+    UnifySwitchAll: {
+      server:{
+        attributes: [
+            {                
+              id: 0,
+              name: "Mode",
+              type: "number",            
+              required: true,
+              reportRequired: false,
+              sceneRequired: false,
+              writable: true,
+              isArray: false,
+            },
+            {                
+              id: 1,
+              name: "OnOff",
+              type: "number",            
+              required: true,
+              reportRequired: false,
+              sceneRequired: false,
+              writable: true,
+              isArray: false,
+            }
+        ],
+        commands: [
+        ] 
+      }
+    },
 }

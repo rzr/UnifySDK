@@ -11751,6 +11751,66 @@ void uic_mqtt_dotdot_unify_schedule_entry_lock_publish_generated_write_attribute
                    false);
 }
 
+
+
+/**
+ * @brief Publishes an incoming/generated WriteAttributes command for
+ * the UnifySwitchAll cluster.
+ *
+ * Publication will be made at the following topic
+ * ucl/by-unid/UNID/epID/UnifySwitchAll/GeneratedCommands/WriteAttributes
+ *
+ * @param unid      The UNID of the node that sent us the command.
+ * 
+ * @param endpoint  The Endpoint ID of the node that sent us the command.
+ * 
+ * @param attribute_values  Values to assign to the attributes
+ * @param attribute_list    List of attributes that are written
+ */
+void uic_mqtt_dotdot_unify_switch_all_publish_generated_write_attributes_command(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint,
+  uic_mqtt_dotdot_unify_switch_all_state_t attribute_values,
+  uic_mqtt_dotdot_unify_switch_all_updated_state_t attribute_list
+){
+  // Create the topic
+  std::string topic = "ucl/by-unid/"+ std::string(unid) + "/ep" +
+                      std::to_string(endpoint) + "/";
+  topic += "UnifySwitchAll/GeneratedCommands/WriteAttributes";
+
+  nlohmann::json json_object = nlohmann::json::object();
+
+
+  if (attribute_list.mode == true) {
+
+  // This is a single value
+
+  json_object["Mode"] = attribute_values.mode;
+
+
+  }
+
+
+  if (attribute_list.on_off == true) {
+
+  // This is a single value
+
+  json_object["OnOff"] = attribute_values.on_off;
+
+
+  }
+
+
+  // Payload contains data from end nodes, which we cannot control, thus we handle if there are non-utf8 characters
+  std::string payload = json_object.dump(-1, ' ', false, nlohmann::detail::error_handler_t::replace);
+
+  // Publish our command
+  uic_mqtt_publish(topic.c_str(),
+                   payload.c_str(),
+                   payload.size(),
+                   false);
+}
+
 /**
  * @brief Publishes an incoming/generated ModeSet command for
  * the UnifyHumidityControl cluster.

@@ -3944,6 +3944,7 @@ static void unset_all_callbacks()
   uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_set_callback_clear();
   uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_get_callback_clear();
   uic_mqtt_dotdot_clear_unify_schedule_entry_lock_write_attributes_callbacks();
+  uic_mqtt_dotdot_clear_unify_switch_all_write_attributes_callbacks();
   uic_mqtt_dotdot_unify_humidity_control_mode_set_callback_clear();
   uic_mqtt_dotdot_unify_humidity_control_setpoint_set_callback_clear();
   uic_mqtt_dotdot_clear_unify_humidity_control_write_attributes_callbacks();

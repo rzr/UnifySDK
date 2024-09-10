@@ -887,6 +887,10 @@ def zb_DSTOffsetSign 0xfd210006
 def zb_DSTOffsetMinute 0xfd210007
 def zb_NumberOfSlotsDailyRepeating 0xfd210008
 
+// This represents short CamelCase labels the attributes in the DotDot UnifySwitchAll cluster
+def zb_Mode 0xfd200000
+def zb_OnOff 0xfd200001
+
 // This represents short CamelCase labels the attributes in the DotDot UnifyHumidityControl cluster
 def zb_ReportingMode 0xfda00001
 def zb_SupportedReportingMode 0xfda00002
