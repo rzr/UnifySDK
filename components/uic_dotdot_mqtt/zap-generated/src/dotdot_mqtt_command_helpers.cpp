@@ -14507,6 +14507,36 @@ void uic_mqtt_dotdot_parse_unify_thermostat_write_attributes(
 }
 
 
+/**
+ * @brief JSON parser for ::WriteAttributes command arguments.
+ *
+ * Parse incoming JSON object to populate command arguments passed in by reference.
+ */
+void uic_mqtt_dotdot_parse_unify_switch_all_write_attributes(
+  nlohmann::json &jsn,
+  uic_mqtt_dotdot_unify_switch_all_state_t &new_state,
+  uic_mqtt_dotdot_unify_switch_all_updated_state_t &new_updated_state
+) {
+
+
+  if (jsn.find("Mode") != jsn.end()) {
+
+    new_state.mode = jsn.at("Mode").get<uint8_t>();
+        
+    new_updated_state.mode = true;
+  }
+
+  if (jsn.find("OnOff") != jsn.end()) {
+
+    new_state.on_off = jsn.at("OnOff").get<uint8_t>();
+        
+    new_updated_state.on_off = true;
+  }
+
+
+}
+
+
 std::string get_json_payload_for_unify_humidity_control_mode_set_command(
   
   const uic_mqtt_dotdot_unify_humidity_control_command_mode_set_fields_t *fields

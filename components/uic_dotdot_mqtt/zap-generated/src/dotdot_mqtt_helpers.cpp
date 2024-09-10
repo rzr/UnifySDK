@@ -10253,6 +10253,21 @@ std::string get_enum_value_name(
   #endif
   }
 
+  if (64800 == cluster_id) {
+  #ifdef UNIFY_SWITCH_ALL_MODE_ENUM_NAME_AVAILABLE
+    if (0 == attribute_id) {
+      // FIXME: Some attributes don't work because multi-upper case names end up like this: unify_switch_allmode instead of this: unify_switch_all_mode
+      return unify_switch_all_mode_get_enum_value_name(value);
+    }
+  #endif
+  #ifdef UNIFY_SWITCH_ALL_ON_OFF_ENUM_NAME_AVAILABLE
+    if (1 == attribute_id) {
+      // FIXME: Some attributes don't work because multi-upper case names end up like this: unify_switch_allon_off instead of this: unify_switch_all_on_off
+      return unify_switch_all_on_off_get_enum_value_name(value);
+    }
+  #endif
+  }
+
   if (64928 == cluster_id) {
   #ifdef UNIFY_HUMIDITY_CONTROL_REPORTING_MODE_ENUM_NAME_AVAILABLE
     if (1 == attribute_id) {
@@ -14756,6 +14771,21 @@ uint32_t get_enum_name_value(
     if (3 == attribute_id) {
       // FIXME: Some attributes don't work because multi-upper case names end up like this: unify_thermostatoperating_state instead of this: unify_thermostat_operating_state
       return unify_thermostat_operating_state_get_enum_value_number(name);
+    }
+  #endif
+  }
+
+  if (64800 == cluster_id) {
+  #ifdef UNIFY_SWITCH_ALL_MODE_ENUM_NAME_AVAILABLE
+    if (0 == attribute_id) {
+      // FIXME: Some attributes don't work because multi-upper case names end up like this: unify_switch_allmode instead of this: unify_switch_all_mode
+      return unify_switch_all_mode_get_enum_value_number(name);
+    }
+  #endif
+  #ifdef UNIFY_SWITCH_ALL_ON_OFF_ENUM_NAME_AVAILABLE
+    if (1 == attribute_id) {
+      // FIXME: Some attributes don't work because multi-upper case names end up like this: unify_switch_allon_off instead of this: unify_switch_all_on_off
+      return unify_switch_all_on_off_get_enum_value_number(name);
     }
   #endif
   }

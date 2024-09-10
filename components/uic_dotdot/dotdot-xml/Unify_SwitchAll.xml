@@ -1,0 +1,16 @@
+<zcl:cluster
+  xmlns:zcl="http://zigbee.org/zcl/clusters"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:type="http://zigbee.org/zcl/types"
+  xmlns:xi="http://www.w3.org/2001/XInclude"
+  xsi:schemaLocation="http://zigbee.org/zcl/clusters cluster.xsd http://zigbee.org/zcl/types type.xsd"
+  id="FD20" revision="1" name="UnifySwitchAll">
+<classification role="application" picsCode="SWA"/>
+
+<server>
+    <attributes>
+      <attribute id="0000" name="Mode" required="true" writable="true" type="uint8"/>
+      <attribute id="0001" name="OnOff" required="true" writable="true" type="uint8"/>
+    </attributes>
+</server>
+</zcl:cluster>

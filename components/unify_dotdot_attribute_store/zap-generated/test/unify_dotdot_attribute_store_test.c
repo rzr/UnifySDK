@@ -1312,6 +1312,16 @@ uic_mqtt_dotdot_unify_thermostat_write_attributes_callback_t get_uic_mqtt_dotdot
   return test_uic_mqtt_dotdot_unify_thermostat_write_attributes_callback;
 }
 
+static uic_mqtt_dotdot_unify_switch_all_force_read_attributes_callback_t test_uic_mqtt_dotdot_unify_switch_all_force_read_attributes_callback = NULL;
+static uic_mqtt_dotdot_unify_switch_all_write_attributes_callback_t test_uic_mqtt_dotdot_unify_switch_all_write_attributes_callback = NULL;
+
+uic_mqtt_dotdot_unify_switch_all_force_read_attributes_callback_t get_uic_mqtt_dotdot_unify_switch_all_force_read_attributes_callback(){
+  return test_uic_mqtt_dotdot_unify_switch_all_force_read_attributes_callback;
+}
+uic_mqtt_dotdot_unify_switch_all_write_attributes_callback_t get_uic_mqtt_dotdot_unify_switch_all_write_attributes_callback(){
+  return test_uic_mqtt_dotdot_unify_switch_all_write_attributes_callback;
+}
+
 static uic_mqtt_dotdot_unify_humidity_control_force_read_attributes_callback_t test_uic_mqtt_dotdot_unify_humidity_control_force_read_attributes_callback = NULL;
 static uic_mqtt_dotdot_unify_humidity_control_write_attributes_callback_t test_uic_mqtt_dotdot_unify_humidity_control_write_attributes_callback = NULL;
 
@@ -2911,6 +2921,16 @@ void set_uic_mqtt_dotdot_unify_thermostat_write_attributes_callback_stub(
 {
   test_uic_mqtt_dotdot_unify_thermostat_write_attributes_callback = callback;
 }
+void set_uic_mqtt_dotdot_unify_switch_all_force_read_attributes_callback_stub(
+  const uic_mqtt_dotdot_unify_switch_all_force_read_attributes_callback_t callback, int cmock_num_calls)
+{
+  test_uic_mqtt_dotdot_unify_switch_all_force_read_attributes_callback = callback;
+}
+void set_uic_mqtt_dotdot_unify_switch_all_write_attributes_callback_stub(
+  const uic_mqtt_dotdot_unify_switch_all_write_attributes_callback_t callback, int cmock_num_calls)
+{
+  test_uic_mqtt_dotdot_unify_switch_all_write_attributes_callback = callback;
+}
 void set_uic_mqtt_dotdot_unify_humidity_control_force_read_attributes_callback_stub(
   const uic_mqtt_dotdot_unify_humidity_control_force_read_attributes_callback_t callback, int cmock_num_calls)
 {
@@ -3851,6 +3871,12 @@ void setUp()
   test_uic_mqtt_dotdot_unify_thermostat_write_attributes_callback = NULL;
   uic_mqtt_dotdot_set_unify_thermostat_write_attributes_callback_Stub(
     &set_uic_mqtt_dotdot_unify_thermostat_write_attributes_callback_stub);
+  test_uic_mqtt_dotdot_unify_switch_all_force_read_attributes_callback = NULL;
+  uic_mqtt_dotdot_set_unify_switch_all_force_read_attributes_callback_Stub(
+    &set_uic_mqtt_dotdot_unify_switch_all_force_read_attributes_callback_stub);
+  test_uic_mqtt_dotdot_unify_switch_all_write_attributes_callback = NULL;
+  uic_mqtt_dotdot_set_unify_switch_all_write_attributes_callback_Stub(
+    &set_uic_mqtt_dotdot_unify_switch_all_write_attributes_callback_stub);
   test_uic_mqtt_dotdot_unify_humidity_control_force_read_attributes_callback = NULL;
   uic_mqtt_dotdot_set_unify_humidity_control_force_read_attributes_callback_Stub(
     &set_uic_mqtt_dotdot_unify_humidity_control_force_read_attributes_callback_stub);
@@ -4612,6 +4638,8 @@ void test_automatic_deduction_of_supported_commands()
   TEST_ASSERT_EQUAL(SL_STATUS_OK, dotdot_create_unify_thermostat_thermostat_mode(expected_unid,expected_endpoint_id) );
   TEST_ASSERT_EQUAL(SL_STATUS_OK, dotdot_create_unify_thermostat_supported_thermostat_mode(expected_unid,expected_endpoint_id) );
   TEST_ASSERT_EQUAL(SL_STATUS_OK, dotdot_create_unify_thermostat_operating_state(expected_unid,expected_endpoint_id) );
+  TEST_ASSERT_EQUAL(SL_STATUS_OK, dotdot_create_unify_switch_all_mode(expected_unid,expected_endpoint_id) );
+  TEST_ASSERT_EQUAL(SL_STATUS_OK, dotdot_create_unify_switch_all_on_off(expected_unid,expected_endpoint_id) );
   TEST_ASSERT_EQUAL(SL_STATUS_OK, dotdot_create_unify_humidity_control_reporting_mode(expected_unid,expected_endpoint_id) );
   TEST_ASSERT_EQUAL(SL_STATUS_OK, dotdot_create_unify_humidity_control_supported_reporting_mode(expected_unid,expected_endpoint_id) );
   TEST_ASSERT_EQUAL(SL_STATUS_OK, dotdot_create_unify_humidity_control_current_state(expected_unid,expected_endpoint_id) );

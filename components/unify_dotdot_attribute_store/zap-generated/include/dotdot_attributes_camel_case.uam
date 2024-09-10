@@ -873,6 +873,10 @@ def zb_ThermostatMode 0xfd150001
 def zb_SupportedThermostatMode 0xfd150002
 def zb_OperatingState 0xfd150003
 
+// This represents short CamelCase labels the attributes in the DotDot UnifySwitchAll cluster
+def zb_Mode 0xfd200000
+def zb_OnOff 0xfd200001
+
 // This represents short CamelCase labels the attributes in the DotDot UnifyHumidityControl cluster
 def zb_ReportingMode 0xfda00001
 def zb_SupportedReportingMode 0xfda00002

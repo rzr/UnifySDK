@@ -2526,6 +2526,44 @@ static sl_status_t unify_thermostat_cluster_write_attributes_callback(
   return SL_STATUS_OK;
 }
 ////////////////////////////////////////////////////////////////////////////////
+// Start of cluster UnifySwitchAll
+////////////////////////////////////////////////////////////////////////////////
+// WriteAttribute Callbacks unify_switch_all
+static sl_status_t unify_switch_all_cluster_write_attributes_callback(
+  const dotdot_unid_t unid,
+  dotdot_endpoint_id_t endpoint_id,
+  uic_mqtt_dotdot_callback_call_type_t call_type,
+  uic_mqtt_dotdot_unify_switch_all_state_t attributes,
+  uic_mqtt_dotdot_unify_switch_all_updated_state_t updated_attributes)
+{
+  if (false == is_write_attributes_enabled()) {
+    return SL_STATUS_FAIL;
+  }
+
+  if (call_type == UIC_MQTT_DOTDOT_CALLBACK_TYPE_SUPPORT_CHECK) {
+    if (is_automatic_deduction_of_supported_commands_enabled()) {
+      return dotdot_is_any_unify_switch_all_writable_attribute_supported(unid, endpoint_id) ?
+        SL_STATUS_OK : SL_STATUS_FAIL;
+    } else {
+      return SL_STATUS_FAIL;
+    }
+  }
+
+  sl_log_debug(LOG_TAG,
+               "unify_switch_all: Incoming WriteAttributes command for %s, endpoint %d.\n",
+               unid,
+               endpoint_id);
+  if (true == updated_attributes.mode) {
+     sl_log_debug(LOG_TAG, "Updating desired value for Mode attribute");
+    dotdot_set_unify_switch_all_mode(unid, endpoint_id, DESIRED_ATTRIBUTE, attributes.mode);
+  }
+  if (true == updated_attributes.on_off) {
+     sl_log_debug(LOG_TAG, "Updating desired value for OnOff attribute");
+    dotdot_set_unify_switch_all_on_off(unid, endpoint_id, DESIRED_ATTRIBUTE, attributes.on_off);
+  }
+  return SL_STATUS_OK;
+}
+////////////////////////////////////////////////////////////////////////////////
 // Start of cluster UnifyHumidityControl
 ////////////////////////////////////////////////////////////////////////////////
 // WriteAttribute Callbacks unify_humidity_control
@@ -2721,6 +2759,9 @@ sl_status_t
   
   uic_mqtt_dotdot_set_unify_thermostat_write_attributes_callback(
     &unify_thermostat_cluster_write_attributes_callback);
+  
+  uic_mqtt_dotdot_set_unify_switch_all_write_attributes_callback(
+    &unify_switch_all_cluster_write_attributes_callback);
   
   uic_mqtt_dotdot_set_unify_humidity_control_write_attributes_callback(
     &unify_humidity_control_cluster_write_attributes_callback);

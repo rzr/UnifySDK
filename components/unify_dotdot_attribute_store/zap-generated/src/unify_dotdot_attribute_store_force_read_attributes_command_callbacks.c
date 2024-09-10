@@ -4435,6 +4435,41 @@ static sl_status_t uic_mqtt_dotdot_unify_thermostat_force_read_attributes_callba
   return SL_STATUS_OK;
 }
 ////////////////////////////////////////////////////////////////////////////////
+// Start of cluster UnifySwitchAll
+////////////////////////////////////////////////////////////////////////////////
+static sl_status_t uic_mqtt_dotdot_unify_switch_all_force_read_attributes_callback (
+  const dotdot_unid_t unid,
+  dotdot_endpoint_id_t endpoint_id,
+  uic_mqtt_dotdot_callback_call_type_t call_type,
+  uic_mqtt_dotdot_unify_switch_all_updated_state_t attribute_list) {
+
+  if (false == is_force_read_attributes_enabled()){
+    return SL_STATUS_FAIL;
+  }
+
+  if (call_type == UIC_MQTT_DOTDOT_CALLBACK_TYPE_SUPPORT_CHECK) {
+    if (is_automatic_deduction_of_supported_commands_enabled()) {
+      return dotdot_is_any_unify_switch_all_attribute_supported(unid, endpoint_id) ?
+        SL_STATUS_OK : SL_STATUS_FAIL;
+    } else {
+      return SL_STATUS_FAIL;
+    }
+  }
+
+  // Go and undefine everything that needs to be read again:
+  if (true == attribute_list.mode) {
+    if (SL_STATUS_OK == dotdot_unify_switch_all_mode_undefine_reported(unid, endpoint_id)) {
+      sl_log_debug(LOG_TAG, "Undefined Reported value of UnifySwitchAll::Mode under %s - Endpoint %d", unid, endpoint_id);
+    }
+  }
+  if (true == attribute_list.on_off) {
+    if (SL_STATUS_OK == dotdot_unify_switch_all_on_off_undefine_reported(unid, endpoint_id)) {
+      sl_log_debug(LOG_TAG, "Undefined Reported value of UnifySwitchAll::OnOff under %s - Endpoint %d", unid, endpoint_id);
+    }
+  }
+  return SL_STATUS_OK;
+}
+////////////////////////////////////////////////////////////////////////////////
 // Start of cluster UnifyHumidityControl
 ////////////////////////////////////////////////////////////////////////////////
 static sl_status_t uic_mqtt_dotdot_unify_humidity_control_force_read_attributes_callback (
@@ -4663,6 +4698,8 @@ sl_status_t
   uic_mqtt_dotdot_set_unify_fan_control_force_read_attributes_callback(&uic_mqtt_dotdot_unify_fan_control_force_read_attributes_callback);
   
   uic_mqtt_dotdot_set_unify_thermostat_force_read_attributes_callback(&uic_mqtt_dotdot_unify_thermostat_force_read_attributes_callback);
+  
+  uic_mqtt_dotdot_set_unify_switch_all_force_read_attributes_callback(&uic_mqtt_dotdot_unify_switch_all_force_read_attributes_callback);
   
   uic_mqtt_dotdot_set_unify_humidity_control_force_read_attributes_callback(&uic_mqtt_dotdot_unify_humidity_control_force_read_attributes_callback);
   

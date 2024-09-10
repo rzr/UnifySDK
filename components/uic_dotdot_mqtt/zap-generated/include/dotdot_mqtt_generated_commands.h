@@ -4975,6 +4975,28 @@ void uic_mqtt_dotdot_unify_thermostat_publish_generated_write_attributes_command
   uic_mqtt_dotdot_unify_thermostat_updated_state_t attribute_list
 );
 
+
+/**
+ * @brief Publishes an incoming/generated WriteAttributes command for
+ * the UnifySwitchAll cluster.
+ *
+ * Publication will be made at the following topic
+ * ucl/by-unid/UNID/epID/UnifySwitchAll/GeneratedCommands/WriteAttributes
+ *
+ * @param unid      The UNID of the node that sent us the command.
+ * 
+ * @param endpoint  The Endpoint ID of the node that sent us the command.
+ * 
+ * @param attribute_values  Values to assign to the attributes
+ * @param attribute_list    List of attributes that are written
+ */
+void uic_mqtt_dotdot_unify_switch_all_publish_generated_write_attributes_command(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint,
+  uic_mqtt_dotdot_unify_switch_all_state_t attribute_values,
+  uic_mqtt_dotdot_unify_switch_all_updated_state_t attribute_list
+);
+
 /**
  * @brief Publishes an incoming/generated ModeSet command for
  * the UnifyHumidityControl cluster.
