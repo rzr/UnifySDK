@@ -2556,6 +2556,68 @@ static sl_status_t unify_thermostat_cluster_write_attributes_callback(
   return SL_STATUS_OK;
 }
 ////////////////////////////////////////////////////////////////////////////////
+// Start of cluster UnifyScheduleEntryLock
+////////////////////////////////////////////////////////////////////////////////
+// WriteAttribute Callbacks unify_schedule_entry_lock
+static sl_status_t unify_schedule_entry_lock_cluster_write_attributes_callback(
+  const dotdot_unid_t unid,
+  dotdot_endpoint_id_t endpoint_id,
+  uic_mqtt_dotdot_callback_call_type_t call_type,
+  uic_mqtt_dotdot_unify_schedule_entry_lock_state_t attributes,
+  uic_mqtt_dotdot_unify_schedule_entry_lock_updated_state_t updated_attributes)
+{
+  if (false == is_write_attributes_enabled()) {
+    return SL_STATUS_FAIL;
+  }
+
+  if (call_type == UIC_MQTT_DOTDOT_CALLBACK_TYPE_SUPPORT_CHECK) {
+    if (is_automatic_deduction_of_supported_commands_enabled()) {
+      return dotdot_is_any_unify_schedule_entry_lock_writable_attribute_supported(unid, endpoint_id) ?
+        SL_STATUS_OK : SL_STATUS_FAIL;
+    } else {
+      return SL_STATUS_FAIL;
+    }
+  }
+
+  sl_log_debug(LOG_TAG,
+               "unify_schedule_entry_lock: Incoming WriteAttributes command for %s, endpoint %d.\n",
+               unid,
+               endpoint_id);
+  if (true == updated_attributes.slots_week_day) {
+     sl_log_debug(LOG_TAG, "Updating desired value for SlotsWeekDay attribute");
+    dotdot_set_unify_schedule_entry_lock_slots_week_day(unid, endpoint_id, DESIRED_ATTRIBUTE, attributes.slots_week_day);
+  }
+  if (true == updated_attributes.slots_year_day) {
+     sl_log_debug(LOG_TAG, "Updating desired value for SlotsYearDay attribute");
+    dotdot_set_unify_schedule_entry_lock_slots_year_day(unid, endpoint_id, DESIRED_ATTRIBUTE, attributes.slots_year_day);
+  }
+  if (true == updated_attributes.signtzo) {
+     sl_log_debug(LOG_TAG, "Updating desired value for SignTZO attribute");
+    dotdot_set_unify_schedule_entry_lock_signtzo(unid, endpoint_id, DESIRED_ATTRIBUTE, attributes.signtzo);
+  }
+  if (true == updated_attributes.hourtzo) {
+     sl_log_debug(LOG_TAG, "Updating desired value for HourTZO attribute");
+    dotdot_set_unify_schedule_entry_lock_hourtzo(unid, endpoint_id, DESIRED_ATTRIBUTE, attributes.hourtzo);
+  }
+  if (true == updated_attributes.minutetzo) {
+     sl_log_debug(LOG_TAG, "Updating desired value for MinuteTZO attribute");
+    dotdot_set_unify_schedule_entry_lock_minutetzo(unid, endpoint_id, DESIRED_ATTRIBUTE, attributes.minutetzo);
+  }
+  if (true == updated_attributes.dst_offset_sign) {
+     sl_log_debug(LOG_TAG, "Updating desired value for DSTOffsetSign attribute");
+    dotdot_set_unify_schedule_entry_lock_dst_offset_sign(unid, endpoint_id, DESIRED_ATTRIBUTE, attributes.dst_offset_sign);
+  }
+  if (true == updated_attributes.dst_offset_minute) {
+     sl_log_debug(LOG_TAG, "Updating desired value for DSTOffsetMinute attribute");
+    dotdot_set_unify_schedule_entry_lock_dst_offset_minute(unid, endpoint_id, DESIRED_ATTRIBUTE, attributes.dst_offset_minute);
+  }
+  if (true == updated_attributes.number_of_slots_daily_repeating) {
+     sl_log_debug(LOG_TAG, "Updating desired value for NumberOfSlotsDailyRepeating attribute");
+    dotdot_set_unify_schedule_entry_lock_number_of_slots_daily_repeating(unid, endpoint_id, DESIRED_ATTRIBUTE, attributes.number_of_slots_daily_repeating);
+  }
+  return SL_STATUS_OK;
+}
+////////////////////////////////////////////////////////////////////////////////
 // Start of cluster UnifyHumidityControl
 ////////////////////////////////////////////////////////////////////////////////
 // WriteAttribute Callbacks unify_humidity_control
@@ -2754,6 +2816,9 @@ sl_status_t
   
   uic_mqtt_dotdot_set_unify_thermostat_write_attributes_callback(
     &unify_thermostat_cluster_write_attributes_callback);
+  
+  uic_mqtt_dotdot_set_unify_schedule_entry_lock_write_attributes_callback(
+    &unify_schedule_entry_lock_cluster_write_attributes_callback);
   
   uic_mqtt_dotdot_set_unify_humidity_control_write_attributes_callback(
     &unify_humidity_control_cluster_write_attributes_callback);

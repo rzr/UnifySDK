@@ -5054,6 +5054,63 @@ typedef sl_status_t (*uic_mqtt_dotdot_unify_thermostat_attribute_operating_state
   uic_mqtt_dotdot_attribute_update_type_t update_type,
   uint8_t operating_state
 );
+// Callback types used by the unify_schedule_entry_lock cluster
+typedef sl_status_t (*uic_mqtt_dotdot_unify_schedule_entry_lock_attribute_slots_week_day_callback_t)(
+  dotdot_unid_t unid,
+  dotdot_endpoint_id_t endpoint,
+  bool unretained,
+  uic_mqtt_dotdot_attribute_update_type_t update_type,
+  uint8_t slots_week_day
+);
+typedef sl_status_t (*uic_mqtt_dotdot_unify_schedule_entry_lock_attribute_slots_year_day_callback_t)(
+  dotdot_unid_t unid,
+  dotdot_endpoint_id_t endpoint,
+  bool unretained,
+  uic_mqtt_dotdot_attribute_update_type_t update_type,
+  uint8_t slots_year_day
+);
+typedef sl_status_t (*uic_mqtt_dotdot_unify_schedule_entry_lock_attribute_signtzo_callback_t)(
+  dotdot_unid_t unid,
+  dotdot_endpoint_id_t endpoint,
+  bool unretained,
+  uic_mqtt_dotdot_attribute_update_type_t update_type,
+  uint8_t signtzo
+);
+typedef sl_status_t (*uic_mqtt_dotdot_unify_schedule_entry_lock_attribute_hourtzo_callback_t)(
+  dotdot_unid_t unid,
+  dotdot_endpoint_id_t endpoint,
+  bool unretained,
+  uic_mqtt_dotdot_attribute_update_type_t update_type,
+  uint8_t hourtzo
+);
+typedef sl_status_t (*uic_mqtt_dotdot_unify_schedule_entry_lock_attribute_minutetzo_callback_t)(
+  dotdot_unid_t unid,
+  dotdot_endpoint_id_t endpoint,
+  bool unretained,
+  uic_mqtt_dotdot_attribute_update_type_t update_type,
+  uint8_t minutetzo
+);
+typedef sl_status_t (*uic_mqtt_dotdot_unify_schedule_entry_lock_attribute_dst_offset_sign_callback_t)(
+  dotdot_unid_t unid,
+  dotdot_endpoint_id_t endpoint,
+  bool unretained,
+  uic_mqtt_dotdot_attribute_update_type_t update_type,
+  uint8_t dst_offset_sign
+);
+typedef sl_status_t (*uic_mqtt_dotdot_unify_schedule_entry_lock_attribute_dst_offset_minute_callback_t)(
+  dotdot_unid_t unid,
+  dotdot_endpoint_id_t endpoint,
+  bool unretained,
+  uic_mqtt_dotdot_attribute_update_type_t update_type,
+  uint8_t dst_offset_minute
+);
+typedef sl_status_t (*uic_mqtt_dotdot_unify_schedule_entry_lock_attribute_number_of_slots_daily_repeating_callback_t)(
+  dotdot_unid_t unid,
+  dotdot_endpoint_id_t endpoint,
+  bool unretained,
+  uic_mqtt_dotdot_attribute_update_type_t update_type,
+  uint8_t number_of_slots_daily_repeating
+);
 // Callback types used by the unify_humidity_control cluster
 typedef sl_status_t (*uic_mqtt_dotdot_unify_humidity_control_attribute_reporting_mode_callback_t)(
   dotdot_unid_t unid,
@@ -9852,6 +9909,62 @@ void uic_mqtt_dotdot_unify_thermostat_attribute_supported_thermostat_mode_callba
  * this callback will overwrite the previous set callback
  */
 void uic_mqtt_dotdot_unify_thermostat_attribute_operating_state_callback_set(const uic_mqtt_dotdot_unify_thermostat_attribute_operating_state_callback_t callback);
+
+
+/**
+ *  Initializes the attributes features for the UnifyScheduleEntryLock cluster,
+ *  allowing to receive attribute updates from other UNIDs.
+ */
+sl_status_t uic_mqtt_dotdot_unify_schedule_entry_lock_attributes_init();
+
+/**
+ * Setup callback to be called when a
+ * UnifyScheduleEntryLock/Attributes/slots_week_day/# is received. Setting
+ * this callback will overwrite the previous set callback
+ */
+void uic_mqtt_dotdot_unify_schedule_entry_lock_attribute_slots_week_day_callback_set(const uic_mqtt_dotdot_unify_schedule_entry_lock_attribute_slots_week_day_callback_t callback);
+/**
+ * Setup callback to be called when a
+ * UnifyScheduleEntryLock/Attributes/slots_year_day/# is received. Setting
+ * this callback will overwrite the previous set callback
+ */
+void uic_mqtt_dotdot_unify_schedule_entry_lock_attribute_slots_year_day_callback_set(const uic_mqtt_dotdot_unify_schedule_entry_lock_attribute_slots_year_day_callback_t callback);
+/**
+ * Setup callback to be called when a
+ * UnifyScheduleEntryLock/Attributes/signtzo/# is received. Setting
+ * this callback will overwrite the previous set callback
+ */
+void uic_mqtt_dotdot_unify_schedule_entry_lock_attribute_signtzo_callback_set(const uic_mqtt_dotdot_unify_schedule_entry_lock_attribute_signtzo_callback_t callback);
+/**
+ * Setup callback to be called when a
+ * UnifyScheduleEntryLock/Attributes/hourtzo/# is received. Setting
+ * this callback will overwrite the previous set callback
+ */
+void uic_mqtt_dotdot_unify_schedule_entry_lock_attribute_hourtzo_callback_set(const uic_mqtt_dotdot_unify_schedule_entry_lock_attribute_hourtzo_callback_t callback);
+/**
+ * Setup callback to be called when a
+ * UnifyScheduleEntryLock/Attributes/minutetzo/# is received. Setting
+ * this callback will overwrite the previous set callback
+ */
+void uic_mqtt_dotdot_unify_schedule_entry_lock_attribute_minutetzo_callback_set(const uic_mqtt_dotdot_unify_schedule_entry_lock_attribute_minutetzo_callback_t callback);
+/**
+ * Setup callback to be called when a
+ * UnifyScheduleEntryLock/Attributes/dst_offset_sign/# is received. Setting
+ * this callback will overwrite the previous set callback
+ */
+void uic_mqtt_dotdot_unify_schedule_entry_lock_attribute_dst_offset_sign_callback_set(const uic_mqtt_dotdot_unify_schedule_entry_lock_attribute_dst_offset_sign_callback_t callback);
+/**
+ * Setup callback to be called when a
+ * UnifyScheduleEntryLock/Attributes/dst_offset_minute/# is received. Setting
+ * this callback will overwrite the previous set callback
+ */
+void uic_mqtt_dotdot_unify_schedule_entry_lock_attribute_dst_offset_minute_callback_set(const uic_mqtt_dotdot_unify_schedule_entry_lock_attribute_dst_offset_minute_callback_t callback);
+/**
+ * Setup callback to be called when a
+ * UnifyScheduleEntryLock/Attributes/number_of_slots_daily_repeating/# is received. Setting
+ * this callback will overwrite the previous set callback
+ */
+void uic_mqtt_dotdot_unify_schedule_entry_lock_attribute_number_of_slots_daily_repeating_callback_set(const uic_mqtt_dotdot_unify_schedule_entry_lock_attribute_number_of_slots_daily_repeating_callback_t callback);
 
 
 /**

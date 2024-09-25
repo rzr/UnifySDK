@@ -11236,6 +11236,234 @@ void uic_mqtt_dotdot_unify_thermostat_publish_generated_write_attributes_command
 }
 
 /**
+ * @brief Publishes an incoming/generated ScheduleEntryLockWeekDayReport command for
+ * the UnifyScheduleEntryLock cluster.
+ *
+ * Publication will be made at the following topic
+ * ucl/by-unid/UNID/epID/UnifyScheduleEntryLock/GeneratedCommands/ScheduleEntryLockWeekDayReport
+ *
+ * @param unid      The UNID of the node that sent us the command.
+ * 
+ * @param endpoint  The Endpoint ID of the node that sent us the command.
+ * 
+ * 
+ * @param fields                Struct pointer with the fields value of the command
+ * 
+ */
+void uic_mqtt_dotdot_unify_schedule_entry_lock_publish_generated_schedule_entry_lock_week_day_report_command(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint,
+  const uic_mqtt_dotdot_unify_schedule_entry_lock_command_schedule_entry_lock_week_day_report_fields_t *fields
+  
+) {
+  // Create the topic
+  std::string topic = "ucl/by-unid/"+ std::string(unid) + "/ep" +
+                      std::to_string(endpoint) + "/";
+  topic += "UnifyScheduleEntryLock/GeneratedCommands/ScheduleEntryLockWeekDayReport";
+
+  std::string payload =
+    get_json_payload_for_unify_schedule_entry_lock_schedule_entry_lock_week_day_report_command(
+    fields);
+
+  // Publish our command
+  uic_mqtt_publish(topic.c_str(),
+                    payload.c_str(),
+                    payload.size(),
+                    false);
+}
+/**
+ * @brief Publishes an incoming/generated ScheduleEntryLockYearDayReport command for
+ * the UnifyScheduleEntryLock cluster.
+ *
+ * Publication will be made at the following topic
+ * ucl/by-unid/UNID/epID/UnifyScheduleEntryLock/GeneratedCommands/ScheduleEntryLockYearDayReport
+ *
+ * @param unid      The UNID of the node that sent us the command.
+ * 
+ * @param endpoint  The Endpoint ID of the node that sent us the command.
+ * 
+ * 
+ * @param fields                Struct pointer with the fields value of the command
+ * 
+ */
+void uic_mqtt_dotdot_unify_schedule_entry_lock_publish_generated_schedule_entry_lock_year_day_report_command(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint,
+  const uic_mqtt_dotdot_unify_schedule_entry_lock_command_schedule_entry_lock_year_day_report_fields_t *fields
+  
+) {
+  // Create the topic
+  std::string topic = "ucl/by-unid/"+ std::string(unid) + "/ep" +
+                      std::to_string(endpoint) + "/";
+  topic += "UnifyScheduleEntryLock/GeneratedCommands/ScheduleEntryLockYearDayReport";
+
+  std::string payload =
+    get_json_payload_for_unify_schedule_entry_lock_schedule_entry_lock_year_day_report_command(
+    fields);
+
+  // Publish our command
+  uic_mqtt_publish(topic.c_str(),
+                    payload.c_str(),
+                    payload.size(),
+                    false);
+}
+/**
+ * @brief Publishes an incoming/generated ScheduleEntryLockDailyRepeatingReport command for
+ * the UnifyScheduleEntryLock cluster.
+ *
+ * Publication will be made at the following topic
+ * ucl/by-unid/UNID/epID/UnifyScheduleEntryLock/GeneratedCommands/ScheduleEntryLockDailyRepeatingReport
+ *
+ * @param unid      The UNID of the node that sent us the command.
+ * 
+ * @param endpoint  The Endpoint ID of the node that sent us the command.
+ * 
+ * 
+ * @param fields                Struct pointer with the fields value of the command
+ * 
+ */
+void uic_mqtt_dotdot_unify_schedule_entry_lock_publish_generated_schedule_entry_lock_daily_repeating_report_command(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint,
+  const uic_mqtt_dotdot_unify_schedule_entry_lock_command_schedule_entry_lock_daily_repeating_report_fields_t *fields
+  
+) {
+  // Create the topic
+  std::string topic = "ucl/by-unid/"+ std::string(unid) + "/ep" +
+                      std::to_string(endpoint) + "/";
+  topic += "UnifyScheduleEntryLock/GeneratedCommands/ScheduleEntryLockDailyRepeatingReport";
+
+  std::string payload =
+    get_json_payload_for_unify_schedule_entry_lock_schedule_entry_lock_daily_repeating_report_command(
+    fields);
+
+  // Publish our command
+  uic_mqtt_publish(topic.c_str(),
+                    payload.c_str(),
+                    payload.size(),
+                    false);
+}
+
+
+/**
+ * @brief Publishes an incoming/generated WriteAttributes command for
+ * the UnifyScheduleEntryLock cluster.
+ *
+ * Publication will be made at the following topic
+ * ucl/by-unid/UNID/epID/UnifyScheduleEntryLock/GeneratedCommands/WriteAttributes
+ *
+ * @param unid      The UNID of the node that sent us the command.
+ * 
+ * @param endpoint  The Endpoint ID of the node that sent us the command.
+ * 
+ * @param attribute_values  Values to assign to the attributes
+ * @param attribute_list    List of attributes that are written
+ */
+void uic_mqtt_dotdot_unify_schedule_entry_lock_publish_generated_write_attributes_command(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint,
+  uic_mqtt_dotdot_unify_schedule_entry_lock_state_t attribute_values,
+  uic_mqtt_dotdot_unify_schedule_entry_lock_updated_state_t attribute_list
+){
+  // Create the topic
+  std::string topic = "ucl/by-unid/"+ std::string(unid) + "/ep" +
+                      std::to_string(endpoint) + "/";
+  topic += "UnifyScheduleEntryLock/GeneratedCommands/WriteAttributes";
+
+  nlohmann::json json_object = nlohmann::json::object();
+
+
+  if (attribute_list.slots_week_day == true) {
+
+  // This is a single value
+
+  json_object["SlotsWeekDay"] = attribute_values.slots_week_day;
+
+
+  }
+
+
+  if (attribute_list.slots_year_day == true) {
+
+  // This is a single value
+
+  json_object["SlotsYearDay"] = attribute_values.slots_year_day;
+
+
+  }
+
+
+  if (attribute_list.signtzo == true) {
+
+  // This is a single value
+
+  json_object["SignTZO"] = attribute_values.signtzo;
+
+
+  }
+
+
+  if (attribute_list.hourtzo == true) {
+
+  // This is a single value
+
+  json_object["HourTZO"] = attribute_values.hourtzo;
+
+
+  }
+
+
+  if (attribute_list.minutetzo == true) {
+
+  // This is a single value
+
+  json_object["MinuteTZO"] = attribute_values.minutetzo;
+
+
+  }
+
+
+  if (attribute_list.dst_offset_sign == true) {
+
+  // This is a single value
+
+  json_object["DSTOffsetSign"] = attribute_values.dst_offset_sign;
+
+
+  }
+
+
+  if (attribute_list.dst_offset_minute == true) {
+
+  // This is a single value
+
+  json_object["DSTOffsetMinute"] = attribute_values.dst_offset_minute;
+
+
+  }
+
+
+  if (attribute_list.number_of_slots_daily_repeating == true) {
+
+  // This is a single value
+
+  json_object["NumberOfSlotsDailyRepeating"] = attribute_values.number_of_slots_daily_repeating;
+
+
+  }
+
+
+  // Payload contains data from end nodes, which we cannot control, thus we handle if there are non-utf8 characters
+  std::string payload = json_object.dump(-1, ' ', false, nlohmann::detail::error_handler_t::replace);
+
+  // Publish our command
+  uic_mqtt_publish(topic.c_str(),
+                   payload.c_str(),
+                   payload.size(),
+                   false);
+}
+
+/**
  * @brief Publishes an incoming/generated ModeSet command for
  * the UnifyHumidityControl cluster.
  *

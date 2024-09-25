@@ -14523,6 +14523,468 @@ void uic_mqtt_dotdot_parse_unify_thermostat_write_attributes(
 }
 
 
+std::string get_json_payload_for_unify_schedule_entry_lock_schedule_entry_lock_week_day_report_command(
+  
+  const uic_mqtt_dotdot_unify_schedule_entry_lock_command_schedule_entry_lock_week_day_report_fields_t *fields
+  
+){
+  bool command_with_no_fields = true;
+
+  // Create a JSON payload from all the parameters
+  nlohmann::json json_payload;
+  command_with_no_fields = false;
+  // Single Value
+  // Non-enum and non-bitmask (struct, string or scalar)
+  json_payload["UserIdentifier"] = nlohmann::json(fields->user_identifier);
+  command_with_no_fields = false;
+  // Single Value
+  // Non-enum and non-bitmask (struct, string or scalar)
+  json_payload["ScheduleSlotID"] = nlohmann::json(fields->schedule_slotid);
+  command_with_no_fields = false;
+  // Single Value
+  // Non-enum and non-bitmask (struct, string or scalar)
+  json_payload["DayOfWeek"] = nlohmann::json(fields->day_of_week);
+  command_with_no_fields = false;
+  // Single Value
+  // Non-enum and non-bitmask (struct, string or scalar)
+  json_payload["StartHour"] = nlohmann::json(fields->start_hour);
+  command_with_no_fields = false;
+  // Single Value
+  // Non-enum and non-bitmask (struct, string or scalar)
+  json_payload["StartMinute"] = nlohmann::json(fields->start_minute);
+  command_with_no_fields = false;
+  // Single Value
+  // Non-enum and non-bitmask (struct, string or scalar)
+  json_payload["StopHour"] = nlohmann::json(fields->stop_hour);
+  command_with_no_fields = false;
+  // Single Value
+  // Non-enum and non-bitmask (struct, string or scalar)
+  json_payload["StopMinute"] = nlohmann::json(fields->stop_minute);
+
+  // Get the string
+  if (command_with_no_fields == true) {
+    return std::string("{}");
+  }
+  // Payload may contain data from end nodes, which we cannot control, thus we handle if there are non-utf8 characters
+  return json_payload.dump(-1, ' ', false, nlohmann::detail::error_handler_t::replace);
+}
+
+
+void uic_mqtt_dotdot_parse_unify_schedule_entry_lock_schedule_entry_lock_week_day_report(
+  nlohmann::json &jsn,
+  uint8_t &user_identifier,
+  
+  uint8_t &schedule_slotid,
+  
+  uint8_t &day_of_week,
+  
+  uint8_t &start_hour,
+  
+  uint8_t &start_minute,
+  
+  uint8_t &stop_hour,
+  
+  uint8_t &stop_minute
+  
+) {
+
+  if (jsn.at("UserIdentifier").is_null()) {
+    sl_log_debug(LOG_TAG, "Ignoring JSON Null object");
+    return;
+  }
+        
+  user_identifier = jsn.at("UserIdentifier").get< uint8_t >();
+      if (jsn.at("ScheduleSlotID").is_null()) {
+    sl_log_debug(LOG_TAG, "Ignoring JSON Null object");
+    return;
+  }
+        
+  schedule_slotid = jsn.at("ScheduleSlotID").get< uint8_t >();
+      if (jsn.at("DayOfWeek").is_null()) {
+    sl_log_debug(LOG_TAG, "Ignoring JSON Null object");
+    return;
+  }
+        
+  day_of_week = jsn.at("DayOfWeek").get< uint8_t >();
+      if (jsn.at("StartHour").is_null()) {
+    sl_log_debug(LOG_TAG, "Ignoring JSON Null object");
+    return;
+  }
+        
+  start_hour = jsn.at("StartHour").get< uint8_t >();
+      if (jsn.at("StartMinute").is_null()) {
+    sl_log_debug(LOG_TAG, "Ignoring JSON Null object");
+    return;
+  }
+        
+  start_minute = jsn.at("StartMinute").get< uint8_t >();
+      if (jsn.at("StopHour").is_null()) {
+    sl_log_debug(LOG_TAG, "Ignoring JSON Null object");
+    return;
+  }
+        
+  stop_hour = jsn.at("StopHour").get< uint8_t >();
+      if (jsn.at("StopMinute").is_null()) {
+    sl_log_debug(LOG_TAG, "Ignoring JSON Null object");
+    return;
+  }
+        
+  stop_minute = jsn.at("StopMinute").get< uint8_t >();
+    }
+
+
+std::string get_json_payload_for_unify_schedule_entry_lock_schedule_entry_lock_year_day_report_command(
+  
+  const uic_mqtt_dotdot_unify_schedule_entry_lock_command_schedule_entry_lock_year_day_report_fields_t *fields
+  
+){
+  bool command_with_no_fields = true;
+
+  // Create a JSON payload from all the parameters
+  nlohmann::json json_payload;
+  command_with_no_fields = false;
+  // Single Value
+  // Non-enum and non-bitmask (struct, string or scalar)
+  json_payload["SetAction"] = nlohmann::json(fields->set_action);
+  command_with_no_fields = false;
+  // Single Value
+  // Non-enum and non-bitmask (struct, string or scalar)
+  json_payload["UserIdentifier"] = nlohmann::json(fields->user_identifier);
+  command_with_no_fields = false;
+  // Single Value
+  // Non-enum and non-bitmask (struct, string or scalar)
+  json_payload["ScheduleSlotID"] = nlohmann::json(fields->schedule_slotid);
+  command_with_no_fields = false;
+  // Single Value
+  // Non-enum and non-bitmask (struct, string or scalar)
+  json_payload["StartYear"] = nlohmann::json(fields->start_year);
+  command_with_no_fields = false;
+  // Single Value
+  // Non-enum and non-bitmask (struct, string or scalar)
+  json_payload["StartDay"] = nlohmann::json(fields->start_day);
+  command_with_no_fields = false;
+  // Single Value
+  // Non-enum and non-bitmask (struct, string or scalar)
+  json_payload["StartHour"] = nlohmann::json(fields->start_hour);
+  command_with_no_fields = false;
+  // Single Value
+  // Non-enum and non-bitmask (struct, string or scalar)
+  json_payload["StartMinute"] = nlohmann::json(fields->start_minute);
+  command_with_no_fields = false;
+  // Single Value
+  // Non-enum and non-bitmask (struct, string or scalar)
+  json_payload["StopYear"] = nlohmann::json(fields->stop_year);
+  command_with_no_fields = false;
+  // Single Value
+  // Non-enum and non-bitmask (struct, string or scalar)
+  json_payload["StopDay"] = nlohmann::json(fields->stop_day);
+  command_with_no_fields = false;
+  // Single Value
+  // Non-enum and non-bitmask (struct, string or scalar)
+  json_payload["StopHour"] = nlohmann::json(fields->stop_hour);
+  command_with_no_fields = false;
+  // Single Value
+  // Non-enum and non-bitmask (struct, string or scalar)
+  json_payload["StopMinute"] = nlohmann::json(fields->stop_minute);
+
+  // Get the string
+  if (command_with_no_fields == true) {
+    return std::string("{}");
+  }
+  // Payload may contain data from end nodes, which we cannot control, thus we handle if there are non-utf8 characters
+  return json_payload.dump(-1, ' ', false, nlohmann::detail::error_handler_t::replace);
+}
+
+
+void uic_mqtt_dotdot_parse_unify_schedule_entry_lock_schedule_entry_lock_year_day_report(
+  nlohmann::json &jsn,
+  uint8_t &set_action,
+  
+  uint8_t &user_identifier,
+  
+  uint8_t &schedule_slotid,
+  
+  uint8_t &start_year,
+  
+  uint8_t &start_day,
+  
+  uint8_t &start_hour,
+  
+  uint8_t &start_minute,
+  
+  uint8_t &stop_year,
+  
+  uint8_t &stop_day,
+  
+  uint8_t &stop_hour,
+  
+  uint8_t &stop_minute
+  
+) {
+
+  if (jsn.at("SetAction").is_null()) {
+    sl_log_debug(LOG_TAG, "Ignoring JSON Null object");
+    return;
+  }
+        
+  set_action = jsn.at("SetAction").get< uint8_t >();
+      if (jsn.at("UserIdentifier").is_null()) {
+    sl_log_debug(LOG_TAG, "Ignoring JSON Null object");
+    return;
+  }
+        
+  user_identifier = jsn.at("UserIdentifier").get< uint8_t >();
+      if (jsn.at("ScheduleSlotID").is_null()) {
+    sl_log_debug(LOG_TAG, "Ignoring JSON Null object");
+    return;
+  }
+        
+  schedule_slotid = jsn.at("ScheduleSlotID").get< uint8_t >();
+      if (jsn.at("StartYear").is_null()) {
+    sl_log_debug(LOG_TAG, "Ignoring JSON Null object");
+    return;
+  }
+        
+  start_year = jsn.at("StartYear").get< uint8_t >();
+      if (jsn.at("StartDay").is_null()) {
+    sl_log_debug(LOG_TAG, "Ignoring JSON Null object");
+    return;
+  }
+        
+  start_day = jsn.at("StartDay").get< uint8_t >();
+      if (jsn.at("StartHour").is_null()) {
+    sl_log_debug(LOG_TAG, "Ignoring JSON Null object");
+    return;
+  }
+        
+  start_hour = jsn.at("StartHour").get< uint8_t >();
+      if (jsn.at("StartMinute").is_null()) {
+    sl_log_debug(LOG_TAG, "Ignoring JSON Null object");
+    return;
+  }
+        
+  start_minute = jsn.at("StartMinute").get< uint8_t >();
+      if (jsn.at("StopYear").is_null()) {
+    sl_log_debug(LOG_TAG, "Ignoring JSON Null object");
+    return;
+  }
+        
+  stop_year = jsn.at("StopYear").get< uint8_t >();
+      if (jsn.at("StopDay").is_null()) {
+    sl_log_debug(LOG_TAG, "Ignoring JSON Null object");
+    return;
+  }
+        
+  stop_day = jsn.at("StopDay").get< uint8_t >();
+      if (jsn.at("StopHour").is_null()) {
+    sl_log_debug(LOG_TAG, "Ignoring JSON Null object");
+    return;
+  }
+        
+  stop_hour = jsn.at("StopHour").get< uint8_t >();
+      if (jsn.at("StopMinute").is_null()) {
+    sl_log_debug(LOG_TAG, "Ignoring JSON Null object");
+    return;
+  }
+        
+  stop_minute = jsn.at("StopMinute").get< uint8_t >();
+    }
+
+
+std::string get_json_payload_for_unify_schedule_entry_lock_schedule_entry_lock_daily_repeating_report_command(
+  
+  const uic_mqtt_dotdot_unify_schedule_entry_lock_command_schedule_entry_lock_daily_repeating_report_fields_t *fields
+  
+){
+  bool command_with_no_fields = true;
+
+  // Create a JSON payload from all the parameters
+  nlohmann::json json_payload;
+  command_with_no_fields = false;
+  // Single Value
+  // Non-enum and non-bitmask (struct, string or scalar)
+  json_payload["SetAction"] = nlohmann::json(fields->set_action);
+  command_with_no_fields = false;
+  // Single Value
+  // Non-enum and non-bitmask (struct, string or scalar)
+  json_payload["UserIdentifier"] = nlohmann::json(fields->user_identifier);
+  command_with_no_fields = false;
+  // Single Value
+  // Non-enum and non-bitmask (struct, string or scalar)
+  json_payload["ScheduleSlotID"] = nlohmann::json(fields->schedule_slotid);
+  command_with_no_fields = false;
+  // Single Value
+  // Non-enum and non-bitmask (struct, string or scalar)
+  json_payload["WeekDayBitmask"] = nlohmann::json(fields->week_day_bitmask);
+  command_with_no_fields = false;
+  // Single Value
+  // Non-enum and non-bitmask (struct, string or scalar)
+  json_payload["StartHour"] = nlohmann::json(fields->start_hour);
+  command_with_no_fields = false;
+  // Single Value
+  // Non-enum and non-bitmask (struct, string or scalar)
+  json_payload["StartMinute"] = nlohmann::json(fields->start_minute);
+  command_with_no_fields = false;
+  // Single Value
+  // Non-enum and non-bitmask (struct, string or scalar)
+  json_payload["DurationHour"] = nlohmann::json(fields->duration_hour);
+  command_with_no_fields = false;
+  // Single Value
+  // Non-enum and non-bitmask (struct, string or scalar)
+  json_payload["DurationMinute"] = nlohmann::json(fields->duration_minute);
+
+  // Get the string
+  if (command_with_no_fields == true) {
+    return std::string("{}");
+  }
+  // Payload may contain data from end nodes, which we cannot control, thus we handle if there are non-utf8 characters
+  return json_payload.dump(-1, ' ', false, nlohmann::detail::error_handler_t::replace);
+}
+
+
+void uic_mqtt_dotdot_parse_unify_schedule_entry_lock_schedule_entry_lock_daily_repeating_report(
+  nlohmann::json &jsn,
+  uint8_t &set_action,
+  
+  uint8_t &user_identifier,
+  
+  uint8_t &schedule_slotid,
+  
+  uint8_t &week_day_bitmask,
+  
+  uint8_t &start_hour,
+  
+  uint8_t &start_minute,
+  
+  uint8_t &duration_hour,
+  
+  uint8_t &duration_minute
+  
+) {
+
+  if (jsn.at("SetAction").is_null()) {
+    sl_log_debug(LOG_TAG, "Ignoring JSON Null object");
+    return;
+  }
+        
+  set_action = jsn.at("SetAction").get< uint8_t >();
+      if (jsn.at("UserIdentifier").is_null()) {
+    sl_log_debug(LOG_TAG, "Ignoring JSON Null object");
+    return;
+  }
+        
+  user_identifier = jsn.at("UserIdentifier").get< uint8_t >();
+      if (jsn.at("ScheduleSlotID").is_null()) {
+    sl_log_debug(LOG_TAG, "Ignoring JSON Null object");
+    return;
+  }
+        
+  schedule_slotid = jsn.at("ScheduleSlotID").get< uint8_t >();
+      if (jsn.at("WeekDayBitmask").is_null()) {
+    sl_log_debug(LOG_TAG, "Ignoring JSON Null object");
+    return;
+  }
+        
+  week_day_bitmask = jsn.at("WeekDayBitmask").get< uint8_t >();
+      if (jsn.at("StartHour").is_null()) {
+    sl_log_debug(LOG_TAG, "Ignoring JSON Null object");
+    return;
+  }
+        
+  start_hour = jsn.at("StartHour").get< uint8_t >();
+      if (jsn.at("StartMinute").is_null()) {
+    sl_log_debug(LOG_TAG, "Ignoring JSON Null object");
+    return;
+  }
+        
+  start_minute = jsn.at("StartMinute").get< uint8_t >();
+      if (jsn.at("DurationHour").is_null()) {
+    sl_log_debug(LOG_TAG, "Ignoring JSON Null object");
+    return;
+  }
+        
+  duration_hour = jsn.at("DurationHour").get< uint8_t >();
+      if (jsn.at("DurationMinute").is_null()) {
+    sl_log_debug(LOG_TAG, "Ignoring JSON Null object");
+    return;
+  }
+        
+  duration_minute = jsn.at("DurationMinute").get< uint8_t >();
+    }
+
+
+/**
+ * @brief JSON parser for ::WriteAttributes command arguments.
+ *
+ * Parse incoming JSON object to populate command arguments passed in by reference.
+ */
+void uic_mqtt_dotdot_parse_unify_schedule_entry_lock_write_attributes(
+  nlohmann::json &jsn,
+  uic_mqtt_dotdot_unify_schedule_entry_lock_state_t &new_state,
+  uic_mqtt_dotdot_unify_schedule_entry_lock_updated_state_t &new_updated_state
+) {
+
+
+  if (jsn.find("SlotsWeekDay") != jsn.end()) {
+
+    new_state.slots_week_day = jsn.at("SlotsWeekDay").get<uint8_t>();
+        
+    new_updated_state.slots_week_day = true;
+  }
+
+  if (jsn.find("SlotsYearDay") != jsn.end()) {
+
+    new_state.slots_year_day = jsn.at("SlotsYearDay").get<uint8_t>();
+        
+    new_updated_state.slots_year_day = true;
+  }
+
+  if (jsn.find("SignTZO") != jsn.end()) {
+
+    new_state.signtzo = jsn.at("SignTZO").get<uint8_t>();
+        
+    new_updated_state.signtzo = true;
+  }
+
+  if (jsn.find("HourTZO") != jsn.end()) {
+
+    new_state.hourtzo = jsn.at("HourTZO").get<uint8_t>();
+        
+    new_updated_state.hourtzo = true;
+  }
+
+  if (jsn.find("MinuteTZO") != jsn.end()) {
+
+    new_state.minutetzo = jsn.at("MinuteTZO").get<uint8_t>();
+        
+    new_updated_state.minutetzo = true;
+  }
+
+  if (jsn.find("DSTOffsetSign") != jsn.end()) {
+
+    new_state.dst_offset_sign = jsn.at("DSTOffsetSign").get<uint8_t>();
+        
+    new_updated_state.dst_offset_sign = true;
+  }
+
+  if (jsn.find("DSTOffsetMinute") != jsn.end()) {
+
+    new_state.dst_offset_minute = jsn.at("DSTOffsetMinute").get<uint8_t>();
+        
+    new_updated_state.dst_offset_minute = true;
+  }
+
+  if (jsn.find("NumberOfSlotsDailyRepeating") != jsn.end()) {
+
+    new_state.number_of_slots_daily_repeating = jsn.at("NumberOfSlotsDailyRepeating").get<uint8_t>();
+        
+    new_updated_state.number_of_slots_daily_repeating = true;
+  }
+
+
+}
+
+
 std::string get_json_payload_for_unify_humidity_control_mode_set_command(
   
   const uic_mqtt_dotdot_unify_humidity_control_command_mode_set_fields_t *fields

@@ -29,6 +29,7 @@ export enum ClusterTypes {
 	SoilMoisture = "SoilMoisture", 
 	TemperatureMeasurement = "TemperatureMeasurement", 
 	Thermostat = "Thermostat", 
+	UnifyScheduleEntryLock = "UnifyScheduleEntryLock", 
 	WindSpeedMeasurement = "WindSpeedMeasurement", 
 	WindowCovering = "WindowCovering"
 }

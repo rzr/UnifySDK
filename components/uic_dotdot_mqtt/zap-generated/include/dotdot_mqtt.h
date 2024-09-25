@@ -40139,6 +40139,635 @@ void uic_mqtt_dotdot_unify_thermostat_publish_supported_commands(
 void uic_mqtt_dotdot_unify_thermostat_publish_empty_supported_commands(
   const dotdot_unid_t unid
   ,dotdot_endpoint_id_t endpoint);
+// Callback types used by the unify_schedule_entry_lock cluster
+typedef sl_status_t (*uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_week_day_report_callback_t)(
+    dotdot_unid_t unid,
+    dotdot_endpoint_id_t endpoint,
+    uic_mqtt_dotdot_callback_call_type_t call_type,
+    uint8_t user_identifier,
+
+    uint8_t schedule_slotid,
+
+    uint8_t day_of_week,
+
+    uint8_t start_hour,
+
+    uint8_t start_minute,
+
+    uint8_t stop_hour,
+
+    uint8_t stop_minute
+
+);
+typedef sl_status_t (*uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_year_day_report_callback_t)(
+    dotdot_unid_t unid,
+    dotdot_endpoint_id_t endpoint,
+    uic_mqtt_dotdot_callback_call_type_t call_type,
+    uint8_t set_action,
+
+    uint8_t user_identifier,
+
+    uint8_t schedule_slotid,
+
+    uint8_t start_year,
+
+    uint8_t start_day,
+
+    uint8_t start_hour,
+
+    uint8_t start_minute,
+
+    uint8_t stop_year,
+
+    uint8_t stop_day,
+
+    uint8_t stop_hour,
+
+    uint8_t stop_minute
+
+);
+typedef sl_status_t (*uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_daily_repeating_report_callback_t)(
+    dotdot_unid_t unid,
+    dotdot_endpoint_id_t endpoint,
+    uic_mqtt_dotdot_callback_call_type_t call_type,
+    uint8_t set_action,
+
+    uint8_t user_identifier,
+
+    uint8_t schedule_slotid,
+
+    uint8_t week_day_bitmask,
+
+    uint8_t start_hour,
+
+    uint8_t start_minute,
+
+    uint8_t duration_hour,
+
+    uint8_t duration_minute
+
+);
+
+typedef struct {
+  uint8_t slots_week_day;
+  uint8_t slots_year_day;
+  uint8_t signtzo;
+  uint8_t hourtzo;
+  uint8_t minutetzo;
+  uint8_t dst_offset_sign;
+  uint8_t dst_offset_minute;
+  uint8_t number_of_slots_daily_repeating;
+} uic_mqtt_dotdot_unify_schedule_entry_lock_state_t;
+
+typedef struct {
+  bool slots_week_day;
+  bool slots_year_day;
+  bool signtzo;
+  bool hourtzo;
+  bool minutetzo;
+  bool dst_offset_sign;
+  bool dst_offset_minute;
+  bool number_of_slots_daily_repeating;
+} uic_mqtt_dotdot_unify_schedule_entry_lock_updated_state_t;
+
+typedef sl_status_t (*uic_mqtt_dotdot_unify_schedule_entry_lock_write_attributes_callback_t)(
+    const dotdot_unid_t unid,
+    const dotdot_endpoint_id_t endpoint,
+    uic_mqtt_dotdot_callback_call_type_t call_type,
+    uic_mqtt_dotdot_unify_schedule_entry_lock_state_t,
+    uic_mqtt_dotdot_unify_schedule_entry_lock_updated_state_t
+);
+
+typedef sl_status_t (*uic_mqtt_dotdot_unify_schedule_entry_lock_force_read_attributes_callback_t)(
+    const dotdot_unid_t unid,
+    const dotdot_endpoint_id_t endpoint,
+    uic_mqtt_dotdot_callback_call_type_t call_type,
+    uic_mqtt_dotdot_unify_schedule_entry_lock_updated_state_t
+);
+
+
+/**
+ * @brief Command fields for UnifyScheduleEntryLock/ScheduleEntryLockWeekDayReport
+ */
+typedef struct {
+  uint8_t user_identifier;
+
+  uint8_t schedule_slotid;
+
+  uint8_t day_of_week;
+
+  uint8_t start_hour;
+
+  uint8_t start_minute;
+
+  uint8_t stop_hour;
+
+  uint8_t stop_minute;
+} uic_mqtt_dotdot_unify_schedule_entry_lock_command_schedule_entry_lock_week_day_report_fields_t;
+
+/**
+ * @brief Command fields for UnifyScheduleEntryLock/ScheduleEntryLockYearDayReport
+ */
+typedef struct {
+  uint8_t set_action;
+
+  uint8_t user_identifier;
+
+  uint8_t schedule_slotid;
+
+  uint8_t start_year;
+
+  uint8_t start_day;
+
+  uint8_t start_hour;
+
+  uint8_t start_minute;
+
+  uint8_t stop_year;
+
+  uint8_t stop_day;
+
+  uint8_t stop_hour;
+
+  uint8_t stop_minute;
+} uic_mqtt_dotdot_unify_schedule_entry_lock_command_schedule_entry_lock_year_day_report_fields_t;
+
+/**
+ * @brief Command fields for UnifyScheduleEntryLock/ScheduleEntryLockDailyRepeatingReport
+ */
+typedef struct {
+  uint8_t set_action;
+
+  uint8_t user_identifier;
+
+  uint8_t schedule_slotid;
+
+  uint8_t week_day_bitmask;
+
+  uint8_t start_hour;
+
+  uint8_t start_minute;
+
+  uint8_t duration_hour;
+
+  uint8_t duration_minute;
+} uic_mqtt_dotdot_unify_schedule_entry_lock_command_schedule_entry_lock_daily_repeating_report_fields_t;
+
+
+/**
+ * @brief Setup callback to be called when a
+ * UnifyScheduleEntryLock/Commands/schedule_entry_lock_week_day_report is received.
+ *
+ * Setting this callback will not overwrite the previous set callback
+ * @param callback      Function to be called on command reception
+ */
+void uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_week_day_report_callback_set(const uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_week_day_report_callback_t callback);
+/**
+ * @brief Unsets callback to be called when a
+ * UnifyScheduleEntryLock/Commands/schedule_entry_lock_week_day_report is received.
+ *
+ * @param callback      Function to be no longer called on command reception
+ */
+void uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_week_day_report_callback_unset(const uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_week_day_report_callback_t callback);
+/**
+ * @brief Clears all callbacks registered for when
+ * UnifyScheduleEntryLock/Commands/schedule_entry_lock_week_day_report is received.
+ */
+void uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_week_day_report_callback_clear();
+
+/**
+ * @brief Setup callback to be called when a
+ * +/UnifyScheduleEntryLock/GeneratedCommands/schedule_entry_lock_week_day_report is received.
+ *
+ * Setting this callback will not overwrite the previous set callback
+ * @param callback      Function to be called on command reception
+ */
+void uic_mqtt_dotdot_unify_schedule_entry_lock_generated_schedule_entry_lock_week_day_report_callback_set(const uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_week_day_report_callback_t callback);
+/**
+ * @brief Unsets callback to be called when a
+ * +/UnifyScheduleEntryLock/GeneratedCommands/schedule_entry_lock_week_day_report is received.
+ * @param callback      Function to be no longer called on command reception
+ */
+void uic_mqtt_dotdot_unify_schedule_entry_lock_generated_schedule_entry_lock_week_day_report_callback_unset(const uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_week_day_report_callback_t callback);
+/**
+ * @brief Clears all callbacks registered for when
+ * +/UnifyScheduleEntryLock/GeneratedCommands/schedule_entry_lock_week_day_report is received.
+ */
+void uic_mqtt_dotdot_unify_schedule_entry_lock_generated_schedule_entry_lock_week_day_report_callback_clear();
+/**
+ * @brief Setup callback to be called when a
+ * UnifyScheduleEntryLock/Commands/schedule_entry_lock_year_day_report is received.
+ *
+ * Setting this callback will not overwrite the previous set callback
+ * @param callback      Function to be called on command reception
+ */
+void uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_year_day_report_callback_set(const uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_year_day_report_callback_t callback);
+/**
+ * @brief Unsets callback to be called when a
+ * UnifyScheduleEntryLock/Commands/schedule_entry_lock_year_day_report is received.
+ *
+ * @param callback      Function to be no longer called on command reception
+ */
+void uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_year_day_report_callback_unset(const uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_year_day_report_callback_t callback);
+/**
+ * @brief Clears all callbacks registered for when
+ * UnifyScheduleEntryLock/Commands/schedule_entry_lock_year_day_report is received.
+ */
+void uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_year_day_report_callback_clear();
+
+/**
+ * @brief Setup callback to be called when a
+ * +/UnifyScheduleEntryLock/GeneratedCommands/schedule_entry_lock_year_day_report is received.
+ *
+ * Setting this callback will not overwrite the previous set callback
+ * @param callback      Function to be called on command reception
+ */
+void uic_mqtt_dotdot_unify_schedule_entry_lock_generated_schedule_entry_lock_year_day_report_callback_set(const uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_year_day_report_callback_t callback);
+/**
+ * @brief Unsets callback to be called when a
+ * +/UnifyScheduleEntryLock/GeneratedCommands/schedule_entry_lock_year_day_report is received.
+ * @param callback      Function to be no longer called on command reception
+ */
+void uic_mqtt_dotdot_unify_schedule_entry_lock_generated_schedule_entry_lock_year_day_report_callback_unset(const uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_year_day_report_callback_t callback);
+/**
+ * @brief Clears all callbacks registered for when
+ * +/UnifyScheduleEntryLock/GeneratedCommands/schedule_entry_lock_year_day_report is received.
+ */
+void uic_mqtt_dotdot_unify_schedule_entry_lock_generated_schedule_entry_lock_year_day_report_callback_clear();
+/**
+ * @brief Setup callback to be called when a
+ * UnifyScheduleEntryLock/Commands/schedule_entry_lock_daily_repeating_report is received.
+ *
+ * Setting this callback will not overwrite the previous set callback
+ * @param callback      Function to be called on command reception
+ */
+void uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_daily_repeating_report_callback_set(const uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_daily_repeating_report_callback_t callback);
+/**
+ * @brief Unsets callback to be called when a
+ * UnifyScheduleEntryLock/Commands/schedule_entry_lock_daily_repeating_report is received.
+ *
+ * @param callback      Function to be no longer called on command reception
+ */
+void uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_daily_repeating_report_callback_unset(const uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_daily_repeating_report_callback_t callback);
+/**
+ * @brief Clears all callbacks registered for when
+ * UnifyScheduleEntryLock/Commands/schedule_entry_lock_daily_repeating_report is received.
+ */
+void uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_daily_repeating_report_callback_clear();
+
+/**
+ * @brief Setup callback to be called when a
+ * +/UnifyScheduleEntryLock/GeneratedCommands/schedule_entry_lock_daily_repeating_report is received.
+ *
+ * Setting this callback will not overwrite the previous set callback
+ * @param callback      Function to be called on command reception
+ */
+void uic_mqtt_dotdot_unify_schedule_entry_lock_generated_schedule_entry_lock_daily_repeating_report_callback_set(const uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_daily_repeating_report_callback_t callback);
+/**
+ * @brief Unsets callback to be called when a
+ * +/UnifyScheduleEntryLock/GeneratedCommands/schedule_entry_lock_daily_repeating_report is received.
+ * @param callback      Function to be no longer called on command reception
+ */
+void uic_mqtt_dotdot_unify_schedule_entry_lock_generated_schedule_entry_lock_daily_repeating_report_callback_unset(const uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_daily_repeating_report_callback_t callback);
+/**
+ * @brief Clears all callbacks registered for when
+ * +/UnifyScheduleEntryLock/GeneratedCommands/schedule_entry_lock_daily_repeating_report is received.
+ */
+void uic_mqtt_dotdot_unify_schedule_entry_lock_generated_schedule_entry_lock_daily_repeating_report_callback_clear();
+
+/**
+ * @brief Setup a callback for WriteAttribute to be called when a
+ * +/unify_schedule_entry_lock/Commands/WriteAttributes is received.
+ *
+ * Setting this callback will not overwrite the previous set callback
+ * @param callback      Function to be called on command reception
+ */
+void uic_mqtt_dotdot_set_unify_schedule_entry_lock_write_attributes_callback(
+  const uic_mqtt_dotdot_unify_schedule_entry_lock_write_attributes_callback_t callback
+);
+/**
+ * @brief Unsets a callback for WriteAttribute to be called when a
+ * +/unify_schedule_entry_lock/Commands/WriteAttributes is received.
+ * @param callback      Function to be no longer called on command reception
+ */
+void uic_mqtt_dotdot_unset_unify_schedule_entry_lock_write_attributes_callback(
+  const uic_mqtt_dotdot_unify_schedule_entry_lock_write_attributes_callback_t callback
+);
+/**
+ * @brief Clears all callbacks registered for when
+ * +/unify_schedule_entry_lock/Commands/WriteAttributes is received.
+ */
+void uic_mqtt_dotdot_clear_unify_schedule_entry_lock_write_attributes_callbacks();
+
+/**
+ * @brief Setup a callback for ForceReadAttributes to be called when a
+ * +/unify_schedule_entry_lock/Commands/ForceReadAttributes is received.
+ *
+ * Setting this callback will not overwrite the previous set callback
+ * @param callback      Function to be called on command reception
+ */
+void uic_mqtt_dotdot_set_unify_schedule_entry_lock_force_read_attributes_callback(
+  const uic_mqtt_dotdot_unify_schedule_entry_lock_force_read_attributes_callback_t callback
+);
+/**
+ * @brief Unsets a callback for ForceReadAttributes to be called when a
+ * +/unify_schedule_entry_lock/Commands/ForceReadAttributes is received.
+ *
+ * @param callback      Function to be no longer called on command reception
+ */
+void uic_mqtt_dotdot_unset_unify_schedule_entry_lock_force_read_attributes_callback(
+  const uic_mqtt_dotdot_unify_schedule_entry_lock_force_read_attributes_callback_t callback
+);
+/**
+ * @brief Clears all callbacks registered for when
+ * +/unify_schedule_entry_lock/Commands/ForceReadAttributes is received.
+ */
+void uic_mqtt_dotdot_clear_unify_schedule_entry_lock_force_read_attributes_callbacks();
+
+/**
+ * @brief Publish the attribute; UnifyScheduleEntryLock/Attributes/SlotsWeekDay
+ *
+ * @param base_topic    topic prefix to publish, /slots_week_day
+ *                      will be appended
+ * @param value         Value to publish
+ * @param publish_type  Whether to publish as Desired, Reported, or Both.
+ *
+ * @returns SL_STATUS_OK on success
+ */
+sl_status_t uic_mqtt_dotdot_unify_schedule_entry_lock_slots_week_day_publish(
+  const char *base_topic,
+  uint8_t value,
+  uic_mqtt_dotdot_attribute_publish_type_t publish_type
+);
+
+/**
+ * @brief Unretains a published attribute; UnifyScheduleEntryLock/Attributes/SlotsWeekDay
+ *
+ * @param base_topic    topic prefix to publish, /slots_week_day
+ *                      will be appended
+ * @param publish_type  Whether to publish as Desired, Reported, or Both.
+ *
+ * @returns SL_STATUS_OK on success
+ */
+sl_status_t uic_mqtt_dotdot_unify_schedule_entry_lock_slots_week_day_unretain(
+  const char *base_topic,
+  uic_mqtt_dotdot_attribute_publish_type_t publish_type
+);
+
+/**
+ * @brief Publish the attribute; UnifyScheduleEntryLock/Attributes/SlotsYearDay
+ *
+ * @param base_topic    topic prefix to publish, /slots_year_day
+ *                      will be appended
+ * @param value         Value to publish
+ * @param publish_type  Whether to publish as Desired, Reported, or Both.
+ *
+ * @returns SL_STATUS_OK on success
+ */
+sl_status_t uic_mqtt_dotdot_unify_schedule_entry_lock_slots_year_day_publish(
+  const char *base_topic,
+  uint8_t value,
+  uic_mqtt_dotdot_attribute_publish_type_t publish_type
+);
+
+/**
+ * @brief Unretains a published attribute; UnifyScheduleEntryLock/Attributes/SlotsYearDay
+ *
+ * @param base_topic    topic prefix to publish, /slots_year_day
+ *                      will be appended
+ * @param publish_type  Whether to publish as Desired, Reported, or Both.
+ *
+ * @returns SL_STATUS_OK on success
+ */
+sl_status_t uic_mqtt_dotdot_unify_schedule_entry_lock_slots_year_day_unretain(
+  const char *base_topic,
+  uic_mqtt_dotdot_attribute_publish_type_t publish_type
+);
+
+/**
+ * @brief Publish the attribute; UnifyScheduleEntryLock/Attributes/SignTZO
+ *
+ * @param base_topic    topic prefix to publish, /signtzo
+ *                      will be appended
+ * @param value         Value to publish
+ * @param publish_type  Whether to publish as Desired, Reported, or Both.
+ *
+ * @returns SL_STATUS_OK on success
+ */
+sl_status_t uic_mqtt_dotdot_unify_schedule_entry_lock_signtzo_publish(
+  const char *base_topic,
+  uint8_t value,
+  uic_mqtt_dotdot_attribute_publish_type_t publish_type
+);
+
+/**
+ * @brief Unretains a published attribute; UnifyScheduleEntryLock/Attributes/SignTZO
+ *
+ * @param base_topic    topic prefix to publish, /signtzo
+ *                      will be appended
+ * @param publish_type  Whether to publish as Desired, Reported, or Both.
+ *
+ * @returns SL_STATUS_OK on success
+ */
+sl_status_t uic_mqtt_dotdot_unify_schedule_entry_lock_signtzo_unretain(
+  const char *base_topic,
+  uic_mqtt_dotdot_attribute_publish_type_t publish_type
+);
+
+/**
+ * @brief Publish the attribute; UnifyScheduleEntryLock/Attributes/HourTZO
+ *
+ * @param base_topic    topic prefix to publish, /hourtzo
+ *                      will be appended
+ * @param value         Value to publish
+ * @param publish_type  Whether to publish as Desired, Reported, or Both.
+ *
+ * @returns SL_STATUS_OK on success
+ */
+sl_status_t uic_mqtt_dotdot_unify_schedule_entry_lock_hourtzo_publish(
+  const char *base_topic,
+  uint8_t value,
+  uic_mqtt_dotdot_attribute_publish_type_t publish_type
+);
+
+/**
+ * @brief Unretains a published attribute; UnifyScheduleEntryLock/Attributes/HourTZO
+ *
+ * @param base_topic    topic prefix to publish, /hourtzo
+ *                      will be appended
+ * @param publish_type  Whether to publish as Desired, Reported, or Both.
+ *
+ * @returns SL_STATUS_OK on success
+ */
+sl_status_t uic_mqtt_dotdot_unify_schedule_entry_lock_hourtzo_unretain(
+  const char *base_topic,
+  uic_mqtt_dotdot_attribute_publish_type_t publish_type
+);
+
+/**
+ * @brief Publish the attribute; UnifyScheduleEntryLock/Attributes/MinuteTZO
+ *
+ * @param base_topic    topic prefix to publish, /minutetzo
+ *                      will be appended
+ * @param value         Value to publish
+ * @param publish_type  Whether to publish as Desired, Reported, or Both.
+ *
+ * @returns SL_STATUS_OK on success
+ */
+sl_status_t uic_mqtt_dotdot_unify_schedule_entry_lock_minutetzo_publish(
+  const char *base_topic,
+  uint8_t value,
+  uic_mqtt_dotdot_attribute_publish_type_t publish_type
+);
+
+/**
+ * @brief Unretains a published attribute; UnifyScheduleEntryLock/Attributes/MinuteTZO
+ *
+ * @param base_topic    topic prefix to publish, /minutetzo
+ *                      will be appended
+ * @param publish_type  Whether to publish as Desired, Reported, or Both.
+ *
+ * @returns SL_STATUS_OK on success
+ */
+sl_status_t uic_mqtt_dotdot_unify_schedule_entry_lock_minutetzo_unretain(
+  const char *base_topic,
+  uic_mqtt_dotdot_attribute_publish_type_t publish_type
+);
+
+/**
+ * @brief Publish the attribute; UnifyScheduleEntryLock/Attributes/DSTOffsetSign
+ *
+ * @param base_topic    topic prefix to publish, /dst_offset_sign
+ *                      will be appended
+ * @param value         Value to publish
+ * @param publish_type  Whether to publish as Desired, Reported, or Both.
+ *
+ * @returns SL_STATUS_OK on success
+ */
+sl_status_t uic_mqtt_dotdot_unify_schedule_entry_lock_dst_offset_sign_publish(
+  const char *base_topic,
+  uint8_t value,
+  uic_mqtt_dotdot_attribute_publish_type_t publish_type
+);
+
+/**
+ * @brief Unretains a published attribute; UnifyScheduleEntryLock/Attributes/DSTOffsetSign
+ *
+ * @param base_topic    topic prefix to publish, /dst_offset_sign
+ *                      will be appended
+ * @param publish_type  Whether to publish as Desired, Reported, or Both.
+ *
+ * @returns SL_STATUS_OK on success
+ */
+sl_status_t uic_mqtt_dotdot_unify_schedule_entry_lock_dst_offset_sign_unretain(
+  const char *base_topic,
+  uic_mqtt_dotdot_attribute_publish_type_t publish_type
+);
+
+/**
+ * @brief Publish the attribute; UnifyScheduleEntryLock/Attributes/DSTOffsetMinute
+ *
+ * @param base_topic    topic prefix to publish, /dst_offset_minute
+ *                      will be appended
+ * @param value         Value to publish
+ * @param publish_type  Whether to publish as Desired, Reported, or Both.
+ *
+ * @returns SL_STATUS_OK on success
+ */
+sl_status_t uic_mqtt_dotdot_unify_schedule_entry_lock_dst_offset_minute_publish(
+  const char *base_topic,
+  uint8_t value,
+  uic_mqtt_dotdot_attribute_publish_type_t publish_type
+);
+
+/**
+ * @brief Unretains a published attribute; UnifyScheduleEntryLock/Attributes/DSTOffsetMinute
+ *
+ * @param base_topic    topic prefix to publish, /dst_offset_minute
+ *                      will be appended
+ * @param publish_type  Whether to publish as Desired, Reported, or Both.
+ *
+ * @returns SL_STATUS_OK on success
+ */
+sl_status_t uic_mqtt_dotdot_unify_schedule_entry_lock_dst_offset_minute_unretain(
+  const char *base_topic,
+  uic_mqtt_dotdot_attribute_publish_type_t publish_type
+);
+
+/**
+ * @brief Publish the attribute; UnifyScheduleEntryLock/Attributes/NumberOfSlotsDailyRepeating
+ *
+ * @param base_topic    topic prefix to publish, /number_of_slots_daily_repeating
+ *                      will be appended
+ * @param value         Value to publish
+ * @param publish_type  Whether to publish as Desired, Reported, or Both.
+ *
+ * @returns SL_STATUS_OK on success
+ */
+sl_status_t uic_mqtt_dotdot_unify_schedule_entry_lock_number_of_slots_daily_repeating_publish(
+  const char *base_topic,
+  uint8_t value,
+  uic_mqtt_dotdot_attribute_publish_type_t publish_type
+);
+
+/**
+ * @brief Unretains a published attribute; UnifyScheduleEntryLock/Attributes/NumberOfSlotsDailyRepeating
+ *
+ * @param base_topic    topic prefix to publish, /number_of_slots_daily_repeating
+ *                      will be appended
+ * @param publish_type  Whether to publish as Desired, Reported, or Both.
+ *
+ * @returns SL_STATUS_OK on success
+ */
+sl_status_t uic_mqtt_dotdot_unify_schedule_entry_lock_number_of_slots_daily_repeating_unretain(
+  const char *base_topic,
+  uic_mqtt_dotdot_attribute_publish_type_t publish_type
+);
+
+
+/**
+ * @brief Publish the UnifyScheduleEntryLock/ClusterRevision attribute
+ *
+ * @param base_topic    topic prefix to publish, /UnifyScheduleEntryLock/Attributes/ClusterRevision
+ *                      will be appended.
+ * @param value         Value to publish.
+ */
+void uic_mqtt_dotdot_unify_schedule_entry_lock_publish_cluster_revision(const char* base_topic, uint16_t value);
+
+/**
+ * @brief Unretain a publication to UnifyScheduleEntryLock/ClusterRevision attribute
+ *
+ * @param base_topic    topic prefix to publish, /UnifyScheduleEntryLock/Attributes/ClusterRevision
+ *                      will be appended.
+ */
+void uic_mqtt_dotdot_unify_schedule_entry_lock_unretain_cluster_revision(const char* base_topic);
+
+/**
+ * @brief Publish the SupportedCommands for UNID/EndPoint for the UnifyScheduleEntryLock Cluster
+ *
+ * This function will iterate over all Commands in the UnifyScheduleEntryLock Cluster and
+ * call all registered callback functions with UNID/endpoint, and
+ * callback_type = UIC_MQTT_DOTDOT_CALLBACK_TYPE_SUPPORT_CHECK.
+ * All Cluster Command callback functions that return SL_STATUS_OK
+ * will be added to the list of supported commands and published.
+ *
+ * @param unid
+ * @param endpoint
+ */
+void uic_mqtt_dotdot_unify_schedule_entry_lock_publish_supported_commands(
+  const dotdot_unid_t unid,
+  dotdot_endpoint_id_t endpoint);
+
+/**
+ * @brief Publish an empty array of SupportedCommands for UNID/EndPoint for
+ * the UnifyScheduleEntryLock Cluster
+ *
+ * @param unid
+ * @param endpoint )
+ */
+void uic_mqtt_dotdot_unify_schedule_entry_lock_publish_empty_supported_commands(
+  const dotdot_unid_t unid
+  ,dotdot_endpoint_id_t endpoint);
 // Callback types used by the unify_humidity_control cluster
 typedef sl_status_t (*uic_mqtt_dotdot_unify_humidity_control_mode_set_callback_t)(
     dotdot_unid_t unid,

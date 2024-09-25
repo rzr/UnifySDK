@@ -1693,6 +1693,37 @@ void uic_mqtt_dotdot_unify_thermostat_publish_supported_generated_commands(
 
 
 /**
+ * @brief Struct containing the list of commands for UnifyScheduleEntryLock
+ */
+typedef struct _uic_mqtt_dotdot_unify_schedule_entry_lock_supported_commands_ {
+  bool schedule_entry_lock_week_day_report;
+  bool schedule_entry_lock_year_day_report;
+  bool schedule_entry_lock_daily_repeating_report;
+  bool write_attributes;
+} uic_mqtt_dotdot_unify_schedule_entry_lock_supported_commands_t;
+
+/**
+ * @brief Sends/Publishes a the SupportedGenerated commands for
+ * the UnifyScheduleEntryLock cluster for a UNID/Endpoint
+ *
+ * Publication will be made at the following topic
+ * ucl/by-unid/UNID/epID/UnifyScheduleEntryLock/SupportedGeneratedCommands
+ *
+ * @param unid      The UNID of the node on behalf of which the advertisment is made
+ * 
+ * @param endpoint  The Endpoint ID of the node on behalf of which the advertisment is made
+ * 
+ * @param command_list      Struct pointer with the fields value indicating if
+ *                          individual commands can be generated.
+ */
+void uic_mqtt_dotdot_unify_schedule_entry_lock_publish_supported_generated_commands(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint,
+  const uic_mqtt_dotdot_unify_schedule_entry_lock_supported_commands_t *command_list
+);
+
+
+/**
  * @brief Struct containing the list of commands for UnifyHumidityControl
  */
 typedef struct _uic_mqtt_dotdot_unify_humidity_control_supported_commands_ {

@@ -3710,6 +3710,71 @@ void uic_mqtt_dotdot_by_group_unify_thermostat_write_attributes_callback_set(
 
 
 /**
+ * @brief Callback signature for by-group UnifyScheduleEntryLock::ScheduleEntryLockWeekDayReport command.
+ */
+typedef void (*uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_schedule_entry_lock_week_day_report_callback_t)(
+    const dotdot_group_id_t group_id,
+    const uic_mqtt_dotdot_unify_schedule_entry_lock_command_schedule_entry_lock_week_day_report_fields_t *fields
+);
+
+/**
+ * Setup handler to be called when a
+ * ucl/by-group/+/UnifyScheduleEntryLock/schedule_entry_lock_week_day_report is received.
+ * Setting this callback will overwrite the previous set callback.
+ *
+ */
+void uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_schedule_entry_lock_week_day_report_callback_set(const uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_schedule_entry_lock_week_day_report_callback_t callback);
+
+/**
+ * @brief Callback signature for by-group UnifyScheduleEntryLock::ScheduleEntryLockYearDayReport command.
+ */
+typedef void (*uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_schedule_entry_lock_year_day_report_callback_t)(
+    const dotdot_group_id_t group_id,
+    const uic_mqtt_dotdot_unify_schedule_entry_lock_command_schedule_entry_lock_year_day_report_fields_t *fields
+);
+
+/**
+ * Setup handler to be called when a
+ * ucl/by-group/+/UnifyScheduleEntryLock/schedule_entry_lock_year_day_report is received.
+ * Setting this callback will overwrite the previous set callback.
+ *
+ */
+void uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_schedule_entry_lock_year_day_report_callback_set(const uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_schedule_entry_lock_year_day_report_callback_t callback);
+
+/**
+ * @brief Callback signature for by-group UnifyScheduleEntryLock::ScheduleEntryLockDailyRepeatingReport command.
+ */
+typedef void (*uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_schedule_entry_lock_daily_repeating_report_callback_t)(
+    const dotdot_group_id_t group_id,
+    const uic_mqtt_dotdot_unify_schedule_entry_lock_command_schedule_entry_lock_daily_repeating_report_fields_t *fields
+);
+
+/**
+ * Setup handler to be called when a
+ * ucl/by-group/+/UnifyScheduleEntryLock/schedule_entry_lock_daily_repeating_report is received.
+ * Setting this callback will overwrite the previous set callback.
+ *
+ */
+void uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_schedule_entry_lock_daily_repeating_report_callback_set(const uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_schedule_entry_lock_daily_repeating_report_callback_t callback);
+
+typedef void (*uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_write_attributes_callback_t)(
+    const dotdot_group_id_t group_id,
+    uic_mqtt_dotdot_unify_schedule_entry_lock_state_t,
+    uic_mqtt_dotdot_unify_schedule_entry_lock_updated_state_t
+);
+
+/**
+ * Setup a callback for WriteAttribute to be called when a
+ * ucl/by-group/+/unify_schedule_entry_lock/Commands/WriteAttributes is received.
+ * Setting this callback will overwrite any previously set callback.
+ */
+void uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_write_attributes_callback_set(
+  const uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_write_attributes_callback_t callback
+);
+
+
+
+/**
  * @brief Callback signature for by-group UnifyHumidityControl::ModeSet command.
  */
 typedef void (*uic_mqtt_dotdot_by_group_unify_humidity_control_mode_set_callback_t)(

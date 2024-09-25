@@ -368,6 +368,12 @@ static uic_mqtt_dotdot_by_group_unify_fan_control_write_attributes_callback_t ui
 static uic_mqtt_dotdot_by_group_unify_thermostat_write_attributes_callback_t uic_mqtt_dotdot_by_group_unify_thermostat_write_attributes_callback = nullptr;
 
 
+static uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_schedule_entry_lock_week_day_report_callback_t uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_schedule_entry_lock_week_day_report_callback = nullptr;
+static uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_schedule_entry_lock_year_day_report_callback_t uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_schedule_entry_lock_year_day_report_callback = nullptr;
+static uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_schedule_entry_lock_daily_repeating_report_callback_t uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_schedule_entry_lock_daily_repeating_report_callback = nullptr;
+static uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_write_attributes_callback_t uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_write_attributes_callback = nullptr;
+
+
 static uic_mqtt_dotdot_by_group_unify_humidity_control_mode_set_callback_t uic_mqtt_dotdot_by_group_unify_humidity_control_mode_set_callback = nullptr;
 static uic_mqtt_dotdot_by_group_unify_humidity_control_setpoint_set_callback_t uic_mqtt_dotdot_by_group_unify_humidity_control_setpoint_set_callback = nullptr;
 static uic_mqtt_dotdot_by_group_unify_humidity_control_write_attributes_callback_t uic_mqtt_dotdot_by_group_unify_humidity_control_write_attributes_callback = nullptr;
@@ -1882,6 +1888,33 @@ void uic_mqtt_dotdot_by_group_unify_thermostat_write_attributes_callback_set(
   const uic_mqtt_dotdot_by_group_unify_thermostat_write_attributes_callback_t callback)
 {
   uic_mqtt_dotdot_by_group_unify_thermostat_write_attributes_callback = callback;
+}
+
+
+
+// Callbacks setters
+
+void uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_schedule_entry_lock_week_day_report_callback_set(const uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_schedule_entry_lock_week_day_report_callback_t callback)
+{
+  uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_schedule_entry_lock_week_day_report_callback = callback;
+}
+
+
+void uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_schedule_entry_lock_year_day_report_callback_set(const uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_schedule_entry_lock_year_day_report_callback_t callback)
+{
+  uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_schedule_entry_lock_year_day_report_callback = callback;
+}
+
+
+void uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_schedule_entry_lock_daily_repeating_report_callback_set(const uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_schedule_entry_lock_daily_repeating_report_callback_t callback)
+{
+  uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_schedule_entry_lock_daily_repeating_report_callback = callback;
+}
+
+void uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_write_attributes_callback_set(
+  const uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_write_attributes_callback_t callback)
+{
+  uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_write_attributes_callback = callback;
 }
 
 
@@ -23427,6 +23460,496 @@ sl_status_t uic_mqtt_dotdot_by_group_unify_thermostat_init()
 
 
 
+// Callback function for incoming publications on ucl/by-group/+/UnifyScheduleEntryLock/Commands/ScheduleEntryLockWeekDayReport
+static void uic_mqtt_dotdot_on_by_group_unify_schedule_entry_lock_schedule_entry_lock_week_day_report(
+  const char *topic,
+  const char *message,
+  const size_t message_length)
+{
+  if ((group_dispatch_callback == nullptr) && (uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_schedule_entry_lock_week_day_report_callback == nullptr)) {
+    return;
+  }
+  if (message_length == 0) {
+    return;
+  }
+
+  dotdot_group_id_t group_id = 0U;
+  if(!uic_dotdot_mqtt::parse_topic_group_id(topic,group_id)) {
+    sl_log_debug(LOG_TAG,
+                "Failed to parse GroupId from topic %s. Ignoring",
+                topic);
+    return;
+  }
+
+  // Pass to command-specific callback if set. Otherwise, pass to
+  // group-dispatch callback
+  if (uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_schedule_entry_lock_week_day_report_callback != nullptr) {
+
+    
+    uic_mqtt_dotdot_unify_schedule_entry_lock_command_schedule_entry_lock_week_day_report_fields_t fields;
+
+
+      nlohmann::json jsn;
+      try {
+        jsn = nlohmann::json::parse(std::string(message));
+
+      
+        uic_mqtt_dotdot_parse_unify_schedule_entry_lock_schedule_entry_lock_week_day_report(
+          jsn,
+          fields.user_identifier,
+              
+          fields.schedule_slotid,
+              
+          fields.day_of_week,
+              
+          fields.start_hour,
+              
+          fields.start_minute,
+              
+          fields.stop_hour,
+              
+          fields.stop_minute
+              );
+
+      // Populate list fields from vector or string types
+      
+
+      } catch (const nlohmann::json::parse_error& e) {
+        // Catch JSON object field parsing errors
+        sl_log_debug(LOG_TAG, LOG_FMT_JSON_PARSE_FAIL, "UnifyScheduleEntryLock", "ScheduleEntryLockWeekDayReport");
+        return;
+      } catch (const nlohmann::json::exception& e) {
+        // Catch JSON object field parsing errors
+        sl_log_debug(LOG_TAG, LOG_FMT_JSON_ERROR, "UnifyScheduleEntryLock", "ScheduleEntryLockWeekDayReport", e.what());
+        return;
+      } catch (const std::exception& e) {
+        sl_log_debug(LOG_TAG, LOG_FMT_JSON_ERROR, "UnifyScheduleEntryLock", "ScheduleEntryLockWeekDayReport", "");
+        return;
+      }
+
+      uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_schedule_entry_lock_week_day_report_callback(
+        group_id,
+        &fields
+      );
+  } else if ((group_dispatch_callback != nullptr) && (!get_uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_week_day_report_callback().empty())) {
+    // group-dispatch callback only called if the command-specific by-unid
+    // callback is set
+    try {
+      nlohmann::json jsn = nlohmann::json::parse(std::string(message));
+      if (jsn.find("UserIdentifier") == jsn.end()) {
+        sl_log_debug(LOG_TAG, "UnifyScheduleEntryLock::ScheduleEntryLockWeekDayReport: Missing command-argument: UserIdentifier\n");
+        return;
+      }
+      if (jsn.find("ScheduleSlotID") == jsn.end()) {
+        sl_log_debug(LOG_TAG, "UnifyScheduleEntryLock::ScheduleEntryLockWeekDayReport: Missing command-argument: ScheduleSlotID\n");
+        return;
+      }
+      if (jsn.find("DayOfWeek") == jsn.end()) {
+        sl_log_debug(LOG_TAG, "UnifyScheduleEntryLock::ScheduleEntryLockWeekDayReport: Missing command-argument: DayOfWeek\n");
+        return;
+      }
+      if (jsn.find("StartHour") == jsn.end()) {
+        sl_log_debug(LOG_TAG, "UnifyScheduleEntryLock::ScheduleEntryLockWeekDayReport: Missing command-argument: StartHour\n");
+        return;
+      }
+      if (jsn.find("StartMinute") == jsn.end()) {
+        sl_log_debug(LOG_TAG, "UnifyScheduleEntryLock::ScheduleEntryLockWeekDayReport: Missing command-argument: StartMinute\n");
+        return;
+      }
+      if (jsn.find("StopHour") == jsn.end()) {
+        sl_log_debug(LOG_TAG, "UnifyScheduleEntryLock::ScheduleEntryLockWeekDayReport: Missing command-argument: StopHour\n");
+        return;
+      }
+      if (jsn.find("StopMinute") == jsn.end()) {
+        sl_log_debug(LOG_TAG, "UnifyScheduleEntryLock::ScheduleEntryLockWeekDayReport: Missing command-argument: StopMinute\n");
+        return;
+      }
+
+      group_dispatch_callback(
+        group_id,
+        "UnifyScheduleEntryLock",
+        "ScheduleEntryLockWeekDayReport",
+        message,
+        message_length,
+        uic_mqtt_dotdot_on_unify_schedule_entry_lock_schedule_entry_lock_week_day_report);
+
+    } catch (...) {
+      sl_log_debug(LOG_TAG, "ScheduleEntryLockWeekDayReport: Unable to parse JSON payload.\n");
+      return;
+    }
+  }
+
+}
+
+// Callback function for incoming publications on ucl/by-group/+/UnifyScheduleEntryLock/Commands/ScheduleEntryLockYearDayReport
+static void uic_mqtt_dotdot_on_by_group_unify_schedule_entry_lock_schedule_entry_lock_year_day_report(
+  const char *topic,
+  const char *message,
+  const size_t message_length)
+{
+  if ((group_dispatch_callback == nullptr) && (uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_schedule_entry_lock_year_day_report_callback == nullptr)) {
+    return;
+  }
+  if (message_length == 0) {
+    return;
+  }
+
+  dotdot_group_id_t group_id = 0U;
+  if(!uic_dotdot_mqtt::parse_topic_group_id(topic,group_id)) {
+    sl_log_debug(LOG_TAG,
+                "Failed to parse GroupId from topic %s. Ignoring",
+                topic);
+    return;
+  }
+
+  // Pass to command-specific callback if set. Otherwise, pass to
+  // group-dispatch callback
+  if (uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_schedule_entry_lock_year_day_report_callback != nullptr) {
+
+    
+    uic_mqtt_dotdot_unify_schedule_entry_lock_command_schedule_entry_lock_year_day_report_fields_t fields;
+
+
+      nlohmann::json jsn;
+      try {
+        jsn = nlohmann::json::parse(std::string(message));
+
+      
+        uic_mqtt_dotdot_parse_unify_schedule_entry_lock_schedule_entry_lock_year_day_report(
+          jsn,
+          fields.set_action,
+              
+          fields.user_identifier,
+              
+          fields.schedule_slotid,
+              
+          fields.start_year,
+              
+          fields.start_day,
+              
+          fields.start_hour,
+              
+          fields.start_minute,
+              
+          fields.stop_year,
+              
+          fields.stop_day,
+              
+          fields.stop_hour,
+              
+          fields.stop_minute
+              );
+
+      // Populate list fields from vector or string types
+      
+
+      } catch (const nlohmann::json::parse_error& e) {
+        // Catch JSON object field parsing errors
+        sl_log_debug(LOG_TAG, LOG_FMT_JSON_PARSE_FAIL, "UnifyScheduleEntryLock", "ScheduleEntryLockYearDayReport");
+        return;
+      } catch (const nlohmann::json::exception& e) {
+        // Catch JSON object field parsing errors
+        sl_log_debug(LOG_TAG, LOG_FMT_JSON_ERROR, "UnifyScheduleEntryLock", "ScheduleEntryLockYearDayReport", e.what());
+        return;
+      } catch (const std::exception& e) {
+        sl_log_debug(LOG_TAG, LOG_FMT_JSON_ERROR, "UnifyScheduleEntryLock", "ScheduleEntryLockYearDayReport", "");
+        return;
+      }
+
+      uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_schedule_entry_lock_year_day_report_callback(
+        group_id,
+        &fields
+      );
+  } else if ((group_dispatch_callback != nullptr) && (!get_uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_year_day_report_callback().empty())) {
+    // group-dispatch callback only called if the command-specific by-unid
+    // callback is set
+    try {
+      nlohmann::json jsn = nlohmann::json::parse(std::string(message));
+      if (jsn.find("SetAction") == jsn.end()) {
+        sl_log_debug(LOG_TAG, "UnifyScheduleEntryLock::ScheduleEntryLockYearDayReport: Missing command-argument: SetAction\n");
+        return;
+      }
+      if (jsn.find("UserIdentifier") == jsn.end()) {
+        sl_log_debug(LOG_TAG, "UnifyScheduleEntryLock::ScheduleEntryLockYearDayReport: Missing command-argument: UserIdentifier\n");
+        return;
+      }
+      if (jsn.find("ScheduleSlotID") == jsn.end()) {
+        sl_log_debug(LOG_TAG, "UnifyScheduleEntryLock::ScheduleEntryLockYearDayReport: Missing command-argument: ScheduleSlotID\n");
+        return;
+      }
+      if (jsn.find("StartYear") == jsn.end()) {
+        sl_log_debug(LOG_TAG, "UnifyScheduleEntryLock::ScheduleEntryLockYearDayReport: Missing command-argument: StartYear\n");
+        return;
+      }
+      if (jsn.find("StartDay") == jsn.end()) {
+        sl_log_debug(LOG_TAG, "UnifyScheduleEntryLock::ScheduleEntryLockYearDayReport: Missing command-argument: StartDay\n");
+        return;
+      }
+      if (jsn.find("StartHour") == jsn.end()) {
+        sl_log_debug(LOG_TAG, "UnifyScheduleEntryLock::ScheduleEntryLockYearDayReport: Missing command-argument: StartHour\n");
+        return;
+      }
+      if (jsn.find("StartMinute") == jsn.end()) {
+        sl_log_debug(LOG_TAG, "UnifyScheduleEntryLock::ScheduleEntryLockYearDayReport: Missing command-argument: StartMinute\n");
+        return;
+      }
+      if (jsn.find("StopYear") == jsn.end()) {
+        sl_log_debug(LOG_TAG, "UnifyScheduleEntryLock::ScheduleEntryLockYearDayReport: Missing command-argument: StopYear\n");
+        return;
+      }
+      if (jsn.find("StopDay") == jsn.end()) {
+        sl_log_debug(LOG_TAG, "UnifyScheduleEntryLock::ScheduleEntryLockYearDayReport: Missing command-argument: StopDay\n");
+        return;
+      }
+      if (jsn.find("StopHour") == jsn.end()) {
+        sl_log_debug(LOG_TAG, "UnifyScheduleEntryLock::ScheduleEntryLockYearDayReport: Missing command-argument: StopHour\n");
+        return;
+      }
+      if (jsn.find("StopMinute") == jsn.end()) {
+        sl_log_debug(LOG_TAG, "UnifyScheduleEntryLock::ScheduleEntryLockYearDayReport: Missing command-argument: StopMinute\n");
+        return;
+      }
+
+      group_dispatch_callback(
+        group_id,
+        "UnifyScheduleEntryLock",
+        "ScheduleEntryLockYearDayReport",
+        message,
+        message_length,
+        uic_mqtt_dotdot_on_unify_schedule_entry_lock_schedule_entry_lock_year_day_report);
+
+    } catch (...) {
+      sl_log_debug(LOG_TAG, "ScheduleEntryLockYearDayReport: Unable to parse JSON payload.\n");
+      return;
+    }
+  }
+
+}
+
+// Callback function for incoming publications on ucl/by-group/+/UnifyScheduleEntryLock/Commands/ScheduleEntryLockDailyRepeatingReport
+static void uic_mqtt_dotdot_on_by_group_unify_schedule_entry_lock_schedule_entry_lock_daily_repeating_report(
+  const char *topic,
+  const char *message,
+  const size_t message_length)
+{
+  if ((group_dispatch_callback == nullptr) && (uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_schedule_entry_lock_daily_repeating_report_callback == nullptr)) {
+    return;
+  }
+  if (message_length == 0) {
+    return;
+  }
+
+  dotdot_group_id_t group_id = 0U;
+  if(!uic_dotdot_mqtt::parse_topic_group_id(topic,group_id)) {
+    sl_log_debug(LOG_TAG,
+                "Failed to parse GroupId from topic %s. Ignoring",
+                topic);
+    return;
+  }
+
+  // Pass to command-specific callback if set. Otherwise, pass to
+  // group-dispatch callback
+  if (uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_schedule_entry_lock_daily_repeating_report_callback != nullptr) {
+
+    
+    uic_mqtt_dotdot_unify_schedule_entry_lock_command_schedule_entry_lock_daily_repeating_report_fields_t fields;
+
+
+      nlohmann::json jsn;
+      try {
+        jsn = nlohmann::json::parse(std::string(message));
+
+      
+        uic_mqtt_dotdot_parse_unify_schedule_entry_lock_schedule_entry_lock_daily_repeating_report(
+          jsn,
+          fields.set_action,
+              
+          fields.user_identifier,
+              
+          fields.schedule_slotid,
+              
+          fields.week_day_bitmask,
+              
+          fields.start_hour,
+              
+          fields.start_minute,
+              
+          fields.duration_hour,
+              
+          fields.duration_minute
+              );
+
+      // Populate list fields from vector or string types
+      
+
+      } catch (const nlohmann::json::parse_error& e) {
+        // Catch JSON object field parsing errors
+        sl_log_debug(LOG_TAG, LOG_FMT_JSON_PARSE_FAIL, "UnifyScheduleEntryLock", "ScheduleEntryLockDailyRepeatingReport");
+        return;
+      } catch (const nlohmann::json::exception& e) {
+        // Catch JSON object field parsing errors
+        sl_log_debug(LOG_TAG, LOG_FMT_JSON_ERROR, "UnifyScheduleEntryLock", "ScheduleEntryLockDailyRepeatingReport", e.what());
+        return;
+      } catch (const std::exception& e) {
+        sl_log_debug(LOG_TAG, LOG_FMT_JSON_ERROR, "UnifyScheduleEntryLock", "ScheduleEntryLockDailyRepeatingReport", "");
+        return;
+      }
+
+      uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_schedule_entry_lock_daily_repeating_report_callback(
+        group_id,
+        &fields
+      );
+  } else if ((group_dispatch_callback != nullptr) && (!get_uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_daily_repeating_report_callback().empty())) {
+    // group-dispatch callback only called if the command-specific by-unid
+    // callback is set
+    try {
+      nlohmann::json jsn = nlohmann::json::parse(std::string(message));
+      if (jsn.find("SetAction") == jsn.end()) {
+        sl_log_debug(LOG_TAG, "UnifyScheduleEntryLock::ScheduleEntryLockDailyRepeatingReport: Missing command-argument: SetAction\n");
+        return;
+      }
+      if (jsn.find("UserIdentifier") == jsn.end()) {
+        sl_log_debug(LOG_TAG, "UnifyScheduleEntryLock::ScheduleEntryLockDailyRepeatingReport: Missing command-argument: UserIdentifier\n");
+        return;
+      }
+      if (jsn.find("ScheduleSlotID") == jsn.end()) {
+        sl_log_debug(LOG_TAG, "UnifyScheduleEntryLock::ScheduleEntryLockDailyRepeatingReport: Missing command-argument: ScheduleSlotID\n");
+        return;
+      }
+      if (jsn.find("WeekDayBitmask") == jsn.end()) {
+        sl_log_debug(LOG_TAG, "UnifyScheduleEntryLock::ScheduleEntryLockDailyRepeatingReport: Missing command-argument: WeekDayBitmask\n");
+        return;
+      }
+      if (jsn.find("StartHour") == jsn.end()) {
+        sl_log_debug(LOG_TAG, "UnifyScheduleEntryLock::ScheduleEntryLockDailyRepeatingReport: Missing command-argument: StartHour\n");
+        return;
+      }
+      if (jsn.find("StartMinute") == jsn.end()) {
+        sl_log_debug(LOG_TAG, "UnifyScheduleEntryLock::ScheduleEntryLockDailyRepeatingReport: Missing command-argument: StartMinute\n");
+        return;
+      }
+      if (jsn.find("DurationHour") == jsn.end()) {
+        sl_log_debug(LOG_TAG, "UnifyScheduleEntryLock::ScheduleEntryLockDailyRepeatingReport: Missing command-argument: DurationHour\n");
+        return;
+      }
+      if (jsn.find("DurationMinute") == jsn.end()) {
+        sl_log_debug(LOG_TAG, "UnifyScheduleEntryLock::ScheduleEntryLockDailyRepeatingReport: Missing command-argument: DurationMinute\n");
+        return;
+      }
+
+      group_dispatch_callback(
+        group_id,
+        "UnifyScheduleEntryLock",
+        "ScheduleEntryLockDailyRepeatingReport",
+        message,
+        message_length,
+        uic_mqtt_dotdot_on_unify_schedule_entry_lock_schedule_entry_lock_daily_repeating_report);
+
+    } catch (...) {
+      sl_log_debug(LOG_TAG, "ScheduleEntryLockDailyRepeatingReport: Unable to parse JSON payload.\n");
+      return;
+    }
+  }
+
+}
+
+static void uic_mqtt_dotdot_on_by_group_unify_schedule_entry_lock_WriteAttributes(
+  const char *topic,
+  const char *message,
+  const size_t message_length)
+{
+
+  if ((group_dispatch_callback == nullptr) && (uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_write_attributes_callback == nullptr)) {
+    return;
+  }
+  if (message_length == 0) {
+    return;
+  }
+
+  dotdot_group_id_t group_id = 0U;
+  if(!uic_dotdot_mqtt::parse_topic_group_id(topic,group_id)) {
+    sl_log_debug(LOG_TAG,
+                "Failed to parse GroupId from topic %s. Ignoring",
+                topic);
+    return;
+  }
+
+  if ((group_dispatch_callback != nullptr) && (!get_uic_mqtt_dotdot_unify_schedule_entry_lock_write_attributes_callback().empty())) {
+    try {
+      group_dispatch_callback(group_id,
+                              "UnifyScheduleEntryLock",
+                              "WriteAttributes",
+                              message,
+                              message_length,
+                              uic_mqtt_dotdot_on_unify_schedule_entry_lock_WriteAttributes);
+
+    } catch (...) {
+      sl_log_debug(LOG_TAG, "UnifyScheduleEntryLock: Unable to parse JSON payload.\n");
+      return;
+    }
+  } else if (uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_write_attributes_callback != nullptr) {
+
+    uic_mqtt_dotdot_unify_schedule_entry_lock_state_t new_state = {};
+    uic_mqtt_dotdot_unify_schedule_entry_lock_updated_state_t new_updated_state = {};
+    
+
+    nlohmann::json jsn;
+    try {
+      jsn = nlohmann::json::parse(std::string(message));
+
+      uic_mqtt_dotdot_parse_unify_schedule_entry_lock_write_attributes(
+        jsn,
+        new_state,
+        new_updated_state
+      );
+    } catch (const nlohmann::json::parse_error& e) {
+      // Catch JSON object field parsing errors
+      sl_log_debug(LOG_TAG, LOG_FMT_JSON_PARSE_FAIL, "UnifyScheduleEntryLock", "WriteAttributes");
+      return;
+    } catch (const nlohmann::json::exception& e) {
+      // Catch JSON object field parsing errors
+      sl_log_debug(LOG_TAG, LOG_FMT_JSON_ERROR, "UnifyScheduleEntryLock", "WriteAttributes", e.what());
+      return;
+    } catch (const std::exception& e) {
+      sl_log_debug(LOG_TAG, LOG_FMT_JSON_ERROR, "UnifyScheduleEntryLock", "WriteAttributes", "");
+      return;
+    }
+
+    uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_write_attributes_callback(
+      group_id,
+      new_state,
+      new_updated_state
+    );
+  }
+}
+
+sl_status_t uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_init()
+{
+  std::string subscription_topic;
+  const std::string topic_bygroup = TOPIC_BY_GROUP_PREFIX;
+  if(uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_write_attributes_callback) {
+    subscription_topic = topic_bygroup + "UnifyScheduleEntryLock/Commands/WriteAttributes";
+    uic_mqtt_subscribe(subscription_topic.c_str(), uic_mqtt_dotdot_on_by_group_unify_schedule_entry_lock_WriteAttributes);
+  }
+  if (uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_schedule_entry_lock_week_day_report_callback) {
+    subscription_topic = topic_bygroup + "UnifyScheduleEntryLock/Commands/ScheduleEntryLockWeekDayReport";
+    uic_mqtt_subscribe(subscription_topic.c_str(), uic_mqtt_dotdot_on_by_group_unify_schedule_entry_lock_schedule_entry_lock_week_day_report);
+  }
+  if (uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_schedule_entry_lock_year_day_report_callback) {
+    subscription_topic = topic_bygroup + "UnifyScheduleEntryLock/Commands/ScheduleEntryLockYearDayReport";
+    uic_mqtt_subscribe(subscription_topic.c_str(), uic_mqtt_dotdot_on_by_group_unify_schedule_entry_lock_schedule_entry_lock_year_day_report);
+  }
+  if (uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_schedule_entry_lock_daily_repeating_report_callback) {
+    subscription_topic = topic_bygroup + "UnifyScheduleEntryLock/Commands/ScheduleEntryLockDailyRepeatingReport";
+    uic_mqtt_subscribe(subscription_topic.c_str(), uic_mqtt_dotdot_on_by_group_unify_schedule_entry_lock_schedule_entry_lock_daily_repeating_report);
+  }
+
+  return SL_STATUS_OK;
+}
+
+
+
+
 // Callback function for incoming publications on ucl/by-group/+/UnifyHumidityControl/Commands/ModeSet
 static void uic_mqtt_dotdot_on_by_group_unify_humidity_control_mode_set(
   const char *topic,
@@ -23988,6 +24511,11 @@ void uic_mqtt_dotdot_set_group_dispatch_callback(group_dispatch_t callback)
     uic_mqtt_subscribe("ucl/by-group/+/UnifyFanControl/Commands/TurnOff", uic_mqtt_dotdot_on_by_group_unify_fan_control_turn_off);
 
     uic_mqtt_subscribe("ucl/by-group/+/UnifyThermostat/Commands/WriteAttributes", uic_mqtt_dotdot_on_by_group_unify_thermostat_WriteAttributes);
+
+    uic_mqtt_subscribe("ucl/by-group/+/UnifyScheduleEntryLock/Commands/WriteAttributes", uic_mqtt_dotdot_on_by_group_unify_schedule_entry_lock_WriteAttributes);
+    uic_mqtt_subscribe("ucl/by-group/+/UnifyScheduleEntryLock/Commands/ScheduleEntryLockWeekDayReport", uic_mqtt_dotdot_on_by_group_unify_schedule_entry_lock_schedule_entry_lock_week_day_report);
+    uic_mqtt_subscribe("ucl/by-group/+/UnifyScheduleEntryLock/Commands/ScheduleEntryLockYearDayReport", uic_mqtt_dotdot_on_by_group_unify_schedule_entry_lock_schedule_entry_lock_year_day_report);
+    uic_mqtt_subscribe("ucl/by-group/+/UnifyScheduleEntryLock/Commands/ScheduleEntryLockDailyRepeatingReport", uic_mqtt_dotdot_on_by_group_unify_schedule_entry_lock_schedule_entry_lock_daily_repeating_report);
 
     uic_mqtt_subscribe("ucl/by-group/+/UnifyHumidityControl/Commands/WriteAttributes", uic_mqtt_dotdot_on_by_group_unify_humidity_control_WriteAttributes);
     uic_mqtt_subscribe("ucl/by-group/+/UnifyHumidityControl/Commands/ModeSet", uic_mqtt_dotdot_on_by_group_unify_humidity_control_mode_set);

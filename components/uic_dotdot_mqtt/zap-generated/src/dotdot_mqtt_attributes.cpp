@@ -62165,6 +62165,713 @@ void uic_mqtt_dotdot_unify_thermostat_attribute_operating_state_callback_set(con
 // End of supported cluster.
 
 ///////////////////////////////////////////////////////////////////////////////
+// Callback pointers for UnifyScheduleEntryLock
+///////////////////////////////////////////////////////////////////////////////
+static uic_mqtt_dotdot_unify_schedule_entry_lock_attribute_slots_week_day_callback_t uic_mqtt_dotdot_unify_schedule_entry_lock_attribute_slots_week_day_callback = nullptr;
+static uic_mqtt_dotdot_unify_schedule_entry_lock_attribute_slots_year_day_callback_t uic_mqtt_dotdot_unify_schedule_entry_lock_attribute_slots_year_day_callback = nullptr;
+static uic_mqtt_dotdot_unify_schedule_entry_lock_attribute_signtzo_callback_t uic_mqtt_dotdot_unify_schedule_entry_lock_attribute_signtzo_callback = nullptr;
+static uic_mqtt_dotdot_unify_schedule_entry_lock_attribute_hourtzo_callback_t uic_mqtt_dotdot_unify_schedule_entry_lock_attribute_hourtzo_callback = nullptr;
+static uic_mqtt_dotdot_unify_schedule_entry_lock_attribute_minutetzo_callback_t uic_mqtt_dotdot_unify_schedule_entry_lock_attribute_minutetzo_callback = nullptr;
+static uic_mqtt_dotdot_unify_schedule_entry_lock_attribute_dst_offset_sign_callback_t uic_mqtt_dotdot_unify_schedule_entry_lock_attribute_dst_offset_sign_callback = nullptr;
+static uic_mqtt_dotdot_unify_schedule_entry_lock_attribute_dst_offset_minute_callback_t uic_mqtt_dotdot_unify_schedule_entry_lock_attribute_dst_offset_minute_callback = nullptr;
+static uic_mqtt_dotdot_unify_schedule_entry_lock_attribute_number_of_slots_daily_repeating_callback_t uic_mqtt_dotdot_unify_schedule_entry_lock_attribute_number_of_slots_daily_repeating_callback = nullptr;
+
+///////////////////////////////////////////////////////////////////////////////
+// Attribute update handlers for UnifyScheduleEntryLock
+///////////////////////////////////////////////////////////////////////////////
+static void uic_mqtt_dotdot_on_unify_schedule_entry_lock_slots_week_day_attribute_update(
+  const char *topic,
+  const char *message,
+  const size_t message_length) {
+  if (uic_mqtt_dotdot_unify_schedule_entry_lock_attribute_slots_week_day_callback == nullptr) {
+    return;
+  }
+
+  std::string unid;
+  uint8_t endpoint = 0; // Default value for endpoint-less topics.
+  if(! uic_dotdot_mqtt::parse_topic(topic,unid,endpoint)) {
+    sl_log_debug(LOG_TAG,
+                "Error parsing UNID / Endpoint ID from topic %s. Ignoring",
+                topic);
+    return;
+  }
+
+  std::string last_item;
+  if (SL_STATUS_OK != uic_dotdot_mqtt::get_topic_last_item(topic,last_item)){
+    sl_log_debug(LOG_TAG,
+                "Error parsing last item from topic %s. Ignoring",
+                topic);
+    return;
+  }
+
+  uic_mqtt_dotdot_attribute_update_type_t update_type;
+  if (last_item == "Reported") {
+    update_type = UCL_REPORTED_UPDATED;
+  } else if (last_item == "Desired") {
+    update_type = UCL_DESIRED_UPDATED;
+  } else {
+    sl_log_debug(LOG_TAG,
+                "Unknown value type (neither Desired/Reported) for topic %s. Ignoring",
+                topic);
+    return;
+  }
+
+  // Empty message means unretained value.
+  bool unretained = false;
+  if (message_length == 0) {
+    unretained = true;
+  }
+
+
+  uint8_t slots_week_day = {};
+
+  nlohmann::json json_payload;
+  try {
+
+    if (unretained == false) {
+      json_payload = nlohmann::json::parse(std::string(message));
+
+      if (json_payload.find("value") == json_payload.end()) {
+        sl_log_debug(LOG_TAG, "UnifyScheduleEntryLock::SlotsWeekDay: Missing attribute element: 'value'\n");
+        return;
+      }
+// Start parsing value
+      slots_week_day = json_payload.at("value").get<uint8_t>();
+    
+    // End parsing value
+    }
+
+  } catch (const std::exception& e) {
+    sl_log_debug(LOG_TAG, LOG_FMT_JSON_ERROR, "value", message);
+    return;
+  }
+
+  uic_mqtt_dotdot_unify_schedule_entry_lock_attribute_slots_week_day_callback(
+    static_cast<dotdot_unid_t>(unid.c_str()),
+    endpoint,
+    unretained,
+    update_type,
+    slots_week_day
+  );
+
+}
+static void uic_mqtt_dotdot_on_unify_schedule_entry_lock_slots_year_day_attribute_update(
+  const char *topic,
+  const char *message,
+  const size_t message_length) {
+  if (uic_mqtt_dotdot_unify_schedule_entry_lock_attribute_slots_year_day_callback == nullptr) {
+    return;
+  }
+
+  std::string unid;
+  uint8_t endpoint = 0; // Default value for endpoint-less topics.
+  if(! uic_dotdot_mqtt::parse_topic(topic,unid,endpoint)) {
+    sl_log_debug(LOG_TAG,
+                "Error parsing UNID / Endpoint ID from topic %s. Ignoring",
+                topic);
+    return;
+  }
+
+  std::string last_item;
+  if (SL_STATUS_OK != uic_dotdot_mqtt::get_topic_last_item(topic,last_item)){
+    sl_log_debug(LOG_TAG,
+                "Error parsing last item from topic %s. Ignoring",
+                topic);
+    return;
+  }
+
+  uic_mqtt_dotdot_attribute_update_type_t update_type;
+  if (last_item == "Reported") {
+    update_type = UCL_REPORTED_UPDATED;
+  } else if (last_item == "Desired") {
+    update_type = UCL_DESIRED_UPDATED;
+  } else {
+    sl_log_debug(LOG_TAG,
+                "Unknown value type (neither Desired/Reported) for topic %s. Ignoring",
+                topic);
+    return;
+  }
+
+  // Empty message means unretained value.
+  bool unretained = false;
+  if (message_length == 0) {
+    unretained = true;
+  }
+
+
+  uint8_t slots_year_day = {};
+
+  nlohmann::json json_payload;
+  try {
+
+    if (unretained == false) {
+      json_payload = nlohmann::json::parse(std::string(message));
+
+      if (json_payload.find("value") == json_payload.end()) {
+        sl_log_debug(LOG_TAG, "UnifyScheduleEntryLock::SlotsYearDay: Missing attribute element: 'value'\n");
+        return;
+      }
+// Start parsing value
+      slots_year_day = json_payload.at("value").get<uint8_t>();
+    
+    // End parsing value
+    }
+
+  } catch (const std::exception& e) {
+    sl_log_debug(LOG_TAG, LOG_FMT_JSON_ERROR, "value", message);
+    return;
+  }
+
+  uic_mqtt_dotdot_unify_schedule_entry_lock_attribute_slots_year_day_callback(
+    static_cast<dotdot_unid_t>(unid.c_str()),
+    endpoint,
+    unretained,
+    update_type,
+    slots_year_day
+  );
+
+}
+static void uic_mqtt_dotdot_on_unify_schedule_entry_lock_signtzo_attribute_update(
+  const char *topic,
+  const char *message,
+  const size_t message_length) {
+  if (uic_mqtt_dotdot_unify_schedule_entry_lock_attribute_signtzo_callback == nullptr) {
+    return;
+  }
+
+  std::string unid;
+  uint8_t endpoint = 0; // Default value for endpoint-less topics.
+  if(! uic_dotdot_mqtt::parse_topic(topic,unid,endpoint)) {
+    sl_log_debug(LOG_TAG,
+                "Error parsing UNID / Endpoint ID from topic %s. Ignoring",
+                topic);
+    return;
+  }
+
+  std::string last_item;
+  if (SL_STATUS_OK != uic_dotdot_mqtt::get_topic_last_item(topic,last_item)){
+    sl_log_debug(LOG_TAG,
+                "Error parsing last item from topic %s. Ignoring",
+                topic);
+    return;
+  }
+
+  uic_mqtt_dotdot_attribute_update_type_t update_type;
+  if (last_item == "Reported") {
+    update_type = UCL_REPORTED_UPDATED;
+  } else if (last_item == "Desired") {
+    update_type = UCL_DESIRED_UPDATED;
+  } else {
+    sl_log_debug(LOG_TAG,
+                "Unknown value type (neither Desired/Reported) for topic %s. Ignoring",
+                topic);
+    return;
+  }
+
+  // Empty message means unretained value.
+  bool unretained = false;
+  if (message_length == 0) {
+    unretained = true;
+  }
+
+
+  uint8_t signtzo = {};
+
+  nlohmann::json json_payload;
+  try {
+
+    if (unretained == false) {
+      json_payload = nlohmann::json::parse(std::string(message));
+
+      if (json_payload.find("value") == json_payload.end()) {
+        sl_log_debug(LOG_TAG, "UnifyScheduleEntryLock::SignTZO: Missing attribute element: 'value'\n");
+        return;
+      }
+// Start parsing value
+      signtzo = json_payload.at("value").get<uint8_t>();
+    
+    // End parsing value
+    }
+
+  } catch (const std::exception& e) {
+    sl_log_debug(LOG_TAG, LOG_FMT_JSON_ERROR, "value", message);
+    return;
+  }
+
+  uic_mqtt_dotdot_unify_schedule_entry_lock_attribute_signtzo_callback(
+    static_cast<dotdot_unid_t>(unid.c_str()),
+    endpoint,
+    unretained,
+    update_type,
+    signtzo
+  );
+
+}
+static void uic_mqtt_dotdot_on_unify_schedule_entry_lock_hourtzo_attribute_update(
+  const char *topic,
+  const char *message,
+  const size_t message_length) {
+  if (uic_mqtt_dotdot_unify_schedule_entry_lock_attribute_hourtzo_callback == nullptr) {
+    return;
+  }
+
+  std::string unid;
+  uint8_t endpoint = 0; // Default value for endpoint-less topics.
+  if(! uic_dotdot_mqtt::parse_topic(topic,unid,endpoint)) {
+    sl_log_debug(LOG_TAG,
+                "Error parsing UNID / Endpoint ID from topic %s. Ignoring",
+                topic);
+    return;
+  }
+
+  std::string last_item;
+  if (SL_STATUS_OK != uic_dotdot_mqtt::get_topic_last_item(topic,last_item)){
+    sl_log_debug(LOG_TAG,
+                "Error parsing last item from topic %s. Ignoring",
+                topic);
+    return;
+  }
+
+  uic_mqtt_dotdot_attribute_update_type_t update_type;
+  if (last_item == "Reported") {
+    update_type = UCL_REPORTED_UPDATED;
+  } else if (last_item == "Desired") {
+    update_type = UCL_DESIRED_UPDATED;
+  } else {
+    sl_log_debug(LOG_TAG,
+                "Unknown value type (neither Desired/Reported) for topic %s. Ignoring",
+                topic);
+    return;
+  }
+
+  // Empty message means unretained value.
+  bool unretained = false;
+  if (message_length == 0) {
+    unretained = true;
+  }
+
+
+  uint8_t hourtzo = {};
+
+  nlohmann::json json_payload;
+  try {
+
+    if (unretained == false) {
+      json_payload = nlohmann::json::parse(std::string(message));
+
+      if (json_payload.find("value") == json_payload.end()) {
+        sl_log_debug(LOG_TAG, "UnifyScheduleEntryLock::HourTZO: Missing attribute element: 'value'\n");
+        return;
+      }
+// Start parsing value
+      hourtzo = json_payload.at("value").get<uint8_t>();
+    
+    // End parsing value
+    }
+
+  } catch (const std::exception& e) {
+    sl_log_debug(LOG_TAG, LOG_FMT_JSON_ERROR, "value", message);
+    return;
+  }
+
+  uic_mqtt_dotdot_unify_schedule_entry_lock_attribute_hourtzo_callback(
+    static_cast<dotdot_unid_t>(unid.c_str()),
+    endpoint,
+    unretained,
+    update_type,
+    hourtzo
+  );
+
+}
+static void uic_mqtt_dotdot_on_unify_schedule_entry_lock_minutetzo_attribute_update(
+  const char *topic,
+  const char *message,
+  const size_t message_length) {
+  if (uic_mqtt_dotdot_unify_schedule_entry_lock_attribute_minutetzo_callback == nullptr) {
+    return;
+  }
+
+  std::string unid;
+  uint8_t endpoint = 0; // Default value for endpoint-less topics.
+  if(! uic_dotdot_mqtt::parse_topic(topic,unid,endpoint)) {
+    sl_log_debug(LOG_TAG,
+                "Error parsing UNID / Endpoint ID from topic %s. Ignoring",
+                topic);
+    return;
+  }
+
+  std::string last_item;
+  if (SL_STATUS_OK != uic_dotdot_mqtt::get_topic_last_item(topic,last_item)){
+    sl_log_debug(LOG_TAG,
+                "Error parsing last item from topic %s. Ignoring",
+                topic);
+    return;
+  }
+
+  uic_mqtt_dotdot_attribute_update_type_t update_type;
+  if (last_item == "Reported") {
+    update_type = UCL_REPORTED_UPDATED;
+  } else if (last_item == "Desired") {
+    update_type = UCL_DESIRED_UPDATED;
+  } else {
+    sl_log_debug(LOG_TAG,
+                "Unknown value type (neither Desired/Reported) for topic %s. Ignoring",
+                topic);
+    return;
+  }
+
+  // Empty message means unretained value.
+  bool unretained = false;
+  if (message_length == 0) {
+    unretained = true;
+  }
+
+
+  uint8_t minutetzo = {};
+
+  nlohmann::json json_payload;
+  try {
+
+    if (unretained == false) {
+      json_payload = nlohmann::json::parse(std::string(message));
+
+      if (json_payload.find("value") == json_payload.end()) {
+        sl_log_debug(LOG_TAG, "UnifyScheduleEntryLock::MinuteTZO: Missing attribute element: 'value'\n");
+        return;
+      }
+// Start parsing value
+      minutetzo = json_payload.at("value").get<uint8_t>();
+    
+    // End parsing value
+    }
+
+  } catch (const std::exception& e) {
+    sl_log_debug(LOG_TAG, LOG_FMT_JSON_ERROR, "value", message);
+    return;
+  }
+
+  uic_mqtt_dotdot_unify_schedule_entry_lock_attribute_minutetzo_callback(
+    static_cast<dotdot_unid_t>(unid.c_str()),
+    endpoint,
+    unretained,
+    update_type,
+    minutetzo
+  );
+
+}
+static void uic_mqtt_dotdot_on_unify_schedule_entry_lock_dst_offset_sign_attribute_update(
+  const char *topic,
+  const char *message,
+  const size_t message_length) {
+  if (uic_mqtt_dotdot_unify_schedule_entry_lock_attribute_dst_offset_sign_callback == nullptr) {
+    return;
+  }
+
+  std::string unid;
+  uint8_t endpoint = 0; // Default value for endpoint-less topics.
+  if(! uic_dotdot_mqtt::parse_topic(topic,unid,endpoint)) {
+    sl_log_debug(LOG_TAG,
+                "Error parsing UNID / Endpoint ID from topic %s. Ignoring",
+                topic);
+    return;
+  }
+
+  std::string last_item;
+  if (SL_STATUS_OK != uic_dotdot_mqtt::get_topic_last_item(topic,last_item)){
+    sl_log_debug(LOG_TAG,
+                "Error parsing last item from topic %s. Ignoring",
+                topic);
+    return;
+  }
+
+  uic_mqtt_dotdot_attribute_update_type_t update_type;
+  if (last_item == "Reported") {
+    update_type = UCL_REPORTED_UPDATED;
+  } else if (last_item == "Desired") {
+    update_type = UCL_DESIRED_UPDATED;
+  } else {
+    sl_log_debug(LOG_TAG,
+                "Unknown value type (neither Desired/Reported) for topic %s. Ignoring",
+                topic);
+    return;
+  }
+
+  // Empty message means unretained value.
+  bool unretained = false;
+  if (message_length == 0) {
+    unretained = true;
+  }
+
+
+  uint8_t dst_offset_sign = {};
+
+  nlohmann::json json_payload;
+  try {
+
+    if (unretained == false) {
+      json_payload = nlohmann::json::parse(std::string(message));
+
+      if (json_payload.find("value") == json_payload.end()) {
+        sl_log_debug(LOG_TAG, "UnifyScheduleEntryLock::DSTOffsetSign: Missing attribute element: 'value'\n");
+        return;
+      }
+// Start parsing value
+      dst_offset_sign = json_payload.at("value").get<uint8_t>();
+    
+    // End parsing value
+    }
+
+  } catch (const std::exception& e) {
+    sl_log_debug(LOG_TAG, LOG_FMT_JSON_ERROR, "value", message);
+    return;
+  }
+
+  uic_mqtt_dotdot_unify_schedule_entry_lock_attribute_dst_offset_sign_callback(
+    static_cast<dotdot_unid_t>(unid.c_str()),
+    endpoint,
+    unretained,
+    update_type,
+    dst_offset_sign
+  );
+
+}
+static void uic_mqtt_dotdot_on_unify_schedule_entry_lock_dst_offset_minute_attribute_update(
+  const char *topic,
+  const char *message,
+  const size_t message_length) {
+  if (uic_mqtt_dotdot_unify_schedule_entry_lock_attribute_dst_offset_minute_callback == nullptr) {
+    return;
+  }
+
+  std::string unid;
+  uint8_t endpoint = 0; // Default value for endpoint-less topics.
+  if(! uic_dotdot_mqtt::parse_topic(topic,unid,endpoint)) {
+    sl_log_debug(LOG_TAG,
+                "Error parsing UNID / Endpoint ID from topic %s. Ignoring",
+                topic);
+    return;
+  }
+
+  std::string last_item;
+  if (SL_STATUS_OK != uic_dotdot_mqtt::get_topic_last_item(topic,last_item)){
+    sl_log_debug(LOG_TAG,
+                "Error parsing last item from topic %s. Ignoring",
+                topic);
+    return;
+  }
+
+  uic_mqtt_dotdot_attribute_update_type_t update_type;
+  if (last_item == "Reported") {
+    update_type = UCL_REPORTED_UPDATED;
+  } else if (last_item == "Desired") {
+    update_type = UCL_DESIRED_UPDATED;
+  } else {
+    sl_log_debug(LOG_TAG,
+                "Unknown value type (neither Desired/Reported) for topic %s. Ignoring",
+                topic);
+    return;
+  }
+
+  // Empty message means unretained value.
+  bool unretained = false;
+  if (message_length == 0) {
+    unretained = true;
+  }
+
+
+  uint8_t dst_offset_minute = {};
+
+  nlohmann::json json_payload;
+  try {
+
+    if (unretained == false) {
+      json_payload = nlohmann::json::parse(std::string(message));
+
+      if (json_payload.find("value") == json_payload.end()) {
+        sl_log_debug(LOG_TAG, "UnifyScheduleEntryLock::DSTOffsetMinute: Missing attribute element: 'value'\n");
+        return;
+      }
+// Start parsing value
+      dst_offset_minute = json_payload.at("value").get<uint8_t>();
+    
+    // End parsing value
+    }
+
+  } catch (const std::exception& e) {
+    sl_log_debug(LOG_TAG, LOG_FMT_JSON_ERROR, "value", message);
+    return;
+  }
+
+  uic_mqtt_dotdot_unify_schedule_entry_lock_attribute_dst_offset_minute_callback(
+    static_cast<dotdot_unid_t>(unid.c_str()),
+    endpoint,
+    unretained,
+    update_type,
+    dst_offset_minute
+  );
+
+}
+static void uic_mqtt_dotdot_on_unify_schedule_entry_lock_number_of_slots_daily_repeating_attribute_update(
+  const char *topic,
+  const char *message,
+  const size_t message_length) {
+  if (uic_mqtt_dotdot_unify_schedule_entry_lock_attribute_number_of_slots_daily_repeating_callback == nullptr) {
+    return;
+  }
+
+  std::string unid;
+  uint8_t endpoint = 0; // Default value for endpoint-less topics.
+  if(! uic_dotdot_mqtt::parse_topic(topic,unid,endpoint)) {
+    sl_log_debug(LOG_TAG,
+                "Error parsing UNID / Endpoint ID from topic %s. Ignoring",
+                topic);
+    return;
+  }
+
+  std::string last_item;
+  if (SL_STATUS_OK != uic_dotdot_mqtt::get_topic_last_item(topic,last_item)){
+    sl_log_debug(LOG_TAG,
+                "Error parsing last item from topic %s. Ignoring",
+                topic);
+    return;
+  }
+
+  uic_mqtt_dotdot_attribute_update_type_t update_type;
+  if (last_item == "Reported") {
+    update_type = UCL_REPORTED_UPDATED;
+  } else if (last_item == "Desired") {
+    update_type = UCL_DESIRED_UPDATED;
+  } else {
+    sl_log_debug(LOG_TAG,
+                "Unknown value type (neither Desired/Reported) for topic %s. Ignoring",
+                topic);
+    return;
+  }
+
+  // Empty message means unretained value.
+  bool unretained = false;
+  if (message_length == 0) {
+    unretained = true;
+  }
+
+
+  uint8_t number_of_slots_daily_repeating = {};
+
+  nlohmann::json json_payload;
+  try {
+
+    if (unretained == false) {
+      json_payload = nlohmann::json::parse(std::string(message));
+
+      if (json_payload.find("value") == json_payload.end()) {
+        sl_log_debug(LOG_TAG, "UnifyScheduleEntryLock::NumberOfSlotsDailyRepeating: Missing attribute element: 'value'\n");
+        return;
+      }
+// Start parsing value
+      number_of_slots_daily_repeating = json_payload.at("value").get<uint8_t>();
+    
+    // End parsing value
+    }
+
+  } catch (const std::exception& e) {
+    sl_log_debug(LOG_TAG, LOG_FMT_JSON_ERROR, "value", message);
+    return;
+  }
+
+  uic_mqtt_dotdot_unify_schedule_entry_lock_attribute_number_of_slots_daily_repeating_callback(
+    static_cast<dotdot_unid_t>(unid.c_str()),
+    endpoint,
+    unretained,
+    update_type,
+    number_of_slots_daily_repeating
+  );
+
+}
+
+///////////////////////////////////////////////////////////////////////////////
+// Attribute init functions for UnifyScheduleEntryLock
+///////////////////////////////////////////////////////////////////////////////
+sl_status_t uic_mqtt_dotdot_unify_schedule_entry_lock_attributes_init()
+{
+  std::string base_topic = "ucl/by-unid/+/+/";
+
+  std::string subscription_topic;
+  if(uic_mqtt_dotdot_unify_schedule_entry_lock_attribute_slots_week_day_callback) {
+    subscription_topic = base_topic + "UnifyScheduleEntryLock/Attributes/SlotsWeekDay/#";
+    uic_mqtt_subscribe(subscription_topic.c_str(), &uic_mqtt_dotdot_on_unify_schedule_entry_lock_slots_week_day_attribute_update);
+  }
+  if(uic_mqtt_dotdot_unify_schedule_entry_lock_attribute_slots_year_day_callback) {
+    subscription_topic = base_topic + "UnifyScheduleEntryLock/Attributes/SlotsYearDay/#";
+    uic_mqtt_subscribe(subscription_topic.c_str(), &uic_mqtt_dotdot_on_unify_schedule_entry_lock_slots_year_day_attribute_update);
+  }
+  if(uic_mqtt_dotdot_unify_schedule_entry_lock_attribute_signtzo_callback) {
+    subscription_topic = base_topic + "UnifyScheduleEntryLock/Attributes/SignTZO/#";
+    uic_mqtt_subscribe(subscription_topic.c_str(), &uic_mqtt_dotdot_on_unify_schedule_entry_lock_signtzo_attribute_update);
+  }
+  if(uic_mqtt_dotdot_unify_schedule_entry_lock_attribute_hourtzo_callback) {
+    subscription_topic = base_topic + "UnifyScheduleEntryLock/Attributes/HourTZO/#";
+    uic_mqtt_subscribe(subscription_topic.c_str(), &uic_mqtt_dotdot_on_unify_schedule_entry_lock_hourtzo_attribute_update);
+  }
+  if(uic_mqtt_dotdot_unify_schedule_entry_lock_attribute_minutetzo_callback) {
+    subscription_topic = base_topic + "UnifyScheduleEntryLock/Attributes/MinuteTZO/#";
+    uic_mqtt_subscribe(subscription_topic.c_str(), &uic_mqtt_dotdot_on_unify_schedule_entry_lock_minutetzo_attribute_update);
+  }
+  if(uic_mqtt_dotdot_unify_schedule_entry_lock_attribute_dst_offset_sign_callback) {
+    subscription_topic = base_topic + "UnifyScheduleEntryLock/Attributes/DSTOffsetSign/#";
+    uic_mqtt_subscribe(subscription_topic.c_str(), &uic_mqtt_dotdot_on_unify_schedule_entry_lock_dst_offset_sign_attribute_update);
+  }
+  if(uic_mqtt_dotdot_unify_schedule_entry_lock_attribute_dst_offset_minute_callback) {
+    subscription_topic = base_topic + "UnifyScheduleEntryLock/Attributes/DSTOffsetMinute/#";
+    uic_mqtt_subscribe(subscription_topic.c_str(), &uic_mqtt_dotdot_on_unify_schedule_entry_lock_dst_offset_minute_attribute_update);
+  }
+  if(uic_mqtt_dotdot_unify_schedule_entry_lock_attribute_number_of_slots_daily_repeating_callback) {
+    subscription_topic = base_topic + "UnifyScheduleEntryLock/Attributes/NumberOfSlotsDailyRepeating/#";
+    uic_mqtt_subscribe(subscription_topic.c_str(), &uic_mqtt_dotdot_on_unify_schedule_entry_lock_number_of_slots_daily_repeating_attribute_update);
+  }
+
+  return SL_STATUS_OK;
+}
+
+
+///////////////////////////////////////////////////////////////////////////////
+// Callback setters and getters for UnifyScheduleEntryLock
+///////////////////////////////////////////////////////////////////////////////
+void uic_mqtt_dotdot_unify_schedule_entry_lock_attribute_slots_week_day_callback_set(const uic_mqtt_dotdot_unify_schedule_entry_lock_attribute_slots_week_day_callback_t callback)
+{
+  uic_mqtt_dotdot_unify_schedule_entry_lock_attribute_slots_week_day_callback = callback;
+}
+void uic_mqtt_dotdot_unify_schedule_entry_lock_attribute_slots_year_day_callback_set(const uic_mqtt_dotdot_unify_schedule_entry_lock_attribute_slots_year_day_callback_t callback)
+{
+  uic_mqtt_dotdot_unify_schedule_entry_lock_attribute_slots_year_day_callback = callback;
+}
+void uic_mqtt_dotdot_unify_schedule_entry_lock_attribute_signtzo_callback_set(const uic_mqtt_dotdot_unify_schedule_entry_lock_attribute_signtzo_callback_t callback)
+{
+  uic_mqtt_dotdot_unify_schedule_entry_lock_attribute_signtzo_callback = callback;
+}
+void uic_mqtt_dotdot_unify_schedule_entry_lock_attribute_hourtzo_callback_set(const uic_mqtt_dotdot_unify_schedule_entry_lock_attribute_hourtzo_callback_t callback)
+{
+  uic_mqtt_dotdot_unify_schedule_entry_lock_attribute_hourtzo_callback = callback;
+}
+void uic_mqtt_dotdot_unify_schedule_entry_lock_attribute_minutetzo_callback_set(const uic_mqtt_dotdot_unify_schedule_entry_lock_attribute_minutetzo_callback_t callback)
+{
+  uic_mqtt_dotdot_unify_schedule_entry_lock_attribute_minutetzo_callback = callback;
+}
+void uic_mqtt_dotdot_unify_schedule_entry_lock_attribute_dst_offset_sign_callback_set(const uic_mqtt_dotdot_unify_schedule_entry_lock_attribute_dst_offset_sign_callback_t callback)
+{
+  uic_mqtt_dotdot_unify_schedule_entry_lock_attribute_dst_offset_sign_callback = callback;
+}
+void uic_mqtt_dotdot_unify_schedule_entry_lock_attribute_dst_offset_minute_callback_set(const uic_mqtt_dotdot_unify_schedule_entry_lock_attribute_dst_offset_minute_callback_t callback)
+{
+  uic_mqtt_dotdot_unify_schedule_entry_lock_attribute_dst_offset_minute_callback = callback;
+}
+void uic_mqtt_dotdot_unify_schedule_entry_lock_attribute_number_of_slots_daily_repeating_callback_set(const uic_mqtt_dotdot_unify_schedule_entry_lock_attribute_number_of_slots_daily_repeating_callback_t callback)
+{
+  uic_mqtt_dotdot_unify_schedule_entry_lock_attribute_number_of_slots_daily_repeating_callback = callback;
+}
+
+// End of supported cluster.
+
+///////////////////////////////////////////////////////////////////////////////
 // Callback pointers for UnifyHumidityControl
 ///////////////////////////////////////////////////////////////////////////////
 static uic_mqtt_dotdot_unify_humidity_control_attribute_reporting_mode_callback_t uic_mqtt_dotdot_unify_humidity_control_attribute_reporting_mode_callback = nullptr;

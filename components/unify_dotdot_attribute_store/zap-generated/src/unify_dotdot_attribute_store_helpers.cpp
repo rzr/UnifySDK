@@ -82302,6 +82302,961 @@ bool dotdot_is_any_unify_thermostat_writable_attribute_supported(
   return false;
 }
 ////////////////////////////////////////////////////////////////////////////////
+// Start of cluster UnifyScheduleEntryLock
+////////////////////////////////////////////////////////////////////////////////
+bool dotdot_is_supported_unify_schedule_entry_lock_slots_week_day(
+  const dotdot_unid_t unid, const dotdot_endpoint_id_t endpoint_id)
+{
+  attribute_store_node_t endpoint_node = unify_dotdot_attributes_get_endpoint_node()(unid, endpoint_id);
+  attribute_store_node_t node
+    = attribute_store_get_first_child_by_type(
+      endpoint_node,
+      DOTDOT_ATTRIBUTE_ID_UNIFY_SCHEDULE_ENTRY_LOCK_SLOTS_WEEK_DAY);
+  return attribute_store_node_exists(node);
+}
+
+uint8_t dotdot_get_unify_schedule_entry_lock_slots_week_day(
+  const dotdot_unid_t unid,
+  dotdot_endpoint_id_t endpoint_id,
+  attribute_store_node_value_state_t value_state)
+{
+  attribute_store_node_t endpoint_node = unify_dotdot_attributes_get_endpoint_node()(unid, endpoint_id);
+  attribute_store_node_t node
+    = attribute_store_get_first_child_by_type(
+      endpoint_node,
+      DOTDOT_ATTRIBUTE_ID_UNIFY_SCHEDULE_ENTRY_LOCK_SLOTS_WEEK_DAY);
+
+  uint8_t result = {};
+  attribute_store_read_value(node,
+                             value_state,
+                             (uint8_t *)&result,
+                             sizeof(result));
+  return result;
+}
+
+sl_status_t dotdot_set_unify_schedule_entry_lock_slots_week_day(
+  const dotdot_unid_t unid,
+  dotdot_endpoint_id_t endpoint_id,
+  attribute_store_node_value_state_t value_state,
+  uint8_t new_slots_week_day
+  )
+{
+  attribute_store_node_t endpoint_node = unify_dotdot_attributes_get_endpoint_node()(unid, endpoint_id);
+
+  attribute_store_node_t node
+    = attribute_store_get_first_child_by_type(
+      endpoint_node,
+      DOTDOT_ATTRIBUTE_ID_UNIFY_SCHEDULE_ENTRY_LOCK_SLOTS_WEEK_DAY);
+
+  return attribute_store_set_node_attribute_value(node,
+                                                  value_state,
+                                                  (uint8_t *)&new_slots_week_day,
+                                                  sizeof(uint8_t));
+  }
+
+sl_status_t dotdot_unify_schedule_entry_lock_slots_week_day_undefine_reported(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id) {
+  attribute_store_node_t endpoint_node = unify_dotdot_attributes_get_endpoint_node()(unid, endpoint_id);
+  attribute_store_node_t node
+    = attribute_store_get_first_child_by_type(
+      endpoint_node,
+      DOTDOT_ATTRIBUTE_ID_UNIFY_SCHEDULE_ENTRY_LOCK_SLOTS_WEEK_DAY);
+  attribute_store_undefine_reported(node);
+  return (node != ATTRIBUTE_STORE_INVALID_NODE) ? SL_STATUS_OK : SL_STATUS_FAIL;
+}
+
+sl_status_t dotdot_unify_schedule_entry_lock_slots_week_day_undefine_desired(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id) {
+
+  attribute_store_node_t endpoint_node = unify_dotdot_attributes_get_endpoint_node()(unid, endpoint_id);
+  attribute_store_node_t node
+    = attribute_store_get_first_child_by_type(
+      endpoint_node,
+      DOTDOT_ATTRIBUTE_ID_UNIFY_SCHEDULE_ENTRY_LOCK_SLOTS_WEEK_DAY);
+  attribute_store_undefine_desired(node);
+  return (node != ATTRIBUTE_STORE_INVALID_NODE) ? SL_STATUS_OK : SL_STATUS_FAIL;
+}
+
+
+bool dotdot_unify_schedule_entry_lock_slots_week_day_is_reported_defined(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id)
+{
+  attribute_store_node_t endpoint_node = unify_dotdot_attributes_get_endpoint_node()(unid, endpoint_id);
+  attribute_store_node_t node
+    = attribute_store_get_first_child_by_type(
+      endpoint_node,
+      DOTDOT_ATTRIBUTE_ID_UNIFY_SCHEDULE_ENTRY_LOCK_SLOTS_WEEK_DAY);
+  return attribute_store_is_reported_defined(node);
+}
+
+bool dotdot_unify_schedule_entry_lock_slots_week_day_is_desired_defined(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id)
+{
+  attribute_store_node_t endpoint_node = unify_dotdot_attributes_get_endpoint_node()(unid, endpoint_id);
+  attribute_store_node_t node
+    = attribute_store_get_first_child_by_type(
+      endpoint_node,
+      DOTDOT_ATTRIBUTE_ID_UNIFY_SCHEDULE_ENTRY_LOCK_SLOTS_WEEK_DAY);
+  return attribute_store_is_desired_defined(node);
+}
+
+sl_status_t dotdot_create_unify_schedule_entry_lock_slots_week_day(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id) {
+
+  attribute_store_node_t endpoint_node = unify_dotdot_attributes_get_endpoint_node()(unid, endpoint_id);
+  attribute_store_node_t node =
+    attribute_store_create_child_if_missing(endpoint_node,
+                                           DOTDOT_ATTRIBUTE_ID_UNIFY_SCHEDULE_ENTRY_LOCK_SLOTS_WEEK_DAY);
+
+  return (node != ATTRIBUTE_STORE_INVALID_NODE) ? SL_STATUS_OK : SL_STATUS_FAIL;
+}
+bool dotdot_is_supported_unify_schedule_entry_lock_slots_year_day(
+  const dotdot_unid_t unid, const dotdot_endpoint_id_t endpoint_id)
+{
+  attribute_store_node_t endpoint_node = unify_dotdot_attributes_get_endpoint_node()(unid, endpoint_id);
+  attribute_store_node_t node
+    = attribute_store_get_first_child_by_type(
+      endpoint_node,
+      DOTDOT_ATTRIBUTE_ID_UNIFY_SCHEDULE_ENTRY_LOCK_SLOTS_YEAR_DAY);
+  return attribute_store_node_exists(node);
+}
+
+uint8_t dotdot_get_unify_schedule_entry_lock_slots_year_day(
+  const dotdot_unid_t unid,
+  dotdot_endpoint_id_t endpoint_id,
+  attribute_store_node_value_state_t value_state)
+{
+  attribute_store_node_t endpoint_node = unify_dotdot_attributes_get_endpoint_node()(unid, endpoint_id);
+  attribute_store_node_t node
+    = attribute_store_get_first_child_by_type(
+      endpoint_node,
+      DOTDOT_ATTRIBUTE_ID_UNIFY_SCHEDULE_ENTRY_LOCK_SLOTS_YEAR_DAY);
+
+  uint8_t result = {};
+  attribute_store_read_value(node,
+                             value_state,
+                             (uint8_t *)&result,
+                             sizeof(result));
+  return result;
+}
+
+sl_status_t dotdot_set_unify_schedule_entry_lock_slots_year_day(
+  const dotdot_unid_t unid,
+  dotdot_endpoint_id_t endpoint_id,
+  attribute_store_node_value_state_t value_state,
+  uint8_t new_slots_year_day
+  )
+{
+  attribute_store_node_t endpoint_node = unify_dotdot_attributes_get_endpoint_node()(unid, endpoint_id);
+
+  attribute_store_node_t node
+    = attribute_store_get_first_child_by_type(
+      endpoint_node,
+      DOTDOT_ATTRIBUTE_ID_UNIFY_SCHEDULE_ENTRY_LOCK_SLOTS_YEAR_DAY);
+
+  return attribute_store_set_node_attribute_value(node,
+                                                  value_state,
+                                                  (uint8_t *)&new_slots_year_day,
+                                                  sizeof(uint8_t));
+  }
+
+sl_status_t dotdot_unify_schedule_entry_lock_slots_year_day_undefine_reported(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id) {
+  attribute_store_node_t endpoint_node = unify_dotdot_attributes_get_endpoint_node()(unid, endpoint_id);
+  attribute_store_node_t node
+    = attribute_store_get_first_child_by_type(
+      endpoint_node,
+      DOTDOT_ATTRIBUTE_ID_UNIFY_SCHEDULE_ENTRY_LOCK_SLOTS_YEAR_DAY);
+  attribute_store_undefine_reported(node);
+  return (node != ATTRIBUTE_STORE_INVALID_NODE) ? SL_STATUS_OK : SL_STATUS_FAIL;
+}
+
+sl_status_t dotdot_unify_schedule_entry_lock_slots_year_day_undefine_desired(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id) {
+
+  attribute_store_node_t endpoint_node = unify_dotdot_attributes_get_endpoint_node()(unid, endpoint_id);
+  attribute_store_node_t node
+    = attribute_store_get_first_child_by_type(
+      endpoint_node,
+      DOTDOT_ATTRIBUTE_ID_UNIFY_SCHEDULE_ENTRY_LOCK_SLOTS_YEAR_DAY);
+  attribute_store_undefine_desired(node);
+  return (node != ATTRIBUTE_STORE_INVALID_NODE) ? SL_STATUS_OK : SL_STATUS_FAIL;
+}
+
+
+bool dotdot_unify_schedule_entry_lock_slots_year_day_is_reported_defined(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id)
+{
+  attribute_store_node_t endpoint_node = unify_dotdot_attributes_get_endpoint_node()(unid, endpoint_id);
+  attribute_store_node_t node
+    = attribute_store_get_first_child_by_type(
+      endpoint_node,
+      DOTDOT_ATTRIBUTE_ID_UNIFY_SCHEDULE_ENTRY_LOCK_SLOTS_YEAR_DAY);
+  return attribute_store_is_reported_defined(node);
+}
+
+bool dotdot_unify_schedule_entry_lock_slots_year_day_is_desired_defined(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id)
+{
+  attribute_store_node_t endpoint_node = unify_dotdot_attributes_get_endpoint_node()(unid, endpoint_id);
+  attribute_store_node_t node
+    = attribute_store_get_first_child_by_type(
+      endpoint_node,
+      DOTDOT_ATTRIBUTE_ID_UNIFY_SCHEDULE_ENTRY_LOCK_SLOTS_YEAR_DAY);
+  return attribute_store_is_desired_defined(node);
+}
+
+sl_status_t dotdot_create_unify_schedule_entry_lock_slots_year_day(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id) {
+
+  attribute_store_node_t endpoint_node = unify_dotdot_attributes_get_endpoint_node()(unid, endpoint_id);
+  attribute_store_node_t node =
+    attribute_store_create_child_if_missing(endpoint_node,
+                                           DOTDOT_ATTRIBUTE_ID_UNIFY_SCHEDULE_ENTRY_LOCK_SLOTS_YEAR_DAY);
+
+  return (node != ATTRIBUTE_STORE_INVALID_NODE) ? SL_STATUS_OK : SL_STATUS_FAIL;
+}
+bool dotdot_is_supported_unify_schedule_entry_lock_signtzo(
+  const dotdot_unid_t unid, const dotdot_endpoint_id_t endpoint_id)
+{
+  attribute_store_node_t endpoint_node = unify_dotdot_attributes_get_endpoint_node()(unid, endpoint_id);
+  attribute_store_node_t node
+    = attribute_store_get_first_child_by_type(
+      endpoint_node,
+      DOTDOT_ATTRIBUTE_ID_UNIFY_SCHEDULE_ENTRY_LOCK_SIGNTZO);
+  return attribute_store_node_exists(node);
+}
+
+uint8_t dotdot_get_unify_schedule_entry_lock_signtzo(
+  const dotdot_unid_t unid,
+  dotdot_endpoint_id_t endpoint_id,
+  attribute_store_node_value_state_t value_state)
+{
+  attribute_store_node_t endpoint_node = unify_dotdot_attributes_get_endpoint_node()(unid, endpoint_id);
+  attribute_store_node_t node
+    = attribute_store_get_first_child_by_type(
+      endpoint_node,
+      DOTDOT_ATTRIBUTE_ID_UNIFY_SCHEDULE_ENTRY_LOCK_SIGNTZO);
+
+  uint8_t result = {};
+  attribute_store_read_value(node,
+                             value_state,
+                             (uint8_t *)&result,
+                             sizeof(result));
+  return result;
+}
+
+sl_status_t dotdot_set_unify_schedule_entry_lock_signtzo(
+  const dotdot_unid_t unid,
+  dotdot_endpoint_id_t endpoint_id,
+  attribute_store_node_value_state_t value_state,
+  uint8_t new_signtzo
+  )
+{
+  attribute_store_node_t endpoint_node = unify_dotdot_attributes_get_endpoint_node()(unid, endpoint_id);
+
+  attribute_store_node_t node
+    = attribute_store_get_first_child_by_type(
+      endpoint_node,
+      DOTDOT_ATTRIBUTE_ID_UNIFY_SCHEDULE_ENTRY_LOCK_SIGNTZO);
+
+  return attribute_store_set_node_attribute_value(node,
+                                                  value_state,
+                                                  (uint8_t *)&new_signtzo,
+                                                  sizeof(uint8_t));
+  }
+
+sl_status_t dotdot_unify_schedule_entry_lock_signtzo_undefine_reported(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id) {
+  attribute_store_node_t endpoint_node = unify_dotdot_attributes_get_endpoint_node()(unid, endpoint_id);
+  attribute_store_node_t node
+    = attribute_store_get_first_child_by_type(
+      endpoint_node,
+      DOTDOT_ATTRIBUTE_ID_UNIFY_SCHEDULE_ENTRY_LOCK_SIGNTZO);
+  attribute_store_undefine_reported(node);
+  return (node != ATTRIBUTE_STORE_INVALID_NODE) ? SL_STATUS_OK : SL_STATUS_FAIL;
+}
+
+sl_status_t dotdot_unify_schedule_entry_lock_signtzo_undefine_desired(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id) {
+
+  attribute_store_node_t endpoint_node = unify_dotdot_attributes_get_endpoint_node()(unid, endpoint_id);
+  attribute_store_node_t node
+    = attribute_store_get_first_child_by_type(
+      endpoint_node,
+      DOTDOT_ATTRIBUTE_ID_UNIFY_SCHEDULE_ENTRY_LOCK_SIGNTZO);
+  attribute_store_undefine_desired(node);
+  return (node != ATTRIBUTE_STORE_INVALID_NODE) ? SL_STATUS_OK : SL_STATUS_FAIL;
+}
+
+
+bool dotdot_unify_schedule_entry_lock_signtzo_is_reported_defined(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id)
+{
+  attribute_store_node_t endpoint_node = unify_dotdot_attributes_get_endpoint_node()(unid, endpoint_id);
+  attribute_store_node_t node
+    = attribute_store_get_first_child_by_type(
+      endpoint_node,
+      DOTDOT_ATTRIBUTE_ID_UNIFY_SCHEDULE_ENTRY_LOCK_SIGNTZO);
+  return attribute_store_is_reported_defined(node);
+}
+
+bool dotdot_unify_schedule_entry_lock_signtzo_is_desired_defined(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id)
+{
+  attribute_store_node_t endpoint_node = unify_dotdot_attributes_get_endpoint_node()(unid, endpoint_id);
+  attribute_store_node_t node
+    = attribute_store_get_first_child_by_type(
+      endpoint_node,
+      DOTDOT_ATTRIBUTE_ID_UNIFY_SCHEDULE_ENTRY_LOCK_SIGNTZO);
+  return attribute_store_is_desired_defined(node);
+}
+
+sl_status_t dotdot_create_unify_schedule_entry_lock_signtzo(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id) {
+
+  attribute_store_node_t endpoint_node = unify_dotdot_attributes_get_endpoint_node()(unid, endpoint_id);
+  attribute_store_node_t node =
+    attribute_store_create_child_if_missing(endpoint_node,
+                                           DOTDOT_ATTRIBUTE_ID_UNIFY_SCHEDULE_ENTRY_LOCK_SIGNTZO);
+
+  return (node != ATTRIBUTE_STORE_INVALID_NODE) ? SL_STATUS_OK : SL_STATUS_FAIL;
+}
+bool dotdot_is_supported_unify_schedule_entry_lock_hourtzo(
+  const dotdot_unid_t unid, const dotdot_endpoint_id_t endpoint_id)
+{
+  attribute_store_node_t endpoint_node = unify_dotdot_attributes_get_endpoint_node()(unid, endpoint_id);
+  attribute_store_node_t node
+    = attribute_store_get_first_child_by_type(
+      endpoint_node,
+      DOTDOT_ATTRIBUTE_ID_UNIFY_SCHEDULE_ENTRY_LOCK_HOURTZO);
+  return attribute_store_node_exists(node);
+}
+
+uint8_t dotdot_get_unify_schedule_entry_lock_hourtzo(
+  const dotdot_unid_t unid,
+  dotdot_endpoint_id_t endpoint_id,
+  attribute_store_node_value_state_t value_state)
+{
+  attribute_store_node_t endpoint_node = unify_dotdot_attributes_get_endpoint_node()(unid, endpoint_id);
+  attribute_store_node_t node
+    = attribute_store_get_first_child_by_type(
+      endpoint_node,
+      DOTDOT_ATTRIBUTE_ID_UNIFY_SCHEDULE_ENTRY_LOCK_HOURTZO);
+
+  uint8_t result = {};
+  attribute_store_read_value(node,
+                             value_state,
+                             (uint8_t *)&result,
+                             sizeof(result));
+  return result;
+}
+
+sl_status_t dotdot_set_unify_schedule_entry_lock_hourtzo(
+  const dotdot_unid_t unid,
+  dotdot_endpoint_id_t endpoint_id,
+  attribute_store_node_value_state_t value_state,
+  uint8_t new_hourtzo
+  )
+{
+  attribute_store_node_t endpoint_node = unify_dotdot_attributes_get_endpoint_node()(unid, endpoint_id);
+
+  attribute_store_node_t node
+    = attribute_store_get_first_child_by_type(
+      endpoint_node,
+      DOTDOT_ATTRIBUTE_ID_UNIFY_SCHEDULE_ENTRY_LOCK_HOURTZO);
+
+  return attribute_store_set_node_attribute_value(node,
+                                                  value_state,
+                                                  (uint8_t *)&new_hourtzo,
+                                                  sizeof(uint8_t));
+  }
+
+sl_status_t dotdot_unify_schedule_entry_lock_hourtzo_undefine_reported(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id) {
+  attribute_store_node_t endpoint_node = unify_dotdot_attributes_get_endpoint_node()(unid, endpoint_id);
+  attribute_store_node_t node
+    = attribute_store_get_first_child_by_type(
+      endpoint_node,
+      DOTDOT_ATTRIBUTE_ID_UNIFY_SCHEDULE_ENTRY_LOCK_HOURTZO);
+  attribute_store_undefine_reported(node);
+  return (node != ATTRIBUTE_STORE_INVALID_NODE) ? SL_STATUS_OK : SL_STATUS_FAIL;
+}
+
+sl_status_t dotdot_unify_schedule_entry_lock_hourtzo_undefine_desired(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id) {
+
+  attribute_store_node_t endpoint_node = unify_dotdot_attributes_get_endpoint_node()(unid, endpoint_id);
+  attribute_store_node_t node
+    = attribute_store_get_first_child_by_type(
+      endpoint_node,
+      DOTDOT_ATTRIBUTE_ID_UNIFY_SCHEDULE_ENTRY_LOCK_HOURTZO);
+  attribute_store_undefine_desired(node);
+  return (node != ATTRIBUTE_STORE_INVALID_NODE) ? SL_STATUS_OK : SL_STATUS_FAIL;
+}
+
+
+bool dotdot_unify_schedule_entry_lock_hourtzo_is_reported_defined(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id)
+{
+  attribute_store_node_t endpoint_node = unify_dotdot_attributes_get_endpoint_node()(unid, endpoint_id);
+  attribute_store_node_t node
+    = attribute_store_get_first_child_by_type(
+      endpoint_node,
+      DOTDOT_ATTRIBUTE_ID_UNIFY_SCHEDULE_ENTRY_LOCK_HOURTZO);
+  return attribute_store_is_reported_defined(node);
+}
+
+bool dotdot_unify_schedule_entry_lock_hourtzo_is_desired_defined(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id)
+{
+  attribute_store_node_t endpoint_node = unify_dotdot_attributes_get_endpoint_node()(unid, endpoint_id);
+  attribute_store_node_t node
+    = attribute_store_get_first_child_by_type(
+      endpoint_node,
+      DOTDOT_ATTRIBUTE_ID_UNIFY_SCHEDULE_ENTRY_LOCK_HOURTZO);
+  return attribute_store_is_desired_defined(node);
+}
+
+sl_status_t dotdot_create_unify_schedule_entry_lock_hourtzo(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id) {
+
+  attribute_store_node_t endpoint_node = unify_dotdot_attributes_get_endpoint_node()(unid, endpoint_id);
+  attribute_store_node_t node =
+    attribute_store_create_child_if_missing(endpoint_node,
+                                           DOTDOT_ATTRIBUTE_ID_UNIFY_SCHEDULE_ENTRY_LOCK_HOURTZO);
+
+  return (node != ATTRIBUTE_STORE_INVALID_NODE) ? SL_STATUS_OK : SL_STATUS_FAIL;
+}
+bool dotdot_is_supported_unify_schedule_entry_lock_minutetzo(
+  const dotdot_unid_t unid, const dotdot_endpoint_id_t endpoint_id)
+{
+  attribute_store_node_t endpoint_node = unify_dotdot_attributes_get_endpoint_node()(unid, endpoint_id);
+  attribute_store_node_t node
+    = attribute_store_get_first_child_by_type(
+      endpoint_node,
+      DOTDOT_ATTRIBUTE_ID_UNIFY_SCHEDULE_ENTRY_LOCK_MINUTETZO);
+  return attribute_store_node_exists(node);
+}
+
+uint8_t dotdot_get_unify_schedule_entry_lock_minutetzo(
+  const dotdot_unid_t unid,
+  dotdot_endpoint_id_t endpoint_id,
+  attribute_store_node_value_state_t value_state)
+{
+  attribute_store_node_t endpoint_node = unify_dotdot_attributes_get_endpoint_node()(unid, endpoint_id);
+  attribute_store_node_t node
+    = attribute_store_get_first_child_by_type(
+      endpoint_node,
+      DOTDOT_ATTRIBUTE_ID_UNIFY_SCHEDULE_ENTRY_LOCK_MINUTETZO);
+
+  uint8_t result = {};
+  attribute_store_read_value(node,
+                             value_state,
+                             (uint8_t *)&result,
+                             sizeof(result));
+  return result;
+}
+
+sl_status_t dotdot_set_unify_schedule_entry_lock_minutetzo(
+  const dotdot_unid_t unid,
+  dotdot_endpoint_id_t endpoint_id,
+  attribute_store_node_value_state_t value_state,
+  uint8_t new_minutetzo
+  )
+{
+  attribute_store_node_t endpoint_node = unify_dotdot_attributes_get_endpoint_node()(unid, endpoint_id);
+
+  attribute_store_node_t node
+    = attribute_store_get_first_child_by_type(
+      endpoint_node,
+      DOTDOT_ATTRIBUTE_ID_UNIFY_SCHEDULE_ENTRY_LOCK_MINUTETZO);
+
+  return attribute_store_set_node_attribute_value(node,
+                                                  value_state,
+                                                  (uint8_t *)&new_minutetzo,
+                                                  sizeof(uint8_t));
+  }
+
+sl_status_t dotdot_unify_schedule_entry_lock_minutetzo_undefine_reported(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id) {
+  attribute_store_node_t endpoint_node = unify_dotdot_attributes_get_endpoint_node()(unid, endpoint_id);
+  attribute_store_node_t node
+    = attribute_store_get_first_child_by_type(
+      endpoint_node,
+      DOTDOT_ATTRIBUTE_ID_UNIFY_SCHEDULE_ENTRY_LOCK_MINUTETZO);
+  attribute_store_undefine_reported(node);
+  return (node != ATTRIBUTE_STORE_INVALID_NODE) ? SL_STATUS_OK : SL_STATUS_FAIL;
+}
+
+sl_status_t dotdot_unify_schedule_entry_lock_minutetzo_undefine_desired(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id) {
+
+  attribute_store_node_t endpoint_node = unify_dotdot_attributes_get_endpoint_node()(unid, endpoint_id);
+  attribute_store_node_t node
+    = attribute_store_get_first_child_by_type(
+      endpoint_node,
+      DOTDOT_ATTRIBUTE_ID_UNIFY_SCHEDULE_ENTRY_LOCK_MINUTETZO);
+  attribute_store_undefine_desired(node);
+  return (node != ATTRIBUTE_STORE_INVALID_NODE) ? SL_STATUS_OK : SL_STATUS_FAIL;
+}
+
+
+bool dotdot_unify_schedule_entry_lock_minutetzo_is_reported_defined(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id)
+{
+  attribute_store_node_t endpoint_node = unify_dotdot_attributes_get_endpoint_node()(unid, endpoint_id);
+  attribute_store_node_t node
+    = attribute_store_get_first_child_by_type(
+      endpoint_node,
+      DOTDOT_ATTRIBUTE_ID_UNIFY_SCHEDULE_ENTRY_LOCK_MINUTETZO);
+  return attribute_store_is_reported_defined(node);
+}
+
+bool dotdot_unify_schedule_entry_lock_minutetzo_is_desired_defined(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id)
+{
+  attribute_store_node_t endpoint_node = unify_dotdot_attributes_get_endpoint_node()(unid, endpoint_id);
+  attribute_store_node_t node
+    = attribute_store_get_first_child_by_type(
+      endpoint_node,
+      DOTDOT_ATTRIBUTE_ID_UNIFY_SCHEDULE_ENTRY_LOCK_MINUTETZO);
+  return attribute_store_is_desired_defined(node);
+}
+
+sl_status_t dotdot_create_unify_schedule_entry_lock_minutetzo(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id) {
+
+  attribute_store_node_t endpoint_node = unify_dotdot_attributes_get_endpoint_node()(unid, endpoint_id);
+  attribute_store_node_t node =
+    attribute_store_create_child_if_missing(endpoint_node,
+                                           DOTDOT_ATTRIBUTE_ID_UNIFY_SCHEDULE_ENTRY_LOCK_MINUTETZO);
+
+  return (node != ATTRIBUTE_STORE_INVALID_NODE) ? SL_STATUS_OK : SL_STATUS_FAIL;
+}
+bool dotdot_is_supported_unify_schedule_entry_lock_dst_offset_sign(
+  const dotdot_unid_t unid, const dotdot_endpoint_id_t endpoint_id)
+{
+  attribute_store_node_t endpoint_node = unify_dotdot_attributes_get_endpoint_node()(unid, endpoint_id);
+  attribute_store_node_t node
+    = attribute_store_get_first_child_by_type(
+      endpoint_node,
+      DOTDOT_ATTRIBUTE_ID_UNIFY_SCHEDULE_ENTRY_LOCK_DST_OFFSET_SIGN);
+  return attribute_store_node_exists(node);
+}
+
+uint8_t dotdot_get_unify_schedule_entry_lock_dst_offset_sign(
+  const dotdot_unid_t unid,
+  dotdot_endpoint_id_t endpoint_id,
+  attribute_store_node_value_state_t value_state)
+{
+  attribute_store_node_t endpoint_node = unify_dotdot_attributes_get_endpoint_node()(unid, endpoint_id);
+  attribute_store_node_t node
+    = attribute_store_get_first_child_by_type(
+      endpoint_node,
+      DOTDOT_ATTRIBUTE_ID_UNIFY_SCHEDULE_ENTRY_LOCK_DST_OFFSET_SIGN);
+
+  uint8_t result = {};
+  attribute_store_read_value(node,
+                             value_state,
+                             (uint8_t *)&result,
+                             sizeof(result));
+  return result;
+}
+
+sl_status_t dotdot_set_unify_schedule_entry_lock_dst_offset_sign(
+  const dotdot_unid_t unid,
+  dotdot_endpoint_id_t endpoint_id,
+  attribute_store_node_value_state_t value_state,
+  uint8_t new_dst_offset_sign
+  )
+{
+  attribute_store_node_t endpoint_node = unify_dotdot_attributes_get_endpoint_node()(unid, endpoint_id);
+
+  attribute_store_node_t node
+    = attribute_store_get_first_child_by_type(
+      endpoint_node,
+      DOTDOT_ATTRIBUTE_ID_UNIFY_SCHEDULE_ENTRY_LOCK_DST_OFFSET_SIGN);
+
+  return attribute_store_set_node_attribute_value(node,
+                                                  value_state,
+                                                  (uint8_t *)&new_dst_offset_sign,
+                                                  sizeof(uint8_t));
+  }
+
+sl_status_t dotdot_unify_schedule_entry_lock_dst_offset_sign_undefine_reported(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id) {
+  attribute_store_node_t endpoint_node = unify_dotdot_attributes_get_endpoint_node()(unid, endpoint_id);
+  attribute_store_node_t node
+    = attribute_store_get_first_child_by_type(
+      endpoint_node,
+      DOTDOT_ATTRIBUTE_ID_UNIFY_SCHEDULE_ENTRY_LOCK_DST_OFFSET_SIGN);
+  attribute_store_undefine_reported(node);
+  return (node != ATTRIBUTE_STORE_INVALID_NODE) ? SL_STATUS_OK : SL_STATUS_FAIL;
+}
+
+sl_status_t dotdot_unify_schedule_entry_lock_dst_offset_sign_undefine_desired(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id) {
+
+  attribute_store_node_t endpoint_node = unify_dotdot_attributes_get_endpoint_node()(unid, endpoint_id);
+  attribute_store_node_t node
+    = attribute_store_get_first_child_by_type(
+      endpoint_node,
+      DOTDOT_ATTRIBUTE_ID_UNIFY_SCHEDULE_ENTRY_LOCK_DST_OFFSET_SIGN);
+  attribute_store_undefine_desired(node);
+  return (node != ATTRIBUTE_STORE_INVALID_NODE) ? SL_STATUS_OK : SL_STATUS_FAIL;
+}
+
+
+bool dotdot_unify_schedule_entry_lock_dst_offset_sign_is_reported_defined(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id)
+{
+  attribute_store_node_t endpoint_node = unify_dotdot_attributes_get_endpoint_node()(unid, endpoint_id);
+  attribute_store_node_t node
+    = attribute_store_get_first_child_by_type(
+      endpoint_node,
+      DOTDOT_ATTRIBUTE_ID_UNIFY_SCHEDULE_ENTRY_LOCK_DST_OFFSET_SIGN);
+  return attribute_store_is_reported_defined(node);
+}
+
+bool dotdot_unify_schedule_entry_lock_dst_offset_sign_is_desired_defined(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id)
+{
+  attribute_store_node_t endpoint_node = unify_dotdot_attributes_get_endpoint_node()(unid, endpoint_id);
+  attribute_store_node_t node
+    = attribute_store_get_first_child_by_type(
+      endpoint_node,
+      DOTDOT_ATTRIBUTE_ID_UNIFY_SCHEDULE_ENTRY_LOCK_DST_OFFSET_SIGN);
+  return attribute_store_is_desired_defined(node);
+}
+
+sl_status_t dotdot_create_unify_schedule_entry_lock_dst_offset_sign(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id) {
+
+  attribute_store_node_t endpoint_node = unify_dotdot_attributes_get_endpoint_node()(unid, endpoint_id);
+  attribute_store_node_t node =
+    attribute_store_create_child_if_missing(endpoint_node,
+                                           DOTDOT_ATTRIBUTE_ID_UNIFY_SCHEDULE_ENTRY_LOCK_DST_OFFSET_SIGN);
+
+  return (node != ATTRIBUTE_STORE_INVALID_NODE) ? SL_STATUS_OK : SL_STATUS_FAIL;
+}
+bool dotdot_is_supported_unify_schedule_entry_lock_dst_offset_minute(
+  const dotdot_unid_t unid, const dotdot_endpoint_id_t endpoint_id)
+{
+  attribute_store_node_t endpoint_node = unify_dotdot_attributes_get_endpoint_node()(unid, endpoint_id);
+  attribute_store_node_t node
+    = attribute_store_get_first_child_by_type(
+      endpoint_node,
+      DOTDOT_ATTRIBUTE_ID_UNIFY_SCHEDULE_ENTRY_LOCK_DST_OFFSET_MINUTE);
+  return attribute_store_node_exists(node);
+}
+
+uint8_t dotdot_get_unify_schedule_entry_lock_dst_offset_minute(
+  const dotdot_unid_t unid,
+  dotdot_endpoint_id_t endpoint_id,
+  attribute_store_node_value_state_t value_state)
+{
+  attribute_store_node_t endpoint_node = unify_dotdot_attributes_get_endpoint_node()(unid, endpoint_id);
+  attribute_store_node_t node
+    = attribute_store_get_first_child_by_type(
+      endpoint_node,
+      DOTDOT_ATTRIBUTE_ID_UNIFY_SCHEDULE_ENTRY_LOCK_DST_OFFSET_MINUTE);
+
+  uint8_t result = {};
+  attribute_store_read_value(node,
+                             value_state,
+                             (uint8_t *)&result,
+                             sizeof(result));
+  return result;
+}
+
+sl_status_t dotdot_set_unify_schedule_entry_lock_dst_offset_minute(
+  const dotdot_unid_t unid,
+  dotdot_endpoint_id_t endpoint_id,
+  attribute_store_node_value_state_t value_state,
+  uint8_t new_dst_offset_minute
+  )
+{
+  attribute_store_node_t endpoint_node = unify_dotdot_attributes_get_endpoint_node()(unid, endpoint_id);
+
+  attribute_store_node_t node
+    = attribute_store_get_first_child_by_type(
+      endpoint_node,
+      DOTDOT_ATTRIBUTE_ID_UNIFY_SCHEDULE_ENTRY_LOCK_DST_OFFSET_MINUTE);
+
+  return attribute_store_set_node_attribute_value(node,
+                                                  value_state,
+                                                  (uint8_t *)&new_dst_offset_minute,
+                                                  sizeof(uint8_t));
+  }
+
+sl_status_t dotdot_unify_schedule_entry_lock_dst_offset_minute_undefine_reported(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id) {
+  attribute_store_node_t endpoint_node = unify_dotdot_attributes_get_endpoint_node()(unid, endpoint_id);
+  attribute_store_node_t node
+    = attribute_store_get_first_child_by_type(
+      endpoint_node,
+      DOTDOT_ATTRIBUTE_ID_UNIFY_SCHEDULE_ENTRY_LOCK_DST_OFFSET_MINUTE);
+  attribute_store_undefine_reported(node);
+  return (node != ATTRIBUTE_STORE_INVALID_NODE) ? SL_STATUS_OK : SL_STATUS_FAIL;
+}
+
+sl_status_t dotdot_unify_schedule_entry_lock_dst_offset_minute_undefine_desired(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id) {
+
+  attribute_store_node_t endpoint_node = unify_dotdot_attributes_get_endpoint_node()(unid, endpoint_id);
+  attribute_store_node_t node
+    = attribute_store_get_first_child_by_type(
+      endpoint_node,
+      DOTDOT_ATTRIBUTE_ID_UNIFY_SCHEDULE_ENTRY_LOCK_DST_OFFSET_MINUTE);
+  attribute_store_undefine_desired(node);
+  return (node != ATTRIBUTE_STORE_INVALID_NODE) ? SL_STATUS_OK : SL_STATUS_FAIL;
+}
+
+
+bool dotdot_unify_schedule_entry_lock_dst_offset_minute_is_reported_defined(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id)
+{
+  attribute_store_node_t endpoint_node = unify_dotdot_attributes_get_endpoint_node()(unid, endpoint_id);
+  attribute_store_node_t node
+    = attribute_store_get_first_child_by_type(
+      endpoint_node,
+      DOTDOT_ATTRIBUTE_ID_UNIFY_SCHEDULE_ENTRY_LOCK_DST_OFFSET_MINUTE);
+  return attribute_store_is_reported_defined(node);
+}
+
+bool dotdot_unify_schedule_entry_lock_dst_offset_minute_is_desired_defined(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id)
+{
+  attribute_store_node_t endpoint_node = unify_dotdot_attributes_get_endpoint_node()(unid, endpoint_id);
+  attribute_store_node_t node
+    = attribute_store_get_first_child_by_type(
+      endpoint_node,
+      DOTDOT_ATTRIBUTE_ID_UNIFY_SCHEDULE_ENTRY_LOCK_DST_OFFSET_MINUTE);
+  return attribute_store_is_desired_defined(node);
+}
+
+sl_status_t dotdot_create_unify_schedule_entry_lock_dst_offset_minute(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id) {
+
+  attribute_store_node_t endpoint_node = unify_dotdot_attributes_get_endpoint_node()(unid, endpoint_id);
+  attribute_store_node_t node =
+    attribute_store_create_child_if_missing(endpoint_node,
+                                           DOTDOT_ATTRIBUTE_ID_UNIFY_SCHEDULE_ENTRY_LOCK_DST_OFFSET_MINUTE);
+
+  return (node != ATTRIBUTE_STORE_INVALID_NODE) ? SL_STATUS_OK : SL_STATUS_FAIL;
+}
+bool dotdot_is_supported_unify_schedule_entry_lock_number_of_slots_daily_repeating(
+  const dotdot_unid_t unid, const dotdot_endpoint_id_t endpoint_id)
+{
+  attribute_store_node_t endpoint_node = unify_dotdot_attributes_get_endpoint_node()(unid, endpoint_id);
+  attribute_store_node_t node
+    = attribute_store_get_first_child_by_type(
+      endpoint_node,
+      DOTDOT_ATTRIBUTE_ID_UNIFY_SCHEDULE_ENTRY_LOCK_NUMBER_OF_SLOTS_DAILY_REPEATING);
+  return attribute_store_node_exists(node);
+}
+
+uint8_t dotdot_get_unify_schedule_entry_lock_number_of_slots_daily_repeating(
+  const dotdot_unid_t unid,
+  dotdot_endpoint_id_t endpoint_id,
+  attribute_store_node_value_state_t value_state)
+{
+  attribute_store_node_t endpoint_node = unify_dotdot_attributes_get_endpoint_node()(unid, endpoint_id);
+  attribute_store_node_t node
+    = attribute_store_get_first_child_by_type(
+      endpoint_node,
+      DOTDOT_ATTRIBUTE_ID_UNIFY_SCHEDULE_ENTRY_LOCK_NUMBER_OF_SLOTS_DAILY_REPEATING);
+
+  uint8_t result = {};
+  attribute_store_read_value(node,
+                             value_state,
+                             (uint8_t *)&result,
+                             sizeof(result));
+  return result;
+}
+
+sl_status_t dotdot_set_unify_schedule_entry_lock_number_of_slots_daily_repeating(
+  const dotdot_unid_t unid,
+  dotdot_endpoint_id_t endpoint_id,
+  attribute_store_node_value_state_t value_state,
+  uint8_t new_number_of_slots_daily_repeating
+  )
+{
+  attribute_store_node_t endpoint_node = unify_dotdot_attributes_get_endpoint_node()(unid, endpoint_id);
+
+  attribute_store_node_t node
+    = attribute_store_get_first_child_by_type(
+      endpoint_node,
+      DOTDOT_ATTRIBUTE_ID_UNIFY_SCHEDULE_ENTRY_LOCK_NUMBER_OF_SLOTS_DAILY_REPEATING);
+
+  return attribute_store_set_node_attribute_value(node,
+                                                  value_state,
+                                                  (uint8_t *)&new_number_of_slots_daily_repeating,
+                                                  sizeof(uint8_t));
+  }
+
+sl_status_t dotdot_unify_schedule_entry_lock_number_of_slots_daily_repeating_undefine_reported(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id) {
+  attribute_store_node_t endpoint_node = unify_dotdot_attributes_get_endpoint_node()(unid, endpoint_id);
+  attribute_store_node_t node
+    = attribute_store_get_first_child_by_type(
+      endpoint_node,
+      DOTDOT_ATTRIBUTE_ID_UNIFY_SCHEDULE_ENTRY_LOCK_NUMBER_OF_SLOTS_DAILY_REPEATING);
+  attribute_store_undefine_reported(node);
+  return (node != ATTRIBUTE_STORE_INVALID_NODE) ? SL_STATUS_OK : SL_STATUS_FAIL;
+}
+
+sl_status_t dotdot_unify_schedule_entry_lock_number_of_slots_daily_repeating_undefine_desired(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id) {
+
+  attribute_store_node_t endpoint_node = unify_dotdot_attributes_get_endpoint_node()(unid, endpoint_id);
+  attribute_store_node_t node
+    = attribute_store_get_first_child_by_type(
+      endpoint_node,
+      DOTDOT_ATTRIBUTE_ID_UNIFY_SCHEDULE_ENTRY_LOCK_NUMBER_OF_SLOTS_DAILY_REPEATING);
+  attribute_store_undefine_desired(node);
+  return (node != ATTRIBUTE_STORE_INVALID_NODE) ? SL_STATUS_OK : SL_STATUS_FAIL;
+}
+
+
+bool dotdot_unify_schedule_entry_lock_number_of_slots_daily_repeating_is_reported_defined(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id)
+{
+  attribute_store_node_t endpoint_node = unify_dotdot_attributes_get_endpoint_node()(unid, endpoint_id);
+  attribute_store_node_t node
+    = attribute_store_get_first_child_by_type(
+      endpoint_node,
+      DOTDOT_ATTRIBUTE_ID_UNIFY_SCHEDULE_ENTRY_LOCK_NUMBER_OF_SLOTS_DAILY_REPEATING);
+  return attribute_store_is_reported_defined(node);
+}
+
+bool dotdot_unify_schedule_entry_lock_number_of_slots_daily_repeating_is_desired_defined(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id)
+{
+  attribute_store_node_t endpoint_node = unify_dotdot_attributes_get_endpoint_node()(unid, endpoint_id);
+  attribute_store_node_t node
+    = attribute_store_get_first_child_by_type(
+      endpoint_node,
+      DOTDOT_ATTRIBUTE_ID_UNIFY_SCHEDULE_ENTRY_LOCK_NUMBER_OF_SLOTS_DAILY_REPEATING);
+  return attribute_store_is_desired_defined(node);
+}
+
+sl_status_t dotdot_create_unify_schedule_entry_lock_number_of_slots_daily_repeating(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id) {
+
+  attribute_store_node_t endpoint_node = unify_dotdot_attributes_get_endpoint_node()(unid, endpoint_id);
+  attribute_store_node_t node =
+    attribute_store_create_child_if_missing(endpoint_node,
+                                           DOTDOT_ATTRIBUTE_ID_UNIFY_SCHEDULE_ENTRY_LOCK_NUMBER_OF_SLOTS_DAILY_REPEATING);
+
+  return (node != ATTRIBUTE_STORE_INVALID_NODE) ? SL_STATUS_OK : SL_STATUS_FAIL;
+}
+
+bool dotdot_is_any_unify_schedule_entry_lock_attribute_supported(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id) {
+
+  if (true == dotdot_is_supported_unify_schedule_entry_lock_slots_week_day(unid, endpoint_id)) {
+    return true;
+  }
+  if (true == dotdot_is_supported_unify_schedule_entry_lock_slots_year_day(unid, endpoint_id)) {
+    return true;
+  }
+  if (true == dotdot_is_supported_unify_schedule_entry_lock_signtzo(unid, endpoint_id)) {
+    return true;
+  }
+  if (true == dotdot_is_supported_unify_schedule_entry_lock_hourtzo(unid, endpoint_id)) {
+    return true;
+  }
+  if (true == dotdot_is_supported_unify_schedule_entry_lock_minutetzo(unid, endpoint_id)) {
+    return true;
+  }
+  if (true == dotdot_is_supported_unify_schedule_entry_lock_dst_offset_sign(unid, endpoint_id)) {
+    return true;
+  }
+  if (true == dotdot_is_supported_unify_schedule_entry_lock_dst_offset_minute(unid, endpoint_id)) {
+    return true;
+  }
+  if (true == dotdot_is_supported_unify_schedule_entry_lock_number_of_slots_daily_repeating(unid, endpoint_id)) {
+    return true;
+  }
+
+  return false;
+}
+
+bool dotdot_is_any_unify_schedule_entry_lock_writable_attribute_supported(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id) {
+
+  if (true == dotdot_is_supported_unify_schedule_entry_lock_slots_week_day(unid, endpoint_id)) {
+    return true;
+  }
+  if (true == dotdot_is_supported_unify_schedule_entry_lock_slots_year_day(unid, endpoint_id)) {
+    return true;
+  }
+  if (true == dotdot_is_supported_unify_schedule_entry_lock_signtzo(unid, endpoint_id)) {
+    return true;
+  }
+  if (true == dotdot_is_supported_unify_schedule_entry_lock_hourtzo(unid, endpoint_id)) {
+    return true;
+  }
+  if (true == dotdot_is_supported_unify_schedule_entry_lock_minutetzo(unid, endpoint_id)) {
+    return true;
+  }
+  if (true == dotdot_is_supported_unify_schedule_entry_lock_dst_offset_sign(unid, endpoint_id)) {
+    return true;
+  }
+  if (true == dotdot_is_supported_unify_schedule_entry_lock_dst_offset_minute(unid, endpoint_id)) {
+    return true;
+  }
+  if (true == dotdot_is_supported_unify_schedule_entry_lock_number_of_slots_daily_repeating(unid, endpoint_id)) {
+    return true;
+  }
+
+  return false;
+}
+////////////////////////////////////////////////////////////////////////////////
 // Start of cluster UnifyHumidityControl
 ////////////////////////////////////////////////////////////////////////////////
 bool dotdot_is_supported_unify_humidity_control_reporting_mode(

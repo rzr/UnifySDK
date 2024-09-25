@@ -10473,6 +10473,57 @@ std::string get_enum_value_name(
   #endif
   }
 
+  if (64801 == cluster_id) {
+  #ifdef UNIFY_SCHEDULE_ENTRY_LOCK_SLOTS_WEEK_DAY_ENUM_NAME_AVAILABLE
+    if (1 == attribute_id) {
+      // FIXME: Some attributes don't work because multi-upper case names end up like this: unify_schedule_entry_lockslots_week_day instead of this: unify_schedule_entry_lock_slots_week_day
+      return unify_schedule_entry_lock_slots_week_day_get_enum_value_name(value);
+    }
+  #endif
+  #ifdef UNIFY_SCHEDULE_ENTRY_LOCK_SLOTS_YEAR_DAY_ENUM_NAME_AVAILABLE
+    if (2 == attribute_id) {
+      // FIXME: Some attributes don't work because multi-upper case names end up like this: unify_schedule_entry_lockslots_year_day instead of this: unify_schedule_entry_lock_slots_year_day
+      return unify_schedule_entry_lock_slots_year_day_get_enum_value_name(value);
+    }
+  #endif
+  #ifdef UNIFY_SCHEDULE_ENTRY_LOCK_SIGNTZO_ENUM_NAME_AVAILABLE
+    if (3 == attribute_id) {
+      // FIXME: Some attributes don't work because multi-upper case names end up like this: unify_schedule_entry_locksigntzo instead of this: unify_schedule_entry_lock_signtzo
+      return unify_schedule_entry_lock_signtzo_get_enum_value_name(value);
+    }
+  #endif
+  #ifdef UNIFY_SCHEDULE_ENTRY_LOCK_HOURTZO_ENUM_NAME_AVAILABLE
+    if (4 == attribute_id) {
+      // FIXME: Some attributes don't work because multi-upper case names end up like this: unify_schedule_entry_lockhourtzo instead of this: unify_schedule_entry_lock_hourtzo
+      return unify_schedule_entry_lock_hourtzo_get_enum_value_name(value);
+    }
+  #endif
+  #ifdef UNIFY_SCHEDULE_ENTRY_LOCK_MINUTETZO_ENUM_NAME_AVAILABLE
+    if (5 == attribute_id) {
+      // FIXME: Some attributes don't work because multi-upper case names end up like this: unify_schedule_entry_lockminutetzo instead of this: unify_schedule_entry_lock_minutetzo
+      return unify_schedule_entry_lock_minutetzo_get_enum_value_name(value);
+    }
+  #endif
+  #ifdef UNIFY_SCHEDULE_ENTRY_LOCK_DST_OFFSET_SIGN_ENUM_NAME_AVAILABLE
+    if (6 == attribute_id) {
+      // FIXME: Some attributes don't work because multi-upper case names end up like this: unify_schedule_entry_lockdst_offset_sign instead of this: unify_schedule_entry_lock_dst_offset_sign
+      return unify_schedule_entry_lock_dst_offset_sign_get_enum_value_name(value);
+    }
+  #endif
+  #ifdef UNIFY_SCHEDULE_ENTRY_LOCK_DST_OFFSET_MINUTE_ENUM_NAME_AVAILABLE
+    if (7 == attribute_id) {
+      // FIXME: Some attributes don't work because multi-upper case names end up like this: unify_schedule_entry_lockdst_offset_minute instead of this: unify_schedule_entry_lock_dst_offset_minute
+      return unify_schedule_entry_lock_dst_offset_minute_get_enum_value_name(value);
+    }
+  #endif
+  #ifdef UNIFY_SCHEDULE_ENTRY_LOCK_NUMBER_OF_SLOTS_DAILY_REPEATING_ENUM_NAME_AVAILABLE
+    if (8 == attribute_id) {
+      // FIXME: Some attributes don't work because multi-upper case names end up like this: unify_schedule_entry_locknumber_of_slots_daily_repeating instead of this: unify_schedule_entry_lock_number_of_slots_daily_repeating
+      return unify_schedule_entry_lock_number_of_slots_daily_repeating_get_enum_value_name(value);
+    }
+  #endif
+  }
+
   if (64928 == cluster_id) {
   #ifdef UNIFY_HUMIDITY_CONTROL_REPORTING_MODE_ENUM_NAME_AVAILABLE
     if (1 == attribute_id) {
@@ -14991,6 +15042,57 @@ uint32_t get_enum_name_value(
     if (3 == attribute_id) {
       // FIXME: Some attributes don't work because multi-upper case names end up like this: unify_thermostatoperating_state instead of this: unify_thermostat_operating_state
       return unify_thermostat_operating_state_get_enum_value_number(name);
+    }
+  #endif
+  }
+
+  if (64801 == cluster_id) {
+  #ifdef UNIFY_SCHEDULE_ENTRY_LOCK_SLOTS_WEEK_DAY_ENUM_NAME_AVAILABLE
+    if (1 == attribute_id) {
+      // FIXME: Some attributes don't work because multi-upper case names end up like this: unify_schedule_entry_lockslots_week_day instead of this: unify_schedule_entry_lock_slots_week_day
+      return unify_schedule_entry_lock_slots_week_day_get_enum_value_number(name);
+    }
+  #endif
+  #ifdef UNIFY_SCHEDULE_ENTRY_LOCK_SLOTS_YEAR_DAY_ENUM_NAME_AVAILABLE
+    if (2 == attribute_id) {
+      // FIXME: Some attributes don't work because multi-upper case names end up like this: unify_schedule_entry_lockslots_year_day instead of this: unify_schedule_entry_lock_slots_year_day
+      return unify_schedule_entry_lock_slots_year_day_get_enum_value_number(name);
+    }
+  #endif
+  #ifdef UNIFY_SCHEDULE_ENTRY_LOCK_SIGNTZO_ENUM_NAME_AVAILABLE
+    if (3 == attribute_id) {
+      // FIXME: Some attributes don't work because multi-upper case names end up like this: unify_schedule_entry_locksigntzo instead of this: unify_schedule_entry_lock_signtzo
+      return unify_schedule_entry_lock_signtzo_get_enum_value_number(name);
+    }
+  #endif
+  #ifdef UNIFY_SCHEDULE_ENTRY_LOCK_HOURTZO_ENUM_NAME_AVAILABLE
+    if (4 == attribute_id) {
+      // FIXME: Some attributes don't work because multi-upper case names end up like this: unify_schedule_entry_lockhourtzo instead of this: unify_schedule_entry_lock_hourtzo
+      return unify_schedule_entry_lock_hourtzo_get_enum_value_number(name);
+    }
+  #endif
+  #ifdef UNIFY_SCHEDULE_ENTRY_LOCK_MINUTETZO_ENUM_NAME_AVAILABLE
+    if (5 == attribute_id) {
+      // FIXME: Some attributes don't work because multi-upper case names end up like this: unify_schedule_entry_lockminutetzo instead of this: unify_schedule_entry_lock_minutetzo
+      return unify_schedule_entry_lock_minutetzo_get_enum_value_number(name);
+    }
+  #endif
+  #ifdef UNIFY_SCHEDULE_ENTRY_LOCK_DST_OFFSET_SIGN_ENUM_NAME_AVAILABLE
+    if (6 == attribute_id) {
+      // FIXME: Some attributes don't work because multi-upper case names end up like this: unify_schedule_entry_lockdst_offset_sign instead of this: unify_schedule_entry_lock_dst_offset_sign
+      return unify_schedule_entry_lock_dst_offset_sign_get_enum_value_number(name);
+    }
+  #endif
+  #ifdef UNIFY_SCHEDULE_ENTRY_LOCK_DST_OFFSET_MINUTE_ENUM_NAME_AVAILABLE
+    if (7 == attribute_id) {
+      // FIXME: Some attributes don't work because multi-upper case names end up like this: unify_schedule_entry_lockdst_offset_minute instead of this: unify_schedule_entry_lock_dst_offset_minute
+      return unify_schedule_entry_lock_dst_offset_minute_get_enum_value_number(name);
+    }
+  #endif
+  #ifdef UNIFY_SCHEDULE_ENTRY_LOCK_NUMBER_OF_SLOTS_DAILY_REPEATING_ENUM_NAME_AVAILABLE
+    if (8 == attribute_id) {
+      // FIXME: Some attributes don't work because multi-upper case names end up like this: unify_schedule_entry_locknumber_of_slots_daily_repeating instead of this: unify_schedule_entry_lock_number_of_slots_daily_repeating
+      return unify_schedule_entry_lock_number_of_slots_daily_repeating_get_enum_value_number(name);
     }
   #endif
   }

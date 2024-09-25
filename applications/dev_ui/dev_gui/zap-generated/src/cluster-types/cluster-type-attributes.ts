@@ -15352,4 +15352,249 @@ export let ClusterTypeAttrs: any = {
         ] 
       }
     },
+    UnifyScheduleEntryLock: {
+      server:{
+        attributes: [
+            {                
+              id: 1,
+              name: "SlotsWeekDay",
+              type: "number",            
+              max: 255,
+              min: 0,
+              required: true,
+              reportRequired: false,
+              sceneRequired: false,
+              writable: true,
+              isArray: false,
+            },
+            {                
+              id: 2,
+              name: "SlotsYearDay",
+              type: "number",            
+              max: 255,
+              min: 0,
+              required: true,
+              reportRequired: false,
+              sceneRequired: false,
+              writable: true,
+              isArray: false,
+            },
+            {                
+              id: 3,
+              name: "SignTZO",
+              type: "number",            
+              required: true,
+              reportRequired: false,
+              sceneRequired: false,
+              writable: true,
+              isArray: false,
+            },
+            {                
+              id: 4,
+              name: "HourTZO",
+              type: "number",            
+              required: true,
+              reportRequired: false,
+              sceneRequired: false,
+              writable: true,
+              isArray: false,
+            },
+            {                
+              id: 5,
+              name: "MinuteTZO",
+              type: "number",            
+              required: true,
+              reportRequired: false,
+              sceneRequired: false,
+              writable: true,
+              isArray: false,
+            },
+            {                
+              id: 6,
+              name: "DSTOffsetSign",
+              type: "number",            
+              required: true,
+              reportRequired: false,
+              sceneRequired: false,
+              writable: true,
+              isArray: false,
+            },
+            {                
+              id: 7,
+              name: "DSTOffsetMinute",
+              type: "number",            
+              required: true,
+              reportRequired: false,
+              sceneRequired: false,
+              writable: true,
+              isArray: false,
+            },
+            {                
+              id: 8,
+              name: "NumberOfSlotsDailyRepeating",
+              type: "number",            
+              max: 255,
+              min: 0,
+              required: true,
+              reportRequired: false,
+              sceneRequired: false,
+              writable: true,
+              isArray: false,
+            }
+        ],
+        commands: [
+            {
+              id: 1,
+              name: "ScheduleEntryLockWeekDayReport",
+              required: true,
+              fields: [
+                  {
+                    name: "UserIdentifier",
+                    type: "number",
+                    isArray: false,
+                  },
+                  {
+                    name: "ScheduleSlotID",
+                    type: "number",
+                    isArray: false,
+                  },
+                  {
+                    name: "DayOfWeek",
+                    type: "number",
+                    isArray: false,
+                  },
+                  {
+                    name: "StartHour",
+                    type: "number",
+                    isArray: false,
+                  },
+                  {
+                    name: "StartMinute",
+                    type: "number",
+                    isArray: false,
+                  },
+                  {
+                    name: "StopHour",
+                    type: "number",
+                    isArray: false,
+                  },
+                  {
+                    name: "StopMinute",
+                    type: "number",
+                    isArray: false,
+                  }
+              ]              
+            },
+            {
+              id: 2,
+              name: "ScheduleEntryLockYearDayReport",
+              required: true,
+              fields: [
+                  {
+                    name: "SetAction",
+                    type: "number",
+                    isArray: false,
+                  },
+                  {
+                    name: "UserIdentifier",
+                    type: "number",
+                    isArray: false,
+                  },
+                  {
+                    name: "ScheduleSlotID",
+                    type: "number",
+                    isArray: false,
+                  },
+                  {
+                    name: "StartYear",
+                    type: "number",
+                    isArray: false,
+                  },
+                  {
+                    name: "StartDay",
+                    type: "number",
+                    isArray: false,
+                  },
+                  {
+                    name: "StartHour",
+                    type: "number",
+                    isArray: false,
+                  },
+                  {
+                    name: "StartMinute",
+                    type: "number",
+                    isArray: false,
+                  },
+                  {
+                    name: "StopYear",
+                    type: "number",
+                    isArray: false,
+                  },
+                  {
+                    name: "StopDay",
+                    type: "number",
+                    isArray: false,
+                  },
+                  {
+                    name: "StopHour",
+                    type: "number",
+                    isArray: false,
+                  },
+                  {
+                    name: "StopMinute",
+                    type: "number",
+                    isArray: false,
+                  }
+              ]              
+            },
+            {
+              id: 3,
+              name: "ScheduleEntryLockDailyRepeatingReport",
+              required: true,
+              fields: [
+                  {
+                    name: "SetAction",
+                    type: "number",
+                    isArray: false,
+                  },
+                  {
+                    name: "UserIdentifier",
+                    type: "number",
+                    isArray: false,
+                  },
+                  {
+                    name: "ScheduleSlotID",
+                    type: "number",
+                    isArray: false,
+                  },
+                  {
+                    name: "WeekDayBitmask",
+                    type: "number",
+                    isArray: false,
+                  },
+                  {
+                    name: "StartHour",
+                    type: "number",
+                    isArray: false,
+                  },
+                  {
+                    name: "StartMinute",
+                    type: "number",
+                    isArray: false,
+                  },
+                  {
+                    name: "DurationHour",
+                    type: "number",
+                    isArray: false,
+                  },
+                  {
+                    name: "DurationMinute",
+                    type: "number",
+                    isArray: false,
+                  }
+              ]              
+            }
+        ] 
+      }
+    },
 }

@@ -4470,6 +4470,71 @@ static sl_status_t uic_mqtt_dotdot_unify_thermostat_force_read_attributes_callba
   return SL_STATUS_OK;
 }
 ////////////////////////////////////////////////////////////////////////////////
+// Start of cluster UnifyScheduleEntryLock
+////////////////////////////////////////////////////////////////////////////////
+static sl_status_t uic_mqtt_dotdot_unify_schedule_entry_lock_force_read_attributes_callback (
+  const dotdot_unid_t unid,
+  dotdot_endpoint_id_t endpoint_id,
+  uic_mqtt_dotdot_callback_call_type_t call_type,
+  uic_mqtt_dotdot_unify_schedule_entry_lock_updated_state_t attribute_list) {
+
+  if (false == is_force_read_attributes_enabled()){
+    return SL_STATUS_FAIL;
+  }
+
+  if (call_type == UIC_MQTT_DOTDOT_CALLBACK_TYPE_SUPPORT_CHECK) {
+    if (is_automatic_deduction_of_supported_commands_enabled()) {
+      return dotdot_is_any_unify_schedule_entry_lock_attribute_supported(unid, endpoint_id) ?
+        SL_STATUS_OK : SL_STATUS_FAIL;
+    } else {
+      return SL_STATUS_FAIL;
+    }
+  }
+
+  // Go and undefine everything that needs to be read again:
+  if (true == attribute_list.slots_week_day) {
+    if (SL_STATUS_OK == dotdot_unify_schedule_entry_lock_slots_week_day_undefine_reported(unid, endpoint_id)) {
+      sl_log_debug(LOG_TAG, "Undefined Reported value of UnifyScheduleEntryLock::SlotsWeekDay under %s - Endpoint %d", unid, endpoint_id);
+    }
+  }
+  if (true == attribute_list.slots_year_day) {
+    if (SL_STATUS_OK == dotdot_unify_schedule_entry_lock_slots_year_day_undefine_reported(unid, endpoint_id)) {
+      sl_log_debug(LOG_TAG, "Undefined Reported value of UnifyScheduleEntryLock::SlotsYearDay under %s - Endpoint %d", unid, endpoint_id);
+    }
+  }
+  if (true == attribute_list.signtzo) {
+    if (SL_STATUS_OK == dotdot_unify_schedule_entry_lock_signtzo_undefine_reported(unid, endpoint_id)) {
+      sl_log_debug(LOG_TAG, "Undefined Reported value of UnifyScheduleEntryLock::SignTZO under %s - Endpoint %d", unid, endpoint_id);
+    }
+  }
+  if (true == attribute_list.hourtzo) {
+    if (SL_STATUS_OK == dotdot_unify_schedule_entry_lock_hourtzo_undefine_reported(unid, endpoint_id)) {
+      sl_log_debug(LOG_TAG, "Undefined Reported value of UnifyScheduleEntryLock::HourTZO under %s - Endpoint %d", unid, endpoint_id);
+    }
+  }
+  if (true == attribute_list.minutetzo) {
+    if (SL_STATUS_OK == dotdot_unify_schedule_entry_lock_minutetzo_undefine_reported(unid, endpoint_id)) {
+      sl_log_debug(LOG_TAG, "Undefined Reported value of UnifyScheduleEntryLock::MinuteTZO under %s - Endpoint %d", unid, endpoint_id);
+    }
+  }
+  if (true == attribute_list.dst_offset_sign) {
+    if (SL_STATUS_OK == dotdot_unify_schedule_entry_lock_dst_offset_sign_undefine_reported(unid, endpoint_id)) {
+      sl_log_debug(LOG_TAG, "Undefined Reported value of UnifyScheduleEntryLock::DSTOffsetSign under %s - Endpoint %d", unid, endpoint_id);
+    }
+  }
+  if (true == attribute_list.dst_offset_minute) {
+    if (SL_STATUS_OK == dotdot_unify_schedule_entry_lock_dst_offset_minute_undefine_reported(unid, endpoint_id)) {
+      sl_log_debug(LOG_TAG, "Undefined Reported value of UnifyScheduleEntryLock::DSTOffsetMinute under %s - Endpoint %d", unid, endpoint_id);
+    }
+  }
+  if (true == attribute_list.number_of_slots_daily_repeating) {
+    if (SL_STATUS_OK == dotdot_unify_schedule_entry_lock_number_of_slots_daily_repeating_undefine_reported(unid, endpoint_id)) {
+      sl_log_debug(LOG_TAG, "Undefined Reported value of UnifyScheduleEntryLock::NumberOfSlotsDailyRepeating under %s - Endpoint %d", unid, endpoint_id);
+    }
+  }
+  return SL_STATUS_OK;
+}
+////////////////////////////////////////////////////////////////////////////////
 // Start of cluster UnifyHumidityControl
 ////////////////////////////////////////////////////////////////////////////////
 static sl_status_t uic_mqtt_dotdot_unify_humidity_control_force_read_attributes_callback (
@@ -4700,6 +4765,8 @@ sl_status_t
   uic_mqtt_dotdot_set_unify_fan_control_force_read_attributes_callback(&uic_mqtt_dotdot_unify_fan_control_force_read_attributes_callback);
   
   uic_mqtt_dotdot_set_unify_thermostat_force_read_attributes_callback(&uic_mqtt_dotdot_unify_thermostat_force_read_attributes_callback);
+  
+  uic_mqtt_dotdot_set_unify_schedule_entry_lock_force_read_attributes_callback(&uic_mqtt_dotdot_unify_schedule_entry_lock_force_read_attributes_callback);
   
   uic_mqtt_dotdot_set_unify_humidity_control_force_read_attributes_callback(&uic_mqtt_dotdot_unify_humidity_control_force_read_attributes_callback);
   

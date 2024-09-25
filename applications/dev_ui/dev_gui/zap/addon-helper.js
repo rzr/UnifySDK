@@ -31,6 +31,7 @@ const supportedClusters = [
     "SystemMetrics",
     "TemperatureMeasurement",
     "Thermostat",
+    "UnifyScheduleEntryLock",
     "WindSpeedMeasurement",
     "WindowCovering"
 ];

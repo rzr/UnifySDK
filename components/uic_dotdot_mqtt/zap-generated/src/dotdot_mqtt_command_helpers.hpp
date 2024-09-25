@@ -6031,6 +6031,148 @@ void uic_mqtt_dotdot_parse_unify_thermostat_write_attributes(
 
 /**
  * @brief Private helper function that will create a JSON string based on the
+ * fields of a UnifyScheduleEntryLock ScheduleEntryLockWeekDayReport command
+ * 
+ * @param fields       Struct pointer with the list of fields for the command
+ * 
+ * @returns std::string that contains JSON payload
+ */
+std::string get_json_payload_for_unify_schedule_entry_lock_schedule_entry_lock_week_day_report_command(
+  
+  const uic_mqtt_dotdot_unify_schedule_entry_lock_command_schedule_entry_lock_week_day_report_fields_t *fields
+  
+);
+
+
+/**
+ * @brief JSON parser for UnifyScheduleEntryLock ScheduleEntryLockWeekDayReport command arguments.
+ *
+ * Parse incoming JSON object to populate command arguments passed in by reference.
+ */
+void uic_mqtt_dotdot_parse_unify_schedule_entry_lock_schedule_entry_lock_week_day_report(
+  nlohmann::json &jsn,
+  uint8_t &user_identifier,
+
+  uint8_t &schedule_slotid,
+
+  uint8_t &day_of_week,
+
+  uint8_t &start_hour,
+
+  uint8_t &start_minute,
+
+  uint8_t &stop_hour,
+
+  uint8_t &stop_minute
+
+);
+
+
+
+/**
+ * @brief Private helper function that will create a JSON string based on the
+ * fields of a UnifyScheduleEntryLock ScheduleEntryLockYearDayReport command
+ * 
+ * @param fields       Struct pointer with the list of fields for the command
+ * 
+ * @returns std::string that contains JSON payload
+ */
+std::string get_json_payload_for_unify_schedule_entry_lock_schedule_entry_lock_year_day_report_command(
+  
+  const uic_mqtt_dotdot_unify_schedule_entry_lock_command_schedule_entry_lock_year_day_report_fields_t *fields
+  
+);
+
+
+/**
+ * @brief JSON parser for UnifyScheduleEntryLock ScheduleEntryLockYearDayReport command arguments.
+ *
+ * Parse incoming JSON object to populate command arguments passed in by reference.
+ */
+void uic_mqtt_dotdot_parse_unify_schedule_entry_lock_schedule_entry_lock_year_day_report(
+  nlohmann::json &jsn,
+  uint8_t &set_action,
+
+  uint8_t &user_identifier,
+
+  uint8_t &schedule_slotid,
+
+  uint8_t &start_year,
+
+  uint8_t &start_day,
+
+  uint8_t &start_hour,
+
+  uint8_t &start_minute,
+
+  uint8_t &stop_year,
+
+  uint8_t &stop_day,
+
+  uint8_t &stop_hour,
+
+  uint8_t &stop_minute
+
+);
+
+
+
+/**
+ * @brief Private helper function that will create a JSON string based on the
+ * fields of a UnifyScheduleEntryLock ScheduleEntryLockDailyRepeatingReport command
+ * 
+ * @param fields       Struct pointer with the list of fields for the command
+ * 
+ * @returns std::string that contains JSON payload
+ */
+std::string get_json_payload_for_unify_schedule_entry_lock_schedule_entry_lock_daily_repeating_report_command(
+  
+  const uic_mqtt_dotdot_unify_schedule_entry_lock_command_schedule_entry_lock_daily_repeating_report_fields_t *fields
+  
+);
+
+
+/**
+ * @brief JSON parser for UnifyScheduleEntryLock ScheduleEntryLockDailyRepeatingReport command arguments.
+ *
+ * Parse incoming JSON object to populate command arguments passed in by reference.
+ */
+void uic_mqtt_dotdot_parse_unify_schedule_entry_lock_schedule_entry_lock_daily_repeating_report(
+  nlohmann::json &jsn,
+  uint8_t &set_action,
+
+  uint8_t &user_identifier,
+
+  uint8_t &schedule_slotid,
+
+  uint8_t &week_day_bitmask,
+
+  uint8_t &start_hour,
+
+  uint8_t &start_minute,
+
+  uint8_t &duration_hour,
+
+  uint8_t &duration_minute
+
+);
+
+
+
+/**
+ * @brief JSON parser for UnifyScheduleEntryLock WriteAttributes command arguments.
+ *
+ * Parse incoming JSON object to populate command arguments passed in by reference.
+ */
+void uic_mqtt_dotdot_parse_unify_schedule_entry_lock_write_attributes(
+  nlohmann::json &jsn,
+  uic_mqtt_dotdot_unify_schedule_entry_lock_state_t &new_state,
+  uic_mqtt_dotdot_unify_schedule_entry_lock_updated_state_t &new_updated_state
+);
+
+
+/**
+ * @brief Private helper function that will create a JSON string based on the
  * fields of a UnifyHumidityControl ModeSet command
  * 
  * @param fields       Struct pointer with the list of fields for the command

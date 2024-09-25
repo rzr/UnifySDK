@@ -4998,6 +4998,91 @@ void uic_mqtt_dotdot_unify_thermostat_publish_generated_write_attributes_command
 );
 
 /**
+ * @brief Publishes an incoming/generated ScheduleEntryLockWeekDayReport command for
+ * the UnifyScheduleEntryLock cluster.
+ *
+ * Publication will be made at the following topic
+ * ucl/by-unid/UNID/epID/UnifyScheduleEntryLock/GeneratedCommands/ScheduleEntryLockWeekDayReport
+ *
+ * @param unid      The UNID of the node that sent us the command.
+ * 
+ * @param endpoint  The Endpoint ID of the node that sent us the command.
+ * 
+ * 
+ * @param fields                Struct pointer with the fields value of the command
+ * 
+ */
+void uic_mqtt_dotdot_unify_schedule_entry_lock_publish_generated_schedule_entry_lock_week_day_report_command(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint,
+  const uic_mqtt_dotdot_unify_schedule_entry_lock_command_schedule_entry_lock_week_day_report_fields_t *fields
+  
+);
+/**
+ * @brief Publishes an incoming/generated ScheduleEntryLockYearDayReport command for
+ * the UnifyScheduleEntryLock cluster.
+ *
+ * Publication will be made at the following topic
+ * ucl/by-unid/UNID/epID/UnifyScheduleEntryLock/GeneratedCommands/ScheduleEntryLockYearDayReport
+ *
+ * @param unid      The UNID of the node that sent us the command.
+ * 
+ * @param endpoint  The Endpoint ID of the node that sent us the command.
+ * 
+ * 
+ * @param fields                Struct pointer with the fields value of the command
+ * 
+ */
+void uic_mqtt_dotdot_unify_schedule_entry_lock_publish_generated_schedule_entry_lock_year_day_report_command(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint,
+  const uic_mqtt_dotdot_unify_schedule_entry_lock_command_schedule_entry_lock_year_day_report_fields_t *fields
+  
+);
+/**
+ * @brief Publishes an incoming/generated ScheduleEntryLockDailyRepeatingReport command for
+ * the UnifyScheduleEntryLock cluster.
+ *
+ * Publication will be made at the following topic
+ * ucl/by-unid/UNID/epID/UnifyScheduleEntryLock/GeneratedCommands/ScheduleEntryLockDailyRepeatingReport
+ *
+ * @param unid      The UNID of the node that sent us the command.
+ * 
+ * @param endpoint  The Endpoint ID of the node that sent us the command.
+ * 
+ * 
+ * @param fields                Struct pointer with the fields value of the command
+ * 
+ */
+void uic_mqtt_dotdot_unify_schedule_entry_lock_publish_generated_schedule_entry_lock_daily_repeating_report_command(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint,
+  const uic_mqtt_dotdot_unify_schedule_entry_lock_command_schedule_entry_lock_daily_repeating_report_fields_t *fields
+  
+);
+
+/**
+ * @brief Publishes an incoming/generated WriteAttributes command for
+ * the UnifyScheduleEntryLock cluster.
+ *
+ * Publication will be made at the following topic
+ * ucl/by-unid/UNID/epID/UnifyScheduleEntryLock/GeneratedCommands/WriteAttributes
+ *
+ * @param unid      The UNID of the node that sent us the command.
+ * 
+ * @param endpoint  The Endpoint ID of the node that sent us the command.
+ * 
+ * @param attribute_values  Values to assign to the attributes
+ * @param attribute_list    List of attributes that are written
+ */
+void uic_mqtt_dotdot_unify_schedule_entry_lock_publish_generated_write_attributes_command(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint,
+  uic_mqtt_dotdot_unify_schedule_entry_lock_state_t attribute_values,
+  uic_mqtt_dotdot_unify_schedule_entry_lock_updated_state_t attribute_list
+);
+
+/**
  * @brief Publishes an incoming/generated ModeSet command for
  * the UnifyHumidityControl cluster.
  *

@@ -32,6 +32,7 @@ const SupportedClusters = {
 	SoilMoisture: "SoilMoisture", 
 	TemperatureMeasurement: "TemperatureMeasurement", 
 	Thermostat: "Thermostat", 
+	UnifyScheduleEntryLock: "UnifyScheduleEntryLock", 
 	WindSpeedMeasurement: "WindSpeedMeasurement", 
 	WindowCovering: "WindowCovering"
 }
