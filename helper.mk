@@ -3,7 +3,7 @@
 # ex: set tabstop=4 noexpandtab:
 # -*- coding: utf-8 -*
 
-default: help zpc/default
+default: help all/default
 	@echo "$@: TODO: Support more than $^ by default"
 	@date -u
 
@@ -25,28 +25,29 @@ packages+=nlohmann-json3-dev
 # TODO: remove for offline build
 packages+=curl wget python3-pip
 packages+=time
+packages+=npm
 
-RUST_VERSION?=1.65.0
+RUST_VERSION?=1.64.0
 export PATH := ${HOME}/.cargo/bin:${PATH}
 
 zpc_exe?=${build_dir}/applications/zpc/zpc
 exes+=${zpc_exe}
 
 zpc_cmake_options?=\
-	-DBUILD_AOXPC=OFF \
-	-DBUILD_CPCD=OFF \
-	-DBUILD_DEV_GUI=OFF \
-	-DBUILD_EMD=OFF \
-	-DBUILD_EPC=OFF \
-	-DBUILD_GMS=OFF \
-	-DBUILD_IMAGE_PROVIDER=OFF \
-	-DBUILD_NAL=OFF \
+	-DBUILD_AOXPC=ON \
+	-DBUILD_CPCD=ON \
+	-DBUILD_DEV_GUI=ON \
+	-DBUILD_EMD=ON \
+	-DBUILD_EPC=ON \
+	-DBUILD_GMS=ON \
+	-DBUILD_IMAGE_PROVIDER=ON \
+	-DBUILD_NAL=ON \
 	-DBUILD_OTBR=OFF \
-	-DBUILD_POSITIONING=OFF \
+	-DBUILD_POSITIONING=OM \
 	-DBUILD_TESTING=ON \
-	-DBUILD_UPTI_CAP=OFF \
-	-DBUILD_UPTI_WRITER=OFF \
-	-DBUILD_UPVL=OFF \
+	-DBUILD_UPTI_CAP=ON\
+	-DBUILD_UPTI_WRITER=ON \
+	-DBUILD_UPVL=ON \
 	-DBUILD_ZIGBEED=OFF \
 	-DBUILD_ZIGPC=OFF
 
