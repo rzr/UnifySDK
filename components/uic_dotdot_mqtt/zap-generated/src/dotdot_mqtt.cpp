@@ -94313,10 +94313,12 @@ void uic_mqtt_dotdot_on_unify_schedule_entry_lock_schedule_entry_lock_year_day_r
   uint8_t user_identifier = {};
   uint8_t schedule_slotid = {};
   uint8_t start_year = {};
+  uint8_t start_month = {};
   uint8_t start_day = {};
   uint8_t start_hour = {};
   uint8_t start_minute = {};
   uint8_t stop_year = {};
+  uint8_t stop_month = {};
   uint8_t stop_day = {};
   uint8_t stop_hour = {};
   uint8_t stop_minute = {};
@@ -94337,6 +94339,8 @@ void uic_mqtt_dotdot_on_unify_schedule_entry_lock_schedule_entry_lock_year_day_r
 
       start_year,
 
+      start_month,
+
       start_day,
 
       start_hour,
@@ -94344,6 +94348,8 @@ void uic_mqtt_dotdot_on_unify_schedule_entry_lock_schedule_entry_lock_year_day_r
       start_minute,
 
       stop_year,
+
+      stop_month,
 
       stop_day,
 
@@ -94380,6 +94386,8 @@ void uic_mqtt_dotdot_on_unify_schedule_entry_lock_schedule_entry_lock_year_day_r
   
       start_year,
   
+      start_month,
+  
       start_day,
   
       start_hour,
@@ -94387,6 +94395,8 @@ void uic_mqtt_dotdot_on_unify_schedule_entry_lock_schedule_entry_lock_year_day_r
       start_minute,
   
       stop_year,
+  
+      stop_month,
   
       stop_day,
   
@@ -94422,10 +94432,12 @@ static void uic_mqtt_dotdot_on_generated_unify_schedule_entry_lock_schedule_entr
   uint8_t user_identifier = {};
   uint8_t schedule_slotid = {};
   uint8_t start_year = {};
+  uint8_t start_month = {};
   uint8_t start_day = {};
   uint8_t start_hour = {};
   uint8_t start_minute = {};
   uint8_t stop_year = {};
+  uint8_t stop_month = {};
   uint8_t stop_day = {};
   uint8_t stop_hour = {};
   uint8_t stop_minute = {};
@@ -94446,6 +94458,8 @@ static void uic_mqtt_dotdot_on_generated_unify_schedule_entry_lock_schedule_entr
 
       start_year,
 
+      start_month,
+
       start_day,
 
       start_hour,
@@ -94453,6 +94467,8 @@ static void uic_mqtt_dotdot_on_generated_unify_schedule_entry_lock_schedule_entr
       start_minute,
 
       stop_year,
+
+      stop_month,
 
       stop_day,
 
@@ -94490,6 +94506,8 @@ static void uic_mqtt_dotdot_on_generated_unify_schedule_entry_lock_schedule_entr
   
       start_year,
   
+      start_month,
+  
       start_day,
   
       start_hour,
@@ -94497,6 +94515,8 @@ static void uic_mqtt_dotdot_on_generated_unify_schedule_entry_lock_schedule_entr
       start_minute,
   
       stop_year,
+  
+      stop_month,
   
       stop_day,
   
@@ -111368,6 +111388,8 @@ static inline bool uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock
     memset(&schedule_slotid_value, 0x00, sizeof(schedule_slotid_value));
     uint8_t start_year_value;
     memset(&start_year_value, 0x00, sizeof(start_year_value));
+    uint8_t start_month_value;
+    memset(&start_month_value, 0x00, sizeof(start_month_value));
     uint8_t start_day_value;
     memset(&start_day_value, 0x00, sizeof(start_day_value));
     uint8_t start_hour_value;
@@ -111376,6 +111398,8 @@ static inline bool uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock
     memset(&start_minute_value, 0x00, sizeof(start_minute_value));
     uint8_t stop_year_value;
     memset(&stop_year_value, 0x00, sizeof(stop_year_value));
+    uint8_t stop_month_value;
+    memset(&stop_month_value, 0x00, sizeof(stop_month_value));
     uint8_t stop_day_value;
     memset(&stop_day_value, 0x00, sizeof(stop_day_value));
     uint8_t stop_hour_value;
@@ -111393,6 +111417,8 @@ static inline bool uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock
     
         start_year_value,
     
+        start_month_value,
+    
         start_day_value,
     
         start_hour_value,
@@ -111400,6 +111426,8 @@ static inline bool uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock
         start_minute_value,
     
         stop_year_value,
+    
+        stop_month_value,
     
         stop_day_value,
     

@@ -88,6 +88,11 @@
             <type:minInclusive value="0" />
             <type:maxInclusive value="23" />
           </restriction>
+        <field name="StartMonth" type="uint8" />
+          <restriction>
+            <type:minInclusive value="1" />
+            <type:maxInclusive value="12" />
+          </restriction>
         <field name="StartMinute" type="uint8" />
           <restriction>
             <type:minInclusive value="0" />
@@ -97,6 +102,11 @@
           <restriction>
             <type:minInclusive value="0" />
             <type:maxInclusive value="99" />
+          </restriction>
+        <field name="StopMonth" type="uint8" />
+          <restriction>
+            <type:minInclusive value="1" />
+            <type:maxInclusive value="12" />
           </restriction>
         <field name="StopDay" type="uint8" />
           <restriction>
@@ -204,6 +214,11 @@
             <type:minInclusive value="0" />
             <type:maxInclusive value="99" />
           </restriction>
+        <field name="StartMonth" type="uint8" />
+          <restriction>
+            <type:minInclusive value="1" />
+            <type:maxInclusive value="12" />
+          </restriction>
         <field name="StartDay" type="uint8" />
           <restriction>
             <type:minInclusive value="0" />
@@ -223,6 +238,11 @@
           <restriction>
             <type:minInclusive value="0" />
             <type:maxInclusive value="99" />
+          </restriction>
+        <field name="StopMonth" type="uint8" />
+          <restriction>
+            <type:minInclusive value="1" />
+            <type:maxInclusive value="12" />
           </restriction>
         <field name="StopDay" type="uint8" />
           <restriction>

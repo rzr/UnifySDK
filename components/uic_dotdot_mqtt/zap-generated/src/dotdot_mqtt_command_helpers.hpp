@@ -6099,6 +6099,8 @@ void uic_mqtt_dotdot_parse_unify_schedule_entry_lock_schedule_entry_lock_year_da
 
   uint8_t &start_year,
 
+  uint8_t &start_month,
+
   uint8_t &start_day,
 
   uint8_t &start_hour,
@@ -6106,6 +6108,8 @@ void uic_mqtt_dotdot_parse_unify_schedule_entry_lock_schedule_entry_lock_year_da
   uint8_t &start_minute,
 
   uint8_t &stop_year,
+
+  uint8_t &stop_month,
 
   uint8_t &stop_day,
 

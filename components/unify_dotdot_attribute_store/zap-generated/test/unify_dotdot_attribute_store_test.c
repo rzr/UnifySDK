@@ -7863,6 +7863,8 @@ void test_automatic_deduction_of_supported_commands()
       memset(&schedule_slotid_value, 0x00, sizeof(schedule_slotid_value));
       uint8_t start_year_value;
       memset(&start_year_value, 0x00, sizeof(start_year_value));
+      uint8_t start_month_value;
+      memset(&start_month_value, 0x00, sizeof(start_month_value));
       uint8_t start_day_value;
       memset(&start_day_value, 0x00, sizeof(start_day_value));
       uint8_t start_hour_value;
@@ -7871,6 +7873,8 @@ void test_automatic_deduction_of_supported_commands()
       memset(&start_minute_value, 0x00, sizeof(start_minute_value));
       uint8_t stop_year_value;
       memset(&stop_year_value, 0x00, sizeof(stop_year_value));
+      uint8_t stop_month_value;
+      memset(&stop_month_value, 0x00, sizeof(stop_month_value));
       uint8_t stop_day_value;
       memset(&stop_day_value, 0x00, sizeof(stop_day_value));
       uint8_t stop_hour_value;
@@ -7888,6 +7892,8 @@ void test_automatic_deduction_of_supported_commands()
       
         start_year_value,
       
+        start_month_value,
+      
         start_day_value,
       
         start_hour_value,
@@ -7895,6 +7901,8 @@ void test_automatic_deduction_of_supported_commands()
         start_minute_value,
       
         stop_year_value,
+      
+        stop_month_value,
       
         stop_day_value,
       
@@ -11107,10 +11115,14 @@ void test_automatic_deduction_of_supported_commands()
       memset(&start_day_value, 0x00, sizeof(start_day_value));
       uint8_t start_hour_value;
       memset(&start_hour_value, 0x00, sizeof(start_hour_value));
+      uint8_t start_month_value;
+      memset(&start_month_value, 0x00, sizeof(start_month_value));
       uint8_t start_minute_value;
       memset(&start_minute_value, 0x00, sizeof(start_minute_value));
       uint8_t stop_year_value;
       memset(&stop_year_value, 0x00, sizeof(stop_year_value));
+      uint8_t stop_month_value;
+      memset(&stop_month_value, 0x00, sizeof(stop_month_value));
       uint8_t stop_day_value;
       memset(&stop_day_value, 0x00, sizeof(stop_day_value));
       uint8_t stop_hour_value;
@@ -11132,9 +11144,13 @@ void test_automatic_deduction_of_supported_commands()
       
         start_hour_value,
       
+        start_month_value,
+      
         start_minute_value,
       
         stop_year_value,
+      
+        stop_month_value,
       
         stop_day_value,
       

@@ -23625,6 +23625,8 @@ static void uic_mqtt_dotdot_on_by_group_unify_schedule_entry_lock_schedule_entry
               
           fields.start_year,
               
+          fields.start_month,
+              
           fields.start_day,
               
           fields.start_hour,
@@ -23632,6 +23634,8 @@ static void uic_mqtt_dotdot_on_by_group_unify_schedule_entry_lock_schedule_entry
           fields.start_minute,
               
           fields.stop_year,
+              
+          fields.stop_month,
               
           fields.stop_day,
               

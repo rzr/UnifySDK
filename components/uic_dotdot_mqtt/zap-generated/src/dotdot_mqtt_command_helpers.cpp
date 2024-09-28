@@ -14661,6 +14661,10 @@ std::string get_json_payload_for_unify_schedule_entry_lock_schedule_entry_lock_y
   command_with_no_fields = false;
   // Single Value
   // Non-enum and non-bitmask (struct, string or scalar)
+  json_payload["StartMonth"] = nlohmann::json(fields->start_month);
+  command_with_no_fields = false;
+  // Single Value
+  // Non-enum and non-bitmask (struct, string or scalar)
   json_payload["StartDay"] = nlohmann::json(fields->start_day);
   command_with_no_fields = false;
   // Single Value
@@ -14674,6 +14678,10 @@ std::string get_json_payload_for_unify_schedule_entry_lock_schedule_entry_lock_y
   // Single Value
   // Non-enum and non-bitmask (struct, string or scalar)
   json_payload["StopYear"] = nlohmann::json(fields->stop_year);
+  command_with_no_fields = false;
+  // Single Value
+  // Non-enum and non-bitmask (struct, string or scalar)
+  json_payload["StopMonth"] = nlohmann::json(fields->stop_month);
   command_with_no_fields = false;
   // Single Value
   // Non-enum and non-bitmask (struct, string or scalar)
@@ -14706,6 +14714,8 @@ void uic_mqtt_dotdot_parse_unify_schedule_entry_lock_schedule_entry_lock_year_da
   
   uint8_t &start_year,
   
+  uint8_t &start_month,
+  
   uint8_t &start_day,
   
   uint8_t &start_hour,
@@ -14713,6 +14723,8 @@ void uic_mqtt_dotdot_parse_unify_schedule_entry_lock_schedule_entry_lock_year_da
   uint8_t &start_minute,
   
   uint8_t &stop_year,
+  
+  uint8_t &stop_month,
   
   uint8_t &stop_day,
   
@@ -14746,6 +14758,12 @@ void uic_mqtt_dotdot_parse_unify_schedule_entry_lock_schedule_entry_lock_year_da
   }
         
   start_year = jsn.at("StartYear").get< uint8_t >();
+      if (jsn.at("StartMonth").is_null()) {
+    sl_log_debug(LOG_TAG, "Ignoring JSON Null object");
+    return;
+  }
+        
+  start_month = jsn.at("StartMonth").get< uint8_t >();
       if (jsn.at("StartDay").is_null()) {
     sl_log_debug(LOG_TAG, "Ignoring JSON Null object");
     return;
@@ -14770,6 +14788,12 @@ void uic_mqtt_dotdot_parse_unify_schedule_entry_lock_schedule_entry_lock_year_da
   }
         
   stop_year = jsn.at("StopYear").get< uint8_t >();
+      if (jsn.at("StopMonth").is_null()) {
+    sl_log_debug(LOG_TAG, "Ignoring JSON Null object");
+    return;
+  }
+        
+  stop_month = jsn.at("StopMonth").get< uint8_t >();
       if (jsn.at("StopDay").is_null()) {
     sl_log_debug(LOG_TAG, "Ignoring JSON Null object");
     return;
@@ -14820,6 +14844,10 @@ std::string get_json_payload_for_unify_schedule_entry_lock_schedule_entry_lock_d
   // Single Value
   // Non-enum and non-bitmask (struct, string or scalar)
   json_payload["StartHour"] = nlohmann::json(fields->start_hour);
+  command_with_no_fields = false;
+  // Single Value
+  // Non-enum and non-bitmask (struct, string or scalar)
+  json_payload["StartMonth"] = nlohmann::json(fields->start_month);
   command_with_no_fields = false;
   // Single Value
   // Non-enum and non-bitmask (struct, string or scalar)
@@ -14892,6 +14920,12 @@ void uic_mqtt_dotdot_parse_unify_schedule_entry_lock_schedule_entry_lock_daily_r
   }
         
   start_hour = jsn.at("StartHour").get< uint8_t >();
+      if (jsn.at("StartMonth").is_null()) {
+    sl_log_debug(LOG_TAG, "Ignoring JSON Null object");
+    return;
+  }
+        
+  start_month = jsn.at("StartMonth").get< uint8_t >();
       if (jsn.at("StartMinute").is_null()) {
     sl_log_debug(LOG_TAG, "Ignoring JSON Null object");
     return;

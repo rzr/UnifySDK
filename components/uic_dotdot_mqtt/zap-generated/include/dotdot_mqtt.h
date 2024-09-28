@@ -40171,6 +40171,8 @@ typedef sl_status_t (*uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_l
 
     uint8_t start_year,
 
+    uint8_t start_month,
+
     uint8_t start_day,
 
     uint8_t start_hour,
@@ -40178,6 +40180,8 @@ typedef sl_status_t (*uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_l
     uint8_t start_minute,
 
     uint8_t stop_year,
+
+    uint8_t stop_month,
 
     uint8_t stop_day,
 
@@ -40277,6 +40281,8 @@ typedef struct {
 
   uint8_t start_year;
 
+  uint8_t start_month;
+
   uint8_t start_day;
 
   uint8_t start_hour;
@@ -40284,6 +40290,8 @@ typedef struct {
   uint8_t start_minute;
 
   uint8_t stop_year;
+
+  uint8_t stop_month;
 
   uint8_t stop_day;
 

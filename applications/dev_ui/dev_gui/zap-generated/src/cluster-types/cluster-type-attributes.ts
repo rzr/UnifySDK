@@ -15511,6 +15511,11 @@ export let ClusterTypeAttrs: any = {
                     isArray: false,
                   },
                   {
+                    name: "StartMonth",
+                    type: "number",
+                    isArray: false,
+                  },
+                  {
                     name: "StartDay",
                     type: "number",
                     isArray: false,
@@ -15527,6 +15532,11 @@ export let ClusterTypeAttrs: any = {
                   },
                   {
                     name: "StopYear",
+                    type: "number",
+                    isArray: false,
+                  },
+                  {
+                    name: "StopMonth",
                     type: "number",
                     isArray: false,
                   },
@@ -15574,6 +15584,11 @@ export let ClusterTypeAttrs: any = {
                   },
                   {
                     name: "StartHour",
+                    type: "number",
+                    isArray: false,
+                  },
+                  {
+                    name: "StartMonth",
                     type: "number",
                     isArray: false,
                   },
