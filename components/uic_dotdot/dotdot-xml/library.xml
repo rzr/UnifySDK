@@ -502,5 +502,6 @@ applicable to this document can be found in the LICENSE.md file.
   <xi:include href="Unify_Thermostat.xml" parse="xml"/>
   <xi:include href="Unify_FanControl.xml" parse="xml"/>
   <xi:include href="Unify_MultilevelSensor.xml" parse="xml"/>
-  <xi:include href="Unify_ScheduleEntryLock.xml" parse="xml"/>  
+  <xi:include href="Unify_ScheduleEntryLock.xml" parse="xml"/>
+  <xi:include href="Unify_ApplicationStatus.xml" parse="xml"/>
 </zcl:library>
