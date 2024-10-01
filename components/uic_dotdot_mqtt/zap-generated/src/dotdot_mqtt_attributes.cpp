@@ -63640,3 +63640,293 @@ void uic_mqtt_dotdot_unify_humidity_control_attribute_auto_setpoint_precision_ca
 
 // End of supported cluster.
 
+///////////////////////////////////////////////////////////////////////////////
+// Callback pointers for ApplicationStatus
+///////////////////////////////////////////////////////////////////////////////
+static uic_mqtt_dotdot_application_status_attribute_busy_status_callback_t uic_mqtt_dotdot_application_status_attribute_busy_status_callback = nullptr;
+static uic_mqtt_dotdot_application_status_attribute_wait_time_callback_t uic_mqtt_dotdot_application_status_attribute_wait_time_callback = nullptr;
+static uic_mqtt_dotdot_application_status_attribute_reject_status_callback_t uic_mqtt_dotdot_application_status_attribute_reject_status_callback = nullptr;
+
+///////////////////////////////////////////////////////////////////////////////
+// Attribute update handlers for ApplicationStatus
+///////////////////////////////////////////////////////////////////////////////
+static void uic_mqtt_dotdot_on_application_status_busy_status_attribute_update(
+  const char *topic,
+  const char *message,
+  const size_t message_length) {
+  if (uic_mqtt_dotdot_application_status_attribute_busy_status_callback == nullptr) {
+    return;
+  }
+
+  std::string unid;
+  uint8_t endpoint = 0; // Default value for endpoint-less topics.
+  if(! uic_dotdot_mqtt::parse_topic(topic,unid,endpoint)) {
+    sl_log_debug(LOG_TAG,
+                "Error parsing UNID / Endpoint ID from topic %s. Ignoring",
+                topic);
+    return;
+  }
+
+  std::string last_item;
+  if (SL_STATUS_OK != uic_dotdot_mqtt::get_topic_last_item(topic,last_item)){
+    sl_log_debug(LOG_TAG,
+                "Error parsing last item from topic %s. Ignoring",
+                topic);
+    return;
+  }
+
+  uic_mqtt_dotdot_attribute_update_type_t update_type;
+  if (last_item == "Reported") {
+    update_type = UCL_REPORTED_UPDATED;
+  } else if (last_item == "Desired") {
+    update_type = UCL_DESIRED_UPDATED;
+  } else {
+    sl_log_debug(LOG_TAG,
+                "Unknown value type (neither Desired/Reported) for topic %s. Ignoring",
+                topic);
+    return;
+  }
+
+  // Empty message means unretained value.
+  bool unretained = false;
+  if (message_length == 0) {
+    unretained = true;
+  }
+
+
+  uint8_t busy_status = {};
+
+  nlohmann::json json_payload;
+  try {
+
+    if (unretained == false) {
+      json_payload = nlohmann::json::parse(std::string(message));
+
+      if (json_payload.find("value") == json_payload.end()) {
+        sl_log_debug(LOG_TAG, "ApplicationStatus::BusyStatus: Missing attribute element: 'value'\n");
+        return;
+      }
+// Start parsing value
+      uint32_t tmp = get_enum_decimal_value<ApplicationStatusBusyStatus>("value", json_payload);
+      if (tmp == numeric_limits<ApplicationStatusBusyStatus>::max()) {
+      #ifdef APPLICATION_STATUS_BUSY_STATUS_ENUM_NAME_AVAILABLE
+        tmp = application_status_busy_status_get_enum_value_number(json_payload.at("value").get<std::string>());
+      #elif defined(BUSY_STATUS_ENUM_NAME_AVAILABLE)
+        tmp = busy_status_get_enum_value_number(json_payload.at("value").get<std::string>());
+      #endif
+      }
+      busy_status = static_cast<uint8_t>(tmp);
+
+    // End parsing value
+    }
+
+  } catch (const std::exception& e) {
+    sl_log_debug(LOG_TAG, LOG_FMT_JSON_ERROR, "value", message);
+    return;
+  }
+
+  uic_mqtt_dotdot_application_status_attribute_busy_status_callback(
+    static_cast<dotdot_unid_t>(unid.c_str()),
+    endpoint,
+    unretained,
+    update_type,
+    busy_status
+  );
+
+}
+static void uic_mqtt_dotdot_on_application_status_wait_time_attribute_update(
+  const char *topic,
+  const char *message,
+  const size_t message_length) {
+  if (uic_mqtt_dotdot_application_status_attribute_wait_time_callback == nullptr) {
+    return;
+  }
+
+  std::string unid;
+  uint8_t endpoint = 0; // Default value for endpoint-less topics.
+  if(! uic_dotdot_mqtt::parse_topic(topic,unid,endpoint)) {
+    sl_log_debug(LOG_TAG,
+                "Error parsing UNID / Endpoint ID from topic %s. Ignoring",
+                topic);
+    return;
+  }
+
+  std::string last_item;
+  if (SL_STATUS_OK != uic_dotdot_mqtt::get_topic_last_item(topic,last_item)){
+    sl_log_debug(LOG_TAG,
+                "Error parsing last item from topic %s. Ignoring",
+                topic);
+    return;
+  }
+
+  uic_mqtt_dotdot_attribute_update_type_t update_type;
+  if (last_item == "Reported") {
+    update_type = UCL_REPORTED_UPDATED;
+  } else if (last_item == "Desired") {
+    update_type = UCL_DESIRED_UPDATED;
+  } else {
+    sl_log_debug(LOG_TAG,
+                "Unknown value type (neither Desired/Reported) for topic %s. Ignoring",
+                topic);
+    return;
+  }
+
+  // Empty message means unretained value.
+  bool unretained = false;
+  if (message_length == 0) {
+    unretained = true;
+  }
+
+
+  uint8_t wait_time = {};
+
+  nlohmann::json json_payload;
+  try {
+
+    if (unretained == false) {
+      json_payload = nlohmann::json::parse(std::string(message));
+
+      if (json_payload.find("value") == json_payload.end()) {
+        sl_log_debug(LOG_TAG, "ApplicationStatus::WaitTime: Missing attribute element: 'value'\n");
+        return;
+      }
+// Start parsing value
+      wait_time = json_payload.at("value").get<uint8_t>();
+    
+    // End parsing value
+    }
+
+  } catch (const std::exception& e) {
+    sl_log_debug(LOG_TAG, LOG_FMT_JSON_ERROR, "value", message);
+    return;
+  }
+
+  uic_mqtt_dotdot_application_status_attribute_wait_time_callback(
+    static_cast<dotdot_unid_t>(unid.c_str()),
+    endpoint,
+    unretained,
+    update_type,
+    wait_time
+  );
+
+}
+static void uic_mqtt_dotdot_on_application_status_reject_status_attribute_update(
+  const char *topic,
+  const char *message,
+  const size_t message_length) {
+  if (uic_mqtt_dotdot_application_status_attribute_reject_status_callback == nullptr) {
+    return;
+  }
+
+  std::string unid;
+  uint8_t endpoint = 0; // Default value for endpoint-less topics.
+  if(! uic_dotdot_mqtt::parse_topic(topic,unid,endpoint)) {
+    sl_log_debug(LOG_TAG,
+                "Error parsing UNID / Endpoint ID from topic %s. Ignoring",
+                topic);
+    return;
+  }
+
+  std::string last_item;
+  if (SL_STATUS_OK != uic_dotdot_mqtt::get_topic_last_item(topic,last_item)){
+    sl_log_debug(LOG_TAG,
+                "Error parsing last item from topic %s. Ignoring",
+                topic);
+    return;
+  }
+
+  uic_mqtt_dotdot_attribute_update_type_t update_type;
+  if (last_item == "Reported") {
+    update_type = UCL_REPORTED_UPDATED;
+  } else if (last_item == "Desired") {
+    update_type = UCL_DESIRED_UPDATED;
+  } else {
+    sl_log_debug(LOG_TAG,
+                "Unknown value type (neither Desired/Reported) for topic %s. Ignoring",
+                topic);
+    return;
+  }
+
+  // Empty message means unretained value.
+  bool unretained = false;
+  if (message_length == 0) {
+    unretained = true;
+  }
+
+
+  bool reject_status = {};
+
+  nlohmann::json json_payload;
+  try {
+
+    if (unretained == false) {
+      json_payload = nlohmann::json::parse(std::string(message));
+
+      if (json_payload.find("value") == json_payload.end()) {
+        sl_log_debug(LOG_TAG, "ApplicationStatus::RejectStatus: Missing attribute element: 'value'\n");
+        return;
+      }
+// Start parsing value
+      reject_status = get_bool_from_json(json_payload, "value");
+
+    // End parsing value
+    }
+
+  } catch (const std::exception& e) {
+    sl_log_debug(LOG_TAG, LOG_FMT_JSON_ERROR, "value", message);
+    return;
+  }
+
+  uic_mqtt_dotdot_application_status_attribute_reject_status_callback(
+    static_cast<dotdot_unid_t>(unid.c_str()),
+    endpoint,
+    unretained,
+    update_type,
+    reject_status
+  );
+
+}
+
+///////////////////////////////////////////////////////////////////////////////
+// Attribute init functions for ApplicationStatus
+///////////////////////////////////////////////////////////////////////////////
+sl_status_t uic_mqtt_dotdot_application_status_attributes_init()
+{
+  std::string base_topic = "ucl/by-unid/+/+/";
+
+  std::string subscription_topic;
+  if(uic_mqtt_dotdot_application_status_attribute_busy_status_callback) {
+    subscription_topic = base_topic + "ApplicationStatus/Attributes/BusyStatus/#";
+    uic_mqtt_subscribe(subscription_topic.c_str(), &uic_mqtt_dotdot_on_application_status_busy_status_attribute_update);
+  }
+  if(uic_mqtt_dotdot_application_status_attribute_wait_time_callback) {
+    subscription_topic = base_topic + "ApplicationStatus/Attributes/WaitTime/#";
+    uic_mqtt_subscribe(subscription_topic.c_str(), &uic_mqtt_dotdot_on_application_status_wait_time_attribute_update);
+  }
+  if(uic_mqtt_dotdot_application_status_attribute_reject_status_callback) {
+    subscription_topic = base_topic + "ApplicationStatus/Attributes/RejectStatus/#";
+    uic_mqtt_subscribe(subscription_topic.c_str(), &uic_mqtt_dotdot_on_application_status_reject_status_attribute_update);
+  }
+
+  return SL_STATUS_OK;
+}
+
+
+///////////////////////////////////////////////////////////////////////////////
+// Callback setters and getters for ApplicationStatus
+///////////////////////////////////////////////////////////////////////////////
+void uic_mqtt_dotdot_application_status_attribute_busy_status_callback_set(const uic_mqtt_dotdot_application_status_attribute_busy_status_callback_t callback)
+{
+  uic_mqtt_dotdot_application_status_attribute_busy_status_callback = callback;
+}
+void uic_mqtt_dotdot_application_status_attribute_wait_time_callback_set(const uic_mqtt_dotdot_application_status_attribute_wait_time_callback_t callback)
+{
+  uic_mqtt_dotdot_application_status_attribute_wait_time_callback = callback;
+}
+void uic_mqtt_dotdot_application_status_attribute_reject_status_callback_set(const uic_mqtt_dotdot_application_status_attribute_reject_status_callback_t callback)
+{
+  uic_mqtt_dotdot_application_status_attribute_reject_status_callback = callback;
+}
+
+// End of supported cluster.
+

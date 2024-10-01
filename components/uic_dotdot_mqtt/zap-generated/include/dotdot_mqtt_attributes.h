@@ -5173,6 +5173,28 @@ typedef sl_status_t (*uic_mqtt_dotdot_unify_humidity_control_attribute_auto_setp
   uic_mqtt_dotdot_attribute_update_type_t update_type,
   uint8_t auto_setpoint_precision
 );
+// Callback types used by the application_status cluster
+typedef sl_status_t (*uic_mqtt_dotdot_application_status_attribute_busy_status_callback_t)(
+  dotdot_unid_t unid,
+  dotdot_endpoint_id_t endpoint,
+  bool unretained,
+  uic_mqtt_dotdot_attribute_update_type_t update_type,
+  uint8_t busy_status
+);
+typedef sl_status_t (*uic_mqtt_dotdot_application_status_attribute_wait_time_callback_t)(
+  dotdot_unid_t unid,
+  dotdot_endpoint_id_t endpoint,
+  bool unretained,
+  uic_mqtt_dotdot_attribute_update_type_t update_type,
+  uint8_t wait_time
+);
+typedef sl_status_t (*uic_mqtt_dotdot_application_status_attribute_reject_status_callback_t)(
+  dotdot_unid_t unid,
+  dotdot_endpoint_id_t endpoint,
+  bool unretained,
+  uic_mqtt_dotdot_attribute_update_type_t update_type,
+  bool reject_status
+);
 
 #ifdef __cplusplus
 extern "C" {
@@ -9939,6 +9961,32 @@ void uic_mqtt_dotdot_unify_humidity_control_attribute_auto_setpoint_scale_callba
  * this callback will overwrite the previous set callback
  */
 void uic_mqtt_dotdot_unify_humidity_control_attribute_auto_setpoint_precision_callback_set(const uic_mqtt_dotdot_unify_humidity_control_attribute_auto_setpoint_precision_callback_t callback);
+
+
+/**
+ *  Initializes the attributes features for the ApplicationStatus cluster,
+ *  allowing to receive attribute updates from other UNIDs.
+ */
+sl_status_t uic_mqtt_dotdot_application_status_attributes_init();
+
+/**
+ * Setup callback to be called when a
+ * ApplicationStatus/Attributes/busy_status/# is received. Setting
+ * this callback will overwrite the previous set callback
+ */
+void uic_mqtt_dotdot_application_status_attribute_busy_status_callback_set(const uic_mqtt_dotdot_application_status_attribute_busy_status_callback_t callback);
+/**
+ * Setup callback to be called when a
+ * ApplicationStatus/Attributes/wait_time/# is received. Setting
+ * this callback will overwrite the previous set callback
+ */
+void uic_mqtt_dotdot_application_status_attribute_wait_time_callback_set(const uic_mqtt_dotdot_application_status_attribute_wait_time_callback_t callback);
+/**
+ * Setup callback to be called when a
+ * ApplicationStatus/Attributes/reject_status/# is received. Setting
+ * this callback will overwrite the previous set callback
+ */
+void uic_mqtt_dotdot_application_status_attribute_reject_status_callback_set(const uic_mqtt_dotdot_application_status_attribute_reject_status_callback_t callback);
 
 
 #ifdef __cplusplus

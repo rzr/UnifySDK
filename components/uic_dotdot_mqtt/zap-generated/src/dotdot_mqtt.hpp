@@ -371,6 +371,13 @@ sl_status_t uic_mqtt_dotdot_by_group_unify_thermostat_init();
  */
 sl_status_t uic_mqtt_dotdot_by_group_unify_humidity_control_init();
 
+/**
+ * @brief Initialize ApplicationStatus dotdot bygroup command handlers
+ *
+ * @returns SL_STATUS_OK on success, error otherwise.
+ */
+sl_status_t uic_mqtt_dotdot_by_group_application_status_init();
+
 
 
 // clang-format on
@@ -5110,6 +5117,27 @@ std::set<uic_mqtt_dotdot_unify_humidity_control_write_attributes_callback_t> & g
  */
 // clang-format off
 void uic_mqtt_dotdot_on_unify_humidity_control_WriteAttributes(
+  const char *topic,
+  const char *message,
+  const size_t message_length);
+
+
+// clang-format on
+
+/**
+ * @brief Retrieves the container with callback pointers for by-unid
+ * /Commands/WriteAttributes messages
+ *
+ * @returns std::set of callbacks.
+ */
+std::set<uic_mqtt_dotdot_application_status_write_attributes_callback_t> & get_uic_mqtt_dotdot_application_status_write_attributes_callback();
+
+/**
+ * @brief MQTT Subscribe handler for incoming publications on:
+ * ucl/by-unid/+/+/ApplicationStatus/Commands/WriteAttributes
+ */
+// clang-format off
+void uic_mqtt_dotdot_on_application_status_WriteAttributes(
   const char *topic,
   const char *message,
   const size_t message_length);

@@ -40803,6 +40803,221 @@ void uic_mqtt_dotdot_unify_humidity_control_publish_supported_commands(
 void uic_mqtt_dotdot_unify_humidity_control_publish_empty_supported_commands(
   const dotdot_unid_t unid
   ,dotdot_endpoint_id_t endpoint);
+// Callback types used by the application_status cluster
+
+typedef struct {
+  uint8_t busy_status;
+  uint8_t wait_time;
+  bool reject_status;
+} uic_mqtt_dotdot_application_status_state_t;
+
+typedef struct {
+  bool busy_status;
+  bool wait_time;
+  bool reject_status;
+} uic_mqtt_dotdot_application_status_updated_state_t;
+
+typedef sl_status_t (*uic_mqtt_dotdot_application_status_write_attributes_callback_t)(
+    const dotdot_unid_t unid,
+    const dotdot_endpoint_id_t endpoint,
+    uic_mqtt_dotdot_callback_call_type_t call_type,
+    uic_mqtt_dotdot_application_status_state_t,
+    uic_mqtt_dotdot_application_status_updated_state_t
+);
+
+typedef sl_status_t (*uic_mqtt_dotdot_application_status_force_read_attributes_callback_t)(
+    const dotdot_unid_t unid,
+    const dotdot_endpoint_id_t endpoint,
+    uic_mqtt_dotdot_callback_call_type_t call_type,
+    uic_mqtt_dotdot_application_status_updated_state_t
+);
+
+
+
+
+/**
+ * @brief Setup a callback for WriteAttribute to be called when a
+ * +/application_status/Commands/WriteAttributes is received.
+ *
+ * Setting this callback will not overwrite the previous set callback
+ * @param callback      Function to be called on command reception
+ */
+void uic_mqtt_dotdot_set_application_status_write_attributes_callback(
+  const uic_mqtt_dotdot_application_status_write_attributes_callback_t callback
+);
+/**
+ * @brief Unsets a callback for WriteAttribute to be called when a
+ * +/application_status/Commands/WriteAttributes is received.
+ * @param callback      Function to be no longer called on command reception
+ */
+void uic_mqtt_dotdot_unset_application_status_write_attributes_callback(
+  const uic_mqtt_dotdot_application_status_write_attributes_callback_t callback
+);
+/**
+ * @brief Clears all callbacks registered for when
+ * +/application_status/Commands/WriteAttributes is received.
+ */
+void uic_mqtt_dotdot_clear_application_status_write_attributes_callbacks();
+
+/**
+ * @brief Setup a callback for ForceReadAttributes to be called when a
+ * +/application_status/Commands/ForceReadAttributes is received.
+ *
+ * Setting this callback will not overwrite the previous set callback
+ * @param callback      Function to be called on command reception
+ */
+void uic_mqtt_dotdot_set_application_status_force_read_attributes_callback(
+  const uic_mqtt_dotdot_application_status_force_read_attributes_callback_t callback
+);
+/**
+ * @brief Unsets a callback for ForceReadAttributes to be called when a
+ * +/application_status/Commands/ForceReadAttributes is received.
+ *
+ * @param callback      Function to be no longer called on command reception
+ */
+void uic_mqtt_dotdot_unset_application_status_force_read_attributes_callback(
+  const uic_mqtt_dotdot_application_status_force_read_attributes_callback_t callback
+);
+/**
+ * @brief Clears all callbacks registered for when
+ * +/application_status/Commands/ForceReadAttributes is received.
+ */
+void uic_mqtt_dotdot_clear_application_status_force_read_attributes_callbacks();
+
+/**
+ * @brief Publish the attribute; ApplicationStatus/Attributes/BusyStatus
+ *
+ * @param base_topic    topic prefix to publish, /busy_status
+ *                      will be appended
+ * @param value         Value to publish
+ * @param publish_type  Whether to publish as Desired, Reported, or Both.
+ *
+ * @returns SL_STATUS_OK on success
+ */
+sl_status_t uic_mqtt_dotdot_application_status_busy_status_publish(
+  const char *base_topic,
+  uint8_t value,
+  uic_mqtt_dotdot_attribute_publish_type_t publish_type
+);
+
+/**
+ * @brief Unretains a published attribute; ApplicationStatus/Attributes/BusyStatus
+ *
+ * @param base_topic    topic prefix to publish, /busy_status
+ *                      will be appended
+ * @param publish_type  Whether to publish as Desired, Reported, or Both.
+ *
+ * @returns SL_STATUS_OK on success
+ */
+sl_status_t uic_mqtt_dotdot_application_status_busy_status_unretain(
+  const char *base_topic,
+  uic_mqtt_dotdot_attribute_publish_type_t publish_type
+);
+
+/**
+ * @brief Publish the attribute; ApplicationStatus/Attributes/WaitTime
+ *
+ * @param base_topic    topic prefix to publish, /wait_time
+ *                      will be appended
+ * @param value         Value to publish
+ * @param publish_type  Whether to publish as Desired, Reported, or Both.
+ *
+ * @returns SL_STATUS_OK on success
+ */
+sl_status_t uic_mqtt_dotdot_application_status_wait_time_publish(
+  const char *base_topic,
+  uint8_t value,
+  uic_mqtt_dotdot_attribute_publish_type_t publish_type
+);
+
+/**
+ * @brief Unretains a published attribute; ApplicationStatus/Attributes/WaitTime
+ *
+ * @param base_topic    topic prefix to publish, /wait_time
+ *                      will be appended
+ * @param publish_type  Whether to publish as Desired, Reported, or Both.
+ *
+ * @returns SL_STATUS_OK on success
+ */
+sl_status_t uic_mqtt_dotdot_application_status_wait_time_unretain(
+  const char *base_topic,
+  uic_mqtt_dotdot_attribute_publish_type_t publish_type
+);
+
+/**
+ * @brief Publish the attribute; ApplicationStatus/Attributes/RejectStatus
+ *
+ * @param base_topic    topic prefix to publish, /reject_status
+ *                      will be appended
+ * @param value         Value to publish
+ * @param publish_type  Whether to publish as Desired, Reported, or Both.
+ *
+ * @returns SL_STATUS_OK on success
+ */
+sl_status_t uic_mqtt_dotdot_application_status_reject_status_publish(
+  const char *base_topic,
+  bool value,
+  uic_mqtt_dotdot_attribute_publish_type_t publish_type
+);
+
+/**
+ * @brief Unretains a published attribute; ApplicationStatus/Attributes/RejectStatus
+ *
+ * @param base_topic    topic prefix to publish, /reject_status
+ *                      will be appended
+ * @param publish_type  Whether to publish as Desired, Reported, or Both.
+ *
+ * @returns SL_STATUS_OK on success
+ */
+sl_status_t uic_mqtt_dotdot_application_status_reject_status_unretain(
+  const char *base_topic,
+  uic_mqtt_dotdot_attribute_publish_type_t publish_type
+);
+
+
+/**
+ * @brief Publish the ApplicationStatus/ClusterRevision attribute
+ *
+ * @param base_topic    topic prefix to publish, /ApplicationStatus/Attributes/ClusterRevision
+ *                      will be appended.
+ * @param value         Value to publish.
+ */
+void uic_mqtt_dotdot_application_status_publish_cluster_revision(const char* base_topic, uint16_t value);
+
+/**
+ * @brief Unretain a publication to ApplicationStatus/ClusterRevision attribute
+ *
+ * @param base_topic    topic prefix to publish, /ApplicationStatus/Attributes/ClusterRevision
+ *                      will be appended.
+ */
+void uic_mqtt_dotdot_application_status_unretain_cluster_revision(const char* base_topic);
+
+/**
+ * @brief Publish the SupportedCommands for UNID/EndPoint for the ApplicationStatus Cluster
+ *
+ * This function will iterate over all Commands in the ApplicationStatus Cluster and
+ * call all registered callback functions with UNID/endpoint, and
+ * callback_type = UIC_MQTT_DOTDOT_CALLBACK_TYPE_SUPPORT_CHECK.
+ * All Cluster Command callback functions that return SL_STATUS_OK
+ * will be added to the list of supported commands and published.
+ *
+ * @param unid
+ * @param endpoint
+ */
+void uic_mqtt_dotdot_application_status_publish_supported_commands(
+  const dotdot_unid_t unid,
+  dotdot_endpoint_id_t endpoint);
+
+/**
+ * @brief Publish an empty array of SupportedCommands for UNID/EndPoint for
+ * the ApplicationStatus Cluster
+ *
+ * @param unid
+ * @param endpoint )
+ */
+void uic_mqtt_dotdot_application_status_publish_empty_supported_commands(
+  const dotdot_unid_t unid
+  ,dotdot_endpoint_id_t endpoint);
 
 /**
  * @brief Publish the SupportedCommands for UNID/EndPoint

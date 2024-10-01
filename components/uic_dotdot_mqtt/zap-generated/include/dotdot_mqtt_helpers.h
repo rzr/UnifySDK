@@ -55,6 +55,13 @@ char *aox_locator_reporting_mode_get_enum_value_name_c(
   uint32_t value, char *result, size_t max_result_size);
 /** Get aox_locator_reporting_mode enum representation from string. */
 uint32_t aox_locator_reporting_mode_get_enum_value_number_c(const char *str);
+#define APPLICATION_STATUS_BUSY_STATUS_ENUM_NAME_AVAILABLE 1
+
+/** Get application_status_busy_status string representation from enum. */
+char *application_status_busy_status_get_enum_value_name_c(
+  uint32_t value, char *result, size_t max_result_size);
+/** Get application_status_busy_status enum representation from string. */
+uint32_t application_status_busy_status_get_enum_value_number_c(const char *str);
 #define ARM_ARM_MODE_ENUM_NAME_AVAILABLE 1
 
 /** Get arm_arm_mode string representation from enum. */
