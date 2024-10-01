@@ -208,6 +208,45 @@ uint32_t aox_locator_reporting_mode_get_enum_value_number(const std::string &str
   return std::numeric_limits<uint32_t>::max();
 }
 
+// Enum to string map for ApplicationStatusBusyStatus
+const std::map<uint32_t, std::string> application_status_busy_status_enum_id_to_string_map {
+  { 0, "Try again later" },
+  { 1, "Try again in WaitTime seconds" },
+  { 2, "Request queued" },
+};
+
+// String to enum map for ApplicationStatusBusyStatus
+const std::map<std::string, uint32_t> application_status_busy_status_enum_string_to_id_map {
+  { "Try again later", 0 },
+  { "Try again in WaitTime seconds", 1 },
+  { "Request queued", 2 },
+};
+
+std::string application_status_busy_status_get_enum_value_name(
+  uint32_t value)
+{
+  auto it = application_status_busy_status_enum_id_to_string_map.find(value);
+  if (it != application_status_busy_status_enum_id_to_string_map.end()){
+    return it->second;
+  }
+
+  // No known name value is set for this field.
+  // Set it to a string version of the value.
+  return std::to_string(value);
+}
+
+uint32_t application_status_busy_status_get_enum_value_number(const std::string &str)
+{
+  auto it = application_status_busy_status_enum_string_to_id_map.find(str);
+  if (it != application_status_busy_status_enum_string_to_id_map.end()){
+    return it->second;
+  }
+
+  // No known numeric value is set for this string.
+  // Return UINT32_MAX to indicate an error.
+  return std::numeric_limits<uint32_t>::max();
+}
+
 // Enum to string map for ArmArmMode
 const std::map<uint32_t, std::string> arm_arm_mode_enum_id_to_string_map {
   { 0, "Disarm" },
@@ -10641,6 +10680,27 @@ std::string get_enum_value_name(
   #endif
   }
 
+  if (65442 == cluster_id) {
+  #ifdef APPLICATION_STATUS_BUSY_STATUS_ENUM_NAME_AVAILABLE
+    if (0 == attribute_id) {
+      // FIXME: Some attributes don't work because multi-upper case names end up like this: application_statusbusy_status instead of this: application_status_busy_status
+      return application_status_busy_status_get_enum_value_name(value);
+    }
+  #endif
+  #ifdef APPLICATION_STATUS_WAIT_TIME_ENUM_NAME_AVAILABLE
+    if (1 == attribute_id) {
+      // FIXME: Some attributes don't work because multi-upper case names end up like this: application_statuswait_time instead of this: application_status_wait_time
+      return application_status_wait_time_get_enum_value_name(value);
+    }
+  #endif
+  #ifdef APPLICATION_STATUS_REJECT_STATUS_ENUM_NAME_AVAILABLE
+    if (2 == attribute_id) {
+      // FIXME: Some attributes don't work because multi-upper case names end up like this: application_statusreject_status instead of this: application_status_reject_status
+      return application_status_reject_status_get_enum_value_name(value);
+    }
+  #endif
+  }
+
 
   std::string value_name;
   return value_name;
@@ -15214,6 +15274,27 @@ uint32_t get_enum_name_value(
   #endif
   }
 
+  if (65442 == cluster_id) {
+  #ifdef APPLICATION_STATUS_BUSY_STATUS_ENUM_NAME_AVAILABLE
+    if (0 == attribute_id) {
+      // FIXME: Some attributes don't work because multi-upper case names end up like this: application_statusbusy_status instead of this: application_status_busy_status
+      return application_status_busy_status_get_enum_value_number(name);
+    }
+  #endif
+  #ifdef APPLICATION_STATUS_WAIT_TIME_ENUM_NAME_AVAILABLE
+    if (1 == attribute_id) {
+      // FIXME: Some attributes don't work because multi-upper case names end up like this: application_statuswait_time instead of this: application_status_wait_time
+      return application_status_wait_time_get_enum_value_number(name);
+    }
+  #endif
+  #ifdef APPLICATION_STATUS_REJECT_STATUS_ENUM_NAME_AVAILABLE
+    if (2 == attribute_id) {
+      // FIXME: Some attributes don't work because multi-upper case names end up like this: application_statusreject_status instead of this: application_status_reject_status
+      return application_status_reject_status_get_enum_value_number(name);
+    }
+  #endif
+  }
+
 
   // No known numeric value is set for this string.
   // Return UINT32_MAX to indicate an error.
@@ -15265,6 +15346,17 @@ char *aox_locator_reporting_mode_get_enum_value_name_c(
 uint32_t aox_locator_reporting_mode_get_enum_value_number_c(const char *str)
 {
   return aox_locator_reporting_mode_get_enum_value_number(std::string(str));
+}
+char *application_status_busy_status_get_enum_value_name_c(
+  uint32_t value, char *result, size_t max_result_size)
+{
+  snprintf(result, max_result_size, "%s", application_status_busy_status_get_enum_value_name(value).c_str());
+  return result;
+}
+
+uint32_t application_status_busy_status_get_enum_value_number_c(const char *str)
+{
+  return application_status_busy_status_get_enum_value_number(std::string(str));
 }
 char *arm_arm_mode_get_enum_value_name_c(
   uint32_t value, char *result, size_t max_result_size)

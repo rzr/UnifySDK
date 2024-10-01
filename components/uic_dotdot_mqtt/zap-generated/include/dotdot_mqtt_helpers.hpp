@@ -98,6 +98,23 @@ std::string aox_locator_reporting_mode_get_enum_value_name(
  */
 uint32_t aox_locator_reporting_mode_get_enum_value_number(const std::string &str);
 
+#define APPLICATION_STATUS_BUSY_STATUS_ENUM_NAME_AVAILABLE 1
+
+/**
+ * @brief Finds the name of a field for the ApplicationStatusBusyStatus enum
+ *
+ * @returns A string representation of the value.
+ */
+std::string application_status_busy_status_get_enum_value_name(
+  uint32_t value);
+
+/**
+ * @brief Finds the enum number of a string representation for the ApplicationStatusBusyStatus enum
+ *
+ * @returns A number enum value.
+ */
+uint32_t application_status_busy_status_get_enum_value_number(const std::string &str);
+
 #define ARM_ARM_MODE_ENUM_NAME_AVAILABLE 1
 
 /**

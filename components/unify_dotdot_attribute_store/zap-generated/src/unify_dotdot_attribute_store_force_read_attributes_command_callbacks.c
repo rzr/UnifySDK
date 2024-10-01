@@ -4654,6 +4654,46 @@ static sl_status_t uic_mqtt_dotdot_unify_humidity_control_force_read_attributes_
   }
   return SL_STATUS_OK;
 }
+////////////////////////////////////////////////////////////////////////////////
+// Start of cluster ApplicationStatus
+////////////////////////////////////////////////////////////////////////////////
+static sl_status_t uic_mqtt_dotdot_application_status_force_read_attributes_callback (
+  const dotdot_unid_t unid,
+  dotdot_endpoint_id_t endpoint_id,
+  uic_mqtt_dotdot_callback_call_type_t call_type,
+  uic_mqtt_dotdot_application_status_updated_state_t attribute_list) {
+
+  if (false == is_force_read_attributes_enabled()){
+    return SL_STATUS_FAIL;
+  }
+
+  if (call_type == UIC_MQTT_DOTDOT_CALLBACK_TYPE_SUPPORT_CHECK) {
+    if (is_automatic_deduction_of_supported_commands_enabled()) {
+      return dotdot_is_any_application_status_attribute_supported(unid, endpoint_id) ?
+        SL_STATUS_OK : SL_STATUS_FAIL;
+    } else {
+      return SL_STATUS_FAIL;
+    }
+  }
+
+  // Go and undefine everything that needs to be read again:
+  if (true == attribute_list.busy_status) {
+    if (SL_STATUS_OK == dotdot_application_status_busy_status_undefine_reported(unid, endpoint_id)) {
+      sl_log_debug(LOG_TAG, "Undefined Reported value of ApplicationStatus::BusyStatus under %s - Endpoint %d", unid, endpoint_id);
+    }
+  }
+  if (true == attribute_list.wait_time) {
+    if (SL_STATUS_OK == dotdot_application_status_wait_time_undefine_reported(unid, endpoint_id)) {
+      sl_log_debug(LOG_TAG, "Undefined Reported value of ApplicationStatus::WaitTime under %s - Endpoint %d", unid, endpoint_id);
+    }
+  }
+  if (true == attribute_list.reject_status) {
+    if (SL_STATUS_OK == dotdot_application_status_reject_status_undefine_reported(unid, endpoint_id)) {
+      sl_log_debug(LOG_TAG, "Undefined Reported value of ApplicationStatus::RejectStatus under %s - Endpoint %d", unid, endpoint_id);
+    }
+  }
+  return SL_STATUS_OK;
+}
 // clang-format on
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -4769,6 +4809,8 @@ sl_status_t
   uic_mqtt_dotdot_set_unify_schedule_entry_lock_force_read_attributes_callback(&uic_mqtt_dotdot_unify_schedule_entry_lock_force_read_attributes_callback);
   
   uic_mqtt_dotdot_set_unify_humidity_control_force_read_attributes_callback(&uic_mqtt_dotdot_unify_humidity_control_force_read_attributes_callback);
+  
+  uic_mqtt_dotdot_set_application_status_force_read_attributes_callback(&uic_mqtt_dotdot_application_status_force_read_attributes_callback);
   
   // clang-format on
 

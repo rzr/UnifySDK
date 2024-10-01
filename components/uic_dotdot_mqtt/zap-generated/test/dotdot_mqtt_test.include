@@ -3947,6 +3947,7 @@ static void unset_all_callbacks()
   uic_mqtt_dotdot_unify_humidity_control_mode_set_callback_clear();
   uic_mqtt_dotdot_unify_humidity_control_setpoint_set_callback_clear();
   uic_mqtt_dotdot_clear_unify_humidity_control_write_attributes_callbacks();
+  uic_mqtt_dotdot_clear_application_status_write_attributes_callbacks();
 }
 
 static void reset_callback_counters()

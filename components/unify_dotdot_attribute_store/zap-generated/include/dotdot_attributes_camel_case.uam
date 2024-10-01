@@ -908,3 +908,8 @@ def zb_AutoSetpoint 0xfda00011
 def zb_AutoSetpointScale 0xfda00012
 def zb_AutoSetpointPrecision 0xfda00013
 
+// This represents short CamelCase labels the attributes in the DotDot ApplicationStatus cluster
+def zb_BusyStatus 0xffa20000
+def zb_WaitTime 0xffa20001
+def zb_RejectStatus 0xffa20002
+

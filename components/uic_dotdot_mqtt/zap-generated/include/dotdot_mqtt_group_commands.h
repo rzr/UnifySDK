@@ -3951,6 +3951,23 @@ void uic_mqtt_dotdot_by_group_unify_humidity_control_write_attributes_callback_s
 
 
 
+typedef void (*uic_mqtt_dotdot_by_group_application_status_write_attributes_callback_t)(
+    const dotdot_group_id_t group_id,
+    uic_mqtt_dotdot_application_status_state_t,
+    uic_mqtt_dotdot_application_status_updated_state_t
+);
+
+/**
+ * Setup a callback for WriteAttribute to be called when a
+ * ucl/by-group/+/application_status/Commands/WriteAttributes is received.
+ * Setting this callback will overwrite any previously set callback.
+ */
+void uic_mqtt_dotdot_by_group_application_status_write_attributes_callback_set(
+  const uic_mqtt_dotdot_by_group_application_status_write_attributes_callback_t callback
+);
+
+
+
 #ifdef __cplusplus
 }
 #endif // __cplusplus

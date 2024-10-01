@@ -844,4 +844,8 @@
 
   uic_mqtt_dotdot_unify_humidity_control_setpoint_set_callback_t get_uic_mqtt_dotdot_unify_humidity_control_setpoint_set_callback();
 
+
+  uic_mqtt_dotdot_application_status_force_read_attributes_callback_t get_uic_mqtt_dotdot_application_status_force_read_attributes_callback();
+  uic_mqtt_dotdot_application_status_write_attributes_callback_t get_uic_mqtt_dotdot_application_status_write_attributes_callback();
+
 #endif // UNIFY_DOTDOT_ATTRIBUTE_STORE_TEST_H
