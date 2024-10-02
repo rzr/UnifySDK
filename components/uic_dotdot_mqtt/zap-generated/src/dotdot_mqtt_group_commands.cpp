@@ -354,6 +354,9 @@ static uic_mqtt_dotdot_by_group_configuration_parameters_discover_parameter_rang
 static uic_mqtt_dotdot_by_group_configuration_parameters_write_attributes_callback_t uic_mqtt_dotdot_by_group_configuration_parameters_write_attributes_callback = nullptr;
 
 
+static uic_mqtt_dotdot_by_group_multilevel_sensor_write_attributes_callback_t uic_mqtt_dotdot_by_group_multilevel_sensor_write_attributes_callback = nullptr;
+
+
 static uic_mqtt_dotdot_by_group_descriptor_write_attributes_callback_t uic_mqtt_dotdot_by_group_descriptor_write_attributes_callback = nullptr;
 
 
@@ -1831,6 +1834,15 @@ void uic_mqtt_dotdot_by_group_configuration_parameters_write_attributes_callback
   const uic_mqtt_dotdot_by_group_configuration_parameters_write_attributes_callback_t callback)
 {
   uic_mqtt_dotdot_by_group_configuration_parameters_write_attributes_callback = callback;
+}
+
+
+
+// Callbacks setters
+void uic_mqtt_dotdot_by_group_multilevel_sensor_write_attributes_callback_set(
+  const uic_mqtt_dotdot_by_group_multilevel_sensor_write_attributes_callback_t callback)
+{
+  uic_mqtt_dotdot_by_group_multilevel_sensor_write_attributes_callback = callback;
 }
 
 
@@ -22908,6 +22920,91 @@ sl_status_t uic_mqtt_dotdot_by_group_configuration_parameters_init()
 
 
 
+static void uic_mqtt_dotdot_on_by_group_multilevel_sensor_WriteAttributes(
+  const char *topic,
+  const char *message,
+  const size_t message_length)
+{
+
+  if ((group_dispatch_callback == nullptr) && (uic_mqtt_dotdot_by_group_multilevel_sensor_write_attributes_callback == nullptr)) {
+    return;
+  }
+  if (message_length == 0) {
+    return;
+  }
+
+  dotdot_group_id_t group_id = 0U;
+  if(!uic_dotdot_mqtt::parse_topic_group_id(topic,group_id)) {
+    sl_log_debug(LOG_TAG,
+                "Failed to parse GroupId from topic %s. Ignoring",
+                topic);
+    return;
+  }
+
+  if ((group_dispatch_callback != nullptr) && (!get_uic_mqtt_dotdot_multilevel_sensor_write_attributes_callback().empty())) {
+    try {
+      group_dispatch_callback(group_id,
+                              "MultilevelSensor",
+                              "WriteAttributes",
+                              message,
+                              message_length,
+                              uic_mqtt_dotdot_on_multilevel_sensor_WriteAttributes);
+
+    } catch (...) {
+      sl_log_debug(LOG_TAG, "MultilevelSensor: Unable to parse JSON payload.\n");
+      return;
+    }
+  } else if (uic_mqtt_dotdot_by_group_multilevel_sensor_write_attributes_callback != nullptr) {
+
+    uic_mqtt_dotdot_multilevel_sensor_state_t new_state = {};
+    uic_mqtt_dotdot_multilevel_sensor_updated_state_t new_updated_state = {};
+    
+
+    nlohmann::json jsn;
+    try {
+      jsn = nlohmann::json::parse(std::string(message));
+
+      uic_mqtt_dotdot_parse_multilevel_sensor_write_attributes(
+        jsn,
+        new_state,
+        new_updated_state
+      );
+    } catch (const nlohmann::json::parse_error& e) {
+      // Catch JSON object field parsing errors
+      sl_log_debug(LOG_TAG, LOG_FMT_JSON_PARSE_FAIL, "MultilevelSensor", "WriteAttributes");
+      return;
+    } catch (const nlohmann::json::exception& e) {
+      // Catch JSON object field parsing errors
+      sl_log_debug(LOG_TAG, LOG_FMT_JSON_ERROR, "MultilevelSensor", "WriteAttributes", e.what());
+      return;
+    } catch (const std::exception& e) {
+      sl_log_debug(LOG_TAG, LOG_FMT_JSON_ERROR, "MultilevelSensor", "WriteAttributes", "");
+      return;
+    }
+
+    uic_mqtt_dotdot_by_group_multilevel_sensor_write_attributes_callback(
+      group_id,
+      new_state,
+      new_updated_state
+    );
+  }
+}
+
+sl_status_t uic_mqtt_dotdot_by_group_multilevel_sensor_init()
+{
+  std::string subscription_topic;
+  const std::string topic_bygroup = TOPIC_BY_GROUP_PREFIX;
+  if(uic_mqtt_dotdot_by_group_multilevel_sensor_write_attributes_callback) {
+    subscription_topic = topic_bygroup + "MultilevelSensor/Commands/WriteAttributes";
+    uic_mqtt_subscribe(subscription_topic.c_str(), uic_mqtt_dotdot_on_by_group_multilevel_sensor_WriteAttributes);
+  }
+
+  return SL_STATUS_OK;
+}
+
+
+
+
 static void uic_mqtt_dotdot_on_by_group_descriptor_WriteAttributes(
   const char *topic,
   const char *message,
@@ -23881,6 +23978,8 @@ void uic_mqtt_dotdot_set_group_dispatch_callback(group_dispatch_t callback)
     uic_mqtt_subscribe("ucl/by-group/+/ConfigurationParameters/Commands/DefaultResetAllParameters", uic_mqtt_dotdot_on_by_group_configuration_parameters_default_reset_all_parameters);
     uic_mqtt_subscribe("ucl/by-group/+/ConfigurationParameters/Commands/SetParameter", uic_mqtt_dotdot_on_by_group_configuration_parameters_set_parameter);
     uic_mqtt_subscribe("ucl/by-group/+/ConfigurationParameters/Commands/DiscoverParameterRange", uic_mqtt_dotdot_on_by_group_configuration_parameters_discover_parameter_range);
+
+    uic_mqtt_subscribe("ucl/by-group/+/MultilevelSensor/Commands/WriteAttributes", uic_mqtt_dotdot_on_by_group_multilevel_sensor_WriteAttributes);
 
     uic_mqtt_subscribe("ucl/by-group/+/Descriptor/Commands/WriteAttributes", uic_mqtt_dotdot_on_by_group_descriptor_WriteAttributes);
 

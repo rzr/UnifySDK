@@ -4978,6 +4978,21 @@ typedef sl_status_t (*uic_mqtt_dotdot_configuration_parameters_attribute_configu
   size_t configuration_parameters_count,
   const ConfigurationParameter* configuration_parameters
 );
+// Callback types used by the multilevel_sensor cluster
+typedef sl_status_t (*uic_mqtt_dotdot_multilevel_sensor_attribute_sensor_values_callback_t)(
+  dotdot_unid_t unid,
+  dotdot_endpoint_id_t endpoint,
+  bool unretained,
+  uic_mqtt_dotdot_attribute_update_type_t update_type,
+  SensorValue sensor_values
+);
+typedef sl_status_t (*uic_mqtt_dotdot_multilevel_sensor_attribute_sensor_type_callback_t)(
+  dotdot_unid_t unid,
+  dotdot_endpoint_id_t endpoint,
+  bool unretained,
+  uic_mqtt_dotdot_attribute_update_type_t update_type,
+  uint8_t sensor_type
+);
 // Callback types used by the protocol_controller_network_management cluster
 typedef sl_status_t (*uic_mqtt_dotdot_protocol_controller_network_management_attribute_network_management_state_callback_t)(
   dotdot_unid_t unid,
@@ -9737,6 +9752,26 @@ sl_status_t uic_mqtt_dotdot_configuration_parameters_attributes_init();
  * this callback will overwrite the previous set callback
  */
 void uic_mqtt_dotdot_configuration_parameters_attribute_configuration_parameters_callback_set(const uic_mqtt_dotdot_configuration_parameters_attribute_configuration_parameters_callback_t callback);
+
+
+/**
+ *  Initializes the attributes features for the MultilevelSensor cluster,
+ *  allowing to receive attribute updates from other UNIDs.
+ */
+sl_status_t uic_mqtt_dotdot_multilevel_sensor_attributes_init();
+
+/**
+ * Setup callback to be called when a
+ * MultilevelSensor/Attributes/sensor_values/# is received. Setting
+ * this callback will overwrite the previous set callback
+ */
+void uic_mqtt_dotdot_multilevel_sensor_attribute_sensor_values_callback_set(const uic_mqtt_dotdot_multilevel_sensor_attribute_sensor_values_callback_t callback);
+/**
+ * Setup callback to be called when a
+ * MultilevelSensor/Attributes/sensor_type/# is received. Setting
+ * this callback will overwrite the previous set callback
+ */
+void uic_mqtt_dotdot_multilevel_sensor_attribute_sensor_type_callback_set(const uic_mqtt_dotdot_multilevel_sensor_attribute_sensor_type_callback_t callback);
 
 
 /**

@@ -1947,6 +1947,19 @@ const char *uic_dotdot_get_attribute_name(dotdot_cluster_id_t cluster_id,
           return "Unknown";
       }
       // clang-format off
+    case DOTDOT_MULTILEVEL_SENSOR_CLUSTER_ID:
+      // clang-format on
+      switch (attribute_id) {
+        // clang-format off
+        case DOTDOT_MULTILEVEL_SENSOR_SENSOR_VALUES_ATTRIBUTE_ID:
+          return "SensorValues";
+        case DOTDOT_MULTILEVEL_SENSOR_SENSOR_TYPE_ATTRIBUTE_ID:
+          return "SensorType";
+          // clang-format on
+        default:
+          return "Unknown";
+      }
+      // clang-format off
     case DOTDOT_AOX_LOCATOR_CLUSTER_ID:
       // clang-format on
       switch (attribute_id) {
@@ -4415,6 +4428,14 @@ dotdot_attribute_id_t
         return DOTDOT_CONFIGURATION_PARAMETERS_CONFIGURATION_PARAMETERS_ATTRIBUTE_ID;
       }
     break;
+    case DOTDOT_MULTILEVEL_SENSOR_CLUSTER_ID:
+      if (strcmp ("SensorValues", attribute_name) == 0) {
+        return DOTDOT_MULTILEVEL_SENSOR_SENSOR_VALUES_ATTRIBUTE_ID;
+      }
+      if (strcmp ("SensorType", attribute_name) == 0) {
+        return DOTDOT_MULTILEVEL_SENSOR_SENSOR_TYPE_ATTRIBUTE_ID;
+      }
+    break;
     case DOTDOT_AOX_LOCATOR_CLUSTER_ID:
       if (strcmp ("ReportingMode", attribute_name) == 0) {
         return DOTDOT_AOX_LOCATOR_REPORTING_MODE_ATTRIBUTE_ID;
@@ -6506,6 +6527,19 @@ dotdot_attribute_json_type_t
           return JSON_TYPE_UNKNOWN;
       }
       // clang-format off
+    case DOTDOT_MULTILEVEL_SENSOR_CLUSTER_ID:
+      // clang-format on
+      switch (attribute_id) {
+        // clang-format off
+        case DOTDOT_MULTILEVEL_SENSOR_SENSOR_VALUES_ATTRIBUTE_ID:
+          return JSON_TYPE_OBJECT;
+        case DOTDOT_MULTILEVEL_SENSOR_SENSOR_TYPE_ATTRIBUTE_ID:
+          return JSON_TYPE_NUMBER;
+                  // clang-format on
+        default:
+          return JSON_TYPE_UNKNOWN;
+      }
+      // clang-format off
     case DOTDOT_AOX_LOCATOR_CLUSTER_ID:
       // clang-format on
       switch (attribute_id) {
@@ -6980,6 +7014,12 @@ bool uic_dotdot_attribute_is_enum(dotdot_cluster_id_t cluster_id,
   }
 
   if (64775 == cluster_id) {
+  }
+
+  if (64777 == cluster_id) {
+    if (1 == attribute_id) {
+      return true;
+    }
   }
 
   if (64786 == cluster_id) {

@@ -344,6 +344,13 @@ sl_status_t uic_mqtt_dotdot_by_group_name_and_location_init();
 sl_status_t uic_mqtt_dotdot_by_group_configuration_parameters_init();
 
 /**
+ * @brief Initialize MultilevelSensor dotdot bygroup command handlers
+ *
+ * @returns SL_STATUS_OK on success, error otherwise.
+ */
+sl_status_t uic_mqtt_dotdot_by_group_multilevel_sensor_init();
+
+/**
  * @brief Initialize Descriptor dotdot bygroup command handlers
  *
  * @returns SL_STATUS_OK on success, error otherwise.
@@ -4910,6 +4917,27 @@ std::set<uic_mqtt_dotdot_configuration_parameters_write_attributes_callback_t> &
  */
 // clang-format off
 void uic_mqtt_dotdot_on_configuration_parameters_WriteAttributes(
+  const char *topic,
+  const char *message,
+  const size_t message_length);
+
+
+// clang-format on
+
+/**
+ * @brief Retrieves the container with callback pointers for by-unid
+ * /Commands/WriteAttributes messages
+ *
+ * @returns std::set of callbacks.
+ */
+std::set<uic_mqtt_dotdot_multilevel_sensor_write_attributes_callback_t> & get_uic_mqtt_dotdot_multilevel_sensor_write_attributes_callback();
+
+/**
+ * @brief MQTT Subscribe handler for incoming publications on:
+ * ucl/by-unid/+/+/MultilevelSensor/Commands/WriteAttributes
+ */
+// clang-format off
+void uic_mqtt_dotdot_on_multilevel_sensor_WriteAttributes(
   const char *topic,
   const char *message,
   const size_t message_length);

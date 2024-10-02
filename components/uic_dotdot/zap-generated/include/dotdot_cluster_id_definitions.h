@@ -238,6 +238,10 @@
 #define DOTDOT_CONFIGURATION_PARAMETERS_CLUSTER_ID ((dotdot_cluster_id_t)0xFD07)
 
 
+// Definitions for cluster: MultilevelSensor
+#define DOTDOT_MULTILEVEL_SENSOR_CLUSTER_ID ((dotdot_cluster_id_t)0xFD09)
+
+
 // Definitions for cluster: AoXLocator
 #define DOTDOT_AOX_LOCATOR_CLUSTER_ID ((dotdot_cluster_id_t)0xFD10)
 

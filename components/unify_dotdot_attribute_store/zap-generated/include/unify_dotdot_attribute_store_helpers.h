@@ -75294,6 +75294,246 @@ bool dotdot_is_any_configuration_parameters_writable_attribute_supported(
   const dotdot_endpoint_id_t endpoint_id);
 
 ////////////////////////////////////////////////////////////////////////////////
+// Start of cluster MultilevelSensor
+////////////////////////////////////////////////////////////////////////////////
+// MultilevelSensor SensorValues
+/**
+ * @brief Verifies if the DotDot MultilevelSensor - SensorValues is supported
+ * under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ *
+ * @returns true if SensorValues is supported
+ * @returns false if SensorValues is not supported
+ */
+bool dotdot_is_supported_multilevel_sensor_sensor_values (
+              const dotdot_unid_t unid, const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Gets the DotDot MultilevelSensor - SensorValues attribute value under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @param value_state   value state to get,
+ *                      see \ref attribute_store_get_node_attribute_value
+ * 
+ *
+ * @returns SensorValues attribute
+ */
+SensorValue dotdot_get_multilevel_sensor_sensor_values(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id,
+  attribute_store_node_value_state_t value_state);
+
+/**
+ * @brief Set the DotDot MultilevelSensor - SensorValues attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @param value_state   value state to write for the node,
+ *                      see \ref attribute_store_set_node_attribute_value
+ * 
+ * @param new_sensor_values new value to set
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_set_multilevel_sensor_sensor_values(
+  const dotdot_unid_t unid,
+  dotdot_endpoint_id_t endpoint_id,
+  attribute_store_node_value_state_t value_state,
+  SensorValue new_sensor_values
+  );
+
+/**
+ * @brief Undefines the Reported value of the the DotDot MultilevelSensor - SensorValues
+ * attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_multilevel_sensor_sensor_values_undefine_reported(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Undefines the Desired value of the DotDot
+ * MultilevelSensor - SensorValues attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_multilevel_sensor_sensor_values_undefine_desired(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Checks if the reported value is defined for the DotDot
+ * MultilevelSensor - SensorValues attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns true if defined, false is undefined or non-existent
+ */
+bool dotdot_multilevel_sensor_sensor_values_is_reported_defined(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Checks if the desired value is defined for the DotDot
+ * MultilevelSensor - SensorValues attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns true if defined, false is undefined or non-existent
+ */
+bool dotdot_multilevel_sensor_sensor_values_is_desired_defined(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Creates a DotDot MultilevelSensor - SensorValues attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_create_multilevel_sensor_sensor_values(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+// MultilevelSensor SensorType
+/**
+ * @brief Verifies if the DotDot MultilevelSensor - SensorType is supported
+ * under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ *
+ * @returns true if SensorType is supported
+ * @returns false if SensorType is not supported
+ */
+bool dotdot_is_supported_multilevel_sensor_sensor_type (
+              const dotdot_unid_t unid, const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Gets the DotDot MultilevelSensor - SensorType attribute value under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @param value_state   value state to get,
+ *                      see \ref attribute_store_get_node_attribute_value
+ * 
+ *
+ * @returns SensorType attribute
+ */
+uint8_t dotdot_get_multilevel_sensor_sensor_type(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id,
+  attribute_store_node_value_state_t value_state);
+
+/**
+ * @brief Set the DotDot MultilevelSensor - SensorType attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @param value_state   value state to write for the node,
+ *                      see \ref attribute_store_set_node_attribute_value
+ * 
+ * @param new_sensor_type new value to set
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_set_multilevel_sensor_sensor_type(
+  const dotdot_unid_t unid,
+  dotdot_endpoint_id_t endpoint_id,
+  attribute_store_node_value_state_t value_state,
+  uint8_t new_sensor_type
+  );
+
+/**
+ * @brief Undefines the Reported value of the the DotDot MultilevelSensor - SensorType
+ * attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_multilevel_sensor_sensor_type_undefine_reported(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Undefines the Desired value of the DotDot
+ * MultilevelSensor - SensorType attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_multilevel_sensor_sensor_type_undefine_desired(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Checks if the reported value is defined for the DotDot
+ * MultilevelSensor - SensorType attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns true if defined, false is undefined or non-existent
+ */
+bool dotdot_multilevel_sensor_sensor_type_is_reported_defined(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Checks if the desired value is defined for the DotDot
+ * MultilevelSensor - SensorType attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns true if defined, false is undefined or non-existent
+ */
+bool dotdot_multilevel_sensor_sensor_type_is_desired_defined(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Creates a DotDot MultilevelSensor - SensorType attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_create_multilevel_sensor_sensor_type(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Checks if a UNID/Endpoint supports any attribute for the MultilevelSensor
+ * Cluster
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns true if at least 1 attribute in the Attribute Store, false otherwise
+ */
+bool dotdot_is_any_multilevel_sensor_attribute_supported(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Checks if a UNID/Endpoint supports any writable attribute for the
+ * MultilevelSensor Cluster
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns true if at least 1 writable attribute in the Attribute Store, false otherwise
+ */
+bool dotdot_is_any_multilevel_sensor_writable_attribute_supported(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+////////////////////////////////////////////////////////////////////////////////
 // Start of cluster ProtocolController-NetworkManagement
 ////////////////////////////////////////////////////////////////////////////////
 // ProtocolController-NetworkManagement NetworkManagementState

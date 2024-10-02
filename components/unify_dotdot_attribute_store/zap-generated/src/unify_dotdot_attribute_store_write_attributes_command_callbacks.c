@@ -2398,6 +2398,36 @@ static sl_status_t configuration_parameters_cluster_write_attributes_callback(
   return SL_STATUS_OK;
 }
 ////////////////////////////////////////////////////////////////////////////////
+// Start of cluster MultilevelSensor
+////////////////////////////////////////////////////////////////////////////////
+// WriteAttribute Callbacks multilevel_sensor
+static sl_status_t multilevel_sensor_cluster_write_attributes_callback(
+  const dotdot_unid_t unid,
+  dotdot_endpoint_id_t endpoint_id,
+  uic_mqtt_dotdot_callback_call_type_t call_type,
+  uic_mqtt_dotdot_multilevel_sensor_state_t attributes,
+  uic_mqtt_dotdot_multilevel_sensor_updated_state_t updated_attributes)
+{
+  if (false == is_write_attributes_enabled()) {
+    return SL_STATUS_FAIL;
+  }
+
+  if (call_type == UIC_MQTT_DOTDOT_CALLBACK_TYPE_SUPPORT_CHECK) {
+    if (is_automatic_deduction_of_supported_commands_enabled()) {
+      return dotdot_is_any_multilevel_sensor_writable_attribute_supported(unid, endpoint_id) ?
+        SL_STATUS_OK : SL_STATUS_FAIL;
+    } else {
+      return SL_STATUS_FAIL;
+    }
+  }
+
+  sl_log_debug(LOG_TAG,
+               "multilevel_sensor: Incoming WriteAttributes command for %s, endpoint %d.\n",
+               unid,
+               endpoint_id);
+  return SL_STATUS_OK;
+}
+////////////////////////////////////////////////////////////////////////////////
 // Start of cluster ProtocolController-NetworkManagement
 ////////////////////////////////////////////////////////////////////////////////
 // WriteAttribute Callbacks protocol_controller_network_management
@@ -2709,6 +2739,9 @@ sl_status_t
   
   uic_mqtt_dotdot_set_configuration_parameters_write_attributes_callback(
     &configuration_parameters_cluster_write_attributes_callback);
+  
+  uic_mqtt_dotdot_set_multilevel_sensor_write_attributes_callback(
+    &multilevel_sensor_cluster_write_attributes_callback);
   
   uic_mqtt_dotdot_set_protocol_controller_network_management_write_attributes_callback(
     &protocol_controller_network_management_cluster_write_attributes_callback);

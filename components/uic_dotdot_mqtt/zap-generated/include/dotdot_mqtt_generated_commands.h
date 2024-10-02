@@ -4838,6 +4838,28 @@ void uic_mqtt_dotdot_configuration_parameters_publish_generated_write_attributes
   uic_mqtt_dotdot_configuration_parameters_updated_state_t attribute_list
 );
 
+
+/**
+ * @brief Publishes an incoming/generated WriteAttributes command for
+ * the MultilevelSensor cluster.
+ *
+ * Publication will be made at the following topic
+ * ucl/by-unid/UNID/epID/MultilevelSensor/GeneratedCommands/WriteAttributes
+ *
+ * @param unid      The UNID of the node that sent us the command.
+ * 
+ * @param endpoint  The Endpoint ID of the node that sent us the command.
+ * 
+ * @param attribute_values  Values to assign to the attributes
+ * @param attribute_list    List of attributes that are written
+ */
+void uic_mqtt_dotdot_multilevel_sensor_publish_generated_write_attributes_command(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint,
+  uic_mqtt_dotdot_multilevel_sensor_state_t attribute_values,
+  uic_mqtt_dotdot_multilevel_sensor_updated_state_t attribute_list
+);
+
 /**
  * @brief Publishes an incoming/generated Write command for
  * the ProtocolController-NetworkManagement cluster.

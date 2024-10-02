@@ -834,6 +834,10 @@ def zb_Location 0xfd060001
 // This represents short CamelCase labels the attributes in the DotDot ConfigurationParameters cluster
 def zb_ConfigurationParameters 0xfd070000
 
+// This represents short CamelCase labels the attributes in the DotDot MultilevelSensor cluster
+def zb_SensorValues 0xfd090000
+def zb_SensorType 0xfd090001
+
 // This represents short CamelCase labels the attributes in the DotDot AoXLocator cluster
 def zb_ReportingMode 0xfd100001
 def zb_PositionAndOrientationValid 0xfd100002

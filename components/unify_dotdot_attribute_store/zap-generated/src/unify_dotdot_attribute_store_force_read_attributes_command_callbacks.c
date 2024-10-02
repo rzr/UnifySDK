@@ -4325,6 +4325,41 @@ static sl_status_t uic_mqtt_dotdot_configuration_parameters_force_read_attribute
   return SL_STATUS_OK;
 }
 ////////////////////////////////////////////////////////////////////////////////
+// Start of cluster MultilevelSensor
+////////////////////////////////////////////////////////////////////////////////
+static sl_status_t uic_mqtt_dotdot_multilevel_sensor_force_read_attributes_callback (
+  const dotdot_unid_t unid,
+  dotdot_endpoint_id_t endpoint_id,
+  uic_mqtt_dotdot_callback_call_type_t call_type,
+  uic_mqtt_dotdot_multilevel_sensor_updated_state_t attribute_list) {
+
+  if (false == is_force_read_attributes_enabled()){
+    return SL_STATUS_FAIL;
+  }
+
+  if (call_type == UIC_MQTT_DOTDOT_CALLBACK_TYPE_SUPPORT_CHECK) {
+    if (is_automatic_deduction_of_supported_commands_enabled()) {
+      return dotdot_is_any_multilevel_sensor_attribute_supported(unid, endpoint_id) ?
+        SL_STATUS_OK : SL_STATUS_FAIL;
+    } else {
+      return SL_STATUS_FAIL;
+    }
+  }
+
+  // Go and undefine everything that needs to be read again:
+  if (true == attribute_list.sensor_values) {
+    if (SL_STATUS_OK == dotdot_multilevel_sensor_sensor_values_undefine_reported(unid, endpoint_id)) {
+      sl_log_debug(LOG_TAG, "Undefined Reported value of MultilevelSensor::SensorValues under %s - Endpoint %d", unid, endpoint_id);
+    }
+  }
+  if (true == attribute_list.sensor_type) {
+    if (SL_STATUS_OK == dotdot_multilevel_sensor_sensor_type_undefine_reported(unid, endpoint_id)) {
+      sl_log_debug(LOG_TAG, "Undefined Reported value of MultilevelSensor::SensorType under %s - Endpoint %d", unid, endpoint_id);
+    }
+  }
+  return SL_STATUS_OK;
+}
+////////////////////////////////////////////////////////////////////////////////
 // Start of cluster Descriptor
 ////////////////////////////////////////////////////////////////////////////////
 static sl_status_t uic_mqtt_dotdot_descriptor_force_read_attributes_callback (
@@ -4656,6 +4691,8 @@ sl_status_t
   uic_mqtt_dotdot_set_name_and_location_force_read_attributes_callback(&uic_mqtt_dotdot_name_and_location_force_read_attributes_callback);
   
   uic_mqtt_dotdot_set_configuration_parameters_force_read_attributes_callback(&uic_mqtt_dotdot_configuration_parameters_force_read_attributes_callback);
+  
+  uic_mqtt_dotdot_set_multilevel_sensor_force_read_attributes_callback(&uic_mqtt_dotdot_multilevel_sensor_force_read_attributes_callback);
   
 
   uic_mqtt_dotdot_set_descriptor_force_read_attributes_callback(&uic_mqtt_dotdot_descriptor_force_read_attributes_callback);

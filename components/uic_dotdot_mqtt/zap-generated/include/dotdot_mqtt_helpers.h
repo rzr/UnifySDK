@@ -538,6 +538,13 @@ char *move_step_mode_get_enum_value_name_c(
   uint32_t value, char *result, size_t max_result_size);
 /** Get move_step_mode enum representation from string. */
 uint32_t move_step_mode_get_enum_value_number_c(const char *str);
+#define MULTILEVEL_SENSOR_SENSOR_TYPE_ENUM_NAME_AVAILABLE 1
+
+/** Get multilevel_sensor_sensor_type string representation from enum. */
+char *multilevel_sensor_sensor_type_get_enum_value_name_c(
+  uint32_t value, char *result, size_t max_result_size);
+/** Get multilevel_sensor_sensor_type enum representation from string. */
+uint32_t multilevel_sensor_sensor_type_get_enum_value_number_c(const char *str);
 #define NM_STATE_ENUM_NAME_AVAILABLE 1
 
 /** Get nm_state string representation from enum. */

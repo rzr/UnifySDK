@@ -81054,6 +81054,255 @@ bool dotdot_is_any_configuration_parameters_writable_attribute_supported(
   return false;
 }
 ////////////////////////////////////////////////////////////////////////////////
+// Start of cluster MultilevelSensor
+////////////////////////////////////////////////////////////////////////////////
+bool dotdot_is_supported_multilevel_sensor_sensor_values(
+  const dotdot_unid_t unid, const dotdot_endpoint_id_t endpoint_id)
+{
+  attribute_store_node_t endpoint_node = unify_dotdot_attributes_get_endpoint_node()(unid, endpoint_id);
+  attribute_store_node_t node
+    = attribute_store_get_first_child_by_type(
+      endpoint_node,
+      DOTDOT_ATTRIBUTE_ID_MULTILEVEL_SENSOR_SENSOR_VALUES);
+  return attribute_store_node_exists(node);
+}
+
+SensorValue dotdot_get_multilevel_sensor_sensor_values(
+  const dotdot_unid_t unid,
+  dotdot_endpoint_id_t endpoint_id,
+  attribute_store_node_value_state_t value_state)
+{
+  attribute_store_node_t endpoint_node = unify_dotdot_attributes_get_endpoint_node()(unid, endpoint_id);
+  attribute_store_node_t node
+    = attribute_store_get_first_child_by_type(
+      endpoint_node,
+      DOTDOT_ATTRIBUTE_ID_MULTILEVEL_SENSOR_SENSOR_VALUES);
+
+  SensorValue result = {};
+  attribute_store_read_value(node,
+                             value_state,
+                             (uint8_t *)&result,
+                             sizeof(result));
+  return result;
+}
+
+sl_status_t dotdot_set_multilevel_sensor_sensor_values(
+  const dotdot_unid_t unid,
+  dotdot_endpoint_id_t endpoint_id,
+  attribute_store_node_value_state_t value_state,
+  SensorValue new_sensor_values
+  )
+{
+  attribute_store_node_t endpoint_node = unify_dotdot_attributes_get_endpoint_node()(unid, endpoint_id);
+
+  attribute_store_node_t node
+    = attribute_store_get_first_child_by_type(
+      endpoint_node,
+      DOTDOT_ATTRIBUTE_ID_MULTILEVEL_SENSOR_SENSOR_VALUES);
+
+  // Skip attribute SensorValues because it is a struct,
+  // we typically don't save them as structs in the attribute store.
+  sl_log_error(LOG_TAG, "Error, skipping to change the desired value of SensorValues, Attribute %d, "
+                        "because it is a complicated type (struct: SensorValue). "
+                        "Please change the code to do this manually.", node);
+  return SL_STATUS_FAIL;
+}
+
+sl_status_t dotdot_multilevel_sensor_sensor_values_undefine_reported(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id) {
+  attribute_store_node_t endpoint_node = unify_dotdot_attributes_get_endpoint_node()(unid, endpoint_id);
+  attribute_store_node_t node
+    = attribute_store_get_first_child_by_type(
+      endpoint_node,
+      DOTDOT_ATTRIBUTE_ID_MULTILEVEL_SENSOR_SENSOR_VALUES);
+  attribute_store_undefine_reported(node);
+  return (node != ATTRIBUTE_STORE_INVALID_NODE) ? SL_STATUS_OK : SL_STATUS_FAIL;
+}
+
+sl_status_t dotdot_multilevel_sensor_sensor_values_undefine_desired(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id) {
+
+  attribute_store_node_t endpoint_node = unify_dotdot_attributes_get_endpoint_node()(unid, endpoint_id);
+  attribute_store_node_t node
+    = attribute_store_get_first_child_by_type(
+      endpoint_node,
+      DOTDOT_ATTRIBUTE_ID_MULTILEVEL_SENSOR_SENSOR_VALUES);
+  attribute_store_undefine_desired(node);
+  return (node != ATTRIBUTE_STORE_INVALID_NODE) ? SL_STATUS_OK : SL_STATUS_FAIL;
+}
+
+
+bool dotdot_multilevel_sensor_sensor_values_is_reported_defined(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id)
+{
+  attribute_store_node_t endpoint_node = unify_dotdot_attributes_get_endpoint_node()(unid, endpoint_id);
+  attribute_store_node_t node
+    = attribute_store_get_first_child_by_type(
+      endpoint_node,
+      DOTDOT_ATTRIBUTE_ID_MULTILEVEL_SENSOR_SENSOR_VALUES);
+  return attribute_store_is_reported_defined(node);
+}
+
+bool dotdot_multilevel_sensor_sensor_values_is_desired_defined(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id)
+{
+  attribute_store_node_t endpoint_node = unify_dotdot_attributes_get_endpoint_node()(unid, endpoint_id);
+  attribute_store_node_t node
+    = attribute_store_get_first_child_by_type(
+      endpoint_node,
+      DOTDOT_ATTRIBUTE_ID_MULTILEVEL_SENSOR_SENSOR_VALUES);
+  return attribute_store_is_desired_defined(node);
+}
+
+sl_status_t dotdot_create_multilevel_sensor_sensor_values(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id) {
+
+  attribute_store_node_t endpoint_node = unify_dotdot_attributes_get_endpoint_node()(unid, endpoint_id);
+  attribute_store_node_t node =
+    attribute_store_create_child_if_missing(endpoint_node,
+                                           DOTDOT_ATTRIBUTE_ID_MULTILEVEL_SENSOR_SENSOR_VALUES);
+
+  return (node != ATTRIBUTE_STORE_INVALID_NODE) ? SL_STATUS_OK : SL_STATUS_FAIL;
+}
+bool dotdot_is_supported_multilevel_sensor_sensor_type(
+  const dotdot_unid_t unid, const dotdot_endpoint_id_t endpoint_id)
+{
+  attribute_store_node_t endpoint_node = unify_dotdot_attributes_get_endpoint_node()(unid, endpoint_id);
+  attribute_store_node_t node
+    = attribute_store_get_first_child_by_type(
+      endpoint_node,
+      DOTDOT_ATTRIBUTE_ID_MULTILEVEL_SENSOR_SENSOR_TYPE);
+  return attribute_store_node_exists(node);
+}
+
+uint8_t dotdot_get_multilevel_sensor_sensor_type(
+  const dotdot_unid_t unid,
+  dotdot_endpoint_id_t endpoint_id,
+  attribute_store_node_value_state_t value_state)
+{
+  attribute_store_node_t endpoint_node = unify_dotdot_attributes_get_endpoint_node()(unid, endpoint_id);
+  attribute_store_node_t node
+    = attribute_store_get_first_child_by_type(
+      endpoint_node,
+      DOTDOT_ATTRIBUTE_ID_MULTILEVEL_SENSOR_SENSOR_TYPE);
+
+  uint8_t result = {};
+  attribute_store_read_value(node,
+                             value_state,
+                             (uint8_t *)&result,
+                             sizeof(result));
+  return result;
+}
+
+sl_status_t dotdot_set_multilevel_sensor_sensor_type(
+  const dotdot_unid_t unid,
+  dotdot_endpoint_id_t endpoint_id,
+  attribute_store_node_value_state_t value_state,
+  uint8_t new_sensor_type
+  )
+{
+  attribute_store_node_t endpoint_node = unify_dotdot_attributes_get_endpoint_node()(unid, endpoint_id);
+
+  attribute_store_node_t node
+    = attribute_store_get_first_child_by_type(
+      endpoint_node,
+      DOTDOT_ATTRIBUTE_ID_MULTILEVEL_SENSOR_SENSOR_TYPE);
+
+  return attribute_store_set_node_attribute_value(node,
+                                                  value_state,
+                                                  (uint8_t *)&new_sensor_type,
+                                                  sizeof(uint8_t));
+  }
+
+sl_status_t dotdot_multilevel_sensor_sensor_type_undefine_reported(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id) {
+  attribute_store_node_t endpoint_node = unify_dotdot_attributes_get_endpoint_node()(unid, endpoint_id);
+  attribute_store_node_t node
+    = attribute_store_get_first_child_by_type(
+      endpoint_node,
+      DOTDOT_ATTRIBUTE_ID_MULTILEVEL_SENSOR_SENSOR_TYPE);
+  attribute_store_undefine_reported(node);
+  return (node != ATTRIBUTE_STORE_INVALID_NODE) ? SL_STATUS_OK : SL_STATUS_FAIL;
+}
+
+sl_status_t dotdot_multilevel_sensor_sensor_type_undefine_desired(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id) {
+
+  attribute_store_node_t endpoint_node = unify_dotdot_attributes_get_endpoint_node()(unid, endpoint_id);
+  attribute_store_node_t node
+    = attribute_store_get_first_child_by_type(
+      endpoint_node,
+      DOTDOT_ATTRIBUTE_ID_MULTILEVEL_SENSOR_SENSOR_TYPE);
+  attribute_store_undefine_desired(node);
+  return (node != ATTRIBUTE_STORE_INVALID_NODE) ? SL_STATUS_OK : SL_STATUS_FAIL;
+}
+
+
+bool dotdot_multilevel_sensor_sensor_type_is_reported_defined(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id)
+{
+  attribute_store_node_t endpoint_node = unify_dotdot_attributes_get_endpoint_node()(unid, endpoint_id);
+  attribute_store_node_t node
+    = attribute_store_get_first_child_by_type(
+      endpoint_node,
+      DOTDOT_ATTRIBUTE_ID_MULTILEVEL_SENSOR_SENSOR_TYPE);
+  return attribute_store_is_reported_defined(node);
+}
+
+bool dotdot_multilevel_sensor_sensor_type_is_desired_defined(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id)
+{
+  attribute_store_node_t endpoint_node = unify_dotdot_attributes_get_endpoint_node()(unid, endpoint_id);
+  attribute_store_node_t node
+    = attribute_store_get_first_child_by_type(
+      endpoint_node,
+      DOTDOT_ATTRIBUTE_ID_MULTILEVEL_SENSOR_SENSOR_TYPE);
+  return attribute_store_is_desired_defined(node);
+}
+
+sl_status_t dotdot_create_multilevel_sensor_sensor_type(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id) {
+
+  attribute_store_node_t endpoint_node = unify_dotdot_attributes_get_endpoint_node()(unid, endpoint_id);
+  attribute_store_node_t node =
+    attribute_store_create_child_if_missing(endpoint_node,
+                                           DOTDOT_ATTRIBUTE_ID_MULTILEVEL_SENSOR_SENSOR_TYPE);
+
+  return (node != ATTRIBUTE_STORE_INVALID_NODE) ? SL_STATUS_OK : SL_STATUS_FAIL;
+}
+
+bool dotdot_is_any_multilevel_sensor_attribute_supported(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id) {
+
+  if (true == dotdot_is_supported_multilevel_sensor_sensor_values(unid, endpoint_id)) {
+    return true;
+  }
+  if (true == dotdot_is_supported_multilevel_sensor_sensor_type(unid, endpoint_id)) {
+    return true;
+  }
+
+  return false;
+}
+
+bool dotdot_is_any_multilevel_sensor_writable_attribute_supported(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id) {
+
+
+  return false;
+}
+////////////////////////////////////////////////////////////////////////////////
 // Start of cluster ProtocolController-NetworkManagement
 ////////////////////////////////////////////////////////////////////////////////
 bool dotdot_is_supported_protocol_controller_network_management_network_management_state(

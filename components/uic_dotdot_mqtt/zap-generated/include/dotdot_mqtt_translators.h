@@ -494,6 +494,32 @@ inline void to_json(nlohmann::json& jsn, const SSceneTable& field)
 
 
 /**
+ * Parse SensorValue type from json object.
+ *
+ * @param jsn     JSON object to parse from.
+ * @param field  field to be populated from JSON object.
+ */
+inline void from_json(const nlohmann::json& jsn, SensorValue& field)
+{
+  jsn.at("Value").get_to(field.Value);
+  jsn.at("Scale").get_to(field.Scale);
+}
+
+
+/**
+ * Build JSON object from SensorValue type.
+ *
+ * @param jsn     JSON object to be populated.
+ * @param field   Reference data.
+ */
+inline void to_json(nlohmann::json& jsn, const SensorValue& field)
+{
+  jsn["Value"] = field.Value;
+  jsn["Scale"] = field.Scale;
+}
+
+
+/**
  * Parse SphericalCoordinates type from json object.
  *
  * @param jsn     JSON object to parse from.

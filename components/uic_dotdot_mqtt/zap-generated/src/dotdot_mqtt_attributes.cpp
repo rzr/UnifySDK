@@ -61126,6 +61126,212 @@ void uic_mqtt_dotdot_configuration_parameters_attribute_configuration_parameters
 // End of supported cluster.
 
 ///////////////////////////////////////////////////////////////////////////////
+// Callback pointers for MultilevelSensor
+///////////////////////////////////////////////////////////////////////////////
+static uic_mqtt_dotdot_multilevel_sensor_attribute_sensor_values_callback_t uic_mqtt_dotdot_multilevel_sensor_attribute_sensor_values_callback = nullptr;
+static uic_mqtt_dotdot_multilevel_sensor_attribute_sensor_type_callback_t uic_mqtt_dotdot_multilevel_sensor_attribute_sensor_type_callback = nullptr;
+
+///////////////////////////////////////////////////////////////////////////////
+// Attribute update handlers for MultilevelSensor
+///////////////////////////////////////////////////////////////////////////////
+static void uic_mqtt_dotdot_on_multilevel_sensor_sensor_values_attribute_update(
+  const char *topic,
+  const char *message,
+  const size_t message_length) {
+  if (uic_mqtt_dotdot_multilevel_sensor_attribute_sensor_values_callback == nullptr) {
+    return;
+  }
+
+  std::string unid;
+  uint8_t endpoint = 0; // Default value for endpoint-less topics.
+  if(! uic_dotdot_mqtt::parse_topic(topic,unid,endpoint)) {
+    sl_log_debug(LOG_TAG,
+                "Error parsing UNID / Endpoint ID from topic %s. Ignoring",
+                topic);
+    return;
+  }
+
+  std::string last_item;
+  if (SL_STATUS_OK != uic_dotdot_mqtt::get_topic_last_item(topic,last_item)){
+    sl_log_debug(LOG_TAG,
+                "Error parsing last item from topic %s. Ignoring",
+                topic);
+    return;
+  }
+
+  uic_mqtt_dotdot_attribute_update_type_t update_type;
+  if (last_item == "Reported") {
+    update_type = UCL_REPORTED_UPDATED;
+  } else if (last_item == "Desired") {
+    update_type = UCL_DESIRED_UPDATED;
+  } else {
+    sl_log_debug(LOG_TAG,
+                "Unknown value type (neither Desired/Reported) for topic %s. Ignoring",
+                topic);
+    return;
+  }
+
+  // Empty message means unretained value.
+  bool unretained = false;
+  if (message_length == 0) {
+    unretained = true;
+  }
+
+
+  SensorValue sensor_values = {};
+
+  nlohmann::json json_payload;
+  try {
+
+    if (unretained == false) {
+      json_payload = nlohmann::json::parse(std::string(message));
+
+      if (json_payload.find("value") == json_payload.end()) {
+        sl_log_debug(LOG_TAG, "MultilevelSensor::SensorValues: Missing attribute element: 'value'\n");
+        return;
+      }
+// Start parsing value
+      sensor_values.Value = json_payload.at("value").at("Value").get<int32_t>();
+      sensor_values.Scale = json_payload.at("value").at("Scale").get<uint8_t>();
+
+    // End parsing value
+    }
+
+  } catch (const std::exception& e) {
+    sl_log_debug(LOG_TAG, LOG_FMT_JSON_ERROR, "value", message);
+    return;
+  }
+
+  uic_mqtt_dotdot_multilevel_sensor_attribute_sensor_values_callback(
+    static_cast<dotdot_unid_t>(unid.c_str()),
+    endpoint,
+    unretained,
+    update_type,
+    sensor_values
+  );
+
+}
+static void uic_mqtt_dotdot_on_multilevel_sensor_sensor_type_attribute_update(
+  const char *topic,
+  const char *message,
+  const size_t message_length) {
+  if (uic_mqtt_dotdot_multilevel_sensor_attribute_sensor_type_callback == nullptr) {
+    return;
+  }
+
+  std::string unid;
+  uint8_t endpoint = 0; // Default value for endpoint-less topics.
+  if(! uic_dotdot_mqtt::parse_topic(topic,unid,endpoint)) {
+    sl_log_debug(LOG_TAG,
+                "Error parsing UNID / Endpoint ID from topic %s. Ignoring",
+                topic);
+    return;
+  }
+
+  std::string last_item;
+  if (SL_STATUS_OK != uic_dotdot_mqtt::get_topic_last_item(topic,last_item)){
+    sl_log_debug(LOG_TAG,
+                "Error parsing last item from topic %s. Ignoring",
+                topic);
+    return;
+  }
+
+  uic_mqtt_dotdot_attribute_update_type_t update_type;
+  if (last_item == "Reported") {
+    update_type = UCL_REPORTED_UPDATED;
+  } else if (last_item == "Desired") {
+    update_type = UCL_DESIRED_UPDATED;
+  } else {
+    sl_log_debug(LOG_TAG,
+                "Unknown value type (neither Desired/Reported) for topic %s. Ignoring",
+                topic);
+    return;
+  }
+
+  // Empty message means unretained value.
+  bool unretained = false;
+  if (message_length == 0) {
+    unretained = true;
+  }
+
+
+  uint8_t sensor_type = {};
+
+  nlohmann::json json_payload;
+  try {
+
+    if (unretained == false) {
+      json_payload = nlohmann::json::parse(std::string(message));
+
+      if (json_payload.find("value") == json_payload.end()) {
+        sl_log_debug(LOG_TAG, "MultilevelSensor::SensorType: Missing attribute element: 'value'\n");
+        return;
+      }
+// Start parsing value
+      uint32_t tmp = get_enum_decimal_value<MultilevelSensorSensorType>("value", json_payload);
+      if (tmp == numeric_limits<MultilevelSensorSensorType>::max()) {
+      #ifdef MULTILEVEL_SENSOR_SENSOR_TYPE_ENUM_NAME_AVAILABLE
+        tmp = multilevel_sensor_sensor_type_get_enum_value_number(json_payload.at("value").get<std::string>());
+      #elif defined(SENSOR_TYPE_ENUM_NAME_AVAILABLE)
+        tmp = sensor_type_get_enum_value_number(json_payload.at("value").get<std::string>());
+      #endif
+      }
+      sensor_type = static_cast<uint8_t>(tmp);
+
+    // End parsing value
+    }
+
+  } catch (const std::exception& e) {
+    sl_log_debug(LOG_TAG, LOG_FMT_JSON_ERROR, "value", message);
+    return;
+  }
+
+  uic_mqtt_dotdot_multilevel_sensor_attribute_sensor_type_callback(
+    static_cast<dotdot_unid_t>(unid.c_str()),
+    endpoint,
+    unretained,
+    update_type,
+    sensor_type
+  );
+
+}
+
+///////////////////////////////////////////////////////////////////////////////
+// Attribute init functions for MultilevelSensor
+///////////////////////////////////////////////////////////////////////////////
+sl_status_t uic_mqtt_dotdot_multilevel_sensor_attributes_init()
+{
+  std::string base_topic = "ucl/by-unid/+/+/";
+
+  std::string subscription_topic;
+  if(uic_mqtt_dotdot_multilevel_sensor_attribute_sensor_values_callback) {
+    subscription_topic = base_topic + "MultilevelSensor/Attributes/SensorValues/#";
+    uic_mqtt_subscribe(subscription_topic.c_str(), &uic_mqtt_dotdot_on_multilevel_sensor_sensor_values_attribute_update);
+  }
+  if(uic_mqtt_dotdot_multilevel_sensor_attribute_sensor_type_callback) {
+    subscription_topic = base_topic + "MultilevelSensor/Attributes/SensorType/#";
+    uic_mqtt_subscribe(subscription_topic.c_str(), &uic_mqtt_dotdot_on_multilevel_sensor_sensor_type_attribute_update);
+  }
+
+  return SL_STATUS_OK;
+}
+
+
+///////////////////////////////////////////////////////////////////////////////
+// Callback setters and getters for MultilevelSensor
+///////////////////////////////////////////////////////////////////////////////
+void uic_mqtt_dotdot_multilevel_sensor_attribute_sensor_values_callback_set(const uic_mqtt_dotdot_multilevel_sensor_attribute_sensor_values_callback_t callback)
+{
+  uic_mqtt_dotdot_multilevel_sensor_attribute_sensor_values_callback = callback;
+}
+void uic_mqtt_dotdot_multilevel_sensor_attribute_sensor_type_callback_set(const uic_mqtt_dotdot_multilevel_sensor_attribute_sensor_type_callback_t callback)
+{
+  uic_mqtt_dotdot_multilevel_sensor_attribute_sensor_type_callback = callback;
+}
+
+// End of supported cluster.
+
+///////////////////////////////////////////////////////////////////////////////
 // Callback pointers for ProtocolController-NetworkManagement
 ///////////////////////////////////////////////////////////////////////////////
 static uic_mqtt_dotdot_protocol_controller_network_management_attribute_network_management_state_callback_t uic_mqtt_dotdot_protocol_controller_network_management_attribute_network_management_state_callback = nullptr;

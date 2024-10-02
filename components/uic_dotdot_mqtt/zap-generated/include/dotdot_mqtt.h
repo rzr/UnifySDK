@@ -39077,6 +39077,189 @@ void uic_mqtt_dotdot_configuration_parameters_publish_supported_commands(
 void uic_mqtt_dotdot_configuration_parameters_publish_empty_supported_commands(
   const dotdot_unid_t unid
   ,dotdot_endpoint_id_t endpoint);
+// Callback types used by the multilevel_sensor cluster
+
+typedef struct {
+  SensorValue sensor_values;
+  uint8_t sensor_type;
+} uic_mqtt_dotdot_multilevel_sensor_state_t;
+
+typedef struct {
+  bool sensor_values;
+  bool sensor_type;
+} uic_mqtt_dotdot_multilevel_sensor_updated_state_t;
+
+typedef sl_status_t (*uic_mqtt_dotdot_multilevel_sensor_write_attributes_callback_t)(
+    const dotdot_unid_t unid,
+    const dotdot_endpoint_id_t endpoint,
+    uic_mqtt_dotdot_callback_call_type_t call_type,
+    uic_mqtt_dotdot_multilevel_sensor_state_t,
+    uic_mqtt_dotdot_multilevel_sensor_updated_state_t
+);
+
+typedef sl_status_t (*uic_mqtt_dotdot_multilevel_sensor_force_read_attributes_callback_t)(
+    const dotdot_unid_t unid,
+    const dotdot_endpoint_id_t endpoint,
+    uic_mqtt_dotdot_callback_call_type_t call_type,
+    uic_mqtt_dotdot_multilevel_sensor_updated_state_t
+);
+
+
+
+
+/**
+ * @brief Setup a callback for WriteAttribute to be called when a
+ * +/multilevel_sensor/Commands/WriteAttributes is received.
+ *
+ * Setting this callback will not overwrite the previous set callback
+ * @param callback      Function to be called on command reception
+ */
+void uic_mqtt_dotdot_set_multilevel_sensor_write_attributes_callback(
+  const uic_mqtt_dotdot_multilevel_sensor_write_attributes_callback_t callback
+);
+/**
+ * @brief Unsets a callback for WriteAttribute to be called when a
+ * +/multilevel_sensor/Commands/WriteAttributes is received.
+ * @param callback      Function to be no longer called on command reception
+ */
+void uic_mqtt_dotdot_unset_multilevel_sensor_write_attributes_callback(
+  const uic_mqtt_dotdot_multilevel_sensor_write_attributes_callback_t callback
+);
+/**
+ * @brief Clears all callbacks registered for when
+ * +/multilevel_sensor/Commands/WriteAttributes is received.
+ */
+void uic_mqtt_dotdot_clear_multilevel_sensor_write_attributes_callbacks();
+
+/**
+ * @brief Setup a callback for ForceReadAttributes to be called when a
+ * +/multilevel_sensor/Commands/ForceReadAttributes is received.
+ *
+ * Setting this callback will not overwrite the previous set callback
+ * @param callback      Function to be called on command reception
+ */
+void uic_mqtt_dotdot_set_multilevel_sensor_force_read_attributes_callback(
+  const uic_mqtt_dotdot_multilevel_sensor_force_read_attributes_callback_t callback
+);
+/**
+ * @brief Unsets a callback for ForceReadAttributes to be called when a
+ * +/multilevel_sensor/Commands/ForceReadAttributes is received.
+ *
+ * @param callback      Function to be no longer called on command reception
+ */
+void uic_mqtt_dotdot_unset_multilevel_sensor_force_read_attributes_callback(
+  const uic_mqtt_dotdot_multilevel_sensor_force_read_attributes_callback_t callback
+);
+/**
+ * @brief Clears all callbacks registered for when
+ * +/multilevel_sensor/Commands/ForceReadAttributes is received.
+ */
+void uic_mqtt_dotdot_clear_multilevel_sensor_force_read_attributes_callbacks();
+
+/**
+ * @brief Publish the attribute; MultilevelSensor/Attributes/SensorValues
+ *
+ * @param base_topic    topic prefix to publish, /sensor_values
+ *                      will be appended
+ * @param value         Value to publish
+ * @param publish_type  Whether to publish as Desired, Reported, or Both.
+ *
+ * @returns SL_STATUS_OK on success
+ */
+sl_status_t uic_mqtt_dotdot_multilevel_sensor_sensor_values_publish(
+  const char *base_topic,
+  SensorValue value,
+  uic_mqtt_dotdot_attribute_publish_type_t publish_type
+);
+
+/**
+ * @brief Unretains a published attribute; MultilevelSensor/Attributes/SensorValues
+ *
+ * @param base_topic    topic prefix to publish, /sensor_values
+ *                      will be appended
+ * @param publish_type  Whether to publish as Desired, Reported, or Both.
+ *
+ * @returns SL_STATUS_OK on success
+ */
+sl_status_t uic_mqtt_dotdot_multilevel_sensor_sensor_values_unretain(
+  const char *base_topic,
+  uic_mqtt_dotdot_attribute_publish_type_t publish_type
+);
+
+/**
+ * @brief Publish the attribute; MultilevelSensor/Attributes/SensorType
+ *
+ * @param base_topic    topic prefix to publish, /sensor_type
+ *                      will be appended
+ * @param value         Value to publish
+ * @param publish_type  Whether to publish as Desired, Reported, or Both.
+ *
+ * @returns SL_STATUS_OK on success
+ */
+sl_status_t uic_mqtt_dotdot_multilevel_sensor_sensor_type_publish(
+  const char *base_topic,
+  uint8_t value,
+  uic_mqtt_dotdot_attribute_publish_type_t publish_type
+);
+
+/**
+ * @brief Unretains a published attribute; MultilevelSensor/Attributes/SensorType
+ *
+ * @param base_topic    topic prefix to publish, /sensor_type
+ *                      will be appended
+ * @param publish_type  Whether to publish as Desired, Reported, or Both.
+ *
+ * @returns SL_STATUS_OK on success
+ */
+sl_status_t uic_mqtt_dotdot_multilevel_sensor_sensor_type_unretain(
+  const char *base_topic,
+  uic_mqtt_dotdot_attribute_publish_type_t publish_type
+);
+
+
+/**
+ * @brief Publish the MultilevelSensor/ClusterRevision attribute
+ *
+ * @param base_topic    topic prefix to publish, /MultilevelSensor/Attributes/ClusterRevision
+ *                      will be appended.
+ * @param value         Value to publish.
+ */
+void uic_mqtt_dotdot_multilevel_sensor_publish_cluster_revision(const char* base_topic, uint16_t value);
+
+/**
+ * @brief Unretain a publication to MultilevelSensor/ClusterRevision attribute
+ *
+ * @param base_topic    topic prefix to publish, /MultilevelSensor/Attributes/ClusterRevision
+ *                      will be appended.
+ */
+void uic_mqtt_dotdot_multilevel_sensor_unretain_cluster_revision(const char* base_topic);
+
+/**
+ * @brief Publish the SupportedCommands for UNID/EndPoint for the MultilevelSensor Cluster
+ *
+ * This function will iterate over all Commands in the MultilevelSensor Cluster and
+ * call all registered callback functions with UNID/endpoint, and
+ * callback_type = UIC_MQTT_DOTDOT_CALLBACK_TYPE_SUPPORT_CHECK.
+ * All Cluster Command callback functions that return SL_STATUS_OK
+ * will be added to the list of supported commands and published.
+ *
+ * @param unid
+ * @param endpoint
+ */
+void uic_mqtt_dotdot_multilevel_sensor_publish_supported_commands(
+  const dotdot_unid_t unid,
+  dotdot_endpoint_id_t endpoint);
+
+/**
+ * @brief Publish an empty array of SupportedCommands for UNID/EndPoint for
+ * the MultilevelSensor Cluster
+ *
+ * @param unid
+ * @param endpoint )
+ */
+void uic_mqtt_dotdot_multilevel_sensor_publish_empty_supported_commands(
+  const dotdot_unid_t unid
+  ,dotdot_endpoint_id_t endpoint);
 // Callback types used by the protocol_controller_network_management cluster
 typedef sl_status_t (*uic_mqtt_dotdot_protocol_controller_network_management_write_callback_t)(
     dotdot_unid_t unid,

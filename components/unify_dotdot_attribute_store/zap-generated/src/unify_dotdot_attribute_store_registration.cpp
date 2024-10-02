@@ -16808,6 +16808,54 @@ sl_status_t unify_dotdot_attribute_store_registration_init()
   // clang-format on
 
   {
+    // SensorValue // SensorValue // SensorValue
+    std::string attribute_type_string           = "SensorValue";
+    attribute_store_storage_type_t storage_type = UNKNOWN_STORAGE_TYPE;
+
+    // clang-format off
+    storage_type = BYTE_ARRAY_STORAGE_TYPE;
+
+    if (storage_type == UNKNOWN_STORAGE_TYPE) {
+      sl_log_warning(LOG_TAG,
+                     "Unkown storage type for ZCL MultilevelSensor SensorValues, "
+                     "type:  SensorValue // SensorValue");
+    }
+
+    status |= attribute_store_register_type(
+      DOTDOT_ATTRIBUTE_ID_MULTILEVEL_SENSOR_SENSOR_VALUES,
+      "ZCL MultilevelSensor SensorValues",
+      ATTRIBUTE_STORE_INVALID_ATTRIBUTE_TYPE,
+      storage_type);
+  }
+
+  // clang-format off
+  // clang-format on
+
+  {
+    // enum8 // enum8 // uint8_t
+    std::string attribute_type_string           = "uint8_t";
+    attribute_store_storage_type_t storage_type = UNKNOWN_STORAGE_TYPE;
+
+    // clang-format off
+    storage_type = attribute_storage_type_conversion(attribute_type_string);
+
+    if (storage_type == UNKNOWN_STORAGE_TYPE) {
+      sl_log_warning(LOG_TAG,
+                     "Unkown storage type for ZCL MultilevelSensor SensorType, "
+                     "type:  enum8 // uint8_t");
+    }
+
+    status |= attribute_store_register_type(
+      DOTDOT_ATTRIBUTE_ID_MULTILEVEL_SENSOR_SENSOR_TYPE,
+      "ZCL MultilevelSensor SensorType",
+      ATTRIBUTE_STORE_INVALID_ATTRIBUTE_TYPE,
+      storage_type);
+  }
+
+  // clang-format off
+  // clang-format on
+
+  {
     // NetworkManagementState // NetworkManagementState // NetworkManagementState
     std::string attribute_type_string           = "NetworkManagementState";
     attribute_store_storage_type_t storage_type = UNKNOWN_STORAGE_TYPE;

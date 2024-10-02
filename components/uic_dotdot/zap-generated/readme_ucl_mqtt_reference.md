@@ -51891,6 +51891,315 @@ mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/ConfigurationParameters/Commands/Force
 <!-- NEW Page Cluster Support -->
 <!-- -->
 <!-- -->
+\page multilevel_sensor MultilevelSensor Cluster
+The following commands and attributes are accepted as JSON payloads for the
+MultilevelSensor cluster.
+
+<br><br>
+
+<!-- -->
+<!--  START OF MultilevelSensor Attributes Section -->
+<!-- -->
+\section multilevel_sensor_attrs MultilevelSensor Attributes
+The following attribute topics are used to retrieve the MultilevelSensor cluster state.
+
+<br>
+
+\subsection multilevel_sensor_attr_sensor_values MultilevelSensor/SensorValues Attribute
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/MultilevelSensor/Attributes/SensorValues/Reported
+[PREFIX]/MultilevelSensor/Attributes/SensorValues/Desired
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "MultilevelSensor Cluster SensorValues Attribute Properties",
+  "type": "object",
+  "properties": {
+    "value": {
+      "type": "SensorValue"
+    }
+  },
+  "required": [
+    "value"
+  ]
+}
+```
+
+
+**Example Mosquitto CLI Tool Usage**
+
+To see desired/reported value for SensorValues attribute under the by-unid topic space:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/+/+/MultilevelSensor/Attributes/SensorValues/+'
+
+# Example output
+
+ucl/by-unid/<UNID>/ep0/MultilevelSensor/Attributes/SensorValues/Desired { "value": <DESIRED_SENSOR_VALUES>}
+ucl/by-unid/<UNID>/ep0/MultilevelSensor/Attributes/SensorValues/Reported { "value": <REPORTED_SENSOR_VALUES>}
+
+```
+
+<br><br>
+
+\subsection multilevel_sensor_attr_sensor_type MultilevelSensor/SensorType Attribute
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/MultilevelSensor/Attributes/SensorType/Reported
+[PREFIX]/MultilevelSensor/Attributes/SensorType/Desired
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "MultilevelSensor Cluster SensorType Attribute Properties",
+  "type": "object",
+  "properties": {
+    "value": {
+      "type": "MultilevelSensorSensorType"
+    }
+  },
+  "required": [
+    "value"
+  ]
+}
+```
+
+
+**Example Mosquitto CLI Tool Usage**
+
+To see desired/reported value for SensorType attribute under the by-unid topic space:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/+/+/MultilevelSensor/Attributes/SensorType/+'
+
+# Example output
+
+ucl/by-unid/<UNID>/ep0/MultilevelSensor/Attributes/SensorType/Desired { "value": <DESIRED_SENSOR_TYPE>}
+ucl/by-unid/<UNID>/ep0/MultilevelSensor/Attributes/SensorType/Reported { "value": <REPORTED_SENSOR_TYPE>}
+
+```
+
+<br><br>
+
+
+\subsection multilevel_sensor_attr_cluster_revision MultilevelSensor/ClusterRevision Attribute
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/MultilevelSensor/Attributes/ClusterRevision/Reported
+[PREFIX]/MultilevelSensor/Attributes/ClusterRevision/Desired
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "MultilevelSensor Cluster ClusterRevision Attribute Properties",
+  "type": "object",
+  "properties": {
+    "value": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "value"
+  ]
+}
+```
+
+**Example Mosquitto CLI Tool Usage**
+
+To see desired/reported value for ClusterRevision attribute under the by-unid topic space:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/<UNID>/<EP>/MultilevelSensor/Attributes/ClusterRevision/+'
+# Example output
+ucl/by-unid/<UNID>/<EP>/MultilevelSensor/Attributes/ClusterRevision/Desired { "value": <DESIRED_CLUSTER_REVISION> }
+ucl/by-unid/<UNID>/<EP>/MultilevelSensor/Attributes/ClusterRevision/Reported { "value": <REPORTED_CLUSTER_REVISION> }
+```
+
+<!-- -->
+<!--  END OF MultilevelSensor Attributes Section -->
+<!-- -->
+
+<br><br>
+
+<!-- -->
+<!-- START OF MultilevelSensor Supported Commands Section -->
+<!-- -->
+\section multilevel_sensor_recv_cmd_support MultilevelSensor Command Support
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/MultilevelSensor/SupportedCommands
+[PREFIX]/MultilevelSensor/SupportedGeneratedCommands
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "MultilevelSensor Command Support Properties",
+  "type": "object",
+  "properties": {
+      "value": {
+          "type": "array",
+          "items" : {
+            "type": "string",
+            "enum": [
+            ]
+          }
+        }
+      }
+  },
+  "required": [
+    "value"
+  ]
+}
+```
+
+**Example Mosquitto CLI Tool Usage**
+
+To see supported commands for MultilevelSensor cluster under the by-unid topic space:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/<UNID>/<EP>/MultilevelSensor/SupportedCommands'
+# Example output
+ucl/by-unid/<UNID>/<EP>/MultilevelSensor/SupportedCommands { "value": [] }
+```
+
+To see supported generated commands for MultilevelSensor cluster under the by-unid topic space:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/<UNID>/<EP>/MultilevelSensor/SupportedGeneratedCommands'
+# Example output
+ucl/by-unid/<UNID>/<EP>/MultilevelSensor/SupportedGeneratedCommands { "value": [] }
+```
+
+<!-- -->
+<!-- END OF MultilevelSensor Supported Commands Section -->
+<!-- -->
+
+<br><br>
+
+<!-- -->
+<!-- START OF MultilevelSensor Commands Section -->
+<!-- -->
+\section multilevel_sensor_cmds MultilevelSensor Commands
+
+<br><br>
+
+\subsection multilevel_sensor_write_attr_cmd MultilevelSensor/WriteAttributes Command
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/MultilevelSensor/Commands/WriteAttributes
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "MultilevelSensor Cluster WriteAttributes Command Properties",
+  "type": "object",
+  "properties": {
+  },
+  "required": [
+    "value"
+  ]
+}
+```
+
+**Example Mosquitto CLI Tool Usage**
+
+To update all MultilevelSensor attributes under the by-unid topic space:
+
+```console
+mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/MultilevelSensor/Commands/WriteAttributes' -m  '{  }'
+```
+
+> NOTE: Specify only the list of attributes to write in this command.
+> Unspecified attributes will not be updated.
+
+<br><br>
+
+\subsection multilevel_sensor_force_read_attr_cmd MultilevelSensor/ForceReadAttributes Command
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/MultilevelSensor/Commands/ForceReadAttributes
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "MultilevelSensor Cluster ForceReadAttributes Command Properties",
+  "type": "object",
+  "properties": {
+    "value": {
+      "type": "array"
+      "items": {
+        "type": "string",
+        "enum": [
+          "SensorValues",
+          "SensorType"
+        ]
+      }
+    }
+  },
+  "required": [
+    "value"
+  ]
+}
+```
+
+**Example Mosquitto CLI Tool Usage**
+
+To force read all MultilevelSensor attributes under the by-unid topic space (by sending an empty array):
+
+```console
+mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/MultilevelSensor/Commands/ForceReadAttributes' -m  '{ "value": [] }'
+```
+
+To force read one of the MultilevelSensor attributes under the by-unid topic space:
+
+```console
+mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/MultilevelSensor/Commands/ForceReadAttributes' -m  '{ "value": ["SensorValues"] }'
+```
+
+<!-- -->
+<!-- END OF MultilevelSensor Commands Section -->
+<!-- -->
+
+<br><br><br>
+
+
+<!-- -->
+<!-- -->
+<!-- NEW Page Cluster Support -->
+<!-- -->
+<!-- -->
 \page protocol_controller_network_management ProtocolController/NetworkManagement Cluster
 The following commands and attributes are accepted as JSON payloads for the
 ProtocolController-NetworkManagement cluster.
@@ -54909,6 +55218,33 @@ mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/UnifyHumidityControl/Commands/ForceRea
 <br><br>
 
 <!-- -->
+<!-- START OF Struct SensorValue Section -->
+<!-- -->
+\section struct_sensor_value SensorValue Struct
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SensorValue Struct Properties",
+  "type": "object",
+  "properties": {
+    "Value": {
+      "type": "integer"
+    }
+    "Scale": {
+      "type": "integer"
+    }
+  }
+}
+```
+
+<!-- -->
+<!-- END OF Struct SensorValue Section -->
+<!-- -->
+
+<br><br>
+
+<!-- -->
 <!-- START OF Struct SphericalCoordinates Section -->
 <!-- -->
 \section struct_spherical_coordinates SphericalCoordinates Struct
@@ -57028,6 +57364,113 @@ mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/UnifyHumidityControl/Commands/ForceRea
 
 <!-- -->
 <!-- END OF Enum MoveStepMode Section -->
+<!-- -->
+
+<br><br>
+
+<!-- -->
+<!-- START OF Enum MultilevelSensorSensorType Section -->
+<!-- -->
+\section enum_multilevel_sensor_sensor_type MultilevelSensorSensorType Enum
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "MultilevelSensorSensorType Enum Properties",
+  "type": "string",
+  "enum": [
+    "AirTemperature",
+    "Illuminance",
+    "Power",
+    "Humidity",
+    "Velocity",
+    "Direction",
+    "AtmosphericPressure",
+    "BarometricPressure",
+    "SolarRadiation",
+    "DewPoint",
+    "RainRate",
+    "TideLevel",
+    "Weight",
+    "Voltage",
+    "Current",
+    "CarbonDioxideCO2Level",
+    "AirFlow",
+    "TankCapacity",
+    "Distance",
+    "Rotation",
+    "WaterTempurature",
+    "SoilTempurature",
+    "SeismicIntensity",
+    "SeismicMagnitude",
+    "Ultraviolet",
+    "ElectricalResistivity",
+    "ElectricalConductivity",
+    "Loudness",
+    "Moisture",
+    "Frequency",
+    "Time",
+    "TargetTemperature",
+    "ParticulateMatter2.5",
+    "FormaldehydeLevel",
+    "RadonConcentration",
+    "MethaneDensity",
+    "VolatileOrganicCompoundLevel",
+    "CarbonMonoxideLevel",
+    "SoilHumidity",
+    "SoilReactivity",
+    "SoilSalinity",
+    "HeartRate",
+    "BloodPressure",
+    "MuscleMass",
+    "FatMass",
+    "BoneMass",
+    "TotalBodyWater",
+    "BasisMetabolicRate",
+    "BodyMassIndex",
+    "AccelerationX-axis",
+    "AccelerationY-axis",
+    "AccelerationZ-axis",
+    "SmokeDensity",
+    "WaterFlow",
+    "WaterPressure",
+    "RFSignalStrength",
+    "ParticulateMatter10",
+    "RespiratoryRate",
+    "RelativeModulationLevel",
+    "BoilerWaterTemperature",
+    "DomesticHotWaterTemperature",
+    "OutsideTemperature",
+    "ExhaustTemperature",
+    "WaterChlorineLevel",
+    "WaterAcidity",
+    "WaterOxidationReductionPotential",
+    "HeartRateLFHFRatio",
+    "MotionDirection",
+    "AppliedForceOnTheSensor",
+    "ReturnAirTemperature",
+    "SupplyAirTemperature",
+    "CondenserCoilTemperature",
+    "EvaproratorCoilTemperature",
+    "LiquidLineTemperature",
+    "DischargeLineTemperature",
+    "SuctionPressure",
+    "DischargePressure",
+    "DefrostTemperature",
+    "Ozone",
+    "SulfurDioxide",
+    "NitrogenDioxide",
+    "Ammonia",
+    "Lead",
+    "ParticulateMatter1",
+    "PersonCounterEntering",
+    "PersonCounterExiting"
+  ]
+}
+```
+
+<!-- -->
+<!-- END OF Enum MultilevelSensorSensorType Section -->
 <!-- -->
 
 <br><br>

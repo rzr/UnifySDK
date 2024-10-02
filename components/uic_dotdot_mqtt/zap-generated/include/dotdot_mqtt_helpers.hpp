@@ -1271,6 +1271,23 @@ std::string move_step_mode_get_enum_value_name(
  */
 uint32_t move_step_mode_get_enum_value_number(const std::string &str);
 
+#define MULTILEVEL_SENSOR_SENSOR_TYPE_ENUM_NAME_AVAILABLE 1
+
+/**
+ * @brief Finds the name of a field for the MultilevelSensorSensorType enum
+ *
+ * @returns A string representation of the value.
+ */
+std::string multilevel_sensor_sensor_type_get_enum_value_name(
+  uint32_t value);
+
+/**
+ * @brief Finds the enum number of a string representation for the MultilevelSensorSensorType enum
+ *
+ * @returns A number enum value.
+ */
+uint32_t multilevel_sensor_sensor_type_get_enum_value_number(const std::string &str);
+
 #define NM_STATE_ENUM_NAME_AVAILABLE 1
 
 /**

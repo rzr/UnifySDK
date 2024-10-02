@@ -3610,6 +3610,23 @@ void uic_mqtt_dotdot_by_group_configuration_parameters_write_attributes_callback
 
 
 
+typedef void (*uic_mqtt_dotdot_by_group_multilevel_sensor_write_attributes_callback_t)(
+    const dotdot_group_id_t group_id,
+    uic_mqtt_dotdot_multilevel_sensor_state_t,
+    uic_mqtt_dotdot_multilevel_sensor_updated_state_t
+);
+
+/**
+ * Setup a callback for WriteAttribute to be called when a
+ * ucl/by-group/+/multilevel_sensor/Commands/WriteAttributes is received.
+ * Setting this callback will overwrite any previously set callback.
+ */
+void uic_mqtt_dotdot_by_group_multilevel_sensor_write_attributes_callback_set(
+  const uic_mqtt_dotdot_by_group_multilevel_sensor_write_attributes_callback_t callback
+);
+
+
+
 typedef void (*uic_mqtt_dotdot_by_group_descriptor_write_attributes_callback_t)(
     const dotdot_group_id_t group_id,
     uic_mqtt_dotdot_descriptor_state_t,

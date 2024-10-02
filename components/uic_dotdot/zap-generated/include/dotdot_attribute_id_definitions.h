@@ -831,6 +831,9 @@ typedef enum {
 #define DOTDOT_NAME_AND_LOCATION_LOCATION_ATTRIBUTE_ID ((dotdot_attribute_id_t)0x1)
 // Definitions for cluster: ConfigurationParameters
 #define DOTDOT_CONFIGURATION_PARAMETERS_CONFIGURATION_PARAMETERS_ATTRIBUTE_ID ((dotdot_attribute_id_t)0x0)
+// Definitions for cluster: MultilevelSensor
+#define DOTDOT_MULTILEVEL_SENSOR_SENSOR_VALUES_ATTRIBUTE_ID ((dotdot_attribute_id_t)0x0)
+#define DOTDOT_MULTILEVEL_SENSOR_SENSOR_TYPE_ATTRIBUTE_ID ((dotdot_attribute_id_t)0x1)
 // Definitions for cluster: AoXLocator
 #define DOTDOT_AOX_LOCATOR_REPORTING_MODE_ATTRIBUTE_ID ((dotdot_attribute_id_t)0x1)
 #define DOTDOT_AOX_LOCATOR_POSITION_AND_ORIENTATION_VALID_ATTRIBUTE_ID ((dotdot_attribute_id_t)0x2)

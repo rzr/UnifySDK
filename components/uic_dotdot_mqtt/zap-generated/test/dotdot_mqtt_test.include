@@ -3653,6 +3653,7 @@ static void unset_all_callbacks()
   uic_mqtt_dotdot_configuration_parameters_set_parameter_callback_clear();
   uic_mqtt_dotdot_configuration_parameters_discover_parameter_range_callback_clear();
   uic_mqtt_dotdot_clear_configuration_parameters_write_attributes_callbacks();
+  uic_mqtt_dotdot_clear_multilevel_sensor_write_attributes_callbacks();
   uic_mqtt_dotdot_protocol_controller_network_management_write_callback_clear();
   uic_mqtt_dotdot_clear_protocol_controller_network_management_write_attributes_callbacks();
   uic_mqtt_dotdot_clear_descriptor_write_attributes_callbacks();

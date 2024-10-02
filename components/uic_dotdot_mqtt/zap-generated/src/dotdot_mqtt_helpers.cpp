@@ -3423,6 +3423,211 @@ uint32_t move_step_mode_get_enum_value_number(const std::string &str)
   return std::numeric_limits<uint32_t>::max();
 }
 
+// Enum to string map for MultilevelSensorSensorType
+const std::map<uint32_t, std::string> multilevel_sensor_sensor_type_enum_id_to_string_map {
+  { 1, "AirTemperature" },
+  { 3, "Illuminance" },
+  { 4, "Power" },
+  { 5, "Humidity" },
+  { 6, "Velocity" },
+  { 7, "Direction" },
+  { 8, "AtmosphericPressure" },
+  { 9, "BarometricPressure" },
+  { 10, "SolarRadiation" },
+  { 11, "DewPoint" },
+  { 12, "RainRate" },
+  { 13, "TideLevel" },
+  { 14, "Weight" },
+  { 15, "Voltage" },
+  { 16, "Current" },
+  { 17, "CarbonDioxideCO2Level" },
+  { 18, "AirFlow" },
+  { 19, "TankCapacity" },
+  { 20, "Distance" },
+  { 22, "Rotation" },
+  { 23, "WaterTempurature" },
+  { 24, "SoilTempurature" },
+  { 25, "SeismicIntensity" },
+  { 26, "SeismicMagnitude" },
+  { 27, "Ultraviolet" },
+  { 28, "ElectricalResistivity" },
+  { 29, "ElectricalConductivity" },
+  { 30, "Loudness" },
+  { 31, "Moisture" },
+  { 32, "Frequency" },
+  { 33, "Time" },
+  { 34, "TargetTemperature" },
+  { 35, "ParticulateMatter2.5" },
+  { 36, "FormaldehydeLevel" },
+  { 37, "RadonConcentration" },
+  { 38, "MethaneDensity" },
+  { 39, "VolatileOrganicCompoundLevel" },
+  { 40, "CarbonMonoxideLevel" },
+  { 41, "SoilHumidity" },
+  { 42, "SoilReactivity" },
+  { 43, "SoilSalinity" },
+  { 44, "HeartRate" },
+  { 45, "BloodPressure" },
+  { 46, "MuscleMass" },
+  { 47, "FatMass" },
+  { 48, "BoneMass" },
+  { 49, "TotalBodyWater" },
+  { 50, "BasisMetabolicRate" },
+  { 51, "BodyMassIndex" },
+  { 52, "AccelerationX-axis" },
+  { 53, "AccelerationY-axis" },
+  { 54, "AccelerationZ-axis" },
+  { 55, "SmokeDensity" },
+  { 56, "WaterFlow" },
+  { 57, "WaterPressure" },
+  { 58, "RFSignalStrength" },
+  { 59, "ParticulateMatter10" },
+  { 60, "RespiratoryRate" },
+  { 61, "RelativeModulationLevel" },
+  { 62, "BoilerWaterTemperature" },
+  { 63, "DomesticHotWaterTemperature" },
+  { 64, "OutsideTemperature" },
+  { 65, "ExhaustTemperature" },
+  { 66, "WaterChlorineLevel" },
+  { 67, "WaterAcidity" },
+  { 68, "WaterOxidationReductionPotential" },
+  { 69, "HeartRateLFHFRatio" },
+  { 70, "MotionDirection" },
+  { 71, "AppliedForceOnTheSensor" },
+  { 72, "ReturnAirTemperature" },
+  { 73, "SupplyAirTemperature" },
+  { 74, "CondenserCoilTemperature" },
+  { 75, "EvaproratorCoilTemperature" },
+  { 76, "LiquidLineTemperature" },
+  { 77, "DischargeLineTemperature" },
+  { 78, "SuctionPressure" },
+  { 79, "DischargePressure" },
+  { 80, "DefrostTemperature" },
+  { 81, "Ozone" },
+  { 82, "SulfurDioxide" },
+  { 83, "NitrogenDioxide" },
+  { 84, "Ammonia" },
+  { 85, "Lead" },
+  { 86, "ParticulateMatter1" },
+  { 87, "PersonCounterEntering" },
+  { 88, "PersonCounterExiting" },
+};
+
+// String to enum map for MultilevelSensorSensorType
+const std::map<std::string, uint32_t> multilevel_sensor_sensor_type_enum_string_to_id_map {
+  { "AirTemperature", 1 },
+  { "Illuminance", 3 },
+  { "Power", 4 },
+  { "Humidity", 5 },
+  { "Velocity", 6 },
+  { "Direction", 7 },
+  { "AtmosphericPressure", 8 },
+  { "BarometricPressure", 9 },
+  { "SolarRadiation", 10 },
+  { "DewPoint", 11 },
+  { "RainRate", 12 },
+  { "TideLevel", 13 },
+  { "Weight", 14 },
+  { "Voltage", 15 },
+  { "Current", 16 },
+  { "CarbonDioxideCO2Level", 17 },
+  { "AirFlow", 18 },
+  { "TankCapacity", 19 },
+  { "Distance", 20 },
+  { "Rotation", 22 },
+  { "WaterTempurature", 23 },
+  { "SoilTempurature", 24 },
+  { "SeismicIntensity", 25 },
+  { "SeismicMagnitude", 26 },
+  { "Ultraviolet", 27 },
+  { "ElectricalResistivity", 28 },
+  { "ElectricalConductivity", 29 },
+  { "Loudness", 30 },
+  { "Moisture", 31 },
+  { "Frequency", 32 },
+  { "Time", 33 },
+  { "TargetTemperature", 34 },
+  { "ParticulateMatter2.5", 35 },
+  { "FormaldehydeLevel", 36 },
+  { "RadonConcentration", 37 },
+  { "MethaneDensity", 38 },
+  { "VolatileOrganicCompoundLevel", 39 },
+  { "CarbonMonoxideLevel", 40 },
+  { "SoilHumidity", 41 },
+  { "SoilReactivity", 42 },
+  { "SoilSalinity", 43 },
+  { "HeartRate", 44 },
+  { "BloodPressure", 45 },
+  { "MuscleMass", 46 },
+  { "FatMass", 47 },
+  { "BoneMass", 48 },
+  { "TotalBodyWater", 49 },
+  { "BasisMetabolicRate", 50 },
+  { "BodyMassIndex", 51 },
+  { "AccelerationX-axis", 52 },
+  { "AccelerationY-axis", 53 },
+  { "AccelerationZ-axis", 54 },
+  { "SmokeDensity", 55 },
+  { "WaterFlow", 56 },
+  { "WaterPressure", 57 },
+  { "RFSignalStrength", 58 },
+  { "ParticulateMatter10", 59 },
+  { "RespiratoryRate", 60 },
+  { "RelativeModulationLevel", 61 },
+  { "BoilerWaterTemperature", 62 },
+  { "DomesticHotWaterTemperature", 63 },
+  { "OutsideTemperature", 64 },
+  { "ExhaustTemperature", 65 },
+  { "WaterChlorineLevel", 66 },
+  { "WaterAcidity", 67 },
+  { "WaterOxidationReductionPotential", 68 },
+  { "HeartRateLFHFRatio", 69 },
+  { "MotionDirection", 70 },
+  { "AppliedForceOnTheSensor", 71 },
+  { "ReturnAirTemperature", 72 },
+  { "SupplyAirTemperature", 73 },
+  { "CondenserCoilTemperature", 74 },
+  { "EvaproratorCoilTemperature", 75 },
+  { "LiquidLineTemperature", 76 },
+  { "DischargeLineTemperature", 77 },
+  { "SuctionPressure", 78 },
+  { "DischargePressure", 79 },
+  { "DefrostTemperature", 80 },
+  { "Ozone", 81 },
+  { "SulfurDioxide", 82 },
+  { "NitrogenDioxide", 83 },
+  { "Ammonia", 84 },
+  { "Lead", 85 },
+  { "ParticulateMatter1", 86 },
+  { "PersonCounterEntering", 87 },
+  { "PersonCounterExiting", 88 },
+};
+
+std::string multilevel_sensor_sensor_type_get_enum_value_name(
+  uint32_t value)
+{
+  auto it = multilevel_sensor_sensor_type_enum_id_to_string_map.find(value);
+  if (it != multilevel_sensor_sensor_type_enum_id_to_string_map.end()){
+    return it->second;
+  }
+
+  // No known name value is set for this field.
+  // Set it to a string version of the value.
+  return std::to_string(value);
+}
+
+uint32_t multilevel_sensor_sensor_type_get_enum_value_number(const std::string &str)
+{
+  auto it = multilevel_sensor_sensor_type_enum_string_to_id_map.find(str);
+  if (it != multilevel_sensor_sensor_type_enum_string_to_id_map.end()){
+    return it->second;
+  }
+
+  // No known numeric value is set for this string.
+  // Return UINT32_MAX to indicate an error.
+  return std::numeric_limits<uint32_t>::max();
+}
+
 // Enum to string map for NM_State
 const std::map<uint32_t, std::string> nm_state_enum_id_to_string_map {
   { 0, "idle" },
@@ -10193,6 +10398,21 @@ std::string get_enum_value_name(
   #endif
   }
 
+  if (64777 == cluster_id) {
+  #ifdef MULTILEVEL_SENSOR_SENSOR_VALUES_ENUM_NAME_AVAILABLE
+    if (0 == attribute_id) {
+      // FIXME: Some attributes don't work because multi-upper case names end up like this: multilevel_sensorsensor_values instead of this: multilevel_sensor_sensor_values
+      return multilevel_sensor_sensor_values_get_enum_value_name(value);
+    }
+  #endif
+  #ifdef MULTILEVEL_SENSOR_SENSOR_TYPE_ENUM_NAME_AVAILABLE
+    if (1 == attribute_id) {
+      // FIXME: Some attributes don't work because multi-upper case names end up like this: multilevel_sensorsensor_type instead of this: multilevel_sensor_sensor_type
+      return multilevel_sensor_sensor_type_get_enum_value_name(value);
+    }
+  #endif
+  }
+
   if (64786 == cluster_id) {
   #ifdef PROTOCOL_CONTROLLER_NETWORK_MANAGEMENT_NETWORK_MANAGEMENT_STATE_ENUM_NAME_AVAILABLE
     if (1 == attribute_id) {
@@ -14700,6 +14920,21 @@ uint32_t get_enum_name_value(
   #endif
   }
 
+  if (64777 == cluster_id) {
+  #ifdef MULTILEVEL_SENSOR_SENSOR_VALUES_ENUM_NAME_AVAILABLE
+    if (0 == attribute_id) {
+      // FIXME: Some attributes don't work because multi-upper case names end up like this: multilevel_sensorsensor_values instead of this: multilevel_sensor_sensor_values
+      return multilevel_sensor_sensor_values_get_enum_value_number(name);
+    }
+  #endif
+  #ifdef MULTILEVEL_SENSOR_SENSOR_TYPE_ENUM_NAME_AVAILABLE
+    if (1 == attribute_id) {
+      // FIXME: Some attributes don't work because multi-upper case names end up like this: multilevel_sensorsensor_type instead of this: multilevel_sensor_sensor_type
+      return multilevel_sensor_sensor_type_get_enum_value_number(name);
+    }
+  #endif
+  }
+
   if (64786 == cluster_id) {
   #ifdef PROTOCOL_CONTROLLER_NETWORK_MANAGEMENT_NETWORK_MANAGEMENT_STATE_ENUM_NAME_AVAILABLE
     if (1 == attribute_id) {
@@ -15687,6 +15922,17 @@ char *move_step_mode_get_enum_value_name_c(
 uint32_t move_step_mode_get_enum_value_number_c(const char *str)
 {
   return move_step_mode_get_enum_value_number(std::string(str));
+}
+char *multilevel_sensor_sensor_type_get_enum_value_name_c(
+  uint32_t value, char *result, size_t max_result_size)
+{
+  snprintf(result, max_result_size, "%s", multilevel_sensor_sensor_type_get_enum_value_name(value).c_str());
+  return result;
+}
+
+uint32_t multilevel_sensor_sensor_type_get_enum_value_number_c(const char *str)
+{
+  return multilevel_sensor_sensor_type_get_enum_value_number(std::string(str));
 }
 char *nm_state_get_enum_value_name_c(
   uint32_t value, char *result, size_t max_result_size)

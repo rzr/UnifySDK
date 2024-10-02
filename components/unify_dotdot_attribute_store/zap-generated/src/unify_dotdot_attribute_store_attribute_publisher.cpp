@@ -24479,6 +24479,235 @@ static void configuration_parameters_cluster_cluster_revision_callback(
 
 /**
  * @brief Publishes the desired value of an updated attribute store node for
+ * the MultilevelSensor cluster.
+ * @param updated_node Updated attribute store node
+ * @param change       Type of change applied
+ */
+static void multilevel_sensor_cluster_publish_desired_value_callback(
+   attribute_store_node_t updated_node, attribute_store_change_t change)
+{
+  // clang-format on
+  if (false == is_publish_desired_attribute_values_to_mqtt_enabled()) {
+    return;
+  }
+  if (change == ATTRIBUTE_DELETED || change == ATTRIBUTE_CREATED) {
+    return;
+  }
+  // Scene exception: check that the attribute is not under the Scene Table extension, which is a config and not the node's state.
+  if (ATTRIBUTE_STORE_INVALID_NODE
+      != attribute_store_get_first_parent_with_type(
+        updated_node,
+        DOTDOT_ATTRIBUTE_ID_SCENES_SCENE_TABLE)) {
+    return;
+  }
+
+  // Get the UNID and EndPoint, and prepare the basic topic
+  char unid[MAXIMUM_UNID_SIZE]     = {};
+  // clang-format off
+  // clang-format on
+  dotdot_endpoint_id_t endpoint_id = 0;
+  if (SL_STATUS_OK
+      != unify_dotdot_attributes_get_unid_endpoint()(updated_node,
+                                                     unid,
+                                                     &endpoint_id)) {
+    return;
+  }
+  // clang-format off
+  // clang-format on
+
+  std::string base_topic = "ucl/by-unid/" + std::string(unid);
+  // clang-format off
+  base_topic += "/ep" + std::to_string(endpoint_id);
+  // clang-format on
+
+  attribute_store_type_t type = attribute_store_get_node_type(updated_node);
+  if (type == ATTRIBUTE_STORE_INVALID_ATTRIBUTE_TYPE) {
+    sl_log_debug(LOG_TAG,
+                 "Warning: Invalid type for Attribute ID %d, "
+                 "this should not happen.",
+                 updated_node);
+    return;
+  }
+
+  // If the value got updated but both Reported and Desired undefined, we skip publication
+  if (false == attribute_store_is_reported_defined(updated_node)
+      && false == attribute_store_is_desired_defined(updated_node)) {
+    sl_log_debug(LOG_TAG,
+                 "Reported/Desired values are undefined. "
+                 "Skipping publication");
+    return;
+  }
+
+  // clang-format off
+  try {
+    attribute_store::attribute attr(updated_node);
+    // Skip attribute SensorValues because it is a struct,
+    // we typically don't save them as structs in the attribute store.
+    sl_log_debug(LOG_TAG,"Warning: Cannot publish desired value for attribute MultilevelSensor SensorValues. Structs are not supported");
+      if (type == DOTDOT_ATTRIBUTE_ID_MULTILEVEL_SENSOR_SENSOR_TYPE) {
+          uic_mqtt_dotdot_multilevel_sensor_sensor_type_publish(
+            base_topic.c_str(),
+            static_cast<uint8_t>(attr.desired_or_reported<uint8_t>()),
+            UCL_MQTT_PUBLISH_TYPE_DESIRED);
+        return;
+      }
+      } catch (std::exception &ex) {
+    sl_log_warning(LOG_TAG, "Failed to publish the Desired attribute value: %s", ex.what());
+  }
+}
+
+/**
+ * @brief Publishes the reported value of an updated attribute store node for
+ * the MultilevelSensor cluster.
+ * @param updated_node Updated attribute store node
+ * @param change       Type of change applied
+ */
+static void multilevel_sensor_cluster_publish_reported_value_callback(
+   attribute_store_node_t updated_node, attribute_store_change_t change)
+{
+  // clang-format on
+  if (false == is_publish_reported_attribute_values_to_mqtt_enabled()) {
+    return;
+  }
+  if (change == ATTRIBUTE_CREATED) {
+    return;
+  }
+  // Scene exception: check that the attribute is not under the Scene Table extension, which is a config and not the node's state.
+  if (ATTRIBUTE_STORE_INVALID_NODE
+      != attribute_store_get_first_parent_with_type(
+        updated_node,
+        DOTDOT_ATTRIBUTE_ID_SCENES_SCENE_TABLE)) {
+    return;
+  }
+
+  // Get the UNID and EndPoint, and prepare the basic topic
+  char unid[MAXIMUM_UNID_SIZE]     = {};
+  // clang-format off
+  // clang-format on
+  dotdot_endpoint_id_t endpoint_id = 0;
+  if (SL_STATUS_OK
+      != unify_dotdot_attributes_get_unid_endpoint()(updated_node,
+                                                     unid,
+                                                     &endpoint_id)) {
+    return;
+  }
+  // clang-format off
+  // clang-format on
+
+  std::string base_topic = "ucl/by-unid/" + std::string(unid);
+  // clang-format off
+  base_topic += "/ep" + std::to_string(endpoint_id);
+  // clang-format on
+
+  attribute_store_type_t type = attribute_store_get_node_type(updated_node);
+  if (type == ATTRIBUTE_STORE_INVALID_ATTRIBUTE_TYPE) {
+    sl_log_debug(LOG_TAG,
+                 "Warning: Invalid type for Attribute ID %d, "
+                 "this should not happen.",
+                 updated_node);
+    return;
+  }
+
+  // Deletion case:
+  if (change == ATTRIBUTE_DELETED) {
+    // clang-format off
+    switch(type) {
+     case DOTDOT_ATTRIBUTE_ID_MULTILEVEL_SENSOR_SENSOR_VALUES:
+        // clang-format on
+        sl_log_debug(LOG_TAG,
+                     "Unretaining MultilevelSensor::SensorValues under topic %s",
+                     base_topic.c_str());
+        // clang-format off
+      uic_mqtt_dotdot_multilevel_sensor_sensor_values_unretain(base_topic.c_str(), UCL_MQTT_PUBLISH_TYPE_ALL);
+      break;
+     case DOTDOT_ATTRIBUTE_ID_MULTILEVEL_SENSOR_SENSOR_TYPE:
+        // clang-format on
+        sl_log_debug(LOG_TAG,
+                     "Unretaining MultilevelSensor::SensorType under topic %s",
+                     base_topic.c_str());
+        // clang-format off
+      uic_mqtt_dotdot_multilevel_sensor_sensor_type_unretain(base_topic.c_str(), UCL_MQTT_PUBLISH_TYPE_ALL);
+      break;
+    default:
+    break;
+    }
+    // clang-format on
+    return;
+  }
+
+  // If the value got updated but undefined, we skip publication
+  if (false == attribute_store_is_reported_defined(updated_node)) {
+    sl_log_debug(LOG_TAG, "Reported value is undefined. Skipping publication");
+    return;
+  }
+
+  // Else we assume update case:
+  // clang-format off
+  try {
+    attribute_store::attribute attr(updated_node);
+    // Skip attribute SensorValues because it is a struct,
+    // we typically don't save them as structs in the attribute store.
+    sl_log_debug(LOG_TAG,"Warning: Cannot publish reported value for attribute MultilevelSensor SensorValues. Structs are not supported");
+      if (type == DOTDOT_ATTRIBUTE_ID_MULTILEVEL_SENSOR_SENSOR_TYPE) {
+          uic_mqtt_dotdot_multilevel_sensor_sensor_type_publish(
+            base_topic.c_str(),
+            static_cast<uint8_t>(attr.reported<uint8_t>()),
+            (attr.desired_exists() && !attribute_store_is_value_matched(updated_node)) ? UCL_MQTT_PUBLISH_TYPE_REPORTED : UCL_MQTT_PUBLISH_TYPE_ALL);
+        return;
+      }
+      } catch (std::exception &ex) {
+    sl_log_warning(LOG_TAG, "Failed to publish the Reported attribute value: %s", ex.what());
+  }
+}
+
+static void multilevel_sensor_cluster_cluster_revision_callback(
+   attribute_store_node_t updated_node, attribute_store_change_t change)
+{
+  // clang-format on
+  if (false == is_publish_reported_attribute_values_to_mqtt_enabled()) {
+    return;
+  }
+
+  // Get the UNID and EndPoint, and prepare the basic topic
+  char unid[MAXIMUM_UNID_SIZE]     = {};
+  dotdot_endpoint_id_t endpoint_id = 0;
+  // clang-format off
+  // clang-format on
+  if (SL_STATUS_OK
+      != unify_dotdot_attributes_get_unid_endpoint()(updated_node,
+                                                     unid,
+                                                     &endpoint_id)) {
+    return;
+  }
+  // clang-format off
+  // clang-format on
+
+  std::string base_topic = "ucl/by-unid/" + std::string(unid);
+  // clang-format off
+  base_topic += "/ep" + std::to_string(endpoint_id);
+
+  if ((change == ATTRIBUTE_CREATED) || (change == ATTRIBUTE_UPDATED)) {
+    // On attribute creation, make sure to publish the attribute revision for the first time
+    std::string cluster_revision_topic = base_topic + "/MultilevelSensor/Attributes/ClusterRevision";
+    if (uic_mqtt_count_topics(cluster_revision_topic.c_str()) == 0) {
+      uic_mqtt_dotdot_multilevel_sensor_publish_cluster_revision(base_topic.c_str(), 1);
+    }
+  }
+
+  if (change == ATTRIBUTE_DELETED) {
+    // Check if we just erased the last attribute under a cluster, if yes, unretain
+    // the Cluster revision too.
+    if (false == dotdot_is_any_multilevel_sensor_attribute_supported(unid, endpoint_id)) {
+      base_topic +=  "/MultilevelSensor";
+      sl_log_debug(LOG_TAG, "No more attributes supported for MultilevelSensor cluster for UNID %s Endpoint %d. Unretaining leftover topics at %s",unid, endpoint_id, base_topic.c_str());
+      uic_mqtt_unretain(base_topic.c_str());
+    }
+  }
+}
+
+
+/**
+ * @brief Publishes the desired value of an updated attribute store node for
  * the ProtocolController-NetworkManagement cluster.
  * @param updated_node Updated attribute store node
  * @param change       Type of change applied
@@ -35754,6 +35983,34 @@ sl_status_t unify_dotdot_attribute_store_attribute_publisher_init()
     attribute_store_register_callback_by_type(
       configuration_parameters_cluster_cluster_revision_callback,
       DOTDOT_ATTRIBUTE_ID_CONFIGURATION_PARAMETERS_CONFIGURATION_PARAMETERS);
+    //Desired attribute state
+    attribute_store_register_callback_by_type_and_state(
+      multilevel_sensor_cluster_publish_desired_value_callback,
+      DOTDOT_ATTRIBUTE_ID_MULTILEVEL_SENSOR_SENSOR_VALUES,
+      DESIRED_ATTRIBUTE);
+    //Reported attribute state
+    attribute_store_register_callback_by_type_and_state(
+      multilevel_sensor_cluster_publish_reported_value_callback,
+      DOTDOT_ATTRIBUTE_ID_MULTILEVEL_SENSOR_SENSOR_VALUES,
+      REPORTED_ATTRIBUTE);
+    //registering a callback when an attribute is created for publishing cluster revision
+    attribute_store_register_callback_by_type(
+      multilevel_sensor_cluster_cluster_revision_callback,
+      DOTDOT_ATTRIBUTE_ID_MULTILEVEL_SENSOR_SENSOR_VALUES);
+    //Desired attribute state
+    attribute_store_register_callback_by_type_and_state(
+      multilevel_sensor_cluster_publish_desired_value_callback,
+      DOTDOT_ATTRIBUTE_ID_MULTILEVEL_SENSOR_SENSOR_TYPE,
+      DESIRED_ATTRIBUTE);
+    //Reported attribute state
+    attribute_store_register_callback_by_type_and_state(
+      multilevel_sensor_cluster_publish_reported_value_callback,
+      DOTDOT_ATTRIBUTE_ID_MULTILEVEL_SENSOR_SENSOR_TYPE,
+      REPORTED_ATTRIBUTE);
+    //registering a callback when an attribute is created for publishing cluster revision
+    attribute_store_register_callback_by_type(
+      multilevel_sensor_cluster_cluster_revision_callback,
+      DOTDOT_ATTRIBUTE_ID_MULTILEVEL_SENSOR_SENSOR_TYPE);
     //Desired attribute state
     attribute_store_register_callback_by_type_and_state(
       protocol_controller_network_management_cluster_publish_desired_value_callback,
