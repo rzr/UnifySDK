@@ -127,6 +127,7 @@ function isStruct(type) {
     case 'SSceneTable': return true
     case 'DeviceTypeStruct': return true
     case 'CredentialStruct': return true
+    case 'SensorValue': return true
     default: return false
   }
 }
