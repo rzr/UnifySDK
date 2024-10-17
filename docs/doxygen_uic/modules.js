@@ -1,6 +1,6 @@
 var modules =
 [
-    [ "Mapper path match evaluation", "group__Attribute.html", null ],
+    [ "Mapper path match evaluation", "group__Attribute.html", "group__Attribute" ],
     [ "Scope settings helpers", "group__attribute__mapper__scope__settings.html", "group__attribute__mapper__scope__settings" ],
     [ "Unify Attribute Definitions", "group__uic__attribute__definitions.html", null ],
     [ "Unify Components", "group__unify__components.html", "group__unify__components" ],
@@ -15,5 +15,6 @@ var modules =
     [ "OnOff Cluster Mapper", "group__on__off__cluster__mapper.html", "group__on__off__cluster__mapper" ],
     [ "PollControl Cluster Mapper", "group__unify__dotdot__attribute__store__command__callbacks__poll__control.html", "group__unify__dotdot__attribute__store__command__callbacks__poll__control" ],
     [ "Thermostat Cluster Mapper", "group__thermostat__cluster__mapper.html", "group__thermostat__cluster__mapper" ],
-    [ "WindowCovering Cluster Mapper", "group__unify__dotdot__attribute__store__command__callbacks__window__covering.html", "group__unify__dotdot__attribute__store__command__callbacks__window__covering" ]
+    [ "WindowCovering Cluster Mapper", "group__unify__dotdot__attribute__store__command__callbacks__window__covering.html", "group__unify__dotdot__attribute__store__command__callbacks__window__covering" ],
+    [ "UCL device type", "group__unify__dotdot__attribute__store__descriptor.html", null ]
 ];

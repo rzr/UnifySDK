@@ -42,37 +42,38 @@ sl_status_t
     return status;
   }
 
+
   // Handle Well known Case
 
-  if (is_well_known_key_add) {
-    status = zigpc_gateway_network_permit_joins(true);
-    sl_log_debug(LOG_TAG, "Gateway permits joins with status: 0x%X", status);
-  } else {
-    // Handle install code
-    zigbee_eui64_t eui64_le;
-    zigbee_install_code_t install_code_copy;
+    if (is_well_known_key_add)
+    {
+        status = zigpc_gateway_network_permit_joins(true);
+    }
+    else
+    {
+      // Handle install code
+      zigbee_eui64_t eui64_le;
+      zigbee_install_code_t install_code_copy;
 
-    std::copy(install_code,
-              install_code + sizeof(zigbee_install_code_t),
-              install_code_copy);
+      std::copy(install_code,
+            install_code + sizeof(zigbee_install_code_t),
+            install_code_copy);
 
-    zigbee_eui64_copy_switch_endian(eui64_le, node_eui64);
+      zigbee_eui64_copy_switch_endian(eui64_le, node_eui64);
 
-    status  = zigbeeHostTrustCenterAddDeviceInstallCode(
+      status  = zigbeeHostTrustCenterAddDeviceInstallCode(
                   eui64_le,
                   install_code_copy,
                   install_code_length);
-    
-    sl_log_debug(LOG_TAG, "Add device install code with status: 0x%X", status);
-  }
+    }
 
   status =  zigbeeHostTrustCenterJoinOpen(true);
 
   sl_log(LOG_TAG,
-          (status == EMBER_SUCCESS) ? SL_LOG_INFO : SL_LOG_ERROR,
-          "Add Node Gateway : %sable permit-join EmberAfStatus: 0x%X",
-          true ? "En" : "Dis",
-          status);
+           (status == SL_STATUS_OK) ? SL_LOG_INFO : SL_LOG_ERROR,
+          "Add Node Gateway : %sable permit-join sl_zigbee_af_status_t: 0x%X",
+         true ? "En" : "Dis",
+         status);
 
   return status;
 }
@@ -92,25 +93,25 @@ sl_status_t zigpc_gateway_network_permit_joins(bool enable)
 {
   sl_status_t status = SL_STATUS_OK;
 
-  if (enable) {
-    if(zigpc_get_config()->tc_use_well_known_key == true ){
-          EmberEUI64 wildcardEui64
+  if (enable)
+  {
+      if(zigpc_get_config()->tc_use_well_known_key == true )
+      {
+          sl_802154_long_addr_t wildcardEui64
             = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF};
-          const EmberKeyData centralizedKey
+          const sl_zigbee_key_data_t centralizedKey
             = zigbeeHostGetTrustCenterWellKownKey();
 
           status
             = zigbeeHostTrustCenterAddLinkKey(wildcardEui64, &centralizedKey, true);
 
           sl_log(LOG_TAG,
-             (status == EMBER_SUCCESS) ? SL_LOG_INFO : SL_LOG_ERROR,
-            "Gateway Well-known link key add EmberAfStatus: 0x%X",
+             (status == SL_STATUS_OK) ? SL_LOG_INFO : SL_LOG_ERROR,
+            "Gateway Well-known link key add sl_zigbee_af_status_t: 0x%X",
              status);
       }
 
       status = zigbeeHostTrustCenterJoinOpen(true);
-      sl_log_debug(LOG_TAG, "Trust Center permits joins with status: 0x%X", status);
-    
       zigpc_gateway_command_print_nwk_key();
 
   } else {
@@ -118,8 +119,8 @@ sl_status_t zigpc_gateway_network_permit_joins(bool enable)
   }
 
   sl_log(LOG_TAG,
-         (status == EMBER_SUCCESS) ? SL_LOG_INFO : SL_LOG_ERROR,
-          "Permit Joins Gateway : %sable permit-join EmberAfStatus: 0x%X",
+         (status == SL_STATUS_OK) ? SL_LOG_INFO : SL_LOG_ERROR,
+          "Permit Joins Gateway : %sable permit-join sl_zigbee_af_status_t: 0x%X",
          enable ? "En" : "Dis",
          status);
 
@@ -396,20 +397,20 @@ void zigpc_gateway_command_print_info(void)
 
 void zigpc_gateway_command_print_nwk_key(void)
 {
-  EmberKeyStruct nwk_key;
+  sl_zigbee_key_struct_t nwk_key;
 
-  EmberStatus status
-    = zigbeeHostGetEmberKey(EMBER_CURRENT_NETWORK_KEY, &nwk_key);
-  if (status != EMBER_SUCCESS) {
-    sl_log_error(LOG_TAG, "Failed to read NWK key: EmberStatus(0x%X)", status);
+  sl_status_t status
+    = zigbeeHostGetEmberKey(SL_ZIGBEE_CURRENT_NETWORK_KEY, &nwk_key);
+  if (status != SL_STATUS_OK) {
+    sl_log_error(LOG_TAG, "Failed to read NWK key: sl_status_t(0x%X)", status);
   } else {
-    char nwk_key_str[EMBER_ENCRYPTION_KEY_SIZE * 3 + 1];
+    char nwk_key_str[SL_ZIGBEE_ENCRYPTION_KEY_SIZE  * 3 + 1];
     size_t nwk_key_str_size = 0;
-    for (uint8_t i = 0; i < EMBER_ENCRYPTION_KEY_SIZE; i++) {
+    for (uint8_t i = 0; i < SL_ZIGBEE_ENCRYPTION_KEY_SIZE ; i++) {
       nwk_key_str_size += snprintf(nwk_key_str + nwk_key_str_size,
                                    4,
                                    " %02X",
-                                   emberKeyContents(&(nwk_key.key))[i]);
+                                   sl_zigbee_key_contents(&(nwk_key.key))[i]);
     }
     sl_log_info(LOG_TAG, "NWK Key:%s", nwk_key_str);
   }
@@ -429,7 +430,7 @@ bool zigpc_gateway_install_code_is_valid(const uint8_t *install_code,
 
 sl_status_t zigpc_gateway_bootload_restart()
 {
-  EmberStatus status = zigbeeHostLaunchBootloader();
+  sl_status_t status = zigbeeHostLaunchBootloader();
 
-  return (status == EMBER_SUCCESS) ? SL_STATUS_OK : SL_STATUS_FAIL;
+  return (status == SL_STATUS_OK) ? SL_STATUS_OK : SL_STATUS_FAIL;
 }

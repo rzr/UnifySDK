@@ -14,6 +14,7 @@ var group__dotdot__cluster__id__definitions =
     [ "DOTDOT_COMMISSIONING_CLUSTER_ID", "group__dotdot__cluster__id__definitions.html#ga3c8391adf3c07d0f2dfd7c7f3035e650", null ],
     [ "DOTDOT_CONFIGURATION_PARAMETERS_CLUSTER_ID", "group__dotdot__cluster__id__definitions.html#ga64fc596ee22fc1dc1c19bb1bd7f134d9", null ],
     [ "DOTDOT_DEHUMIDIFICATION_CONTROL_CLUSTER_ID", "group__dotdot__cluster__id__definitions.html#gaf40ae65340a7e7db62f9b0e339e75686", null ],
+    [ "DOTDOT_DESCRIPTOR_CLUSTER_ID", "group__dotdot__cluster__id__definitions.html#gad5c2f6876c028faf242fd6bf9031c455", null ],
     [ "DOTDOT_DEVICE_TEMPERATURE_CONFIGURATION_CLUSTER_ID", "group__dotdot__cluster__id__definitions.html#gab13b5af6a575fa240968002c3ff32bfb", null ],
     [ "DOTDOT_DIAGNOSTICS_CLUSTER_ID", "group__dotdot__cluster__id__definitions.html#ga64a64d76573912584d9f37532eaaca69", null ],
     [ "DOTDOT_DOOR_LOCK_CLUSTER_ID", "group__dotdot__cluster__id__definitions.html#ga52e3dca8879b0375f8fc91b3e4760496", null ],
@@ -53,8 +54,11 @@ var group__dotdot__cluster__id__definitions =
     [ "DOTDOT_THERMOSTAT_CLUSTER_ID", "group__dotdot__cluster__id__definitions.html#gaaaf90fdbb579ebe87224c73859fb65f7", null ],
     [ "DOTDOT_THERMOSTAT_USER_INTERFACE_CONFIGURATION_CLUSTER_ID", "group__dotdot__cluster__id__definitions.html#ga16564cd3b6d733bbe5916330118b649c", null ],
     [ "DOTDOT_TIME_CLUSTER_ID", "group__dotdot__cluster__id__definitions.html#gac8292badce3f903358009a0cf99415e0", null ],
+    [ "DOTDOT_UNIFY_FAN_CONTROL_CLUSTER_ID", "group__dotdot__cluster__id__definitions.html#ga8221b75552c5fceb5347952ee396ccec", null ],
+    [ "DOTDOT_UNIFY_HUMIDITY_CONTROL_CLUSTER_ID", "group__dotdot__cluster__id__definitions.html#ga28c56a3728fd6ab4fc2e52f49f53999b", null ],
+    [ "DOTDOT_UNIFY_THERMOSTAT_CLUSTER_ID", "group__dotdot__cluster__id__definitions.html#gaf6f7170e93729e955f1c4c44d3bf64c3", null ],
     [ "DOTDOT_WIND_SPEED_MEASUREMENT_CLUSTER_ID", "group__dotdot__cluster__id__definitions.html#gacd53c8af154a88abbaf54133f713b84d", null ],
     [ "DOTDOT_WINDOW_COVERING_CLUSTER_ID", "group__dotdot__cluster__id__definitions.html#gab661e81ea29443cb6195dec1829667c5", null ],
     [ "uic_dotdot_get_cluster_id", "group__dotdot__cluster__id__definitions.html#ga6e7f501345ec80660e63e228a7272f22", null ],
-    [ "uic_dotdot_get_cluster_name", "group__dotdot__cluster__id__definitions.html#gab76d9d817313d313ff2db073180aee73", null ]
+    [ "uic_dotdot_get_cluster_name", "group__dotdot__cluster__id__definitions.html#gacf5fbdb4c3b2c14101f43744820fce24", null ]
 ];

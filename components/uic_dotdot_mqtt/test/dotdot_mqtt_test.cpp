@@ -232,7 +232,7 @@ static uint16_t user_id_value     = 0;
 static uint8_t user_status_value  = 0;
 static uint8_t user_type_value    = 0;
 static std::string pin_code_value = "";
-static sl_status_t uic_mqtt_dotdot_door_lock_setpin_code_test_callback(
+static sl_status_t uic_mqtt_dotdot_door_lock_set_pin_code_test_callback(
   dotdot_unid_t unid,
   dotdot_endpoint_id_t endpoint,
   uic_mqtt_dotdot_callback_call_type_t callback_type,
@@ -254,8 +254,8 @@ void test_dotdot_mqtt_enum_commands()
   const char topic[]
     = "ucl/by-unid/zwDEADBEEF/ep0/DoorLock/Commands/SetPINCode";
 
-  uic_mqtt_dotdot_door_lock_setpin_code_callback_set(
-    &uic_mqtt_dotdot_door_lock_setpin_code_test_callback);
+  uic_mqtt_dotdot_door_lock_set_pin_code_callback_set(
+    &uic_mqtt_dotdot_door_lock_set_pin_code_test_callback);
   uic_mqtt_dotdot_init();
 
   std::string payload = R"({
@@ -555,7 +555,7 @@ void test_dotdot_mqtt_bitmaps_commands()
         "UpdateStartHue": false
     },
     "Action": "ActivateColorLoopFromColorLoopStartEnhancedHue",
-    "Direction": "IncrementEnhancedCurrentHue",
+    "Direction": "ColorLoopHueIncrement",
     "Time": 1,
     "StartHue": 0,
     "OptionsMask": "0",
@@ -577,7 +577,7 @@ void test_dotdot_mqtt_bitmaps_commands()
   TEST_ASSERT_EQUAL(
     ZCL_COLOR_LOOP_SET_ACTION_ACTIVATE_COLOR_LOOP_FROM_COLOR_LOOP_START_ENHANCED_HUE,
     action_status);
-  TEST_ASSERT_EQUAL(ZCL_CC_COLOR_LOOP_DIRECTION_INCREMENT_ENHANCED_CURRENT_HUE,
+  TEST_ASSERT_EQUAL(ZCL_CC_COLOR_LOOP_DIRECTION_COLOR_LOOP_HUE_INCREMENT,
                     direction_status);
   TEST_ASSERT_EQUAL(time_payload_state, time_state);
   TEST_ASSERT_EQUAL(start_hue_payload_state, start_hue_state);

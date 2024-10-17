@@ -15,8 +15,10 @@ add_library(
   src/unify_dotdot_attribute_store_command_callbacks_poll_control.c
   src/unify_dotdot_attribute_store_command_callbacks_thermostat.c
   src/unify_dotdot_attribute_store_command_callbacks_window_covering.c
+  src/unify_dotdot_attribute_store_command_callbacks_zwave_fan_control.c
   src/unify_dotdot_attribute_store_node_state.cpp
   src/unify_dotdot_attribute_store_group_cluster.cpp
+  src/unify_dotdot_attribute_store_descriptor.cpp
   ${ZAP_CURRENT_OUTPUT_DIR}/src/unify_dotdot_attribute_store_helpers.cpp
   ${ZAP_CURRENT_OUTPUT_DIR}/src/unify_dotdot_attribute_store_registration.cpp
   ${ZAP_CURRENT_OUTPUT_DIR}/src/unify_dotdot_attribute_store_write_attributes_command_callbacks.c

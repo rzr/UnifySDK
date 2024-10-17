@@ -1,5 +1,20 @@
 # Portable Runtime Release Notes
 
+## [1.6.0] - Aug 2024
+
+* Portable runtime cli and gui now supports Example Emulated Device(EED) to test without actual hardware.
+* Reference platform updated to Bookworm 64-bit based Raspberry Pi OS.
+  
+## [1.5.0] - Feb 2024
+
+* Portable runtime gui enhanced to work with latest unify core.
+* Portable runtime cli and gui now supports ZIGPC-NCP, AOXPC, Multiprotocol (ZIGPC-RCP).
+  Further details about the cli and gui in-detail changes can be found in documentation.
+* Added failure log when firmware image is not present at the given path during flash app command.
+* Chip type option check validation is fixed.
+* Portable runtime supports a new resource-path option. (defaults to local packaged resources placed in      
+  resources_local folder)
+
 ## [1.4.0] - Aug 2023
 
 * New flash applications (SensorPIR, Wall Controller, Power Strip) support added

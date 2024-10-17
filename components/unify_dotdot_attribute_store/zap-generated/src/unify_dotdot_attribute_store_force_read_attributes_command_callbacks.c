@@ -1087,13 +1087,13 @@ static sl_status_t uic_mqtt_dotdot_door_lock_force_read_attributes_callback (
       sl_log_debug(LOG_TAG, "Undefined Reported value of DoorLock::NumberOfTotalUsersSupported under %s - Endpoint %d", unid, endpoint_id);
     }
   }
-  if (true == attribute_list.number_ofpin_users_supported) {
-    if (SL_STATUS_OK == dotdot_door_lock_number_ofpin_users_supported_undefine_reported(unid, endpoint_id)) {
+  if (true == attribute_list.number_of_pin_users_supported) {
+    if (SL_STATUS_OK == dotdot_door_lock_number_of_pin_users_supported_undefine_reported(unid, endpoint_id)) {
       sl_log_debug(LOG_TAG, "Undefined Reported value of DoorLock::NumberOfPINUsersSupported under %s - Endpoint %d", unid, endpoint_id);
     }
   }
-  if (true == attribute_list.number_ofrfid_users_supported) {
-    if (SL_STATUS_OK == dotdot_door_lock_number_ofrfid_users_supported_undefine_reported(unid, endpoint_id)) {
+  if (true == attribute_list.number_of_rfid_users_supported) {
+    if (SL_STATUS_OK == dotdot_door_lock_number_of_rfid_users_supported_undefine_reported(unid, endpoint_id)) {
       sl_log_debug(LOG_TAG, "Undefined Reported value of DoorLock::NumberOfRFIDUsersSupported under %s - Endpoint %d", unid, endpoint_id);
     }
   }
@@ -1112,24 +1112,34 @@ static sl_status_t uic_mqtt_dotdot_door_lock_force_read_attributes_callback (
       sl_log_debug(LOG_TAG, "Undefined Reported value of DoorLock::NumberOfHolidaySchedulesSupported under %s - Endpoint %d", unid, endpoint_id);
     }
   }
-  if (true == attribute_list.maxpin_code_length) {
-    if (SL_STATUS_OK == dotdot_door_lock_maxpin_code_length_undefine_reported(unid, endpoint_id)) {
+  if (true == attribute_list.max_pin_code_length) {
+    if (SL_STATUS_OK == dotdot_door_lock_max_pin_code_length_undefine_reported(unid, endpoint_id)) {
       sl_log_debug(LOG_TAG, "Undefined Reported value of DoorLock::MaxPINCodeLength under %s - Endpoint %d", unid, endpoint_id);
     }
   }
-  if (true == attribute_list.minpin_code_length) {
-    if (SL_STATUS_OK == dotdot_door_lock_minpin_code_length_undefine_reported(unid, endpoint_id)) {
+  if (true == attribute_list.min_pin_code_length) {
+    if (SL_STATUS_OK == dotdot_door_lock_min_pin_code_length_undefine_reported(unid, endpoint_id)) {
       sl_log_debug(LOG_TAG, "Undefined Reported value of DoorLock::MinPINCodeLength under %s - Endpoint %d", unid, endpoint_id);
     }
   }
-  if (true == attribute_list.maxrfid_code_length) {
-    if (SL_STATUS_OK == dotdot_door_lock_maxrfid_code_length_undefine_reported(unid, endpoint_id)) {
+  if (true == attribute_list.max_rfid_code_length) {
+    if (SL_STATUS_OK == dotdot_door_lock_max_rfid_code_length_undefine_reported(unid, endpoint_id)) {
       sl_log_debug(LOG_TAG, "Undefined Reported value of DoorLock::MaxRFIDCodeLength under %s - Endpoint %d", unid, endpoint_id);
     }
   }
-  if (true == attribute_list.minrfid_code_length) {
-    if (SL_STATUS_OK == dotdot_door_lock_minrfid_code_length_undefine_reported(unid, endpoint_id)) {
+  if (true == attribute_list.min_rfid_code_length) {
+    if (SL_STATUS_OK == dotdot_door_lock_min_rfid_code_length_undefine_reported(unid, endpoint_id)) {
       sl_log_debug(LOG_TAG, "Undefined Reported value of DoorLock::MinRFIDCodeLength under %s - Endpoint %d", unid, endpoint_id);
+    }
+  }
+  if (true == attribute_list.credential_rules_support) {
+    if (SL_STATUS_OK == dotdot_door_lock_credential_rules_support_undefine_reported(unid, endpoint_id)) {
+      sl_log_debug(LOG_TAG, "Undefined Reported value of DoorLock::CredentialRulesSupport under %s - Endpoint %d", unid, endpoint_id);
+    }
+  }
+  if (true == attribute_list.number_of_credentials_supported_per_user) {
+    if (SL_STATUS_OK == dotdot_door_lock_number_of_credentials_supported_per_user_undefine_reported(unid, endpoint_id)) {
+      sl_log_debug(LOG_TAG, "Undefined Reported value of DoorLock::NumberOfCredentialsSupportedPerUser under %s - Endpoint %d", unid, endpoint_id);
     }
   }
   if (true == attribute_list.enable_logging) {
@@ -1192,6 +1202,11 @@ static sl_status_t uic_mqtt_dotdot_door_lock_force_read_attributes_callback (
       sl_log_debug(LOG_TAG, "Undefined Reported value of DoorLock::EnablePrivacyModeButton under %s - Endpoint %d", unid, endpoint_id);
     }
   }
+  if (true == attribute_list.local_programming_features) {
+    if (SL_STATUS_OK == dotdot_door_lock_local_programming_features_undefine_reported(unid, endpoint_id)) {
+      sl_log_debug(LOG_TAG, "Undefined Reported value of DoorLock::LocalProgrammingFeatures under %s - Endpoint %d", unid, endpoint_id);
+    }
+  }
   if (true == attribute_list.wrong_code_entry_limit) {
     if (SL_STATUS_OK == dotdot_door_lock_wrong_code_entry_limit_undefine_reported(unid, endpoint_id)) {
       sl_log_debug(LOG_TAG, "Undefined Reported value of DoorLock::WrongCodeEntryLimit under %s - Endpoint %d", unid, endpoint_id);
@@ -1202,19 +1217,24 @@ static sl_status_t uic_mqtt_dotdot_door_lock_force_read_attributes_callback (
       sl_log_debug(LOG_TAG, "Undefined Reported value of DoorLock::UserCodeTemporaryDisableTime under %s - Endpoint %d", unid, endpoint_id);
     }
   }
-  if (true == attribute_list.sendpin_over_the_air) {
-    if (SL_STATUS_OK == dotdot_door_lock_sendpin_over_the_air_undefine_reported(unid, endpoint_id)) {
+  if (true == attribute_list.send_pin_over_the_air) {
+    if (SL_STATUS_OK == dotdot_door_lock_send_pin_over_the_air_undefine_reported(unid, endpoint_id)) {
       sl_log_debug(LOG_TAG, "Undefined Reported value of DoorLock::SendPINOverTheAir under %s - Endpoint %d", unid, endpoint_id);
     }
   }
-  if (true == attribute_list.requirepi_nforrf_operation) {
-    if (SL_STATUS_OK == dotdot_door_lock_requirepi_nforrf_operation_undefine_reported(unid, endpoint_id)) {
+  if (true == attribute_list.require_pi_nfor_rf_operation) {
+    if (SL_STATUS_OK == dotdot_door_lock_require_pi_nfor_rf_operation_undefine_reported(unid, endpoint_id)) {
       sl_log_debug(LOG_TAG, "Undefined Reported value of DoorLock::RequirePINforRFOperation under %s - Endpoint %d", unid, endpoint_id);
     }
   }
   if (true == attribute_list.security_level) {
     if (SL_STATUS_OK == dotdot_door_lock_security_level_undefine_reported(unid, endpoint_id)) {
       sl_log_debug(LOG_TAG, "Undefined Reported value of DoorLock::SecurityLevel under %s - Endpoint %d", unid, endpoint_id);
+    }
+  }
+  if (true == attribute_list.expiring_user_timeout) {
+    if (SL_STATUS_OK == dotdot_door_lock_expiring_user_timeout_undefine_reported(unid, endpoint_id)) {
+      sl_log_debug(LOG_TAG, "Undefined Reported value of DoorLock::ExpiringUserTimeout under %s - Endpoint %d", unid, endpoint_id);
     }
   }
   if (true == attribute_list.alarm_mask) {
@@ -1255,6 +1275,11 @@ static sl_status_t uic_mqtt_dotdot_door_lock_force_read_attributes_callback (
   if (true == attribute_list.rfid_programming_event_mask) {
     if (SL_STATUS_OK == dotdot_door_lock_rfid_programming_event_mask_undefine_reported(unid, endpoint_id)) {
       sl_log_debug(LOG_TAG, "Undefined Reported value of DoorLock::RFIDProgrammingEventMask under %s - Endpoint %d", unid, endpoint_id);
+    }
+  }
+  if (true == attribute_list.feature_map) {
+    if (SL_STATUS_OK == dotdot_door_lock_feature_map_undefine_reported(unid, endpoint_id)) {
+      sl_log_debug(LOG_TAG, "Undefined Reported value of DoorLock::FeatureMap under %s - Endpoint %d", unid, endpoint_id);
     }
   }
   return SL_STATUS_OK;
@@ -3652,18 +3677,18 @@ static sl_status_t uic_mqtt_dotdot_electrical_measurement_force_read_attributes_
       sl_log_debug(LOG_TAG, "Undefined Reported value of ElectricalMeasurement::PowerFactor under %s - Endpoint %d", unid, endpoint_id);
     }
   }
-  if (true == attribute_list.averagerms_voltage_measurement_period) {
-    if (SL_STATUS_OK == dotdot_electrical_measurement_averagerms_voltage_measurement_period_undefine_reported(unid, endpoint_id)) {
+  if (true == attribute_list.average_rms_voltage_measurement_period) {
+    if (SL_STATUS_OK == dotdot_electrical_measurement_average_rms_voltage_measurement_period_undefine_reported(unid, endpoint_id)) {
       sl_log_debug(LOG_TAG, "Undefined Reported value of ElectricalMeasurement::AverageRMSVoltageMeasurementPeriod under %s - Endpoint %d", unid, endpoint_id);
     }
   }
-  if (true == attribute_list.averagerms_over_voltage_counter) {
-    if (SL_STATUS_OK == dotdot_electrical_measurement_averagerms_over_voltage_counter_undefine_reported(unid, endpoint_id)) {
+  if (true == attribute_list.average_rms_over_voltage_counter) {
+    if (SL_STATUS_OK == dotdot_electrical_measurement_average_rms_over_voltage_counter_undefine_reported(unid, endpoint_id)) {
       sl_log_debug(LOG_TAG, "Undefined Reported value of ElectricalMeasurement::AverageRMSOverVoltageCounter under %s - Endpoint %d", unid, endpoint_id);
     }
   }
-  if (true == attribute_list.averagerms_under_voltage_counter) {
-    if (SL_STATUS_OK == dotdot_electrical_measurement_averagerms_under_voltage_counter_undefine_reported(unid, endpoint_id)) {
+  if (true == attribute_list.average_rms_under_voltage_counter) {
+    if (SL_STATUS_OK == dotdot_electrical_measurement_average_rms_under_voltage_counter_undefine_reported(unid, endpoint_id)) {
       sl_log_debug(LOG_TAG, "Undefined Reported value of ElectricalMeasurement::AverageRMSUnderVoltageCounter under %s - Endpoint %d", unid, endpoint_id);
     }
   }
@@ -3757,13 +3782,13 @@ static sl_status_t uic_mqtt_dotdot_electrical_measurement_force_read_attributes_
       sl_log_debug(LOG_TAG, "Undefined Reported value of ElectricalMeasurement::ACReactivePowerOverload under %s - Endpoint %d", unid, endpoint_id);
     }
   }
-  if (true == attribute_list.averagerms_over_voltage) {
-    if (SL_STATUS_OK == dotdot_electrical_measurement_averagerms_over_voltage_undefine_reported(unid, endpoint_id)) {
+  if (true == attribute_list.average_rms_over_voltage) {
+    if (SL_STATUS_OK == dotdot_electrical_measurement_average_rms_over_voltage_undefine_reported(unid, endpoint_id)) {
       sl_log_debug(LOG_TAG, "Undefined Reported value of ElectricalMeasurement::AverageRMSOverVoltage under %s - Endpoint %d", unid, endpoint_id);
     }
   }
-  if (true == attribute_list.averagerms_under_voltage) {
-    if (SL_STATUS_OK == dotdot_electrical_measurement_averagerms_under_voltage_undefine_reported(unid, endpoint_id)) {
+  if (true == attribute_list.average_rms_under_voltage) {
+    if (SL_STATUS_OK == dotdot_electrical_measurement_average_rms_under_voltage_undefine_reported(unid, endpoint_id)) {
       sl_log_debug(LOG_TAG, "Undefined Reported value of ElectricalMeasurement::AverageRMSUnderVoltage under %s - Endpoint %d", unid, endpoint_id);
     }
   }
@@ -3862,18 +3887,18 @@ static sl_status_t uic_mqtt_dotdot_electrical_measurement_force_read_attributes_
       sl_log_debug(LOG_TAG, "Undefined Reported value of ElectricalMeasurement::PowerFactorPhB under %s - Endpoint %d", unid, endpoint_id);
     }
   }
-  if (true == attribute_list.averagerms_voltage_measurement_period_phb) {
-    if (SL_STATUS_OK == dotdot_electrical_measurement_averagerms_voltage_measurement_period_phb_undefine_reported(unid, endpoint_id)) {
+  if (true == attribute_list.average_rms_voltage_measurement_period_phb) {
+    if (SL_STATUS_OK == dotdot_electrical_measurement_average_rms_voltage_measurement_period_phb_undefine_reported(unid, endpoint_id)) {
       sl_log_debug(LOG_TAG, "Undefined Reported value of ElectricalMeasurement::AverageRMSVoltageMeasurementPeriodPhB under %s - Endpoint %d", unid, endpoint_id);
     }
   }
-  if (true == attribute_list.averagerms_over_voltage_counter_phb) {
-    if (SL_STATUS_OK == dotdot_electrical_measurement_averagerms_over_voltage_counter_phb_undefine_reported(unid, endpoint_id)) {
+  if (true == attribute_list.average_rms_over_voltage_counter_phb) {
+    if (SL_STATUS_OK == dotdot_electrical_measurement_average_rms_over_voltage_counter_phb_undefine_reported(unid, endpoint_id)) {
       sl_log_debug(LOG_TAG, "Undefined Reported value of ElectricalMeasurement::AverageRMSOverVoltageCounterPhB under %s - Endpoint %d", unid, endpoint_id);
     }
   }
-  if (true == attribute_list.averagerms_under_voltage_counter_phb) {
-    if (SL_STATUS_OK == dotdot_electrical_measurement_averagerms_under_voltage_counter_phb_undefine_reported(unid, endpoint_id)) {
+  if (true == attribute_list.average_rms_under_voltage_counter_phb) {
+    if (SL_STATUS_OK == dotdot_electrical_measurement_average_rms_under_voltage_counter_phb_undefine_reported(unid, endpoint_id)) {
       sl_log_debug(LOG_TAG, "Undefined Reported value of ElectricalMeasurement::AverageRMSUnderVoltageCounterPhB under %s - Endpoint %d", unid, endpoint_id);
     }
   }
@@ -3972,18 +3997,18 @@ static sl_status_t uic_mqtt_dotdot_electrical_measurement_force_read_attributes_
       sl_log_debug(LOG_TAG, "Undefined Reported value of ElectricalMeasurement::PowerFactorPhC under %s - Endpoint %d", unid, endpoint_id);
     }
   }
-  if (true == attribute_list.averagerms_voltage_measurement_period_phc) {
-    if (SL_STATUS_OK == dotdot_electrical_measurement_averagerms_voltage_measurement_period_phc_undefine_reported(unid, endpoint_id)) {
+  if (true == attribute_list.average_rms_voltage_measurement_period_phc) {
+    if (SL_STATUS_OK == dotdot_electrical_measurement_average_rms_voltage_measurement_period_phc_undefine_reported(unid, endpoint_id)) {
       sl_log_debug(LOG_TAG, "Undefined Reported value of ElectricalMeasurement::AverageRMSVoltageMeasurementPeriodPhC under %s - Endpoint %d", unid, endpoint_id);
     }
   }
-  if (true == attribute_list.averagerms_over_voltage_counter_phc) {
-    if (SL_STATUS_OK == dotdot_electrical_measurement_averagerms_over_voltage_counter_phc_undefine_reported(unid, endpoint_id)) {
+  if (true == attribute_list.average_rms_over_voltage_counter_phc) {
+    if (SL_STATUS_OK == dotdot_electrical_measurement_average_rms_over_voltage_counter_phc_undefine_reported(unid, endpoint_id)) {
       sl_log_debug(LOG_TAG, "Undefined Reported value of ElectricalMeasurement::AverageRMSOverVoltageCounterPhC under %s - Endpoint %d", unid, endpoint_id);
     }
   }
-  if (true == attribute_list.averagerms_under_voltage_counter_phc) {
-    if (SL_STATUS_OK == dotdot_electrical_measurement_averagerms_under_voltage_counter_phc_undefine_reported(unid, endpoint_id)) {
+  if (true == attribute_list.average_rms_under_voltage_counter_phc) {
+    if (SL_STATUS_OK == dotdot_electrical_measurement_average_rms_under_voltage_counter_phc_undefine_reported(unid, endpoint_id)) {
       sl_log_debug(LOG_TAG, "Undefined Reported value of ElectricalMeasurement::AverageRMSUnderVoltageCounterPhC under %s - Endpoint %d", unid, endpoint_id);
     }
   }
@@ -4167,8 +4192,8 @@ static sl_status_t uic_mqtt_dotdot_diagnostics_force_read_attributes_callback (
       sl_log_debug(LOG_TAG, "Undefined Reported value of Diagnostics::RelayedUcast under %s - Endpoint %d", unid, endpoint_id);
     }
   }
-  if (true == attribute_list.phy_tomac_queue_limit_reached) {
-    if (SL_STATUS_OK == dotdot_diagnostics_phy_tomac_queue_limit_reached_undefine_reported(unid, endpoint_id)) {
+  if (true == attribute_list.phy_to_mac_queue_limit_reached) {
+    if (SL_STATUS_OK == dotdot_diagnostics_phy_to_mac_queue_limit_reached_undefine_reported(unid, endpoint_id)) {
       sl_log_debug(LOG_TAG, "Undefined Reported value of Diagnostics::PHYToMACQueueLimitReached under %s - Endpoint %d", unid, endpoint_id);
     }
   }
@@ -4177,8 +4202,8 @@ static sl_status_t uic_mqtt_dotdot_diagnostics_force_read_attributes_callback (
       sl_log_debug(LOG_TAG, "Undefined Reported value of Diagnostics::PacketValidateDropCount under %s - Endpoint %d", unid, endpoint_id);
     }
   }
-  if (true == attribute_list.averagemac_retry_peraps_message_sent) {
-    if (SL_STATUS_OK == dotdot_diagnostics_averagemac_retry_peraps_message_sent_undefine_reported(unid, endpoint_id)) {
+  if (true == attribute_list.average_mac_retry_per_aps_message_sent) {
+    if (SL_STATUS_OK == dotdot_diagnostics_average_mac_retry_per_aps_message_sent_undefine_reported(unid, endpoint_id)) {
       sl_log_debug(LOG_TAG, "Undefined Reported value of Diagnostics::AverageMACRetryPerAPSMessageSent under %s - Endpoint %d", unid, endpoint_id);
     }
   }
@@ -4444,6 +4469,236 @@ static sl_status_t uic_mqtt_dotdot_aox_position_estimation_force_read_attributes
   }
   return SL_STATUS_OK;
 }
+////////////////////////////////////////////////////////////////////////////////
+// Start of cluster Descriptor
+////////////////////////////////////////////////////////////////////////////////
+static sl_status_t uic_mqtt_dotdot_descriptor_force_read_attributes_callback (
+  const dotdot_unid_t unid,
+  dotdot_endpoint_id_t endpoint_id,
+  uic_mqtt_dotdot_callback_call_type_t call_type,
+  uic_mqtt_dotdot_descriptor_updated_state_t attribute_list) {
+
+  if (false == is_force_read_attributes_enabled()){
+    return SL_STATUS_FAIL;
+  }
+
+  if (call_type == UIC_MQTT_DOTDOT_CALLBACK_TYPE_SUPPORT_CHECK) {
+    if (is_automatic_deduction_of_supported_commands_enabled()) {
+      return dotdot_is_any_descriptor_attribute_supported(unid, endpoint_id) ?
+        SL_STATUS_OK : SL_STATUS_FAIL;
+    } else {
+      return SL_STATUS_FAIL;
+    }
+  }
+
+  // Go and undefine everything that needs to be read again:
+  if (true == attribute_list.device_type_list) {
+    if (SL_STATUS_OK == dotdot_descriptor_device_type_list_undefine_reported(unid, endpoint_id)) {
+      sl_log_debug(LOG_TAG, "Undefined Reported value of Descriptor::DeviceTypeList under %s - Endpoint %d", unid, endpoint_id);
+    }
+  }
+  return SL_STATUS_OK;
+}
+////////////////////////////////////////////////////////////////////////////////
+// Start of cluster UnifyFanControl
+////////////////////////////////////////////////////////////////////////////////
+static sl_status_t uic_mqtt_dotdot_unify_fan_control_force_read_attributes_callback (
+  const dotdot_unid_t unid,
+  dotdot_endpoint_id_t endpoint_id,
+  uic_mqtt_dotdot_callback_call_type_t call_type,
+  uic_mqtt_dotdot_unify_fan_control_updated_state_t attribute_list) {
+
+  if (false == is_force_read_attributes_enabled()){
+    return SL_STATUS_FAIL;
+  }
+
+  if (call_type == UIC_MQTT_DOTDOT_CALLBACK_TYPE_SUPPORT_CHECK) {
+    if (is_automatic_deduction_of_supported_commands_enabled()) {
+      return dotdot_is_any_unify_fan_control_attribute_supported(unid, endpoint_id) ?
+        SL_STATUS_OK : SL_STATUS_FAIL;
+    } else {
+      return SL_STATUS_FAIL;
+    }
+  }
+
+  // Go and undefine everything that needs to be read again:
+  if (true == attribute_list.z_wave_fan_mode) {
+    if (SL_STATUS_OK == dotdot_unify_fan_control_z_wave_fan_mode_undefine_reported(unid, endpoint_id)) {
+      sl_log_debug(LOG_TAG, "Undefined Reported value of UnifyFanControl::ZWaveFanMode under %s - Endpoint %d", unid, endpoint_id);
+    }
+  }
+  if (true == attribute_list.z_wave_supported_fan_mode) {
+    if (SL_STATUS_OK == dotdot_unify_fan_control_z_wave_supported_fan_mode_undefine_reported(unid, endpoint_id)) {
+      sl_log_debug(LOG_TAG, "Undefined Reported value of UnifyFanControl::ZWaveSupportedFanMode under %s - Endpoint %d", unid, endpoint_id);
+    }
+  }
+  if (true == attribute_list.z_wave_fan_state) {
+    if (SL_STATUS_OK == dotdot_unify_fan_control_z_wave_fan_state_undefine_reported(unid, endpoint_id)) {
+      sl_log_debug(LOG_TAG, "Undefined Reported value of UnifyFanControl::ZWaveFanState under %s - Endpoint %d", unid, endpoint_id);
+    }
+  }
+  return SL_STATUS_OK;
+}
+////////////////////////////////////////////////////////////////////////////////
+// Start of cluster UnifyThermostat
+////////////////////////////////////////////////////////////////////////////////
+static sl_status_t uic_mqtt_dotdot_unify_thermostat_force_read_attributes_callback (
+  const dotdot_unid_t unid,
+  dotdot_endpoint_id_t endpoint_id,
+  uic_mqtt_dotdot_callback_call_type_t call_type,
+  uic_mqtt_dotdot_unify_thermostat_updated_state_t attribute_list) {
+
+  if (false == is_force_read_attributes_enabled()){
+    return SL_STATUS_FAIL;
+  }
+
+  if (call_type == UIC_MQTT_DOTDOT_CALLBACK_TYPE_SUPPORT_CHECK) {
+    if (is_automatic_deduction_of_supported_commands_enabled()) {
+      return dotdot_is_any_unify_thermostat_attribute_supported(unid, endpoint_id) ?
+        SL_STATUS_OK : SL_STATUS_FAIL;
+    } else {
+      return SL_STATUS_FAIL;
+    }
+  }
+
+  // Go and undefine everything that needs to be read again:
+  if (true == attribute_list.thermostat_mode) {
+    if (SL_STATUS_OK == dotdot_unify_thermostat_thermostat_mode_undefine_reported(unid, endpoint_id)) {
+      sl_log_debug(LOG_TAG, "Undefined Reported value of UnifyThermostat::ThermostatMode under %s - Endpoint %d", unid, endpoint_id);
+    }
+  }
+  if (true == attribute_list.supported_thermostat_mode) {
+    if (SL_STATUS_OK == dotdot_unify_thermostat_supported_thermostat_mode_undefine_reported(unid, endpoint_id)) {
+      sl_log_debug(LOG_TAG, "Undefined Reported value of UnifyThermostat::SupportedThermostatMode under %s - Endpoint %d", unid, endpoint_id);
+    }
+  }
+  if (true == attribute_list.operating_state) {
+    if (SL_STATUS_OK == dotdot_unify_thermostat_operating_state_undefine_reported(unid, endpoint_id)) {
+      sl_log_debug(LOG_TAG, "Undefined Reported value of UnifyThermostat::OperatingState under %s - Endpoint %d", unid, endpoint_id);
+    }
+  }
+  return SL_STATUS_OK;
+}
+////////////////////////////////////////////////////////////////////////////////
+// Start of cluster UnifyHumidityControl
+////////////////////////////////////////////////////////////////////////////////
+static sl_status_t uic_mqtt_dotdot_unify_humidity_control_force_read_attributes_callback (
+  const dotdot_unid_t unid,
+  dotdot_endpoint_id_t endpoint_id,
+  uic_mqtt_dotdot_callback_call_type_t call_type,
+  uic_mqtt_dotdot_unify_humidity_control_updated_state_t attribute_list) {
+
+  if (false == is_force_read_attributes_enabled()){
+    return SL_STATUS_FAIL;
+  }
+
+  if (call_type == UIC_MQTT_DOTDOT_CALLBACK_TYPE_SUPPORT_CHECK) {
+    if (is_automatic_deduction_of_supported_commands_enabled()) {
+      return dotdot_is_any_unify_humidity_control_attribute_supported(unid, endpoint_id) ?
+        SL_STATUS_OK : SL_STATUS_FAIL;
+    } else {
+      return SL_STATUS_FAIL;
+    }
+  }
+
+  // Go and undefine everything that needs to be read again:
+  if (true == attribute_list.reporting_mode) {
+    if (SL_STATUS_OK == dotdot_unify_humidity_control_reporting_mode_undefine_reported(unid, endpoint_id)) {
+      sl_log_debug(LOG_TAG, "Undefined Reported value of UnifyHumidityControl::ReportingMode under %s - Endpoint %d", unid, endpoint_id);
+    }
+  }
+  if (true == attribute_list.supported_reporting_mode) {
+    if (SL_STATUS_OK == dotdot_unify_humidity_control_supported_reporting_mode_undefine_reported(unid, endpoint_id)) {
+      sl_log_debug(LOG_TAG, "Undefined Reported value of UnifyHumidityControl::SupportedReportingMode under %s - Endpoint %d", unid, endpoint_id);
+    }
+  }
+  if (true == attribute_list.current_state) {
+    if (SL_STATUS_OK == dotdot_unify_humidity_control_current_state_undefine_reported(unid, endpoint_id)) {
+      sl_log_debug(LOG_TAG, "Undefined Reported value of UnifyHumidityControl::CurrentState under %s - Endpoint %d", unid, endpoint_id);
+    }
+  }
+  if (true == attribute_list.supported_set_points) {
+    if (SL_STATUS_OK == dotdot_unify_humidity_control_supported_set_points_undefine_reported(unid, endpoint_id)) {
+      sl_log_debug(LOG_TAG, "Undefined Reported value of UnifyHumidityControl::SupportedSetPoints under %s - Endpoint %d", unid, endpoint_id);
+    }
+  }
+  if (true == attribute_list.humidifier_setpoint_min) {
+    if (SL_STATUS_OK == dotdot_unify_humidity_control_humidifier_setpoint_min_undefine_reported(unid, endpoint_id)) {
+      sl_log_debug(LOG_TAG, "Undefined Reported value of UnifyHumidityControl::HumidifierSetpointMin under %s - Endpoint %d", unid, endpoint_id);
+    }
+  }
+  if (true == attribute_list.humidifier_setpoint_max) {
+    if (SL_STATUS_OK == dotdot_unify_humidity_control_humidifier_setpoint_max_undefine_reported(unid, endpoint_id)) {
+      sl_log_debug(LOG_TAG, "Undefined Reported value of UnifyHumidityControl::HumidifierSetpointMax under %s - Endpoint %d", unid, endpoint_id);
+    }
+  }
+  if (true == attribute_list.humidifier_setpoint) {
+    if (SL_STATUS_OK == dotdot_unify_humidity_control_humidifier_setpoint_undefine_reported(unid, endpoint_id)) {
+      sl_log_debug(LOG_TAG, "Undefined Reported value of UnifyHumidityControl::HumidifierSetpoint under %s - Endpoint %d", unid, endpoint_id);
+    }
+  }
+  if (true == attribute_list.humidifier_setpoint_scale) {
+    if (SL_STATUS_OK == dotdot_unify_humidity_control_humidifier_setpoint_scale_undefine_reported(unid, endpoint_id)) {
+      sl_log_debug(LOG_TAG, "Undefined Reported value of UnifyHumidityControl::HumidifierSetpointScale under %s - Endpoint %d", unid, endpoint_id);
+    }
+  }
+  if (true == attribute_list.humidifier_setpoint_precision) {
+    if (SL_STATUS_OK == dotdot_unify_humidity_control_humidifier_setpoint_precision_undefine_reported(unid, endpoint_id)) {
+      sl_log_debug(LOG_TAG, "Undefined Reported value of UnifyHumidityControl::HumidifierSetpointPrecision under %s - Endpoint %d", unid, endpoint_id);
+    }
+  }
+  if (true == attribute_list.dehumidifier_setpoint_min) {
+    if (SL_STATUS_OK == dotdot_unify_humidity_control_dehumidifier_setpoint_min_undefine_reported(unid, endpoint_id)) {
+      sl_log_debug(LOG_TAG, "Undefined Reported value of UnifyHumidityControl::DehumidifierSetpointMin under %s - Endpoint %d", unid, endpoint_id);
+    }
+  }
+  if (true == attribute_list.dehumidifier_setpoint_max) {
+    if (SL_STATUS_OK == dotdot_unify_humidity_control_dehumidifier_setpoint_max_undefine_reported(unid, endpoint_id)) {
+      sl_log_debug(LOG_TAG, "Undefined Reported value of UnifyHumidityControl::DehumidifierSetpointMax under %s - Endpoint %d", unid, endpoint_id);
+    }
+  }
+  if (true == attribute_list.dehumidifier_setpoint) {
+    if (SL_STATUS_OK == dotdot_unify_humidity_control_dehumidifier_setpoint_undefine_reported(unid, endpoint_id)) {
+      sl_log_debug(LOG_TAG, "Undefined Reported value of UnifyHumidityControl::DehumidifierSetpoint under %s - Endpoint %d", unid, endpoint_id);
+    }
+  }
+  if (true == attribute_list.dehumidifier_setpoint_scale) {
+    if (SL_STATUS_OK == dotdot_unify_humidity_control_dehumidifier_setpoint_scale_undefine_reported(unid, endpoint_id)) {
+      sl_log_debug(LOG_TAG, "Undefined Reported value of UnifyHumidityControl::DehumidifierSetpointScale under %s - Endpoint %d", unid, endpoint_id);
+    }
+  }
+  if (true == attribute_list.dehumidifier_setpoint_precision) {
+    if (SL_STATUS_OK == dotdot_unify_humidity_control_dehumidifier_setpoint_precision_undefine_reported(unid, endpoint_id)) {
+      sl_log_debug(LOG_TAG, "Undefined Reported value of UnifyHumidityControl::DehumidifierSetpointPrecision under %s - Endpoint %d", unid, endpoint_id);
+    }
+  }
+  if (true == attribute_list.auto_setpoint_min) {
+    if (SL_STATUS_OK == dotdot_unify_humidity_control_auto_setpoint_min_undefine_reported(unid, endpoint_id)) {
+      sl_log_debug(LOG_TAG, "Undefined Reported value of UnifyHumidityControl::AutoSetpointMin under %s - Endpoint %d", unid, endpoint_id);
+    }
+  }
+  if (true == attribute_list.auto_setpoint_max) {
+    if (SL_STATUS_OK == dotdot_unify_humidity_control_auto_setpoint_max_undefine_reported(unid, endpoint_id)) {
+      sl_log_debug(LOG_TAG, "Undefined Reported value of UnifyHumidityControl::AutoSetpointMax under %s - Endpoint %d", unid, endpoint_id);
+    }
+  }
+  if (true == attribute_list.auto_setpoint) {
+    if (SL_STATUS_OK == dotdot_unify_humidity_control_auto_setpoint_undefine_reported(unid, endpoint_id)) {
+      sl_log_debug(LOG_TAG, "Undefined Reported value of UnifyHumidityControl::AutoSetpoint under %s - Endpoint %d", unid, endpoint_id);
+    }
+  }
+  if (true == attribute_list.auto_setpoint_scale) {
+    if (SL_STATUS_OK == dotdot_unify_humidity_control_auto_setpoint_scale_undefine_reported(unid, endpoint_id)) {
+      sl_log_debug(LOG_TAG, "Undefined Reported value of UnifyHumidityControl::AutoSetpointScale under %s - Endpoint %d", unid, endpoint_id);
+    }
+  }
+  if (true == attribute_list.auto_setpoint_precision) {
+    if (SL_STATUS_OK == dotdot_unify_humidity_control_auto_setpoint_precision_undefine_reported(unid, endpoint_id)) {
+      sl_log_debug(LOG_TAG, "Undefined Reported value of UnifyHumidityControl::AutoSetpointPrecision under %s - Endpoint %d", unid, endpoint_id);
+    }
+  }
+  return SL_STATUS_OK;
+}
 // clang-format on
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -4552,6 +4807,14 @@ sl_status_t
   uic_mqtt_dotdot_set_aox_position_estimation_force_read_attributes_callback(&uic_mqtt_dotdot_aox_position_estimation_force_read_attributes_callback);
   
 
+  uic_mqtt_dotdot_set_descriptor_force_read_attributes_callback(&uic_mqtt_dotdot_descriptor_force_read_attributes_callback);
+  
+  uic_mqtt_dotdot_set_unify_fan_control_force_read_attributes_callback(&uic_mqtt_dotdot_unify_fan_control_force_read_attributes_callback);
+  
+  uic_mqtt_dotdot_set_unify_thermostat_force_read_attributes_callback(&uic_mqtt_dotdot_unify_thermostat_force_read_attributes_callback);
+  
+  uic_mqtt_dotdot_set_unify_humidity_control_force_read_attributes_callback(&uic_mqtt_dotdot_unify_humidity_control_force_read_attributes_callback);
+  
   // clang-format on
 
   return SL_STATUS_OK;

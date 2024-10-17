@@ -9,7 +9,7 @@ OTBR_SCRIPTS_DIR=/usr/share/otbr/script
 
 configure_otbr_install() {
     export INFRA_IF_NAME=@OTBR_INFRA_IF_NAME@
-    export RADIO_URL=@OTBR_RADIO_URL@
+    export RADIO_URL="@OTBR_RADIO_URL@"
 
     export OTBR_MDNS=@OTBR_MDNS@
     export NAT64_SERVICE=@OTBR_NAT64_SERVICE@
@@ -64,8 +64,8 @@ enable_otbr_services() {
 }
 
 configure_otbr_install
-init_otbr_scripts
-install_services
+init_otbr_scripts > /dev/null
+install_services > /dev/null # Suppress output of otbr install scripts
 enable_otbr_services
 
 exit 0

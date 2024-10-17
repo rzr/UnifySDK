@@ -16009,7 +16009,7 @@ sl_status_t dotdot_create_door_lock_number_of_total_users_supported(
  * @returns true if NumberOfPINUsersSupported is supported
  * @returns false if NumberOfPINUsersSupported is not supported
  */
-bool dotdot_is_supported_door_lock_number_ofpin_users_supported (
+bool dotdot_is_supported_door_lock_number_of_pin_users_supported (
               const dotdot_unid_t unid, const dotdot_endpoint_id_t endpoint_id);
 
 /**
@@ -16023,7 +16023,7 @@ bool dotdot_is_supported_door_lock_number_ofpin_users_supported (
  *
  * @returns NumberOfPINUsersSupported attribute
  */
-uint16_t dotdot_get_door_lock_number_ofpin_users_supported(
+uint16_t dotdot_get_door_lock_number_of_pin_users_supported(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id,
   attribute_store_node_value_state_t value_state);
@@ -16036,14 +16036,14 @@ uint16_t dotdot_get_door_lock_number_ofpin_users_supported(
  * @param value_state   value state to write for the node,
  *                      see \ref attribute_store_set_node_attribute_value
  * 
- * @param new_number_ofpin_users_supported new value to set
+ * @param new_number_of_pin_users_supported new value to set
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_set_door_lock_number_ofpin_users_supported(
+sl_status_t dotdot_set_door_lock_number_of_pin_users_supported(
   const dotdot_unid_t unid,
   dotdot_endpoint_id_t endpoint_id,
   attribute_store_node_value_state_t value_state,
-  uint16_t new_number_ofpin_users_supported
+  uint16_t new_number_of_pin_users_supported
   );
 
 /**
@@ -16054,7 +16054,7 @@ sl_status_t dotdot_set_door_lock_number_ofpin_users_supported(
  * @param endpoint_id   Endpoint ID
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_door_lock_number_ofpin_users_supported_undefine_reported(
+sl_status_t dotdot_door_lock_number_of_pin_users_supported_undefine_reported(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -16066,7 +16066,7 @@ sl_status_t dotdot_door_lock_number_ofpin_users_supported_undefine_reported(
  * @param endpoint_id   Endpoint ID
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_door_lock_number_ofpin_users_supported_undefine_desired(
+sl_status_t dotdot_door_lock_number_of_pin_users_supported_undefine_desired(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -16078,7 +16078,7 @@ sl_status_t dotdot_door_lock_number_ofpin_users_supported_undefine_desired(
  * @param endpoint_id   Endpoint ID
  * @returns true if defined, false is undefined or non-existent
  */
-bool dotdot_door_lock_number_ofpin_users_supported_is_reported_defined(
+bool dotdot_door_lock_number_of_pin_users_supported_is_reported_defined(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -16090,7 +16090,7 @@ bool dotdot_door_lock_number_ofpin_users_supported_is_reported_defined(
  * @param endpoint_id   Endpoint ID
  * @returns true if defined, false is undefined or non-existent
  */
-bool dotdot_door_lock_number_ofpin_users_supported_is_desired_defined(
+bool dotdot_door_lock_number_of_pin_users_supported_is_desired_defined(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -16101,7 +16101,7 @@ bool dotdot_door_lock_number_ofpin_users_supported_is_desired_defined(
  * @param endpoint_id   Endpoint ID
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_create_door_lock_number_ofpin_users_supported(
+sl_status_t dotdot_create_door_lock_number_of_pin_users_supported(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 // DoorLock NumberOfRFIDUsersSupported
@@ -16115,7 +16115,7 @@ sl_status_t dotdot_create_door_lock_number_ofpin_users_supported(
  * @returns true if NumberOfRFIDUsersSupported is supported
  * @returns false if NumberOfRFIDUsersSupported is not supported
  */
-bool dotdot_is_supported_door_lock_number_ofrfid_users_supported (
+bool dotdot_is_supported_door_lock_number_of_rfid_users_supported (
               const dotdot_unid_t unid, const dotdot_endpoint_id_t endpoint_id);
 
 /**
@@ -16129,7 +16129,7 @@ bool dotdot_is_supported_door_lock_number_ofrfid_users_supported (
  *
  * @returns NumberOfRFIDUsersSupported attribute
  */
-uint16_t dotdot_get_door_lock_number_ofrfid_users_supported(
+uint16_t dotdot_get_door_lock_number_of_rfid_users_supported(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id,
   attribute_store_node_value_state_t value_state);
@@ -16142,14 +16142,14 @@ uint16_t dotdot_get_door_lock_number_ofrfid_users_supported(
  * @param value_state   value state to write for the node,
  *                      see \ref attribute_store_set_node_attribute_value
  * 
- * @param new_number_ofrfid_users_supported new value to set
+ * @param new_number_of_rfid_users_supported new value to set
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_set_door_lock_number_ofrfid_users_supported(
+sl_status_t dotdot_set_door_lock_number_of_rfid_users_supported(
   const dotdot_unid_t unid,
   dotdot_endpoint_id_t endpoint_id,
   attribute_store_node_value_state_t value_state,
-  uint16_t new_number_ofrfid_users_supported
+  uint16_t new_number_of_rfid_users_supported
   );
 
 /**
@@ -16160,7 +16160,7 @@ sl_status_t dotdot_set_door_lock_number_ofrfid_users_supported(
  * @param endpoint_id   Endpoint ID
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_door_lock_number_ofrfid_users_supported_undefine_reported(
+sl_status_t dotdot_door_lock_number_of_rfid_users_supported_undefine_reported(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -16172,7 +16172,7 @@ sl_status_t dotdot_door_lock_number_ofrfid_users_supported_undefine_reported(
  * @param endpoint_id   Endpoint ID
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_door_lock_number_ofrfid_users_supported_undefine_desired(
+sl_status_t dotdot_door_lock_number_of_rfid_users_supported_undefine_desired(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -16184,7 +16184,7 @@ sl_status_t dotdot_door_lock_number_ofrfid_users_supported_undefine_desired(
  * @param endpoint_id   Endpoint ID
  * @returns true if defined, false is undefined or non-existent
  */
-bool dotdot_door_lock_number_ofrfid_users_supported_is_reported_defined(
+bool dotdot_door_lock_number_of_rfid_users_supported_is_reported_defined(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -16196,7 +16196,7 @@ bool dotdot_door_lock_number_ofrfid_users_supported_is_reported_defined(
  * @param endpoint_id   Endpoint ID
  * @returns true if defined, false is undefined or non-existent
  */
-bool dotdot_door_lock_number_ofrfid_users_supported_is_desired_defined(
+bool dotdot_door_lock_number_of_rfid_users_supported_is_desired_defined(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -16207,7 +16207,7 @@ bool dotdot_door_lock_number_ofrfid_users_supported_is_desired_defined(
  * @param endpoint_id   Endpoint ID
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_create_door_lock_number_ofrfid_users_supported(
+sl_status_t dotdot_create_door_lock_number_of_rfid_users_supported(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 // DoorLock NumberOfWeekDaySchedulesSupportedPerUser
@@ -16539,7 +16539,7 @@ sl_status_t dotdot_create_door_lock_number_of_holiday_schedules_supported(
  * @returns true if MaxPINCodeLength is supported
  * @returns false if MaxPINCodeLength is not supported
  */
-bool dotdot_is_supported_door_lock_maxpin_code_length (
+bool dotdot_is_supported_door_lock_max_pin_code_length (
               const dotdot_unid_t unid, const dotdot_endpoint_id_t endpoint_id);
 
 /**
@@ -16553,7 +16553,7 @@ bool dotdot_is_supported_door_lock_maxpin_code_length (
  *
  * @returns MaxPINCodeLength attribute
  */
-uint8_t dotdot_get_door_lock_maxpin_code_length(
+uint8_t dotdot_get_door_lock_max_pin_code_length(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id,
   attribute_store_node_value_state_t value_state);
@@ -16566,14 +16566,14 @@ uint8_t dotdot_get_door_lock_maxpin_code_length(
  * @param value_state   value state to write for the node,
  *                      see \ref attribute_store_set_node_attribute_value
  * 
- * @param new_maxpin_code_length new value to set
+ * @param new_max_pin_code_length new value to set
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_set_door_lock_maxpin_code_length(
+sl_status_t dotdot_set_door_lock_max_pin_code_length(
   const dotdot_unid_t unid,
   dotdot_endpoint_id_t endpoint_id,
   attribute_store_node_value_state_t value_state,
-  uint8_t new_maxpin_code_length
+  uint8_t new_max_pin_code_length
   );
 
 /**
@@ -16584,7 +16584,7 @@ sl_status_t dotdot_set_door_lock_maxpin_code_length(
  * @param endpoint_id   Endpoint ID
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_door_lock_maxpin_code_length_undefine_reported(
+sl_status_t dotdot_door_lock_max_pin_code_length_undefine_reported(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -16596,7 +16596,7 @@ sl_status_t dotdot_door_lock_maxpin_code_length_undefine_reported(
  * @param endpoint_id   Endpoint ID
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_door_lock_maxpin_code_length_undefine_desired(
+sl_status_t dotdot_door_lock_max_pin_code_length_undefine_desired(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -16608,7 +16608,7 @@ sl_status_t dotdot_door_lock_maxpin_code_length_undefine_desired(
  * @param endpoint_id   Endpoint ID
  * @returns true if defined, false is undefined or non-existent
  */
-bool dotdot_door_lock_maxpin_code_length_is_reported_defined(
+bool dotdot_door_lock_max_pin_code_length_is_reported_defined(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -16620,7 +16620,7 @@ bool dotdot_door_lock_maxpin_code_length_is_reported_defined(
  * @param endpoint_id   Endpoint ID
  * @returns true if defined, false is undefined or non-existent
  */
-bool dotdot_door_lock_maxpin_code_length_is_desired_defined(
+bool dotdot_door_lock_max_pin_code_length_is_desired_defined(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -16631,7 +16631,7 @@ bool dotdot_door_lock_maxpin_code_length_is_desired_defined(
  * @param endpoint_id   Endpoint ID
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_create_door_lock_maxpin_code_length(
+sl_status_t dotdot_create_door_lock_max_pin_code_length(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 // DoorLock MinPINCodeLength
@@ -16645,7 +16645,7 @@ sl_status_t dotdot_create_door_lock_maxpin_code_length(
  * @returns true if MinPINCodeLength is supported
  * @returns false if MinPINCodeLength is not supported
  */
-bool dotdot_is_supported_door_lock_minpin_code_length (
+bool dotdot_is_supported_door_lock_min_pin_code_length (
               const dotdot_unid_t unid, const dotdot_endpoint_id_t endpoint_id);
 
 /**
@@ -16659,7 +16659,7 @@ bool dotdot_is_supported_door_lock_minpin_code_length (
  *
  * @returns MinPINCodeLength attribute
  */
-uint8_t dotdot_get_door_lock_minpin_code_length(
+uint8_t dotdot_get_door_lock_min_pin_code_length(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id,
   attribute_store_node_value_state_t value_state);
@@ -16672,14 +16672,14 @@ uint8_t dotdot_get_door_lock_minpin_code_length(
  * @param value_state   value state to write for the node,
  *                      see \ref attribute_store_set_node_attribute_value
  * 
- * @param new_minpin_code_length new value to set
+ * @param new_min_pin_code_length new value to set
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_set_door_lock_minpin_code_length(
+sl_status_t dotdot_set_door_lock_min_pin_code_length(
   const dotdot_unid_t unid,
   dotdot_endpoint_id_t endpoint_id,
   attribute_store_node_value_state_t value_state,
-  uint8_t new_minpin_code_length
+  uint8_t new_min_pin_code_length
   );
 
 /**
@@ -16690,7 +16690,7 @@ sl_status_t dotdot_set_door_lock_minpin_code_length(
  * @param endpoint_id   Endpoint ID
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_door_lock_minpin_code_length_undefine_reported(
+sl_status_t dotdot_door_lock_min_pin_code_length_undefine_reported(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -16702,7 +16702,7 @@ sl_status_t dotdot_door_lock_minpin_code_length_undefine_reported(
  * @param endpoint_id   Endpoint ID
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_door_lock_minpin_code_length_undefine_desired(
+sl_status_t dotdot_door_lock_min_pin_code_length_undefine_desired(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -16714,7 +16714,7 @@ sl_status_t dotdot_door_lock_minpin_code_length_undefine_desired(
  * @param endpoint_id   Endpoint ID
  * @returns true if defined, false is undefined or non-existent
  */
-bool dotdot_door_lock_minpin_code_length_is_reported_defined(
+bool dotdot_door_lock_min_pin_code_length_is_reported_defined(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -16726,7 +16726,7 @@ bool dotdot_door_lock_minpin_code_length_is_reported_defined(
  * @param endpoint_id   Endpoint ID
  * @returns true if defined, false is undefined or non-existent
  */
-bool dotdot_door_lock_minpin_code_length_is_desired_defined(
+bool dotdot_door_lock_min_pin_code_length_is_desired_defined(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -16737,7 +16737,7 @@ bool dotdot_door_lock_minpin_code_length_is_desired_defined(
  * @param endpoint_id   Endpoint ID
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_create_door_lock_minpin_code_length(
+sl_status_t dotdot_create_door_lock_min_pin_code_length(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 // DoorLock MaxRFIDCodeLength
@@ -16751,7 +16751,7 @@ sl_status_t dotdot_create_door_lock_minpin_code_length(
  * @returns true if MaxRFIDCodeLength is supported
  * @returns false if MaxRFIDCodeLength is not supported
  */
-bool dotdot_is_supported_door_lock_maxrfid_code_length (
+bool dotdot_is_supported_door_lock_max_rfid_code_length (
               const dotdot_unid_t unid, const dotdot_endpoint_id_t endpoint_id);
 
 /**
@@ -16765,7 +16765,7 @@ bool dotdot_is_supported_door_lock_maxrfid_code_length (
  *
  * @returns MaxRFIDCodeLength attribute
  */
-uint8_t dotdot_get_door_lock_maxrfid_code_length(
+uint8_t dotdot_get_door_lock_max_rfid_code_length(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id,
   attribute_store_node_value_state_t value_state);
@@ -16778,14 +16778,14 @@ uint8_t dotdot_get_door_lock_maxrfid_code_length(
  * @param value_state   value state to write for the node,
  *                      see \ref attribute_store_set_node_attribute_value
  * 
- * @param new_maxrfid_code_length new value to set
+ * @param new_max_rfid_code_length new value to set
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_set_door_lock_maxrfid_code_length(
+sl_status_t dotdot_set_door_lock_max_rfid_code_length(
   const dotdot_unid_t unid,
   dotdot_endpoint_id_t endpoint_id,
   attribute_store_node_value_state_t value_state,
-  uint8_t new_maxrfid_code_length
+  uint8_t new_max_rfid_code_length
   );
 
 /**
@@ -16796,7 +16796,7 @@ sl_status_t dotdot_set_door_lock_maxrfid_code_length(
  * @param endpoint_id   Endpoint ID
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_door_lock_maxrfid_code_length_undefine_reported(
+sl_status_t dotdot_door_lock_max_rfid_code_length_undefine_reported(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -16808,7 +16808,7 @@ sl_status_t dotdot_door_lock_maxrfid_code_length_undefine_reported(
  * @param endpoint_id   Endpoint ID
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_door_lock_maxrfid_code_length_undefine_desired(
+sl_status_t dotdot_door_lock_max_rfid_code_length_undefine_desired(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -16820,7 +16820,7 @@ sl_status_t dotdot_door_lock_maxrfid_code_length_undefine_desired(
  * @param endpoint_id   Endpoint ID
  * @returns true if defined, false is undefined or non-existent
  */
-bool dotdot_door_lock_maxrfid_code_length_is_reported_defined(
+bool dotdot_door_lock_max_rfid_code_length_is_reported_defined(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -16832,7 +16832,7 @@ bool dotdot_door_lock_maxrfid_code_length_is_reported_defined(
  * @param endpoint_id   Endpoint ID
  * @returns true if defined, false is undefined or non-existent
  */
-bool dotdot_door_lock_maxrfid_code_length_is_desired_defined(
+bool dotdot_door_lock_max_rfid_code_length_is_desired_defined(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -16843,7 +16843,7 @@ bool dotdot_door_lock_maxrfid_code_length_is_desired_defined(
  * @param endpoint_id   Endpoint ID
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_create_door_lock_maxrfid_code_length(
+sl_status_t dotdot_create_door_lock_max_rfid_code_length(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 // DoorLock MinRFIDCodeLength
@@ -16857,7 +16857,7 @@ sl_status_t dotdot_create_door_lock_maxrfid_code_length(
  * @returns true if MinRFIDCodeLength is supported
  * @returns false if MinRFIDCodeLength is not supported
  */
-bool dotdot_is_supported_door_lock_minrfid_code_length (
+bool dotdot_is_supported_door_lock_min_rfid_code_length (
               const dotdot_unid_t unid, const dotdot_endpoint_id_t endpoint_id);
 
 /**
@@ -16871,7 +16871,7 @@ bool dotdot_is_supported_door_lock_minrfid_code_length (
  *
  * @returns MinRFIDCodeLength attribute
  */
-uint8_t dotdot_get_door_lock_minrfid_code_length(
+uint8_t dotdot_get_door_lock_min_rfid_code_length(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id,
   attribute_store_node_value_state_t value_state);
@@ -16884,14 +16884,14 @@ uint8_t dotdot_get_door_lock_minrfid_code_length(
  * @param value_state   value state to write for the node,
  *                      see \ref attribute_store_set_node_attribute_value
  * 
- * @param new_minrfid_code_length new value to set
+ * @param new_min_rfid_code_length new value to set
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_set_door_lock_minrfid_code_length(
+sl_status_t dotdot_set_door_lock_min_rfid_code_length(
   const dotdot_unid_t unid,
   dotdot_endpoint_id_t endpoint_id,
   attribute_store_node_value_state_t value_state,
-  uint8_t new_minrfid_code_length
+  uint8_t new_min_rfid_code_length
   );
 
 /**
@@ -16902,7 +16902,7 @@ sl_status_t dotdot_set_door_lock_minrfid_code_length(
  * @param endpoint_id   Endpoint ID
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_door_lock_minrfid_code_length_undefine_reported(
+sl_status_t dotdot_door_lock_min_rfid_code_length_undefine_reported(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -16914,7 +16914,7 @@ sl_status_t dotdot_door_lock_minrfid_code_length_undefine_reported(
  * @param endpoint_id   Endpoint ID
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_door_lock_minrfid_code_length_undefine_desired(
+sl_status_t dotdot_door_lock_min_rfid_code_length_undefine_desired(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -16926,7 +16926,7 @@ sl_status_t dotdot_door_lock_minrfid_code_length_undefine_desired(
  * @param endpoint_id   Endpoint ID
  * @returns true if defined, false is undefined or non-existent
  */
-bool dotdot_door_lock_minrfid_code_length_is_reported_defined(
+bool dotdot_door_lock_min_rfid_code_length_is_reported_defined(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -16938,7 +16938,7 @@ bool dotdot_door_lock_minrfid_code_length_is_reported_defined(
  * @param endpoint_id   Endpoint ID
  * @returns true if defined, false is undefined or non-existent
  */
-bool dotdot_door_lock_minrfid_code_length_is_desired_defined(
+bool dotdot_door_lock_min_rfid_code_length_is_desired_defined(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -16949,7 +16949,219 @@ bool dotdot_door_lock_minrfid_code_length_is_desired_defined(
  * @param endpoint_id   Endpoint ID
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_create_door_lock_minrfid_code_length(
+sl_status_t dotdot_create_door_lock_min_rfid_code_length(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+// DoorLock CredentialRulesSupport
+/**
+ * @brief Verifies if the DotDot DoorLock - CredentialRulesSupport is supported
+ * under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ *
+ * @returns true if CredentialRulesSupport is supported
+ * @returns false if CredentialRulesSupport is not supported
+ */
+bool dotdot_is_supported_door_lock_credential_rules_support (
+              const dotdot_unid_t unid, const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Gets the DotDot DoorLock - CredentialRulesSupport attribute value under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @param value_state   value state to get,
+ *                      see \ref attribute_store_get_node_attribute_value
+ * 
+ *
+ * @returns CredentialRulesSupport attribute
+ */
+uint8_t dotdot_get_door_lock_credential_rules_support(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id,
+  attribute_store_node_value_state_t value_state);
+
+/**
+ * @brief Set the DotDot DoorLock - CredentialRulesSupport attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @param value_state   value state to write for the node,
+ *                      see \ref attribute_store_set_node_attribute_value
+ * 
+ * @param new_credential_rules_support new value to set
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_set_door_lock_credential_rules_support(
+  const dotdot_unid_t unid,
+  dotdot_endpoint_id_t endpoint_id,
+  attribute_store_node_value_state_t value_state,
+  uint8_t new_credential_rules_support
+  );
+
+/**
+ * @brief Undefines the Reported value of the the DotDot DoorLock - CredentialRulesSupport
+ * attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_door_lock_credential_rules_support_undefine_reported(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Undefines the Desired value of the DotDot
+ * DoorLock - CredentialRulesSupport attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_door_lock_credential_rules_support_undefine_desired(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Checks if the reported value is defined for the DotDot
+ * DoorLock - CredentialRulesSupport attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns true if defined, false is undefined or non-existent
+ */
+bool dotdot_door_lock_credential_rules_support_is_reported_defined(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Checks if the desired value is defined for the DotDot
+ * DoorLock - CredentialRulesSupport attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns true if defined, false is undefined or non-existent
+ */
+bool dotdot_door_lock_credential_rules_support_is_desired_defined(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Creates a DotDot DoorLock - CredentialRulesSupport attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_create_door_lock_credential_rules_support(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+// DoorLock NumberOfCredentialsSupportedPerUser
+/**
+ * @brief Verifies if the DotDot DoorLock - NumberOfCredentialsSupportedPerUser is supported
+ * under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ *
+ * @returns true if NumberOfCredentialsSupportedPerUser is supported
+ * @returns false if NumberOfCredentialsSupportedPerUser is not supported
+ */
+bool dotdot_is_supported_door_lock_number_of_credentials_supported_per_user (
+              const dotdot_unid_t unid, const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Gets the DotDot DoorLock - NumberOfCredentialsSupportedPerUser attribute value under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @param value_state   value state to get,
+ *                      see \ref attribute_store_get_node_attribute_value
+ * 
+ *
+ * @returns NumberOfCredentialsSupportedPerUser attribute
+ */
+uint8_t dotdot_get_door_lock_number_of_credentials_supported_per_user(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id,
+  attribute_store_node_value_state_t value_state);
+
+/**
+ * @brief Set the DotDot DoorLock - NumberOfCredentialsSupportedPerUser attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @param value_state   value state to write for the node,
+ *                      see \ref attribute_store_set_node_attribute_value
+ * 
+ * @param new_number_of_credentials_supported_per_user new value to set
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_set_door_lock_number_of_credentials_supported_per_user(
+  const dotdot_unid_t unid,
+  dotdot_endpoint_id_t endpoint_id,
+  attribute_store_node_value_state_t value_state,
+  uint8_t new_number_of_credentials_supported_per_user
+  );
+
+/**
+ * @brief Undefines the Reported value of the the DotDot DoorLock - NumberOfCredentialsSupportedPerUser
+ * attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_door_lock_number_of_credentials_supported_per_user_undefine_reported(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Undefines the Desired value of the DotDot
+ * DoorLock - NumberOfCredentialsSupportedPerUser attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_door_lock_number_of_credentials_supported_per_user_undefine_desired(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Checks if the reported value is defined for the DotDot
+ * DoorLock - NumberOfCredentialsSupportedPerUser attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns true if defined, false is undefined or non-existent
+ */
+bool dotdot_door_lock_number_of_credentials_supported_per_user_is_reported_defined(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Checks if the desired value is defined for the DotDot
+ * DoorLock - NumberOfCredentialsSupportedPerUser attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns true if defined, false is undefined or non-existent
+ */
+bool dotdot_door_lock_number_of_credentials_supported_per_user_is_desired_defined(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Creates a DotDot DoorLock - NumberOfCredentialsSupportedPerUser attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_create_door_lock_number_of_credentials_supported_per_user(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 // DoorLock EnableLogging
@@ -18227,6 +18439,112 @@ bool dotdot_door_lock_enable_privacy_mode_button_is_desired_defined(
 sl_status_t dotdot_create_door_lock_enable_privacy_mode_button(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
+// DoorLock LocalProgrammingFeatures
+/**
+ * @brief Verifies if the DotDot DoorLock - LocalProgrammingFeatures is supported
+ * under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ *
+ * @returns true if LocalProgrammingFeatures is supported
+ * @returns false if LocalProgrammingFeatures is not supported
+ */
+bool dotdot_is_supported_door_lock_local_programming_features (
+              const dotdot_unid_t unid, const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Gets the DotDot DoorLock - LocalProgrammingFeatures attribute value under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @param value_state   value state to get,
+ *                      see \ref attribute_store_get_node_attribute_value
+ * 
+ *
+ * @returns LocalProgrammingFeatures attribute
+ */
+uint8_t dotdot_get_door_lock_local_programming_features(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id,
+  attribute_store_node_value_state_t value_state);
+
+/**
+ * @brief Set the DotDot DoorLock - LocalProgrammingFeatures attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @param value_state   value state to write for the node,
+ *                      see \ref attribute_store_set_node_attribute_value
+ * 
+ * @param new_local_programming_features new value to set
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_set_door_lock_local_programming_features(
+  const dotdot_unid_t unid,
+  dotdot_endpoint_id_t endpoint_id,
+  attribute_store_node_value_state_t value_state,
+  uint8_t new_local_programming_features
+  );
+
+/**
+ * @brief Undefines the Reported value of the the DotDot DoorLock - LocalProgrammingFeatures
+ * attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_door_lock_local_programming_features_undefine_reported(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Undefines the Desired value of the DotDot
+ * DoorLock - LocalProgrammingFeatures attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_door_lock_local_programming_features_undefine_desired(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Checks if the reported value is defined for the DotDot
+ * DoorLock - LocalProgrammingFeatures attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns true if defined, false is undefined or non-existent
+ */
+bool dotdot_door_lock_local_programming_features_is_reported_defined(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Checks if the desired value is defined for the DotDot
+ * DoorLock - LocalProgrammingFeatures attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns true if defined, false is undefined or non-existent
+ */
+bool dotdot_door_lock_local_programming_features_is_desired_defined(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Creates a DotDot DoorLock - LocalProgrammingFeatures attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_create_door_lock_local_programming_features(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
 // DoorLock WrongCodeEntryLimit
 /**
  * @brief Verifies if the DotDot DoorLock - WrongCodeEntryLimit is supported
@@ -18450,7 +18768,7 @@ sl_status_t dotdot_create_door_lock_user_code_temporary_disable_time(
  * @returns true if SendPINOverTheAir is supported
  * @returns false if SendPINOverTheAir is not supported
  */
-bool dotdot_is_supported_door_lock_sendpin_over_the_air (
+bool dotdot_is_supported_door_lock_send_pin_over_the_air (
               const dotdot_unid_t unid, const dotdot_endpoint_id_t endpoint_id);
 
 /**
@@ -18464,7 +18782,7 @@ bool dotdot_is_supported_door_lock_sendpin_over_the_air (
  *
  * @returns SendPINOverTheAir attribute
  */
-bool dotdot_get_door_lock_sendpin_over_the_air(
+bool dotdot_get_door_lock_send_pin_over_the_air(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id,
   attribute_store_node_value_state_t value_state);
@@ -18477,14 +18795,14 @@ bool dotdot_get_door_lock_sendpin_over_the_air(
  * @param value_state   value state to write for the node,
  *                      see \ref attribute_store_set_node_attribute_value
  * 
- * @param new_sendpin_over_the_air new value to set
+ * @param new_send_pin_over_the_air new value to set
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_set_door_lock_sendpin_over_the_air(
+sl_status_t dotdot_set_door_lock_send_pin_over_the_air(
   const dotdot_unid_t unid,
   dotdot_endpoint_id_t endpoint_id,
   attribute_store_node_value_state_t value_state,
-  bool new_sendpin_over_the_air
+  bool new_send_pin_over_the_air
   );
 
 /**
@@ -18495,7 +18813,7 @@ sl_status_t dotdot_set_door_lock_sendpin_over_the_air(
  * @param endpoint_id   Endpoint ID
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_door_lock_sendpin_over_the_air_undefine_reported(
+sl_status_t dotdot_door_lock_send_pin_over_the_air_undefine_reported(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -18507,7 +18825,7 @@ sl_status_t dotdot_door_lock_sendpin_over_the_air_undefine_reported(
  * @param endpoint_id   Endpoint ID
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_door_lock_sendpin_over_the_air_undefine_desired(
+sl_status_t dotdot_door_lock_send_pin_over_the_air_undefine_desired(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -18519,7 +18837,7 @@ sl_status_t dotdot_door_lock_sendpin_over_the_air_undefine_desired(
  * @param endpoint_id   Endpoint ID
  * @returns true if defined, false is undefined or non-existent
  */
-bool dotdot_door_lock_sendpin_over_the_air_is_reported_defined(
+bool dotdot_door_lock_send_pin_over_the_air_is_reported_defined(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -18531,7 +18849,7 @@ bool dotdot_door_lock_sendpin_over_the_air_is_reported_defined(
  * @param endpoint_id   Endpoint ID
  * @returns true if defined, false is undefined or non-existent
  */
-bool dotdot_door_lock_sendpin_over_the_air_is_desired_defined(
+bool dotdot_door_lock_send_pin_over_the_air_is_desired_defined(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -18542,7 +18860,7 @@ bool dotdot_door_lock_sendpin_over_the_air_is_desired_defined(
  * @param endpoint_id   Endpoint ID
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_create_door_lock_sendpin_over_the_air(
+sl_status_t dotdot_create_door_lock_send_pin_over_the_air(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 // DoorLock RequirePINforRFOperation
@@ -18556,7 +18874,7 @@ sl_status_t dotdot_create_door_lock_sendpin_over_the_air(
  * @returns true if RequirePINforRFOperation is supported
  * @returns false if RequirePINforRFOperation is not supported
  */
-bool dotdot_is_supported_door_lock_requirepi_nforrf_operation (
+bool dotdot_is_supported_door_lock_require_pi_nfor_rf_operation (
               const dotdot_unid_t unid, const dotdot_endpoint_id_t endpoint_id);
 
 /**
@@ -18570,7 +18888,7 @@ bool dotdot_is_supported_door_lock_requirepi_nforrf_operation (
  *
  * @returns RequirePINforRFOperation attribute
  */
-bool dotdot_get_door_lock_requirepi_nforrf_operation(
+bool dotdot_get_door_lock_require_pi_nfor_rf_operation(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id,
   attribute_store_node_value_state_t value_state);
@@ -18583,14 +18901,14 @@ bool dotdot_get_door_lock_requirepi_nforrf_operation(
  * @param value_state   value state to write for the node,
  *                      see \ref attribute_store_set_node_attribute_value
  * 
- * @param new_requirepi_nforrf_operation new value to set
+ * @param new_require_pi_nfor_rf_operation new value to set
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_set_door_lock_requirepi_nforrf_operation(
+sl_status_t dotdot_set_door_lock_require_pi_nfor_rf_operation(
   const dotdot_unid_t unid,
   dotdot_endpoint_id_t endpoint_id,
   attribute_store_node_value_state_t value_state,
-  bool new_requirepi_nforrf_operation
+  bool new_require_pi_nfor_rf_operation
   );
 
 /**
@@ -18601,7 +18919,7 @@ sl_status_t dotdot_set_door_lock_requirepi_nforrf_operation(
  * @param endpoint_id   Endpoint ID
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_door_lock_requirepi_nforrf_operation_undefine_reported(
+sl_status_t dotdot_door_lock_require_pi_nfor_rf_operation_undefine_reported(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -18613,7 +18931,7 @@ sl_status_t dotdot_door_lock_requirepi_nforrf_operation_undefine_reported(
  * @param endpoint_id   Endpoint ID
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_door_lock_requirepi_nforrf_operation_undefine_desired(
+sl_status_t dotdot_door_lock_require_pi_nfor_rf_operation_undefine_desired(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -18625,7 +18943,7 @@ sl_status_t dotdot_door_lock_requirepi_nforrf_operation_undefine_desired(
  * @param endpoint_id   Endpoint ID
  * @returns true if defined, false is undefined or non-existent
  */
-bool dotdot_door_lock_requirepi_nforrf_operation_is_reported_defined(
+bool dotdot_door_lock_require_pi_nfor_rf_operation_is_reported_defined(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -18637,7 +18955,7 @@ bool dotdot_door_lock_requirepi_nforrf_operation_is_reported_defined(
  * @param endpoint_id   Endpoint ID
  * @returns true if defined, false is undefined or non-existent
  */
-bool dotdot_door_lock_requirepi_nforrf_operation_is_desired_defined(
+bool dotdot_door_lock_require_pi_nfor_rf_operation_is_desired_defined(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -18648,7 +18966,7 @@ bool dotdot_door_lock_requirepi_nforrf_operation_is_desired_defined(
  * @param endpoint_id   Endpoint ID
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_create_door_lock_requirepi_nforrf_operation(
+sl_status_t dotdot_create_door_lock_require_pi_nfor_rf_operation(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 // DoorLock SecurityLevel
@@ -18755,6 +19073,112 @@ bool dotdot_door_lock_security_level_is_desired_defined(
  * @returns sl_status_t SL_STATUS_OK on success
  */
 sl_status_t dotdot_create_door_lock_security_level(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+// DoorLock ExpiringUserTimeout
+/**
+ * @brief Verifies if the DotDot DoorLock - ExpiringUserTimeout is supported
+ * under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ *
+ * @returns true if ExpiringUserTimeout is supported
+ * @returns false if ExpiringUserTimeout is not supported
+ */
+bool dotdot_is_supported_door_lock_expiring_user_timeout (
+              const dotdot_unid_t unid, const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Gets the DotDot DoorLock - ExpiringUserTimeout attribute value under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @param value_state   value state to get,
+ *                      see \ref attribute_store_get_node_attribute_value
+ * 
+ *
+ * @returns ExpiringUserTimeout attribute
+ */
+uint16_t dotdot_get_door_lock_expiring_user_timeout(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id,
+  attribute_store_node_value_state_t value_state);
+
+/**
+ * @brief Set the DotDot DoorLock - ExpiringUserTimeout attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @param value_state   value state to write for the node,
+ *                      see \ref attribute_store_set_node_attribute_value
+ * 
+ * @param new_expiring_user_timeout new value to set
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_set_door_lock_expiring_user_timeout(
+  const dotdot_unid_t unid,
+  dotdot_endpoint_id_t endpoint_id,
+  attribute_store_node_value_state_t value_state,
+  uint16_t new_expiring_user_timeout
+  );
+
+/**
+ * @brief Undefines the Reported value of the the DotDot DoorLock - ExpiringUserTimeout
+ * attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_door_lock_expiring_user_timeout_undefine_reported(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Undefines the Desired value of the DotDot
+ * DoorLock - ExpiringUserTimeout attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_door_lock_expiring_user_timeout_undefine_desired(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Checks if the reported value is defined for the DotDot
+ * DoorLock - ExpiringUserTimeout attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns true if defined, false is undefined or non-existent
+ */
+bool dotdot_door_lock_expiring_user_timeout_is_reported_defined(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Checks if the desired value is defined for the DotDot
+ * DoorLock - ExpiringUserTimeout attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns true if defined, false is undefined or non-existent
+ */
+bool dotdot_door_lock_expiring_user_timeout_is_desired_defined(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Creates a DotDot DoorLock - ExpiringUserTimeout attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_create_door_lock_expiring_user_timeout(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 // DoorLock AlarmMask
@@ -19603,6 +20027,112 @@ bool dotdot_door_lock_rfid_programming_event_mask_is_desired_defined(
  * @returns sl_status_t SL_STATUS_OK on success
  */
 sl_status_t dotdot_create_door_lock_rfid_programming_event_mask(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+// DoorLock FeatureMap
+/**
+ * @brief Verifies if the DotDot DoorLock - FeatureMap is supported
+ * under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ *
+ * @returns true if FeatureMap is supported
+ * @returns false if FeatureMap is not supported
+ */
+bool dotdot_is_supported_door_lock_feature_map (
+              const dotdot_unid_t unid, const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Gets the DotDot DoorLock - FeatureMap attribute value under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @param value_state   value state to get,
+ *                      see \ref attribute_store_get_node_attribute_value
+ * 
+ *
+ * @returns FeatureMap attribute
+ */
+uint16_t dotdot_get_door_lock_feature_map(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id,
+  attribute_store_node_value_state_t value_state);
+
+/**
+ * @brief Set the DotDot DoorLock - FeatureMap attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @param value_state   value state to write for the node,
+ *                      see \ref attribute_store_set_node_attribute_value
+ * 
+ * @param new_feature_map new value to set
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_set_door_lock_feature_map(
+  const dotdot_unid_t unid,
+  dotdot_endpoint_id_t endpoint_id,
+  attribute_store_node_value_state_t value_state,
+  uint16_t new_feature_map
+  );
+
+/**
+ * @brief Undefines the Reported value of the the DotDot DoorLock - FeatureMap
+ * attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_door_lock_feature_map_undefine_reported(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Undefines the Desired value of the DotDot
+ * DoorLock - FeatureMap attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_door_lock_feature_map_undefine_desired(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Checks if the reported value is defined for the DotDot
+ * DoorLock - FeatureMap attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns true if defined, false is undefined or non-existent
+ */
+bool dotdot_door_lock_feature_map_is_reported_defined(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Checks if the desired value is defined for the DotDot
+ * DoorLock - FeatureMap attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns true if defined, false is undefined or non-existent
+ */
+bool dotdot_door_lock_feature_map_is_desired_defined(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Creates a DotDot DoorLock - FeatureMap attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_create_door_lock_feature_map(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -36823,7 +37353,7 @@ bool dotdot_is_supported_color_control_color_loop_direction (
  *
  * @returns ColorLoopDirection attribute
  */
-CCColorLoopDirection dotdot_get_color_control_color_loop_direction(
+uint8_t dotdot_get_color_control_color_loop_direction(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id,
   attribute_store_node_value_state_t value_state);
@@ -36843,7 +37373,7 @@ sl_status_t dotdot_set_color_control_color_loop_direction(
   const dotdot_unid_t unid,
   dotdot_endpoint_id_t endpoint_id,
   attribute_store_node_value_state_t value_state,
-  CCColorLoopDirection new_color_loop_direction
+  uint8_t new_color_loop_direction
   );
 
 /**
@@ -56851,7 +57381,7 @@ sl_status_t dotdot_create_electrical_measurement_power_factor(
  * @returns true if AverageRMSVoltageMeasurementPeriod is supported
  * @returns false if AverageRMSVoltageMeasurementPeriod is not supported
  */
-bool dotdot_is_supported_electrical_measurement_averagerms_voltage_measurement_period (
+bool dotdot_is_supported_electrical_measurement_average_rms_voltage_measurement_period (
               const dotdot_unid_t unid, const dotdot_endpoint_id_t endpoint_id);
 
 /**
@@ -56865,7 +57395,7 @@ bool dotdot_is_supported_electrical_measurement_averagerms_voltage_measurement_p
  *
  * @returns AverageRMSVoltageMeasurementPeriod attribute
  */
-uint16_t dotdot_get_electrical_measurement_averagerms_voltage_measurement_period(
+uint16_t dotdot_get_electrical_measurement_average_rms_voltage_measurement_period(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id,
   attribute_store_node_value_state_t value_state);
@@ -56878,14 +57408,14 @@ uint16_t dotdot_get_electrical_measurement_averagerms_voltage_measurement_period
  * @param value_state   value state to write for the node,
  *                      see \ref attribute_store_set_node_attribute_value
  * 
- * @param new_averagerms_voltage_measurement_period new value to set
+ * @param new_average_rms_voltage_measurement_period new value to set
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_set_electrical_measurement_averagerms_voltage_measurement_period(
+sl_status_t dotdot_set_electrical_measurement_average_rms_voltage_measurement_period(
   const dotdot_unid_t unid,
   dotdot_endpoint_id_t endpoint_id,
   attribute_store_node_value_state_t value_state,
-  uint16_t new_averagerms_voltage_measurement_period
+  uint16_t new_average_rms_voltage_measurement_period
   );
 
 /**
@@ -56896,7 +57426,7 @@ sl_status_t dotdot_set_electrical_measurement_averagerms_voltage_measurement_per
  * @param endpoint_id   Endpoint ID
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_electrical_measurement_averagerms_voltage_measurement_period_undefine_reported(
+sl_status_t dotdot_electrical_measurement_average_rms_voltage_measurement_period_undefine_reported(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -56908,7 +57438,7 @@ sl_status_t dotdot_electrical_measurement_averagerms_voltage_measurement_period_
  * @param endpoint_id   Endpoint ID
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_electrical_measurement_averagerms_voltage_measurement_period_undefine_desired(
+sl_status_t dotdot_electrical_measurement_average_rms_voltage_measurement_period_undefine_desired(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -56920,7 +57450,7 @@ sl_status_t dotdot_electrical_measurement_averagerms_voltage_measurement_period_
  * @param endpoint_id   Endpoint ID
  * @returns true if defined, false is undefined or non-existent
  */
-bool dotdot_electrical_measurement_averagerms_voltage_measurement_period_is_reported_defined(
+bool dotdot_electrical_measurement_average_rms_voltage_measurement_period_is_reported_defined(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -56932,7 +57462,7 @@ bool dotdot_electrical_measurement_averagerms_voltage_measurement_period_is_repo
  * @param endpoint_id   Endpoint ID
  * @returns true if defined, false is undefined or non-existent
  */
-bool dotdot_electrical_measurement_averagerms_voltage_measurement_period_is_desired_defined(
+bool dotdot_electrical_measurement_average_rms_voltage_measurement_period_is_desired_defined(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -56943,7 +57473,7 @@ bool dotdot_electrical_measurement_averagerms_voltage_measurement_period_is_desi
  * @param endpoint_id   Endpoint ID
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_create_electrical_measurement_averagerms_voltage_measurement_period(
+sl_status_t dotdot_create_electrical_measurement_average_rms_voltage_measurement_period(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 // ElectricalMeasurement AverageRMSOverVoltageCounter
@@ -56957,7 +57487,7 @@ sl_status_t dotdot_create_electrical_measurement_averagerms_voltage_measurement_
  * @returns true if AverageRMSOverVoltageCounter is supported
  * @returns false if AverageRMSOverVoltageCounter is not supported
  */
-bool dotdot_is_supported_electrical_measurement_averagerms_over_voltage_counter (
+bool dotdot_is_supported_electrical_measurement_average_rms_over_voltage_counter (
               const dotdot_unid_t unid, const dotdot_endpoint_id_t endpoint_id);
 
 /**
@@ -56971,7 +57501,7 @@ bool dotdot_is_supported_electrical_measurement_averagerms_over_voltage_counter 
  *
  * @returns AverageRMSOverVoltageCounter attribute
  */
-uint16_t dotdot_get_electrical_measurement_averagerms_over_voltage_counter(
+uint16_t dotdot_get_electrical_measurement_average_rms_over_voltage_counter(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id,
   attribute_store_node_value_state_t value_state);
@@ -56984,14 +57514,14 @@ uint16_t dotdot_get_electrical_measurement_averagerms_over_voltage_counter(
  * @param value_state   value state to write for the node,
  *                      see \ref attribute_store_set_node_attribute_value
  * 
- * @param new_averagerms_over_voltage_counter new value to set
+ * @param new_average_rms_over_voltage_counter new value to set
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_set_electrical_measurement_averagerms_over_voltage_counter(
+sl_status_t dotdot_set_electrical_measurement_average_rms_over_voltage_counter(
   const dotdot_unid_t unid,
   dotdot_endpoint_id_t endpoint_id,
   attribute_store_node_value_state_t value_state,
-  uint16_t new_averagerms_over_voltage_counter
+  uint16_t new_average_rms_over_voltage_counter
   );
 
 /**
@@ -57002,7 +57532,7 @@ sl_status_t dotdot_set_electrical_measurement_averagerms_over_voltage_counter(
  * @param endpoint_id   Endpoint ID
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_electrical_measurement_averagerms_over_voltage_counter_undefine_reported(
+sl_status_t dotdot_electrical_measurement_average_rms_over_voltage_counter_undefine_reported(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -57014,7 +57544,7 @@ sl_status_t dotdot_electrical_measurement_averagerms_over_voltage_counter_undefi
  * @param endpoint_id   Endpoint ID
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_electrical_measurement_averagerms_over_voltage_counter_undefine_desired(
+sl_status_t dotdot_electrical_measurement_average_rms_over_voltage_counter_undefine_desired(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -57026,7 +57556,7 @@ sl_status_t dotdot_electrical_measurement_averagerms_over_voltage_counter_undefi
  * @param endpoint_id   Endpoint ID
  * @returns true if defined, false is undefined or non-existent
  */
-bool dotdot_electrical_measurement_averagerms_over_voltage_counter_is_reported_defined(
+bool dotdot_electrical_measurement_average_rms_over_voltage_counter_is_reported_defined(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -57038,7 +57568,7 @@ bool dotdot_electrical_measurement_averagerms_over_voltage_counter_is_reported_d
  * @param endpoint_id   Endpoint ID
  * @returns true if defined, false is undefined or non-existent
  */
-bool dotdot_electrical_measurement_averagerms_over_voltage_counter_is_desired_defined(
+bool dotdot_electrical_measurement_average_rms_over_voltage_counter_is_desired_defined(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -57049,7 +57579,7 @@ bool dotdot_electrical_measurement_averagerms_over_voltage_counter_is_desired_de
  * @param endpoint_id   Endpoint ID
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_create_electrical_measurement_averagerms_over_voltage_counter(
+sl_status_t dotdot_create_electrical_measurement_average_rms_over_voltage_counter(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 // ElectricalMeasurement AverageRMSUnderVoltageCounter
@@ -57063,7 +57593,7 @@ sl_status_t dotdot_create_electrical_measurement_averagerms_over_voltage_counter
  * @returns true if AverageRMSUnderVoltageCounter is supported
  * @returns false if AverageRMSUnderVoltageCounter is not supported
  */
-bool dotdot_is_supported_electrical_measurement_averagerms_under_voltage_counter (
+bool dotdot_is_supported_electrical_measurement_average_rms_under_voltage_counter (
               const dotdot_unid_t unid, const dotdot_endpoint_id_t endpoint_id);
 
 /**
@@ -57077,7 +57607,7 @@ bool dotdot_is_supported_electrical_measurement_averagerms_under_voltage_counter
  *
  * @returns AverageRMSUnderVoltageCounter attribute
  */
-uint16_t dotdot_get_electrical_measurement_averagerms_under_voltage_counter(
+uint16_t dotdot_get_electrical_measurement_average_rms_under_voltage_counter(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id,
   attribute_store_node_value_state_t value_state);
@@ -57090,14 +57620,14 @@ uint16_t dotdot_get_electrical_measurement_averagerms_under_voltage_counter(
  * @param value_state   value state to write for the node,
  *                      see \ref attribute_store_set_node_attribute_value
  * 
- * @param new_averagerms_under_voltage_counter new value to set
+ * @param new_average_rms_under_voltage_counter new value to set
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_set_electrical_measurement_averagerms_under_voltage_counter(
+sl_status_t dotdot_set_electrical_measurement_average_rms_under_voltage_counter(
   const dotdot_unid_t unid,
   dotdot_endpoint_id_t endpoint_id,
   attribute_store_node_value_state_t value_state,
-  uint16_t new_averagerms_under_voltage_counter
+  uint16_t new_average_rms_under_voltage_counter
   );
 
 /**
@@ -57108,7 +57638,7 @@ sl_status_t dotdot_set_electrical_measurement_averagerms_under_voltage_counter(
  * @param endpoint_id   Endpoint ID
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_electrical_measurement_averagerms_under_voltage_counter_undefine_reported(
+sl_status_t dotdot_electrical_measurement_average_rms_under_voltage_counter_undefine_reported(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -57120,7 +57650,7 @@ sl_status_t dotdot_electrical_measurement_averagerms_under_voltage_counter_undef
  * @param endpoint_id   Endpoint ID
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_electrical_measurement_averagerms_under_voltage_counter_undefine_desired(
+sl_status_t dotdot_electrical_measurement_average_rms_under_voltage_counter_undefine_desired(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -57132,7 +57662,7 @@ sl_status_t dotdot_electrical_measurement_averagerms_under_voltage_counter_undef
  * @param endpoint_id   Endpoint ID
  * @returns true if defined, false is undefined or non-existent
  */
-bool dotdot_electrical_measurement_averagerms_under_voltage_counter_is_reported_defined(
+bool dotdot_electrical_measurement_average_rms_under_voltage_counter_is_reported_defined(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -57144,7 +57674,7 @@ bool dotdot_electrical_measurement_averagerms_under_voltage_counter_is_reported_
  * @param endpoint_id   Endpoint ID
  * @returns true if defined, false is undefined or non-existent
  */
-bool dotdot_electrical_measurement_averagerms_under_voltage_counter_is_desired_defined(
+bool dotdot_electrical_measurement_average_rms_under_voltage_counter_is_desired_defined(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -57155,7 +57685,7 @@ bool dotdot_electrical_measurement_averagerms_under_voltage_counter_is_desired_d
  * @param endpoint_id   Endpoint ID
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_create_electrical_measurement_averagerms_under_voltage_counter(
+sl_status_t dotdot_create_electrical_measurement_average_rms_under_voltage_counter(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 // ElectricalMeasurement RMSExtremeOverVoltagePeriod
@@ -59077,7 +59607,7 @@ sl_status_t dotdot_create_electrical_measurement_ac_reactive_power_overload(
  * @returns true if AverageRMSOverVoltage is supported
  * @returns false if AverageRMSOverVoltage is not supported
  */
-bool dotdot_is_supported_electrical_measurement_averagerms_over_voltage (
+bool dotdot_is_supported_electrical_measurement_average_rms_over_voltage (
               const dotdot_unid_t unid, const dotdot_endpoint_id_t endpoint_id);
 
 /**
@@ -59091,7 +59621,7 @@ bool dotdot_is_supported_electrical_measurement_averagerms_over_voltage (
  *
  * @returns AverageRMSOverVoltage attribute
  */
-int16_t dotdot_get_electrical_measurement_averagerms_over_voltage(
+int16_t dotdot_get_electrical_measurement_average_rms_over_voltage(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id,
   attribute_store_node_value_state_t value_state);
@@ -59104,14 +59634,14 @@ int16_t dotdot_get_electrical_measurement_averagerms_over_voltage(
  * @param value_state   value state to write for the node,
  *                      see \ref attribute_store_set_node_attribute_value
  * 
- * @param new_averagerms_over_voltage new value to set
+ * @param new_average_rms_over_voltage new value to set
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_set_electrical_measurement_averagerms_over_voltage(
+sl_status_t dotdot_set_electrical_measurement_average_rms_over_voltage(
   const dotdot_unid_t unid,
   dotdot_endpoint_id_t endpoint_id,
   attribute_store_node_value_state_t value_state,
-  int16_t new_averagerms_over_voltage
+  int16_t new_average_rms_over_voltage
   );
 
 /**
@@ -59122,7 +59652,7 @@ sl_status_t dotdot_set_electrical_measurement_averagerms_over_voltage(
  * @param endpoint_id   Endpoint ID
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_electrical_measurement_averagerms_over_voltage_undefine_reported(
+sl_status_t dotdot_electrical_measurement_average_rms_over_voltage_undefine_reported(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -59134,7 +59664,7 @@ sl_status_t dotdot_electrical_measurement_averagerms_over_voltage_undefine_repor
  * @param endpoint_id   Endpoint ID
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_electrical_measurement_averagerms_over_voltage_undefine_desired(
+sl_status_t dotdot_electrical_measurement_average_rms_over_voltage_undefine_desired(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -59146,7 +59676,7 @@ sl_status_t dotdot_electrical_measurement_averagerms_over_voltage_undefine_desir
  * @param endpoint_id   Endpoint ID
  * @returns true if defined, false is undefined or non-existent
  */
-bool dotdot_electrical_measurement_averagerms_over_voltage_is_reported_defined(
+bool dotdot_electrical_measurement_average_rms_over_voltage_is_reported_defined(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -59158,7 +59688,7 @@ bool dotdot_electrical_measurement_averagerms_over_voltage_is_reported_defined(
  * @param endpoint_id   Endpoint ID
  * @returns true if defined, false is undefined or non-existent
  */
-bool dotdot_electrical_measurement_averagerms_over_voltage_is_desired_defined(
+bool dotdot_electrical_measurement_average_rms_over_voltage_is_desired_defined(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -59169,7 +59699,7 @@ bool dotdot_electrical_measurement_averagerms_over_voltage_is_desired_defined(
  * @param endpoint_id   Endpoint ID
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_create_electrical_measurement_averagerms_over_voltage(
+sl_status_t dotdot_create_electrical_measurement_average_rms_over_voltage(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 // ElectricalMeasurement AverageRMSUnderVoltage
@@ -59183,7 +59713,7 @@ sl_status_t dotdot_create_electrical_measurement_averagerms_over_voltage(
  * @returns true if AverageRMSUnderVoltage is supported
  * @returns false if AverageRMSUnderVoltage is not supported
  */
-bool dotdot_is_supported_electrical_measurement_averagerms_under_voltage (
+bool dotdot_is_supported_electrical_measurement_average_rms_under_voltage (
               const dotdot_unid_t unid, const dotdot_endpoint_id_t endpoint_id);
 
 /**
@@ -59197,7 +59727,7 @@ bool dotdot_is_supported_electrical_measurement_averagerms_under_voltage (
  *
  * @returns AverageRMSUnderVoltage attribute
  */
-int16_t dotdot_get_electrical_measurement_averagerms_under_voltage(
+int16_t dotdot_get_electrical_measurement_average_rms_under_voltage(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id,
   attribute_store_node_value_state_t value_state);
@@ -59210,14 +59740,14 @@ int16_t dotdot_get_electrical_measurement_averagerms_under_voltage(
  * @param value_state   value state to write for the node,
  *                      see \ref attribute_store_set_node_attribute_value
  * 
- * @param new_averagerms_under_voltage new value to set
+ * @param new_average_rms_under_voltage new value to set
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_set_electrical_measurement_averagerms_under_voltage(
+sl_status_t dotdot_set_electrical_measurement_average_rms_under_voltage(
   const dotdot_unid_t unid,
   dotdot_endpoint_id_t endpoint_id,
   attribute_store_node_value_state_t value_state,
-  int16_t new_averagerms_under_voltage
+  int16_t new_average_rms_under_voltage
   );
 
 /**
@@ -59228,7 +59758,7 @@ sl_status_t dotdot_set_electrical_measurement_averagerms_under_voltage(
  * @param endpoint_id   Endpoint ID
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_electrical_measurement_averagerms_under_voltage_undefine_reported(
+sl_status_t dotdot_electrical_measurement_average_rms_under_voltage_undefine_reported(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -59240,7 +59770,7 @@ sl_status_t dotdot_electrical_measurement_averagerms_under_voltage_undefine_repo
  * @param endpoint_id   Endpoint ID
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_electrical_measurement_averagerms_under_voltage_undefine_desired(
+sl_status_t dotdot_electrical_measurement_average_rms_under_voltage_undefine_desired(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -59252,7 +59782,7 @@ sl_status_t dotdot_electrical_measurement_averagerms_under_voltage_undefine_desi
  * @param endpoint_id   Endpoint ID
  * @returns true if defined, false is undefined or non-existent
  */
-bool dotdot_electrical_measurement_averagerms_under_voltage_is_reported_defined(
+bool dotdot_electrical_measurement_average_rms_under_voltage_is_reported_defined(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -59264,7 +59794,7 @@ bool dotdot_electrical_measurement_averagerms_under_voltage_is_reported_defined(
  * @param endpoint_id   Endpoint ID
  * @returns true if defined, false is undefined or non-existent
  */
-bool dotdot_electrical_measurement_averagerms_under_voltage_is_desired_defined(
+bool dotdot_electrical_measurement_average_rms_under_voltage_is_desired_defined(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -59275,7 +59805,7 @@ bool dotdot_electrical_measurement_averagerms_under_voltage_is_desired_defined(
  * @param endpoint_id   Endpoint ID
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_create_electrical_measurement_averagerms_under_voltage(
+sl_status_t dotdot_create_electrical_measurement_average_rms_under_voltage(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 // ElectricalMeasurement RMSExtremeOverVoltage
@@ -61303,7 +61833,7 @@ sl_status_t dotdot_create_electrical_measurement_power_factor_phb(
  * @returns true if AverageRMSVoltageMeasurementPeriodPhB is supported
  * @returns false if AverageRMSVoltageMeasurementPeriodPhB is not supported
  */
-bool dotdot_is_supported_electrical_measurement_averagerms_voltage_measurement_period_phb (
+bool dotdot_is_supported_electrical_measurement_average_rms_voltage_measurement_period_phb (
               const dotdot_unid_t unid, const dotdot_endpoint_id_t endpoint_id);
 
 /**
@@ -61317,7 +61847,7 @@ bool dotdot_is_supported_electrical_measurement_averagerms_voltage_measurement_p
  *
  * @returns AverageRMSVoltageMeasurementPeriodPhB attribute
  */
-uint16_t dotdot_get_electrical_measurement_averagerms_voltage_measurement_period_phb(
+uint16_t dotdot_get_electrical_measurement_average_rms_voltage_measurement_period_phb(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id,
   attribute_store_node_value_state_t value_state);
@@ -61330,14 +61860,14 @@ uint16_t dotdot_get_electrical_measurement_averagerms_voltage_measurement_period
  * @param value_state   value state to write for the node,
  *                      see \ref attribute_store_set_node_attribute_value
  * 
- * @param new_averagerms_voltage_measurement_period_phb new value to set
+ * @param new_average_rms_voltage_measurement_period_phb new value to set
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_set_electrical_measurement_averagerms_voltage_measurement_period_phb(
+sl_status_t dotdot_set_electrical_measurement_average_rms_voltage_measurement_period_phb(
   const dotdot_unid_t unid,
   dotdot_endpoint_id_t endpoint_id,
   attribute_store_node_value_state_t value_state,
-  uint16_t new_averagerms_voltage_measurement_period_phb
+  uint16_t new_average_rms_voltage_measurement_period_phb
   );
 
 /**
@@ -61348,7 +61878,7 @@ sl_status_t dotdot_set_electrical_measurement_averagerms_voltage_measurement_per
  * @param endpoint_id   Endpoint ID
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_electrical_measurement_averagerms_voltage_measurement_period_phb_undefine_reported(
+sl_status_t dotdot_electrical_measurement_average_rms_voltage_measurement_period_phb_undefine_reported(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -61360,7 +61890,7 @@ sl_status_t dotdot_electrical_measurement_averagerms_voltage_measurement_period_
  * @param endpoint_id   Endpoint ID
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_electrical_measurement_averagerms_voltage_measurement_period_phb_undefine_desired(
+sl_status_t dotdot_electrical_measurement_average_rms_voltage_measurement_period_phb_undefine_desired(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -61372,7 +61902,7 @@ sl_status_t dotdot_electrical_measurement_averagerms_voltage_measurement_period_
  * @param endpoint_id   Endpoint ID
  * @returns true if defined, false is undefined or non-existent
  */
-bool dotdot_electrical_measurement_averagerms_voltage_measurement_period_phb_is_reported_defined(
+bool dotdot_electrical_measurement_average_rms_voltage_measurement_period_phb_is_reported_defined(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -61384,7 +61914,7 @@ bool dotdot_electrical_measurement_averagerms_voltage_measurement_period_phb_is_
  * @param endpoint_id   Endpoint ID
  * @returns true if defined, false is undefined or non-existent
  */
-bool dotdot_electrical_measurement_averagerms_voltage_measurement_period_phb_is_desired_defined(
+bool dotdot_electrical_measurement_average_rms_voltage_measurement_period_phb_is_desired_defined(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -61395,7 +61925,7 @@ bool dotdot_electrical_measurement_averagerms_voltage_measurement_period_phb_is_
  * @param endpoint_id   Endpoint ID
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_create_electrical_measurement_averagerms_voltage_measurement_period_phb(
+sl_status_t dotdot_create_electrical_measurement_average_rms_voltage_measurement_period_phb(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 // ElectricalMeasurement AverageRMSOverVoltageCounterPhB
@@ -61409,7 +61939,7 @@ sl_status_t dotdot_create_electrical_measurement_averagerms_voltage_measurement_
  * @returns true if AverageRMSOverVoltageCounterPhB is supported
  * @returns false if AverageRMSOverVoltageCounterPhB is not supported
  */
-bool dotdot_is_supported_electrical_measurement_averagerms_over_voltage_counter_phb (
+bool dotdot_is_supported_electrical_measurement_average_rms_over_voltage_counter_phb (
               const dotdot_unid_t unid, const dotdot_endpoint_id_t endpoint_id);
 
 /**
@@ -61423,7 +61953,7 @@ bool dotdot_is_supported_electrical_measurement_averagerms_over_voltage_counter_
  *
  * @returns AverageRMSOverVoltageCounterPhB attribute
  */
-uint16_t dotdot_get_electrical_measurement_averagerms_over_voltage_counter_phb(
+uint16_t dotdot_get_electrical_measurement_average_rms_over_voltage_counter_phb(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id,
   attribute_store_node_value_state_t value_state);
@@ -61436,14 +61966,14 @@ uint16_t dotdot_get_electrical_measurement_averagerms_over_voltage_counter_phb(
  * @param value_state   value state to write for the node,
  *                      see \ref attribute_store_set_node_attribute_value
  * 
- * @param new_averagerms_over_voltage_counter_phb new value to set
+ * @param new_average_rms_over_voltage_counter_phb new value to set
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_set_electrical_measurement_averagerms_over_voltage_counter_phb(
+sl_status_t dotdot_set_electrical_measurement_average_rms_over_voltage_counter_phb(
   const dotdot_unid_t unid,
   dotdot_endpoint_id_t endpoint_id,
   attribute_store_node_value_state_t value_state,
-  uint16_t new_averagerms_over_voltage_counter_phb
+  uint16_t new_average_rms_over_voltage_counter_phb
   );
 
 /**
@@ -61454,7 +61984,7 @@ sl_status_t dotdot_set_electrical_measurement_averagerms_over_voltage_counter_ph
  * @param endpoint_id   Endpoint ID
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_electrical_measurement_averagerms_over_voltage_counter_phb_undefine_reported(
+sl_status_t dotdot_electrical_measurement_average_rms_over_voltage_counter_phb_undefine_reported(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -61466,7 +61996,7 @@ sl_status_t dotdot_electrical_measurement_averagerms_over_voltage_counter_phb_un
  * @param endpoint_id   Endpoint ID
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_electrical_measurement_averagerms_over_voltage_counter_phb_undefine_desired(
+sl_status_t dotdot_electrical_measurement_average_rms_over_voltage_counter_phb_undefine_desired(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -61478,7 +62008,7 @@ sl_status_t dotdot_electrical_measurement_averagerms_over_voltage_counter_phb_un
  * @param endpoint_id   Endpoint ID
  * @returns true if defined, false is undefined or non-existent
  */
-bool dotdot_electrical_measurement_averagerms_over_voltage_counter_phb_is_reported_defined(
+bool dotdot_electrical_measurement_average_rms_over_voltage_counter_phb_is_reported_defined(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -61490,7 +62020,7 @@ bool dotdot_electrical_measurement_averagerms_over_voltage_counter_phb_is_report
  * @param endpoint_id   Endpoint ID
  * @returns true if defined, false is undefined or non-existent
  */
-bool dotdot_electrical_measurement_averagerms_over_voltage_counter_phb_is_desired_defined(
+bool dotdot_electrical_measurement_average_rms_over_voltage_counter_phb_is_desired_defined(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -61501,7 +62031,7 @@ bool dotdot_electrical_measurement_averagerms_over_voltage_counter_phb_is_desire
  * @param endpoint_id   Endpoint ID
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_create_electrical_measurement_averagerms_over_voltage_counter_phb(
+sl_status_t dotdot_create_electrical_measurement_average_rms_over_voltage_counter_phb(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 // ElectricalMeasurement AverageRMSUnderVoltageCounterPhB
@@ -61515,7 +62045,7 @@ sl_status_t dotdot_create_electrical_measurement_averagerms_over_voltage_counter
  * @returns true if AverageRMSUnderVoltageCounterPhB is supported
  * @returns false if AverageRMSUnderVoltageCounterPhB is not supported
  */
-bool dotdot_is_supported_electrical_measurement_averagerms_under_voltage_counter_phb (
+bool dotdot_is_supported_electrical_measurement_average_rms_under_voltage_counter_phb (
               const dotdot_unid_t unid, const dotdot_endpoint_id_t endpoint_id);
 
 /**
@@ -61529,7 +62059,7 @@ bool dotdot_is_supported_electrical_measurement_averagerms_under_voltage_counter
  *
  * @returns AverageRMSUnderVoltageCounterPhB attribute
  */
-uint16_t dotdot_get_electrical_measurement_averagerms_under_voltage_counter_phb(
+uint16_t dotdot_get_electrical_measurement_average_rms_under_voltage_counter_phb(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id,
   attribute_store_node_value_state_t value_state);
@@ -61542,14 +62072,14 @@ uint16_t dotdot_get_electrical_measurement_averagerms_under_voltage_counter_phb(
  * @param value_state   value state to write for the node,
  *                      see \ref attribute_store_set_node_attribute_value
  * 
- * @param new_averagerms_under_voltage_counter_phb new value to set
+ * @param new_average_rms_under_voltage_counter_phb new value to set
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_set_electrical_measurement_averagerms_under_voltage_counter_phb(
+sl_status_t dotdot_set_electrical_measurement_average_rms_under_voltage_counter_phb(
   const dotdot_unid_t unid,
   dotdot_endpoint_id_t endpoint_id,
   attribute_store_node_value_state_t value_state,
-  uint16_t new_averagerms_under_voltage_counter_phb
+  uint16_t new_average_rms_under_voltage_counter_phb
   );
 
 /**
@@ -61560,7 +62090,7 @@ sl_status_t dotdot_set_electrical_measurement_averagerms_under_voltage_counter_p
  * @param endpoint_id   Endpoint ID
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_electrical_measurement_averagerms_under_voltage_counter_phb_undefine_reported(
+sl_status_t dotdot_electrical_measurement_average_rms_under_voltage_counter_phb_undefine_reported(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -61572,7 +62102,7 @@ sl_status_t dotdot_electrical_measurement_averagerms_under_voltage_counter_phb_u
  * @param endpoint_id   Endpoint ID
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_electrical_measurement_averagerms_under_voltage_counter_phb_undefine_desired(
+sl_status_t dotdot_electrical_measurement_average_rms_under_voltage_counter_phb_undefine_desired(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -61584,7 +62114,7 @@ sl_status_t dotdot_electrical_measurement_averagerms_under_voltage_counter_phb_u
  * @param endpoint_id   Endpoint ID
  * @returns true if defined, false is undefined or non-existent
  */
-bool dotdot_electrical_measurement_averagerms_under_voltage_counter_phb_is_reported_defined(
+bool dotdot_electrical_measurement_average_rms_under_voltage_counter_phb_is_reported_defined(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -61596,7 +62126,7 @@ bool dotdot_electrical_measurement_averagerms_under_voltage_counter_phb_is_repor
  * @param endpoint_id   Endpoint ID
  * @returns true if defined, false is undefined or non-existent
  */
-bool dotdot_electrical_measurement_averagerms_under_voltage_counter_phb_is_desired_defined(
+bool dotdot_electrical_measurement_average_rms_under_voltage_counter_phb_is_desired_defined(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -61607,7 +62137,7 @@ bool dotdot_electrical_measurement_averagerms_under_voltage_counter_phb_is_desir
  * @param endpoint_id   Endpoint ID
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_create_electrical_measurement_averagerms_under_voltage_counter_phb(
+sl_status_t dotdot_create_electrical_measurement_average_rms_under_voltage_counter_phb(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 // ElectricalMeasurement RMSExtremeOverVoltagePeriodPhB
@@ -63635,7 +64165,7 @@ sl_status_t dotdot_create_electrical_measurement_power_factor_phc(
  * @returns true if AverageRMSVoltageMeasurementPeriodPhC is supported
  * @returns false if AverageRMSVoltageMeasurementPeriodPhC is not supported
  */
-bool dotdot_is_supported_electrical_measurement_averagerms_voltage_measurement_period_phc (
+bool dotdot_is_supported_electrical_measurement_average_rms_voltage_measurement_period_phc (
               const dotdot_unid_t unid, const dotdot_endpoint_id_t endpoint_id);
 
 /**
@@ -63649,7 +64179,7 @@ bool dotdot_is_supported_electrical_measurement_averagerms_voltage_measurement_p
  *
  * @returns AverageRMSVoltageMeasurementPeriodPhC attribute
  */
-uint16_t dotdot_get_electrical_measurement_averagerms_voltage_measurement_period_phc(
+uint16_t dotdot_get_electrical_measurement_average_rms_voltage_measurement_period_phc(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id,
   attribute_store_node_value_state_t value_state);
@@ -63662,14 +64192,14 @@ uint16_t dotdot_get_electrical_measurement_averagerms_voltage_measurement_period
  * @param value_state   value state to write for the node,
  *                      see \ref attribute_store_set_node_attribute_value
  * 
- * @param new_averagerms_voltage_measurement_period_phc new value to set
+ * @param new_average_rms_voltage_measurement_period_phc new value to set
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_set_electrical_measurement_averagerms_voltage_measurement_period_phc(
+sl_status_t dotdot_set_electrical_measurement_average_rms_voltage_measurement_period_phc(
   const dotdot_unid_t unid,
   dotdot_endpoint_id_t endpoint_id,
   attribute_store_node_value_state_t value_state,
-  uint16_t new_averagerms_voltage_measurement_period_phc
+  uint16_t new_average_rms_voltage_measurement_period_phc
   );
 
 /**
@@ -63680,7 +64210,7 @@ sl_status_t dotdot_set_electrical_measurement_averagerms_voltage_measurement_per
  * @param endpoint_id   Endpoint ID
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_electrical_measurement_averagerms_voltage_measurement_period_phc_undefine_reported(
+sl_status_t dotdot_electrical_measurement_average_rms_voltage_measurement_period_phc_undefine_reported(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -63692,7 +64222,7 @@ sl_status_t dotdot_electrical_measurement_averagerms_voltage_measurement_period_
  * @param endpoint_id   Endpoint ID
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_electrical_measurement_averagerms_voltage_measurement_period_phc_undefine_desired(
+sl_status_t dotdot_electrical_measurement_average_rms_voltage_measurement_period_phc_undefine_desired(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -63704,7 +64234,7 @@ sl_status_t dotdot_electrical_measurement_averagerms_voltage_measurement_period_
  * @param endpoint_id   Endpoint ID
  * @returns true if defined, false is undefined or non-existent
  */
-bool dotdot_electrical_measurement_averagerms_voltage_measurement_period_phc_is_reported_defined(
+bool dotdot_electrical_measurement_average_rms_voltage_measurement_period_phc_is_reported_defined(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -63716,7 +64246,7 @@ bool dotdot_electrical_measurement_averagerms_voltage_measurement_period_phc_is_
  * @param endpoint_id   Endpoint ID
  * @returns true if defined, false is undefined or non-existent
  */
-bool dotdot_electrical_measurement_averagerms_voltage_measurement_period_phc_is_desired_defined(
+bool dotdot_electrical_measurement_average_rms_voltage_measurement_period_phc_is_desired_defined(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -63727,7 +64257,7 @@ bool dotdot_electrical_measurement_averagerms_voltage_measurement_period_phc_is_
  * @param endpoint_id   Endpoint ID
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_create_electrical_measurement_averagerms_voltage_measurement_period_phc(
+sl_status_t dotdot_create_electrical_measurement_average_rms_voltage_measurement_period_phc(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 // ElectricalMeasurement AverageRMSOverVoltageCounterPhC
@@ -63741,7 +64271,7 @@ sl_status_t dotdot_create_electrical_measurement_averagerms_voltage_measurement_
  * @returns true if AverageRMSOverVoltageCounterPhC is supported
  * @returns false if AverageRMSOverVoltageCounterPhC is not supported
  */
-bool dotdot_is_supported_electrical_measurement_averagerms_over_voltage_counter_phc (
+bool dotdot_is_supported_electrical_measurement_average_rms_over_voltage_counter_phc (
               const dotdot_unid_t unid, const dotdot_endpoint_id_t endpoint_id);
 
 /**
@@ -63755,7 +64285,7 @@ bool dotdot_is_supported_electrical_measurement_averagerms_over_voltage_counter_
  *
  * @returns AverageRMSOverVoltageCounterPhC attribute
  */
-uint16_t dotdot_get_electrical_measurement_averagerms_over_voltage_counter_phc(
+uint16_t dotdot_get_electrical_measurement_average_rms_over_voltage_counter_phc(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id,
   attribute_store_node_value_state_t value_state);
@@ -63768,14 +64298,14 @@ uint16_t dotdot_get_electrical_measurement_averagerms_over_voltage_counter_phc(
  * @param value_state   value state to write for the node,
  *                      see \ref attribute_store_set_node_attribute_value
  * 
- * @param new_averagerms_over_voltage_counter_phc new value to set
+ * @param new_average_rms_over_voltage_counter_phc new value to set
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_set_electrical_measurement_averagerms_over_voltage_counter_phc(
+sl_status_t dotdot_set_electrical_measurement_average_rms_over_voltage_counter_phc(
   const dotdot_unid_t unid,
   dotdot_endpoint_id_t endpoint_id,
   attribute_store_node_value_state_t value_state,
-  uint16_t new_averagerms_over_voltage_counter_phc
+  uint16_t new_average_rms_over_voltage_counter_phc
   );
 
 /**
@@ -63786,7 +64316,7 @@ sl_status_t dotdot_set_electrical_measurement_averagerms_over_voltage_counter_ph
  * @param endpoint_id   Endpoint ID
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_electrical_measurement_averagerms_over_voltage_counter_phc_undefine_reported(
+sl_status_t dotdot_electrical_measurement_average_rms_over_voltage_counter_phc_undefine_reported(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -63798,7 +64328,7 @@ sl_status_t dotdot_electrical_measurement_averagerms_over_voltage_counter_phc_un
  * @param endpoint_id   Endpoint ID
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_electrical_measurement_averagerms_over_voltage_counter_phc_undefine_desired(
+sl_status_t dotdot_electrical_measurement_average_rms_over_voltage_counter_phc_undefine_desired(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -63810,7 +64340,7 @@ sl_status_t dotdot_electrical_measurement_averagerms_over_voltage_counter_phc_un
  * @param endpoint_id   Endpoint ID
  * @returns true if defined, false is undefined or non-existent
  */
-bool dotdot_electrical_measurement_averagerms_over_voltage_counter_phc_is_reported_defined(
+bool dotdot_electrical_measurement_average_rms_over_voltage_counter_phc_is_reported_defined(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -63822,7 +64352,7 @@ bool dotdot_electrical_measurement_averagerms_over_voltage_counter_phc_is_report
  * @param endpoint_id   Endpoint ID
  * @returns true if defined, false is undefined or non-existent
  */
-bool dotdot_electrical_measurement_averagerms_over_voltage_counter_phc_is_desired_defined(
+bool dotdot_electrical_measurement_average_rms_over_voltage_counter_phc_is_desired_defined(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -63833,7 +64363,7 @@ bool dotdot_electrical_measurement_averagerms_over_voltage_counter_phc_is_desire
  * @param endpoint_id   Endpoint ID
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_create_electrical_measurement_averagerms_over_voltage_counter_phc(
+sl_status_t dotdot_create_electrical_measurement_average_rms_over_voltage_counter_phc(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 // ElectricalMeasurement AverageRMSUnderVoltageCounterPhC
@@ -63847,7 +64377,7 @@ sl_status_t dotdot_create_electrical_measurement_averagerms_over_voltage_counter
  * @returns true if AverageRMSUnderVoltageCounterPhC is supported
  * @returns false if AverageRMSUnderVoltageCounterPhC is not supported
  */
-bool dotdot_is_supported_electrical_measurement_averagerms_under_voltage_counter_phc (
+bool dotdot_is_supported_electrical_measurement_average_rms_under_voltage_counter_phc (
               const dotdot_unid_t unid, const dotdot_endpoint_id_t endpoint_id);
 
 /**
@@ -63861,7 +64391,7 @@ bool dotdot_is_supported_electrical_measurement_averagerms_under_voltage_counter
  *
  * @returns AverageRMSUnderVoltageCounterPhC attribute
  */
-uint16_t dotdot_get_electrical_measurement_averagerms_under_voltage_counter_phc(
+uint16_t dotdot_get_electrical_measurement_average_rms_under_voltage_counter_phc(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id,
   attribute_store_node_value_state_t value_state);
@@ -63874,14 +64404,14 @@ uint16_t dotdot_get_electrical_measurement_averagerms_under_voltage_counter_phc(
  * @param value_state   value state to write for the node,
  *                      see \ref attribute_store_set_node_attribute_value
  * 
- * @param new_averagerms_under_voltage_counter_phc new value to set
+ * @param new_average_rms_under_voltage_counter_phc new value to set
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_set_electrical_measurement_averagerms_under_voltage_counter_phc(
+sl_status_t dotdot_set_electrical_measurement_average_rms_under_voltage_counter_phc(
   const dotdot_unid_t unid,
   dotdot_endpoint_id_t endpoint_id,
   attribute_store_node_value_state_t value_state,
-  uint16_t new_averagerms_under_voltage_counter_phc
+  uint16_t new_average_rms_under_voltage_counter_phc
   );
 
 /**
@@ -63892,7 +64422,7 @@ sl_status_t dotdot_set_electrical_measurement_averagerms_under_voltage_counter_p
  * @param endpoint_id   Endpoint ID
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_electrical_measurement_averagerms_under_voltage_counter_phc_undefine_reported(
+sl_status_t dotdot_electrical_measurement_average_rms_under_voltage_counter_phc_undefine_reported(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -63904,7 +64434,7 @@ sl_status_t dotdot_electrical_measurement_averagerms_under_voltage_counter_phc_u
  * @param endpoint_id   Endpoint ID
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_electrical_measurement_averagerms_under_voltage_counter_phc_undefine_desired(
+sl_status_t dotdot_electrical_measurement_average_rms_under_voltage_counter_phc_undefine_desired(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -63916,7 +64446,7 @@ sl_status_t dotdot_electrical_measurement_averagerms_under_voltage_counter_phc_u
  * @param endpoint_id   Endpoint ID
  * @returns true if defined, false is undefined or non-existent
  */
-bool dotdot_electrical_measurement_averagerms_under_voltage_counter_phc_is_reported_defined(
+bool dotdot_electrical_measurement_average_rms_under_voltage_counter_phc_is_reported_defined(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -63928,7 +64458,7 @@ bool dotdot_electrical_measurement_averagerms_under_voltage_counter_phc_is_repor
  * @param endpoint_id   Endpoint ID
  * @returns true if defined, false is undefined or non-existent
  */
-bool dotdot_electrical_measurement_averagerms_under_voltage_counter_phc_is_desired_defined(
+bool dotdot_electrical_measurement_average_rms_under_voltage_counter_phc_is_desired_defined(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -63939,7 +64469,7 @@ bool dotdot_electrical_measurement_averagerms_under_voltage_counter_phc_is_desir
  * @param endpoint_id   Endpoint ID
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_create_electrical_measurement_averagerms_under_voltage_counter_phc(
+sl_status_t dotdot_create_electrical_measurement_average_rms_under_voltage_counter_phc(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 // ElectricalMeasurement RMSExtremeOverVoltagePeriodPhC
@@ -67267,7 +67797,7 @@ sl_status_t dotdot_create_diagnostics_relayed_ucast(
  * @returns true if PHYToMACQueueLimitReached is supported
  * @returns false if PHYToMACQueueLimitReached is not supported
  */
-bool dotdot_is_supported_diagnostics_phy_tomac_queue_limit_reached (
+bool dotdot_is_supported_diagnostics_phy_to_mac_queue_limit_reached (
               const dotdot_unid_t unid, const dotdot_endpoint_id_t endpoint_id);
 
 /**
@@ -67281,7 +67811,7 @@ bool dotdot_is_supported_diagnostics_phy_tomac_queue_limit_reached (
  *
  * @returns PHYToMACQueueLimitReached attribute
  */
-uint16_t dotdot_get_diagnostics_phy_tomac_queue_limit_reached(
+uint16_t dotdot_get_diagnostics_phy_to_mac_queue_limit_reached(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id,
   attribute_store_node_value_state_t value_state);
@@ -67294,14 +67824,14 @@ uint16_t dotdot_get_diagnostics_phy_tomac_queue_limit_reached(
  * @param value_state   value state to write for the node,
  *                      see \ref attribute_store_set_node_attribute_value
  * 
- * @param new_phy_tomac_queue_limit_reached new value to set
+ * @param new_phy_to_mac_queue_limit_reached new value to set
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_set_diagnostics_phy_tomac_queue_limit_reached(
+sl_status_t dotdot_set_diagnostics_phy_to_mac_queue_limit_reached(
   const dotdot_unid_t unid,
   dotdot_endpoint_id_t endpoint_id,
   attribute_store_node_value_state_t value_state,
-  uint16_t new_phy_tomac_queue_limit_reached
+  uint16_t new_phy_to_mac_queue_limit_reached
   );
 
 /**
@@ -67312,7 +67842,7 @@ sl_status_t dotdot_set_diagnostics_phy_tomac_queue_limit_reached(
  * @param endpoint_id   Endpoint ID
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_diagnostics_phy_tomac_queue_limit_reached_undefine_reported(
+sl_status_t dotdot_diagnostics_phy_to_mac_queue_limit_reached_undefine_reported(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -67324,7 +67854,7 @@ sl_status_t dotdot_diagnostics_phy_tomac_queue_limit_reached_undefine_reported(
  * @param endpoint_id   Endpoint ID
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_diagnostics_phy_tomac_queue_limit_reached_undefine_desired(
+sl_status_t dotdot_diagnostics_phy_to_mac_queue_limit_reached_undefine_desired(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -67336,7 +67866,7 @@ sl_status_t dotdot_diagnostics_phy_tomac_queue_limit_reached_undefine_desired(
  * @param endpoint_id   Endpoint ID
  * @returns true if defined, false is undefined or non-existent
  */
-bool dotdot_diagnostics_phy_tomac_queue_limit_reached_is_reported_defined(
+bool dotdot_diagnostics_phy_to_mac_queue_limit_reached_is_reported_defined(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -67348,7 +67878,7 @@ bool dotdot_diagnostics_phy_tomac_queue_limit_reached_is_reported_defined(
  * @param endpoint_id   Endpoint ID
  * @returns true if defined, false is undefined or non-existent
  */
-bool dotdot_diagnostics_phy_tomac_queue_limit_reached_is_desired_defined(
+bool dotdot_diagnostics_phy_to_mac_queue_limit_reached_is_desired_defined(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -67359,7 +67889,7 @@ bool dotdot_diagnostics_phy_tomac_queue_limit_reached_is_desired_defined(
  * @param endpoint_id   Endpoint ID
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_create_diagnostics_phy_tomac_queue_limit_reached(
+sl_status_t dotdot_create_diagnostics_phy_to_mac_queue_limit_reached(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 // Diagnostics PacketValidateDropCount
@@ -67479,7 +68009,7 @@ sl_status_t dotdot_create_diagnostics_packet_validate_drop_count(
  * @returns true if AverageMACRetryPerAPSMessageSent is supported
  * @returns false if AverageMACRetryPerAPSMessageSent is not supported
  */
-bool dotdot_is_supported_diagnostics_averagemac_retry_peraps_message_sent (
+bool dotdot_is_supported_diagnostics_average_mac_retry_per_aps_message_sent (
               const dotdot_unid_t unid, const dotdot_endpoint_id_t endpoint_id);
 
 /**
@@ -67493,7 +68023,7 @@ bool dotdot_is_supported_diagnostics_averagemac_retry_peraps_message_sent (
  *
  * @returns AverageMACRetryPerAPSMessageSent attribute
  */
-uint16_t dotdot_get_diagnostics_averagemac_retry_peraps_message_sent(
+uint16_t dotdot_get_diagnostics_average_mac_retry_per_aps_message_sent(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id,
   attribute_store_node_value_state_t value_state);
@@ -67506,14 +68036,14 @@ uint16_t dotdot_get_diagnostics_averagemac_retry_peraps_message_sent(
  * @param value_state   value state to write for the node,
  *                      see \ref attribute_store_set_node_attribute_value
  * 
- * @param new_averagemac_retry_peraps_message_sent new value to set
+ * @param new_average_mac_retry_per_aps_message_sent new value to set
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_set_diagnostics_averagemac_retry_peraps_message_sent(
+sl_status_t dotdot_set_diagnostics_average_mac_retry_per_aps_message_sent(
   const dotdot_unid_t unid,
   dotdot_endpoint_id_t endpoint_id,
   attribute_store_node_value_state_t value_state,
-  uint16_t new_averagemac_retry_peraps_message_sent
+  uint16_t new_average_mac_retry_per_aps_message_sent
   );
 
 /**
@@ -67524,7 +68054,7 @@ sl_status_t dotdot_set_diagnostics_averagemac_retry_peraps_message_sent(
  * @param endpoint_id   Endpoint ID
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_diagnostics_averagemac_retry_peraps_message_sent_undefine_reported(
+sl_status_t dotdot_diagnostics_average_mac_retry_per_aps_message_sent_undefine_reported(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -67536,7 +68066,7 @@ sl_status_t dotdot_diagnostics_averagemac_retry_peraps_message_sent_undefine_rep
  * @param endpoint_id   Endpoint ID
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_diagnostics_averagemac_retry_peraps_message_sent_undefine_desired(
+sl_status_t dotdot_diagnostics_average_mac_retry_per_aps_message_sent_undefine_desired(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -67548,7 +68078,7 @@ sl_status_t dotdot_diagnostics_averagemac_retry_peraps_message_sent_undefine_des
  * @param endpoint_id   Endpoint ID
  * @returns true if defined, false is undefined or non-existent
  */
-bool dotdot_diagnostics_averagemac_retry_peraps_message_sent_is_reported_defined(
+bool dotdot_diagnostics_average_mac_retry_per_aps_message_sent_is_reported_defined(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -67560,7 +68090,7 @@ bool dotdot_diagnostics_averagemac_retry_peraps_message_sent_is_reported_defined
  * @param endpoint_id   Endpoint ID
  * @returns true if defined, false is undefined or non-existent
  */
-bool dotdot_diagnostics_averagemac_retry_peraps_message_sent_is_desired_defined(
+bool dotdot_diagnostics_average_mac_retry_per_aps_message_sent_is_desired_defined(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -67571,7 +68101,7 @@ bool dotdot_diagnostics_averagemac_retry_peraps_message_sent_is_desired_defined(
  * @param endpoint_id   Endpoint ID
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_create_diagnostics_averagemac_retry_peraps_message_sent(
+sl_status_t dotdot_create_diagnostics_average_mac_retry_per_aps_message_sent(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 // Diagnostics LastMessageLQI
@@ -72234,7 +72764,7 @@ sl_status_t dotdot_create_application_monitoring_application_connected(
  * @returns true if ApplicationMQTTTopics is supported
  * @returns false if ApplicationMQTTTopics is not supported
  */
-bool dotdot_is_supported_application_monitoring_applicationmqtt_topics (
+bool dotdot_is_supported_application_monitoring_application_mqtt_topics (
               const dotdot_unid_t unid, const dotdot_endpoint_id_t endpoint_id);
 
 /**
@@ -72251,7 +72781,7 @@ bool dotdot_is_supported_application_monitoring_applicationmqtt_topics (
  *
  * @returns ApplicationMQTTTopics attribute
  */
-const char* dotdot_get_application_monitoring_applicationmqtt_topics(
+const char* dotdot_get_application_monitoring_application_mqtt_topics(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id,
   attribute_store_node_value_state_t value_state);
@@ -72264,17 +72794,17 @@ const char* dotdot_get_application_monitoring_applicationmqtt_topics(
  * @param value_state   value state to write for the node,
  *                      see \ref attribute_store_set_node_attribute_value
  * 
- * @param new_applicationmqtt_topics_count Number of elements in the array
+ * @param new_application_mqtt_topics_count Number of elements in the array
  * 
- * @param new_applicationmqtt_topics new value to set
+ * @param new_application_mqtt_topics new value to set
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_set_application_monitoring_applicationmqtt_topics(
+sl_status_t dotdot_set_application_monitoring_application_mqtt_topics(
   const dotdot_unid_t unid,
   dotdot_endpoint_id_t endpoint_id,
   attribute_store_node_value_state_t value_state,
-  size_t new_applicationmqtt_topics_count,
-  const char** new_applicationmqtt_topics
+  size_t new_application_mqtt_topics_count,
+  const char** new_application_mqtt_topics
   );
 
 /**
@@ -72285,7 +72815,7 @@ sl_status_t dotdot_set_application_monitoring_applicationmqtt_topics(
  * @param endpoint_id   Endpoint ID
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_application_monitoring_applicationmqtt_topics_undefine_reported(
+sl_status_t dotdot_application_monitoring_application_mqtt_topics_undefine_reported(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -72297,7 +72827,7 @@ sl_status_t dotdot_application_monitoring_applicationmqtt_topics_undefine_report
  * @param endpoint_id   Endpoint ID
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_application_monitoring_applicationmqtt_topics_undefine_desired(
+sl_status_t dotdot_application_monitoring_application_mqtt_topics_undefine_desired(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -72309,7 +72839,7 @@ sl_status_t dotdot_application_monitoring_applicationmqtt_topics_undefine_desire
  * @param endpoint_id   Endpoint ID
  * @returns true if defined, false is undefined or non-existent
  */
-bool dotdot_application_monitoring_applicationmqtt_topics_is_reported_defined(
+bool dotdot_application_monitoring_application_mqtt_topics_is_reported_defined(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -72321,7 +72851,7 @@ bool dotdot_application_monitoring_applicationmqtt_topics_is_reported_defined(
  * @param endpoint_id   Endpoint ID
  * @returns true if defined, false is undefined or non-existent
  */
-bool dotdot_application_monitoring_applicationmqtt_topics_is_desired_defined(
+bool dotdot_application_monitoring_application_mqtt_topics_is_desired_defined(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -72332,7 +72862,7 @@ bool dotdot_application_monitoring_applicationmqtt_topics_is_desired_defined(
  * @param endpoint_id   Endpoint ID
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_create_application_monitoring_applicationmqtt_topics(
+sl_status_t dotdot_create_application_monitoring_application_mqtt_topics(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 // ApplicationMonitoring UptimeMinutes
@@ -73836,7 +74366,7 @@ sl_status_t dotdot_create_application_monitoring_application_statistics_reportin
  * @returns true if ApplicationCPUUsagePercent is supported
  * @returns false if ApplicationCPUUsagePercent is not supported
  */
-bool dotdot_is_supported_application_monitoring_applicationcpu_usage_percent (
+bool dotdot_is_supported_application_monitoring_application_cpu_usage_percent (
               const dotdot_unid_t unid, const dotdot_endpoint_id_t endpoint_id);
 
 /**
@@ -73850,7 +74380,7 @@ bool dotdot_is_supported_application_monitoring_applicationcpu_usage_percent (
  *
  * @returns ApplicationCPUUsagePercent attribute
  */
-double dotdot_get_application_monitoring_applicationcpu_usage_percent(
+double dotdot_get_application_monitoring_application_cpu_usage_percent(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id,
   attribute_store_node_value_state_t value_state);
@@ -73863,14 +74393,14 @@ double dotdot_get_application_monitoring_applicationcpu_usage_percent(
  * @param value_state   value state to write for the node,
  *                      see \ref attribute_store_set_node_attribute_value
  * 
- * @param new_applicationcpu_usage_percent new value to set
+ * @param new_application_cpu_usage_percent new value to set
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_set_application_monitoring_applicationcpu_usage_percent(
+sl_status_t dotdot_set_application_monitoring_application_cpu_usage_percent(
   const dotdot_unid_t unid,
   dotdot_endpoint_id_t endpoint_id,
   attribute_store_node_value_state_t value_state,
-  double new_applicationcpu_usage_percent
+  double new_application_cpu_usage_percent
   );
 
 /**
@@ -73881,7 +74411,7 @@ sl_status_t dotdot_set_application_monitoring_applicationcpu_usage_percent(
  * @param endpoint_id   Endpoint ID
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_application_monitoring_applicationcpu_usage_percent_undefine_reported(
+sl_status_t dotdot_application_monitoring_application_cpu_usage_percent_undefine_reported(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -73893,7 +74423,7 @@ sl_status_t dotdot_application_monitoring_applicationcpu_usage_percent_undefine_
  * @param endpoint_id   Endpoint ID
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_application_monitoring_applicationcpu_usage_percent_undefine_desired(
+sl_status_t dotdot_application_monitoring_application_cpu_usage_percent_undefine_desired(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -73905,7 +74435,7 @@ sl_status_t dotdot_application_monitoring_applicationcpu_usage_percent_undefine_
  * @param endpoint_id   Endpoint ID
  * @returns true if defined, false is undefined or non-existent
  */
-bool dotdot_application_monitoring_applicationcpu_usage_percent_is_reported_defined(
+bool dotdot_application_monitoring_application_cpu_usage_percent_is_reported_defined(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -73917,7 +74447,7 @@ bool dotdot_application_monitoring_applicationcpu_usage_percent_is_reported_defi
  * @param endpoint_id   Endpoint ID
  * @returns true if defined, false is undefined or non-existent
  */
-bool dotdot_application_monitoring_applicationcpu_usage_percent_is_desired_defined(
+bool dotdot_application_monitoring_application_cpu_usage_percent_is_desired_defined(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -73928,7 +74458,7 @@ bool dotdot_application_monitoring_applicationcpu_usage_percent_is_desired_defin
  * @param endpoint_id   Endpoint ID
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_create_application_monitoring_applicationcpu_usage_percent(
+sl_status_t dotdot_create_application_monitoring_application_cpu_usage_percent(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 // ApplicationMonitoring ApplicationCPUAverageUsagePercent
@@ -73942,7 +74472,7 @@ sl_status_t dotdot_create_application_monitoring_applicationcpu_usage_percent(
  * @returns true if ApplicationCPUAverageUsagePercent is supported
  * @returns false if ApplicationCPUAverageUsagePercent is not supported
  */
-bool dotdot_is_supported_application_monitoring_applicationcpu_average_usage_percent (
+bool dotdot_is_supported_application_monitoring_application_cpu_average_usage_percent (
               const dotdot_unid_t unid, const dotdot_endpoint_id_t endpoint_id);
 
 /**
@@ -73956,7 +74486,7 @@ bool dotdot_is_supported_application_monitoring_applicationcpu_average_usage_per
  *
  * @returns ApplicationCPUAverageUsagePercent attribute
  */
-double dotdot_get_application_monitoring_applicationcpu_average_usage_percent(
+double dotdot_get_application_monitoring_application_cpu_average_usage_percent(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id,
   attribute_store_node_value_state_t value_state);
@@ -73969,14 +74499,14 @@ double dotdot_get_application_monitoring_applicationcpu_average_usage_percent(
  * @param value_state   value state to write for the node,
  *                      see \ref attribute_store_set_node_attribute_value
  * 
- * @param new_applicationcpu_average_usage_percent new value to set
+ * @param new_application_cpu_average_usage_percent new value to set
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_set_application_monitoring_applicationcpu_average_usage_percent(
+sl_status_t dotdot_set_application_monitoring_application_cpu_average_usage_percent(
   const dotdot_unid_t unid,
   dotdot_endpoint_id_t endpoint_id,
   attribute_store_node_value_state_t value_state,
-  double new_applicationcpu_average_usage_percent
+  double new_application_cpu_average_usage_percent
   );
 
 /**
@@ -73987,7 +74517,7 @@ sl_status_t dotdot_set_application_monitoring_applicationcpu_average_usage_perce
  * @param endpoint_id   Endpoint ID
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_application_monitoring_applicationcpu_average_usage_percent_undefine_reported(
+sl_status_t dotdot_application_monitoring_application_cpu_average_usage_percent_undefine_reported(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -73999,7 +74529,7 @@ sl_status_t dotdot_application_monitoring_applicationcpu_average_usage_percent_u
  * @param endpoint_id   Endpoint ID
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_application_monitoring_applicationcpu_average_usage_percent_undefine_desired(
+sl_status_t dotdot_application_monitoring_application_cpu_average_usage_percent_undefine_desired(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -74011,7 +74541,7 @@ sl_status_t dotdot_application_monitoring_applicationcpu_average_usage_percent_u
  * @param endpoint_id   Endpoint ID
  * @returns true if defined, false is undefined or non-existent
  */
-bool dotdot_application_monitoring_applicationcpu_average_usage_percent_is_reported_defined(
+bool dotdot_application_monitoring_application_cpu_average_usage_percent_is_reported_defined(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -74023,7 +74553,7 @@ bool dotdot_application_monitoring_applicationcpu_average_usage_percent_is_repor
  * @param endpoint_id   Endpoint ID
  * @returns true if defined, false is undefined or non-existent
  */
-bool dotdot_application_monitoring_applicationcpu_average_usage_percent_is_desired_defined(
+bool dotdot_application_monitoring_application_cpu_average_usage_percent_is_desired_defined(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -74034,7 +74564,7 @@ bool dotdot_application_monitoring_applicationcpu_average_usage_percent_is_desir
  * @param endpoint_id   Endpoint ID
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_create_application_monitoring_applicationcpu_average_usage_percent(
+sl_status_t dotdot_create_application_monitoring_application_cpu_average_usage_percent(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 // ApplicationMonitoring ApplicationCPUMinUsagePercent
@@ -74048,7 +74578,7 @@ sl_status_t dotdot_create_application_monitoring_applicationcpu_average_usage_pe
  * @returns true if ApplicationCPUMinUsagePercent is supported
  * @returns false if ApplicationCPUMinUsagePercent is not supported
  */
-bool dotdot_is_supported_application_monitoring_applicationcpu_min_usage_percent (
+bool dotdot_is_supported_application_monitoring_application_cpu_min_usage_percent (
               const dotdot_unid_t unid, const dotdot_endpoint_id_t endpoint_id);
 
 /**
@@ -74062,7 +74592,7 @@ bool dotdot_is_supported_application_monitoring_applicationcpu_min_usage_percent
  *
  * @returns ApplicationCPUMinUsagePercent attribute
  */
-double dotdot_get_application_monitoring_applicationcpu_min_usage_percent(
+double dotdot_get_application_monitoring_application_cpu_min_usage_percent(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id,
   attribute_store_node_value_state_t value_state);
@@ -74075,14 +74605,14 @@ double dotdot_get_application_monitoring_applicationcpu_min_usage_percent(
  * @param value_state   value state to write for the node,
  *                      see \ref attribute_store_set_node_attribute_value
  * 
- * @param new_applicationcpu_min_usage_percent new value to set
+ * @param new_application_cpu_min_usage_percent new value to set
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_set_application_monitoring_applicationcpu_min_usage_percent(
+sl_status_t dotdot_set_application_monitoring_application_cpu_min_usage_percent(
   const dotdot_unid_t unid,
   dotdot_endpoint_id_t endpoint_id,
   attribute_store_node_value_state_t value_state,
-  double new_applicationcpu_min_usage_percent
+  double new_application_cpu_min_usage_percent
   );
 
 /**
@@ -74093,7 +74623,7 @@ sl_status_t dotdot_set_application_monitoring_applicationcpu_min_usage_percent(
  * @param endpoint_id   Endpoint ID
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_application_monitoring_applicationcpu_min_usage_percent_undefine_reported(
+sl_status_t dotdot_application_monitoring_application_cpu_min_usage_percent_undefine_reported(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -74105,7 +74635,7 @@ sl_status_t dotdot_application_monitoring_applicationcpu_min_usage_percent_undef
  * @param endpoint_id   Endpoint ID
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_application_monitoring_applicationcpu_min_usage_percent_undefine_desired(
+sl_status_t dotdot_application_monitoring_application_cpu_min_usage_percent_undefine_desired(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -74117,7 +74647,7 @@ sl_status_t dotdot_application_monitoring_applicationcpu_min_usage_percent_undef
  * @param endpoint_id   Endpoint ID
  * @returns true if defined, false is undefined or non-existent
  */
-bool dotdot_application_monitoring_applicationcpu_min_usage_percent_is_reported_defined(
+bool dotdot_application_monitoring_application_cpu_min_usage_percent_is_reported_defined(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -74129,7 +74659,7 @@ bool dotdot_application_monitoring_applicationcpu_min_usage_percent_is_reported_
  * @param endpoint_id   Endpoint ID
  * @returns true if defined, false is undefined or non-existent
  */
-bool dotdot_application_monitoring_applicationcpu_min_usage_percent_is_desired_defined(
+bool dotdot_application_monitoring_application_cpu_min_usage_percent_is_desired_defined(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -74140,7 +74670,7 @@ bool dotdot_application_monitoring_applicationcpu_min_usage_percent_is_desired_d
  * @param endpoint_id   Endpoint ID
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_create_application_monitoring_applicationcpu_min_usage_percent(
+sl_status_t dotdot_create_application_monitoring_application_cpu_min_usage_percent(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 // ApplicationMonitoring ApplicationCPUMaxUsagePercent
@@ -74154,7 +74684,7 @@ sl_status_t dotdot_create_application_monitoring_applicationcpu_min_usage_percen
  * @returns true if ApplicationCPUMaxUsagePercent is supported
  * @returns false if ApplicationCPUMaxUsagePercent is not supported
  */
-bool dotdot_is_supported_application_monitoring_applicationcpu_max_usage_percent (
+bool dotdot_is_supported_application_monitoring_application_cpu_max_usage_percent (
               const dotdot_unid_t unid, const dotdot_endpoint_id_t endpoint_id);
 
 /**
@@ -74168,7 +74698,7 @@ bool dotdot_is_supported_application_monitoring_applicationcpu_max_usage_percent
  *
  * @returns ApplicationCPUMaxUsagePercent attribute
  */
-double dotdot_get_application_monitoring_applicationcpu_max_usage_percent(
+double dotdot_get_application_monitoring_application_cpu_max_usage_percent(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id,
   attribute_store_node_value_state_t value_state);
@@ -74181,14 +74711,14 @@ double dotdot_get_application_monitoring_applicationcpu_max_usage_percent(
  * @param value_state   value state to write for the node,
  *                      see \ref attribute_store_set_node_attribute_value
  * 
- * @param new_applicationcpu_max_usage_percent new value to set
+ * @param new_application_cpu_max_usage_percent new value to set
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_set_application_monitoring_applicationcpu_max_usage_percent(
+sl_status_t dotdot_set_application_monitoring_application_cpu_max_usage_percent(
   const dotdot_unid_t unid,
   dotdot_endpoint_id_t endpoint_id,
   attribute_store_node_value_state_t value_state,
-  double new_applicationcpu_max_usage_percent
+  double new_application_cpu_max_usage_percent
   );
 
 /**
@@ -74199,7 +74729,7 @@ sl_status_t dotdot_set_application_monitoring_applicationcpu_max_usage_percent(
  * @param endpoint_id   Endpoint ID
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_application_monitoring_applicationcpu_max_usage_percent_undefine_reported(
+sl_status_t dotdot_application_monitoring_application_cpu_max_usage_percent_undefine_reported(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -74211,7 +74741,7 @@ sl_status_t dotdot_application_monitoring_applicationcpu_max_usage_percent_undef
  * @param endpoint_id   Endpoint ID
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_application_monitoring_applicationcpu_max_usage_percent_undefine_desired(
+sl_status_t dotdot_application_monitoring_application_cpu_max_usage_percent_undefine_desired(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -74223,7 +74753,7 @@ sl_status_t dotdot_application_monitoring_applicationcpu_max_usage_percent_undef
  * @param endpoint_id   Endpoint ID
  * @returns true if defined, false is undefined or non-existent
  */
-bool dotdot_application_monitoring_applicationcpu_max_usage_percent_is_reported_defined(
+bool dotdot_application_monitoring_application_cpu_max_usage_percent_is_reported_defined(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -74235,7 +74765,7 @@ bool dotdot_application_monitoring_applicationcpu_max_usage_percent_is_reported_
  * @param endpoint_id   Endpoint ID
  * @returns true if defined, false is undefined or non-existent
  */
-bool dotdot_application_monitoring_applicationcpu_max_usage_percent_is_desired_defined(
+bool dotdot_application_monitoring_application_cpu_max_usage_percent_is_desired_defined(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -74246,7 +74776,7 @@ bool dotdot_application_monitoring_applicationcpu_max_usage_percent_is_desired_d
  * @param endpoint_id   Endpoint ID
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_create_application_monitoring_applicationcpu_max_usage_percent(
+sl_status_t dotdot_create_application_monitoring_application_cpu_max_usage_percent(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 // ApplicationMonitoring ApplicationRAMUsageMB
@@ -74260,7 +74790,7 @@ sl_status_t dotdot_create_application_monitoring_applicationcpu_max_usage_percen
  * @returns true if ApplicationRAMUsageMB is supported
  * @returns false if ApplicationRAMUsageMB is not supported
  */
-bool dotdot_is_supported_application_monitoring_applicationram_usagemb (
+bool dotdot_is_supported_application_monitoring_application_ram_usagemb (
               const dotdot_unid_t unid, const dotdot_endpoint_id_t endpoint_id);
 
 /**
@@ -74274,7 +74804,7 @@ bool dotdot_is_supported_application_monitoring_applicationram_usagemb (
  *
  * @returns ApplicationRAMUsageMB attribute
  */
-double dotdot_get_application_monitoring_applicationram_usagemb(
+double dotdot_get_application_monitoring_application_ram_usagemb(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id,
   attribute_store_node_value_state_t value_state);
@@ -74287,14 +74817,14 @@ double dotdot_get_application_monitoring_applicationram_usagemb(
  * @param value_state   value state to write for the node,
  *                      see \ref attribute_store_set_node_attribute_value
  * 
- * @param new_applicationram_usagemb new value to set
+ * @param new_application_ram_usagemb new value to set
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_set_application_monitoring_applicationram_usagemb(
+sl_status_t dotdot_set_application_monitoring_application_ram_usagemb(
   const dotdot_unid_t unid,
   dotdot_endpoint_id_t endpoint_id,
   attribute_store_node_value_state_t value_state,
-  double new_applicationram_usagemb
+  double new_application_ram_usagemb
   );
 
 /**
@@ -74305,7 +74835,7 @@ sl_status_t dotdot_set_application_monitoring_applicationram_usagemb(
  * @param endpoint_id   Endpoint ID
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_application_monitoring_applicationram_usagemb_undefine_reported(
+sl_status_t dotdot_application_monitoring_application_ram_usagemb_undefine_reported(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -74317,7 +74847,7 @@ sl_status_t dotdot_application_monitoring_applicationram_usagemb_undefine_report
  * @param endpoint_id   Endpoint ID
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_application_monitoring_applicationram_usagemb_undefine_desired(
+sl_status_t dotdot_application_monitoring_application_ram_usagemb_undefine_desired(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -74329,7 +74859,7 @@ sl_status_t dotdot_application_monitoring_applicationram_usagemb_undefine_desire
  * @param endpoint_id   Endpoint ID
  * @returns true if defined, false is undefined or non-existent
  */
-bool dotdot_application_monitoring_applicationram_usagemb_is_reported_defined(
+bool dotdot_application_monitoring_application_ram_usagemb_is_reported_defined(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -74341,7 +74871,7 @@ bool dotdot_application_monitoring_applicationram_usagemb_is_reported_defined(
  * @param endpoint_id   Endpoint ID
  * @returns true if defined, false is undefined or non-existent
  */
-bool dotdot_application_monitoring_applicationram_usagemb_is_desired_defined(
+bool dotdot_application_monitoring_application_ram_usagemb_is_desired_defined(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -74352,7 +74882,7 @@ bool dotdot_application_monitoring_applicationram_usagemb_is_desired_defined(
  * @param endpoint_id   Endpoint ID
  * @returns sl_status_t SL_STATUS_OK on success
  */
-sl_status_t dotdot_create_application_monitoring_applicationram_usagemb(
+sl_status_t dotdot_create_application_monitoring_application_ram_usagemb(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 
@@ -76979,6 +77509,2877 @@ bool dotdot_is_any_protocol_controller_network_management_attribute_supported(
  * @returns true if at least 1 writable attribute in the Attribute Store, false otherwise
  */
 bool dotdot_is_any_protocol_controller_network_management_writable_attribute_supported(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+////////////////////////////////////////////////////////////////////////////////
+// Start of cluster Descriptor
+////////////////////////////////////////////////////////////////////////////////
+// Descriptor DeviceTypeList
+/**
+ * @brief Verifies if the DotDot Descriptor - DeviceTypeList is supported
+ * under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ *
+ * @returns true if DeviceTypeList is supported
+ * @returns false if DeviceTypeList is not supported
+ */
+bool dotdot_is_supported_descriptor_device_type_list (
+              const dotdot_unid_t unid, const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Gets the DotDot Descriptor - DeviceTypeList attribute value under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @param value_state   value state to get,
+ *                      see \ref attribute_store_get_node_attribute_value
+ * 
+ *
+ * @returns DeviceTypeList attribute
+ */
+DeviceTypeStruct dotdot_get_descriptor_device_type_list(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id,
+  attribute_store_node_value_state_t value_state);
+
+/**
+ * @brief Set the DotDot Descriptor - DeviceTypeList attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @param value_state   value state to write for the node,
+ *                      see \ref attribute_store_set_node_attribute_value
+ * 
+ * @param new_device_type_list_count Number of elements in the array
+ * 
+ * @param new_device_type_list new value to set
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_set_descriptor_device_type_list(
+  const dotdot_unid_t unid,
+  dotdot_endpoint_id_t endpoint_id,
+  attribute_store_node_value_state_t value_state,
+  size_t new_device_type_list_count,
+  const DeviceTypeStruct* new_device_type_list
+  );
+
+/**
+ * @brief Undefines the Reported value of the the DotDot Descriptor - DeviceTypeList
+ * attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_descriptor_device_type_list_undefine_reported(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Undefines the Desired value of the DotDot
+ * Descriptor - DeviceTypeList attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_descriptor_device_type_list_undefine_desired(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Checks if the reported value is defined for the DotDot
+ * Descriptor - DeviceTypeList attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns true if defined, false is undefined or non-existent
+ */
+bool dotdot_descriptor_device_type_list_is_reported_defined(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Checks if the desired value is defined for the DotDot
+ * Descriptor - DeviceTypeList attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns true if defined, false is undefined or non-existent
+ */
+bool dotdot_descriptor_device_type_list_is_desired_defined(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Creates a DotDot Descriptor - DeviceTypeList attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_create_descriptor_device_type_list(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Checks if a UNID/Endpoint supports any attribute for the Descriptor
+ * Cluster
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns true if at least 1 attribute in the Attribute Store, false otherwise
+ */
+bool dotdot_is_any_descriptor_attribute_supported(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Checks if a UNID/Endpoint supports any writable attribute for the
+ * Descriptor Cluster
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns true if at least 1 writable attribute in the Attribute Store, false otherwise
+ */
+bool dotdot_is_any_descriptor_writable_attribute_supported(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+////////////////////////////////////////////////////////////////////////////////
+// Start of cluster UnifyFanControl
+////////////////////////////////////////////////////////////////////////////////
+// UnifyFanControl ZWaveFanMode
+/**
+ * @brief Verifies if the DotDot UnifyFanControl - ZWaveFanMode is supported
+ * under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ *
+ * @returns true if ZWaveFanMode is supported
+ * @returns false if ZWaveFanMode is not supported
+ */
+bool dotdot_is_supported_unify_fan_control_z_wave_fan_mode (
+              const dotdot_unid_t unid, const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Gets the DotDot UnifyFanControl - ZWaveFanMode attribute value under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @param value_state   value state to get,
+ *                      see \ref attribute_store_get_node_attribute_value
+ * 
+ *
+ * @returns ZWaveFanMode attribute
+ */
+ZWaveFanModeEnum dotdot_get_unify_fan_control_z_wave_fan_mode(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id,
+  attribute_store_node_value_state_t value_state);
+
+/**
+ * @brief Set the DotDot UnifyFanControl - ZWaveFanMode attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @param value_state   value state to write for the node,
+ *                      see \ref attribute_store_set_node_attribute_value
+ * 
+ * @param new_z_wave_fan_mode new value to set
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_set_unify_fan_control_z_wave_fan_mode(
+  const dotdot_unid_t unid,
+  dotdot_endpoint_id_t endpoint_id,
+  attribute_store_node_value_state_t value_state,
+  ZWaveFanModeEnum new_z_wave_fan_mode
+  );
+
+/**
+ * @brief Undefines the Reported value of the the DotDot UnifyFanControl - ZWaveFanMode
+ * attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_unify_fan_control_z_wave_fan_mode_undefine_reported(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Undefines the Desired value of the DotDot
+ * UnifyFanControl - ZWaveFanMode attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_unify_fan_control_z_wave_fan_mode_undefine_desired(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Checks if the reported value is defined for the DotDot
+ * UnifyFanControl - ZWaveFanMode attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns true if defined, false is undefined or non-existent
+ */
+bool dotdot_unify_fan_control_z_wave_fan_mode_is_reported_defined(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Checks if the desired value is defined for the DotDot
+ * UnifyFanControl - ZWaveFanMode attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns true if defined, false is undefined or non-existent
+ */
+bool dotdot_unify_fan_control_z_wave_fan_mode_is_desired_defined(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Creates a DotDot UnifyFanControl - ZWaveFanMode attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_create_unify_fan_control_z_wave_fan_mode(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+// UnifyFanControl ZWaveSupportedFanMode
+/**
+ * @brief Verifies if the DotDot UnifyFanControl - ZWaveSupportedFanMode is supported
+ * under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ *
+ * @returns true if ZWaveSupportedFanMode is supported
+ * @returns false if ZWaveSupportedFanMode is not supported
+ */
+bool dotdot_is_supported_unify_fan_control_z_wave_supported_fan_mode (
+              const dotdot_unid_t unid, const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Gets the DotDot UnifyFanControl - ZWaveSupportedFanMode attribute value under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @param value_state   value state to get,
+ *                      see \ref attribute_store_get_node_attribute_value
+ * 
+ *
+ * @returns ZWaveSupportedFanMode attribute
+ */
+uint16_t dotdot_get_unify_fan_control_z_wave_supported_fan_mode(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id,
+  attribute_store_node_value_state_t value_state);
+
+/**
+ * @brief Set the DotDot UnifyFanControl - ZWaveSupportedFanMode attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @param value_state   value state to write for the node,
+ *                      see \ref attribute_store_set_node_attribute_value
+ * 
+ * @param new_z_wave_supported_fan_mode new value to set
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_set_unify_fan_control_z_wave_supported_fan_mode(
+  const dotdot_unid_t unid,
+  dotdot_endpoint_id_t endpoint_id,
+  attribute_store_node_value_state_t value_state,
+  uint16_t new_z_wave_supported_fan_mode
+  );
+
+/**
+ * @brief Undefines the Reported value of the the DotDot UnifyFanControl - ZWaveSupportedFanMode
+ * attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_unify_fan_control_z_wave_supported_fan_mode_undefine_reported(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Undefines the Desired value of the DotDot
+ * UnifyFanControl - ZWaveSupportedFanMode attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_unify_fan_control_z_wave_supported_fan_mode_undefine_desired(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Checks if the reported value is defined for the DotDot
+ * UnifyFanControl - ZWaveSupportedFanMode attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns true if defined, false is undefined or non-existent
+ */
+bool dotdot_unify_fan_control_z_wave_supported_fan_mode_is_reported_defined(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Checks if the desired value is defined for the DotDot
+ * UnifyFanControl - ZWaveSupportedFanMode attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns true if defined, false is undefined or non-existent
+ */
+bool dotdot_unify_fan_control_z_wave_supported_fan_mode_is_desired_defined(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Creates a DotDot UnifyFanControl - ZWaveSupportedFanMode attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_create_unify_fan_control_z_wave_supported_fan_mode(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+// UnifyFanControl ZWaveFanState
+/**
+ * @brief Verifies if the DotDot UnifyFanControl - ZWaveFanState is supported
+ * under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ *
+ * @returns true if ZWaveFanState is supported
+ * @returns false if ZWaveFanState is not supported
+ */
+bool dotdot_is_supported_unify_fan_control_z_wave_fan_state (
+              const dotdot_unid_t unid, const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Gets the DotDot UnifyFanControl - ZWaveFanState attribute value under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @param value_state   value state to get,
+ *                      see \ref attribute_store_get_node_attribute_value
+ * 
+ *
+ * @returns ZWaveFanState attribute
+ */
+ZWaveFanStateEnum dotdot_get_unify_fan_control_z_wave_fan_state(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id,
+  attribute_store_node_value_state_t value_state);
+
+/**
+ * @brief Set the DotDot UnifyFanControl - ZWaveFanState attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @param value_state   value state to write for the node,
+ *                      see \ref attribute_store_set_node_attribute_value
+ * 
+ * @param new_z_wave_fan_state new value to set
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_set_unify_fan_control_z_wave_fan_state(
+  const dotdot_unid_t unid,
+  dotdot_endpoint_id_t endpoint_id,
+  attribute_store_node_value_state_t value_state,
+  ZWaveFanStateEnum new_z_wave_fan_state
+  );
+
+/**
+ * @brief Undefines the Reported value of the the DotDot UnifyFanControl - ZWaveFanState
+ * attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_unify_fan_control_z_wave_fan_state_undefine_reported(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Undefines the Desired value of the DotDot
+ * UnifyFanControl - ZWaveFanState attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_unify_fan_control_z_wave_fan_state_undefine_desired(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Checks if the reported value is defined for the DotDot
+ * UnifyFanControl - ZWaveFanState attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns true if defined, false is undefined or non-existent
+ */
+bool dotdot_unify_fan_control_z_wave_fan_state_is_reported_defined(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Checks if the desired value is defined for the DotDot
+ * UnifyFanControl - ZWaveFanState attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns true if defined, false is undefined or non-existent
+ */
+bool dotdot_unify_fan_control_z_wave_fan_state_is_desired_defined(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Creates a DotDot UnifyFanControl - ZWaveFanState attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_create_unify_fan_control_z_wave_fan_state(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Checks if a UNID/Endpoint supports any attribute for the UnifyFanControl
+ * Cluster
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns true if at least 1 attribute in the Attribute Store, false otherwise
+ */
+bool dotdot_is_any_unify_fan_control_attribute_supported(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Checks if a UNID/Endpoint supports any writable attribute for the
+ * UnifyFanControl Cluster
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns true if at least 1 writable attribute in the Attribute Store, false otherwise
+ */
+bool dotdot_is_any_unify_fan_control_writable_attribute_supported(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+////////////////////////////////////////////////////////////////////////////////
+// Start of cluster UnifyThermostat
+////////////////////////////////////////////////////////////////////////////////
+// UnifyThermostat ThermostatMode
+/**
+ * @brief Verifies if the DotDot UnifyThermostat - ThermostatMode is supported
+ * under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ *
+ * @returns true if ThermostatMode is supported
+ * @returns false if ThermostatMode is not supported
+ */
+bool dotdot_is_supported_unify_thermostat_thermostat_mode (
+              const dotdot_unid_t unid, const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Gets the DotDot UnifyThermostat - ThermostatMode attribute value under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @param value_state   value state to get,
+ *                      see \ref attribute_store_get_node_attribute_value
+ * 
+ *
+ * @returns ThermostatMode attribute
+ */
+uint8_t dotdot_get_unify_thermostat_thermostat_mode(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id,
+  attribute_store_node_value_state_t value_state);
+
+/**
+ * @brief Set the DotDot UnifyThermostat - ThermostatMode attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @param value_state   value state to write for the node,
+ *                      see \ref attribute_store_set_node_attribute_value
+ * 
+ * @param new_thermostat_mode new value to set
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_set_unify_thermostat_thermostat_mode(
+  const dotdot_unid_t unid,
+  dotdot_endpoint_id_t endpoint_id,
+  attribute_store_node_value_state_t value_state,
+  uint8_t new_thermostat_mode
+  );
+
+/**
+ * @brief Undefines the Reported value of the the DotDot UnifyThermostat - ThermostatMode
+ * attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_unify_thermostat_thermostat_mode_undefine_reported(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Undefines the Desired value of the DotDot
+ * UnifyThermostat - ThermostatMode attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_unify_thermostat_thermostat_mode_undefine_desired(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Checks if the reported value is defined for the DotDot
+ * UnifyThermostat - ThermostatMode attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns true if defined, false is undefined or non-existent
+ */
+bool dotdot_unify_thermostat_thermostat_mode_is_reported_defined(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Checks if the desired value is defined for the DotDot
+ * UnifyThermostat - ThermostatMode attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns true if defined, false is undefined or non-existent
+ */
+bool dotdot_unify_thermostat_thermostat_mode_is_desired_defined(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Creates a DotDot UnifyThermostat - ThermostatMode attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_create_unify_thermostat_thermostat_mode(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+// UnifyThermostat SupportedThermostatMode
+/**
+ * @brief Verifies if the DotDot UnifyThermostat - SupportedThermostatMode is supported
+ * under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ *
+ * @returns true if SupportedThermostatMode is supported
+ * @returns false if SupportedThermostatMode is not supported
+ */
+bool dotdot_is_supported_unify_thermostat_supported_thermostat_mode (
+              const dotdot_unid_t unid, const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Gets the DotDot UnifyThermostat - SupportedThermostatMode attribute value under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @param value_state   value state to get,
+ *                      see \ref attribute_store_get_node_attribute_value
+ * 
+ *
+ * @returns SupportedThermostatMode attribute
+ */
+uint16_t dotdot_get_unify_thermostat_supported_thermostat_mode(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id,
+  attribute_store_node_value_state_t value_state);
+
+/**
+ * @brief Set the DotDot UnifyThermostat - SupportedThermostatMode attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @param value_state   value state to write for the node,
+ *                      see \ref attribute_store_set_node_attribute_value
+ * 
+ * @param new_supported_thermostat_mode new value to set
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_set_unify_thermostat_supported_thermostat_mode(
+  const dotdot_unid_t unid,
+  dotdot_endpoint_id_t endpoint_id,
+  attribute_store_node_value_state_t value_state,
+  uint16_t new_supported_thermostat_mode
+  );
+
+/**
+ * @brief Undefines the Reported value of the the DotDot UnifyThermostat - SupportedThermostatMode
+ * attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_unify_thermostat_supported_thermostat_mode_undefine_reported(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Undefines the Desired value of the DotDot
+ * UnifyThermostat - SupportedThermostatMode attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_unify_thermostat_supported_thermostat_mode_undefine_desired(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Checks if the reported value is defined for the DotDot
+ * UnifyThermostat - SupportedThermostatMode attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns true if defined, false is undefined or non-existent
+ */
+bool dotdot_unify_thermostat_supported_thermostat_mode_is_reported_defined(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Checks if the desired value is defined for the DotDot
+ * UnifyThermostat - SupportedThermostatMode attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns true if defined, false is undefined or non-existent
+ */
+bool dotdot_unify_thermostat_supported_thermostat_mode_is_desired_defined(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Creates a DotDot UnifyThermostat - SupportedThermostatMode attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_create_unify_thermostat_supported_thermostat_mode(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+// UnifyThermostat OperatingState
+/**
+ * @brief Verifies if the DotDot UnifyThermostat - OperatingState is supported
+ * under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ *
+ * @returns true if OperatingState is supported
+ * @returns false if OperatingState is not supported
+ */
+bool dotdot_is_supported_unify_thermostat_operating_state (
+              const dotdot_unid_t unid, const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Gets the DotDot UnifyThermostat - OperatingState attribute value under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @param value_state   value state to get,
+ *                      see \ref attribute_store_get_node_attribute_value
+ * 
+ *
+ * @returns OperatingState attribute
+ */
+uint8_t dotdot_get_unify_thermostat_operating_state(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id,
+  attribute_store_node_value_state_t value_state);
+
+/**
+ * @brief Set the DotDot UnifyThermostat - OperatingState attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @param value_state   value state to write for the node,
+ *                      see \ref attribute_store_set_node_attribute_value
+ * 
+ * @param new_operating_state new value to set
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_set_unify_thermostat_operating_state(
+  const dotdot_unid_t unid,
+  dotdot_endpoint_id_t endpoint_id,
+  attribute_store_node_value_state_t value_state,
+  uint8_t new_operating_state
+  );
+
+/**
+ * @brief Undefines the Reported value of the the DotDot UnifyThermostat - OperatingState
+ * attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_unify_thermostat_operating_state_undefine_reported(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Undefines the Desired value of the DotDot
+ * UnifyThermostat - OperatingState attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_unify_thermostat_operating_state_undefine_desired(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Checks if the reported value is defined for the DotDot
+ * UnifyThermostat - OperatingState attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns true if defined, false is undefined or non-existent
+ */
+bool dotdot_unify_thermostat_operating_state_is_reported_defined(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Checks if the desired value is defined for the DotDot
+ * UnifyThermostat - OperatingState attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns true if defined, false is undefined or non-existent
+ */
+bool dotdot_unify_thermostat_operating_state_is_desired_defined(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Creates a DotDot UnifyThermostat - OperatingState attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_create_unify_thermostat_operating_state(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Checks if a UNID/Endpoint supports any attribute for the UnifyThermostat
+ * Cluster
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns true if at least 1 attribute in the Attribute Store, false otherwise
+ */
+bool dotdot_is_any_unify_thermostat_attribute_supported(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Checks if a UNID/Endpoint supports any writable attribute for the
+ * UnifyThermostat Cluster
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns true if at least 1 writable attribute in the Attribute Store, false otherwise
+ */
+bool dotdot_is_any_unify_thermostat_writable_attribute_supported(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+////////////////////////////////////////////////////////////////////////////////
+// Start of cluster UnifyHumidityControl
+////////////////////////////////////////////////////////////////////////////////
+// UnifyHumidityControl ReportingMode
+/**
+ * @brief Verifies if the DotDot UnifyHumidityControl - ReportingMode is supported
+ * under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ *
+ * @returns true if ReportingMode is supported
+ * @returns false if ReportingMode is not supported
+ */
+bool dotdot_is_supported_unify_humidity_control_reporting_mode (
+              const dotdot_unid_t unid, const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Gets the DotDot UnifyHumidityControl - ReportingMode attribute value under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @param value_state   value state to get,
+ *                      see \ref attribute_store_get_node_attribute_value
+ * 
+ *
+ * @returns ReportingMode attribute
+ */
+ModeType dotdot_get_unify_humidity_control_reporting_mode(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id,
+  attribute_store_node_value_state_t value_state);
+
+/**
+ * @brief Set the DotDot UnifyHumidityControl - ReportingMode attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @param value_state   value state to write for the node,
+ *                      see \ref attribute_store_set_node_attribute_value
+ * 
+ * @param new_reporting_mode new value to set
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_set_unify_humidity_control_reporting_mode(
+  const dotdot_unid_t unid,
+  dotdot_endpoint_id_t endpoint_id,
+  attribute_store_node_value_state_t value_state,
+  ModeType new_reporting_mode
+  );
+
+/**
+ * @brief Undefines the Reported value of the the DotDot UnifyHumidityControl - ReportingMode
+ * attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_unify_humidity_control_reporting_mode_undefine_reported(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Undefines the Desired value of the DotDot
+ * UnifyHumidityControl - ReportingMode attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_unify_humidity_control_reporting_mode_undefine_desired(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Checks if the reported value is defined for the DotDot
+ * UnifyHumidityControl - ReportingMode attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns true if defined, false is undefined or non-existent
+ */
+bool dotdot_unify_humidity_control_reporting_mode_is_reported_defined(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Checks if the desired value is defined for the DotDot
+ * UnifyHumidityControl - ReportingMode attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns true if defined, false is undefined or non-existent
+ */
+bool dotdot_unify_humidity_control_reporting_mode_is_desired_defined(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Creates a DotDot UnifyHumidityControl - ReportingMode attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_create_unify_humidity_control_reporting_mode(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+// UnifyHumidityControl SupportedReportingMode
+/**
+ * @brief Verifies if the DotDot UnifyHumidityControl - SupportedReportingMode is supported
+ * under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ *
+ * @returns true if SupportedReportingMode is supported
+ * @returns false if SupportedReportingMode is not supported
+ */
+bool dotdot_is_supported_unify_humidity_control_supported_reporting_mode (
+              const dotdot_unid_t unid, const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Gets the DotDot UnifyHumidityControl - SupportedReportingMode attribute value under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @param value_state   value state to get,
+ *                      see \ref attribute_store_get_node_attribute_value
+ * 
+ *
+ * @returns SupportedReportingMode attribute
+ */
+uint8_t dotdot_get_unify_humidity_control_supported_reporting_mode(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id,
+  attribute_store_node_value_state_t value_state);
+
+/**
+ * @brief Set the DotDot UnifyHumidityControl - SupportedReportingMode attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @param value_state   value state to write for the node,
+ *                      see \ref attribute_store_set_node_attribute_value
+ * 
+ * @param new_supported_reporting_mode new value to set
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_set_unify_humidity_control_supported_reporting_mode(
+  const dotdot_unid_t unid,
+  dotdot_endpoint_id_t endpoint_id,
+  attribute_store_node_value_state_t value_state,
+  uint8_t new_supported_reporting_mode
+  );
+
+/**
+ * @brief Undefines the Reported value of the the DotDot UnifyHumidityControl - SupportedReportingMode
+ * attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_unify_humidity_control_supported_reporting_mode_undefine_reported(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Undefines the Desired value of the DotDot
+ * UnifyHumidityControl - SupportedReportingMode attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_unify_humidity_control_supported_reporting_mode_undefine_desired(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Checks if the reported value is defined for the DotDot
+ * UnifyHumidityControl - SupportedReportingMode attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns true if defined, false is undefined or non-existent
+ */
+bool dotdot_unify_humidity_control_supported_reporting_mode_is_reported_defined(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Checks if the desired value is defined for the DotDot
+ * UnifyHumidityControl - SupportedReportingMode attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns true if defined, false is undefined or non-existent
+ */
+bool dotdot_unify_humidity_control_supported_reporting_mode_is_desired_defined(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Creates a DotDot UnifyHumidityControl - SupportedReportingMode attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_create_unify_humidity_control_supported_reporting_mode(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+// UnifyHumidityControl CurrentState
+/**
+ * @brief Verifies if the DotDot UnifyHumidityControl - CurrentState is supported
+ * under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ *
+ * @returns true if CurrentState is supported
+ * @returns false if CurrentState is not supported
+ */
+bool dotdot_is_supported_unify_humidity_control_current_state (
+              const dotdot_unid_t unid, const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Gets the DotDot UnifyHumidityControl - CurrentState attribute value under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @param value_state   value state to get,
+ *                      see \ref attribute_store_get_node_attribute_value
+ * 
+ *
+ * @returns CurrentState attribute
+ */
+uint8_t dotdot_get_unify_humidity_control_current_state(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id,
+  attribute_store_node_value_state_t value_state);
+
+/**
+ * @brief Set the DotDot UnifyHumidityControl - CurrentState attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @param value_state   value state to write for the node,
+ *                      see \ref attribute_store_set_node_attribute_value
+ * 
+ * @param new_current_state new value to set
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_set_unify_humidity_control_current_state(
+  const dotdot_unid_t unid,
+  dotdot_endpoint_id_t endpoint_id,
+  attribute_store_node_value_state_t value_state,
+  uint8_t new_current_state
+  );
+
+/**
+ * @brief Undefines the Reported value of the the DotDot UnifyHumidityControl - CurrentState
+ * attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_unify_humidity_control_current_state_undefine_reported(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Undefines the Desired value of the DotDot
+ * UnifyHumidityControl - CurrentState attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_unify_humidity_control_current_state_undefine_desired(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Checks if the reported value is defined for the DotDot
+ * UnifyHumidityControl - CurrentState attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns true if defined, false is undefined or non-existent
+ */
+bool dotdot_unify_humidity_control_current_state_is_reported_defined(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Checks if the desired value is defined for the DotDot
+ * UnifyHumidityControl - CurrentState attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns true if defined, false is undefined or non-existent
+ */
+bool dotdot_unify_humidity_control_current_state_is_desired_defined(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Creates a DotDot UnifyHumidityControl - CurrentState attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_create_unify_humidity_control_current_state(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+// UnifyHumidityControl SupportedSetPoints
+/**
+ * @brief Verifies if the DotDot UnifyHumidityControl - SupportedSetPoints is supported
+ * under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ *
+ * @returns true if SupportedSetPoints is supported
+ * @returns false if SupportedSetPoints is not supported
+ */
+bool dotdot_is_supported_unify_humidity_control_supported_set_points (
+              const dotdot_unid_t unid, const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Gets the DotDot UnifyHumidityControl - SupportedSetPoints attribute value under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @param value_state   value state to get,
+ *                      see \ref attribute_store_get_node_attribute_value
+ * 
+ *
+ * @returns SupportedSetPoints attribute
+ */
+uint8_t dotdot_get_unify_humidity_control_supported_set_points(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id,
+  attribute_store_node_value_state_t value_state);
+
+/**
+ * @brief Set the DotDot UnifyHumidityControl - SupportedSetPoints attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @param value_state   value state to write for the node,
+ *                      see \ref attribute_store_set_node_attribute_value
+ * 
+ * @param new_supported_set_points new value to set
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_set_unify_humidity_control_supported_set_points(
+  const dotdot_unid_t unid,
+  dotdot_endpoint_id_t endpoint_id,
+  attribute_store_node_value_state_t value_state,
+  uint8_t new_supported_set_points
+  );
+
+/**
+ * @brief Undefines the Reported value of the the DotDot UnifyHumidityControl - SupportedSetPoints
+ * attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_unify_humidity_control_supported_set_points_undefine_reported(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Undefines the Desired value of the DotDot
+ * UnifyHumidityControl - SupportedSetPoints attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_unify_humidity_control_supported_set_points_undefine_desired(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Checks if the reported value is defined for the DotDot
+ * UnifyHumidityControl - SupportedSetPoints attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns true if defined, false is undefined or non-existent
+ */
+bool dotdot_unify_humidity_control_supported_set_points_is_reported_defined(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Checks if the desired value is defined for the DotDot
+ * UnifyHumidityControl - SupportedSetPoints attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns true if defined, false is undefined or non-existent
+ */
+bool dotdot_unify_humidity_control_supported_set_points_is_desired_defined(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Creates a DotDot UnifyHumidityControl - SupportedSetPoints attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_create_unify_humidity_control_supported_set_points(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+// UnifyHumidityControl HumidifierSetpointMin
+/**
+ * @brief Verifies if the DotDot UnifyHumidityControl - HumidifierSetpointMin is supported
+ * under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ *
+ * @returns true if HumidifierSetpointMin is supported
+ * @returns false if HumidifierSetpointMin is not supported
+ */
+bool dotdot_is_supported_unify_humidity_control_humidifier_setpoint_min (
+              const dotdot_unid_t unid, const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Gets the DotDot UnifyHumidityControl - HumidifierSetpointMin attribute value under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @param value_state   value state to get,
+ *                      see \ref attribute_store_get_node_attribute_value
+ * 
+ *
+ * @returns HumidifierSetpointMin attribute
+ */
+int32_t dotdot_get_unify_humidity_control_humidifier_setpoint_min(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id,
+  attribute_store_node_value_state_t value_state);
+
+/**
+ * @brief Set the DotDot UnifyHumidityControl - HumidifierSetpointMin attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @param value_state   value state to write for the node,
+ *                      see \ref attribute_store_set_node_attribute_value
+ * 
+ * @param new_humidifier_setpoint_min new value to set
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_set_unify_humidity_control_humidifier_setpoint_min(
+  const dotdot_unid_t unid,
+  dotdot_endpoint_id_t endpoint_id,
+  attribute_store_node_value_state_t value_state,
+  int32_t new_humidifier_setpoint_min
+  );
+
+/**
+ * @brief Undefines the Reported value of the the DotDot UnifyHumidityControl - HumidifierSetpointMin
+ * attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_unify_humidity_control_humidifier_setpoint_min_undefine_reported(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Undefines the Desired value of the DotDot
+ * UnifyHumidityControl - HumidifierSetpointMin attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_unify_humidity_control_humidifier_setpoint_min_undefine_desired(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Checks if the reported value is defined for the DotDot
+ * UnifyHumidityControl - HumidifierSetpointMin attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns true if defined, false is undefined or non-existent
+ */
+bool dotdot_unify_humidity_control_humidifier_setpoint_min_is_reported_defined(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Checks if the desired value is defined for the DotDot
+ * UnifyHumidityControl - HumidifierSetpointMin attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns true if defined, false is undefined or non-existent
+ */
+bool dotdot_unify_humidity_control_humidifier_setpoint_min_is_desired_defined(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Creates a DotDot UnifyHumidityControl - HumidifierSetpointMin attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_create_unify_humidity_control_humidifier_setpoint_min(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+// UnifyHumidityControl HumidifierSetpointMax
+/**
+ * @brief Verifies if the DotDot UnifyHumidityControl - HumidifierSetpointMax is supported
+ * under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ *
+ * @returns true if HumidifierSetpointMax is supported
+ * @returns false if HumidifierSetpointMax is not supported
+ */
+bool dotdot_is_supported_unify_humidity_control_humidifier_setpoint_max (
+              const dotdot_unid_t unid, const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Gets the DotDot UnifyHumidityControl - HumidifierSetpointMax attribute value under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @param value_state   value state to get,
+ *                      see \ref attribute_store_get_node_attribute_value
+ * 
+ *
+ * @returns HumidifierSetpointMax attribute
+ */
+int32_t dotdot_get_unify_humidity_control_humidifier_setpoint_max(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id,
+  attribute_store_node_value_state_t value_state);
+
+/**
+ * @brief Set the DotDot UnifyHumidityControl - HumidifierSetpointMax attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @param value_state   value state to write for the node,
+ *                      see \ref attribute_store_set_node_attribute_value
+ * 
+ * @param new_humidifier_setpoint_max new value to set
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_set_unify_humidity_control_humidifier_setpoint_max(
+  const dotdot_unid_t unid,
+  dotdot_endpoint_id_t endpoint_id,
+  attribute_store_node_value_state_t value_state,
+  int32_t new_humidifier_setpoint_max
+  );
+
+/**
+ * @brief Undefines the Reported value of the the DotDot UnifyHumidityControl - HumidifierSetpointMax
+ * attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_unify_humidity_control_humidifier_setpoint_max_undefine_reported(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Undefines the Desired value of the DotDot
+ * UnifyHumidityControl - HumidifierSetpointMax attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_unify_humidity_control_humidifier_setpoint_max_undefine_desired(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Checks if the reported value is defined for the DotDot
+ * UnifyHumidityControl - HumidifierSetpointMax attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns true if defined, false is undefined or non-existent
+ */
+bool dotdot_unify_humidity_control_humidifier_setpoint_max_is_reported_defined(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Checks if the desired value is defined for the DotDot
+ * UnifyHumidityControl - HumidifierSetpointMax attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns true if defined, false is undefined or non-existent
+ */
+bool dotdot_unify_humidity_control_humidifier_setpoint_max_is_desired_defined(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Creates a DotDot UnifyHumidityControl - HumidifierSetpointMax attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_create_unify_humidity_control_humidifier_setpoint_max(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+// UnifyHumidityControl HumidifierSetpoint
+/**
+ * @brief Verifies if the DotDot UnifyHumidityControl - HumidifierSetpoint is supported
+ * under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ *
+ * @returns true if HumidifierSetpoint is supported
+ * @returns false if HumidifierSetpoint is not supported
+ */
+bool dotdot_is_supported_unify_humidity_control_humidifier_setpoint (
+              const dotdot_unid_t unid, const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Gets the DotDot UnifyHumidityControl - HumidifierSetpoint attribute value under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @param value_state   value state to get,
+ *                      see \ref attribute_store_get_node_attribute_value
+ * 
+ *
+ * @returns HumidifierSetpoint attribute
+ */
+int32_t dotdot_get_unify_humidity_control_humidifier_setpoint(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id,
+  attribute_store_node_value_state_t value_state);
+
+/**
+ * @brief Set the DotDot UnifyHumidityControl - HumidifierSetpoint attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @param value_state   value state to write for the node,
+ *                      see \ref attribute_store_set_node_attribute_value
+ * 
+ * @param new_humidifier_setpoint new value to set
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_set_unify_humidity_control_humidifier_setpoint(
+  const dotdot_unid_t unid,
+  dotdot_endpoint_id_t endpoint_id,
+  attribute_store_node_value_state_t value_state,
+  int32_t new_humidifier_setpoint
+  );
+
+/**
+ * @brief Undefines the Reported value of the the DotDot UnifyHumidityControl - HumidifierSetpoint
+ * attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_unify_humidity_control_humidifier_setpoint_undefine_reported(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Undefines the Desired value of the DotDot
+ * UnifyHumidityControl - HumidifierSetpoint attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_unify_humidity_control_humidifier_setpoint_undefine_desired(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Checks if the reported value is defined for the DotDot
+ * UnifyHumidityControl - HumidifierSetpoint attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns true if defined, false is undefined or non-existent
+ */
+bool dotdot_unify_humidity_control_humidifier_setpoint_is_reported_defined(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Checks if the desired value is defined for the DotDot
+ * UnifyHumidityControl - HumidifierSetpoint attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns true if defined, false is undefined or non-existent
+ */
+bool dotdot_unify_humidity_control_humidifier_setpoint_is_desired_defined(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Creates a DotDot UnifyHumidityControl - HumidifierSetpoint attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_create_unify_humidity_control_humidifier_setpoint(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+// UnifyHumidityControl HumidifierSetpointScale
+/**
+ * @brief Verifies if the DotDot UnifyHumidityControl - HumidifierSetpointScale is supported
+ * under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ *
+ * @returns true if HumidifierSetpointScale is supported
+ * @returns false if HumidifierSetpointScale is not supported
+ */
+bool dotdot_is_supported_unify_humidity_control_humidifier_setpoint_scale (
+              const dotdot_unid_t unid, const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Gets the DotDot UnifyHumidityControl - HumidifierSetpointScale attribute value under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @param value_state   value state to get,
+ *                      see \ref attribute_store_get_node_attribute_value
+ * 
+ *
+ * @returns HumidifierSetpointScale attribute
+ */
+ScaleType dotdot_get_unify_humidity_control_humidifier_setpoint_scale(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id,
+  attribute_store_node_value_state_t value_state);
+
+/**
+ * @brief Set the DotDot UnifyHumidityControl - HumidifierSetpointScale attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @param value_state   value state to write for the node,
+ *                      see \ref attribute_store_set_node_attribute_value
+ * 
+ * @param new_humidifier_setpoint_scale new value to set
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_set_unify_humidity_control_humidifier_setpoint_scale(
+  const dotdot_unid_t unid,
+  dotdot_endpoint_id_t endpoint_id,
+  attribute_store_node_value_state_t value_state,
+  ScaleType new_humidifier_setpoint_scale
+  );
+
+/**
+ * @brief Undefines the Reported value of the the DotDot UnifyHumidityControl - HumidifierSetpointScale
+ * attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_unify_humidity_control_humidifier_setpoint_scale_undefine_reported(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Undefines the Desired value of the DotDot
+ * UnifyHumidityControl - HumidifierSetpointScale attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_unify_humidity_control_humidifier_setpoint_scale_undefine_desired(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Checks if the reported value is defined for the DotDot
+ * UnifyHumidityControl - HumidifierSetpointScale attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns true if defined, false is undefined or non-existent
+ */
+bool dotdot_unify_humidity_control_humidifier_setpoint_scale_is_reported_defined(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Checks if the desired value is defined for the DotDot
+ * UnifyHumidityControl - HumidifierSetpointScale attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns true if defined, false is undefined or non-existent
+ */
+bool dotdot_unify_humidity_control_humidifier_setpoint_scale_is_desired_defined(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Creates a DotDot UnifyHumidityControl - HumidifierSetpointScale attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_create_unify_humidity_control_humidifier_setpoint_scale(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+// UnifyHumidityControl HumidifierSetpointPrecision
+/**
+ * @brief Verifies if the DotDot UnifyHumidityControl - HumidifierSetpointPrecision is supported
+ * under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ *
+ * @returns true if HumidifierSetpointPrecision is supported
+ * @returns false if HumidifierSetpointPrecision is not supported
+ */
+bool dotdot_is_supported_unify_humidity_control_humidifier_setpoint_precision (
+              const dotdot_unid_t unid, const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Gets the DotDot UnifyHumidityControl - HumidifierSetpointPrecision attribute value under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @param value_state   value state to get,
+ *                      see \ref attribute_store_get_node_attribute_value
+ * 
+ *
+ * @returns HumidifierSetpointPrecision attribute
+ */
+uint8_t dotdot_get_unify_humidity_control_humidifier_setpoint_precision(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id,
+  attribute_store_node_value_state_t value_state);
+
+/**
+ * @brief Set the DotDot UnifyHumidityControl - HumidifierSetpointPrecision attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @param value_state   value state to write for the node,
+ *                      see \ref attribute_store_set_node_attribute_value
+ * 
+ * @param new_humidifier_setpoint_precision new value to set
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_set_unify_humidity_control_humidifier_setpoint_precision(
+  const dotdot_unid_t unid,
+  dotdot_endpoint_id_t endpoint_id,
+  attribute_store_node_value_state_t value_state,
+  uint8_t new_humidifier_setpoint_precision
+  );
+
+/**
+ * @brief Undefines the Reported value of the the DotDot UnifyHumidityControl - HumidifierSetpointPrecision
+ * attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_unify_humidity_control_humidifier_setpoint_precision_undefine_reported(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Undefines the Desired value of the DotDot
+ * UnifyHumidityControl - HumidifierSetpointPrecision attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_unify_humidity_control_humidifier_setpoint_precision_undefine_desired(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Checks if the reported value is defined for the DotDot
+ * UnifyHumidityControl - HumidifierSetpointPrecision attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns true if defined, false is undefined or non-existent
+ */
+bool dotdot_unify_humidity_control_humidifier_setpoint_precision_is_reported_defined(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Checks if the desired value is defined for the DotDot
+ * UnifyHumidityControl - HumidifierSetpointPrecision attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns true if defined, false is undefined or non-existent
+ */
+bool dotdot_unify_humidity_control_humidifier_setpoint_precision_is_desired_defined(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Creates a DotDot UnifyHumidityControl - HumidifierSetpointPrecision attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_create_unify_humidity_control_humidifier_setpoint_precision(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+// UnifyHumidityControl DehumidifierSetpointMin
+/**
+ * @brief Verifies if the DotDot UnifyHumidityControl - DehumidifierSetpointMin is supported
+ * under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ *
+ * @returns true if DehumidifierSetpointMin is supported
+ * @returns false if DehumidifierSetpointMin is not supported
+ */
+bool dotdot_is_supported_unify_humidity_control_dehumidifier_setpoint_min (
+              const dotdot_unid_t unid, const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Gets the DotDot UnifyHumidityControl - DehumidifierSetpointMin attribute value under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @param value_state   value state to get,
+ *                      see \ref attribute_store_get_node_attribute_value
+ * 
+ *
+ * @returns DehumidifierSetpointMin attribute
+ */
+int32_t dotdot_get_unify_humidity_control_dehumidifier_setpoint_min(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id,
+  attribute_store_node_value_state_t value_state);
+
+/**
+ * @brief Set the DotDot UnifyHumidityControl - DehumidifierSetpointMin attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @param value_state   value state to write for the node,
+ *                      see \ref attribute_store_set_node_attribute_value
+ * 
+ * @param new_dehumidifier_setpoint_min new value to set
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_set_unify_humidity_control_dehumidifier_setpoint_min(
+  const dotdot_unid_t unid,
+  dotdot_endpoint_id_t endpoint_id,
+  attribute_store_node_value_state_t value_state,
+  int32_t new_dehumidifier_setpoint_min
+  );
+
+/**
+ * @brief Undefines the Reported value of the the DotDot UnifyHumidityControl - DehumidifierSetpointMin
+ * attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_unify_humidity_control_dehumidifier_setpoint_min_undefine_reported(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Undefines the Desired value of the DotDot
+ * UnifyHumidityControl - DehumidifierSetpointMin attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_unify_humidity_control_dehumidifier_setpoint_min_undefine_desired(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Checks if the reported value is defined for the DotDot
+ * UnifyHumidityControl - DehumidifierSetpointMin attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns true if defined, false is undefined or non-existent
+ */
+bool dotdot_unify_humidity_control_dehumidifier_setpoint_min_is_reported_defined(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Checks if the desired value is defined for the DotDot
+ * UnifyHumidityControl - DehumidifierSetpointMin attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns true if defined, false is undefined or non-existent
+ */
+bool dotdot_unify_humidity_control_dehumidifier_setpoint_min_is_desired_defined(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Creates a DotDot UnifyHumidityControl - DehumidifierSetpointMin attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_create_unify_humidity_control_dehumidifier_setpoint_min(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+// UnifyHumidityControl DehumidifierSetpointMax
+/**
+ * @brief Verifies if the DotDot UnifyHumidityControl - DehumidifierSetpointMax is supported
+ * under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ *
+ * @returns true if DehumidifierSetpointMax is supported
+ * @returns false if DehumidifierSetpointMax is not supported
+ */
+bool dotdot_is_supported_unify_humidity_control_dehumidifier_setpoint_max (
+              const dotdot_unid_t unid, const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Gets the DotDot UnifyHumidityControl - DehumidifierSetpointMax attribute value under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @param value_state   value state to get,
+ *                      see \ref attribute_store_get_node_attribute_value
+ * 
+ *
+ * @returns DehumidifierSetpointMax attribute
+ */
+int32_t dotdot_get_unify_humidity_control_dehumidifier_setpoint_max(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id,
+  attribute_store_node_value_state_t value_state);
+
+/**
+ * @brief Set the DotDot UnifyHumidityControl - DehumidifierSetpointMax attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @param value_state   value state to write for the node,
+ *                      see \ref attribute_store_set_node_attribute_value
+ * 
+ * @param new_dehumidifier_setpoint_max new value to set
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_set_unify_humidity_control_dehumidifier_setpoint_max(
+  const dotdot_unid_t unid,
+  dotdot_endpoint_id_t endpoint_id,
+  attribute_store_node_value_state_t value_state,
+  int32_t new_dehumidifier_setpoint_max
+  );
+
+/**
+ * @brief Undefines the Reported value of the the DotDot UnifyHumidityControl - DehumidifierSetpointMax
+ * attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_unify_humidity_control_dehumidifier_setpoint_max_undefine_reported(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Undefines the Desired value of the DotDot
+ * UnifyHumidityControl - DehumidifierSetpointMax attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_unify_humidity_control_dehumidifier_setpoint_max_undefine_desired(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Checks if the reported value is defined for the DotDot
+ * UnifyHumidityControl - DehumidifierSetpointMax attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns true if defined, false is undefined or non-existent
+ */
+bool dotdot_unify_humidity_control_dehumidifier_setpoint_max_is_reported_defined(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Checks if the desired value is defined for the DotDot
+ * UnifyHumidityControl - DehumidifierSetpointMax attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns true if defined, false is undefined or non-existent
+ */
+bool dotdot_unify_humidity_control_dehumidifier_setpoint_max_is_desired_defined(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Creates a DotDot UnifyHumidityControl - DehumidifierSetpointMax attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_create_unify_humidity_control_dehumidifier_setpoint_max(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+// UnifyHumidityControl DehumidifierSetpoint
+/**
+ * @brief Verifies if the DotDot UnifyHumidityControl - DehumidifierSetpoint is supported
+ * under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ *
+ * @returns true if DehumidifierSetpoint is supported
+ * @returns false if DehumidifierSetpoint is not supported
+ */
+bool dotdot_is_supported_unify_humidity_control_dehumidifier_setpoint (
+              const dotdot_unid_t unid, const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Gets the DotDot UnifyHumidityControl - DehumidifierSetpoint attribute value under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @param value_state   value state to get,
+ *                      see \ref attribute_store_get_node_attribute_value
+ * 
+ *
+ * @returns DehumidifierSetpoint attribute
+ */
+int32_t dotdot_get_unify_humidity_control_dehumidifier_setpoint(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id,
+  attribute_store_node_value_state_t value_state);
+
+/**
+ * @brief Set the DotDot UnifyHumidityControl - DehumidifierSetpoint attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @param value_state   value state to write for the node,
+ *                      see \ref attribute_store_set_node_attribute_value
+ * 
+ * @param new_dehumidifier_setpoint new value to set
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_set_unify_humidity_control_dehumidifier_setpoint(
+  const dotdot_unid_t unid,
+  dotdot_endpoint_id_t endpoint_id,
+  attribute_store_node_value_state_t value_state,
+  int32_t new_dehumidifier_setpoint
+  );
+
+/**
+ * @brief Undefines the Reported value of the the DotDot UnifyHumidityControl - DehumidifierSetpoint
+ * attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_unify_humidity_control_dehumidifier_setpoint_undefine_reported(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Undefines the Desired value of the DotDot
+ * UnifyHumidityControl - DehumidifierSetpoint attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_unify_humidity_control_dehumidifier_setpoint_undefine_desired(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Checks if the reported value is defined for the DotDot
+ * UnifyHumidityControl - DehumidifierSetpoint attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns true if defined, false is undefined or non-existent
+ */
+bool dotdot_unify_humidity_control_dehumidifier_setpoint_is_reported_defined(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Checks if the desired value is defined for the DotDot
+ * UnifyHumidityControl - DehumidifierSetpoint attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns true if defined, false is undefined or non-existent
+ */
+bool dotdot_unify_humidity_control_dehumidifier_setpoint_is_desired_defined(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Creates a DotDot UnifyHumidityControl - DehumidifierSetpoint attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_create_unify_humidity_control_dehumidifier_setpoint(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+// UnifyHumidityControl DehumidifierSetpointScale
+/**
+ * @brief Verifies if the DotDot UnifyHumidityControl - DehumidifierSetpointScale is supported
+ * under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ *
+ * @returns true if DehumidifierSetpointScale is supported
+ * @returns false if DehumidifierSetpointScale is not supported
+ */
+bool dotdot_is_supported_unify_humidity_control_dehumidifier_setpoint_scale (
+              const dotdot_unid_t unid, const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Gets the DotDot UnifyHumidityControl - DehumidifierSetpointScale attribute value under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @param value_state   value state to get,
+ *                      see \ref attribute_store_get_node_attribute_value
+ * 
+ *
+ * @returns DehumidifierSetpointScale attribute
+ */
+ScaleType dotdot_get_unify_humidity_control_dehumidifier_setpoint_scale(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id,
+  attribute_store_node_value_state_t value_state);
+
+/**
+ * @brief Set the DotDot UnifyHumidityControl - DehumidifierSetpointScale attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @param value_state   value state to write for the node,
+ *                      see \ref attribute_store_set_node_attribute_value
+ * 
+ * @param new_dehumidifier_setpoint_scale new value to set
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_set_unify_humidity_control_dehumidifier_setpoint_scale(
+  const dotdot_unid_t unid,
+  dotdot_endpoint_id_t endpoint_id,
+  attribute_store_node_value_state_t value_state,
+  ScaleType new_dehumidifier_setpoint_scale
+  );
+
+/**
+ * @brief Undefines the Reported value of the the DotDot UnifyHumidityControl - DehumidifierSetpointScale
+ * attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_unify_humidity_control_dehumidifier_setpoint_scale_undefine_reported(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Undefines the Desired value of the DotDot
+ * UnifyHumidityControl - DehumidifierSetpointScale attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_unify_humidity_control_dehumidifier_setpoint_scale_undefine_desired(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Checks if the reported value is defined for the DotDot
+ * UnifyHumidityControl - DehumidifierSetpointScale attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns true if defined, false is undefined or non-existent
+ */
+bool dotdot_unify_humidity_control_dehumidifier_setpoint_scale_is_reported_defined(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Checks if the desired value is defined for the DotDot
+ * UnifyHumidityControl - DehumidifierSetpointScale attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns true if defined, false is undefined or non-existent
+ */
+bool dotdot_unify_humidity_control_dehumidifier_setpoint_scale_is_desired_defined(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Creates a DotDot UnifyHumidityControl - DehumidifierSetpointScale attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_create_unify_humidity_control_dehumidifier_setpoint_scale(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+// UnifyHumidityControl DehumidifierSetpointPrecision
+/**
+ * @brief Verifies if the DotDot UnifyHumidityControl - DehumidifierSetpointPrecision is supported
+ * under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ *
+ * @returns true if DehumidifierSetpointPrecision is supported
+ * @returns false if DehumidifierSetpointPrecision is not supported
+ */
+bool dotdot_is_supported_unify_humidity_control_dehumidifier_setpoint_precision (
+              const dotdot_unid_t unid, const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Gets the DotDot UnifyHumidityControl - DehumidifierSetpointPrecision attribute value under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @param value_state   value state to get,
+ *                      see \ref attribute_store_get_node_attribute_value
+ * 
+ *
+ * @returns DehumidifierSetpointPrecision attribute
+ */
+uint8_t dotdot_get_unify_humidity_control_dehumidifier_setpoint_precision(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id,
+  attribute_store_node_value_state_t value_state);
+
+/**
+ * @brief Set the DotDot UnifyHumidityControl - DehumidifierSetpointPrecision attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @param value_state   value state to write for the node,
+ *                      see \ref attribute_store_set_node_attribute_value
+ * 
+ * @param new_dehumidifier_setpoint_precision new value to set
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_set_unify_humidity_control_dehumidifier_setpoint_precision(
+  const dotdot_unid_t unid,
+  dotdot_endpoint_id_t endpoint_id,
+  attribute_store_node_value_state_t value_state,
+  uint8_t new_dehumidifier_setpoint_precision
+  );
+
+/**
+ * @brief Undefines the Reported value of the the DotDot UnifyHumidityControl - DehumidifierSetpointPrecision
+ * attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_unify_humidity_control_dehumidifier_setpoint_precision_undefine_reported(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Undefines the Desired value of the DotDot
+ * UnifyHumidityControl - DehumidifierSetpointPrecision attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_unify_humidity_control_dehumidifier_setpoint_precision_undefine_desired(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Checks if the reported value is defined for the DotDot
+ * UnifyHumidityControl - DehumidifierSetpointPrecision attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns true if defined, false is undefined or non-existent
+ */
+bool dotdot_unify_humidity_control_dehumidifier_setpoint_precision_is_reported_defined(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Checks if the desired value is defined for the DotDot
+ * UnifyHumidityControl - DehumidifierSetpointPrecision attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns true if defined, false is undefined or non-existent
+ */
+bool dotdot_unify_humidity_control_dehumidifier_setpoint_precision_is_desired_defined(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Creates a DotDot UnifyHumidityControl - DehumidifierSetpointPrecision attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_create_unify_humidity_control_dehumidifier_setpoint_precision(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+// UnifyHumidityControl AutoSetpointMin
+/**
+ * @brief Verifies if the DotDot UnifyHumidityControl - AutoSetpointMin is supported
+ * under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ *
+ * @returns true if AutoSetpointMin is supported
+ * @returns false if AutoSetpointMin is not supported
+ */
+bool dotdot_is_supported_unify_humidity_control_auto_setpoint_min (
+              const dotdot_unid_t unid, const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Gets the DotDot UnifyHumidityControl - AutoSetpointMin attribute value under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @param value_state   value state to get,
+ *                      see \ref attribute_store_get_node_attribute_value
+ * 
+ *
+ * @returns AutoSetpointMin attribute
+ */
+int32_t dotdot_get_unify_humidity_control_auto_setpoint_min(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id,
+  attribute_store_node_value_state_t value_state);
+
+/**
+ * @brief Set the DotDot UnifyHumidityControl - AutoSetpointMin attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @param value_state   value state to write for the node,
+ *                      see \ref attribute_store_set_node_attribute_value
+ * 
+ * @param new_auto_setpoint_min new value to set
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_set_unify_humidity_control_auto_setpoint_min(
+  const dotdot_unid_t unid,
+  dotdot_endpoint_id_t endpoint_id,
+  attribute_store_node_value_state_t value_state,
+  int32_t new_auto_setpoint_min
+  );
+
+/**
+ * @brief Undefines the Reported value of the the DotDot UnifyHumidityControl - AutoSetpointMin
+ * attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_unify_humidity_control_auto_setpoint_min_undefine_reported(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Undefines the Desired value of the DotDot
+ * UnifyHumidityControl - AutoSetpointMin attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_unify_humidity_control_auto_setpoint_min_undefine_desired(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Checks if the reported value is defined for the DotDot
+ * UnifyHumidityControl - AutoSetpointMin attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns true if defined, false is undefined or non-existent
+ */
+bool dotdot_unify_humidity_control_auto_setpoint_min_is_reported_defined(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Checks if the desired value is defined for the DotDot
+ * UnifyHumidityControl - AutoSetpointMin attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns true if defined, false is undefined or non-existent
+ */
+bool dotdot_unify_humidity_control_auto_setpoint_min_is_desired_defined(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Creates a DotDot UnifyHumidityControl - AutoSetpointMin attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_create_unify_humidity_control_auto_setpoint_min(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+// UnifyHumidityControl AutoSetpointMax
+/**
+ * @brief Verifies if the DotDot UnifyHumidityControl - AutoSetpointMax is supported
+ * under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ *
+ * @returns true if AutoSetpointMax is supported
+ * @returns false if AutoSetpointMax is not supported
+ */
+bool dotdot_is_supported_unify_humidity_control_auto_setpoint_max (
+              const dotdot_unid_t unid, const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Gets the DotDot UnifyHumidityControl - AutoSetpointMax attribute value under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @param value_state   value state to get,
+ *                      see \ref attribute_store_get_node_attribute_value
+ * 
+ *
+ * @returns AutoSetpointMax attribute
+ */
+int32_t dotdot_get_unify_humidity_control_auto_setpoint_max(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id,
+  attribute_store_node_value_state_t value_state);
+
+/**
+ * @brief Set the DotDot UnifyHumidityControl - AutoSetpointMax attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @param value_state   value state to write for the node,
+ *                      see \ref attribute_store_set_node_attribute_value
+ * 
+ * @param new_auto_setpoint_max new value to set
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_set_unify_humidity_control_auto_setpoint_max(
+  const dotdot_unid_t unid,
+  dotdot_endpoint_id_t endpoint_id,
+  attribute_store_node_value_state_t value_state,
+  int32_t new_auto_setpoint_max
+  );
+
+/**
+ * @brief Undefines the Reported value of the the DotDot UnifyHumidityControl - AutoSetpointMax
+ * attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_unify_humidity_control_auto_setpoint_max_undefine_reported(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Undefines the Desired value of the DotDot
+ * UnifyHumidityControl - AutoSetpointMax attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_unify_humidity_control_auto_setpoint_max_undefine_desired(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Checks if the reported value is defined for the DotDot
+ * UnifyHumidityControl - AutoSetpointMax attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns true if defined, false is undefined or non-existent
+ */
+bool dotdot_unify_humidity_control_auto_setpoint_max_is_reported_defined(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Checks if the desired value is defined for the DotDot
+ * UnifyHumidityControl - AutoSetpointMax attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns true if defined, false is undefined or non-existent
+ */
+bool dotdot_unify_humidity_control_auto_setpoint_max_is_desired_defined(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Creates a DotDot UnifyHumidityControl - AutoSetpointMax attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_create_unify_humidity_control_auto_setpoint_max(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+// UnifyHumidityControl AutoSetpoint
+/**
+ * @brief Verifies if the DotDot UnifyHumidityControl - AutoSetpoint is supported
+ * under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ *
+ * @returns true if AutoSetpoint is supported
+ * @returns false if AutoSetpoint is not supported
+ */
+bool dotdot_is_supported_unify_humidity_control_auto_setpoint (
+              const dotdot_unid_t unid, const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Gets the DotDot UnifyHumidityControl - AutoSetpoint attribute value under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @param value_state   value state to get,
+ *                      see \ref attribute_store_get_node_attribute_value
+ * 
+ *
+ * @returns AutoSetpoint attribute
+ */
+int32_t dotdot_get_unify_humidity_control_auto_setpoint(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id,
+  attribute_store_node_value_state_t value_state);
+
+/**
+ * @brief Set the DotDot UnifyHumidityControl - AutoSetpoint attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @param value_state   value state to write for the node,
+ *                      see \ref attribute_store_set_node_attribute_value
+ * 
+ * @param new_auto_setpoint new value to set
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_set_unify_humidity_control_auto_setpoint(
+  const dotdot_unid_t unid,
+  dotdot_endpoint_id_t endpoint_id,
+  attribute_store_node_value_state_t value_state,
+  int32_t new_auto_setpoint
+  );
+
+/**
+ * @brief Undefines the Reported value of the the DotDot UnifyHumidityControl - AutoSetpoint
+ * attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_unify_humidity_control_auto_setpoint_undefine_reported(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Undefines the Desired value of the DotDot
+ * UnifyHumidityControl - AutoSetpoint attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_unify_humidity_control_auto_setpoint_undefine_desired(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Checks if the reported value is defined for the DotDot
+ * UnifyHumidityControl - AutoSetpoint attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns true if defined, false is undefined or non-existent
+ */
+bool dotdot_unify_humidity_control_auto_setpoint_is_reported_defined(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Checks if the desired value is defined for the DotDot
+ * UnifyHumidityControl - AutoSetpoint attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns true if defined, false is undefined or non-existent
+ */
+bool dotdot_unify_humidity_control_auto_setpoint_is_desired_defined(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Creates a DotDot UnifyHumidityControl - AutoSetpoint attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_create_unify_humidity_control_auto_setpoint(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+// UnifyHumidityControl AutoSetpointScale
+/**
+ * @brief Verifies if the DotDot UnifyHumidityControl - AutoSetpointScale is supported
+ * under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ *
+ * @returns true if AutoSetpointScale is supported
+ * @returns false if AutoSetpointScale is not supported
+ */
+bool dotdot_is_supported_unify_humidity_control_auto_setpoint_scale (
+              const dotdot_unid_t unid, const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Gets the DotDot UnifyHumidityControl - AutoSetpointScale attribute value under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @param value_state   value state to get,
+ *                      see \ref attribute_store_get_node_attribute_value
+ * 
+ *
+ * @returns AutoSetpointScale attribute
+ */
+ScaleType dotdot_get_unify_humidity_control_auto_setpoint_scale(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id,
+  attribute_store_node_value_state_t value_state);
+
+/**
+ * @brief Set the DotDot UnifyHumidityControl - AutoSetpointScale attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @param value_state   value state to write for the node,
+ *                      see \ref attribute_store_set_node_attribute_value
+ * 
+ * @param new_auto_setpoint_scale new value to set
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_set_unify_humidity_control_auto_setpoint_scale(
+  const dotdot_unid_t unid,
+  dotdot_endpoint_id_t endpoint_id,
+  attribute_store_node_value_state_t value_state,
+  ScaleType new_auto_setpoint_scale
+  );
+
+/**
+ * @brief Undefines the Reported value of the the DotDot UnifyHumidityControl - AutoSetpointScale
+ * attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_unify_humidity_control_auto_setpoint_scale_undefine_reported(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Undefines the Desired value of the DotDot
+ * UnifyHumidityControl - AutoSetpointScale attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_unify_humidity_control_auto_setpoint_scale_undefine_desired(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Checks if the reported value is defined for the DotDot
+ * UnifyHumidityControl - AutoSetpointScale attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns true if defined, false is undefined or non-existent
+ */
+bool dotdot_unify_humidity_control_auto_setpoint_scale_is_reported_defined(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Checks if the desired value is defined for the DotDot
+ * UnifyHumidityControl - AutoSetpointScale attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns true if defined, false is undefined or non-existent
+ */
+bool dotdot_unify_humidity_control_auto_setpoint_scale_is_desired_defined(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Creates a DotDot UnifyHumidityControl - AutoSetpointScale attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_create_unify_humidity_control_auto_setpoint_scale(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+// UnifyHumidityControl AutoSetpointPrecision
+/**
+ * @brief Verifies if the DotDot UnifyHumidityControl - AutoSetpointPrecision is supported
+ * under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ *
+ * @returns true if AutoSetpointPrecision is supported
+ * @returns false if AutoSetpointPrecision is not supported
+ */
+bool dotdot_is_supported_unify_humidity_control_auto_setpoint_precision (
+              const dotdot_unid_t unid, const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Gets the DotDot UnifyHumidityControl - AutoSetpointPrecision attribute value under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @param value_state   value state to get,
+ *                      see \ref attribute_store_get_node_attribute_value
+ * 
+ *
+ * @returns AutoSetpointPrecision attribute
+ */
+uint8_t dotdot_get_unify_humidity_control_auto_setpoint_precision(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id,
+  attribute_store_node_value_state_t value_state);
+
+/**
+ * @brief Set the DotDot UnifyHumidityControl - AutoSetpointPrecision attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @param value_state   value state to write for the node,
+ *                      see \ref attribute_store_set_node_attribute_value
+ * 
+ * @param new_auto_setpoint_precision new value to set
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_set_unify_humidity_control_auto_setpoint_precision(
+  const dotdot_unid_t unid,
+  dotdot_endpoint_id_t endpoint_id,
+  attribute_store_node_value_state_t value_state,
+  uint8_t new_auto_setpoint_precision
+  );
+
+/**
+ * @brief Undefines the Reported value of the the DotDot UnifyHumidityControl - AutoSetpointPrecision
+ * attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_unify_humidity_control_auto_setpoint_precision_undefine_reported(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Undefines the Desired value of the DotDot
+ * UnifyHumidityControl - AutoSetpointPrecision attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_unify_humidity_control_auto_setpoint_precision_undefine_desired(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Checks if the reported value is defined for the DotDot
+ * UnifyHumidityControl - AutoSetpointPrecision attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns true if defined, false is undefined or non-existent
+ */
+bool dotdot_unify_humidity_control_auto_setpoint_precision_is_reported_defined(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Checks if the desired value is defined for the DotDot
+ * UnifyHumidityControl - AutoSetpointPrecision attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns true if defined, false is undefined or non-existent
+ */
+bool dotdot_unify_humidity_control_auto_setpoint_precision_is_desired_defined(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Creates a DotDot UnifyHumidityControl - AutoSetpointPrecision attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_create_unify_humidity_control_auto_setpoint_precision(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Checks if a UNID/Endpoint supports any attribute for the UnifyHumidityControl
+ * Cluster
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns true if at least 1 attribute in the Attribute Store, false otherwise
+ */
+bool dotdot_is_any_unify_humidity_control_attribute_supported(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Checks if a UNID/Endpoint supports any writable attribute for the
+ * UnifyHumidityControl Cluster
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns true if at least 1 writable attribute in the Attribute Store, false otherwise
+ */
+bool dotdot_is_any_unify_humidity_control_writable_attribute_supported(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 

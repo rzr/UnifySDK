@@ -41,13 +41,13 @@ char *aox_locator_aox_mode_get_enum_value_name_c(
   uint32_t value, char *result, size_t max_result_size);
 /** Get aox_locator_aox_mode enum representation from string. */
 uint32_t aox_locator_aox_mode_get_enum_value_number_c(const char *str);
-#define AOX_LOCATORCTE_MODE_ENUM_NAME_AVAILABLE 1
+#define AOX_LOCATOR_CTE_MODE_ENUM_NAME_AVAILABLE 1
 
-/** Get aox_locatorcte_mode string representation from enum. */
-char *aox_locatorcte_mode_get_enum_value_name_c(
+/** Get aox_locator_cte_mode string representation from enum. */
+char *aox_locator_cte_mode_get_enum_value_name_c(
   uint32_t value, char *result, size_t max_result_size);
-/** Get aox_locatorcte_mode enum representation from string. */
-uint32_t aox_locatorcte_mode_get_enum_value_number_c(const char *str);
+/** Get aox_locator_cte_mode enum representation from string. */
+uint32_t aox_locator_cte_mode_get_enum_value_number_c(const char *str);
 #define AOX_LOCATOR_REPORTING_MODE_ENUM_NAME_AVAILABLE 1
 
 /** Get aox_locator_reporting_mode string representation from enum. */
@@ -111,13 +111,13 @@ char *battery_size_get_enum_value_name_c(
   uint32_t value, char *result, size_t max_result_size);
 /** Get battery_size enum representation from string. */
 uint32_t battery_size_get_enum_value_number_c(const char *str);
-#define BYPASS_RESPONSE_ZONEID_BYPASS_RESULT_ENUM_NAME_AVAILABLE 1
+#define BYPASS_RESPONSE_ZONE_ID_BYPASS_RESULT_ENUM_NAME_AVAILABLE 1
 
-/** Get bypass_response_zoneid_bypass_result string representation from enum. */
-char *bypass_response_zoneid_bypass_result_get_enum_value_name_c(
+/** Get bypass_response_zone_id_bypass_result string representation from enum. */
+char *bypass_response_zone_id_bypass_result_get_enum_value_name_c(
   uint32_t value, char *result, size_t max_result_size);
-/** Get bypass_response_zoneid_bypass_result enum representation from string. */
-uint32_t bypass_response_zoneid_bypass_result_get_enum_value_number_c(const char *str);
+/** Get bypass_response_zone_id_bypass_result enum representation from string. */
+uint32_t bypass_response_zone_id_bypass_result_get_enum_value_number_c(const char *str);
 #define CC_COLOR_LOOP_DIRECTION_ENUM_NAME_AVAILABLE 1
 
 /** Get cc_color_loop_direction string representation from enum. */
@@ -153,6 +153,13 @@ char *color_control_color_loop_active_get_enum_value_name_c(
   uint32_t value, char *result, size_t max_result_size);
 /** Get color_control_color_loop_active enum representation from string. */
 uint32_t color_control_color_loop_active_get_enum_value_number_c(const char *str);
+#define COLOR_CONTROL_COLOR_LOOP_DIRECTION_ENUM_NAME_AVAILABLE 1
+
+/** Get color_control_color_loop_direction string representation from enum. */
+char *color_control_color_loop_direction_get_enum_value_name_c(
+  uint32_t value, char *result, size_t max_result_size);
+/** Get color_control_color_loop_direction enum representation from string. */
+uint32_t color_control_color_loop_direction_get_enum_value_number_c(const char *str);
 #define COLOR_CONTROL_COLOR_MODE_ENUM_NAME_AVAILABLE 1
 
 /** Get color_control_color_mode string representation from enum. */
@@ -209,6 +216,27 @@ char *commissioning_startup_control_get_enum_value_name_c(
   uint32_t value, char *result, size_t max_result_size);
 /** Get commissioning_startup_control enum representation from string. */
 uint32_t commissioning_startup_control_get_enum_value_number_c(const char *str);
+#define CREDENTIAL_RULE_ENUM_ENUM_NAME_AVAILABLE 1
+
+/** Get credential_rule_enum string representation from enum. */
+char *credential_rule_enum_get_enum_value_name_c(
+  uint32_t value, char *result, size_t max_result_size);
+/** Get credential_rule_enum enum representation from string. */
+uint32_t credential_rule_enum_get_enum_value_number_c(const char *str);
+#define CREDENTIAL_TYPE_ENUM_ENUM_NAME_AVAILABLE 1
+
+/** Get credential_type_enum string representation from enum. */
+char *credential_type_enum_get_enum_value_name_c(
+  uint32_t value, char *result, size_t max_result_size);
+/** Get credential_type_enum enum representation from string. */
+uint32_t credential_type_enum_get_enum_value_number_c(const char *str);
+#define DATA_OPERATION_TYPE_ENUM_ENUM_NAME_AVAILABLE 1
+
+/** Get data_operation_type_enum string representation from enum. */
+char *data_operation_type_enum_get_enum_value_name_c(
+  uint32_t value, char *result, size_t max_result_size);
+/** Get data_operation_type_enum enum representation from string. */
+uint32_t data_operation_type_enum_get_enum_value_number_c(const char *str);
 #define DEHUMIDIFICATION_CONTROL_DEHUMIDIFICATION_LOCKOUT_ENUM_NAME_AVAILABLE 1
 
 /** Get dehumidification_control_dehumidification_lockout string representation from enum. */
@@ -230,6 +258,13 @@ char *dehumidification_control_relative_humidity_mode_get_enum_value_name_c(
   uint32_t value, char *result, size_t max_result_size);
 /** Get dehumidification_control_relative_humidity_mode enum representation from string. */
 uint32_t dehumidification_control_relative_humidity_mode_get_enum_value_number_c(const char *str);
+#define DEV_TYPE_ID_ENUM_NAME_AVAILABLE 1
+
+/** Get dev_type_id string representation from enum. */
+char *dev_type_id_get_enum_value_name_c(
+  uint32_t value, char *result, size_t max_result_size);
+/** Get dev_type_id enum representation from string. */
+uint32_t dev_type_id_get_enum_value_number_c(const char *str);
 #define DOOR_LOCK_DOOR_STATE_ENUM_NAME_AVAILABLE 1
 
 /** Get door_lock_door_state string representation from enum. */
@@ -237,13 +272,13 @@ char *door_lock_door_state_get_enum_value_name_c(
   uint32_t value, char *result, size_t max_result_size);
 /** Get door_lock_door_state enum representation from string. */
 uint32_t door_lock_door_state_get_enum_value_number_c(const char *str);
-#define DOOR_LOCKLED_SETTINGS_ENUM_NAME_AVAILABLE 1
+#define DOOR_LOCK_LED_SETTINGS_ENUM_NAME_AVAILABLE 1
 
-/** Get door_lockled_settings string representation from enum. */
-char *door_lockled_settings_get_enum_value_name_c(
+/** Get door_lock_led_settings string representation from enum. */
+char *door_lock_led_settings_get_enum_value_name_c(
   uint32_t value, char *result, size_t max_result_size);
-/** Get door_lockled_settings enum representation from string. */
-uint32_t door_lockled_settings_get_enum_value_number_c(const char *str);
+/** Get door_lock_led_settings enum representation from string. */
+uint32_t door_lock_led_settings_get_enum_value_number_c(const char *str);
 #define DOOR_LOCK_LOCK_STATE_ENUM_NAME_AVAILABLE 1
 
 /** Get door_lock_lock_state string representation from enum. */
@@ -489,6 +524,13 @@ char *metering_unitof_measure_get_enum_value_name_c(
   uint32_t value, char *result, size_t max_result_size);
 /** Get metering_unitof_measure enum representation from string. */
 uint32_t metering_unitof_measure_get_enum_value_number_c(const char *str);
+#define MODE_TYPE_ENUM_NAME_AVAILABLE 1
+
+/** Get mode_type string representation from enum. */
+char *mode_type_get_enum_value_name_c(
+  uint32_t value, char *result, size_t max_result_size);
+/** Get mode_type enum representation from string. */
+uint32_t mode_type_get_enum_value_number_c(const char *str);
 #define MOVE_STEP_MODE_ENUM_NAME_AVAILABLE 1
 
 /** Get move_step_mode string representation from enum. */
@@ -622,6 +664,13 @@ char *shdcfg_direction_get_enum_value_name_c(
   uint32_t value, char *result, size_t max_result_size);
 /** Get shdcfg_direction enum representation from string. */
 uint32_t shdcfg_direction_get_enum_value_number_c(const char *str);
+#define SCALE_TYPE_ENUM_NAME_AVAILABLE 1
+
+/** Get scale_type string representation from enum. */
+char *scale_type_get_enum_value_name_c(
+  uint32_t value, char *result, size_t max_result_size);
+/** Get scale_type enum representation from string. */
+uint32_t scale_type_get_enum_value_number_c(const char *str);
 #define SETPOINT_RAISE_OR_LOWER_MODE_ENUM_NAME_AVAILABLE 1
 
 /** Get setpoint_raise_or_lower_mode string representation from enum. */
@@ -629,6 +678,13 @@ char *setpoint_raise_or_lower_mode_get_enum_value_name_c(
   uint32_t value, char *result, size_t max_result_size);
 /** Get setpoint_raise_or_lower_mode enum representation from string. */
 uint32_t setpoint_raise_or_lower_mode_get_enum_value_number_c(const char *str);
+#define SETPOINT_TYPE_ENUM_NAME_AVAILABLE 1
+
+/** Get setpoint_type string representation from enum. */
+char *setpoint_type_get_enum_value_name_c(
+  uint32_t value, char *result, size_t max_result_size);
+/** Get setpoint_type enum representation from string. */
+uint32_t setpoint_type_get_enum_value_number_c(const char *str);
 #define SHADE_CONFIGURATION_MODE_ENUM_NAME_AVAILABLE 1
 
 /** Get shade_configuration_mode string representation from enum. */
@@ -657,41 +713,41 @@ char *squawk_configuration_squawk_mode_get_enum_value_name_c(
   uint32_t value, char *result, size_t max_result_size);
 /** Get squawk_configuration_squawk_mode enum representation from string. */
 uint32_t squawk_configuration_squawk_mode_get_enum_value_number_c(const char *str);
-#define THERMOSTATAC_CAPACITY_FORMAT_ENUM_NAME_AVAILABLE 1
+#define THERMOSTAT_AC_CAPACITY_FORMAT_ENUM_NAME_AVAILABLE 1
 
-/** Get thermostatac_capacity_format string representation from enum. */
-char *thermostatac_capacity_format_get_enum_value_name_c(
+/** Get thermostat_ac_capacity_format string representation from enum. */
+char *thermostat_ac_capacity_format_get_enum_value_name_c(
   uint32_t value, char *result, size_t max_result_size);
-/** Get thermostatac_capacity_format enum representation from string. */
-uint32_t thermostatac_capacity_format_get_enum_value_number_c(const char *str);
-#define THERMOSTATAC_COMPRESSOR_TYPE_ENUM_NAME_AVAILABLE 1
+/** Get thermostat_ac_capacity_format enum representation from string. */
+uint32_t thermostat_ac_capacity_format_get_enum_value_number_c(const char *str);
+#define THERMOSTAT_AC_COMPRESSOR_TYPE_ENUM_NAME_AVAILABLE 1
 
-/** Get thermostatac_compressor_type string representation from enum. */
-char *thermostatac_compressor_type_get_enum_value_name_c(
+/** Get thermostat_ac_compressor_type string representation from enum. */
+char *thermostat_ac_compressor_type_get_enum_value_name_c(
   uint32_t value, char *result, size_t max_result_size);
-/** Get thermostatac_compressor_type enum representation from string. */
-uint32_t thermostatac_compressor_type_get_enum_value_number_c(const char *str);
-#define THERMOSTATAC_LOUVER_POSITION_ENUM_NAME_AVAILABLE 1
+/** Get thermostat_ac_compressor_type enum representation from string. */
+uint32_t thermostat_ac_compressor_type_get_enum_value_number_c(const char *str);
+#define THERMOSTAT_AC_LOUVER_POSITION_ENUM_NAME_AVAILABLE 1
 
-/** Get thermostatac_louver_position string representation from enum. */
-char *thermostatac_louver_position_get_enum_value_name_c(
+/** Get thermostat_ac_louver_position string representation from enum. */
+char *thermostat_ac_louver_position_get_enum_value_name_c(
   uint32_t value, char *result, size_t max_result_size);
-/** Get thermostatac_louver_position enum representation from string. */
-uint32_t thermostatac_louver_position_get_enum_value_number_c(const char *str);
-#define THERMOSTATAC_REFRIGERANT_TYPE_ENUM_NAME_AVAILABLE 1
+/** Get thermostat_ac_louver_position enum representation from string. */
+uint32_t thermostat_ac_louver_position_get_enum_value_number_c(const char *str);
+#define THERMOSTAT_AC_REFRIGERANT_TYPE_ENUM_NAME_AVAILABLE 1
 
-/** Get thermostatac_refrigerant_type string representation from enum. */
-char *thermostatac_refrigerant_type_get_enum_value_name_c(
+/** Get thermostat_ac_refrigerant_type string representation from enum. */
+char *thermostat_ac_refrigerant_type_get_enum_value_name_c(
   uint32_t value, char *result, size_t max_result_size);
-/** Get thermostatac_refrigerant_type enum representation from string. */
-uint32_t thermostatac_refrigerant_type_get_enum_value_number_c(const char *str);
-#define THERMOSTATAC_TYPE_ENUM_NAME_AVAILABLE 1
+/** Get thermostat_ac_refrigerant_type enum representation from string. */
+uint32_t thermostat_ac_refrigerant_type_get_enum_value_number_c(const char *str);
+#define THERMOSTAT_AC_TYPE_ENUM_NAME_AVAILABLE 1
 
-/** Get thermostatac_type string representation from enum. */
-char *thermostatac_type_get_enum_value_name_c(
+/** Get thermostat_ac_type string representation from enum. */
+char *thermostat_ac_type_get_enum_value_name_c(
   uint32_t value, char *result, size_t max_result_size);
-/** Get thermostatac_type enum representation from string. */
-uint32_t thermostatac_type_get_enum_value_number_c(const char *str);
+/** Get thermostat_ac_type enum representation from string. */
+uint32_t thermostat_ac_type_get_enum_value_number_c(const char *str);
 #define THERMOSTAT_CONTROL_SEQUENCE_OF_OPERATION_ENUM_NAME_AVAILABLE 1
 
 /** Get thermostat_control_sequence_of_operation string representation from enum. */
@@ -783,6 +839,27 @@ char *tx_report_transmission_speed_get_enum_value_name_c(
   uint32_t value, char *result, size_t max_result_size);
 /** Get tx_report_transmission_speed enum representation from string. */
 uint32_t tx_report_transmission_speed_get_enum_value_number_c(const char *str);
+#define UNIFY_HUMIDITY_CONTROL_CURRENT_STATE_ENUM_NAME_AVAILABLE 1
+
+/** Get unify_humidity_control_current_state string representation from enum. */
+char *unify_humidity_control_current_state_get_enum_value_name_c(
+  uint32_t value, char *result, size_t max_result_size);
+/** Get unify_humidity_control_current_state enum representation from string. */
+uint32_t unify_humidity_control_current_state_get_enum_value_number_c(const char *str);
+#define UNIFY_THERMOSTAT_OPERATING_STATE_ENUM_NAME_AVAILABLE 1
+
+/** Get unify_thermostat_operating_state string representation from enum. */
+char *unify_thermostat_operating_state_get_enum_value_name_c(
+  uint32_t value, char *result, size_t max_result_size);
+/** Get unify_thermostat_operating_state enum representation from string. */
+uint32_t unify_thermostat_operating_state_get_enum_value_number_c(const char *str);
+#define UNIFY_THERMOSTAT_THERMOSTAT_MODE_ENUM_NAME_AVAILABLE 1
+
+/** Get unify_thermostat_thermostat_mode string representation from enum. */
+char *unify_thermostat_thermostat_mode_get_enum_value_name_c(
+  uint32_t value, char *result, size_t max_result_size);
+/** Get unify_thermostat_thermostat_mode enum representation from string. */
+uint32_t unify_thermostat_thermostat_mode_get_enum_value_number_c(const char *str);
 #define WINDOW_COVERING_WINDOW_COVERING_TYPE_ENUM_NAME_AVAILABLE 1
 
 /** Get window_covering_window_covering_type string representation from enum. */
@@ -790,6 +867,20 @@ char *window_covering_window_covering_type_get_enum_value_name_c(
   uint32_t value, char *result, size_t max_result_size);
 /** Get window_covering_window_covering_type enum representation from string. */
 uint32_t window_covering_window_covering_type_get_enum_value_number_c(const char *str);
+#define Z_WAVE_FAN_MODE_ENUM_ENUM_NAME_AVAILABLE 1
+
+/** Get z_wave_fan_mode_enum string representation from enum. */
+char *z_wave_fan_mode_enum_get_enum_value_name_c(
+  uint32_t value, char *result, size_t max_result_size);
+/** Get z_wave_fan_mode_enum enum representation from string. */
+uint32_t z_wave_fan_mode_enum_get_enum_value_number_c(const char *str);
+#define Z_WAVE_FAN_STATE_ENUM_ENUM_NAME_AVAILABLE 1
+
+/** Get z_wave_fan_state_enum string representation from enum. */
+char *z_wave_fan_state_enum_get_enum_value_name_c(
+  uint32_t value, char *result, size_t max_result_size);
+/** Get z_wave_fan_state_enum enum representation from string. */
+uint32_t z_wave_fan_state_enum_get_enum_value_number_c(const char *str);
 #define ZONE_ENROLL_RESPONSE_ENROLL_RESPONSE_CODE_ENUM_NAME_AVAILABLE 1
 
 /** Get zone_enroll_response_enroll_response_code string representation from enum. */

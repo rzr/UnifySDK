@@ -17,7 +17,7 @@ export CMAKE_GENERATOR
 build_dir?=build
 sudo?=sudo
 
-debian_codename?=bullseye
+debian_codename?=bookworm
 
 packages?=cmake ninja-build build-essential python3-full ruby clang
 packages+=git-lfs unp time file
@@ -25,7 +25,9 @@ packages+=nlohmann-json3-dev
 # TODO: remove for offline build
 packages+=curl wget python3-pip
 packages+=time
+packages+=yarnpkg
 
+rust_url?=https://sh.rustup.rs
 RUST_VERSION?=1.65.0
 export PATH := ${HOME}/.cargo/bin:${PATH}
 
@@ -35,7 +37,7 @@ exes+=${zpc_exe}
 zpc_cmake_options?=\
 	-DBUILD_AOXPC=OFF \
 	-DBUILD_CPCD=OFF \
-	-DBUILD_DEV_GUI=OFF \
+	-DBUILD_DEV_GUI=ON \
 	-DBUILD_EMD=OFF \
 	-DBUILD_EPC=OFF \
 	-DBUILD_GMS=OFF \
@@ -60,16 +62,16 @@ help: README.md
 	@echo "# PATH=${PATH}"
 	@echo ""
 
-setup/debian: ${CURDIR}/docker/target_dependencies.apt
+setup/debian: ${CURDIR}/docker/target_dependencies.apt ${CURDIR}/docker/host_dependencies.apt
 	cat /etc/debian_version
 	-${sudo} apt update
-	${sudo} apt install -y $(shell cat $<)
+	${sudo} apt install -y $(shell sort $^ | sed -e 's|//.*||g' )
 	${sudo} apt install -y ${packages}
 	@echo "$@: TODO: Support debian stable rustc=1.63 https://tracker.debian.org/pkg/rustc"
 
 setup/rust:
 	@echo "$@: TODO: Support https://tracker.debian.org/pkg/rustup"
-	curl https://sh.rustup.rs -sSf | bash -s -- -y --default-toolchain ${RUST_VERSION}
+	curl --insecure  --proto '=https' --tlsv1.2 -sSf  ${rust_url} | bash -s -- -y --default-toolchain ${RUST_VERSION}
 	cat $${HOME}/.cargo/env
 	@echo '$@: info: You might like to add ". $${HOME}/.cargo/env" to "$${HOME}/.bashrc"'
 	-which rustc
@@ -78,9 +80,11 @@ setup/rust:
 	@echo "$@: TODO: Support stable version from https://releases.rs/ or older"
 
 setup/python:
+	python3 --version
 	@echo "$@: TODO: https://github.com/wbond/pybars3/issues/82"
 	pip3 --version || echo "warning: Please install pip"
-	pip3 install pybars3
+	pip3 install "pybars3" \
+		|| pip3 install --break-system-packages "pybars3"
 
 cmake_url?=https://github.com/Kitware/CMake/releases/download/v3.21.6/cmake-3.21.6-Linux-x86_64.sh
 cmake_filename?=$(shell basename -- "${cmake_url}")
@@ -108,12 +112,17 @@ setup/debian/bookworm: setup/debian setup/rust setup/python
 setup: setup/debian/${debian_codename}
 	date -u
 
-git: .git/lfs
+git/lfs/prepare: .git/lfs
 	git lfs version || echo "$@: warning: Please install git-lfs"
 	git lfs status --porcelain || git lfs install
 	time git lfs pull
 	git lfs update || git lfs update --force
 	git lfs status --porcelain
+
+git/modules/prepare:
+	[ ! -r .git/modules ] || git submodule update --init --recursive
+
+git/prepare: git/modules/prepare git/lfs/prepare
 
 configure: ${build_dir}/CMakeCache.txt
 	file -E $<
@@ -139,10 +148,12 @@ all: ${exes}
 test: ${build_dir}
 	ctest --test-dir ${<}
 
+check: test
+
 distclean:
 	rm -rf ${build_dir}
 
-prepare: git
+prepare: git/prepare
 
 all/default: configure build test
 	@date -u
@@ -180,7 +191,7 @@ rootfs/%: ${rootfs_dir}
 	${rootfs_shell} apt-get update
 	${rootfs_shell} apt-get install -- make sudo
 	${rootfs_shell}	\
-	      	--bind="${CURDIR}:${CURDIR}" \
+		--bind="${CURDIR}:${CURDIR}" \
 		${MAKE} \
 			--directory="${CURDIR}" \
 			--file="${CURDIR}/helper.mk" \

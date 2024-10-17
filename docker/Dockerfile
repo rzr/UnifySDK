@@ -1,4 +1,4 @@
-ARG FROM="debian:bullseye"
+ARG FROM="debian:bookworm"
 FROM ${FROM}
 
 SHELL ["/bin/bash", "-c"]
@@ -31,17 +31,9 @@ RUN readarray -d ' ' -t TARGET_DEPS < <(cat /tmp/target_dependencies.apt | awk -
   $(for arch in ${ARCH} ; do echo crossbuild-essential-${arch} ; done)\
   && rm -rf /var/lib/apt/lists/*
 
-# Install cmake 3.21.6
-RUN curl -L https://github.com/Kitware/CMake/releases/download/v3.21.6/cmake-3.21.6-Linux-x86_64.sh --output /tmp/cmake-3.21.6-Linux-x86_64.sh \
-  && cd /tmp \
-  && echo d460a33c42f248388a8f2249659ad2f5eab6854bebaf4f57c1df49ded404e593  cmake-3.21.6-Linux-x86_64.sh > /tmp/cmake-3.21.6-Linux-x86_64.sh.sha256 \
-  && sha256sum -c cmake-3.21.6-Linux-x86_64.sh.sha256 \
-  && chmod +x /tmp/cmake*.sh \
-  && /tmp/cmake*.sh --prefix=/usr/local --skip-license \
-  && rm /tmp/cmake*
-
 # Install pip3 packages
-RUN pip3 install gcovr==5.0 \
+# --break-system-packages : https://stackoverflow.com/a/75722775/7231626 needed since bookworm update
+RUN pip3 install --break-system-packages gcovr==5.0 diff-cover==9.1.0 \
   pybars3==0.9.7 PyMeta3==0.5.1 xmltodict==0.12.0 \
   sphinx==5.1.0 breathe==4.34.0 myst-parser==0.18.0 linkify-it-py==2.0.0 sphinxcontrib-plantuml==0.24 sphinx-markdown-tables==0.0.17 sphinx-rtd-theme==1.0.0
 
@@ -61,7 +53,7 @@ RUN touch /dummyroot/etc/ld.so.cache
 ENV QEMU_LD_PREFIX=/dummyroot
 
 # Rust Version to install
-ENV RUST_VERSION=1.65.0
+ENV RUST_VERSION=1.71.0
 # Rust and Cargo home directories
 ENV RUSTUP_HOME=/opt/rustup-home
 ENV CARGO_HOME=/opt/cargo-home
@@ -73,8 +65,8 @@ RUN curl https://sh.rustup.rs -sSf --output /tmp/sh.rustup.rs \
   && if [[ $ARCH == *"arm64"* ]]; then export RUST_TRIPLES="$RUST_TRIPLES aarch64-unknown-linux-gnu"; fi \
   && ./sh.rustup.rs -y --profile minimal --target ${RUST_TRIPLES} --default-toolchain ${RUST_VERSION}\
   && rm /tmp/sh.rustup.rs \
-  && /opt/cargo-home/bin/cargo install cargo2junit --locked \
-  && /opt/cargo-home/bin/cargo install --version 1.41.3 cargo-deb \ 
+  && /opt/cargo-home/bin/cargo install --version 0.1.13 --locked cargo2junit \
+  && /opt/cargo-home/bin/cargo install --version 1.44.0 --locked cargo-deb \
   && chmod -R a+rw ${RUSTUP_HOME} ${CARGO_HOME} \
   && find ${RUSTUP_HOME} ${CARGO_HOME} -type d -exec chmod a+x {} \;
 ENV PATH="${CARGO_HOME}/bin:${PATH}"
@@ -116,6 +108,8 @@ RUN if [ "$CLANG" = true ] ; then \
   /tmp/llvm.sh 12; \
   fi
 
+# Install yarn
+RUN npm install yarn -g
 
 RUN getent group ${GROUP_ID} || addgroup --gid ${GROUP_ID} user
 RUN useradd -m -l -u $USER_ID -g $GROUP_ID -G sudo -p $(openssl passwd -1 user) -o -s /bin/bash user

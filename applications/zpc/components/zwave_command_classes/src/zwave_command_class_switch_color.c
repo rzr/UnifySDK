@@ -24,6 +24,7 @@
 #include "attribute_store_defined_attribute_types.h"
 #include "ZW_classcmd.h"
 #include "zpc_attribute_resolver.h"
+#include "zwave_command_classes_utils.h"
 
 // Includes from other Unify Components
 #include "dotdot_mqtt.h"
@@ -34,6 +35,24 @@
 #include "attribute_timeouts.h"
 #include "sl_log.h"
 
+#define LOG_TAG "zwave_command_class_switch_color"
+
+static void set_duration(attribute_store_node_t state_node,
+                         attribute_store_node_value_state_t state,
+                         uint32_t duration)
+{
+  attribute_store_node_t duration_node
+    = attribute_store_get_first_child_by_type(
+      state_node,
+      ATTRIBUTE_COMMAND_CLASS_SWITCH_COLOR_DURATION);
+
+  attribute_store_set_node_attribute_value(duration_node,
+                                           state,
+                                           (uint8_t *)&duration,
+                                           sizeof(duration));
+}
+
+[[maybe_unused]]
 static void
   set_all_color_switch_durations(attribute_store_node_t state_node,
                                  attribute_store_node_value_state_t value_state,
@@ -47,21 +66,41 @@ static void
   while (component_node != ATTRIBUTE_STORE_INVALID_NODE) {
     index += 1;
 
-    attribute_store_node_t duration_node
-      = attribute_store_get_first_child_by_type(
-        component_node,
-        ATTRIBUTE_COMMAND_CLASS_SWITCH_COLOR_DURATION);
-
-    attribute_store_set_node_attribute_value(duration_node,
-                                             value_state,
-                                             (uint8_t *)&duration,
-                                             sizeof(duration));
+    set_duration(component_node, value_state, duration);
 
     component_node = attribute_store_get_node_child_by_type(
       state_node,
       ATTRIBUTE_COMMAND_CLASS_SWITCH_COLOR_COLOR_COMPONENT_ID,
       index);
   }
+}
+
+static void switch_color_undefine_reported(attribute_store_node_t state_node)
+{
+  zwave_command_class_switch_color_invoke_on_all_attributes_with_return_value(
+    state_node,
+    ATTRIBUTE_COMMAND_CLASS_SWITCH_COLOR_VALUE,
+    attribute_stop_transition);
+
+  attribute_store_node_t duration_node
+      = attribute_store_get_first_child_by_type(
+        state_node,
+        ATTRIBUTE_COMMAND_CLASS_SWITCH_COLOR_DURATION);
+  color_component_id_duration_t duration = 0;
+  attribute_store_undefine_desired(duration_node);
+  attribute_store_set_reported(duration_node,
+                               &duration,
+                               sizeof(duration));
+
+  sl_log_debug(LOG_TAG, "Transition time expired, probe color");
+  zwave_command_class_switch_color_invoke_on_all_attributes(
+    state_node,
+    ATTRIBUTE_COMMAND_CLASS_SWITCH_COLOR_VALUE,
+    attribute_store_undefine_desired);
+  zwave_command_class_switch_color_invoke_on_all_attributes(
+    state_node,
+    ATTRIBUTE_COMMAND_CLASS_SWITCH_COLOR_VALUE,
+    attribute_store_undefine_reported);
 }
 
 // FIXME: UIC-1901 This function belongs to zwave_command_class_switch_color.rs, but this
@@ -78,12 +117,22 @@ static void
     return;
   }
 
+  attribute_store_node_t duration_node
+      = attribute_store_get_first_child_by_type(
+        state_node,
+        ATTRIBUTE_COMMAND_CLASS_SWITCH_COLOR_DURATION);
+
+  color_component_id_duration_t duration = 0;
+  attribute_store_get_desired(duration_node,
+                              &duration,
+                              sizeof(duration));
+
+  clock_time_t zwave_desired_duration
+    = zwave_duration_to_time((uint8_t)duration);
+
   switch (event) {
     case FRAME_SENT_EVENT_OK_SUPERVISION_WORKING:
-      zwave_command_class_switch_color_invoke_on_all_attributes_with_return_value(
-        state_node,
-        ATTRIBUTE_COMMAND_CLASS_SWITCH_COLOR_DURATION,
-        &attribute_store_set_reported_as_desired);
+      attribute_store_set_reported_as_desired(duration_node);
       break;
 
     case FRAME_SENT_EVENT_OK_SUPERVISION_SUCCESS:
@@ -95,11 +144,44 @@ static void
         state_node,
         ATTRIBUTE_COMMAND_CLASS_SWITCH_COLOR_VALUE,
         &attribute_store_undefine_desired);
-      set_all_color_switch_durations(state_node, REPORTED_ATTRIBUTE, 0);
-      set_all_color_switch_durations(state_node, DESIRED_ATTRIBUTE, 0);
+      set_duration(state_node, REPORTED_ATTRIBUTE, 0);
+      attribute_store_undefine_desired(duration_node);
       break;
 
-    // FRAME_SENT_EVENT_OK_NO_SUPERVISION:
+    case FRAME_SENT_EVENT_OK_NO_SUPERVISION:
+      zwave_command_class_switch_color_invoke_on_all_attributes_with_return_value(
+        state_node,
+        ATTRIBUTE_COMMAND_CLASS_SWITCH_COLOR_VALUE,
+        attribute_stop_transition);
+      if(zwave_desired_duration > 0) {
+        // Should we estimate reported color values during transition
+        // and publish them as reported, like we did for level cluster?
+
+        zwave_command_class_switch_color_invoke_on_all_attributes(
+          state_node,
+          ATTRIBUTE_COMMAND_CLASS_SWITCH_COLOR_VALUE,
+          attribute_store_undefine_desired);
+
+        attribute_store_set_reported_as_desired(duration_node);
+        attribute_store_undefine_desired(duration_node);
+
+        // Probe again after this duration
+        attribute_timeout_set_callback(state_node,
+                                       zwave_desired_duration + PROBE_BACK_OFF,
+                                       &switch_color_undefine_reported);
+      } else {
+        zwave_command_class_switch_color_invoke_on_all_attributes(
+          state_node,
+          ATTRIBUTE_COMMAND_CLASS_SWITCH_COLOR_VALUE,
+          attribute_store_undefine_desired);
+        zwave_command_class_switch_color_invoke_on_all_attributes(
+          state_node,
+          ATTRIBUTE_COMMAND_CLASS_SWITCH_COLOR_VALUE,
+          attribute_store_undefine_reported);
+        attribute_store_undefine_desired(duration_node);
+      }
+      break;
+
     // FRAME_SENT_EVENT_OK_SUPERVISION_NO_SUPPORT:
     // FRAME_SENT_EVENT_OK_SUPERVISION_FAIL:
     default:
@@ -115,14 +197,8 @@ static void
         state_node,
         ATTRIBUTE_COMMAND_CLASS_SWITCH_COLOR_VALUE,
         &attribute_store_undefine_reported);
-      zwave_command_class_switch_color_invoke_on_all_attributes(
-        state_node,
-        ATTRIBUTE_COMMAND_CLASS_SWITCH_COLOR_DURATION,
-        &attribute_store_undefine_desired);
-      zwave_command_class_switch_color_invoke_on_all_attributes(
-        state_node,
-        ATTRIBUTE_COMMAND_CLASS_SWITCH_COLOR_DURATION,
-        &attribute_store_undefine_reported);
+      attribute_store_undefine_desired(duration_node);
+      attribute_store_undefine_reported(duration_node);
       break;
   }
 

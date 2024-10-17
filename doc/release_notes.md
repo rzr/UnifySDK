@@ -8,21 +8,78 @@ For the full documentation of this latest release, go to
 
 For the application specific release notes, please follow these links:
 
-* [GMS](applications/gms/release_notes.md)
-* [NAL](applications/nal/release_notes.md)
-* [Dev GUI](applications/dev_ui/dev_gui/release_notes.md)
-* [Image Provider](applications/image_provider/release_notes.md)
-* [UPVL](applications/upvl/release_notes.md)
-* [ZigPC](applications/zigpc/release_notes.md)
-* [ZPC](applications/zpc/release_notes.md)
-* [UPTICap](applications/upti_cap/release_notes.md)
-* [UPTIWriter](applications/upti_writer/release_notes.md)
-* [AoXPC](applications/aox/applications/aoxpc/release_notes.md)
-* [AoX Positioning application](applications/aox/applications/positioning/release_notes.md)
-* [CPCd](applications/cpcd/release_notes.md)
-* [OpenThread Border Router](applications/openthread_border_router/release_notes.md)
-* [Zigbeed](applications/zigbeed/release_notes.md)
-* [Portable Runtime](portable_runtime/release_notes.md)
+* [GMS](../applications/gms/release_notes.md)
+* [NAL](../applications/nal/release_notes.md)
+* [Dev GUI](../applications/dev_ui/dev_gui/release_notes.md)
+* [Image Provider](../applications/image_provider/release_notes.md)
+* [UPVL](../applications/upvl/release_notes.md)
+* [ZigPC](../applications/zigpc/release_notes.md)
+* [ZPC](../applications/zpc/release_notes.md)
+* [UPTICap](../applications/upti_cap/release_notes.md)
+* [UPTIWriter](../applications/upti_writer/release_notes.md)
+* [AoXPC](../applications/aox/applications/aoxpc/release_notes.md)
+* [AoX Positioning application](../applications/aox/applications/positioning/release_notes.md)
+* [CPCd](../applications/cpcd/release_notes.md)
+* [OpenThread Border Router](../applications/openthread_border_router/release_notes.md)
+* [Zigbeed](../applications/zigbeed/release_notes.md)
+* [Portable Runtime](../portable_runtime/release_notes.md)
+
+## [1.6.0] - August 2024
+
+### Added (1.6.0)
+
+* Portable runtime cli and gui now supports Example Emulated Device(EED) to test without actual hardware.
+
+### Changed (1.6.0)
+
+* Reference platform updated to Bookworm 64-bit based Raspberry Pi OS.
+* ZigPC migrated to Simplicity SDK v2024.6.0 with alpha quality.
+* Mosquitto version updated to 2.0.18.
+
+### Known Issues (1.6.0)
+
+* **UIC-2261**: Attribute Mapper parent operator navigation does not always work (only on left hand sides).
+  _Note_: Avoid using the parent operator in UAM files, use the common_parent_type scope setting instead.
+* **UIC-2228**: Attribute Mapper reducer is disabled due to errors. The mapper will not successfully reduce constant expressions.
+  _Note_: Avoid unnecessary calculations in the UAM files. e.g. write 100 instead of 10*10.
+* **UIC-2725**: The Dotdot MQTT library does not always use enum names, even though the Unify Specification indicates that it should.
+  _Note_: Be tolerant to numbers instead of strings for enums.
+
+## [1.5.0] - Feb 2024
+
+### Added (1.5.0)
+
+* Portable runtime GUI is now being released as an artifact for windows and Linux.
+* Added Description cluster with device type attribute to unify. (Experimental)
+* Upgraded DoorLock cluster to match matter data model. (Experimental)
+* Mosquitto version updated to 2.0.15.
+* Docker
+  * Rust version updated to 1.71.
+  * Updated and documented the dependencies used in Unify Docker.
+* CMake
+  * Will throw build failure error if sl_status_string.sh generation failed.
+  * GIT_VERSION_SHA variable will be populated during cmake build.(this variable is a part of final version string)
+
+### Fixed (1.5.0)
+
+* NetworkList State attribute section is now added to Unify Specification.
+* Added handling for ExecuteIfOff parameter of move and movetolevel command of Level cluster.
+* Removed ignorable error messages regarding file descriptors on terminal resize.
+* Fixed asSnakeCaseUpper JSON helper function when several letters are uppercase in a row.
+  Example: String AoXLocatorCTEMode -> was previosly AOX_LOCATORCTE_MODE
+                                    -> After fix will be AOX_LOCATOR_CTE_MODE
+
+### Known Issues (1.5.0)
+
+* Supports GSDK version 4.3.0.
+* The 1.5.0 protocol controllers MUST be used with the 1.5.0 libunify only (as a result of updating the JSON helper function).
+* ZigPC 1.5.0 release is of Alpha quality.
+* **UIC-2261**: Attribute Mapper parent operator navigation does not always work (only on left hand sides).
+  _Note_: Avoid using the parent operator in UAM files, use the common_parent_type scope setting instead.
+* **UIC-2228**: Attribute Mapper reducer is disabled due to errors. The mapper will not successfully reduce constant expressions.
+  _Note_: Avoid unnecessary calculations in the UAM files. e.g. write 100 instead of 10*10.
+* **UIC-2725**: The Dotdot MQTT library does not always use enum names, even though the Unify Specification indicates that it should.
+  _Note_: Be tolerant to numbers instead of strings for enums.
 
 ## [1.4.0] - Aug 2023
 

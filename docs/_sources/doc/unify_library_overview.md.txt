@@ -15,7 +15,7 @@ The Unify Framework Library provides the following overall features
 - Build system with docker containers
 - Documentation framework
 - Packaging system for distributing components and basic scripts for system
-  integration with Debian Bullseye.
+  integration with Debian Bookworm.
 - Coding standard
 
 The figure below show the meta functionality that the Unify Frameworks provides.
@@ -304,15 +304,4 @@ All Unify component should adhere to a common coding standard.
 
 See the [Unify Coding Standard](standards/coding-standard.md)
 
-## How To's
 
-Those sections show how to use the Unify Library.
-
-```{toctree}
----
-maxdepth: 1
----
-how_to_write_uam_files.rst
-how_to_develop_a_protocol_controller.rst
-how_to_develop_an_iot_service.md
-```

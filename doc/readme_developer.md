@@ -12,7 +12,6 @@ titlesonly:
 ---
 readme_building.md
 readme_cmake.md
-readme_debug.md
 readme_rust.md
 unify_library_overview.md
 standards/coding-standard.md

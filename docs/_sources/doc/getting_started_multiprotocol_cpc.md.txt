@@ -1,9 +1,9 @@
-# Multiprotocol Setup
+# Getting Started with the Multiprotocol Setup
 
 ## Prerequisites
 
 Follow the directions in the
-[Unify Host SDK getting started guide](getting_started.md)
+[Unify Host SDK getting started guide](getting_started_unify.md)
 to set up your Raspberry Pi 4 and install the Unify Host SDK Debian packages.
 
 By default, the `uic-zigpc` service is configured to operate with the
@@ -160,3 +160,5 @@ the proper multiprotocol RCP image with BLE HCI support to the EFR32
 (rcp-uart-802154-blehci), and that you've successfully connected CPCd to the
 RCP as described above. Next, a small utility called `cpc-hci-bridge` must be
 started to connect BlueZ to CPCd. See the [cpc-hci-bridge user guide](../applications/cpc-hci-bridge/readme_user.md)
+
+

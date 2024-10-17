@@ -12463,7 +12463,7 @@ ucl/by-unid/<UNID>/ep0/DoorLock/Attributes/NumberOfTotalUsersSupported/Reported 
 
 <br><br>
 
-\subsection door_lock_attr_number_ofpin_users_supported DoorLock/NumberOfPINUsersSupported Attribute
+\subsection door_lock_attr_number_of_pin_users_supported DoorLock/NumberOfPINUsersSupported Attribute
 
 **MQTT Topic Pattern:**
 
@@ -12500,14 +12500,14 @@ mosquitto_sub -t 'ucl/by-unid/+/+/DoorLock/Attributes/NumberOfPINUsersSupported/
 
 # Example output
 
-ucl/by-unid/<UNID>/ep0/DoorLock/Attributes/NumberOfPINUsersSupported/Desired { "value": <DESIRED_NUMBER_OFPIN_USERS_SUPPORTED>}
-ucl/by-unid/<UNID>/ep0/DoorLock/Attributes/NumberOfPINUsersSupported/Reported { "value": <REPORTED_NUMBER_OFPIN_USERS_SUPPORTED>}
+ucl/by-unid/<UNID>/ep0/DoorLock/Attributes/NumberOfPINUsersSupported/Desired { "value": <DESIRED_NUMBER_OF_PIN_USERS_SUPPORTED>}
+ucl/by-unid/<UNID>/ep0/DoorLock/Attributes/NumberOfPINUsersSupported/Reported { "value": <REPORTED_NUMBER_OF_PIN_USERS_SUPPORTED>}
 
 ```
 
 <br><br>
 
-\subsection door_lock_attr_number_ofrfid_users_supported DoorLock/NumberOfRFIDUsersSupported Attribute
+\subsection door_lock_attr_number_of_rfid_users_supported DoorLock/NumberOfRFIDUsersSupported Attribute
 
 **MQTT Topic Pattern:**
 
@@ -12544,8 +12544,8 @@ mosquitto_sub -t 'ucl/by-unid/+/+/DoorLock/Attributes/NumberOfRFIDUsersSupported
 
 # Example output
 
-ucl/by-unid/<UNID>/ep0/DoorLock/Attributes/NumberOfRFIDUsersSupported/Desired { "value": <DESIRED_NUMBER_OFRFID_USERS_SUPPORTED>}
-ucl/by-unid/<UNID>/ep0/DoorLock/Attributes/NumberOfRFIDUsersSupported/Reported { "value": <REPORTED_NUMBER_OFRFID_USERS_SUPPORTED>}
+ucl/by-unid/<UNID>/ep0/DoorLock/Attributes/NumberOfRFIDUsersSupported/Desired { "value": <DESIRED_NUMBER_OF_RFID_USERS_SUPPORTED>}
+ucl/by-unid/<UNID>/ep0/DoorLock/Attributes/NumberOfRFIDUsersSupported/Reported { "value": <REPORTED_NUMBER_OF_RFID_USERS_SUPPORTED>}
 
 ```
 
@@ -12683,7 +12683,7 @@ ucl/by-unid/<UNID>/ep0/DoorLock/Attributes/NumberOfHolidaySchedulesSupported/Rep
 
 <br><br>
 
-\subsection door_lock_attr_maxpin_code_length DoorLock/MaxPINCodeLength Attribute
+\subsection door_lock_attr_max_pin_code_length DoorLock/MaxPINCodeLength Attribute
 
 **MQTT Topic Pattern:**
 
@@ -12720,14 +12720,14 @@ mosquitto_sub -t 'ucl/by-unid/+/+/DoorLock/Attributes/MaxPINCodeLength/+'
 
 # Example output
 
-ucl/by-unid/<UNID>/ep0/DoorLock/Attributes/MaxPINCodeLength/Desired { "value": <DESIRED_MAXPIN_CODE_LENGTH>}
-ucl/by-unid/<UNID>/ep0/DoorLock/Attributes/MaxPINCodeLength/Reported { "value": <REPORTED_MAXPIN_CODE_LENGTH>}
+ucl/by-unid/<UNID>/ep0/DoorLock/Attributes/MaxPINCodeLength/Desired { "value": <DESIRED_MAX_PIN_CODE_LENGTH>}
+ucl/by-unid/<UNID>/ep0/DoorLock/Attributes/MaxPINCodeLength/Reported { "value": <REPORTED_MAX_PIN_CODE_LENGTH>}
 
 ```
 
 <br><br>
 
-\subsection door_lock_attr_minpin_code_length DoorLock/MinPINCodeLength Attribute
+\subsection door_lock_attr_min_pin_code_length DoorLock/MinPINCodeLength Attribute
 
 **MQTT Topic Pattern:**
 
@@ -12764,14 +12764,14 @@ mosquitto_sub -t 'ucl/by-unid/+/+/DoorLock/Attributes/MinPINCodeLength/+'
 
 # Example output
 
-ucl/by-unid/<UNID>/ep0/DoorLock/Attributes/MinPINCodeLength/Desired { "value": <DESIRED_MINPIN_CODE_LENGTH>}
-ucl/by-unid/<UNID>/ep0/DoorLock/Attributes/MinPINCodeLength/Reported { "value": <REPORTED_MINPIN_CODE_LENGTH>}
+ucl/by-unid/<UNID>/ep0/DoorLock/Attributes/MinPINCodeLength/Desired { "value": <DESIRED_MIN_PIN_CODE_LENGTH>}
+ucl/by-unid/<UNID>/ep0/DoorLock/Attributes/MinPINCodeLength/Reported { "value": <REPORTED_MIN_PIN_CODE_LENGTH>}
 
 ```
 
 <br><br>
 
-\subsection door_lock_attr_maxrfid_code_length DoorLock/MaxRFIDCodeLength Attribute
+\subsection door_lock_attr_max_rfid_code_length DoorLock/MaxRFIDCodeLength Attribute
 
 **MQTT Topic Pattern:**
 
@@ -12808,14 +12808,14 @@ mosquitto_sub -t 'ucl/by-unid/+/+/DoorLock/Attributes/MaxRFIDCodeLength/+'
 
 # Example output
 
-ucl/by-unid/<UNID>/ep0/DoorLock/Attributes/MaxRFIDCodeLength/Desired { "value": <DESIRED_MAXRFID_CODE_LENGTH>}
-ucl/by-unid/<UNID>/ep0/DoorLock/Attributes/MaxRFIDCodeLength/Reported { "value": <REPORTED_MAXRFID_CODE_LENGTH>}
+ucl/by-unid/<UNID>/ep0/DoorLock/Attributes/MaxRFIDCodeLength/Desired { "value": <DESIRED_MAX_RFID_CODE_LENGTH>}
+ucl/by-unid/<UNID>/ep0/DoorLock/Attributes/MaxRFIDCodeLength/Reported { "value": <REPORTED_MAX_RFID_CODE_LENGTH>}
 
 ```
 
 <br><br>
 
-\subsection door_lock_attr_minrfid_code_length DoorLock/MinRFIDCodeLength Attribute
+\subsection door_lock_attr_min_rfid_code_length DoorLock/MinRFIDCodeLength Attribute
 
 **MQTT Topic Pattern:**
 
@@ -12852,8 +12852,96 @@ mosquitto_sub -t 'ucl/by-unid/+/+/DoorLock/Attributes/MinRFIDCodeLength/+'
 
 # Example output
 
-ucl/by-unid/<UNID>/ep0/DoorLock/Attributes/MinRFIDCodeLength/Desired { "value": <DESIRED_MINRFID_CODE_LENGTH>}
-ucl/by-unid/<UNID>/ep0/DoorLock/Attributes/MinRFIDCodeLength/Reported { "value": <REPORTED_MINRFID_CODE_LENGTH>}
+ucl/by-unid/<UNID>/ep0/DoorLock/Attributes/MinRFIDCodeLength/Desired { "value": <DESIRED_MIN_RFID_CODE_LENGTH>}
+ucl/by-unid/<UNID>/ep0/DoorLock/Attributes/MinRFIDCodeLength/Reported { "value": <REPORTED_MIN_RFID_CODE_LENGTH>}
+
+```
+
+<br><br>
+
+\subsection door_lock_attr_credential_rules_support DoorLock/CredentialRulesSupport Attribute
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/DoorLock/Attributes/CredentialRulesSupport/Reported
+[PREFIX]/DoorLock/Attributes/CredentialRulesSupport/Desired
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "DoorLock Cluster CredentialRulesSupport Attribute Properties",
+  "type": "object",
+  "properties": {
+    "value": {
+      "type": "DoorLockCredentialRulesSupport"
+    }
+  },
+  "required": [
+    "value"
+  ]
+}
+```
+
+
+**Example Mosquitto CLI Tool Usage**
+
+To see desired/reported value for CredentialRulesSupport attribute under the by-unid topic space:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/+/+/DoorLock/Attributes/CredentialRulesSupport/+'
+
+# Example output
+
+ucl/by-unid/<UNID>/ep0/DoorLock/Attributes/CredentialRulesSupport/Desired { "value": <DESIRED_CREDENTIAL_RULES_SUPPORT>}
+ucl/by-unid/<UNID>/ep0/DoorLock/Attributes/CredentialRulesSupport/Reported { "value": <REPORTED_CREDENTIAL_RULES_SUPPORT>}
+
+```
+
+<br><br>
+
+\subsection door_lock_attr_number_of_credentials_supported_per_user DoorLock/NumberOfCredentialsSupportedPerUser Attribute
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/DoorLock/Attributes/NumberOfCredentialsSupportedPerUser/Reported
+[PREFIX]/DoorLock/Attributes/NumberOfCredentialsSupportedPerUser/Desired
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "DoorLock Cluster NumberOfCredentialsSupportedPerUser Attribute Properties",
+  "type": "object",
+  "properties": {
+    "value": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "value"
+  ]
+}
+```
+
+
+**Example Mosquitto CLI Tool Usage**
+
+To see desired/reported value for NumberOfCredentialsSupportedPerUser attribute under the by-unid topic space:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/+/+/DoorLock/Attributes/NumberOfCredentialsSupportedPerUser/+'
+
+# Example output
+
+ucl/by-unid/<UNID>/ep0/DoorLock/Attributes/NumberOfCredentialsSupportedPerUser/Desired { "value": <DESIRED_NUMBER_OF_CREDENTIALS_SUPPORTED_PER_USER>}
+ucl/by-unid/<UNID>/ep0/DoorLock/Attributes/NumberOfCredentialsSupportedPerUser/Reported { "value": <REPORTED_NUMBER_OF_CREDENTIALS_SUPPORTED_PER_USER>}
 
 ```
 
@@ -13387,6 +13475,50 @@ ucl/by-unid/<UNID>/ep0/DoorLock/Attributes/EnablePrivacyModeButton/Reported { "v
 
 <br><br>
 
+\subsection door_lock_attr_local_programming_features DoorLock/LocalProgrammingFeatures Attribute
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/DoorLock/Attributes/LocalProgrammingFeatures/Reported
+[PREFIX]/DoorLock/Attributes/LocalProgrammingFeatures/Desired
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "DoorLock Cluster LocalProgrammingFeatures Attribute Properties",
+  "type": "object",
+  "properties": {
+    "value": {
+      "type": "DoorLockLocalProgrammingFeatures"
+    }
+  },
+  "required": [
+    "value"
+  ]
+}
+```
+
+
+**Example Mosquitto CLI Tool Usage**
+
+To see desired/reported value for LocalProgrammingFeatures attribute under the by-unid topic space:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/+/+/DoorLock/Attributes/LocalProgrammingFeatures/+'
+
+# Example output
+
+ucl/by-unid/<UNID>/ep0/DoorLock/Attributes/LocalProgrammingFeatures/Desired { "value": <DESIRED_LOCAL_PROGRAMMING_FEATURES>}
+ucl/by-unid/<UNID>/ep0/DoorLock/Attributes/LocalProgrammingFeatures/Reported { "value": <REPORTED_LOCAL_PROGRAMMING_FEATURES>}
+
+```
+
+<br><br>
+
 \subsection door_lock_attr_wrong_code_entry_limit DoorLock/WrongCodeEntryLimit Attribute
 
 **MQTT Topic Pattern:**
@@ -13475,7 +13607,7 @@ ucl/by-unid/<UNID>/ep0/DoorLock/Attributes/UserCodeTemporaryDisableTime/Reported
 
 <br><br>
 
-\subsection door_lock_attr_sendpin_over_the_air DoorLock/SendPINOverTheAir Attribute
+\subsection door_lock_attr_send_pin_over_the_air DoorLock/SendPINOverTheAir Attribute
 
 **MQTT Topic Pattern:**
 
@@ -13512,14 +13644,14 @@ mosquitto_sub -t 'ucl/by-unid/+/+/DoorLock/Attributes/SendPINOverTheAir/+'
 
 # Example output
 
-ucl/by-unid/<UNID>/ep0/DoorLock/Attributes/SendPINOverTheAir/Desired { "value": <DESIRED_SENDPIN_OVER_THE_AIR>}
-ucl/by-unid/<UNID>/ep0/DoorLock/Attributes/SendPINOverTheAir/Reported { "value": <REPORTED_SENDPIN_OVER_THE_AIR>}
+ucl/by-unid/<UNID>/ep0/DoorLock/Attributes/SendPINOverTheAir/Desired { "value": <DESIRED_SEND_PIN_OVER_THE_AIR>}
+ucl/by-unid/<UNID>/ep0/DoorLock/Attributes/SendPINOverTheAir/Reported { "value": <REPORTED_SEND_PIN_OVER_THE_AIR>}
 
 ```
 
 <br><br>
 
-\subsection door_lock_attr_requirepi_nforrf_operation DoorLock/RequirePINforRFOperation Attribute
+\subsection door_lock_attr_require_pi_nfor_rf_operation DoorLock/RequirePINforRFOperation Attribute
 
 **MQTT Topic Pattern:**
 
@@ -13556,8 +13688,8 @@ mosquitto_sub -t 'ucl/by-unid/+/+/DoorLock/Attributes/RequirePINforRFOperation/+
 
 # Example output
 
-ucl/by-unid/<UNID>/ep0/DoorLock/Attributes/RequirePINforRFOperation/Desired { "value": <DESIRED_REQUIREPI_NFORRF_OPERATION>}
-ucl/by-unid/<UNID>/ep0/DoorLock/Attributes/RequirePINforRFOperation/Reported { "value": <REPORTED_REQUIREPI_NFORRF_OPERATION>}
+ucl/by-unid/<UNID>/ep0/DoorLock/Attributes/RequirePINforRFOperation/Desired { "value": <DESIRED_REQUIRE_PI_NFOR_RF_OPERATION>}
+ucl/by-unid/<UNID>/ep0/DoorLock/Attributes/RequirePINforRFOperation/Reported { "value": <REPORTED_REQUIRE_PI_NFOR_RF_OPERATION>}
 
 ```
 
@@ -13602,6 +13734,50 @@ mosquitto_sub -t 'ucl/by-unid/+/+/DoorLock/Attributes/SecurityLevel/+'
 
 ucl/by-unid/<UNID>/ep0/DoorLock/Attributes/SecurityLevel/Desired { "value": <DESIRED_SECURITY_LEVEL>}
 ucl/by-unid/<UNID>/ep0/DoorLock/Attributes/SecurityLevel/Reported { "value": <REPORTED_SECURITY_LEVEL>}
+
+```
+
+<br><br>
+
+\subsection door_lock_attr_expiring_user_timeout DoorLock/ExpiringUserTimeout Attribute
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/DoorLock/Attributes/ExpiringUserTimeout/Reported
+[PREFIX]/DoorLock/Attributes/ExpiringUserTimeout/Desired
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "DoorLock Cluster ExpiringUserTimeout Attribute Properties",
+  "type": "object",
+  "properties": {
+    "value": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "value"
+  ]
+}
+```
+
+
+**Example Mosquitto CLI Tool Usage**
+
+To see desired/reported value for ExpiringUserTimeout attribute under the by-unid topic space:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/+/+/DoorLock/Attributes/ExpiringUserTimeout/+'
+
+# Example output
+
+ucl/by-unid/<UNID>/ep0/DoorLock/Attributes/ExpiringUserTimeout/Desired { "value": <DESIRED_EXPIRING_USER_TIMEOUT>}
+ucl/by-unid/<UNID>/ep0/DoorLock/Attributes/ExpiringUserTimeout/Reported { "value": <REPORTED_EXPIRING_USER_TIMEOUT>}
 
 ```
 
@@ -13959,6 +14135,50 @@ ucl/by-unid/<UNID>/ep0/DoorLock/Attributes/RFIDProgrammingEventMask/Reported { "
 
 <br><br>
 
+\subsection door_lock_attr_feature_map DoorLock/FeatureMap Attribute
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/DoorLock/Attributes/FeatureMap/Reported
+[PREFIX]/DoorLock/Attributes/FeatureMap/Desired
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "DoorLock Cluster FeatureMap Attribute Properties",
+  "type": "object",
+  "properties": {
+    "value": {
+      "type": "DoorLockFeatureMap"
+    }
+  },
+  "required": [
+    "value"
+  ]
+}
+```
+
+
+**Example Mosquitto CLI Tool Usage**
+
+To see desired/reported value for FeatureMap attribute under the by-unid topic space:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/+/+/DoorLock/Attributes/FeatureMap/+'
+
+# Example output
+
+ucl/by-unid/<UNID>/ep0/DoorLock/Attributes/FeatureMap/Desired { "value": <DESIRED_FEATURE_MAP>}
+ucl/by-unid/<UNID>/ep0/DoorLock/Attributes/FeatureMap/Reported { "value": <REPORTED_FEATURE_MAP>}
+
+```
+
+<br><br>
+
 
 \subsection door_lock_attr_cluster_revision DoorLock/ClusterRevision Attribute
 
@@ -14081,8 +14301,18 @@ ucl/by-unid/<UNID>/<EP>/DoorLock/Attributes/ClusterRevision/Reported { "value": 
               "ClearRFIDCodeResponse",
               "ClearAllRFIDCodes",
               "ClearAllRFIDCodesResponse",
+              "SetUser",
+              "GetUser",
+              "GetUserResponse",
+              "ClearUser",
               "OperatingEventNotification",
               "ProgrammingEventNotification",
+              "SetCredential",
+              "SetCredentialResponse",
+              "GetCredentialStatus",
+              "GetCredentialStatusResponse",
+              "ClearCredential",
+              "UnboltDoor",
               "WriteAttributes",
               "ForceReadAttributes"
             ]
@@ -14103,7 +14333,7 @@ To see supported commands for DoorLock cluster under the by-unid topic space:
 ```console
 mosquitto_sub -t 'ucl/by-unid/<UNID>/<EP>/DoorLock/SupportedCommands'
 # Example output
-ucl/by-unid/<UNID>/<EP>/DoorLock/SupportedCommands { "value": ["LockDoor","UnlockDoor","Toggle","UnlockWithTimeout","GetLogRecord","SetPINCode","GetPINCode","ClearPINCode","ClearAllPINCodes","SetUserStatus","GetUserStatus","SetWeekdaySchedule","GetWeekdaySchedule","ClearWeekdaySchedule","SetYearDaySchedule","GetYearDaySchedule","ClearYearDaySchedule","SetHolidaySchedule","GetHolidaySchedule","ClearHolidaySchedule","SetUserType","GetUserType","SetRFIDCode","GetRFIDCode","ClearRFIDCode","ClearAllRFIDCodes",] }
+ucl/by-unid/<UNID>/<EP>/DoorLock/SupportedCommands { "value": ["LockDoor","UnlockDoor","Toggle","UnlockWithTimeout","GetLogRecord","SetPINCode","GetPINCode","ClearPINCode","ClearAllPINCodes","SetUserStatus","GetUserStatus","SetWeekdaySchedule","GetWeekdaySchedule","ClearWeekdaySchedule","SetYearDaySchedule","GetYearDaySchedule","ClearYearDaySchedule","SetHolidaySchedule","GetHolidaySchedule","ClearHolidaySchedule","SetUserType","GetUserType","SetRFIDCode","GetRFIDCode","ClearRFIDCode","ClearAllRFIDCodes","SetUser","GetUser","ClearUser","SetCredential","GetCredentialStatus","ClearCredential","UnboltDoor","WriteAttributes", "ForceReadAttributes"] }
 ```
 
 To see supported generated commands for DoorLock cluster under the by-unid topic space:
@@ -14111,7 +14341,7 @@ To see supported generated commands for DoorLock cluster under the by-unid topic
 ```console
 mosquitto_sub -t 'ucl/by-unid/<UNID>/<EP>/DoorLock/SupportedGeneratedCommands'
 # Example output
-ucl/by-unid/<UNID>/<EP>/DoorLock/SupportedGeneratedCommands { "value": ["LockDoorResponse","UnlockDoorResponse","ToggleResponse","UnlockWithTimeoutResponse","GetLogRecordResponse","SetPINCodeResponse","GetPINCodeResponse","ClearPINCodeResponse","ClearAllPINCodesResponse","SetUserStatusResponse","GetUserStatusResponse","SetWeekdayScheduleResponse","GetWeekdayScheduleResponse","ClearWeekdayScheduleResponse","SetYearDayScheduleResponse","GetYearDayScheduleResponse","ClearYearDayScheduleResponse","SetHolidayScheduleResponse","GetHolidayScheduleResponse","ClearHolidayScheduleResponse","SetUserTypeResponse","GetUserTypeResponse","SetRFIDCodeResponse","GetRFIDCodeResponse","ClearRFIDCodeResponse","ClearAllRFIDCodesResponse","OperatingEventNotification","ProgrammingEventNotification"] }
+ucl/by-unid/<UNID>/<EP>/DoorLock/SupportedGeneratedCommands { "value": ["LockDoorResponse","UnlockDoorResponse","ToggleResponse","UnlockWithTimeoutResponse","GetLogRecordResponse","SetPINCodeResponse","GetPINCodeResponse","ClearPINCodeResponse","ClearAllPINCodesResponse","SetUserStatusResponse","GetUserStatusResponse","SetWeekdayScheduleResponse","GetWeekdayScheduleResponse","ClearWeekdayScheduleResponse","SetYearDayScheduleResponse","GetYearDayScheduleResponse","ClearYearDayScheduleResponse","SetHolidayScheduleResponse","GetHolidayScheduleResponse","ClearHolidayScheduleResponse","SetUserTypeResponse","GetUserTypeResponse","SetRFIDCodeResponse","GetRFIDCodeResponse","ClearRFIDCodeResponse","ClearAllRFIDCodesResponse","GetUserResponse","OperatingEventNotification","ProgrammingEventNotification","SetCredentialResponse","GetCredentialStatusResponse",] }
 ```
 
 <!-- -->
@@ -14159,7 +14389,7 @@ ucl/by-unid/<UNID>/<EP>/DoorLock/SupportedGeneratedCommands { "value": ["LockDoo
 To send a DoorLock/LockDoor command under the by-unid topic space:
 
 ```console
-mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/DoorLock/Commands/LockDoor' -m  '{ "PINOrRFIDCode": <PIN_ORRFID_CODE_VALUE> }'
+mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/DoorLock/Commands/LockDoor' -m  '{ "PINOrRFIDCode": <PIN_OR_RFID_CODE_VALUE> }'
 ```
 
 To receive a DoorLock/LockDoor generated command from a UNID/endpoint:
@@ -14245,7 +14475,7 @@ mosquitto_sub -t 'ucl/by-unid/<UNID>/<EP>/DoorLock/GeneratedCommands/LockDoorRes
 To send a DoorLock/UnlockDoor command under the by-unid topic space:
 
 ```console
-mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/DoorLock/Commands/UnlockDoor' -m  '{ "PINOrRFIDCode": <PIN_ORRFID_CODE_VALUE> }'
+mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/DoorLock/Commands/UnlockDoor' -m  '{ "PINOrRFIDCode": <PIN_OR_RFID_CODE_VALUE> }'
 ```
 
 To receive a DoorLock/UnlockDoor generated command from a UNID/endpoint:
@@ -14331,7 +14561,7 @@ mosquitto_sub -t 'ucl/by-unid/<UNID>/<EP>/DoorLock/GeneratedCommands/UnlockDoorR
 To send a DoorLock/Toggle command under the by-unid topic space:
 
 ```console
-mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/DoorLock/Commands/Toggle' -m  '{ "PINOrRFIDCode": <PIN_ORRFID_CODE_VALUE> }'
+mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/DoorLock/Commands/Toggle' -m  '{ "PINOrRFIDCode": <PIN_OR_RFID_CODE_VALUE> }'
 ```
 
 To receive a DoorLock/Toggle generated command from a UNID/endpoint:
@@ -14421,7 +14651,7 @@ mosquitto_sub -t 'ucl/by-unid/<UNID>/<EP>/DoorLock/GeneratedCommands/ToggleRespo
 To send a DoorLock/UnlockWithTimeout command under the by-unid topic space:
 
 ```console
-mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/DoorLock/Commands/UnlockWithTimeout' -m  '{ "TimeoutInSeconds": <TIMEOUT_IN_SECONDS_VALUE>,"PINOrRFIDCode": <PIN_ORRFID_CODE_VALUE> }'
+mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/DoorLock/Commands/UnlockWithTimeout' -m  '{ "TimeoutInSeconds": <TIMEOUT_IN_SECONDS_VALUE>,"PINOrRFIDCode": <PIN_OR_RFID_CODE_VALUE> }'
 ```
 
 To receive a DoorLock/UnlockWithTimeout generated command from a UNID/endpoint:
@@ -14574,7 +14804,7 @@ mosquitto_sub -t 'ucl/by-unid/<UNID>/<EP>/DoorLock/GeneratedCommands/GetLogRecor
 To send a DoorLock/GetLogRecordResponse command under the by-unid topic space:
 
 ```console
-mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/DoorLock/Commands/GetLogRecordResponse' -m  '{ "LogEntryID": <LOG_ENTRYID_VALUE>,"Timestamp": <TIMESTAMP_VALUE>,"EventType": <EVENT_TYPE_VALUE>,"SourceOperationEvent": <SOURCE_OPERATION_EVENT_VALUE>,"EventIDOrAlarmCode": <EVENTID_OR_ALARM_CODE_VALUE>,"UserID": <USERID_VALUE>,"PIN": <PIN_VALUE> }'
+mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/DoorLock/Commands/GetLogRecordResponse' -m  '{ "LogEntryID": <LOG_ENTRYID_VALUE>,"Timestamp": <TIMESTAMP_VALUE>,"EventType": <EVENT_TYPE_VALUE>,"SourceOperationEvent": <SOURCE_OPERATION_EVENT_VALUE>,"EventIDOrAlarmCode": <EVENT_ID_OR_ALARM_CODE_VALUE>,"UserID": <USERID_VALUE>,"PIN": <PIN_VALUE> }'
 ```
 
 To receive a DoorLock/GetLogRecordResponse generated command from a UNID/endpoint:
@@ -14585,7 +14815,7 @@ mosquitto_sub -t 'ucl/by-unid/<UNID>/<EP>/DoorLock/GeneratedCommands/GetLogRecor
 
 <br><br>
 
-\subsection door_lock_setpin_code_cmd DoorLock/SetPINCode Command
+\subsection door_lock_set_pin_code_cmd DoorLock/SetPINCode Command
 
 **MQTT Topic Pattern:**
 
@@ -14640,7 +14870,7 @@ mosquitto_sub -t 'ucl/by-unid/<UNID>/<EP>/DoorLock/GeneratedCommands/SetPINCode'
 
 <br><br>
 
-\subsection door_lock_setpin_code_response_cmd DoorLock/SetPINCodeResponse Command
+\subsection door_lock_set_pin_code_response_cmd DoorLock/SetPINCodeResponse Command
 
 **MQTT Topic Pattern:**
 
@@ -14683,7 +14913,7 @@ mosquitto_sub -t 'ucl/by-unid/<UNID>/<EP>/DoorLock/GeneratedCommands/SetPINCodeR
 
 <br><br>
 
-\subsection door_lock_getpin_code_cmd DoorLock/GetPINCode Command
+\subsection door_lock_get_pin_code_cmd DoorLock/GetPINCode Command
 
 **MQTT Topic Pattern:**
 
@@ -14726,7 +14956,7 @@ mosquitto_sub -t 'ucl/by-unid/<UNID>/<EP>/DoorLock/GeneratedCommands/GetPINCode'
 
 <br><br>
 
-\subsection door_lock_getpin_code_response_cmd DoorLock/GetPINCodeResponse Command
+\subsection door_lock_get_pin_code_response_cmd DoorLock/GetPINCodeResponse Command
 
 **MQTT Topic Pattern:**
 
@@ -14781,7 +15011,7 @@ mosquitto_sub -t 'ucl/by-unid/<UNID>/<EP>/DoorLock/GeneratedCommands/GetPINCodeR
 
 <br><br>
 
-\subsection door_lock_clearpin_code_cmd DoorLock/ClearPINCode Command
+\subsection door_lock_clear_pin_code_cmd DoorLock/ClearPINCode Command
 
 **MQTT Topic Pattern:**
 
@@ -14824,7 +15054,7 @@ mosquitto_sub -t 'ucl/by-unid/<UNID>/<EP>/DoorLock/GeneratedCommands/ClearPINCod
 
 <br><br>
 
-\subsection door_lock_clearpin_code_response_cmd DoorLock/ClearPINCodeResponse Command
+\subsection door_lock_clear_pin_code_response_cmd DoorLock/ClearPINCodeResponse Command
 
 **MQTT Topic Pattern:**
 
@@ -14867,7 +15097,7 @@ mosquitto_sub -t 'ucl/by-unid/<UNID>/<EP>/DoorLock/GeneratedCommands/ClearPINCod
 
 <br><br>
 
-\subsection door_lock_clear_allpin_codes_cmd DoorLock/ClearAllPINCodes Command
+\subsection door_lock_clear_all_pin_codes_cmd DoorLock/ClearAllPINCodes Command
 
 **MQTT Topic Pattern:**
 
@@ -14906,7 +15136,7 @@ mosquitto_sub -t 'ucl/by-unid/<UNID>/<EP>/DoorLock/GeneratedCommands/ClearAllPIN
 
 <br><br>
 
-\subsection door_lock_clear_allpin_codes_response_cmd DoorLock/ClearAllPINCodesResponse Command
+\subsection door_lock_clear_all_pin_codes_response_cmd DoorLock/ClearAllPINCodesResponse Command
 
 **MQTT Topic Pattern:**
 
@@ -16207,7 +16437,7 @@ mosquitto_sub -t 'ucl/by-unid/<UNID>/<EP>/DoorLock/GeneratedCommands/GetUserType
 
 <br><br>
 
-\subsection door_lock_setrfid_code_cmd DoorLock/SetRFIDCode Command
+\subsection door_lock_set_rfid_code_cmd DoorLock/SetRFIDCode Command
 
 **MQTT Topic Pattern:**
 
@@ -16262,7 +16492,7 @@ mosquitto_sub -t 'ucl/by-unid/<UNID>/<EP>/DoorLock/GeneratedCommands/SetRFIDCode
 
 <br><br>
 
-\subsection door_lock_setrfid_code_response_cmd DoorLock/SetRFIDCodeResponse Command
+\subsection door_lock_set_rfid_code_response_cmd DoorLock/SetRFIDCodeResponse Command
 
 **MQTT Topic Pattern:**
 
@@ -16305,7 +16535,7 @@ mosquitto_sub -t 'ucl/by-unid/<UNID>/<EP>/DoorLock/GeneratedCommands/SetRFIDCode
 
 <br><br>
 
-\subsection door_lock_getrfid_code_cmd DoorLock/GetRFIDCode Command
+\subsection door_lock_get_rfid_code_cmd DoorLock/GetRFIDCode Command
 
 **MQTT Topic Pattern:**
 
@@ -16348,7 +16578,7 @@ mosquitto_sub -t 'ucl/by-unid/<UNID>/<EP>/DoorLock/GeneratedCommands/GetRFIDCode
 
 <br><br>
 
-\subsection door_lock_getrfid_code_response_cmd DoorLock/GetRFIDCodeResponse Command
+\subsection door_lock_get_rfid_code_response_cmd DoorLock/GetRFIDCodeResponse Command
 
 **MQTT Topic Pattern:**
 
@@ -16403,7 +16633,7 @@ mosquitto_sub -t 'ucl/by-unid/<UNID>/<EP>/DoorLock/GeneratedCommands/GetRFIDCode
 
 <br><br>
 
-\subsection door_lock_clearrfid_code_cmd DoorLock/ClearRFIDCode Command
+\subsection door_lock_clear_rfid_code_cmd DoorLock/ClearRFIDCode Command
 
 **MQTT Topic Pattern:**
 
@@ -16446,7 +16676,7 @@ mosquitto_sub -t 'ucl/by-unid/<UNID>/<EP>/DoorLock/GeneratedCommands/ClearRFIDCo
 
 <br><br>
 
-\subsection door_lock_clearrfid_code_response_cmd DoorLock/ClearRFIDCodeResponse Command
+\subsection door_lock_clear_rfid_code_response_cmd DoorLock/ClearRFIDCodeResponse Command
 
 **MQTT Topic Pattern:**
 
@@ -16489,7 +16719,7 @@ mosquitto_sub -t 'ucl/by-unid/<UNID>/<EP>/DoorLock/GeneratedCommands/ClearRFIDCo
 
 <br><br>
 
-\subsection door_lock_clear_allrfid_codes_cmd DoorLock/ClearAllRFIDCodes Command
+\subsection door_lock_clear_all_rfid_codes_cmd DoorLock/ClearAllRFIDCodes Command
 
 **MQTT Topic Pattern:**
 
@@ -16528,7 +16758,7 @@ mosquitto_sub -t 'ucl/by-unid/<UNID>/<EP>/DoorLock/GeneratedCommands/ClearAllRFI
 
 <br><br>
 
-\subsection door_lock_clear_allrfid_codes_response_cmd DoorLock/ClearAllRFIDCodesResponse Command
+\subsection door_lock_clear_all_rfid_codes_response_cmd DoorLock/ClearAllRFIDCodesResponse Command
 
 **MQTT Topic Pattern:**
 
@@ -16567,6 +16797,198 @@ To receive a DoorLock/ClearAllRFIDCodesResponse generated command from a UNID/en
 
 ```console
 mosquitto_sub -t 'ucl/by-unid/<UNID>/<EP>/DoorLock/GeneratedCommands/ClearAllRFIDCodesResponse'
+```
+
+<br><br>
+
+\subsection door_lock_set_user_cmd DoorLock/SetUser Command
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/DoorLock/Commands/SetUser
+[PREFIX]/DoorLock/GeneratedCommands/SetUser
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "DoorLock Cluster SetUser Command Properties",
+  "type": "object",
+  "properties": {
+    "OperationType": {
+      "type": "DataOperationTypeEnum"
+    },
+    "UserIndex": {
+      "type": "integer"
+    },
+    "UserName": {
+      "type": "string"
+    },
+    "UserUniqueID": {
+      "type": "integer"
+    },
+    "UserStatus": {
+      "type": "DrlkSettableUserStatus"
+    },
+    "UserType": {
+      "type": "DrlkUserType"
+    },
+    "CredentialRule": {
+      "type": "CredentialRuleEnum"
+    }
+  },
+  "required": [
+    "OperationType",
+    "UserIndex",
+    "UserName",
+    "UserUniqueID",
+    "UserStatus",
+    "UserType",
+    "CredentialRule"
+  ]
+}
+```
+
+**Example Mosquitto CLI Tool Usage**
+
+To send a DoorLock/SetUser command under the by-unid topic space:
+
+```console
+mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/DoorLock/Commands/SetUser' -m  '{ "OperationType": <OPERATION_TYPE_VALUE>,"UserIndex": <USER_INDEX_VALUE>,"UserName": <USER_NAME_VALUE>,"UserUniqueID": <USER_UNIQUEID_VALUE>,"UserStatus": <USER_STATUS_VALUE>,"UserType": <USER_TYPE_VALUE>,"CredentialRule": <CREDENTIAL_RULE_VALUE> }'
+```
+
+To receive a DoorLock/SetUser generated command from a UNID/endpoint:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/<UNID>/<EP>/DoorLock/GeneratedCommands/SetUser'
+```
+
+<br><br>
+
+\subsection door_lock_get_user_cmd DoorLock/GetUser Command
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/DoorLock/Commands/GetUser
+[PREFIX]/DoorLock/GeneratedCommands/GetUser
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "DoorLock Cluster GetUser Command Properties",
+  "type": "object",
+  "properties": {
+    "UserIndex": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "UserIndex"
+  ]
+}
+```
+
+**Example Mosquitto CLI Tool Usage**
+
+To send a DoorLock/GetUser command under the by-unid topic space:
+
+```console
+mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/DoorLock/Commands/GetUser' -m  '{ "UserIndex": <USER_INDEX_VALUE> }'
+```
+
+To receive a DoorLock/GetUser generated command from a UNID/endpoint:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/<UNID>/<EP>/DoorLock/GeneratedCommands/GetUser'
+```
+
+<br><br>
+
+\subsection door_lock_get_user_response_cmd DoorLock/GetUserResponse Command
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/DoorLock/Commands/GetUserResponse
+[PREFIX]/DoorLock/GeneratedCommands/GetUserResponse
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "DoorLock Cluster GetUserResponse Command Properties",
+  "type": "object",
+  "properties": {
+  },
+  "required": [
+  ]
+}
+```
+
+**Example Mosquitto CLI Tool Usage**
+
+To send a DoorLock/GetUserResponse command under the by-unid topic space:
+
+```console
+mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/DoorLock/Commands/GetUserResponse' -m  '{  }'
+```
+
+To receive a DoorLock/GetUserResponse generated command from a UNID/endpoint:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/<UNID>/<EP>/DoorLock/GeneratedCommands/GetUserResponse'
+```
+
+<br><br>
+
+\subsection door_lock_clear_user_cmd DoorLock/ClearUser Command
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/DoorLock/Commands/ClearUser
+[PREFIX]/DoorLock/GeneratedCommands/ClearUser
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "DoorLock Cluster ClearUser Command Properties",
+  "type": "object",
+  "properties": {
+    "UserIndex": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "UserIndex"
+  ]
+}
+```
+
+**Example Mosquitto CLI Tool Usage**
+
+To send a DoorLock/ClearUser command under the by-unid topic space:
+
+```console
+mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/DoorLock/Commands/ClearUser' -m  '{ "UserIndex": <USER_INDEX_VALUE> }'
+```
+
+To receive a DoorLock/ClearUser generated command from a UNID/endpoint:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/<UNID>/<EP>/DoorLock/GeneratedCommands/ClearUser'
 ```
 
 <br><br>
@@ -16705,6 +17127,276 @@ mosquitto_sub -t 'ucl/by-unid/<UNID>/<EP>/DoorLock/GeneratedCommands/Programming
 
 <br><br>
 
+\subsection door_lock_set_credential_cmd DoorLock/SetCredential Command
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/DoorLock/Commands/SetCredential
+[PREFIX]/DoorLock/GeneratedCommands/SetCredential
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "DoorLock Cluster SetCredential Command Properties",
+  "type": "object",
+  "properties": {
+    "OperationType": {
+      "type": "DataOperationTypeEnum"
+    },
+    "Credential": {
+      "type": "CredentialStruct"
+    },
+    "CredentialData": {
+      "type": "string"
+    },
+    "UserIndex": {
+      "type": "integer"
+    },
+    "UserStatus": {
+      "type": "DrlkSettableUserStatus"
+    },
+    "UserType": {
+      "type": "DrlkUserType"
+    }
+  },
+  "required": [
+    "OperationType",
+    "Credential",
+    "CredentialData",
+    "UserIndex",
+    "UserStatus",
+    "UserType"
+  ]
+}
+```
+
+**Example Mosquitto CLI Tool Usage**
+
+To send a DoorLock/SetCredential command under the by-unid topic space:
+
+```console
+mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/DoorLock/Commands/SetCredential' -m  '{ "OperationType": <OPERATION_TYPE_VALUE>,"Credential": <CREDENTIAL_VALUE>,"CredentialData": <CREDENTIAL_DATA_VALUE>,"UserIndex": <USER_INDEX_VALUE>,"UserStatus": <USER_STATUS_VALUE>,"UserType": <USER_TYPE_VALUE> }'
+```
+
+To receive a DoorLock/SetCredential generated command from a UNID/endpoint:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/<UNID>/<EP>/DoorLock/GeneratedCommands/SetCredential'
+```
+
+<br><br>
+
+\subsection door_lock_set_credential_response_cmd DoorLock/SetCredentialResponse Command
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/DoorLock/Commands/SetCredentialResponse
+[PREFIX]/DoorLock/GeneratedCommands/SetCredentialResponse
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "DoorLock Cluster SetCredentialResponse Command Properties",
+  "type": "object",
+  "properties": {
+  },
+  "required": [
+  ]
+}
+```
+
+**Example Mosquitto CLI Tool Usage**
+
+To send a DoorLock/SetCredentialResponse command under the by-unid topic space:
+
+```console
+mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/DoorLock/Commands/SetCredentialResponse' -m  '{  }'
+```
+
+To receive a DoorLock/SetCredentialResponse generated command from a UNID/endpoint:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/<UNID>/<EP>/DoorLock/GeneratedCommands/SetCredentialResponse'
+```
+
+<br><br>
+
+\subsection door_lock_get_credential_status_cmd DoorLock/GetCredentialStatus Command
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/DoorLock/Commands/GetCredentialStatus
+[PREFIX]/DoorLock/GeneratedCommands/GetCredentialStatus
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "DoorLock Cluster GetCredentialStatus Command Properties",
+  "type": "object",
+  "properties": {
+    "Credential": {
+      "type": "CredentialStruct"
+    }
+  },
+  "required": [
+    "Credential"
+  ]
+}
+```
+
+**Example Mosquitto CLI Tool Usage**
+
+To send a DoorLock/GetCredentialStatus command under the by-unid topic space:
+
+```console
+mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/DoorLock/Commands/GetCredentialStatus' -m  '{ "Credential": <CREDENTIAL_VALUE> }'
+```
+
+To receive a DoorLock/GetCredentialStatus generated command from a UNID/endpoint:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/<UNID>/<EP>/DoorLock/GeneratedCommands/GetCredentialStatus'
+```
+
+<br><br>
+
+\subsection door_lock_get_credential_status_response_cmd DoorLock/GetCredentialStatusResponse Command
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/DoorLock/Commands/GetCredentialStatusResponse
+[PREFIX]/DoorLock/GeneratedCommands/GetCredentialStatusResponse
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "DoorLock Cluster GetCredentialStatusResponse Command Properties",
+  "type": "object",
+  "properties": {
+  },
+  "required": [
+  ]
+}
+```
+
+**Example Mosquitto CLI Tool Usage**
+
+To send a DoorLock/GetCredentialStatusResponse command under the by-unid topic space:
+
+```console
+mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/DoorLock/Commands/GetCredentialStatusResponse' -m  '{  }'
+```
+
+To receive a DoorLock/GetCredentialStatusResponse generated command from a UNID/endpoint:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/<UNID>/<EP>/DoorLock/GeneratedCommands/GetCredentialStatusResponse'
+```
+
+<br><br>
+
+\subsection door_lock_clear_credential_cmd DoorLock/ClearCredential Command
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/DoorLock/Commands/ClearCredential
+[PREFIX]/DoorLock/GeneratedCommands/ClearCredential
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "DoorLock Cluster ClearCredential Command Properties",
+  "type": "object",
+  "properties": {
+    "Credential": {
+      "type": "CredentialStruct"
+    }
+  },
+  "required": [
+    "Credential"
+  ]
+}
+```
+
+**Example Mosquitto CLI Tool Usage**
+
+To send a DoorLock/ClearCredential command under the by-unid topic space:
+
+```console
+mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/DoorLock/Commands/ClearCredential' -m  '{ "Credential": <CREDENTIAL_VALUE> }'
+```
+
+To receive a DoorLock/ClearCredential generated command from a UNID/endpoint:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/<UNID>/<EP>/DoorLock/GeneratedCommands/ClearCredential'
+```
+
+<br><br>
+
+\subsection door_lock_unbolt_door_cmd DoorLock/UnboltDoor Command
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/DoorLock/Commands/UnboltDoor
+[PREFIX]/DoorLock/GeneratedCommands/UnboltDoor
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "DoorLock Cluster UnboltDoor Command Properties",
+  "type": "object",
+  "properties": {
+    "PINCode": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "PINCode"
+  ]
+}
+```
+
+**Example Mosquitto CLI Tool Usage**
+
+To send a DoorLock/UnboltDoor command under the by-unid topic space:
+
+```console
+mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/DoorLock/Commands/UnboltDoor' -m  '{ "PINCode": <PIN_CODE_VALUE> }'
+```
+
+To receive a DoorLock/UnboltDoor generated command from a UNID/endpoint:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/<UNID>/<EP>/DoorLock/GeneratedCommands/UnboltDoor'
+```
+
+<br><br>
+
 \subsection door_lock_write_attr_cmd DoorLock/WriteAttributes Command
 
 **MQTT Topic Pattern:**
@@ -16760,6 +17452,9 @@ mosquitto_sub -t 'ucl/by-unid/<UNID>/<EP>/DoorLock/GeneratedCommands/Programming
     "EnablePrivacyModeButton": {
       "type": "boolean"
     },
+    "LocalProgrammingFeatures": {
+      "type": "DoorLockLocalProgrammingFeatures"
+    },
     "WrongCodeEntryLimit": {
       "type": "integer"
     },
@@ -16771,6 +17466,9 @@ mosquitto_sub -t 'ucl/by-unid/<UNID>/<EP>/DoorLock/GeneratedCommands/Programming
     },
     "RequirePINforRFOperation": {
       "type": "boolean"
+    },
+    "ExpiringUserTimeout": {
+      "type": "integer"
     },
     "AlarmMask": {
       "type": "DoorLockAlarmMask"
@@ -16795,7 +17493,7 @@ mosquitto_sub -t 'ucl/by-unid/<UNID>/<EP>/DoorLock/GeneratedCommands/Programming
     },
     "RFIDProgrammingEventMask": {
       "type": "DoorLockRFIDProgrammingEventMask"
-    }
+    },
   },
   "required": [
     "value"
@@ -16808,7 +17506,7 @@ mosquitto_sub -t 'ucl/by-unid/<UNID>/<EP>/DoorLock/GeneratedCommands/Programming
 To update all DoorLock attributes under the by-unid topic space:
 
 ```console
-mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/DoorLock/Commands/WriteAttributes' -m  '{ "DoorOpenEvents": <DOOR_OPEN_EVENTS_VALUE> ,"DoorClosedEvents": <DOOR_CLOSED_EVENTS_VALUE> ,"OpenPeriod": <OPEN_PERIOD_VALUE> ,"EnableLogging": <ENABLE_LOGGING_VALUE> ,"Language": <LANGUAGE_VALUE> ,"LEDSettings": <LED_SETTINGS_VALUE> ,"AutoRelockTime": <AUTO_RELOCK_TIME_VALUE> ,"SoundVolume": <SOUND_VOLUME_VALUE> ,"OperatingMode": <OPERATING_MODE_VALUE> ,"EnableLocalProgramming": <ENABLE_LOCAL_PROGRAMMING_VALUE> ,"EnableOneTouchLocking": <ENABLE_ONE_TOUCH_LOCKING_VALUE> ,"EnableInsideStatusLED": <ENABLE_INSIDE_STATUSLED_VALUE> ,"EnablePrivacyModeButton": <ENABLE_PRIVACY_MODE_BUTTON_VALUE> ,"WrongCodeEntryLimit": <WRONG_CODE_ENTRY_LIMIT_VALUE> ,"UserCodeTemporaryDisableTime": <USER_CODE_TEMPORARY_DISABLE_TIME_VALUE> ,"SendPINOverTheAir": <SENDPIN_OVER_THE_AIR_VALUE> ,"RequirePINforRFOperation": <REQUIREPI_NFORRF_OPERATION_VALUE> ,"AlarmMask": <ALARM_MASK_VALUE> ,"KeypadOperationEventMask": <KEYPAD_OPERATION_EVENT_MASK_VALUE> ,"RFOperationEventMask": <RF_OPERATION_EVENT_MASK_VALUE> ,"ManualOperationEventMask": <MANUAL_OPERATION_EVENT_MASK_VALUE> ,"RFIDOperationEventMask": <RFID_OPERATION_EVENT_MASK_VALUE> ,"KeypadProgrammingEventMask": <KEYPAD_PROGRAMMING_EVENT_MASK_VALUE> ,"RFProgrammingEventMask": <RF_PROGRAMMING_EVENT_MASK_VALUE> ,"RFIDProgrammingEventMask": <RFID_PROGRAMMING_EVENT_MASK_VALUE>  }'
+mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/DoorLock/Commands/WriteAttributes' -m  '{ "DoorOpenEvents": <DOOR_OPEN_EVENTS_VALUE> ,"DoorClosedEvents": <DOOR_CLOSED_EVENTS_VALUE> ,"OpenPeriod": <OPEN_PERIOD_VALUE> ,"EnableLogging": <ENABLE_LOGGING_VALUE> ,"Language": <LANGUAGE_VALUE> ,"LEDSettings": <LED_SETTINGS_VALUE> ,"AutoRelockTime": <AUTO_RELOCK_TIME_VALUE> ,"SoundVolume": <SOUND_VOLUME_VALUE> ,"OperatingMode": <OPERATING_MODE_VALUE> ,"EnableLocalProgramming": <ENABLE_LOCAL_PROGRAMMING_VALUE> ,"EnableOneTouchLocking": <ENABLE_ONE_TOUCH_LOCKING_VALUE> ,"EnableInsideStatusLED": <ENABLE_INSIDE_STATUSLED_VALUE> ,"EnablePrivacyModeButton": <ENABLE_PRIVACY_MODE_BUTTON_VALUE> ,"LocalProgrammingFeatures": <LOCAL_PROGRAMMING_FEATURES_VALUE> ,"WrongCodeEntryLimit": <WRONG_CODE_ENTRY_LIMIT_VALUE> ,"UserCodeTemporaryDisableTime": <USER_CODE_TEMPORARY_DISABLE_TIME_VALUE> ,"SendPINOverTheAir": <SEND_PIN_OVER_THE_AIR_VALUE> ,"RequirePINforRFOperation": <REQUIRE_PI_NFOR_RF_OPERATION_VALUE> ,"ExpiringUserTimeout": <EXPIRING_USER_TIMEOUT_VALUE> ,"AlarmMask": <ALARM_MASK_VALUE> ,"KeypadOperationEventMask": <KEYPAD_OPERATION_EVENT_MASK_VALUE> ,"RFOperationEventMask": <RF_OPERATION_EVENT_MASK_VALUE> ,"ManualOperationEventMask": <MANUAL_OPERATION_EVENT_MASK_VALUE> ,"RFIDOperationEventMask": <RFID_OPERATION_EVENT_MASK_VALUE> ,"KeypadProgrammingEventMask": <KEYPAD_PROGRAMMING_EVENT_MASK_VALUE> ,"RFProgrammingEventMask": <RF_PROGRAMMING_EVENT_MASK_VALUE> ,"RFIDProgrammingEventMask": <RFID_PROGRAMMING_EVENT_MASK_VALUE> , }'
 ```
 
 > NOTE: Specify only the list of attributes to write in this command.
@@ -16855,6 +17553,8 @@ mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/DoorLock/Commands/WriteAttributes' -m 
           "MinPINCodeLength",
           "MaxRFIDCodeLength",
           "MinRFIDCodeLength",
+          "CredentialRulesSupport",
+          "NumberOfCredentialsSupportedPerUser",
           "EnableLogging",
           "Language",
           "LEDSettings",
@@ -16867,11 +17567,13 @@ mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/DoorLock/Commands/WriteAttributes' -m 
           "EnableOneTouchLocking",
           "EnableInsideStatusLED",
           "EnablePrivacyModeButton",
+          "LocalProgrammingFeatures",
           "WrongCodeEntryLimit",
           "UserCodeTemporaryDisableTime",
           "SendPINOverTheAir",
           "RequirePINforRFOperation",
           "SecurityLevel",
+          "ExpiringUserTimeout",
           "AlarmMask",
           "KeypadOperationEventMask",
           "RFOperationEventMask",
@@ -16879,7 +17581,8 @@ mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/DoorLock/Commands/WriteAttributes' -m 
           "RFIDOperationEventMask",
           "KeypadProgrammingEventMask",
           "RFProgrammingEventMask",
-          "RFIDProgrammingEventMask"
+          "RFIDProgrammingEventMask",
+          "FeatureMap"
         ]
       }
     }
@@ -26535,7 +27238,7 @@ ucl/by-unid/<UNID>/ep0/ColorControl/Attributes/ColorLoopActive/Reported { "value
   "type": "object",
   "properties": {
     "value": {
-      "type": "CCColorLoopDirection"
+      "type": "integer"
     }
   },
   "required": [
@@ -40529,7 +41232,7 @@ ucl/by-unid/<UNID>/ep0/ElectricalMeasurement/Attributes/PowerFactor/Reported { "
 
 <br><br>
 
-\subsection electrical_measurement_attr_averagerms_voltage_measurement_period ElectricalMeasurement/AverageRMSVoltageMeasurementPeriod Attribute
+\subsection electrical_measurement_attr_average_rms_voltage_measurement_period ElectricalMeasurement/AverageRMSVoltageMeasurementPeriod Attribute
 
 **MQTT Topic Pattern:**
 
@@ -40566,14 +41269,14 @@ mosquitto_sub -t 'ucl/by-unid/+/+/ElectricalMeasurement/Attributes/AverageRMSVol
 
 # Example output
 
-ucl/by-unid/<UNID>/ep0/ElectricalMeasurement/Attributes/AverageRMSVoltageMeasurementPeriod/Desired { "value": <DESIRED_AVERAGERMS_VOLTAGE_MEASUREMENT_PERIOD>}
-ucl/by-unid/<UNID>/ep0/ElectricalMeasurement/Attributes/AverageRMSVoltageMeasurementPeriod/Reported { "value": <REPORTED_AVERAGERMS_VOLTAGE_MEASUREMENT_PERIOD>}
+ucl/by-unid/<UNID>/ep0/ElectricalMeasurement/Attributes/AverageRMSVoltageMeasurementPeriod/Desired { "value": <DESIRED_AVERAGE_RMS_VOLTAGE_MEASUREMENT_PERIOD>}
+ucl/by-unid/<UNID>/ep0/ElectricalMeasurement/Attributes/AverageRMSVoltageMeasurementPeriod/Reported { "value": <REPORTED_AVERAGE_RMS_VOLTAGE_MEASUREMENT_PERIOD>}
 
 ```
 
 <br><br>
 
-\subsection electrical_measurement_attr_averagerms_over_voltage_counter ElectricalMeasurement/AverageRMSOverVoltageCounter Attribute
+\subsection electrical_measurement_attr_average_rms_over_voltage_counter ElectricalMeasurement/AverageRMSOverVoltageCounter Attribute
 
 **MQTT Topic Pattern:**
 
@@ -40610,14 +41313,14 @@ mosquitto_sub -t 'ucl/by-unid/+/+/ElectricalMeasurement/Attributes/AverageRMSOve
 
 # Example output
 
-ucl/by-unid/<UNID>/ep0/ElectricalMeasurement/Attributes/AverageRMSOverVoltageCounter/Desired { "value": <DESIRED_AVERAGERMS_OVER_VOLTAGE_COUNTER>}
-ucl/by-unid/<UNID>/ep0/ElectricalMeasurement/Attributes/AverageRMSOverVoltageCounter/Reported { "value": <REPORTED_AVERAGERMS_OVER_VOLTAGE_COUNTER>}
+ucl/by-unid/<UNID>/ep0/ElectricalMeasurement/Attributes/AverageRMSOverVoltageCounter/Desired { "value": <DESIRED_AVERAGE_RMS_OVER_VOLTAGE_COUNTER>}
+ucl/by-unid/<UNID>/ep0/ElectricalMeasurement/Attributes/AverageRMSOverVoltageCounter/Reported { "value": <REPORTED_AVERAGE_RMS_OVER_VOLTAGE_COUNTER>}
 
 ```
 
 <br><br>
 
-\subsection electrical_measurement_attr_averagerms_under_voltage_counter ElectricalMeasurement/AverageRMSUnderVoltageCounter Attribute
+\subsection electrical_measurement_attr_average_rms_under_voltage_counter ElectricalMeasurement/AverageRMSUnderVoltageCounter Attribute
 
 **MQTT Topic Pattern:**
 
@@ -40654,8 +41357,8 @@ mosquitto_sub -t 'ucl/by-unid/+/+/ElectricalMeasurement/Attributes/AverageRMSUnd
 
 # Example output
 
-ucl/by-unid/<UNID>/ep0/ElectricalMeasurement/Attributes/AverageRMSUnderVoltageCounter/Desired { "value": <DESIRED_AVERAGERMS_UNDER_VOLTAGE_COUNTER>}
-ucl/by-unid/<UNID>/ep0/ElectricalMeasurement/Attributes/AverageRMSUnderVoltageCounter/Reported { "value": <REPORTED_AVERAGERMS_UNDER_VOLTAGE_COUNTER>}
+ucl/by-unid/<UNID>/ep0/ElectricalMeasurement/Attributes/AverageRMSUnderVoltageCounter/Desired { "value": <DESIRED_AVERAGE_RMS_UNDER_VOLTAGE_COUNTER>}
+ucl/by-unid/<UNID>/ep0/ElectricalMeasurement/Attributes/AverageRMSUnderVoltageCounter/Reported { "value": <REPORTED_AVERAGE_RMS_UNDER_VOLTAGE_COUNTER>}
 
 ```
 
@@ -41453,7 +42156,7 @@ ucl/by-unid/<UNID>/ep0/ElectricalMeasurement/Attributes/ACReactivePowerOverload/
 
 <br><br>
 
-\subsection electrical_measurement_attr_averagerms_over_voltage ElectricalMeasurement/AverageRMSOverVoltage Attribute
+\subsection electrical_measurement_attr_average_rms_over_voltage ElectricalMeasurement/AverageRMSOverVoltage Attribute
 
 **MQTT Topic Pattern:**
 
@@ -41490,14 +42193,14 @@ mosquitto_sub -t 'ucl/by-unid/+/+/ElectricalMeasurement/Attributes/AverageRMSOve
 
 # Example output
 
-ucl/by-unid/<UNID>/ep0/ElectricalMeasurement/Attributes/AverageRMSOverVoltage/Desired { "value": <DESIRED_AVERAGERMS_OVER_VOLTAGE>}
-ucl/by-unid/<UNID>/ep0/ElectricalMeasurement/Attributes/AverageRMSOverVoltage/Reported { "value": <REPORTED_AVERAGERMS_OVER_VOLTAGE>}
+ucl/by-unid/<UNID>/ep0/ElectricalMeasurement/Attributes/AverageRMSOverVoltage/Desired { "value": <DESIRED_AVERAGE_RMS_OVER_VOLTAGE>}
+ucl/by-unid/<UNID>/ep0/ElectricalMeasurement/Attributes/AverageRMSOverVoltage/Reported { "value": <REPORTED_AVERAGE_RMS_OVER_VOLTAGE>}
 
 ```
 
 <br><br>
 
-\subsection electrical_measurement_attr_averagerms_under_voltage ElectricalMeasurement/AverageRMSUnderVoltage Attribute
+\subsection electrical_measurement_attr_average_rms_under_voltage ElectricalMeasurement/AverageRMSUnderVoltage Attribute
 
 **MQTT Topic Pattern:**
 
@@ -41534,8 +42237,8 @@ mosquitto_sub -t 'ucl/by-unid/+/+/ElectricalMeasurement/Attributes/AverageRMSUnd
 
 # Example output
 
-ucl/by-unid/<UNID>/ep0/ElectricalMeasurement/Attributes/AverageRMSUnderVoltage/Desired { "value": <DESIRED_AVERAGERMS_UNDER_VOLTAGE>}
-ucl/by-unid/<UNID>/ep0/ElectricalMeasurement/Attributes/AverageRMSUnderVoltage/Reported { "value": <REPORTED_AVERAGERMS_UNDER_VOLTAGE>}
+ucl/by-unid/<UNID>/ep0/ElectricalMeasurement/Attributes/AverageRMSUnderVoltage/Desired { "value": <DESIRED_AVERAGE_RMS_UNDER_VOLTAGE>}
+ucl/by-unid/<UNID>/ep0/ElectricalMeasurement/Attributes/AverageRMSUnderVoltage/Reported { "value": <REPORTED_AVERAGE_RMS_UNDER_VOLTAGE>}
 
 ```
 
@@ -42377,7 +43080,7 @@ ucl/by-unid/<UNID>/ep0/ElectricalMeasurement/Attributes/PowerFactorPhB/Reported 
 
 <br><br>
 
-\subsection electrical_measurement_attr_averagerms_voltage_measurement_period_phb ElectricalMeasurement/AverageRMSVoltageMeasurementPeriodPhB Attribute
+\subsection electrical_measurement_attr_average_rms_voltage_measurement_period_phb ElectricalMeasurement/AverageRMSVoltageMeasurementPeriodPhB Attribute
 
 **MQTT Topic Pattern:**
 
@@ -42414,14 +43117,14 @@ mosquitto_sub -t 'ucl/by-unid/+/+/ElectricalMeasurement/Attributes/AverageRMSVol
 
 # Example output
 
-ucl/by-unid/<UNID>/ep0/ElectricalMeasurement/Attributes/AverageRMSVoltageMeasurementPeriodPhB/Desired { "value": <DESIRED_AVERAGERMS_VOLTAGE_MEASUREMENT_PERIOD_PHB>}
-ucl/by-unid/<UNID>/ep0/ElectricalMeasurement/Attributes/AverageRMSVoltageMeasurementPeriodPhB/Reported { "value": <REPORTED_AVERAGERMS_VOLTAGE_MEASUREMENT_PERIOD_PHB>}
+ucl/by-unid/<UNID>/ep0/ElectricalMeasurement/Attributes/AverageRMSVoltageMeasurementPeriodPhB/Desired { "value": <DESIRED_AVERAGE_RMS_VOLTAGE_MEASUREMENT_PERIOD_PHB>}
+ucl/by-unid/<UNID>/ep0/ElectricalMeasurement/Attributes/AverageRMSVoltageMeasurementPeriodPhB/Reported { "value": <REPORTED_AVERAGE_RMS_VOLTAGE_MEASUREMENT_PERIOD_PHB>}
 
 ```
 
 <br><br>
 
-\subsection electrical_measurement_attr_averagerms_over_voltage_counter_phb ElectricalMeasurement/AverageRMSOverVoltageCounterPhB Attribute
+\subsection electrical_measurement_attr_average_rms_over_voltage_counter_phb ElectricalMeasurement/AverageRMSOverVoltageCounterPhB Attribute
 
 **MQTT Topic Pattern:**
 
@@ -42458,14 +43161,14 @@ mosquitto_sub -t 'ucl/by-unid/+/+/ElectricalMeasurement/Attributes/AverageRMSOve
 
 # Example output
 
-ucl/by-unid/<UNID>/ep0/ElectricalMeasurement/Attributes/AverageRMSOverVoltageCounterPhB/Desired { "value": <DESIRED_AVERAGERMS_OVER_VOLTAGE_COUNTER_PHB>}
-ucl/by-unid/<UNID>/ep0/ElectricalMeasurement/Attributes/AverageRMSOverVoltageCounterPhB/Reported { "value": <REPORTED_AVERAGERMS_OVER_VOLTAGE_COUNTER_PHB>}
+ucl/by-unid/<UNID>/ep0/ElectricalMeasurement/Attributes/AverageRMSOverVoltageCounterPhB/Desired { "value": <DESIRED_AVERAGE_RMS_OVER_VOLTAGE_COUNTER_PHB>}
+ucl/by-unid/<UNID>/ep0/ElectricalMeasurement/Attributes/AverageRMSOverVoltageCounterPhB/Reported { "value": <REPORTED_AVERAGE_RMS_OVER_VOLTAGE_COUNTER_PHB>}
 
 ```
 
 <br><br>
 
-\subsection electrical_measurement_attr_averagerms_under_voltage_counter_phb ElectricalMeasurement/AverageRMSUnderVoltageCounterPhB Attribute
+\subsection electrical_measurement_attr_average_rms_under_voltage_counter_phb ElectricalMeasurement/AverageRMSUnderVoltageCounterPhB Attribute
 
 **MQTT Topic Pattern:**
 
@@ -42502,8 +43205,8 @@ mosquitto_sub -t 'ucl/by-unid/+/+/ElectricalMeasurement/Attributes/AverageRMSUnd
 
 # Example output
 
-ucl/by-unid/<UNID>/ep0/ElectricalMeasurement/Attributes/AverageRMSUnderVoltageCounterPhB/Desired { "value": <DESIRED_AVERAGERMS_UNDER_VOLTAGE_COUNTER_PHB>}
-ucl/by-unid/<UNID>/ep0/ElectricalMeasurement/Attributes/AverageRMSUnderVoltageCounterPhB/Reported { "value": <REPORTED_AVERAGERMS_UNDER_VOLTAGE_COUNTER_PHB>}
+ucl/by-unid/<UNID>/ep0/ElectricalMeasurement/Attributes/AverageRMSUnderVoltageCounterPhB/Desired { "value": <DESIRED_AVERAGE_RMS_UNDER_VOLTAGE_COUNTER_PHB>}
+ucl/by-unid/<UNID>/ep0/ElectricalMeasurement/Attributes/AverageRMSUnderVoltageCounterPhB/Reported { "value": <REPORTED_AVERAGE_RMS_UNDER_VOLTAGE_COUNTER_PHB>}
 
 ```
 
@@ -43345,7 +44048,7 @@ ucl/by-unid/<UNID>/ep0/ElectricalMeasurement/Attributes/PowerFactorPhC/Reported 
 
 <br><br>
 
-\subsection electrical_measurement_attr_averagerms_voltage_measurement_period_phc ElectricalMeasurement/AverageRMSVoltageMeasurementPeriodPhC Attribute
+\subsection electrical_measurement_attr_average_rms_voltage_measurement_period_phc ElectricalMeasurement/AverageRMSVoltageMeasurementPeriodPhC Attribute
 
 **MQTT Topic Pattern:**
 
@@ -43382,14 +44085,14 @@ mosquitto_sub -t 'ucl/by-unid/+/+/ElectricalMeasurement/Attributes/AverageRMSVol
 
 # Example output
 
-ucl/by-unid/<UNID>/ep0/ElectricalMeasurement/Attributes/AverageRMSVoltageMeasurementPeriodPhC/Desired { "value": <DESIRED_AVERAGERMS_VOLTAGE_MEASUREMENT_PERIOD_PHC>}
-ucl/by-unid/<UNID>/ep0/ElectricalMeasurement/Attributes/AverageRMSVoltageMeasurementPeriodPhC/Reported { "value": <REPORTED_AVERAGERMS_VOLTAGE_MEASUREMENT_PERIOD_PHC>}
+ucl/by-unid/<UNID>/ep0/ElectricalMeasurement/Attributes/AverageRMSVoltageMeasurementPeriodPhC/Desired { "value": <DESIRED_AVERAGE_RMS_VOLTAGE_MEASUREMENT_PERIOD_PHC>}
+ucl/by-unid/<UNID>/ep0/ElectricalMeasurement/Attributes/AverageRMSVoltageMeasurementPeriodPhC/Reported { "value": <REPORTED_AVERAGE_RMS_VOLTAGE_MEASUREMENT_PERIOD_PHC>}
 
 ```
 
 <br><br>
 
-\subsection electrical_measurement_attr_averagerms_over_voltage_counter_phc ElectricalMeasurement/AverageRMSOverVoltageCounterPhC Attribute
+\subsection electrical_measurement_attr_average_rms_over_voltage_counter_phc ElectricalMeasurement/AverageRMSOverVoltageCounterPhC Attribute
 
 **MQTT Topic Pattern:**
 
@@ -43426,14 +44129,14 @@ mosquitto_sub -t 'ucl/by-unid/+/+/ElectricalMeasurement/Attributes/AverageRMSOve
 
 # Example output
 
-ucl/by-unid/<UNID>/ep0/ElectricalMeasurement/Attributes/AverageRMSOverVoltageCounterPhC/Desired { "value": <DESIRED_AVERAGERMS_OVER_VOLTAGE_COUNTER_PHC>}
-ucl/by-unid/<UNID>/ep0/ElectricalMeasurement/Attributes/AverageRMSOverVoltageCounterPhC/Reported { "value": <REPORTED_AVERAGERMS_OVER_VOLTAGE_COUNTER_PHC>}
+ucl/by-unid/<UNID>/ep0/ElectricalMeasurement/Attributes/AverageRMSOverVoltageCounterPhC/Desired { "value": <DESIRED_AVERAGE_RMS_OVER_VOLTAGE_COUNTER_PHC>}
+ucl/by-unid/<UNID>/ep0/ElectricalMeasurement/Attributes/AverageRMSOverVoltageCounterPhC/Reported { "value": <REPORTED_AVERAGE_RMS_OVER_VOLTAGE_COUNTER_PHC>}
 
 ```
 
 <br><br>
 
-\subsection electrical_measurement_attr_averagerms_under_voltage_counter_phc ElectricalMeasurement/AverageRMSUnderVoltageCounterPhC Attribute
+\subsection electrical_measurement_attr_average_rms_under_voltage_counter_phc ElectricalMeasurement/AverageRMSUnderVoltageCounterPhC Attribute
 
 **MQTT Topic Pattern:**
 
@@ -43470,8 +44173,8 @@ mosquitto_sub -t 'ucl/by-unid/+/+/ElectricalMeasurement/Attributes/AverageRMSUnd
 
 # Example output
 
-ucl/by-unid/<UNID>/ep0/ElectricalMeasurement/Attributes/AverageRMSUnderVoltageCounterPhC/Desired { "value": <DESIRED_AVERAGERMS_UNDER_VOLTAGE_COUNTER_PHC>}
-ucl/by-unid/<UNID>/ep0/ElectricalMeasurement/Attributes/AverageRMSUnderVoltageCounterPhC/Reported { "value": <REPORTED_AVERAGERMS_UNDER_VOLTAGE_COUNTER_PHC>}
+ucl/by-unid/<UNID>/ep0/ElectricalMeasurement/Attributes/AverageRMSUnderVoltageCounterPhC/Desired { "value": <DESIRED_AVERAGE_RMS_UNDER_VOLTAGE_COUNTER_PHC>}
+ucl/by-unid/<UNID>/ep0/ElectricalMeasurement/Attributes/AverageRMSUnderVoltageCounterPhC/Reported { "value": <REPORTED_AVERAGE_RMS_UNDER_VOLTAGE_COUNTER_PHC>}
 
 ```
 
@@ -44094,7 +44797,7 @@ mosquitto_sub -t 'ucl/by-unid/<UNID>/<EP>/ElectricalMeasurement/GeneratedCommand
 To update all ElectricalMeasurement attributes under the by-unid topic space:
 
 ```console
-mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/ElectricalMeasurement/Commands/WriteAttributes' -m  '{ "AverageRMSVoltageMeasurementPeriod": <AVERAGERMS_VOLTAGE_MEASUREMENT_PERIOD_VALUE> ,"AverageRMSOverVoltageCounter": <AVERAGERMS_OVER_VOLTAGE_COUNTER_VALUE> ,"AverageRMSUnderVoltageCounter": <AVERAGERMS_UNDER_VOLTAGE_COUNTER_VALUE> ,"RMSExtremeOverVoltagePeriod": <RMS_EXTREME_OVER_VOLTAGE_PERIOD_VALUE> ,"RMSExtremeUnderVoltagePeriod": <RMS_EXTREME_UNDER_VOLTAGE_PERIOD_VALUE> ,"RMSVoltageSagPeriod": <RMS_VOLTAGE_SAG_PERIOD_VALUE> ,"RMSVoltageSwellPeriod": <RMS_VOLTAGE_SWELL_PERIOD_VALUE> ,"DCOverloadAlarmsMask": <DC_OVERLOAD_ALARMS_MASK_VALUE> ,"ACAlarmsMask": <AC_ALARMS_MASK_VALUE> ,"RMSExtremeOverVoltage": <RMS_EXTREME_OVER_VOLTAGE_VALUE> ,"RMSExtremeUnderVoltage": <RMS_EXTREME_UNDER_VOLTAGE_VALUE> ,"RMSVoltageSag": <RMS_VOLTAGE_SAG_VALUE> ,"RMSVoltageSwell": <RMS_VOLTAGE_SWELL_VALUE> ,"AverageRMSVoltageMeasurementPeriodPhB": <AVERAGERMS_VOLTAGE_MEASUREMENT_PERIOD_PHB_VALUE> ,"AverageRMSOverVoltageCounterPhB": <AVERAGERMS_OVER_VOLTAGE_COUNTER_PHB_VALUE> ,"AverageRMSUnderVoltageCounterPhB": <AVERAGERMS_UNDER_VOLTAGE_COUNTER_PHB_VALUE> ,"RMSExtremeOverVoltagePeriodPhB": <RMS_EXTREME_OVER_VOLTAGE_PERIOD_PHB_VALUE> ,"RMSExtremeUnderVoltagePeriodPhB": <RMS_EXTREME_UNDER_VOLTAGE_PERIOD_PHB_VALUE> ,"RMSVoltageSagPeriodPhB": <RMS_VOLTAGE_SAG_PERIOD_PHB_VALUE> ,"RMSVoltageSwellPeriodPhB": <RMS_VOLTAGE_SWELL_PERIOD_PHB_VALUE> ,"AverageRMSVoltageMeasurementPeriodPhC": <AVERAGERMS_VOLTAGE_MEASUREMENT_PERIOD_PHC_VALUE> ,"AverageRMSOverVoltageCounterPhC": <AVERAGERMS_OVER_VOLTAGE_COUNTER_PHC_VALUE> ,"AverageRMSUnderVoltageCounterPhC": <AVERAGERMS_UNDER_VOLTAGE_COUNTER_PHC_VALUE> ,"RMSExtremeOverVoltagePeriodPhC": <RMS_EXTREME_OVER_VOLTAGE_PERIOD_PHC_VALUE> ,"RMSExtremeUnderVoltagePeriodPhC": <RMS_EXTREME_UNDER_VOLTAGE_PERIOD_PHC_VALUE> ,"RMSVoltageSagPeriodPhC": <RMS_VOLTAGE_SAG_PERIOD_PHC_VALUE> ,"RMSVoltageSwellPeriodPhC": <RMS_VOLTAGE_SWELL_PERIOD_PHC_VALUE>  }'
+mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/ElectricalMeasurement/Commands/WriteAttributes' -m  '{ "AverageRMSVoltageMeasurementPeriod": <AVERAGE_RMS_VOLTAGE_MEASUREMENT_PERIOD_VALUE> ,"AverageRMSOverVoltageCounter": <AVERAGE_RMS_OVER_VOLTAGE_COUNTER_VALUE> ,"AverageRMSUnderVoltageCounter": <AVERAGE_RMS_UNDER_VOLTAGE_COUNTER_VALUE> ,"RMSExtremeOverVoltagePeriod": <RMS_EXTREME_OVER_VOLTAGE_PERIOD_VALUE> ,"RMSExtremeUnderVoltagePeriod": <RMS_EXTREME_UNDER_VOLTAGE_PERIOD_VALUE> ,"RMSVoltageSagPeriod": <RMS_VOLTAGE_SAG_PERIOD_VALUE> ,"RMSVoltageSwellPeriod": <RMS_VOLTAGE_SWELL_PERIOD_VALUE> ,"DCOverloadAlarmsMask": <DC_OVERLOAD_ALARMS_MASK_VALUE> ,"ACAlarmsMask": <AC_ALARMS_MASK_VALUE> ,"RMSExtremeOverVoltage": <RMS_EXTREME_OVER_VOLTAGE_VALUE> ,"RMSExtremeUnderVoltage": <RMS_EXTREME_UNDER_VOLTAGE_VALUE> ,"RMSVoltageSag": <RMS_VOLTAGE_SAG_VALUE> ,"RMSVoltageSwell": <RMS_VOLTAGE_SWELL_VALUE> ,"AverageRMSVoltageMeasurementPeriodPhB": <AVERAGE_RMS_VOLTAGE_MEASUREMENT_PERIOD_PHB_VALUE> ,"AverageRMSOverVoltageCounterPhB": <AVERAGE_RMS_OVER_VOLTAGE_COUNTER_PHB_VALUE> ,"AverageRMSUnderVoltageCounterPhB": <AVERAGE_RMS_UNDER_VOLTAGE_COUNTER_PHB_VALUE> ,"RMSExtremeOverVoltagePeriodPhB": <RMS_EXTREME_OVER_VOLTAGE_PERIOD_PHB_VALUE> ,"RMSExtremeUnderVoltagePeriodPhB": <RMS_EXTREME_UNDER_VOLTAGE_PERIOD_PHB_VALUE> ,"RMSVoltageSagPeriodPhB": <RMS_VOLTAGE_SAG_PERIOD_PHB_VALUE> ,"RMSVoltageSwellPeriodPhB": <RMS_VOLTAGE_SWELL_PERIOD_PHB_VALUE> ,"AverageRMSVoltageMeasurementPeriodPhC": <AVERAGE_RMS_VOLTAGE_MEASUREMENT_PERIOD_PHC_VALUE> ,"AverageRMSOverVoltageCounterPhC": <AVERAGE_RMS_OVER_VOLTAGE_COUNTER_PHC_VALUE> ,"AverageRMSUnderVoltageCounterPhC": <AVERAGE_RMS_UNDER_VOLTAGE_COUNTER_PHC_VALUE> ,"RMSExtremeOverVoltagePeriodPhC": <RMS_EXTREME_OVER_VOLTAGE_PERIOD_PHC_VALUE> ,"RMSExtremeUnderVoltagePeriodPhC": <RMS_EXTREME_UNDER_VOLTAGE_PERIOD_PHC_VALUE> ,"RMSVoltageSagPeriodPhC": <RMS_VOLTAGE_SAG_PERIOD_PHC_VALUE> ,"RMSVoltageSwellPeriodPhC": <RMS_VOLTAGE_SWELL_PERIOD_PHC_VALUE>  }'
 ```
 
 > NOTE: Specify only the list of attributes to write in this command.
@@ -45488,7 +46191,7 @@ ucl/by-unid/<UNID>/ep0/Diagnostics/Attributes/RelayedUcast/Reported { "value": <
 
 <br><br>
 
-\subsection diagnostics_attr_phy_tomac_queue_limit_reached Diagnostics/PHYToMACQueueLimitReached Attribute
+\subsection diagnostics_attr_phy_to_mac_queue_limit_reached Diagnostics/PHYToMACQueueLimitReached Attribute
 
 **MQTT Topic Pattern:**
 
@@ -45525,8 +46228,8 @@ mosquitto_sub -t 'ucl/by-unid/+/+/Diagnostics/Attributes/PHYToMACQueueLimitReach
 
 # Example output
 
-ucl/by-unid/<UNID>/ep0/Diagnostics/Attributes/PHYToMACQueueLimitReached/Desired { "value": <DESIRED_PHY_TOMAC_QUEUE_LIMIT_REACHED>}
-ucl/by-unid/<UNID>/ep0/Diagnostics/Attributes/PHYToMACQueueLimitReached/Reported { "value": <REPORTED_PHY_TOMAC_QUEUE_LIMIT_REACHED>}
+ucl/by-unid/<UNID>/ep0/Diagnostics/Attributes/PHYToMACQueueLimitReached/Desired { "value": <DESIRED_PHY_TO_MAC_QUEUE_LIMIT_REACHED>}
+ucl/by-unid/<UNID>/ep0/Diagnostics/Attributes/PHYToMACQueueLimitReached/Reported { "value": <REPORTED_PHY_TO_MAC_QUEUE_LIMIT_REACHED>}
 
 ```
 
@@ -45576,7 +46279,7 @@ ucl/by-unid/<UNID>/ep0/Diagnostics/Attributes/PacketValidateDropCount/Reported {
 
 <br><br>
 
-\subsection diagnostics_attr_averagemac_retry_peraps_message_sent Diagnostics/AverageMACRetryPerAPSMessageSent Attribute
+\subsection diagnostics_attr_average_mac_retry_per_aps_message_sent Diagnostics/AverageMACRetryPerAPSMessageSent Attribute
 
 **MQTT Topic Pattern:**
 
@@ -45613,8 +46316,8 @@ mosquitto_sub -t 'ucl/by-unid/+/+/Diagnostics/Attributes/AverageMACRetryPerAPSMe
 
 # Example output
 
-ucl/by-unid/<UNID>/ep0/Diagnostics/Attributes/AverageMACRetryPerAPSMessageSent/Desired { "value": <DESIRED_AVERAGEMAC_RETRY_PERAPS_MESSAGE_SENT>}
-ucl/by-unid/<UNID>/ep0/Diagnostics/Attributes/AverageMACRetryPerAPSMessageSent/Reported { "value": <REPORTED_AVERAGEMAC_RETRY_PERAPS_MESSAGE_SENT>}
+ucl/by-unid/<UNID>/ep0/Diagnostics/Attributes/AverageMACRetryPerAPSMessageSent/Desired { "value": <DESIRED_AVERAGE_MAC_RETRY_PER_APS_MESSAGE_SENT>}
+ucl/by-unid/<UNID>/ep0/Diagnostics/Attributes/AverageMACRetryPerAPSMessageSent/Reported { "value": <REPORTED_AVERAGE_MAC_RETRY_PER_APS_MESSAGE_SENT>}
 
 ```
 
@@ -46272,7 +46975,7 @@ ucl/by-unid/<UNID>/ProtocolController/RFTelemetry/SupportedGeneratedCommands { "
 To send a ProtocolController/RFTelemetry/TxReport command under the by-unid topic space:
 
 ```console
-mosquitto_pub -t 'ucl/by-unid/<UNID>/ProtocolController/RFTelemetry/Commands/TxReport' -m  '{ "SourceUNID": <SOURCEUNID_VALUE>,"DestinationUNID": <DESTINATIONUNID_VALUE>,"TransmissionSuccessful": <TRANSMISSION_SUCCESSFUL_VALUE>,"TransmissionTimeMs": <TRANSMISSION_TIME_MS_VALUE>,"TxPowerdBm": <TX_POWERD_BM_VALUE>,"TxChannel": <TX_CHANNEL_VALUE>,"RoutingAttempts": <ROUTING_ATTEMPTS_VALUE>,"RouteChanged": <ROUTE_CHANGED_VALUE>,"TransmissionSpeed": <TRANSMISSION_SPEED_VALUE>,"MeasuredNoiseFloordBm": <MEASURED_NOISE_FLOORD_BM_VALUE>,"LastRouteRepeaters": <LAST_ROUTE_REPEATERS_VALUE>,"IncomingRSSIRepeaters": <INCOMINGRSSI_REPEATERS_VALUE>,"AckRSSI": <ACKRSSI_VALUE>,"AckChannel": <ACK_CHANNEL_VALUE>,"LastRouteFailedLinkFunctionalUNID": <LAST_ROUTE_FAILED_LINK_FUNCTIONALUNID_VALUE>,"LastRouteFailedLinkNonFunctionalUNID": <LAST_ROUTE_FAILED_LINK_NON_FUNCTIONALUNID_VALUE>,"DestinationAckTxPowerdBm": <DESTINATION_ACK_TX_POWERD_BM_VALUE>,"DestinationAckMeasuredRSSI": <DESTINATION_ACK_MEASUREDRSSI_VALUE>,"DestinationAckMeasuredNoiseFloor": <DESTINATION_ACK_MEASURED_NOISE_FLOOR_VALUE> }'
+mosquitto_pub -t 'ucl/by-unid/<UNID>/ProtocolController/RFTelemetry/Commands/TxReport' -m  '{ "SourceUNID": <SOURCEUNID_VALUE>,"DestinationUNID": <DESTINATIONUNID_VALUE>,"TransmissionSuccessful": <TRANSMISSION_SUCCESSFUL_VALUE>,"TransmissionTimeMs": <TRANSMISSION_TIME_MS_VALUE>,"TxPowerdBm": <TX_POWERD_BM_VALUE>,"TxChannel": <TX_CHANNEL_VALUE>,"RoutingAttempts": <ROUTING_ATTEMPTS_VALUE>,"RouteChanged": <ROUTE_CHANGED_VALUE>,"TransmissionSpeed": <TRANSMISSION_SPEED_VALUE>,"MeasuredNoiseFloordBm": <MEASURED_NOISE_FLOORD_BM_VALUE>,"LastRouteRepeaters": <LAST_ROUTE_REPEATERS_VALUE>,"IncomingRSSIRepeaters": <INCOMING_RSSI_REPEATERS_VALUE>,"AckRSSI": <ACKRSSI_VALUE>,"AckChannel": <ACK_CHANNEL_VALUE>,"LastRouteFailedLinkFunctionalUNID": <LAST_ROUTE_FAILED_LINK_FUNCTIONALUNID_VALUE>,"LastRouteFailedLinkNonFunctionalUNID": <LAST_ROUTE_FAILED_LINK_NON_FUNCTIONALUNID_VALUE>,"DestinationAckTxPowerdBm": <DESTINATION_ACK_TX_POWERD_BM_VALUE>,"DestinationAckMeasuredRSSI": <DESTINATION_ACK_MEASUREDRSSI_VALUE>,"DestinationAckMeasuredNoiseFloor": <DESTINATION_ACK_MEASURED_NOISE_FLOOR_VALUE> }'
 ```
 
 To receive a ProtocolController/RFTelemetry/TxReport generated command from a UNID/endpoint:
@@ -49200,7 +49903,7 @@ ucl/by-unid/<UNID>/ApplicationMonitoring/Attributes/ApplicationConnected/Reporte
 
 <br><br>
 
-\subsection application_monitoring_attr_applicationmqtt_topics ApplicationMonitoring/ApplicationMQTTTopics Attribute
+\subsection application_monitoring_attr_application_mqtt_topics ApplicationMonitoring/ApplicationMQTTTopics Attribute
 
 **MQTT Topic Pattern:**
 
@@ -49240,8 +49943,8 @@ mosquitto_sub -t 'ucl/by-unid/+/ApplicationMonitoring/Attributes/ApplicationMQTT
 
 # Example output
 
-ucl/by-unid/<UNID>/ApplicationMonitoring/Attributes/ApplicationMQTTTopics/Desired { "value": [<DESIRED_APPLICATIONMQTT_TOPICS>,<DESIRED_APPLICATIONMQTT_TOPICS>]}
-ucl/by-unid/<UNID>/ApplicationMonitoring/Attributes/ApplicationMQTTTopics/Reported { "value": [<REPORTED_APPLICATIONMQTT_TOPICS>,<REPORTED_APPLICATIONMQTT_TOPICS>]}
+ucl/by-unid/<UNID>/ApplicationMonitoring/Attributes/ApplicationMQTTTopics/Desired { "value": [<DESIRED_APPLICATION_MQTT_TOPICS>,<DESIRED_APPLICATION_MQTT_TOPICS>]}
+ucl/by-unid/<UNID>/ApplicationMonitoring/Attributes/ApplicationMQTTTopics/Reported { "value": [<REPORTED_APPLICATION_MQTT_TOPICS>,<REPORTED_APPLICATION_MQTT_TOPICS>]}
 
 ```
 
@@ -49863,7 +50566,7 @@ ucl/by-unid/<UNID>/ApplicationMonitoring/Attributes/ApplicationStatisticsReporti
 
 <br><br>
 
-\subsection application_monitoring_attr_applicationcpu_usage_percent ApplicationMonitoring/ApplicationCPUUsagePercent Attribute
+\subsection application_monitoring_attr_application_cpu_usage_percent ApplicationMonitoring/ApplicationCPUUsagePercent Attribute
 
 **MQTT Topic Pattern:**
 
@@ -49900,14 +50603,14 @@ mosquitto_sub -t 'ucl/by-unid/+/ApplicationMonitoring/Attributes/ApplicationCPUU
 
 # Example output
 
-ucl/by-unid/<UNID>/ApplicationMonitoring/Attributes/ApplicationCPUUsagePercent/Desired { "value": <DESIRED_APPLICATIONCPU_USAGE_PERCENT>}
-ucl/by-unid/<UNID>/ApplicationMonitoring/Attributes/ApplicationCPUUsagePercent/Reported { "value": <REPORTED_APPLICATIONCPU_USAGE_PERCENT>}
+ucl/by-unid/<UNID>/ApplicationMonitoring/Attributes/ApplicationCPUUsagePercent/Desired { "value": <DESIRED_APPLICATION_CPU_USAGE_PERCENT>}
+ucl/by-unid/<UNID>/ApplicationMonitoring/Attributes/ApplicationCPUUsagePercent/Reported { "value": <REPORTED_APPLICATION_CPU_USAGE_PERCENT>}
 
 ```
 
 <br><br>
 
-\subsection application_monitoring_attr_applicationcpu_average_usage_percent ApplicationMonitoring/ApplicationCPUAverageUsagePercent Attribute
+\subsection application_monitoring_attr_application_cpu_average_usage_percent ApplicationMonitoring/ApplicationCPUAverageUsagePercent Attribute
 
 **MQTT Topic Pattern:**
 
@@ -49944,14 +50647,14 @@ mosquitto_sub -t 'ucl/by-unid/+/ApplicationMonitoring/Attributes/ApplicationCPUA
 
 # Example output
 
-ucl/by-unid/<UNID>/ApplicationMonitoring/Attributes/ApplicationCPUAverageUsagePercent/Desired { "value": <DESIRED_APPLICATIONCPU_AVERAGE_USAGE_PERCENT>}
-ucl/by-unid/<UNID>/ApplicationMonitoring/Attributes/ApplicationCPUAverageUsagePercent/Reported { "value": <REPORTED_APPLICATIONCPU_AVERAGE_USAGE_PERCENT>}
+ucl/by-unid/<UNID>/ApplicationMonitoring/Attributes/ApplicationCPUAverageUsagePercent/Desired { "value": <DESIRED_APPLICATION_CPU_AVERAGE_USAGE_PERCENT>}
+ucl/by-unid/<UNID>/ApplicationMonitoring/Attributes/ApplicationCPUAverageUsagePercent/Reported { "value": <REPORTED_APPLICATION_CPU_AVERAGE_USAGE_PERCENT>}
 
 ```
 
 <br><br>
 
-\subsection application_monitoring_attr_applicationcpu_min_usage_percent ApplicationMonitoring/ApplicationCPUMinUsagePercent Attribute
+\subsection application_monitoring_attr_application_cpu_min_usage_percent ApplicationMonitoring/ApplicationCPUMinUsagePercent Attribute
 
 **MQTT Topic Pattern:**
 
@@ -49988,14 +50691,14 @@ mosquitto_sub -t 'ucl/by-unid/+/ApplicationMonitoring/Attributes/ApplicationCPUM
 
 # Example output
 
-ucl/by-unid/<UNID>/ApplicationMonitoring/Attributes/ApplicationCPUMinUsagePercent/Desired { "value": <DESIRED_APPLICATIONCPU_MIN_USAGE_PERCENT>}
-ucl/by-unid/<UNID>/ApplicationMonitoring/Attributes/ApplicationCPUMinUsagePercent/Reported { "value": <REPORTED_APPLICATIONCPU_MIN_USAGE_PERCENT>}
+ucl/by-unid/<UNID>/ApplicationMonitoring/Attributes/ApplicationCPUMinUsagePercent/Desired { "value": <DESIRED_APPLICATION_CPU_MIN_USAGE_PERCENT>}
+ucl/by-unid/<UNID>/ApplicationMonitoring/Attributes/ApplicationCPUMinUsagePercent/Reported { "value": <REPORTED_APPLICATION_CPU_MIN_USAGE_PERCENT>}
 
 ```
 
 <br><br>
 
-\subsection application_monitoring_attr_applicationcpu_max_usage_percent ApplicationMonitoring/ApplicationCPUMaxUsagePercent Attribute
+\subsection application_monitoring_attr_application_cpu_max_usage_percent ApplicationMonitoring/ApplicationCPUMaxUsagePercent Attribute
 
 **MQTT Topic Pattern:**
 
@@ -50032,14 +50735,14 @@ mosquitto_sub -t 'ucl/by-unid/+/ApplicationMonitoring/Attributes/ApplicationCPUM
 
 # Example output
 
-ucl/by-unid/<UNID>/ApplicationMonitoring/Attributes/ApplicationCPUMaxUsagePercent/Desired { "value": <DESIRED_APPLICATIONCPU_MAX_USAGE_PERCENT>}
-ucl/by-unid/<UNID>/ApplicationMonitoring/Attributes/ApplicationCPUMaxUsagePercent/Reported { "value": <REPORTED_APPLICATIONCPU_MAX_USAGE_PERCENT>}
+ucl/by-unid/<UNID>/ApplicationMonitoring/Attributes/ApplicationCPUMaxUsagePercent/Desired { "value": <DESIRED_APPLICATION_CPU_MAX_USAGE_PERCENT>}
+ucl/by-unid/<UNID>/ApplicationMonitoring/Attributes/ApplicationCPUMaxUsagePercent/Reported { "value": <REPORTED_APPLICATION_CPU_MAX_USAGE_PERCENT>}
 
 ```
 
 <br><br>
 
-\subsection application_monitoring_attr_applicationram_usagemb ApplicationMonitoring/ApplicationRAMUsageMB Attribute
+\subsection application_monitoring_attr_application_ram_usagemb ApplicationMonitoring/ApplicationRAMUsageMB Attribute
 
 **MQTT Topic Pattern:**
 
@@ -50076,8 +50779,8 @@ mosquitto_sub -t 'ucl/by-unid/+/ApplicationMonitoring/Attributes/ApplicationRAMU
 
 # Example output
 
-ucl/by-unid/<UNID>/ApplicationMonitoring/Attributes/ApplicationRAMUsageMB/Desired { "value": <DESIRED_APPLICATIONRAM_USAGEMB>}
-ucl/by-unid/<UNID>/ApplicationMonitoring/Attributes/ApplicationRAMUsageMB/Reported { "value": <REPORTED_APPLICATIONRAM_USAGEMB>}
+ucl/by-unid/<UNID>/ApplicationMonitoring/Attributes/ApplicationRAMUsageMB/Desired { "value": <DESIRED_APPLICATION_RAM_USAGEMB>}
+ucl/by-unid/<UNID>/ApplicationMonitoring/Attributes/ApplicationRAMUsageMB/Reported { "value": <REPORTED_APPLICATION_RAM_USAGEMB>}
 
 ```
 
@@ -52979,6 +53682,2249 @@ mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/ProtocolController/NetworkManagement/C
 <!-- END OF ProtocolController-NetworkManagement Commands Section -->
 <!-- -->
 
+<br><br><br>
+
+
+<!-- -->
+<!-- -->
+<!-- NEW Page Cluster Support -->
+<!-- -->
+<!-- -->
+\page descriptor Descriptor Cluster
+The following commands and attributes are accepted as JSON payloads for the
+Descriptor cluster.
+
+<br><br>
+
+<!-- -->
+<!--  START OF Descriptor Attributes Section -->
+<!-- -->
+\section descriptor_attrs Descriptor Attributes
+The following attribute topics are used to retrieve the Descriptor cluster state.
+
+<br>
+
+\subsection descriptor_attr_device_type_list Descriptor/DeviceTypeList Attribute
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/Descriptor/Attributes/DeviceTypeList/Reported
+[PREFIX]/Descriptor/Attributes/DeviceTypeList/Desired
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Descriptor Cluster DeviceTypeList Attribute Properties",
+  "type": "object",
+  "properties": {
+    "value": {
+      "type": "array",
+      "items": {
+        "type": "DeviceTypeStruct"
+      }
+    }
+  },
+  "required": [
+    "value"
+  ]
+}
+```
+
+
+**Example Mosquitto CLI Tool Usage**
+
+To see desired/reported value for DeviceTypeList attribute under the by-unid topic space:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/+/+/Descriptor/Attributes/DeviceTypeList/+'
+
+# Example output
+
+ucl/by-unid/<UNID>/ep0/Descriptor/Attributes/DeviceTypeList/Desired { "value": [<DESIRED_DEVICE_TYPE_LIST>,<DESIRED_DEVICE_TYPE_LIST>]}
+ucl/by-unid/<UNID>/ep0/Descriptor/Attributes/DeviceTypeList/Reported { "value": [<REPORTED_DEVICE_TYPE_LIST>,<REPORTED_DEVICE_TYPE_LIST>]}
+
+```
+
+<br><br>
+
+
+\subsection descriptor_attr_cluster_revision Descriptor/ClusterRevision Attribute
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/Descriptor/Attributes/ClusterRevision/Reported
+[PREFIX]/Descriptor/Attributes/ClusterRevision/Desired
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Descriptor Cluster ClusterRevision Attribute Properties",
+  "type": "object",
+  "properties": {
+    "value": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "value"
+  ]
+}
+```
+
+**Example Mosquitto CLI Tool Usage**
+
+To see desired/reported value for ClusterRevision attribute under the by-unid topic space:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/<UNID>/<EP>/Descriptor/Attributes/ClusterRevision/+'
+# Example output
+ucl/by-unid/<UNID>/<EP>/Descriptor/Attributes/ClusterRevision/Desired { "value": <DESIRED_CLUSTER_REVISION> }
+ucl/by-unid/<UNID>/<EP>/Descriptor/Attributes/ClusterRevision/Reported { "value": <REPORTED_CLUSTER_REVISION> }
+```
+
+<!-- -->
+<!--  END OF Descriptor Attributes Section -->
+<!-- -->
+
+<br><br>
+
+<!-- -->
+<!-- START OF Descriptor Supported Commands Section -->
+<!-- -->
+\section descriptor_recv_cmd_support Descriptor Command Support
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/Descriptor/SupportedCommands
+[PREFIX]/Descriptor/SupportedGeneratedCommands
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Descriptor Command Support Properties",
+  "type": "object",
+  "properties": {
+      "value": {
+          "type": "array",
+          "items" : {
+            "type": "string",
+            "enum": [
+            ]
+          }
+        }
+      }
+  },
+  "required": [
+    "value"
+  ]
+}
+```
+
+**Example Mosquitto CLI Tool Usage**
+
+To see supported commands for Descriptor cluster under the by-unid topic space:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/<UNID>/<EP>/Descriptor/SupportedCommands'
+# Example output
+ucl/by-unid/<UNID>/<EP>/Descriptor/SupportedCommands { "value": [] }
+```
+
+To see supported generated commands for Descriptor cluster under the by-unid topic space:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/<UNID>/<EP>/Descriptor/SupportedGeneratedCommands'
+# Example output
+ucl/by-unid/<UNID>/<EP>/Descriptor/SupportedGeneratedCommands { "value": [] }
+```
+
+<!-- -->
+<!-- END OF Descriptor Supported Commands Section -->
+<!-- -->
+
+<br><br>
+
+<!-- -->
+<!-- START OF Descriptor Commands Section -->
+<!-- -->
+\section descriptor_cmds Descriptor Commands
+
+<br><br>
+
+\subsection descriptor_write_attr_cmd Descriptor/WriteAttributes Command
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/Descriptor/Commands/WriteAttributes
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Descriptor Cluster WriteAttributes Command Properties",
+  "type": "object",
+  "properties": {
+  },
+  "required": [
+    "value"
+  ]
+}
+```
+
+**Example Mosquitto CLI Tool Usage**
+
+To update all Descriptor attributes under the by-unid topic space:
+
+```console
+mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/Descriptor/Commands/WriteAttributes' -m  '{  }'
+```
+
+> NOTE: Specify only the list of attributes to write in this command.
+> Unspecified attributes will not be updated.
+
+<br><br>
+
+\subsection descriptor_force_read_attr_cmd Descriptor/ForceReadAttributes Command
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/Descriptor/Commands/ForceReadAttributes
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Descriptor Cluster ForceReadAttributes Command Properties",
+  "type": "object",
+  "properties": {
+    "value": {
+      "type": "array"
+      "items": {
+        "type": "string",
+        "enum": [
+          "DeviceTypeList"
+        ]
+      }
+    }
+  },
+  "required": [
+    "value"
+  ]
+}
+```
+
+**Example Mosquitto CLI Tool Usage**
+
+To force read all Descriptor attributes under the by-unid topic space (by sending an empty array):
+
+```console
+mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/Descriptor/Commands/ForceReadAttributes' -m  '{ "value": [] }'
+```
+
+To force read one of the Descriptor attributes under the by-unid topic space:
+
+```console
+mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/Descriptor/Commands/ForceReadAttributes' -m  '{ "value": ["DeviceTypeList"] }'
+```
+
+<!-- -->
+<!-- END OF Descriptor Commands Section -->
+<!-- -->
+
+<br><br><br>
+
+
+<!-- -->
+<!-- -->
+<!-- NEW Page Cluster Support -->
+<!-- -->
+<!-- -->
+\page unify_fan_control UnifyFanControl Cluster
+The following commands and attributes are accepted as JSON payloads for the
+UnifyFanControl cluster.
+
+<br><br>
+
+<!-- -->
+<!--  START OF UnifyFanControl Attributes Section -->
+<!-- -->
+\section unify_fan_control_attrs UnifyFanControl Attributes
+The following attribute topics are used to retrieve the UnifyFanControl cluster state.
+
+<br>
+
+\subsection unify_fan_control_attr_z_wave_fan_mode UnifyFanControl/ZWaveFanMode Attribute
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/UnifyFanControl/Attributes/ZWaveFanMode/Reported
+[PREFIX]/UnifyFanControl/Attributes/ZWaveFanMode/Desired
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UnifyFanControl Cluster ZWaveFanMode Attribute Properties",
+  "type": "object",
+  "properties": {
+    "value": {
+      "type": "ZWaveFanModeEnum"
+    }
+  },
+  "required": [
+    "value"
+  ]
+}
+```
+
+
+**Example Mosquitto CLI Tool Usage**
+
+To see desired/reported value for ZWaveFanMode attribute under the by-unid topic space:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/+/+/UnifyFanControl/Attributes/ZWaveFanMode/+'
+
+# Example output
+
+ucl/by-unid/<UNID>/ep0/UnifyFanControl/Attributes/ZWaveFanMode/Desired { "value": <DESIRED_Z_WAVE_FAN_MODE>}
+ucl/by-unid/<UNID>/ep0/UnifyFanControl/Attributes/ZWaveFanMode/Reported { "value": <REPORTED_Z_WAVE_FAN_MODE>}
+
+```
+
+<br><br>
+
+\subsection unify_fan_control_attr_z_wave_supported_fan_mode UnifyFanControl/ZWaveSupportedFanMode Attribute
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/UnifyFanControl/Attributes/ZWaveSupportedFanMode/Reported
+[PREFIX]/UnifyFanControl/Attributes/ZWaveSupportedFanMode/Desired
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UnifyFanControl Cluster ZWaveSupportedFanMode Attribute Properties",
+  "type": "object",
+  "properties": {
+    "value": {
+      "type": "UnifyFanControlZWaveSupportedFanMode"
+    }
+  },
+  "required": [
+    "value"
+  ]
+}
+```
+
+
+**Example Mosquitto CLI Tool Usage**
+
+To see desired/reported value for ZWaveSupportedFanMode attribute under the by-unid topic space:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/+/+/UnifyFanControl/Attributes/ZWaveSupportedFanMode/+'
+
+# Example output
+
+ucl/by-unid/<UNID>/ep0/UnifyFanControl/Attributes/ZWaveSupportedFanMode/Desired { "value": <DESIRED_Z_WAVE_SUPPORTED_FAN_MODE>}
+ucl/by-unid/<UNID>/ep0/UnifyFanControl/Attributes/ZWaveSupportedFanMode/Reported { "value": <REPORTED_Z_WAVE_SUPPORTED_FAN_MODE>}
+
+```
+
+<br><br>
+
+\subsection unify_fan_control_attr_z_wave_fan_state UnifyFanControl/ZWaveFanState Attribute
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/UnifyFanControl/Attributes/ZWaveFanState/Reported
+[PREFIX]/UnifyFanControl/Attributes/ZWaveFanState/Desired
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UnifyFanControl Cluster ZWaveFanState Attribute Properties",
+  "type": "object",
+  "properties": {
+    "value": {
+      "type": "ZWaveFanStateEnum"
+    }
+  },
+  "required": [
+    "value"
+  ]
+}
+```
+
+
+**Example Mosquitto CLI Tool Usage**
+
+To see desired/reported value for ZWaveFanState attribute under the by-unid topic space:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/+/+/UnifyFanControl/Attributes/ZWaveFanState/+'
+
+# Example output
+
+ucl/by-unid/<UNID>/ep0/UnifyFanControl/Attributes/ZWaveFanState/Desired { "value": <DESIRED_Z_WAVE_FAN_STATE>}
+ucl/by-unid/<UNID>/ep0/UnifyFanControl/Attributes/ZWaveFanState/Reported { "value": <REPORTED_Z_WAVE_FAN_STATE>}
+
+```
+
+<br><br>
+
+
+\subsection unify_fan_control_attr_cluster_revision UnifyFanControl/ClusterRevision Attribute
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/UnifyFanControl/Attributes/ClusterRevision/Reported
+[PREFIX]/UnifyFanControl/Attributes/ClusterRevision/Desired
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UnifyFanControl Cluster ClusterRevision Attribute Properties",
+  "type": "object",
+  "properties": {
+    "value": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "value"
+  ]
+}
+```
+
+**Example Mosquitto CLI Tool Usage**
+
+To see desired/reported value for ClusterRevision attribute under the by-unid topic space:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/<UNID>/<EP>/UnifyFanControl/Attributes/ClusterRevision/+'
+# Example output
+ucl/by-unid/<UNID>/<EP>/UnifyFanControl/Attributes/ClusterRevision/Desired { "value": <DESIRED_CLUSTER_REVISION> }
+ucl/by-unid/<UNID>/<EP>/UnifyFanControl/Attributes/ClusterRevision/Reported { "value": <REPORTED_CLUSTER_REVISION> }
+```
+
+<!-- -->
+<!--  END OF UnifyFanControl Attributes Section -->
+<!-- -->
+
+<br><br>
+
+<!-- -->
+<!-- START OF UnifyFanControl Supported Commands Section -->
+<!-- -->
+\section unify_fan_control_recv_cmd_support UnifyFanControl Command Support
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/UnifyFanControl/SupportedCommands
+[PREFIX]/UnifyFanControl/SupportedGeneratedCommands
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UnifyFanControl Command Support Properties",
+  "type": "object",
+  "properties": {
+      "value": {
+          "type": "array",
+          "items" : {
+            "type": "string",
+            "enum": [
+              "SetFanMode",
+              "TurnOff",
+              "WriteAttributes",
+              "ForceReadAttributes"
+            ]
+          }
+        }
+      }
+  },
+  "required": [
+    "value"
+  ]
+}
+```
+
+**Example Mosquitto CLI Tool Usage**
+
+To see supported commands for UnifyFanControl cluster under the by-unid topic space:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/<UNID>/<EP>/UnifyFanControl/SupportedCommands'
+# Example output
+ucl/by-unid/<UNID>/<EP>/UnifyFanControl/SupportedCommands { "value": ["SetFanMode","TurnOff","WriteAttributes", "ForceReadAttributes"] }
+```
+
+To see supported generated commands for UnifyFanControl cluster under the by-unid topic space:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/<UNID>/<EP>/UnifyFanControl/SupportedGeneratedCommands'
+# Example output
+ucl/by-unid/<UNID>/<EP>/UnifyFanControl/SupportedGeneratedCommands { "value": [] }
+```
+
+<!-- -->
+<!-- END OF UnifyFanControl Supported Commands Section -->
+<!-- -->
+
+<br><br>
+
+<!-- -->
+<!-- START OF UnifyFanControl Commands Section -->
+<!-- -->
+\section unify_fan_control_cmds UnifyFanControl Commands
+
+<br><br>
+
+\subsection unify_fan_control_set_fan_mode_cmd UnifyFanControl/SetFanMode Command
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/UnifyFanControl/Commands/SetFanMode
+[PREFIX]/UnifyFanControl/GeneratedCommands/SetFanMode
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UnifyFanControl Cluster SetFanMode Command Properties",
+  "type": "object",
+  "properties": {
+    "FanMode": {
+      "type": "ZWaveFanModeEnum"
+    }
+  },
+  "required": [
+    "FanMode"
+  ]
+}
+```
+
+**Example Mosquitto CLI Tool Usage**
+
+To send a UnifyFanControl/SetFanMode command under the by-unid topic space:
+
+```console
+mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/UnifyFanControl/Commands/SetFanMode' -m  '{ "FanMode": <FAN_MODE_VALUE> }'
+```
+
+To receive a UnifyFanControl/SetFanMode generated command from a UNID/endpoint:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/<UNID>/<EP>/UnifyFanControl/GeneratedCommands/SetFanMode'
+```
+
+<br><br>
+
+\subsection unify_fan_control_turn_off_cmd UnifyFanControl/TurnOff Command
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/UnifyFanControl/Commands/TurnOff
+[PREFIX]/UnifyFanControl/GeneratedCommands/TurnOff
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UnifyFanControl Cluster TurnOff Command Properties",
+  "type": "object",
+  "properties": {
+  },
+  "required": [
+  ]
+}
+```
+
+**Example Mosquitto CLI Tool Usage**
+
+To send a UnifyFanControl/TurnOff command under the by-unid topic space:
+
+```console
+mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/UnifyFanControl/Commands/TurnOff' -m  '{  }'
+```
+
+To receive a UnifyFanControl/TurnOff generated command from a UNID/endpoint:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/<UNID>/<EP>/UnifyFanControl/GeneratedCommands/TurnOff'
+```
+
+<br><br>
+
+\subsection unify_fan_control_write_attr_cmd UnifyFanControl/WriteAttributes Command
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/UnifyFanControl/Commands/WriteAttributes
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UnifyFanControl Cluster WriteAttributes Command Properties",
+  "type": "object",
+  "properties": {
+    "ZWaveFanMode": {
+      "type": "ZWaveFanModeEnum"
+    },
+  },
+  "required": [
+    "value"
+  ]
+}
+```
+
+**Example Mosquitto CLI Tool Usage**
+
+To update all UnifyFanControl attributes under the by-unid topic space:
+
+```console
+mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/UnifyFanControl/Commands/WriteAttributes' -m  '{ "ZWaveFanMode": <Z_WAVE_FAN_MODE_VALUE> , }'
+```
+
+> NOTE: Specify only the list of attributes to write in this command.
+> Unspecified attributes will not be updated.
+
+<br><br>
+
+\subsection unify_fan_control_force_read_attr_cmd UnifyFanControl/ForceReadAttributes Command
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/UnifyFanControl/Commands/ForceReadAttributes
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UnifyFanControl Cluster ForceReadAttributes Command Properties",
+  "type": "object",
+  "properties": {
+    "value": {
+      "type": "array"
+      "items": {
+        "type": "string",
+        "enum": [
+          "ZWaveFanMode",
+          "ZWaveSupportedFanMode",
+          "ZWaveFanState"
+        ]
+      }
+    }
+  },
+  "required": [
+    "value"
+  ]
+}
+```
+
+**Example Mosquitto CLI Tool Usage**
+
+To force read all UnifyFanControl attributes under the by-unid topic space (by sending an empty array):
+
+```console
+mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/UnifyFanControl/Commands/ForceReadAttributes' -m  '{ "value": [] }'
+```
+
+To force read one of the UnifyFanControl attributes under the by-unid topic space:
+
+```console
+mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/UnifyFanControl/Commands/ForceReadAttributes' -m  '{ "value": ["ZWaveFanMode"] }'
+```
+
+<!-- -->
+<!-- END OF UnifyFanControl Commands Section -->
+<!-- -->
+
+<br><br><br>
+
+
+<!-- -->
+<!-- -->
+<!-- NEW Page Cluster Support -->
+<!-- -->
+<!-- -->
+\page unify_thermostat UnifyThermostat Cluster
+The following commands and attributes are accepted as JSON payloads for the
+UnifyThermostat cluster.
+
+<br><br>
+
+<!-- -->
+<!--  START OF UnifyThermostat Attributes Section -->
+<!-- -->
+\section unify_thermostat_attrs UnifyThermostat Attributes
+The following attribute topics are used to retrieve the UnifyThermostat cluster state.
+
+<br>
+
+\subsection unify_thermostat_attr_thermostat_mode UnifyThermostat/ThermostatMode Attribute
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/UnifyThermostat/Attributes/ThermostatMode/Reported
+[PREFIX]/UnifyThermostat/Attributes/ThermostatMode/Desired
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UnifyThermostat Cluster ThermostatMode Attribute Properties",
+  "type": "object",
+  "properties": {
+    "value": {
+      "type": "UnifyThermostatThermostatMode"
+    }
+  },
+  "required": [
+    "value"
+  ]
+}
+```
+
+
+**Example Mosquitto CLI Tool Usage**
+
+To see desired/reported value for ThermostatMode attribute under the by-unid topic space:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/+/+/UnifyThermostat/Attributes/ThermostatMode/+'
+
+# Example output
+
+ucl/by-unid/<UNID>/ep0/UnifyThermostat/Attributes/ThermostatMode/Desired { "value": <DESIRED_THERMOSTAT_MODE>}
+ucl/by-unid/<UNID>/ep0/UnifyThermostat/Attributes/ThermostatMode/Reported { "value": <REPORTED_THERMOSTAT_MODE>}
+
+```
+
+<br><br>
+
+\subsection unify_thermostat_attr_supported_thermostat_mode UnifyThermostat/SupportedThermostatMode Attribute
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/UnifyThermostat/Attributes/SupportedThermostatMode/Reported
+[PREFIX]/UnifyThermostat/Attributes/SupportedThermostatMode/Desired
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UnifyThermostat Cluster SupportedThermostatMode Attribute Properties",
+  "type": "object",
+  "properties": {
+    "value": {
+      "type": "UnifyThermostatSupportedThermostatMode"
+    }
+  },
+  "required": [
+    "value"
+  ]
+}
+```
+
+
+**Example Mosquitto CLI Tool Usage**
+
+To see desired/reported value for SupportedThermostatMode attribute under the by-unid topic space:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/+/+/UnifyThermostat/Attributes/SupportedThermostatMode/+'
+
+# Example output
+
+ucl/by-unid/<UNID>/ep0/UnifyThermostat/Attributes/SupportedThermostatMode/Desired { "value": <DESIRED_SUPPORTED_THERMOSTAT_MODE>}
+ucl/by-unid/<UNID>/ep0/UnifyThermostat/Attributes/SupportedThermostatMode/Reported { "value": <REPORTED_SUPPORTED_THERMOSTAT_MODE>}
+
+```
+
+<br><br>
+
+\subsection unify_thermostat_attr_operating_state UnifyThermostat/OperatingState Attribute
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/UnifyThermostat/Attributes/OperatingState/Reported
+[PREFIX]/UnifyThermostat/Attributes/OperatingState/Desired
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UnifyThermostat Cluster OperatingState Attribute Properties",
+  "type": "object",
+  "properties": {
+    "value": {
+      "type": "UnifyThermostatOperatingState"
+    }
+  },
+  "required": [
+    "value"
+  ]
+}
+```
+
+
+**Example Mosquitto CLI Tool Usage**
+
+To see desired/reported value for OperatingState attribute under the by-unid topic space:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/+/+/UnifyThermostat/Attributes/OperatingState/+'
+
+# Example output
+
+ucl/by-unid/<UNID>/ep0/UnifyThermostat/Attributes/OperatingState/Desired { "value": <DESIRED_OPERATING_STATE>}
+ucl/by-unid/<UNID>/ep0/UnifyThermostat/Attributes/OperatingState/Reported { "value": <REPORTED_OPERATING_STATE>}
+
+```
+
+<br><br>
+
+
+\subsection unify_thermostat_attr_cluster_revision UnifyThermostat/ClusterRevision Attribute
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/UnifyThermostat/Attributes/ClusterRevision/Reported
+[PREFIX]/UnifyThermostat/Attributes/ClusterRevision/Desired
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UnifyThermostat Cluster ClusterRevision Attribute Properties",
+  "type": "object",
+  "properties": {
+    "value": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "value"
+  ]
+}
+```
+
+**Example Mosquitto CLI Tool Usage**
+
+To see desired/reported value for ClusterRevision attribute under the by-unid topic space:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/<UNID>/<EP>/UnifyThermostat/Attributes/ClusterRevision/+'
+# Example output
+ucl/by-unid/<UNID>/<EP>/UnifyThermostat/Attributes/ClusterRevision/Desired { "value": <DESIRED_CLUSTER_REVISION> }
+ucl/by-unid/<UNID>/<EP>/UnifyThermostat/Attributes/ClusterRevision/Reported { "value": <REPORTED_CLUSTER_REVISION> }
+```
+
+<!-- -->
+<!--  END OF UnifyThermostat Attributes Section -->
+<!-- -->
+
+<br><br>
+
+<!-- -->
+<!-- START OF UnifyThermostat Supported Commands Section -->
+<!-- -->
+\section unify_thermostat_recv_cmd_support UnifyThermostat Command Support
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/UnifyThermostat/SupportedCommands
+[PREFIX]/UnifyThermostat/SupportedGeneratedCommands
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UnifyThermostat Command Support Properties",
+  "type": "object",
+  "properties": {
+      "value": {
+          "type": "array",
+          "items" : {
+            "type": "string",
+            "enum": [
+            ]
+          }
+        }
+      }
+  },
+  "required": [
+    "value"
+  ]
+}
+```
+
+**Example Mosquitto CLI Tool Usage**
+
+To see supported commands for UnifyThermostat cluster under the by-unid topic space:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/<UNID>/<EP>/UnifyThermostat/SupportedCommands'
+# Example output
+ucl/by-unid/<UNID>/<EP>/UnifyThermostat/SupportedCommands { "value": [] }
+```
+
+To see supported generated commands for UnifyThermostat cluster under the by-unid topic space:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/<UNID>/<EP>/UnifyThermostat/SupportedGeneratedCommands'
+# Example output
+ucl/by-unid/<UNID>/<EP>/UnifyThermostat/SupportedGeneratedCommands { "value": [] }
+```
+
+<!-- -->
+<!-- END OF UnifyThermostat Supported Commands Section -->
+<!-- -->
+
+<br><br>
+
+<!-- -->
+<!-- START OF UnifyThermostat Commands Section -->
+<!-- -->
+\section unify_thermostat_cmds UnifyThermostat Commands
+
+<br><br>
+
+\subsection unify_thermostat_write_attr_cmd UnifyThermostat/WriteAttributes Command
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/UnifyThermostat/Commands/WriteAttributes
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UnifyThermostat Cluster WriteAttributes Command Properties",
+  "type": "object",
+  "properties": {
+    "ThermostatMode": {
+      "type": "UnifyThermostatThermostatMode"
+    },
+  },
+  "required": [
+    "value"
+  ]
+}
+```
+
+**Example Mosquitto CLI Tool Usage**
+
+To update all UnifyThermostat attributes under the by-unid topic space:
+
+```console
+mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/UnifyThermostat/Commands/WriteAttributes' -m  '{ "ThermostatMode": <THERMOSTAT_MODE_VALUE> , }'
+```
+
+> NOTE: Specify only the list of attributes to write in this command.
+> Unspecified attributes will not be updated.
+
+<br><br>
+
+\subsection unify_thermostat_force_read_attr_cmd UnifyThermostat/ForceReadAttributes Command
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/UnifyThermostat/Commands/ForceReadAttributes
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UnifyThermostat Cluster ForceReadAttributes Command Properties",
+  "type": "object",
+  "properties": {
+    "value": {
+      "type": "array"
+      "items": {
+        "type": "string",
+        "enum": [
+          "ThermostatMode",
+          "SupportedThermostatMode",
+          "OperatingState"
+        ]
+      }
+    }
+  },
+  "required": [
+    "value"
+  ]
+}
+```
+
+**Example Mosquitto CLI Tool Usage**
+
+To force read all UnifyThermostat attributes under the by-unid topic space (by sending an empty array):
+
+```console
+mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/UnifyThermostat/Commands/ForceReadAttributes' -m  '{ "value": [] }'
+```
+
+To force read one of the UnifyThermostat attributes under the by-unid topic space:
+
+```console
+mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/UnifyThermostat/Commands/ForceReadAttributes' -m  '{ "value": ["ThermostatMode"] }'
+```
+
+<!-- -->
+<!-- END OF UnifyThermostat Commands Section -->
+<!-- -->
+
+<br><br><br>
+
+
+<!-- -->
+<!-- -->
+<!-- NEW Page Cluster Support -->
+<!-- -->
+<!-- -->
+\page unify_humidity_control UnifyHumidityControl Cluster
+The following commands and attributes are accepted as JSON payloads for the
+UnifyHumidityControl cluster.
+
+<br><br>
+
+<!-- -->
+<!--  START OF UnifyHumidityControl Attributes Section -->
+<!-- -->
+\section unify_humidity_control_attrs UnifyHumidityControl Attributes
+The following attribute topics are used to retrieve the UnifyHumidityControl cluster state.
+
+<br>
+
+\subsection unify_humidity_control_attr_reporting_mode UnifyHumidityControl/ReportingMode Attribute
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/UnifyHumidityControl/Attributes/ReportingMode/Reported
+[PREFIX]/UnifyHumidityControl/Attributes/ReportingMode/Desired
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UnifyHumidityControl Cluster ReportingMode Attribute Properties",
+  "type": "object",
+  "properties": {
+    "value": {
+      "type": "ModeType"
+    }
+  },
+  "required": [
+    "value"
+  ]
+}
+```
+
+
+**Example Mosquitto CLI Tool Usage**
+
+To see desired/reported value for ReportingMode attribute under the by-unid topic space:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/+/+/UnifyHumidityControl/Attributes/ReportingMode/+'
+
+# Example output
+
+ucl/by-unid/<UNID>/ep0/UnifyHumidityControl/Attributes/ReportingMode/Desired { "value": <DESIRED_REPORTING_MODE>}
+ucl/by-unid/<UNID>/ep0/UnifyHumidityControl/Attributes/ReportingMode/Reported { "value": <REPORTED_REPORTING_MODE>}
+
+```
+
+<br><br>
+
+\subsection unify_humidity_control_attr_supported_reporting_mode UnifyHumidityControl/SupportedReportingMode Attribute
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/UnifyHumidityControl/Attributes/SupportedReportingMode/Reported
+[PREFIX]/UnifyHumidityControl/Attributes/SupportedReportingMode/Desired
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UnifyHumidityControl Cluster SupportedReportingMode Attribute Properties",
+  "type": "object",
+  "properties": {
+    "value": {
+      "type": "UnifyHumidityControlSupportedReportingMode"
+    }
+  },
+  "required": [
+    "value"
+  ]
+}
+```
+
+
+**Example Mosquitto CLI Tool Usage**
+
+To see desired/reported value for SupportedReportingMode attribute under the by-unid topic space:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/+/+/UnifyHumidityControl/Attributes/SupportedReportingMode/+'
+
+# Example output
+
+ucl/by-unid/<UNID>/ep0/UnifyHumidityControl/Attributes/SupportedReportingMode/Desired { "value": <DESIRED_SUPPORTED_REPORTING_MODE>}
+ucl/by-unid/<UNID>/ep0/UnifyHumidityControl/Attributes/SupportedReportingMode/Reported { "value": <REPORTED_SUPPORTED_REPORTING_MODE>}
+
+```
+
+<br><br>
+
+\subsection unify_humidity_control_attr_current_state UnifyHumidityControl/CurrentState Attribute
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/UnifyHumidityControl/Attributes/CurrentState/Reported
+[PREFIX]/UnifyHumidityControl/Attributes/CurrentState/Desired
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UnifyHumidityControl Cluster CurrentState Attribute Properties",
+  "type": "object",
+  "properties": {
+    "value": {
+      "type": "UnifyHumidityControlCurrentState"
+    }
+  },
+  "required": [
+    "value"
+  ]
+}
+```
+
+
+**Example Mosquitto CLI Tool Usage**
+
+To see desired/reported value for CurrentState attribute under the by-unid topic space:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/+/+/UnifyHumidityControl/Attributes/CurrentState/+'
+
+# Example output
+
+ucl/by-unid/<UNID>/ep0/UnifyHumidityControl/Attributes/CurrentState/Desired { "value": <DESIRED_CURRENT_STATE>}
+ucl/by-unid/<UNID>/ep0/UnifyHumidityControl/Attributes/CurrentState/Reported { "value": <REPORTED_CURRENT_STATE>}
+
+```
+
+<br><br>
+
+\subsection unify_humidity_control_attr_supported_set_points UnifyHumidityControl/SupportedSetPoints Attribute
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/UnifyHumidityControl/Attributes/SupportedSetPoints/Reported
+[PREFIX]/UnifyHumidityControl/Attributes/SupportedSetPoints/Desired
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UnifyHumidityControl Cluster SupportedSetPoints Attribute Properties",
+  "type": "object",
+  "properties": {
+    "value": {
+      "type": "UnifyHumidityControlSupportedSetPoints"
+    }
+  },
+  "required": [
+    "value"
+  ]
+}
+```
+
+
+**Example Mosquitto CLI Tool Usage**
+
+To see desired/reported value for SupportedSetPoints attribute under the by-unid topic space:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/+/+/UnifyHumidityControl/Attributes/SupportedSetPoints/+'
+
+# Example output
+
+ucl/by-unid/<UNID>/ep0/UnifyHumidityControl/Attributes/SupportedSetPoints/Desired { "value": <DESIRED_SUPPORTED_SET_POINTS>}
+ucl/by-unid/<UNID>/ep0/UnifyHumidityControl/Attributes/SupportedSetPoints/Reported { "value": <REPORTED_SUPPORTED_SET_POINTS>}
+
+```
+
+<br><br>
+
+\subsection unify_humidity_control_attr_humidifier_setpoint_min UnifyHumidityControl/HumidifierSetpointMin Attribute
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/UnifyHumidityControl/Attributes/HumidifierSetpointMin/Reported
+[PREFIX]/UnifyHumidityControl/Attributes/HumidifierSetpointMin/Desired
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UnifyHumidityControl Cluster HumidifierSetpointMin Attribute Properties",
+  "type": "object",
+  "properties": {
+    "value": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "value"
+  ]
+}
+```
+
+
+**Example Mosquitto CLI Tool Usage**
+
+To see desired/reported value for HumidifierSetpointMin attribute under the by-unid topic space:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/+/+/UnifyHumidityControl/Attributes/HumidifierSetpointMin/+'
+
+# Example output
+
+ucl/by-unid/<UNID>/ep0/UnifyHumidityControl/Attributes/HumidifierSetpointMin/Desired { "value": <DESIRED_HUMIDIFIER_SETPOINT_MIN>}
+ucl/by-unid/<UNID>/ep0/UnifyHumidityControl/Attributes/HumidifierSetpointMin/Reported { "value": <REPORTED_HUMIDIFIER_SETPOINT_MIN>}
+
+```
+
+<br><br>
+
+\subsection unify_humidity_control_attr_humidifier_setpoint_max UnifyHumidityControl/HumidifierSetpointMax Attribute
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/UnifyHumidityControl/Attributes/HumidifierSetpointMax/Reported
+[PREFIX]/UnifyHumidityControl/Attributes/HumidifierSetpointMax/Desired
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UnifyHumidityControl Cluster HumidifierSetpointMax Attribute Properties",
+  "type": "object",
+  "properties": {
+    "value": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "value"
+  ]
+}
+```
+
+
+**Example Mosquitto CLI Tool Usage**
+
+To see desired/reported value for HumidifierSetpointMax attribute under the by-unid topic space:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/+/+/UnifyHumidityControl/Attributes/HumidifierSetpointMax/+'
+
+# Example output
+
+ucl/by-unid/<UNID>/ep0/UnifyHumidityControl/Attributes/HumidifierSetpointMax/Desired { "value": <DESIRED_HUMIDIFIER_SETPOINT_MAX>}
+ucl/by-unid/<UNID>/ep0/UnifyHumidityControl/Attributes/HumidifierSetpointMax/Reported { "value": <REPORTED_HUMIDIFIER_SETPOINT_MAX>}
+
+```
+
+<br><br>
+
+\subsection unify_humidity_control_attr_humidifier_setpoint UnifyHumidityControl/HumidifierSetpoint Attribute
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/UnifyHumidityControl/Attributes/HumidifierSetpoint/Reported
+[PREFIX]/UnifyHumidityControl/Attributes/HumidifierSetpoint/Desired
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UnifyHumidityControl Cluster HumidifierSetpoint Attribute Properties",
+  "type": "object",
+  "properties": {
+    "value": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "value"
+  ]
+}
+```
+
+
+**Example Mosquitto CLI Tool Usage**
+
+To see desired/reported value for HumidifierSetpoint attribute under the by-unid topic space:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/+/+/UnifyHumidityControl/Attributes/HumidifierSetpoint/+'
+
+# Example output
+
+ucl/by-unid/<UNID>/ep0/UnifyHumidityControl/Attributes/HumidifierSetpoint/Desired { "value": <DESIRED_HUMIDIFIER_SETPOINT>}
+ucl/by-unid/<UNID>/ep0/UnifyHumidityControl/Attributes/HumidifierSetpoint/Reported { "value": <REPORTED_HUMIDIFIER_SETPOINT>}
+
+```
+
+<br><br>
+
+\subsection unify_humidity_control_attr_humidifier_setpoint_scale UnifyHumidityControl/HumidifierSetpointScale Attribute
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/UnifyHumidityControl/Attributes/HumidifierSetpointScale/Reported
+[PREFIX]/UnifyHumidityControl/Attributes/HumidifierSetpointScale/Desired
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UnifyHumidityControl Cluster HumidifierSetpointScale Attribute Properties",
+  "type": "object",
+  "properties": {
+    "value": {
+      "type": "ScaleType"
+    }
+  },
+  "required": [
+    "value"
+  ]
+}
+```
+
+
+**Example Mosquitto CLI Tool Usage**
+
+To see desired/reported value for HumidifierSetpointScale attribute under the by-unid topic space:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/+/+/UnifyHumidityControl/Attributes/HumidifierSetpointScale/+'
+
+# Example output
+
+ucl/by-unid/<UNID>/ep0/UnifyHumidityControl/Attributes/HumidifierSetpointScale/Desired { "value": <DESIRED_HUMIDIFIER_SETPOINT_SCALE>}
+ucl/by-unid/<UNID>/ep0/UnifyHumidityControl/Attributes/HumidifierSetpointScale/Reported { "value": <REPORTED_HUMIDIFIER_SETPOINT_SCALE>}
+
+```
+
+<br><br>
+
+\subsection unify_humidity_control_attr_humidifier_setpoint_precision UnifyHumidityControl/HumidifierSetpointPrecision Attribute
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/UnifyHumidityControl/Attributes/HumidifierSetpointPrecision/Reported
+[PREFIX]/UnifyHumidityControl/Attributes/HumidifierSetpointPrecision/Desired
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UnifyHumidityControl Cluster HumidifierSetpointPrecision Attribute Properties",
+  "type": "object",
+  "properties": {
+    "value": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "value"
+  ]
+}
+```
+
+
+**Example Mosquitto CLI Tool Usage**
+
+To see desired/reported value for HumidifierSetpointPrecision attribute under the by-unid topic space:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/+/+/UnifyHumidityControl/Attributes/HumidifierSetpointPrecision/+'
+
+# Example output
+
+ucl/by-unid/<UNID>/ep0/UnifyHumidityControl/Attributes/HumidifierSetpointPrecision/Desired { "value": <DESIRED_HUMIDIFIER_SETPOINT_PRECISION>}
+ucl/by-unid/<UNID>/ep0/UnifyHumidityControl/Attributes/HumidifierSetpointPrecision/Reported { "value": <REPORTED_HUMIDIFIER_SETPOINT_PRECISION>}
+
+```
+
+<br><br>
+
+\subsection unify_humidity_control_attr_dehumidifier_setpoint_min UnifyHumidityControl/DehumidifierSetpointMin Attribute
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/UnifyHumidityControl/Attributes/DehumidifierSetpointMin/Reported
+[PREFIX]/UnifyHumidityControl/Attributes/DehumidifierSetpointMin/Desired
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UnifyHumidityControl Cluster DehumidifierSetpointMin Attribute Properties",
+  "type": "object",
+  "properties": {
+    "value": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "value"
+  ]
+}
+```
+
+
+**Example Mosquitto CLI Tool Usage**
+
+To see desired/reported value for DehumidifierSetpointMin attribute under the by-unid topic space:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/+/+/UnifyHumidityControl/Attributes/DehumidifierSetpointMin/+'
+
+# Example output
+
+ucl/by-unid/<UNID>/ep0/UnifyHumidityControl/Attributes/DehumidifierSetpointMin/Desired { "value": <DESIRED_DEHUMIDIFIER_SETPOINT_MIN>}
+ucl/by-unid/<UNID>/ep0/UnifyHumidityControl/Attributes/DehumidifierSetpointMin/Reported { "value": <REPORTED_DEHUMIDIFIER_SETPOINT_MIN>}
+
+```
+
+<br><br>
+
+\subsection unify_humidity_control_attr_dehumidifier_setpoint_max UnifyHumidityControl/DehumidifierSetpointMax Attribute
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/UnifyHumidityControl/Attributes/DehumidifierSetpointMax/Reported
+[PREFIX]/UnifyHumidityControl/Attributes/DehumidifierSetpointMax/Desired
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UnifyHumidityControl Cluster DehumidifierSetpointMax Attribute Properties",
+  "type": "object",
+  "properties": {
+    "value": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "value"
+  ]
+}
+```
+
+
+**Example Mosquitto CLI Tool Usage**
+
+To see desired/reported value for DehumidifierSetpointMax attribute under the by-unid topic space:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/+/+/UnifyHumidityControl/Attributes/DehumidifierSetpointMax/+'
+
+# Example output
+
+ucl/by-unid/<UNID>/ep0/UnifyHumidityControl/Attributes/DehumidifierSetpointMax/Desired { "value": <DESIRED_DEHUMIDIFIER_SETPOINT_MAX>}
+ucl/by-unid/<UNID>/ep0/UnifyHumidityControl/Attributes/DehumidifierSetpointMax/Reported { "value": <REPORTED_DEHUMIDIFIER_SETPOINT_MAX>}
+
+```
+
+<br><br>
+
+\subsection unify_humidity_control_attr_dehumidifier_setpoint UnifyHumidityControl/DehumidifierSetpoint Attribute
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/UnifyHumidityControl/Attributes/DehumidifierSetpoint/Reported
+[PREFIX]/UnifyHumidityControl/Attributes/DehumidifierSetpoint/Desired
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UnifyHumidityControl Cluster DehumidifierSetpoint Attribute Properties",
+  "type": "object",
+  "properties": {
+    "value": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "value"
+  ]
+}
+```
+
+
+**Example Mosquitto CLI Tool Usage**
+
+To see desired/reported value for DehumidifierSetpoint attribute under the by-unid topic space:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/+/+/UnifyHumidityControl/Attributes/DehumidifierSetpoint/+'
+
+# Example output
+
+ucl/by-unid/<UNID>/ep0/UnifyHumidityControl/Attributes/DehumidifierSetpoint/Desired { "value": <DESIRED_DEHUMIDIFIER_SETPOINT>}
+ucl/by-unid/<UNID>/ep0/UnifyHumidityControl/Attributes/DehumidifierSetpoint/Reported { "value": <REPORTED_DEHUMIDIFIER_SETPOINT>}
+
+```
+
+<br><br>
+
+\subsection unify_humidity_control_attr_dehumidifier_setpoint_scale UnifyHumidityControl/DehumidifierSetpointScale Attribute
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/UnifyHumidityControl/Attributes/DehumidifierSetpointScale/Reported
+[PREFIX]/UnifyHumidityControl/Attributes/DehumidifierSetpointScale/Desired
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UnifyHumidityControl Cluster DehumidifierSetpointScale Attribute Properties",
+  "type": "object",
+  "properties": {
+    "value": {
+      "type": "ScaleType"
+    }
+  },
+  "required": [
+    "value"
+  ]
+}
+```
+
+
+**Example Mosquitto CLI Tool Usage**
+
+To see desired/reported value for DehumidifierSetpointScale attribute under the by-unid topic space:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/+/+/UnifyHumidityControl/Attributes/DehumidifierSetpointScale/+'
+
+# Example output
+
+ucl/by-unid/<UNID>/ep0/UnifyHumidityControl/Attributes/DehumidifierSetpointScale/Desired { "value": <DESIRED_DEHUMIDIFIER_SETPOINT_SCALE>}
+ucl/by-unid/<UNID>/ep0/UnifyHumidityControl/Attributes/DehumidifierSetpointScale/Reported { "value": <REPORTED_DEHUMIDIFIER_SETPOINT_SCALE>}
+
+```
+
+<br><br>
+
+\subsection unify_humidity_control_attr_dehumidifier_setpoint_precision UnifyHumidityControl/DehumidifierSetpointPrecision Attribute
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/UnifyHumidityControl/Attributes/DehumidifierSetpointPrecision/Reported
+[PREFIX]/UnifyHumidityControl/Attributes/DehumidifierSetpointPrecision/Desired
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UnifyHumidityControl Cluster DehumidifierSetpointPrecision Attribute Properties",
+  "type": "object",
+  "properties": {
+    "value": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "value"
+  ]
+}
+```
+
+
+**Example Mosquitto CLI Tool Usage**
+
+To see desired/reported value for DehumidifierSetpointPrecision attribute under the by-unid topic space:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/+/+/UnifyHumidityControl/Attributes/DehumidifierSetpointPrecision/+'
+
+# Example output
+
+ucl/by-unid/<UNID>/ep0/UnifyHumidityControl/Attributes/DehumidifierSetpointPrecision/Desired { "value": <DESIRED_DEHUMIDIFIER_SETPOINT_PRECISION>}
+ucl/by-unid/<UNID>/ep0/UnifyHumidityControl/Attributes/DehumidifierSetpointPrecision/Reported { "value": <REPORTED_DEHUMIDIFIER_SETPOINT_PRECISION>}
+
+```
+
+<br><br>
+
+\subsection unify_humidity_control_attr_auto_setpoint_min UnifyHumidityControl/AutoSetpointMin Attribute
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/UnifyHumidityControl/Attributes/AutoSetpointMin/Reported
+[PREFIX]/UnifyHumidityControl/Attributes/AutoSetpointMin/Desired
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UnifyHumidityControl Cluster AutoSetpointMin Attribute Properties",
+  "type": "object",
+  "properties": {
+    "value": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "value"
+  ]
+}
+```
+
+
+**Example Mosquitto CLI Tool Usage**
+
+To see desired/reported value for AutoSetpointMin attribute under the by-unid topic space:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/+/+/UnifyHumidityControl/Attributes/AutoSetpointMin/+'
+
+# Example output
+
+ucl/by-unid/<UNID>/ep0/UnifyHumidityControl/Attributes/AutoSetpointMin/Desired { "value": <DESIRED_AUTO_SETPOINT_MIN>}
+ucl/by-unid/<UNID>/ep0/UnifyHumidityControl/Attributes/AutoSetpointMin/Reported { "value": <REPORTED_AUTO_SETPOINT_MIN>}
+
+```
+
+<br><br>
+
+\subsection unify_humidity_control_attr_auto_setpoint_max UnifyHumidityControl/AutoSetpointMax Attribute
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/UnifyHumidityControl/Attributes/AutoSetpointMax/Reported
+[PREFIX]/UnifyHumidityControl/Attributes/AutoSetpointMax/Desired
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UnifyHumidityControl Cluster AutoSetpointMax Attribute Properties",
+  "type": "object",
+  "properties": {
+    "value": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "value"
+  ]
+}
+```
+
+
+**Example Mosquitto CLI Tool Usage**
+
+To see desired/reported value for AutoSetpointMax attribute under the by-unid topic space:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/+/+/UnifyHumidityControl/Attributes/AutoSetpointMax/+'
+
+# Example output
+
+ucl/by-unid/<UNID>/ep0/UnifyHumidityControl/Attributes/AutoSetpointMax/Desired { "value": <DESIRED_AUTO_SETPOINT_MAX>}
+ucl/by-unid/<UNID>/ep0/UnifyHumidityControl/Attributes/AutoSetpointMax/Reported { "value": <REPORTED_AUTO_SETPOINT_MAX>}
+
+```
+
+<br><br>
+
+\subsection unify_humidity_control_attr_auto_setpoint UnifyHumidityControl/AutoSetpoint Attribute
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/UnifyHumidityControl/Attributes/AutoSetpoint/Reported
+[PREFIX]/UnifyHumidityControl/Attributes/AutoSetpoint/Desired
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UnifyHumidityControl Cluster AutoSetpoint Attribute Properties",
+  "type": "object",
+  "properties": {
+    "value": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "value"
+  ]
+}
+```
+
+
+**Example Mosquitto CLI Tool Usage**
+
+To see desired/reported value for AutoSetpoint attribute under the by-unid topic space:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/+/+/UnifyHumidityControl/Attributes/AutoSetpoint/+'
+
+# Example output
+
+ucl/by-unid/<UNID>/ep0/UnifyHumidityControl/Attributes/AutoSetpoint/Desired { "value": <DESIRED_AUTO_SETPOINT>}
+ucl/by-unid/<UNID>/ep0/UnifyHumidityControl/Attributes/AutoSetpoint/Reported { "value": <REPORTED_AUTO_SETPOINT>}
+
+```
+
+<br><br>
+
+\subsection unify_humidity_control_attr_auto_setpoint_scale UnifyHumidityControl/AutoSetpointScale Attribute
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/UnifyHumidityControl/Attributes/AutoSetpointScale/Reported
+[PREFIX]/UnifyHumidityControl/Attributes/AutoSetpointScale/Desired
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UnifyHumidityControl Cluster AutoSetpointScale Attribute Properties",
+  "type": "object",
+  "properties": {
+    "value": {
+      "type": "ScaleType"
+    }
+  },
+  "required": [
+    "value"
+  ]
+}
+```
+
+
+**Example Mosquitto CLI Tool Usage**
+
+To see desired/reported value for AutoSetpointScale attribute under the by-unid topic space:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/+/+/UnifyHumidityControl/Attributes/AutoSetpointScale/+'
+
+# Example output
+
+ucl/by-unid/<UNID>/ep0/UnifyHumidityControl/Attributes/AutoSetpointScale/Desired { "value": <DESIRED_AUTO_SETPOINT_SCALE>}
+ucl/by-unid/<UNID>/ep0/UnifyHumidityControl/Attributes/AutoSetpointScale/Reported { "value": <REPORTED_AUTO_SETPOINT_SCALE>}
+
+```
+
+<br><br>
+
+\subsection unify_humidity_control_attr_auto_setpoint_precision UnifyHumidityControl/AutoSetpointPrecision Attribute
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/UnifyHumidityControl/Attributes/AutoSetpointPrecision/Reported
+[PREFIX]/UnifyHumidityControl/Attributes/AutoSetpointPrecision/Desired
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UnifyHumidityControl Cluster AutoSetpointPrecision Attribute Properties",
+  "type": "object",
+  "properties": {
+    "value": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "value"
+  ]
+}
+```
+
+
+**Example Mosquitto CLI Tool Usage**
+
+To see desired/reported value for AutoSetpointPrecision attribute under the by-unid topic space:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/+/+/UnifyHumidityControl/Attributes/AutoSetpointPrecision/+'
+
+# Example output
+
+ucl/by-unid/<UNID>/ep0/UnifyHumidityControl/Attributes/AutoSetpointPrecision/Desired { "value": <DESIRED_AUTO_SETPOINT_PRECISION>}
+ucl/by-unid/<UNID>/ep0/UnifyHumidityControl/Attributes/AutoSetpointPrecision/Reported { "value": <REPORTED_AUTO_SETPOINT_PRECISION>}
+
+```
+
+<br><br>
+
+
+\subsection unify_humidity_control_attr_cluster_revision UnifyHumidityControl/ClusterRevision Attribute
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/UnifyHumidityControl/Attributes/ClusterRevision/Reported
+[PREFIX]/UnifyHumidityControl/Attributes/ClusterRevision/Desired
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UnifyHumidityControl Cluster ClusterRevision Attribute Properties",
+  "type": "object",
+  "properties": {
+    "value": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "value"
+  ]
+}
+```
+
+**Example Mosquitto CLI Tool Usage**
+
+To see desired/reported value for ClusterRevision attribute under the by-unid topic space:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/<UNID>/<EP>/UnifyHumidityControl/Attributes/ClusterRevision/+'
+# Example output
+ucl/by-unid/<UNID>/<EP>/UnifyHumidityControl/Attributes/ClusterRevision/Desired { "value": <DESIRED_CLUSTER_REVISION> }
+ucl/by-unid/<UNID>/<EP>/UnifyHumidityControl/Attributes/ClusterRevision/Reported { "value": <REPORTED_CLUSTER_REVISION> }
+```
+
+<!-- -->
+<!--  END OF UnifyHumidityControl Attributes Section -->
+<!-- -->
+
+<br><br>
+
+<!-- -->
+<!-- START OF UnifyHumidityControl Supported Commands Section -->
+<!-- -->
+\section unify_humidity_control_recv_cmd_support UnifyHumidityControl Command Support
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/UnifyHumidityControl/SupportedCommands
+[PREFIX]/UnifyHumidityControl/SupportedGeneratedCommands
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UnifyHumidityControl Command Support Properties",
+  "type": "object",
+  "properties": {
+      "value": {
+          "type": "array",
+          "items" : {
+            "type": "string",
+            "enum": [
+              "ModeSet",
+              "SetpointSet",
+              "WriteAttributes",
+              "ForceReadAttributes"
+            ]
+          }
+        }
+      }
+  },
+  "required": [
+    "value"
+  ]
+}
+```
+
+**Example Mosquitto CLI Tool Usage**
+
+To see supported commands for UnifyHumidityControl cluster under the by-unid topic space:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/<UNID>/<EP>/UnifyHumidityControl/SupportedCommands'
+# Example output
+ucl/by-unid/<UNID>/<EP>/UnifyHumidityControl/SupportedCommands { "value": ["ModeSet","SetpointSet","WriteAttributes", "ForceReadAttributes"] }
+```
+
+To see supported generated commands for UnifyHumidityControl cluster under the by-unid topic space:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/<UNID>/<EP>/UnifyHumidityControl/SupportedGeneratedCommands'
+# Example output
+ucl/by-unid/<UNID>/<EP>/UnifyHumidityControl/SupportedGeneratedCommands { "value": [] }
+```
+
+<!-- -->
+<!-- END OF UnifyHumidityControl Supported Commands Section -->
+<!-- -->
+
+<br><br>
+
+<!-- -->
+<!-- START OF UnifyHumidityControl Commands Section -->
+<!-- -->
+\section unify_humidity_control_cmds UnifyHumidityControl Commands
+
+<br><br>
+
+\subsection unify_humidity_control_mode_set_cmd UnifyHumidityControl/ModeSet Command
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/UnifyHumidityControl/Commands/ModeSet
+[PREFIX]/UnifyHumidityControl/GeneratedCommands/ModeSet
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UnifyHumidityControl Cluster ModeSet Command Properties",
+  "type": "object",
+  "properties": {
+    "Mode": {
+      "type": "ModeType"
+    }
+  },
+  "required": [
+    "Mode"
+  ]
+}
+```
+
+**Example Mosquitto CLI Tool Usage**
+
+To send a UnifyHumidityControl/ModeSet command under the by-unid topic space:
+
+```console
+mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/UnifyHumidityControl/Commands/ModeSet' -m  '{ "Mode": <MODE_VALUE> }'
+```
+
+To receive a UnifyHumidityControl/ModeSet generated command from a UNID/endpoint:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/<UNID>/<EP>/UnifyHumidityControl/GeneratedCommands/ModeSet'
+```
+
+<br><br>
+
+\subsection unify_humidity_control_setpoint_set_cmd UnifyHumidityControl/SetpointSet Command
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/UnifyHumidityControl/Commands/SetpointSet
+[PREFIX]/UnifyHumidityControl/GeneratedCommands/SetpointSet
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UnifyHumidityControl Cluster SetpointSet Command Properties",
+  "type": "object",
+  "properties": {
+    "Type": {
+      "type": "SetpointType"
+    },
+    "Precision": {
+      "type": "integer"
+    },
+    "Scale": {
+      "type": "integer"
+    },
+    "Value": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "Type",
+    "Precision",
+    "Scale",
+    "Value"
+  ]
+}
+```
+
+**Example Mosquitto CLI Tool Usage**
+
+To send a UnifyHumidityControl/SetpointSet command under the by-unid topic space:
+
+```console
+mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/UnifyHumidityControl/Commands/SetpointSet' -m  '{ "Type": <TYPE_VALUE>,"Precision": <PRECISION_VALUE>,"Scale": <SCALE_VALUE>,"Value": <VALUE_VALUE> }'
+```
+
+To receive a UnifyHumidityControl/SetpointSet generated command from a UNID/endpoint:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/<UNID>/<EP>/UnifyHumidityControl/GeneratedCommands/SetpointSet'
+```
+
+<br><br>
+
+\subsection unify_humidity_control_write_attr_cmd UnifyHumidityControl/WriteAttributes Command
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/UnifyHumidityControl/Commands/WriteAttributes
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UnifyHumidityControl Cluster WriteAttributes Command Properties",
+  "type": "object",
+  "properties": {
+  },
+  "required": [
+    "value"
+  ]
+}
+```
+
+**Example Mosquitto CLI Tool Usage**
+
+To update all UnifyHumidityControl attributes under the by-unid topic space:
+
+```console
+mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/UnifyHumidityControl/Commands/WriteAttributes' -m  '{  }'
+```
+
+> NOTE: Specify only the list of attributes to write in this command.
+> Unspecified attributes will not be updated.
+
+<br><br>
+
+\subsection unify_humidity_control_force_read_attr_cmd UnifyHumidityControl/ForceReadAttributes Command
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/UnifyHumidityControl/Commands/ForceReadAttributes
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UnifyHumidityControl Cluster ForceReadAttributes Command Properties",
+  "type": "object",
+  "properties": {
+    "value": {
+      "type": "array"
+      "items": {
+        "type": "string",
+        "enum": [
+          "ReportingMode",
+          "SupportedReportingMode",
+          "CurrentState",
+          "SupportedSetPoints",
+          "HumidifierSetpointMin",
+          "HumidifierSetpointMax",
+          "HumidifierSetpoint",
+          "HumidifierSetpointScale",
+          "HumidifierSetpointPrecision",
+          "DehumidifierSetpointMin",
+          "DehumidifierSetpointMax",
+          "DehumidifierSetpoint",
+          "DehumidifierSetpointScale",
+          "DehumidifierSetpointPrecision",
+          "AutoSetpointMin",
+          "AutoSetpointMax",
+          "AutoSetpoint",
+          "AutoSetpointScale",
+          "AutoSetpointPrecision"
+        ]
+      }
+    }
+  },
+  "required": [
+    "value"
+  ]
+}
+```
+
+**Example Mosquitto CLI Tool Usage**
+
+To force read all UnifyHumidityControl attributes under the by-unid topic space (by sending an empty array):
+
+```console
+mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/UnifyHumidityControl/Commands/ForceReadAttributes' -m  '{ "value": [] }'
+```
+
+To force read one of the UnifyHumidityControl attributes under the by-unid topic space:
+
+```console
+mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/UnifyHumidityControl/Commands/ForceReadAttributes' -m  '{ "value": ["ReportingMode"] }'
+```
+
+<!-- -->
+<!-- END OF UnifyHumidityControl Commands Section -->
+<!-- -->
+
 
 <br><br><br>
 
@@ -53150,9 +56096,63 @@ mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/ProtocolController/NetworkManagement/C
 <br><br>
 
 <!-- -->
+<!-- START OF Struct CredentialStruct Section -->
+<!-- -->
+\section struct_credential_struct CredentialStruct Struct
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CredentialStruct Struct Properties",
+  "type": "object",
+  "properties": {
+    "CredentialType": {
+      "type": "CredentialTypeEnum"
+    }
+    "CredentialIndex": {
+      "type": "integer"
+    }
+  }
+}
+```
+
+<!-- -->
+<!-- END OF Struct CredentialStruct Section -->
+<!-- -->
+
+<br><br>
+
+<!-- -->
+<!-- START OF Struct DeviceTypeStruct Section -->
+<!-- -->
+\section struct_device_type_struct DeviceTypeStruct Struct
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "DeviceTypeStruct Struct Properties",
+  "type": "object",
+  "properties": {
+    "DeviceType": {
+      "type": "DevTypeId"
+    }
+    "Revision": {
+      "type": "integer"
+    }
+  }
+}
+```
+
+<!-- -->
+<!-- END OF Struct DeviceTypeStruct Section -->
+<!-- -->
+
+<br><br>
+
+<!-- -->
 <!-- START OF Struct DiskIOCounters Section -->
 <!-- -->
-\section struct_diskio_counters DiskIOCounters Struct
+\section struct_disk_io_counters DiskIOCounters Struct
 
 ```json
 {
@@ -53563,7 +56563,7 @@ mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/ProtocolController/NetworkManagement/C
 <!-- -->
 <!-- START OF Enum AoXLocatorCTEMode Section -->
 <!-- -->
-\section enum_aox_locatorcte_mode AoXLocatorCTEMode Enum
+\section enum_aox_locator_cte_mode AoXLocatorCTEMode Enum
 
 ```json
 {
@@ -53949,7 +56949,7 @@ mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/ProtocolController/NetworkManagement/C
 <!-- -->
 <!-- START OF Enum BypassResponseZoneIDBypassResult Section -->
 <!-- -->
-\section enum_bypass_response_zoneid_bypass_result BypassResponseZoneIDBypassResult Enum
+\section enum_bypass_response_zone_id_bypass_result BypassResponseZoneIDBypassResult Enum
 
 ```json
 {
@@ -53984,8 +56984,8 @@ mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/ProtocolController/NetworkManagement/C
   "title": "CCColorLoopDirection Enum Properties",
   "type": "string",
   "enum": [
-    "DecrementEnhancedCurrentHue",
-    "IncrementEnhancedCurrentHue"
+    "ColorLoopHueDecrement",
+    "ColorLoopHueIncrement"
   ]
 }
 ```
@@ -54087,6 +57087,29 @@ mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/ProtocolController/NetworkManagement/C
 
 <!-- -->
 <!-- END OF Enum ColorControlColorLoopActive Section -->
+<!-- -->
+
+<br><br>
+
+<!-- -->
+<!-- START OF Enum ColorControlColorLoopDirection Section -->
+<!-- -->
+\section enum_color_control_color_loop_direction ColorControlColorLoopDirection Enum
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ColorControlColorLoopDirection Enum Properties",
+  "type": "string",
+  "enum": [
+    "DecrementEnhancedCurrentHue",
+    "IncrementEnhancedCurrentHue"
+  ]
+}
+```
+
+<!-- -->
+<!-- END OF Enum ColorControlColorLoopDirection Section -->
 <!-- -->
 
 <br><br>
@@ -54283,6 +57306,81 @@ mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/ProtocolController/NetworkManagement/C
 <br><br>
 
 <!-- -->
+<!-- START OF Enum CredentialRuleEnum Section -->
+<!-- -->
+\section enum_credential_rule_enum CredentialRuleEnum Enum
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CredentialRuleEnum Enum Properties",
+  "type": "string",
+  "enum": [
+    "Single",
+    "Dual",
+    "Tri"
+  ]
+}
+```
+
+<!-- -->
+<!-- END OF Enum CredentialRuleEnum Section -->
+<!-- -->
+
+<br><br>
+
+<!-- -->
+<!-- START OF Enum CredentialTypeEnum Section -->
+<!-- -->
+\section enum_credential_type_enum CredentialTypeEnum Enum
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CredentialTypeEnum Enum Properties",
+  "type": "string",
+  "enum": [
+    "ProgrammingPIN",
+    "PIN",
+    "RFID",
+    "Fingerprint",
+    "FingerVein",
+    "Face"
+  ]
+}
+```
+
+<!-- -->
+<!-- END OF Enum CredentialTypeEnum Section -->
+<!-- -->
+
+<br><br>
+
+<!-- -->
+<!-- START OF Enum DataOperationTypeEnum Section -->
+<!-- -->
+\section enum_data_operation_type_enum DataOperationTypeEnum Enum
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "DataOperationTypeEnum Enum Properties",
+  "type": "string",
+  "enum": [
+    "Add",
+    "Clear",
+    "Modify"
+  ]
+}
+```
+
+<!-- -->
+<!-- END OF Enum DataOperationTypeEnum Section -->
+<!-- -->
+
+<br><br>
+
+<!-- -->
 <!-- START OF Enum DehumidificationControlDehumidificationLockout Section -->
 <!-- -->
 \section enum_dehumidification_control_dehumidification_lockout DehumidificationControlDehumidificationLockout Enum
@@ -54352,6 +57450,56 @@ mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/ProtocolController/NetworkManagement/C
 <br><br>
 
 <!-- -->
+<!-- START OF Enum DevTypeId Section -->
+<!-- -->
+\section enum_dev_type_id DevTypeId Enum
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "DevTypeId Enum Properties",
+  "type": "string",
+  "enum": [
+    "DoorLock",
+    "DoorLockController",
+    "Fan",
+    "AirPurifier",
+    "RoomAirConditioner",
+    "Cooktop",
+    "ExtractorHood",
+    "OnOffLight",
+    "DimmableLight",
+    "OnOffLightSwitch",
+    "DimmerSwitch",
+    "ColorDimmerSwitch",
+    "LightSensor",
+    "OccupancySensor",
+    "OnOffPluginUnit",
+    "DimmablePlugInUnit",
+    "ColorTemperatureLight",
+    "ExtendedColorLight",
+    "WindowCovering",
+    "WindowCoveringController",
+    "HeatingCoolingUnit",
+    "Thermostat",
+    "TemperatureSensor",
+    "Pump",
+    "PressureSensor",
+    "FlowSensor",
+    "HumiditySensor",
+    "ControlBridge",
+    "OnOffSensor"
+  ]
+}
+```
+
+<!-- -->
+<!-- END OF Enum DevTypeId Section -->
+<!-- -->
+
+<br><br>
+
+<!-- -->
 <!-- START OF Enum DoorLockDoorState Section -->
 <!-- -->
 \section enum_door_lock_door_state DoorLockDoorState Enum
@@ -54367,6 +57515,7 @@ mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/ProtocolController/NetworkManagement/C
     "ErrorJammed",
     "ErrorForcedOpen",
     "ErrorUnspecified",
+    "DoorAjar",
     "Undefined"
   ]
 }
@@ -54381,7 +57530,7 @@ mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/ProtocolController/NetworkManagement/C
 <!-- -->
 <!-- START OF Enum DoorLockLEDSettings Section -->
 <!-- -->
-\section enum_door_lockled_settings DoorLockLEDSettings Enum
+\section enum_door_lock_led_settings DoorLockLEDSettings Enum
 
 ```json
 {
@@ -54416,6 +57565,7 @@ mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/ProtocolController/NetworkManagement/C
     "NotFullyLocked",
     "Locked",
     "Unlocked",
+    "Unlatched",
     "Undefined"
   ]
 }
@@ -54448,7 +57598,8 @@ mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/ProtocolController/NetworkManagement/C
     "TubularLock",
     "InterconnectedLock",
     "DeadLatch",
-    "DoorFurniture"
+    "DoorFurniture",
+    "Eurocylinder"
   ]
 }
 ```
@@ -54495,7 +57646,8 @@ mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/ProtocolController/NetworkManagement/C
   "enum": [
     "SilentMode",
     "LowVolume",
-    "HighVolume"
+    "HighVolume",
+    "MediumVolume"
   ]
 }
 ```
@@ -54670,6 +57822,11 @@ mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/ProtocolController/NetworkManagement/C
     "WeekDayScheduleUser",
     "MasterUser",
     "NonAccessUser",
+    "ForcedUser",
+    "DisposableUser",
+    "ExpiringUser",
+    "ScheduleRestrictedUser",
+    "RemoteOnlyUser",
     "NotSupported"
   ]
 }
@@ -55321,6 +58478,31 @@ mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/ProtocolController/NetworkManagement/C
 <br><br>
 
 <!-- -->
+<!-- START OF Enum ModeType Section -->
+<!-- -->
+\section enum_mode_type ModeType Enum
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ModeType Enum Properties",
+  "type": "string",
+  "enum": [
+    "Off",
+    "Humidify",
+    "Dehumidify",
+    "Auto"
+  ]
+}
+```
+
+<!-- -->
+<!-- END OF Enum ModeType Section -->
+<!-- -->
+
+<br><br>
+
+<!-- -->
 <!-- START OF Enum MoveStepMode Section -->
 <!-- -->
 \section enum_move_step_mode MoveStepMode Enum
@@ -55818,6 +59000,29 @@ mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/ProtocolController/NetworkManagement/C
 <br><br>
 
 <!-- -->
+<!-- START OF Enum ScaleType Section -->
+<!-- -->
+\section enum_scale_type ScaleType Enum
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ScaleType Enum Properties",
+  "type": "string",
+  "enum": [
+    "Percentage",
+    "Absolute"
+  ]
+}
+```
+
+<!-- -->
+<!-- END OF Enum ScaleType Section -->
+<!-- -->
+
+<br><br>
+
+<!-- -->
 <!-- START OF Enum SetpointRaiseOrLowerMode Section -->
 <!-- -->
 \section enum_setpoint_raise_or_lower_mode SetpointRaiseOrLowerMode Enum
@@ -55837,6 +59042,30 @@ mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/ProtocolController/NetworkManagement/C
 
 <!-- -->
 <!-- END OF Enum SetpointRaiseOrLowerMode Section -->
+<!-- -->
+
+<br><br>
+
+<!-- -->
+<!-- START OF Enum SetpointType Section -->
+<!-- -->
+\section enum_setpoint_type SetpointType Enum
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SetpointType Enum Properties",
+  "type": "string",
+  "enum": [
+    "Humidifier",
+    "Dehumidifier",
+    "Auto"
+  ]
+}
+```
+
+<!-- -->
+<!-- END OF Enum SetpointType Section -->
 <!-- -->
 
 <br><br>
@@ -55941,7 +59170,7 @@ mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/ProtocolController/NetworkManagement/C
 <!-- -->
 <!-- START OF Enum ThermostatACCapacityFormat Section -->
 <!-- -->
-\section enum_thermostatac_capacity_format ThermostatACCapacityFormat Enum
+\section enum_thermostat_ac_capacity_format ThermostatACCapacityFormat Enum
 
 ```json
 {
@@ -55963,7 +59192,7 @@ mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/ProtocolController/NetworkManagement/C
 <!-- -->
 <!-- START OF Enum ThermostatACCompressorType Section -->
 <!-- -->
-\section enum_thermostatac_compressor_type ThermostatACCompressorType Enum
+\section enum_thermostat_ac_compressor_type ThermostatACCompressorType Enum
 
 ```json
 {
@@ -55987,7 +59216,7 @@ mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/ProtocolController/NetworkManagement/C
 <!-- -->
 <!-- START OF Enum ThermostatACLouverPosition Section -->
 <!-- -->
-\section enum_thermostatac_louver_position ThermostatACLouverPosition Enum
+\section enum_thermostat_ac_louver_position ThermostatACLouverPosition Enum
 
 ```json
 {
@@ -56013,7 +59242,7 @@ mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/ProtocolController/NetworkManagement/C
 <!-- -->
 <!-- START OF Enum ThermostatACRefrigerantType Section -->
 <!-- -->
-\section enum_thermostatac_refrigerant_type ThermostatACRefrigerantType Enum
+\section enum_thermostat_ac_refrigerant_type ThermostatACRefrigerantType Enum
 
 ```json
 {
@@ -56037,7 +59266,7 @@ mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/ProtocolController/NetworkManagement/C
 <!-- -->
 <!-- START OF Enum ThermostatACType Section -->
 <!-- -->
-\section enum_thermostatac_type ThermostatACType Enum
+\section enum_thermostat_ac_type ThermostatACType Enum
 
 ```json
 {
@@ -56388,6 +59617,100 @@ mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/ProtocolController/NetworkManagement/C
 <br><br>
 
 <!-- -->
+<!-- START OF Enum UnifyHumidityControlCurrentState Section -->
+<!-- -->
+\section enum_unify_humidity_control_current_state UnifyHumidityControlCurrentState Enum
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UnifyHumidityControlCurrentState Enum Properties",
+  "type": "string",
+  "enum": [
+    "Idle",
+    "Humidifying",
+    "Dehumidifying"
+  ]
+}
+```
+
+<!-- -->
+<!-- END OF Enum UnifyHumidityControlCurrentState Section -->
+<!-- -->
+
+<br><br>
+
+<!-- -->
+<!-- START OF Enum UnifyThermostatOperatingState Section -->
+<!-- -->
+\section enum_unify_thermostat_operating_state UnifyThermostatOperatingState Enum
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UnifyThermostatOperatingState Enum Properties",
+  "type": "string",
+  "enum": [
+    "Off",
+    "Heating",
+    "Cooling",
+    "FanOnly",
+    "PendingHeat",
+    "PendingCool",
+    "Vent/Economizer",
+    "AuxHeating",
+    "2ndStageHeating",
+    "2ndStageCooling",
+    "2ndStageAuxHeat",
+    "3rdStageAuxHeat"
+  ]
+}
+```
+
+<!-- -->
+<!-- END OF Enum UnifyThermostatOperatingState Section -->
+<!-- -->
+
+<br><br>
+
+<!-- -->
+<!-- START OF Enum UnifyThermostatThermostatMode Section -->
+<!-- -->
+\section enum_unify_thermostat_thermostat_mode UnifyThermostatThermostatMode Enum
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UnifyThermostatThermostatMode Enum Properties",
+  "type": "string",
+  "enum": [
+    "Off",
+    "Heat",
+    "Cool",
+    "Auto",
+    "Auxiliary",
+    "Resume",
+    "Fan",
+    "Furnace",
+    "Dry",
+    "Moist",
+    "AutoChangeover",
+    "EnergyHeat",
+    "EnergyCool",
+    "Away",
+    "FullPower",
+    "ManufacturerSpecific"
+  ]
+}
+```
+
+<!-- -->
+<!-- END OF Enum UnifyThermostatThermostatMode Section -->
+<!-- -->
+
+<br><br>
+
+<!-- -->
 <!-- START OF Enum WindowCoveringWindowCoveringType Section -->
 <!-- -->
 \section enum_window_covering_window_covering_type WindowCoveringWindowCoveringType Enum
@@ -56414,6 +59737,69 @@ mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/ProtocolController/NetworkManagement/C
 
 <!-- -->
 <!-- END OF Enum WindowCoveringWindowCoveringType Section -->
+<!-- -->
+
+<br><br>
+
+<!-- -->
+<!-- START OF Enum ZWaveFanModeEnum Section -->
+<!-- -->
+\section enum_z_wave_fan_mode_enum ZWaveFanModeEnum Enum
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ZWaveFanModeEnum Enum Properties",
+  "type": "string",
+  "enum": [
+    "Auto",
+    "Low",
+    "AutoHigh",
+    "High",
+    "AutoMedium",
+    "Medium",
+    "Circulation",
+    "HumidityCirculation",
+    "LeftRight",
+    "UpDown",
+    "Quiet",
+    "ExternalCirculation"
+  ]
+}
+```
+
+<!-- -->
+<!-- END OF Enum ZWaveFanModeEnum Section -->
+<!-- -->
+
+<br><br>
+
+<!-- -->
+<!-- START OF Enum ZWaveFanStateEnum Section -->
+<!-- -->
+\section enum_z_wave_fan_state_enum ZWaveFanStateEnum Enum
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ZWaveFanStateEnum Enum Properties",
+  "type": "string",
+  "enum": [
+    "Idle",
+    "Running",
+    "RunningHigh",
+    "RunningMedium",
+    "Circulation",
+    "HumidityCirculation",
+    "RightLeftCirculation",
+    "UpDownCirculation",
+    "QuietCirculation"
+  ]
+}
+```
+
+<!-- -->
+<!-- END OF Enum ZWaveFanStateEnum Section -->
 <!-- -->
 
 <br><br>
@@ -56580,6 +59966,7 @@ mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/ProtocolController/NetworkManagement/C
     "struct",
     "set",
     "bag",
+    "fabric_idx",
     "ToD",
     "date",
     "UTC",
@@ -57052,6 +60439,36 @@ mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/ProtocolController/NetworkManagement/C
 <br><br>
 
 <!-- -->
+<!-- START OF Bitmap DoorLockCredentialRulesSupport Section -->
+<!-- -->
+\section enum_door_lock_credential_rules_support DoorLockCredentialRulesSupport Bitmap
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "DoorLockCredentialRulesSupport Enum Properties",
+  "type": "object",
+  "properties": {
+    "Single": {
+        "type": "boolean"
+    },
+    "Dual": {
+        "type": "boolean"
+    },
+    "Tri": {
+        "type": "boolean"
+    }
+  }
+}
+```
+
+<!-- -->
+<!-- END OF Bitmap DoorLockCredentialRulesSupport Section -->
+<!-- -->
+
+<br><br>
+
+<!-- -->
 <!-- START OF Bitmap DoorLockDefaultConfigurationRegister Section -->
 <!-- -->
 \section enum_door_lock_default_configuration_register DoorLockDefaultConfigurationRegister Bitmap
@@ -57086,6 +60503,66 @@ mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/ProtocolController/NetworkManagement/C
 
 <!-- -->
 <!-- END OF Bitmap DoorLockDefaultConfigurationRegister Section -->
+<!-- -->
+
+<br><br>
+
+<!-- -->
+<!-- START OF Bitmap DoorLockFeatureMap Section -->
+<!-- -->
+\section enum_door_lock_feature_map DoorLockFeatureMap Bitmap
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "DoorLockFeatureMap Enum Properties",
+  "type": "object",
+  "properties": {
+    "PINCredential": {
+        "type": "boolean"
+    },
+    "RFIDCredential": {
+        "type": "boolean"
+    },
+    "FingerCredentials": {
+        "type": "boolean"
+    },
+    "Logging": {
+        "type": "boolean"
+    },
+    "WeekDayAccessSchedules": {
+        "type": "boolean"
+    },
+    "DoorPositionSensor": {
+        "type": "boolean"
+    },
+    "FaceCredentials": {
+        "type": "boolean"
+    },
+    "CredentialOverTheAirAccess": {
+        "type": "boolean"
+    },
+    "User": {
+        "type": "boolean"
+    },
+    "Notification": {
+        "type": "boolean"
+    },
+    "YearDayAccessSchedules": {
+        "type": "boolean"
+    },
+    "HolidaySchedules": {
+        "type": "boolean"
+    },
+    "Unbolting": {
+        "type": "boolean"
+    }
+  }
+}
+```
+
+<!-- -->
+<!-- END OF Bitmap DoorLockFeatureMap Section -->
 <!-- -->
 
 <br><br>
@@ -57172,6 +60649,39 @@ mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/ProtocolController/NetworkManagement/C
 <br><br>
 
 <!-- -->
+<!-- START OF Bitmap DoorLockLocalProgrammingFeatures Section -->
+<!-- -->
+\section enum_door_lock_local_programming_features DoorLockLocalProgrammingFeatures Bitmap
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "DoorLockLocalProgrammingFeatures Enum Properties",
+  "type": "object",
+  "properties": {
+    "AddUsersCredentialsSchedulesLocally": {
+        "type": "boolean"
+    },
+    "ModifyUsersCredentialsSchedulesLocally": {
+        "type": "boolean"
+    },
+    "ClearUsersCredentialsSchedulesLocally": {
+        "type": "boolean"
+    },
+    "AdjustLockSettingsLocally": {
+        "type": "boolean"
+    }
+  }
+}
+```
+
+<!-- -->
+<!-- END OF Bitmap DoorLockLocalProgrammingFeatures Section -->
+<!-- -->
+
+<br><br>
+
+<!-- -->
 <!-- START OF Bitmap DoorLockManualOperationEventMask Section -->
 <!-- -->
 \section enum_door_lock_manual_operation_event_mask DoorLockManualOperationEventMask Bitmap
@@ -57228,7 +60738,7 @@ mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/ProtocolController/NetworkManagement/C
 <!-- -->
 <!-- START OF Bitmap DoorLockRFIDOperationEventMask Section -->
 <!-- -->
-\section enum_door_lockrfid_operation_event_mask DoorLockRFIDOperationEventMask Bitmap
+\section enum_door_lock_rfid_operation_event_mask DoorLockRFIDOperationEventMask Bitmap
 
 ```json
 {
@@ -57270,7 +60780,7 @@ mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/ProtocolController/NetworkManagement/C
 <!-- -->
 <!-- START OF Bitmap DoorLockRFIDProgrammingEventMask Section -->
 <!-- -->
-\section enum_door_lockrfid_programming_event_mask DoorLockRFIDProgrammingEventMask Bitmap
+\section enum_door_lock_rfid_programming_event_mask DoorLockRFIDProgrammingEventMask Bitmap
 
 ```json
 {
@@ -57300,7 +60810,7 @@ mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/ProtocolController/NetworkManagement/C
 <!-- -->
 <!-- START OF Bitmap DoorLockRFOperationEventMask Section -->
 <!-- -->
-\section enum_door_lockrf_operation_event_mask DoorLockRFOperationEventMask Bitmap
+\section enum_door_lock_rf_operation_event_mask DoorLockRFOperationEventMask Bitmap
 
 ```json
 {
@@ -57342,7 +60852,7 @@ mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/ProtocolController/NetworkManagement/C
 <!-- -->
 <!-- START OF Bitmap DoorLockRFProgrammingEventMask Section -->
 <!-- -->
-\section enum_door_lockrf_programming_event_mask DoorLockRFProgrammingEventMask Bitmap
+\section enum_door_lock_rf_programming_event_mask DoorLockRFProgrammingEventMask Bitmap
 
 ```json
 {
@@ -57462,7 +60972,7 @@ mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/ProtocolController/NetworkManagement/C
 <!-- -->
 <!-- START OF Bitmap ElectricalMeasurementACAlarmsMask Section -->
 <!-- -->
-\section enum_electrical_measurementac_alarms_mask ElectricalMeasurementACAlarmsMask Bitmap
+\section enum_electrical_measurement_ac_alarms_mask ElectricalMeasurementACAlarmsMask Bitmap
 
 ```json
 {
@@ -57513,7 +61023,7 @@ mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/ProtocolController/NetworkManagement/C
 <!-- -->
 <!-- START OF Bitmap ElectricalMeasurementDCOverloadAlarmsMask Section -->
 <!-- -->
-\section enum_electrical_measurementdc_overload_alarms_mask ElectricalMeasurementDCOverloadAlarmsMask Bitmap
+\section enum_electrical_measurement_dc_overload_alarms_mask ElectricalMeasurementDCOverloadAlarmsMask Bitmap
 
 ```json
 {
@@ -58338,7 +61848,7 @@ mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/ProtocolController/NetworkManagement/C
 <!-- -->
 <!-- START OF Bitmap ThermostatACErrorCode Section -->
 <!-- -->
-\section enum_thermostatac_error_code ThermostatACErrorCode Bitmap
+\section enum_thermostat_ac_error_code ThermostatACErrorCode Bitmap
 
 ```json
 {
@@ -58404,7 +61914,7 @@ mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/ProtocolController/NetworkManagement/C
 <!-- -->
 <!-- START OF Bitmap ThermostatHVACSystemTypeConfiguration Section -->
 <!-- -->
-\section enum_thermostathvac_system_type_configuration ThermostatHVACSystemTypeConfiguration Bitmap
+\section enum_thermostat_hvac_system_type_configuration ThermostatHVACSystemTypeConfiguration Bitmap
 
 ```json
 {
@@ -58661,6 +62171,192 @@ mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/ProtocolController/NetworkManagement/C
 
 <!-- -->
 <!-- END OF Bitmap TstatScheduleMode Section -->
+<!-- -->
+
+<br><br>
+
+<!-- -->
+<!-- START OF Bitmap UnifyFanControlZWaveSupportedFanMode Section -->
+<!-- -->
+\section enum_unify_fan_controlz_wave_supported_fan_mode UnifyFanControlZWaveSupportedFanMode Bitmap
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UnifyFanControlZWaveSupportedFanMode Enum Properties",
+  "type": "object",
+  "properties": {
+    "Auto": {
+        "type": "boolean"
+    },
+    "Low": {
+        "type": "boolean"
+    },
+    "AutoHigh": {
+        "type": "boolean"
+    },
+    "High": {
+        "type": "boolean"
+    },
+    "AutoMedium": {
+        "type": "boolean"
+    },
+    "Medium": {
+        "type": "boolean"
+    },
+    "Circulation": {
+        "type": "boolean"
+    },
+    "HumidityCirculation": {
+        "type": "boolean"
+    },
+    "LeftRight": {
+        "type": "boolean"
+    },
+    "UpDown": {
+        "type": "boolean"
+    },
+    "Quiet": {
+        "type": "boolean"
+    },
+    "ExternalCirculation": {
+        "type": "boolean"
+    }
+  }
+}
+```
+
+<!-- -->
+<!-- END OF Bitmap UnifyFanControlZWaveSupportedFanMode Section -->
+<!-- -->
+
+<br><br>
+
+<!-- -->
+<!-- START OF Bitmap UnifyHumidityControlSupportedReportingMode Section -->
+<!-- -->
+\section enum_unify_humidity_control_supported_reporting_mode UnifyHumidityControlSupportedReportingMode Bitmap
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UnifyHumidityControlSupportedReportingMode Enum Properties",
+  "type": "object",
+  "properties": {
+    "Humidify": {
+        "type": "boolean"
+    },
+    "Dehumidify": {
+        "type": "boolean"
+    },
+    "Auto": {
+        "type": "boolean"
+    }
+  }
+}
+```
+
+<!-- -->
+<!-- END OF Bitmap UnifyHumidityControlSupportedReportingMode Section -->
+<!-- -->
+
+<br><br>
+
+<!-- -->
+<!-- START OF Bitmap UnifyHumidityControlSupportedSetPoints Section -->
+<!-- -->
+\section enum_unify_humidity_control_supported_set_points UnifyHumidityControlSupportedSetPoints Bitmap
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UnifyHumidityControlSupportedSetPoints Enum Properties",
+  "type": "object",
+  "properties": {
+    "Humidifier": {
+        "type": "boolean"
+    },
+    "Dehumidifier": {
+        "type": "boolean"
+    },
+    "Auto": {
+        "type": "boolean"
+    }
+  }
+}
+```
+
+<!-- -->
+<!-- END OF Bitmap UnifyHumidityControlSupportedSetPoints Section -->
+<!-- -->
+
+<br><br>
+
+<!-- -->
+<!-- START OF Bitmap UnifyThermostatSupportedThermostatMode Section -->
+<!-- -->
+\section enum_unify_thermostat_supported_thermostat_mode UnifyThermostatSupportedThermostatMode Bitmap
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UnifyThermostatSupportedThermostatMode Enum Properties",
+  "type": "object",
+  "properties": {
+    "Off": {
+        "type": "boolean"
+    },
+    "Heat": {
+        "type": "boolean"
+    },
+    "Cool": {
+        "type": "boolean"
+    },
+    "Auto": {
+        "type": "boolean"
+    },
+    "Auxiliary": {
+        "type": "boolean"
+    },
+    "Resume": {
+        "type": "boolean"
+    },
+    "Fan": {
+        "type": "boolean"
+    },
+    "Furnace": {
+        "type": "boolean"
+    },
+    "Dry": {
+        "type": "boolean"
+    },
+    "Moist": {
+        "type": "boolean"
+    },
+    "AutoChangeover": {
+        "type": "boolean"
+    },
+    "EnergyHeat": {
+        "type": "boolean"
+    },
+    "EnergyCool": {
+        "type": "boolean"
+    },
+    "Away": {
+        "type": "boolean"
+    },
+    "FullPower": {
+        "type": "boolean"
+    },
+    "ManufacturerSpecific": {
+        "type": "boolean"
+    }
+  }
+}
+```
+
+<!-- -->
+<!-- END OF Bitmap UnifyThermostatSupportedThermostatMode Section -->
 <!-- -->
 
 <br><br>
@@ -58958,3 +62654,4 @@ refer to the Unify Specification.
 | ConfigurationParameters | ConfigurationParameters | ucl/by-unid/zw-12345678-0001/ep0/ConfigurationParameters/Attributes/ConfigurationParameters/Reported |
 | AoXLocator | AzimuthMask | ucl/by-unid/zw-12345678-0001/ep0/AoXLocator/Attributes/AzimuthMask/Reported |
 | AoXLocator | ElevationMask | ucl/by-unid/zw-12345678-0001/ep0/AoXLocator/Attributes/ElevationMask/Reported |
+| Descriptor | DeviceTypeList | ucl/by-unid/zw-12345678-0001/ep0/Descriptor/Attributes/DeviceTypeList/Reported |

@@ -1,7 +1,7 @@
 # Unify Host SDK User guide
 
 This guide contains information which is common to all Unify applications.
-For a having a general setup running, it assumes you have gone over the [Getting Started guide](getting_started.md).
+For a having a general setup running, it assumes you have gone over the [Getting Started guide](getting_started_unify.md).
 Details about each application can be found in the application specific user guides.
 
 ## Running Using Systemd
@@ -155,6 +155,18 @@ to enable the TLS encrypted connection. The option can be provided from command 
 config file of the components.
 
 >NOTE: the DevUI will need the certificates as input from the user interface itself.
+
+### Using MQTT Explorer to Monitor Messages
+
+You can publish MQTT message and observe the MQTT messages stored in the broker
+with a [MQTT Explorer](https://mqtt-explorer.com/).
+[MQTT Explorer](https://mqtt-explorer.com/) is an MQTT client that provides a
+structured overview of your MQTT topics.
+
+Configure [MQTT Explorer](https://mqtt-explorer.com/) to connect to the host
+where your MQTT broker is located and the topics can be observed. Use the
+[Unify Specifications](./unify_specifications/index.rst)
+if you need assistance to understand what topics and they data represent.
 
 ## Evaluation
 
