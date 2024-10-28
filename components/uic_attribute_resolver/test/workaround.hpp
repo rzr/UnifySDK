@@ -7,5 +7,6 @@
 
 #ifdef __cplusplus
 #include "attribute_resolver_rule_internal.hpp"
+#include "attribute_resolver.hpp"
 #endif
 #endif

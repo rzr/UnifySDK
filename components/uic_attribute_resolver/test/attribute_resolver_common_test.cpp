@@ -471,14 +471,12 @@ void test_attribute_resolver_common_get_node_groups()
   attribute_resolver_set_attribute_depth(attribute_store_get_node_type(node_7),
                                          1);
 
-  // Register a rule for type 7
-  attribute_resolver_register_rule(attribute_store_get_node_type(node_7),
-                                   NULL,
-                                   &test_get_resolution_function);
-  // Register the same rule for type 9
-  attribute_resolver_register_rule(attribute_store_get_node_type(node_9),
-                                   NULL,
-                                   &test_get_resolution_function);
+  // Register same rule for type 7 & type 9
+  attribute_resolver::register_multiple_types_rules(
+    {attribute_store_get_node_type(node_7),
+     attribute_store_get_node_type(node_9)},
+    nullptr,
+    &test_get_resolution_function);
 
   // Get the resolver to resolve:
   attribute_store_undefine_reported(node_7);
@@ -514,14 +512,12 @@ void test_attribute_resolver_common_set_node_groups_ok_execution_verified()
   attribute_resolver_set_attribute_depth(attribute_store_get_node_type(node_7),
                                          1);
 
-  // Register a rule for type 7
-  attribute_resolver_register_rule(attribute_store_get_node_type(node_7),
-                                   &test_set_resolution_function,
-                                   NULL);
-  // Register the same rule for type 9
-  attribute_resolver_register_rule(attribute_store_get_node_type(node_9),
-                                   &test_set_resolution_function,
-                                   NULL);
+  // Register same rule for type 7 & type 9
+  attribute_resolver::register_multiple_types_rules(
+    {attribute_store_get_node_type(node_7),
+     attribute_store_get_node_type(node_9)},
+    &test_set_resolution_function,
+    NULL);
 
   // Get the resolver to resolve:
   value = 1;
@@ -558,14 +554,12 @@ void test_attribute_resolver_common_set_node_groups_ok_execution_failed()
   attribute_resolver_set_attribute_depth(attribute_store_get_node_type(node_7),
                                          1);
 
-  // Register a rule for type 7
-  attribute_resolver_register_rule(attribute_store_get_node_type(node_7),
-                                   &test_set_resolution_function,
-                                   NULL);
-  // Register the same rule for type 9
-  attribute_resolver_register_rule(attribute_store_get_node_type(node_9),
-                                   &test_set_resolution_function,
-                                   NULL);
+  // Register same rule for type 7 & type 9
+  attribute_resolver::register_multiple_types_rules(
+    {attribute_store_get_node_type(node_7),
+     attribute_store_get_node_type(node_9)},
+    &test_set_resolution_function,
+    NULL);
 
   // Get the resolver to resolve:
   value = 1;
@@ -995,14 +989,12 @@ void test_attribute_resolver_common_set_node_groups_with_restart()
   attribute_resolver_set_attribute_depth(attribute_store_get_node_type(node_7),
                                          1);
 
-  // Register a rule for type 7
-  attribute_resolver_register_rule(attribute_store_get_node_type(node_7),
-                                   &test_set_resolution_function,
-                                   NULL);
-  // Register the same rule for type 9
-  attribute_resolver_register_rule(attribute_store_get_node_type(node_9),
-                                   &test_set_resolution_function,
-                                   NULL);
+  // Register a rule for type 7 & type 9
+  attribute_resolver::register_multiple_types_rules(
+    {attribute_store_get_node_type(node_7),
+     attribute_store_get_node_type(node_9)},
+    &test_set_resolution_function,
+    NULL);
 
   // Get the resolver to resolve:
   value = 1;
@@ -1713,14 +1705,12 @@ void test_attribute_resolver_give_up_on_group_get_rule()
   attribute_resolver_set_attribute_depth(attribute_store_get_node_type(node_7),
                                          1);
 
-  // Register a rule for type 7
-  attribute_resolver_register_rule(attribute_store_get_node_type(node_7),
-                                   NULL,
-                                   &test_get_resolution_function);
-  // Register the same rule for type 9
-  attribute_resolver_register_rule(attribute_store_get_node_type(node_9),
-                                   NULL,
-                                   &test_get_resolution_function);
+  // Register same rule for type 7 & type 9
+  attribute_resolver::register_multiple_types_rules(
+    {attribute_store_get_node_type(node_7),
+     attribute_store_get_node_type(node_9)},
+    nullptr,
+    &test_get_resolution_function);
 
   expected_node_for_listening_notification = node_2;
   attribute_resolver_set_resolution_listener(
@@ -1800,15 +1790,10 @@ void test_attribute_resolver_rule_get_group_node()
   attribute_resolver_rule_init(0);
   // Let all node types B,C,D be resolved by the same frame
 
-  attribute_resolver_rule_register(0xb,
-                                   &test_set_resolution_function,
-                                   &test_get_resolution_function);
-  attribute_resolver_rule_register(0xc,
-                                   &test_set_resolution_function,
-                                   &test_get_resolution_function);
-  attribute_resolver_rule_register(0xd,
-                                   &test_set_resolution_function,
-                                   &test_get_resolution_function);
+  attribute_resolver::register_multiple_types_rules(
+    {0xb, 0xc, 0xd},
+    &test_set_resolution_function,
+    &test_get_resolution_function);
 
   // Depth 0, means the node sits alone in its group
   attribute_resolver_set_attribute_depth(0xb, 0);

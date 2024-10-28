@@ -1,6 +1,7 @@
 # Attribute resolver
-add_library(uic_attribute_resolver OBJECT src/attribute_resolver.cpp
-                                          src/attribute_resolver_rule.cpp)
+add_library(uic_attribute_resolver OBJECT src/attribute_resolver_rule.cpp
+                                          src/attribute_resolver.cpp
+                                          )
 
 target_include_directories(
   uic_attribute_resolver

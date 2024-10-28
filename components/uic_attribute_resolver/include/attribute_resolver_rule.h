@@ -80,27 +80,6 @@ typedef void (*resolver_on_set_rule_registered_t)(attribute_store_type_t);
 void attribute_resolver_register_set_rule_listener(
   resolver_on_set_rule_registered_t function);
 
-/**
- * @brief Return the get function for a given attribute type
- *
- * @param node_type
- * @returns         NULL if this attribute type cannot be resolved.
- *                  Else the attribute_resolver_function_t that can resolve
- *                  this particular attribute
- */
-attribute_resolver_function_t
-  attribute_resolver_get_function(attribute_store_type_t node_type);
-
-/**
- * @brief Return the set function for a given attribute type
- *
- * @param node_type
- * @returns         NULL if this attribute type cannot be resolved.
- *                  Else the attribute_resolver_function_t that can resolve
- *                  this particular attribute
- */
-attribute_resolver_function_t
-  attribute_resolver_set_function(attribute_store_type_t node_type);
 
 /**
  * @brief Returns if the Rule Book can resolve a Set Rule for the attribute type
@@ -137,7 +116,7 @@ void on_resolver_send_data_complete(resolver_send_status_t status,
                                     clock_time_t transmit_time,
                                     attribute_store_node_t node,
                                     resolver_rule_type_t rule_type);
-
+                                    
 #ifdef __cplusplus
 }
 #endif

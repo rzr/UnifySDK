@@ -20,3 +20,22 @@ std::set<attribute_store_node_t>
   return std::set<attribute_store_node_t>();
   //NA
 }
+
+namespace attribute_resolver
+{
+void register_rules_internal(attribute_store_type_t node_type,
+                             attribute_resolver_function set_func,
+                             attribute_resolver_function get_func)
+{
+  return;
+};
+
+void register_group_rules_internal(
+  const std::set<attribute_store_type_t> &nodes,
+  attribute_resolver_function set_func,
+  attribute_resolver_function get_func)
+{
+  return;
+};
+
+}  // namespace attribute_resolver

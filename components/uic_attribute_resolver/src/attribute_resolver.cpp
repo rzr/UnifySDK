@@ -17,6 +17,7 @@
 #include "attribute_resolver_rule_internal.hpp"
 
 #include "attribute.hpp"
+#include "attribute_resolver.hpp"
 
 // Includes from other components
 #include "multi_invoke.hpp"
@@ -950,16 +951,19 @@ void on_resolver_rule_execute_complete(attribute_store_node_t node,
   }
 }
 
-///////////////////////////////////////////////////////////////////////////////
-// Attribute Resolver public functions
-///////////////////////////////////////////////////////////////////////////////
-sl_status_t
-  attribute_resolver_register_rule(attribute_store_type_t node_type,
-                                   attribute_resolver_function_t set_func,
-                                   attribute_resolver_function_t get_func)
-{
-  attribute_resolver_rule_register(node_type, set_func, get_func);
 
+
+///////////////////////////////////////////////////////////////////////////////
+// C++ wrapper
+///////////////////////////////////////////////////////////////////////////////
+namespace attribute_resolver
+{
+
+void create_attribute_store_callbacks(
+  attribute_store_type_t node_type,
+  const attribute_resolver_function &set_func,
+  const attribute_resolver_function &get_func)
+{
   if (set_func != nullptr) {
     // Both Get and Set or only Set rule registered, we want to know about both DESIRED and REPORTED updates.
     attribute_store_register_callback_by_type(&on_resolver_node_update,
@@ -976,8 +980,41 @@ sl_status_t
     scan_requested = true;
     process_post(&attribute_resolver_process, RESOLVER_NEXT_EVENT, nullptr);
   }
+}
 
+sl_status_t register_rules(attribute_store_type_t node_type,
+                           attribute_resolver::attribute_resolver_function set_func,
+                           attribute_resolver::attribute_resolver_function get_func)
+{
+  register_rules_internal(node_type, set_func, get_func);
+  create_attribute_store_callbacks(node_type, set_func, get_func);
   return SL_STATUS_OK;
+}
+
+sl_status_t register_multiple_types_rules(
+  const std::set<attribute_store_type_t> &node_types,
+  attribute_resolver_function set_func,
+  attribute_resolver_function get_func)
+{
+  register_group_rules_internal(node_types, set_func, get_func);
+
+  for (auto node_type: node_types) {
+    create_attribute_store_callbacks(node_type, set_func, get_func);
+  }
+  return SL_STATUS_OK;
+}
+
+}  // namespace attribute_resolver
+
+///////////////////////////////////////////////////////////////////////////////
+// Attribute Resolver public functions
+///////////////////////////////////////////////////////////////////////////////
+sl_status_t
+  attribute_resolver_register_rule(attribute_store_type_t node_type,
+                                   attribute_resolver_function_t set_func,
+                                   attribute_resolver_function_t get_func)
+{
+  return attribute_resolver::register_rules(node_type, set_func, get_func);
 }
 
 static sl_status_t

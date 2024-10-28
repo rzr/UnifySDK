@@ -10,8 +10,12 @@
  * sections of the MSLA applicable to Source Code.
  *
  *****************************************************************************/
+
+#include "attribute_resolver.hpp"
+
 // Includes from this component
 #include "attribute_resolver.h"
+
 #include "attribute_resolver_rule_internal.h"
 #include "attribute_resolver_rule_internal.hpp"
 #include "attribute_resolver_rule.h"
@@ -20,6 +24,7 @@
 #include <set>
 #include <map>
 #include <vector>
+#include <memory>
 
 // Unify Components
 #include "attribute_store_helper.h"
@@ -31,10 +36,11 @@ constexpr char LOG_TAG[]                   = "attribute_resolver_rule";
 constexpr int DEFAULT_GROUPING_DEPTH       = 1;
 constexpr clock_time_t MAX_RESOLUTION_TIME = 60 * CLOCK_CONF_SECOND;
 
-struct attribute_rule {
-  attribute_resolver_function_t set_func;
-  attribute_resolver_function_t get_func;
+struct attribute_rules {
+  attribute_resolver::attribute_resolver_function set_func;
+  attribute_resolver::attribute_resolver_function get_func;
 };
+using attribute_rules_ptr = std::shared_ptr<attribute_rules>;
 
 static enum {
   RESOLVER_IDLE,
@@ -42,16 +48,15 @@ static enum {
   RESOLVER_EXECUTING_GET_RULE,
 } resolver_state;
 
-static std::map<attribute_store_type_t, struct attribute_rule> rule_book;
+static std::map<attribute_store_type_t, attribute_rules_ptr> rule_book;
+// To save time we also have an inverted rule book
+// This allows us to quickly find all attributes that belong to the same rule book
+static std::multimap<attribute_rules_ptr, attribute_store_type_t>
+  rule_book_inverted;
+
 static std::map<attribute_store_type_t, int> relatives;
 
-/* Set of attributes in the same report message, this is deducted form the get function */
-static std::multimap<attribute_resolver_function_t, attribute_store_type_t>
-  get_group;
 
-/* Set of attribute in the same set function. */
-static std::multimap<attribute_resolver_function_t, attribute_store_type_t>
-  set_group;
 
 static attribute_rule_complete_t compl_func;
 static attribute_store_node_t node_pending_resolution
@@ -115,6 +120,7 @@ static const char *
   }
 }
 
+
 void on_rule_execution_timeout(void *user)
 {
   sl_log_error(LOG_TAG,
@@ -139,23 +145,17 @@ void on_rule_execution_timeout(void *user)
 static void
   attribute_resolver_rule_get_group(resolver_rule_type_t rule_type,
                                     attribute_store_type_t attribute_type,
-                                    std::set<attribute_store_type_t> &result)
+                                    std::set<attribute_store_type_t> &output)
 {
-  // Start by inserting the node itself.
-  result.insert(attribute_type);
-  //do we have the attribute in the rule book
-  if (rule_book.count(attribute_type)) {
-    if (rule_type == RESOLVER_GET_RULE) {
-      attribute_resolver_function_t f = rule_book.at(attribute_type).get_func;
-      const auto range                = get_group.equal_range(f);
-      for (auto i = range.first; i != range.second; i++) {
-        result.insert(i->second);
-      }
-    } else if (rule_type == RESOLVER_SET_RULE) {
-      attribute_resolver_function_t f = rule_book.at(attribute_type).set_func;
-      const auto range                = set_group.equal_range(f);
-      for (auto i = range.first; i != range.second; i++) {
-        result.insert(i->second);
+  auto attribute_rule = rule_book[attribute_type];
+  if (attribute_rule != nullptr) {
+    auto rule_range = rule_book_inverted.equal_range(attribute_rule);
+    for (auto i = rule_range.first; i != rule_range.second; ++i) {
+      if (rule_type == RESOLVER_GET_RULE && i->first->get_func != nullptr) {
+        output.insert(i->second);
+      } else if (rule_type == RESOLVER_SET_RULE
+                 && i->first->set_func != nullptr) {
+        output.insert(i->second);
       }
     }
   }
@@ -308,7 +308,7 @@ void attribute_resolver_register_set_rule_listener(
   set_rule_listeners.insert(function);
   // If they register themselves late, we notify of already existing rules.
   for (auto it = rule_book.begin(); it != rule_book.end(); ++it) {
-    if (it->second.set_func != nullptr) {
+    if (it->second->set_func != nullptr) {
       function(it->first);
     }
   }
@@ -330,10 +330,8 @@ sl_status_t attribute_resolver_rule_execute(attribute_store_node_t node,
   if (attribute_resolver_rule_busy() == true) {
     return SL_STATUS_BUSY;
   }
-
-  attribute_resolver_function_t func = set_rule
-                                         ? rule_book[attribute_type].set_func
-                                         : rule_book[attribute_type].get_func;
+  const auto rules = rule_book[attribute_type];
+  const auto func = set_rule ? rules->set_func : rules->get_func;
 
   if (func) {
     try {
@@ -392,33 +390,9 @@ sl_status_t attribute_resolver_rule_execute(attribute_store_node_t node,
   return SL_STATUS_NOT_SUPPORTED;
 }
 
-void attribute_resolver_rule_register(attribute_store_type_t node_type,
-                                      attribute_resolver_function_t set_func,
-                                      attribute_resolver_function_t get_func)
-{
-  rule_book[node_type] = {set_func, get_func};
-
-  if (get_func) {
-    get_group.insert(std::make_pair(get_func, node_type));
-  }
-
-  if (set_func) {
-    set_group.insert(std::make_pair(set_func, node_type));
-  }
-
-  // Notify set rule listeners
-  if (set_func != nullptr) {
-    for (auto it = set_rule_listeners.begin(); it != set_rule_listeners.end();
-         ++it) {
-      (*it)(node_type);
-    }
-  }
-}
 
 void attribute_resolver_rule_init(attribute_rule_complete_t __compl_func)
 {
-  get_group.clear();
-  set_group.clear();
   relatives.clear();
   compl_func = __compl_func;
   rule_book.clear();
@@ -447,36 +421,15 @@ void attribute_resolver_rule_abort(attribute_store_node_t node)
   }
 }
 
-attribute_resolver_function_t
-  attribute_resolver_set_function(attribute_store_type_t node_type)
-{
-  if (rule_book.find(node_type) == rule_book.end()) {
-    // No rule at all for this attribute
-    return nullptr;
-  } else {
-    return rule_book[node_type].set_func;
-  }
-}
-
-attribute_resolver_function_t
-  attribute_resolver_get_function(attribute_store_type_t node_type)
-{
-  if (rule_book.find(node_type) == rule_book.end()) {
-    // No rule at all for this attribute
-    return nullptr;
-  } else {
-    return rule_book[node_type].get_func;
-  }
-}
 
 bool attribute_resolver_has_set_rule(attribute_store_type_t node_type)
 {
-  return attribute_resolver_set_function(node_type) != nullptr;
+  return attribute_resolver::set_function(node_type) != nullptr;
 }
 
 bool attribute_resolver_has_get_rule(attribute_store_type_t node_type)
 {
-  return attribute_resolver_get_function(node_type) != nullptr;
+  return attribute_resolver::get_function(node_type) != nullptr;
 }
 
 sl_status_t
@@ -489,3 +442,74 @@ sl_status_t
   relatives.insert(std::make_pair(node_type, depth));
   return SL_STATUS_OK;
 }
+
+
+///////////////////////////////////////////////////////////////////////////
+/// C++ Wrapper
+///////////////////////////////////////////////////////////////////////////
+namespace attribute_resolver
+{
+
+attribute_resolver_function set_function(attribute_store_type_t node_type)
+{
+  if (rule_book.find(node_type) == rule_book.end()) {
+    // No rule at all for this attribute
+    return nullptr;
+  } else {
+    return rule_book[node_type]->set_func;
+  }
+}
+
+attribute_resolver_function
+  get_function(attribute_store_type_t node_type)
+{
+  if (rule_book.find(node_type) == rule_book.end()) {
+    // No rule at all for this attribute
+    return nullptr;
+  } else {
+    return rule_book[node_type]->get_func;
+  }
+}
+
+void helper_register_rules(attribute_store_type_t node_type,
+                           attribute_rules_ptr rules,
+                           bool notify_set_rule_listeners)
+{
+  rule_book[node_type] = rules;
+  rule_book_inverted.insert({rules, node_type});
+
+  if (notify_set_rule_listeners) {
+    for (auto set_rule_listener : set_rule_listeners) {
+      set_rule_listener(node_type);
+    }
+  }
+}
+
+void register_rules_internal(attribute_store_type_t node_type,
+                             attribute_resolver_function set_func,
+                             attribute_resolver_function get_func)
+{
+  auto rules      = std::make_shared<attribute_rules>();
+  rules->set_func = set_func;
+  rules->get_func = get_func;
+
+  helper_register_rules(node_type, rules, set_func != nullptr);
+}
+
+void register_group_rules_internal(
+  const std::set<attribute_store_type_t> &nodes,
+  attribute_resolver_function set_func,
+  attribute_resolver_function get_func)
+{
+  auto rules      = std::make_shared<attribute_rules>();
+  rules->set_func = set_func;
+  rules->get_func = get_func;
+
+  for (auto node_type: nodes) {
+    helper_register_rules(node_type, rules, set_func != nullptr);
+  }
+}
+
+} // namespace attribute_resolver
+
+

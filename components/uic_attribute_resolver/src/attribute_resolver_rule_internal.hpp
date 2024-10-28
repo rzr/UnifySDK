@@ -26,6 +26,11 @@
 #include <set>
 
 #include "attribute_resolver_rule.h"
+#include "attribute_resolver.hpp"
+
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 /**
  * @brief Get a list of attribute types that has the same resolution method as a
@@ -43,6 +48,24 @@
 std::set<attribute_store_node_t>
   attribute_resolver_rule_get_group_nodes(resolver_rule_type_t rule_type,
                                           attribute_store_node_t group);
+
+namespace attribute_resolver
+{
+void register_rules_internal(
+  attribute_store_type_t node_type,
+  attribute_resolver_function set_func,
+  attribute_resolver_function get_func);
+
+void register_group_rules_internal(
+  const std::set<attribute_store_type_t> &nodes,
+  attribute_resolver_function set_func,
+  attribute_resolver_function get_func);
+
+}  // namespace attribute_resolver
+
+#ifdef __cplusplus
+}  // extern "C"
+#endif
 
 #endif  //ATTRIBUTE_RESOLVER_RULE_INTERNAL_HPP
 /** @} end attribute_resolver_rule_internal */

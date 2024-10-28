@@ -53,10 +53,6 @@ typedef void (*attribute_rule_complete_t)(attribute_store_node_t, clock_time_t);
 sl_status_t attribute_resolver_rule_execute(attribute_store_node_t node,
                                             bool set_rule);
 
-void attribute_resolver_rule_register(attribute_store_type_t node_type,
-                                      attribute_resolver_function_t set_func,
-                                      attribute_resolver_function_t get_func);
-
 /**
  * @brief Initialize the rule book
  *
