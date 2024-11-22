@@ -38,6 +38,7 @@
 #include <functional>
 #include <cstring>
 #include <sstream>  // for ostringstream
+
 namespace attribute_store
 {
 /**
@@ -335,6 +336,29 @@ class attribute
   attribute child_by_type(attribute_store_type_t type, size_t index = 0) const
   {
     return attribute_store_get_node_child_by_type(_n, type, index);
+  }
+
+  /**
+   * @brief Get first child of a given type
+   * 
+   * @note If not found, an exception is thrown. Use child_by_type if you don't want an exception.
+   * 
+   * @throw std::invalid_argument if no child of the given type is found
+   * 
+   * @param type Attribute Store Type.
+   * 
+   * @return attribute
+   */
+  attribute first_child(attribute_store_type_t type) const
+  {
+    auto child_node = child_by_type(type);
+    if (!child_node.is_valid()) {
+      throw std::invalid_argument(
+        "No child of type " + std::string(attribute_store_get_type_name(type))
+        + " found under " + name_and_id());
+    }
+
+    return child_node;
   }
 
   /**
