@@ -2689,6 +2689,14 @@ sl_status_t eed_attribute_store_clusters_init()
     DESIRED_ATTRIBUTE);
   attribute_store_register_callback_by_type_and_state(
     &on_zcl_desired_value_update,
+    DOTDOT_ATTRIBUTE_ID_MULTILEVEL_SENSOR_SENSOR_VALUES,
+    DESIRED_ATTRIBUTE);
+  attribute_store_register_callback_by_type_and_state(
+    &on_zcl_desired_value_update,
+    DOTDOT_ATTRIBUTE_ID_MULTILEVEL_SENSOR_SENSOR_TYPE,
+    DESIRED_ATTRIBUTE);
+  attribute_store_register_callback_by_type_and_state(
+    &on_zcl_desired_value_update,
     DOTDOT_ATTRIBUTE_ID_DESCRIPTOR_DEVICE_TYPE_LIST,
     DESIRED_ATTRIBUTE);
   attribute_store_register_callback_by_type_and_state(
