@@ -266,6 +266,10 @@
 #define DOTDOT_UNIFY_THERMOSTAT_CLUSTER_ID ((dotdot_cluster_id_t)0xFD15)
 
 
+// Definitions for cluster: UnifyScheduleEntryLock
+#define DOTDOT_UNIFY_SCHEDULE_ENTRY_LOCK_CLUSTER_ID ((dotdot_cluster_id_t)0xFD21)
+
+
 // Definitions for cluster: UnifyHumidityControl
 #define DOTDOT_UNIFY_HUMIDITY_CONTROL_CLUSTER_ID ((dotdot_cluster_id_t)0xFDA0)
 

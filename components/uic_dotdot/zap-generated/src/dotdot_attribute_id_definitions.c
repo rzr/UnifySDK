@@ -2068,6 +2068,31 @@ const char *uic_dotdot_get_attribute_name(dotdot_cluster_id_t cluster_id,
           return "Unknown";
       }
       // clang-format off
+    case DOTDOT_UNIFY_SCHEDULE_ENTRY_LOCK_CLUSTER_ID:
+      // clang-format on
+      switch (attribute_id) {
+        // clang-format off
+        case DOTDOT_UNIFY_SCHEDULE_ENTRY_LOCK_SLOTS_WEEK_DAY_ATTRIBUTE_ID:
+          return "SlotsWeekDay";
+        case DOTDOT_UNIFY_SCHEDULE_ENTRY_LOCK_SLOTS_YEAR_DAY_ATTRIBUTE_ID:
+          return "SlotsYearDay";
+        case DOTDOT_UNIFY_SCHEDULE_ENTRY_LOCK_SIGNTZO_ATTRIBUTE_ID:
+          return "SignTZO";
+        case DOTDOT_UNIFY_SCHEDULE_ENTRY_LOCK_HOURTZO_ATTRIBUTE_ID:
+          return "HourTZO";
+        case DOTDOT_UNIFY_SCHEDULE_ENTRY_LOCK_MINUTETZO_ATTRIBUTE_ID:
+          return "MinuteTZO";
+        case DOTDOT_UNIFY_SCHEDULE_ENTRY_LOCK_DST_OFFSET_SIGN_ATTRIBUTE_ID:
+          return "DSTOffsetSign";
+        case DOTDOT_UNIFY_SCHEDULE_ENTRY_LOCK_DST_OFFSET_MINUTE_ATTRIBUTE_ID:
+          return "DSTOffsetMinute";
+        case DOTDOT_UNIFY_SCHEDULE_ENTRY_LOCK_NUMBER_OF_SLOTS_DAILY_REPEATING_ATTRIBUTE_ID:
+          return "NumberOfSlotsDailyRepeating";
+          // clang-format on
+        default:
+          return "Unknown";
+      }
+      // clang-format off
     case DOTDOT_UNIFY_HUMIDITY_CONTROL_CLUSTER_ID:
       // clang-format on
       switch (attribute_id) {
@@ -4529,6 +4554,32 @@ dotdot_attribute_id_t
         return DOTDOT_UNIFY_THERMOSTAT_OPERATING_STATE_ATTRIBUTE_ID;
       }
     break;
+    case DOTDOT_UNIFY_SCHEDULE_ENTRY_LOCK_CLUSTER_ID:
+      if (strcmp ("SlotsWeekDay", attribute_name) == 0) {
+        return DOTDOT_UNIFY_SCHEDULE_ENTRY_LOCK_SLOTS_WEEK_DAY_ATTRIBUTE_ID;
+      }
+      if (strcmp ("SlotsYearDay", attribute_name) == 0) {
+        return DOTDOT_UNIFY_SCHEDULE_ENTRY_LOCK_SLOTS_YEAR_DAY_ATTRIBUTE_ID;
+      }
+      if (strcmp ("SignTZO", attribute_name) == 0) {
+        return DOTDOT_UNIFY_SCHEDULE_ENTRY_LOCK_SIGNTZO_ATTRIBUTE_ID;
+      }
+      if (strcmp ("HourTZO", attribute_name) == 0) {
+        return DOTDOT_UNIFY_SCHEDULE_ENTRY_LOCK_HOURTZO_ATTRIBUTE_ID;
+      }
+      if (strcmp ("MinuteTZO", attribute_name) == 0) {
+        return DOTDOT_UNIFY_SCHEDULE_ENTRY_LOCK_MINUTETZO_ATTRIBUTE_ID;
+      }
+      if (strcmp ("DSTOffsetSign", attribute_name) == 0) {
+        return DOTDOT_UNIFY_SCHEDULE_ENTRY_LOCK_DST_OFFSET_SIGN_ATTRIBUTE_ID;
+      }
+      if (strcmp ("DSTOffsetMinute", attribute_name) == 0) {
+        return DOTDOT_UNIFY_SCHEDULE_ENTRY_LOCK_DST_OFFSET_MINUTE_ATTRIBUTE_ID;
+      }
+      if (strcmp ("NumberOfSlotsDailyRepeating", attribute_name) == 0) {
+        return DOTDOT_UNIFY_SCHEDULE_ENTRY_LOCK_NUMBER_OF_SLOTS_DAILY_REPEATING_ATTRIBUTE_ID;
+      }
+    break;
     case DOTDOT_UNIFY_HUMIDITY_CONTROL_CLUSTER_ID:
       if (strcmp ("ReportingMode", attribute_name) == 0) {
         return DOTDOT_UNIFY_HUMIDITY_CONTROL_REPORTING_MODE_ATTRIBUTE_ID;
@@ -6648,6 +6699,31 @@ dotdot_attribute_json_type_t
           return JSON_TYPE_UNKNOWN;
       }
       // clang-format off
+    case DOTDOT_UNIFY_SCHEDULE_ENTRY_LOCK_CLUSTER_ID:
+      // clang-format on
+      switch (attribute_id) {
+        // clang-format off
+        case DOTDOT_UNIFY_SCHEDULE_ENTRY_LOCK_SLOTS_WEEK_DAY_ATTRIBUTE_ID:
+          return JSON_TYPE_NUMBER;
+                case DOTDOT_UNIFY_SCHEDULE_ENTRY_LOCK_SLOTS_YEAR_DAY_ATTRIBUTE_ID:
+          return JSON_TYPE_NUMBER;
+                case DOTDOT_UNIFY_SCHEDULE_ENTRY_LOCK_SIGNTZO_ATTRIBUTE_ID:
+          return JSON_TYPE_NUMBER;
+                case DOTDOT_UNIFY_SCHEDULE_ENTRY_LOCK_HOURTZO_ATTRIBUTE_ID:
+          return JSON_TYPE_NUMBER;
+                case DOTDOT_UNIFY_SCHEDULE_ENTRY_LOCK_MINUTETZO_ATTRIBUTE_ID:
+          return JSON_TYPE_NUMBER;
+                case DOTDOT_UNIFY_SCHEDULE_ENTRY_LOCK_DST_OFFSET_SIGN_ATTRIBUTE_ID:
+          return JSON_TYPE_NUMBER;
+                case DOTDOT_UNIFY_SCHEDULE_ENTRY_LOCK_DST_OFFSET_MINUTE_ATTRIBUTE_ID:
+          return JSON_TYPE_NUMBER;
+                case DOTDOT_UNIFY_SCHEDULE_ENTRY_LOCK_NUMBER_OF_SLOTS_DAILY_REPEATING_ATTRIBUTE_ID:
+          return JSON_TYPE_NUMBER;
+                  // clang-format on
+        default:
+          return JSON_TYPE_UNKNOWN;
+      }
+      // clang-format off
     case DOTDOT_UNIFY_HUMIDITY_CONTROL_CLUSTER_ID:
       // clang-format on
       switch (attribute_id) {
@@ -7044,6 +7120,9 @@ bool uic_dotdot_attribute_is_enum(dotdot_cluster_id_t cluster_id,
     if (3 == attribute_id) {
       return true;
     }
+  }
+
+  if (64801 == cluster_id) {
   }
 
   if (64928 == cluster_id) {

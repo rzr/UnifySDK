@@ -1332,17 +1332,49 @@ uic_mqtt_dotdot_unify_schedule_entry_lock_write_attributes_callback_t get_uic_mq
   return test_uic_mqtt_dotdot_unify_schedule_entry_lock_write_attributes_callback;
 }
 
-static uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_week_day_report_callback_t test_uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_week_day_report_callback = NULL;
-uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_week_day_report_callback_t get_uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_week_day_report_callback(){
-  return test_uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_week_day_report_callback;
+static uic_mqtt_dotdot_unify_schedule_entry_lock_enable_set_callback_t test_uic_mqtt_dotdot_unify_schedule_entry_lock_enable_set_callback = NULL;
+uic_mqtt_dotdot_unify_schedule_entry_lock_enable_set_callback_t get_uic_mqtt_dotdot_unify_schedule_entry_lock_enable_set_callback(){
+  return test_uic_mqtt_dotdot_unify_schedule_entry_lock_enable_set_callback;
 }
-static uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_year_day_report_callback_t test_uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_year_day_report_callback = NULL;
-uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_year_day_report_callback_t get_uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_year_day_report_callback(){
-  return test_uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_year_day_report_callback;
+static uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_report_callback_t test_uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_report_callback = NULL;
+uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_report_callback_t get_uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_report_callback(){
+  return test_uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_report_callback;
 }
-static uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_daily_repeating_report_callback_t test_uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_daily_repeating_report_callback = NULL;
-uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_daily_repeating_report_callback_t get_uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_daily_repeating_report_callback(){
-  return test_uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_daily_repeating_report_callback;
+static uic_mqtt_dotdot_unify_schedule_entry_lock_enable_all_set_callback_t test_uic_mqtt_dotdot_unify_schedule_entry_lock_enable_all_set_callback = NULL;
+uic_mqtt_dotdot_unify_schedule_entry_lock_enable_all_set_callback_t get_uic_mqtt_dotdot_unify_schedule_entry_lock_enable_all_set_callback(){
+  return test_uic_mqtt_dotdot_unify_schedule_entry_lock_enable_all_set_callback;
+}
+static uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_report_callback_t test_uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_report_callback = NULL;
+uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_report_callback_t get_uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_report_callback(){
+  return test_uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_report_callback;
+}
+static uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_set_callback_t test_uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_set_callback = NULL;
+uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_set_callback_t get_uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_set_callback(){
+  return test_uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_set_callback;
+}
+static uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_report_callback_t test_uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_report_callback = NULL;
+uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_report_callback_t get_uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_report_callback(){
+  return test_uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_report_callback;
+}
+static uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_get_callback_t test_uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_get_callback = NULL;
+uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_get_callback_t get_uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_get_callback(){
+  return test_uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_get_callback;
+}
+static uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_set_callback_t test_uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_set_callback = NULL;
+uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_set_callback_t get_uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_set_callback(){
+  return test_uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_set_callback;
+}
+static uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_get_callback_t test_uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_get_callback = NULL;
+uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_get_callback_t get_uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_get_callback(){
+  return test_uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_get_callback;
+}
+static uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_set_callback_t test_uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_set_callback = NULL;
+uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_set_callback_t get_uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_set_callback(){
+  return test_uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_set_callback;
+}
+static uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_get_callback_t test_uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_get_callback = NULL;
+uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_get_callback_t get_uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_get_callback(){
+  return test_uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_get_callback;
 }
 static uic_mqtt_dotdot_unify_humidity_control_force_read_attributes_callback_t test_uic_mqtt_dotdot_unify_humidity_control_force_read_attributes_callback = NULL;
 static uic_mqtt_dotdot_unify_humidity_control_write_attributes_callback_t test_uic_mqtt_dotdot_unify_humidity_control_write_attributes_callback = NULL;
@@ -2963,20 +2995,60 @@ void set_uic_mqtt_dotdot_unify_schedule_entry_lock_write_attributes_callback_stu
 {
   test_uic_mqtt_dotdot_unify_schedule_entry_lock_write_attributes_callback = callback;
 }
-void uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_week_day_report_callback_set_stub(
-  const uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_week_day_report_callback_t callback, int cmock_num_calls)
+void uic_mqtt_dotdot_unify_schedule_entry_lock_enable_set_callback_set_stub(
+  const uic_mqtt_dotdot_unify_schedule_entry_lock_enable_set_callback_t callback, int cmock_num_calls)
 {
-  test_uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_week_day_report_callback = callback;
+  test_uic_mqtt_dotdot_unify_schedule_entry_lock_enable_set_callback = callback;
 }
-void uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_year_day_report_callback_set_stub(
-  const uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_year_day_report_callback_t callback, int cmock_num_calls)
+void uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_report_callback_set_stub(
+  const uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_report_callback_t callback, int cmock_num_calls)
 {
-  test_uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_year_day_report_callback = callback;
+  test_uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_report_callback = callback;
 }
-void uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_daily_repeating_report_callback_set_stub(
-  const uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_daily_repeating_report_callback_t callback, int cmock_num_calls)
+void uic_mqtt_dotdot_unify_schedule_entry_lock_enable_all_set_callback_set_stub(
+  const uic_mqtt_dotdot_unify_schedule_entry_lock_enable_all_set_callback_t callback, int cmock_num_calls)
 {
-  test_uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_daily_repeating_report_callback = callback;
+  test_uic_mqtt_dotdot_unify_schedule_entry_lock_enable_all_set_callback = callback;
+}
+void uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_report_callback_set_stub(
+  const uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_report_callback_t callback, int cmock_num_calls)
+{
+  test_uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_report_callback = callback;
+}
+void uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_set_callback_set_stub(
+  const uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_set_callback_t callback, int cmock_num_calls)
+{
+  test_uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_set_callback = callback;
+}
+void uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_report_callback_set_stub(
+  const uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_report_callback_t callback, int cmock_num_calls)
+{
+  test_uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_report_callback = callback;
+}
+void uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_get_callback_set_stub(
+  const uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_get_callback_t callback, int cmock_num_calls)
+{
+  test_uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_get_callback = callback;
+}
+void uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_set_callback_set_stub(
+  const uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_set_callback_t callback, int cmock_num_calls)
+{
+  test_uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_set_callback = callback;
+}
+void uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_get_callback_set_stub(
+  const uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_get_callback_t callback, int cmock_num_calls)
+{
+  test_uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_get_callback = callback;
+}
+void uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_set_callback_set_stub(
+  const uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_set_callback_t callback, int cmock_num_calls)
+{
+  test_uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_set_callback = callback;
+}
+void uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_get_callback_set_stub(
+  const uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_get_callback_t callback, int cmock_num_calls)
+{
+  test_uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_get_callback = callback;
 }
 void set_uic_mqtt_dotdot_unify_humidity_control_force_read_attributes_callback_stub(
   const uic_mqtt_dotdot_unify_humidity_control_force_read_attributes_callback_t callback, int cmock_num_calls)
@@ -3930,15 +4002,39 @@ void setUp()
   test_uic_mqtt_dotdot_unify_schedule_entry_lock_write_attributes_callback = NULL;
   uic_mqtt_dotdot_set_unify_schedule_entry_lock_write_attributes_callback_Stub(
     &set_uic_mqtt_dotdot_unify_schedule_entry_lock_write_attributes_callback_stub);
-  test_uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_week_day_report_callback = NULL;
-  uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_week_day_report_callback_set_Stub(
-    &uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_week_day_report_callback_set_stub);
-  test_uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_year_day_report_callback = NULL;
-  uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_year_day_report_callback_set_Stub(
-    &uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_year_day_report_callback_set_stub);
-  test_uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_daily_repeating_report_callback = NULL;
-  uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_daily_repeating_report_callback_set_Stub(
-    &uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_daily_repeating_report_callback_set_stub);
+  test_uic_mqtt_dotdot_unify_schedule_entry_lock_enable_set_callback = NULL;
+  uic_mqtt_dotdot_unify_schedule_entry_lock_enable_set_callback_set_Stub(
+    &uic_mqtt_dotdot_unify_schedule_entry_lock_enable_set_callback_set_stub);
+  test_uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_report_callback = NULL;
+  uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_report_callback_set_Stub(
+    &uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_report_callback_set_stub);
+  test_uic_mqtt_dotdot_unify_schedule_entry_lock_enable_all_set_callback = NULL;
+  uic_mqtt_dotdot_unify_schedule_entry_lock_enable_all_set_callback_set_Stub(
+    &uic_mqtt_dotdot_unify_schedule_entry_lock_enable_all_set_callback_set_stub);
+  test_uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_report_callback = NULL;
+  uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_report_callback_set_Stub(
+    &uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_report_callback_set_stub);
+  test_uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_set_callback = NULL;
+  uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_set_callback_set_Stub(
+    &uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_set_callback_set_stub);
+  test_uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_report_callback = NULL;
+  uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_report_callback_set_Stub(
+    &uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_report_callback_set_stub);
+  test_uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_get_callback = NULL;
+  uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_get_callback_set_Stub(
+    &uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_get_callback_set_stub);
+  test_uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_set_callback = NULL;
+  uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_set_callback_set_Stub(
+    &uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_set_callback_set_stub);
+  test_uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_get_callback = NULL;
+  uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_get_callback_set_Stub(
+    &uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_get_callback_set_stub);
+  test_uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_set_callback = NULL;
+  uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_set_callback_set_Stub(
+    &uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_set_callback_set_stub);
+  test_uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_get_callback = NULL;
+  uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_get_callback_set_Stub(
+    &uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_get_callback_set_stub);
   test_uic_mqtt_dotdot_unify_humidity_control_force_read_attributes_callback = NULL;
   uic_mqtt_dotdot_set_unify_humidity_control_force_read_attributes_callback_Stub(
     &set_uic_mqtt_dotdot_unify_humidity_control_force_read_attributes_callback_stub);
@@ -7818,7 +7914,22 @@ void test_automatic_deduction_of_supported_commands()
       
       ));
   }
-  if (NULL != test_uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_week_day_report_callback) {
+  if (NULL != test_uic_mqtt_dotdot_unify_schedule_entry_lock_enable_set_callback) {
+    // Dummy command parameters
+      uint8_t user_identifier_value;
+      memset(&user_identifier_value, 0x00, sizeof(user_identifier_value));
+      uint8_t enabled_value;
+      memset(&enabled_value, 0x00, sizeof(enabled_value));
+  // Invoke with support check
+    TEST_ASSERT_EQUAL(SL_STATUS_FAIL, test_uic_mqtt_dotdot_unify_schedule_entry_lock_enable_set_callback(expected_unid,expected_endpoint_id,UIC_MQTT_DOTDOT_CALLBACK_TYPE_SUPPORT_CHECK
+      ,
+        user_identifier_value,
+      
+        enabled_value
+      
+      ));
+  }
+  if (NULL != test_uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_report_callback) {
     // Dummy command parameters
       uint8_t user_identifier_value;
       memset(&user_identifier_value, 0x00, sizeof(user_identifier_value));
@@ -7835,7 +7946,7 @@ void test_automatic_deduction_of_supported_commands()
       uint8_t stop_minute_value;
       memset(&stop_minute_value, 0x00, sizeof(stop_minute_value));
   // Invoke with support check
-    TEST_ASSERT_EQUAL(SL_STATUS_FAIL, test_uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_week_day_report_callback(expected_unid,expected_endpoint_id,UIC_MQTT_DOTDOT_CALLBACK_TYPE_SUPPORT_CHECK
+    TEST_ASSERT_EQUAL(SL_STATUS_FAIL, test_uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_report_callback(expected_unid,expected_endpoint_id,UIC_MQTT_DOTDOT_CALLBACK_TYPE_SUPPORT_CHECK
       ,
         user_identifier_value,
       
@@ -7853,10 +7964,19 @@ void test_automatic_deduction_of_supported_commands()
       
       ));
   }
-  if (NULL != test_uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_year_day_report_callback) {
+  if (NULL != test_uic_mqtt_dotdot_unify_schedule_entry_lock_enable_all_set_callback) {
     // Dummy command parameters
-      uint8_t set_action_value;
-      memset(&set_action_value, 0x00, sizeof(set_action_value));
+      uint8_t enabled_value;
+      memset(&enabled_value, 0x00, sizeof(enabled_value));
+  // Invoke with support check
+    TEST_ASSERT_EQUAL(SL_STATUS_FAIL, test_uic_mqtt_dotdot_unify_schedule_entry_lock_enable_all_set_callback(expected_unid,expected_endpoint_id,UIC_MQTT_DOTDOT_CALLBACK_TYPE_SUPPORT_CHECK
+      ,
+        enabled_value
+      
+      ));
+  }
+  if (NULL != test_uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_report_callback) {
+    // Dummy command parameters
       uint8_t user_identifier_value;
       memset(&user_identifier_value, 0x00, sizeof(user_identifier_value));
       uint8_t schedule_slotid_value;
@@ -7882,10 +8002,8 @@ void test_automatic_deduction_of_supported_commands()
       uint8_t stop_minute_value;
       memset(&stop_minute_value, 0x00, sizeof(stop_minute_value));
   // Invoke with support check
-    TEST_ASSERT_EQUAL(SL_STATUS_FAIL, test_uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_year_day_report_callback(expected_unid,expected_endpoint_id,UIC_MQTT_DOTDOT_CALLBACK_TYPE_SUPPORT_CHECK
+    TEST_ASSERT_EQUAL(SL_STATUS_FAIL, test_uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_report_callback(expected_unid,expected_endpoint_id,UIC_MQTT_DOTDOT_CALLBACK_TYPE_SUPPORT_CHECK
       ,
-        set_action_value,
-      
         user_identifier_value,
       
         schedule_slotid_value,
@@ -7912,7 +8030,170 @@ void test_automatic_deduction_of_supported_commands()
       
       ));
   }
-  if (NULL != test_uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_daily_repeating_report_callback) {
+  if (NULL != test_uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_set_callback) {
+    // Dummy command parameters
+      uint8_t set_action_value;
+      memset(&set_action_value, 0x00, sizeof(set_action_value));
+      uint8_t user_identifier_value;
+      memset(&user_identifier_value, 0x00, sizeof(user_identifier_value));
+      uint8_t schedule_slotid_value;
+      memset(&schedule_slotid_value, 0x00, sizeof(schedule_slotid_value));
+      uint8_t day_of_week_value;
+      memset(&day_of_week_value, 0x00, sizeof(day_of_week_value));
+      uint8_t start_hour_value;
+      memset(&start_hour_value, 0x00, sizeof(start_hour_value));
+      uint8_t start_minute_value;
+      memset(&start_minute_value, 0x00, sizeof(start_minute_value));
+      uint8_t stop_hour_value;
+      memset(&stop_hour_value, 0x00, sizeof(stop_hour_value));
+      uint8_t stop_minute_value;
+      memset(&stop_minute_value, 0x00, sizeof(stop_minute_value));
+  // Invoke with support check
+    TEST_ASSERT_EQUAL(SL_STATUS_FAIL, test_uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_set_callback(expected_unid,expected_endpoint_id,UIC_MQTT_DOTDOT_CALLBACK_TYPE_SUPPORT_CHECK
+      ,
+        set_action_value,
+      
+        user_identifier_value,
+      
+        schedule_slotid_value,
+      
+        day_of_week_value,
+      
+        start_hour_value,
+      
+        start_minute_value,
+      
+        stop_hour_value,
+      
+        stop_minute_value
+      
+      ));
+  }
+  if (NULL != test_uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_report_callback) {
+    // Dummy command parameters
+      uint8_t user_identifier_value;
+      memset(&user_identifier_value, 0x00, sizeof(user_identifier_value));
+      uint8_t schedule_slotid_value;
+      memset(&schedule_slotid_value, 0x00, sizeof(schedule_slotid_value));
+      uint8_t week_day_bitmask_value;
+      memset(&week_day_bitmask_value, 0x00, sizeof(week_day_bitmask_value));
+      uint8_t start_hour_value;
+      memset(&start_hour_value, 0x00, sizeof(start_hour_value));
+      uint8_t start_minute_value;
+      memset(&start_minute_value, 0x00, sizeof(start_minute_value));
+      uint8_t duration_hour_value;
+      memset(&duration_hour_value, 0x00, sizeof(duration_hour_value));
+      uint8_t duration_minute_value;
+      memset(&duration_minute_value, 0x00, sizeof(duration_minute_value));
+  // Invoke with support check
+    TEST_ASSERT_EQUAL(SL_STATUS_FAIL, test_uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_report_callback(expected_unid,expected_endpoint_id,UIC_MQTT_DOTDOT_CALLBACK_TYPE_SUPPORT_CHECK
+      ,
+        user_identifier_value,
+      
+        schedule_slotid_value,
+      
+        week_day_bitmask_value,
+      
+        start_hour_value,
+      
+        start_minute_value,
+      
+        duration_hour_value,
+      
+        duration_minute_value
+      
+      ));
+  }
+  if (NULL != test_uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_get_callback) {
+    // Dummy command parameters
+      uint8_t user_identifier_value;
+      memset(&user_identifier_value, 0x00, sizeof(user_identifier_value));
+      uint8_t schedule_slotid_value;
+      memset(&schedule_slotid_value, 0x00, sizeof(schedule_slotid_value));
+  // Invoke with support check
+    TEST_ASSERT_EQUAL(SL_STATUS_FAIL, test_uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_get_callback(expected_unid,expected_endpoint_id,UIC_MQTT_DOTDOT_CALLBACK_TYPE_SUPPORT_CHECK
+      ,
+        user_identifier_value,
+      
+        schedule_slotid_value
+      
+      ));
+  }
+  if (NULL != test_uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_set_callback) {
+    // Dummy command parameters
+      uint8_t set_action_value;
+      memset(&set_action_value, 0x00, sizeof(set_action_value));
+      uint8_t user_identifier_value;
+      memset(&user_identifier_value, 0x00, sizeof(user_identifier_value));
+      uint8_t schedule_slotid_value;
+      memset(&schedule_slotid_value, 0x00, sizeof(schedule_slotid_value));
+      uint8_t start_year_value;
+      memset(&start_year_value, 0x00, sizeof(start_year_value));
+      uint8_t start_day_value;
+      memset(&start_day_value, 0x00, sizeof(start_day_value));
+      uint8_t start_hour_value;
+      memset(&start_hour_value, 0x00, sizeof(start_hour_value));
+      uint8_t start_month_value;
+      memset(&start_month_value, 0x00, sizeof(start_month_value));
+      uint8_t start_minute_value;
+      memset(&start_minute_value, 0x00, sizeof(start_minute_value));
+      uint8_t stop_year_value;
+      memset(&stop_year_value, 0x00, sizeof(stop_year_value));
+      uint8_t stop_month_value;
+      memset(&stop_month_value, 0x00, sizeof(stop_month_value));
+      uint8_t stop_day_value;
+      memset(&stop_day_value, 0x00, sizeof(stop_day_value));
+      uint8_t stop_hour_value;
+      memset(&stop_hour_value, 0x00, sizeof(stop_hour_value));
+      uint8_t stop_minute_value;
+      memset(&stop_minute_value, 0x00, sizeof(stop_minute_value));
+  // Invoke with support check
+    TEST_ASSERT_EQUAL(SL_STATUS_FAIL, test_uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_set_callback(expected_unid,expected_endpoint_id,UIC_MQTT_DOTDOT_CALLBACK_TYPE_SUPPORT_CHECK
+      ,
+        set_action_value,
+      
+        user_identifier_value,
+      
+        schedule_slotid_value,
+      
+        start_year_value,
+      
+        start_day_value,
+      
+        start_hour_value,
+      
+        start_month_value,
+      
+        start_minute_value,
+      
+        stop_year_value,
+      
+        stop_month_value,
+      
+        stop_day_value,
+      
+        stop_hour_value,
+      
+        stop_minute_value
+      
+      ));
+  }
+  if (NULL != test_uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_get_callback) {
+    // Dummy command parameters
+      uint8_t user_identifier_value;
+      memset(&user_identifier_value, 0x00, sizeof(user_identifier_value));
+      uint8_t schedule_slotid_value;
+      memset(&schedule_slotid_value, 0x00, sizeof(schedule_slotid_value));
+  // Invoke with support check
+    TEST_ASSERT_EQUAL(SL_STATUS_FAIL, test_uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_get_callback(expected_unid,expected_endpoint_id,UIC_MQTT_DOTDOT_CALLBACK_TYPE_SUPPORT_CHECK
+      ,
+        user_identifier_value,
+      
+        schedule_slotid_value
+      
+      ));
+  }
+  if (NULL != test_uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_set_callback) {
     // Dummy command parameters
       uint8_t set_action_value;
       memset(&set_action_value, 0x00, sizeof(set_action_value));
@@ -7931,7 +8212,7 @@ void test_automatic_deduction_of_supported_commands()
       uint8_t duration_minute_value;
       memset(&duration_minute_value, 0x00, sizeof(duration_minute_value));
   // Invoke with support check
-    TEST_ASSERT_EQUAL(SL_STATUS_FAIL, test_uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_daily_repeating_report_callback(expected_unid,expected_endpoint_id,UIC_MQTT_DOTDOT_CALLBACK_TYPE_SUPPORT_CHECK
+    TEST_ASSERT_EQUAL(SL_STATUS_FAIL, test_uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_set_callback(expected_unid,expected_endpoint_id,UIC_MQTT_DOTDOT_CALLBACK_TYPE_SUPPORT_CHECK
       ,
         set_action_value,
       
@@ -7948,6 +8229,21 @@ void test_automatic_deduction_of_supported_commands()
         duration_hour_value,
       
         duration_minute_value
+      
+      ));
+  }
+  if (NULL != test_uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_get_callback) {
+    // Dummy command parameters
+      uint8_t user_identifier_value;
+      memset(&user_identifier_value, 0x00, sizeof(user_identifier_value));
+      uint8_t schedule_slotid_value;
+      memset(&schedule_slotid_value, 0x00, sizeof(schedule_slotid_value));
+  // Invoke with support check
+    TEST_ASSERT_EQUAL(SL_STATUS_FAIL, test_uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_get_callback(expected_unid,expected_endpoint_id,UIC_MQTT_DOTDOT_CALLBACK_TYPE_SUPPORT_CHECK
+      ,
+        user_identifier_value,
+      
+        schedule_slotid_value
       
       ));
   }
@@ -11066,7 +11362,22 @@ void test_automatic_deduction_of_supported_commands()
       
       ));
   }
-  if (NULL != test_uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_week_day_report_callback) {
+  if (NULL != test_uic_mqtt_dotdot_unify_schedule_entry_lock_enable_set_callback) {
+    // Dummy command parameters
+      uint8_t user_identifier_value;
+      memset(&user_identifier_value, 0x00, sizeof(user_identifier_value));
+      uint8_t enabled_value;
+      memset(&enabled_value, 0x00, sizeof(enabled_value));
+  // Invoke with support check
+    TEST_ASSERT_EQUAL(SL_STATUS_OK, test_uic_mqtt_dotdot_unify_schedule_entry_lock_enable_set_callback(expected_unid,expected_endpoint_id,UIC_MQTT_DOTDOT_CALLBACK_TYPE_SUPPORT_CHECK
+      ,
+        user_identifier_value,
+      
+        enabled_value
+      
+      ));
+  }
+  if (NULL != test_uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_report_callback) {
     // Dummy command parameters
       uint8_t user_identifier_value;
       memset(&user_identifier_value, 0x00, sizeof(user_identifier_value));
@@ -11083,7 +11394,7 @@ void test_automatic_deduction_of_supported_commands()
       uint8_t stop_minute_value;
       memset(&stop_minute_value, 0x00, sizeof(stop_minute_value));
   // Invoke with support check
-    TEST_ASSERT_EQUAL(SL_STATUS_OK, test_uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_week_day_report_callback(expected_unid,expected_endpoint_id,UIC_MQTT_DOTDOT_CALLBACK_TYPE_SUPPORT_CHECK
+    TEST_ASSERT_EQUAL(SL_STATUS_OK, test_uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_report_callback(expected_unid,expected_endpoint_id,UIC_MQTT_DOTDOT_CALLBACK_TYPE_SUPPORT_CHECK
       ,
         user_identifier_value,
       
@@ -11101,7 +11412,162 @@ void test_automatic_deduction_of_supported_commands()
       
       ));
   }
-  if (NULL != test_uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_year_day_report_callback) {
+  if (NULL != test_uic_mqtt_dotdot_unify_schedule_entry_lock_enable_all_set_callback) {
+    // Dummy command parameters
+      uint8_t enabled_value;
+      memset(&enabled_value, 0x00, sizeof(enabled_value));
+  // Invoke with support check
+    TEST_ASSERT_EQUAL(SL_STATUS_OK, test_uic_mqtt_dotdot_unify_schedule_entry_lock_enable_all_set_callback(expected_unid,expected_endpoint_id,UIC_MQTT_DOTDOT_CALLBACK_TYPE_SUPPORT_CHECK
+      ,
+        enabled_value
+      
+      ));
+  }
+  if (NULL != test_uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_report_callback) {
+    // Dummy command parameters
+      uint8_t user_identifier_value;
+      memset(&user_identifier_value, 0x00, sizeof(user_identifier_value));
+      uint8_t schedule_slotid_value;
+      memset(&schedule_slotid_value, 0x00, sizeof(schedule_slotid_value));
+      uint8_t start_year_value;
+      memset(&start_year_value, 0x00, sizeof(start_year_value));
+      uint8_t start_month_value;
+      memset(&start_month_value, 0x00, sizeof(start_month_value));
+      uint8_t start_day_value;
+      memset(&start_day_value, 0x00, sizeof(start_day_value));
+      uint8_t start_hour_value;
+      memset(&start_hour_value, 0x00, sizeof(start_hour_value));
+      uint8_t start_minute_value;
+      memset(&start_minute_value, 0x00, sizeof(start_minute_value));
+      uint8_t stop_year_value;
+      memset(&stop_year_value, 0x00, sizeof(stop_year_value));
+      uint8_t stop_month_value;
+      memset(&stop_month_value, 0x00, sizeof(stop_month_value));
+      uint8_t stop_day_value;
+      memset(&stop_day_value, 0x00, sizeof(stop_day_value));
+      uint8_t stop_hour_value;
+      memset(&stop_hour_value, 0x00, sizeof(stop_hour_value));
+      uint8_t stop_minute_value;
+      memset(&stop_minute_value, 0x00, sizeof(stop_minute_value));
+  // Invoke with support check
+    TEST_ASSERT_EQUAL(SL_STATUS_OK, test_uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_report_callback(expected_unid,expected_endpoint_id,UIC_MQTT_DOTDOT_CALLBACK_TYPE_SUPPORT_CHECK
+      ,
+        user_identifier_value,
+      
+        schedule_slotid_value,
+      
+        start_year_value,
+      
+        start_month_value,
+      
+        start_day_value,
+      
+        start_hour_value,
+      
+        start_minute_value,
+      
+        stop_year_value,
+      
+        stop_month_value,
+      
+        stop_day_value,
+      
+        stop_hour_value,
+      
+        stop_minute_value
+      
+      ));
+  }
+  if (NULL != test_uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_set_callback) {
+    // Dummy command parameters
+      uint8_t set_action_value;
+      memset(&set_action_value, 0x00, sizeof(set_action_value));
+      uint8_t user_identifier_value;
+      memset(&user_identifier_value, 0x00, sizeof(user_identifier_value));
+      uint8_t schedule_slotid_value;
+      memset(&schedule_slotid_value, 0x00, sizeof(schedule_slotid_value));
+      uint8_t day_of_week_value;
+      memset(&day_of_week_value, 0x00, sizeof(day_of_week_value));
+      uint8_t start_hour_value;
+      memset(&start_hour_value, 0x00, sizeof(start_hour_value));
+      uint8_t start_minute_value;
+      memset(&start_minute_value, 0x00, sizeof(start_minute_value));
+      uint8_t stop_hour_value;
+      memset(&stop_hour_value, 0x00, sizeof(stop_hour_value));
+      uint8_t stop_minute_value;
+      memset(&stop_minute_value, 0x00, sizeof(stop_minute_value));
+  // Invoke with support check
+    TEST_ASSERT_EQUAL(SL_STATUS_OK, test_uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_set_callback(expected_unid,expected_endpoint_id,UIC_MQTT_DOTDOT_CALLBACK_TYPE_SUPPORT_CHECK
+      ,
+        set_action_value,
+      
+        user_identifier_value,
+      
+        schedule_slotid_value,
+      
+        day_of_week_value,
+      
+        start_hour_value,
+      
+        start_minute_value,
+      
+        stop_hour_value,
+      
+        stop_minute_value
+      
+      ));
+  }
+  if (NULL != test_uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_report_callback) {
+    // Dummy command parameters
+      uint8_t user_identifier_value;
+      memset(&user_identifier_value, 0x00, sizeof(user_identifier_value));
+      uint8_t schedule_slotid_value;
+      memset(&schedule_slotid_value, 0x00, sizeof(schedule_slotid_value));
+      uint8_t week_day_bitmask_value;
+      memset(&week_day_bitmask_value, 0x00, sizeof(week_day_bitmask_value));
+      uint8_t start_hour_value;
+      memset(&start_hour_value, 0x00, sizeof(start_hour_value));
+      uint8_t start_minute_value;
+      memset(&start_minute_value, 0x00, sizeof(start_minute_value));
+      uint8_t duration_hour_value;
+      memset(&duration_hour_value, 0x00, sizeof(duration_hour_value));
+      uint8_t duration_minute_value;
+      memset(&duration_minute_value, 0x00, sizeof(duration_minute_value));
+  // Invoke with support check
+    TEST_ASSERT_EQUAL(SL_STATUS_OK, test_uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_report_callback(expected_unid,expected_endpoint_id,UIC_MQTT_DOTDOT_CALLBACK_TYPE_SUPPORT_CHECK
+      ,
+        user_identifier_value,
+      
+        schedule_slotid_value,
+      
+        week_day_bitmask_value,
+      
+        start_hour_value,
+      
+        start_minute_value,
+      
+        duration_hour_value,
+      
+        duration_minute_value
+      
+      ));
+  }
+  if (NULL != test_uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_get_callback) {
+    // Dummy command parameters
+      uint8_t user_identifier_value;
+      memset(&user_identifier_value, 0x00, sizeof(user_identifier_value));
+      uint8_t schedule_slotid_value;
+      memset(&schedule_slotid_value, 0x00, sizeof(schedule_slotid_value));
+  // Invoke with support check
+    TEST_ASSERT_EQUAL(SL_STATUS_OK, test_uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_get_callback(expected_unid,expected_endpoint_id,UIC_MQTT_DOTDOT_CALLBACK_TYPE_SUPPORT_CHECK
+      ,
+        user_identifier_value,
+      
+        schedule_slotid_value
+      
+      ));
+  }
+  if (NULL != test_uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_set_callback) {
     // Dummy command parameters
       uint8_t set_action_value;
       memset(&set_action_value, 0x00, sizeof(set_action_value));
@@ -11130,7 +11596,7 @@ void test_automatic_deduction_of_supported_commands()
       uint8_t stop_minute_value;
       memset(&stop_minute_value, 0x00, sizeof(stop_minute_value));
   // Invoke with support check
-    TEST_ASSERT_EQUAL(SL_STATUS_OK, test_uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_year_day_report_callback(expected_unid,expected_endpoint_id,UIC_MQTT_DOTDOT_CALLBACK_TYPE_SUPPORT_CHECK
+    TEST_ASSERT_EQUAL(SL_STATUS_OK, test_uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_set_callback(expected_unid,expected_endpoint_id,UIC_MQTT_DOTDOT_CALLBACK_TYPE_SUPPORT_CHECK
       ,
         set_action_value,
       
@@ -11160,7 +11626,22 @@ void test_automatic_deduction_of_supported_commands()
       
       ));
   }
-  if (NULL != test_uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_daily_repeating_report_callback) {
+  if (NULL != test_uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_get_callback) {
+    // Dummy command parameters
+      uint8_t user_identifier_value;
+      memset(&user_identifier_value, 0x00, sizeof(user_identifier_value));
+      uint8_t schedule_slotid_value;
+      memset(&schedule_slotid_value, 0x00, sizeof(schedule_slotid_value));
+  // Invoke with support check
+    TEST_ASSERT_EQUAL(SL_STATUS_OK, test_uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_get_callback(expected_unid,expected_endpoint_id,UIC_MQTT_DOTDOT_CALLBACK_TYPE_SUPPORT_CHECK
+      ,
+        user_identifier_value,
+      
+        schedule_slotid_value
+      
+      ));
+  }
+  if (NULL != test_uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_set_callback) {
     // Dummy command parameters
       uint8_t set_action_value;
       memset(&set_action_value, 0x00, sizeof(set_action_value));
@@ -11179,7 +11660,7 @@ void test_automatic_deduction_of_supported_commands()
       uint8_t duration_minute_value;
       memset(&duration_minute_value, 0x00, sizeof(duration_minute_value));
   // Invoke with support check
-    TEST_ASSERT_EQUAL(SL_STATUS_OK, test_uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_daily_repeating_report_callback(expected_unid,expected_endpoint_id,UIC_MQTT_DOTDOT_CALLBACK_TYPE_SUPPORT_CHECK
+    TEST_ASSERT_EQUAL(SL_STATUS_OK, test_uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_set_callback(expected_unid,expected_endpoint_id,UIC_MQTT_DOTDOT_CALLBACK_TYPE_SUPPORT_CHECK
       ,
         set_action_value,
       
@@ -11196,6 +11677,21 @@ void test_automatic_deduction_of_supported_commands()
         duration_hour_value,
       
         duration_minute_value
+      
+      ));
+  }
+  if (NULL != test_uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_get_callback) {
+    // Dummy command parameters
+      uint8_t user_identifier_value;
+      memset(&user_identifier_value, 0x00, sizeof(user_identifier_value));
+      uint8_t schedule_slotid_value;
+      memset(&schedule_slotid_value, 0x00, sizeof(schedule_slotid_value));
+  // Invoke with support check
+    TEST_ASSERT_EQUAL(SL_STATUS_OK, test_uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_get_callback(expected_unid,expected_endpoint_id,UIC_MQTT_DOTDOT_CALLBACK_TYPE_SUPPORT_CHECK
+      ,
+        user_identifier_value,
+      
+        schedule_slotid_value
       
       ));
   }

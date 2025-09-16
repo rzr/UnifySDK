@@ -3710,52 +3710,180 @@ void uic_mqtt_dotdot_by_group_unify_thermostat_write_attributes_callback_set(
 
 
 /**
- * @brief Callback signature for by-group UnifyScheduleEntryLock::ScheduleEntryLockWeekDayReport command.
+ * @brief Callback signature for by-group UnifyScheduleEntryLock::EnableSet command.
  */
-typedef void (*uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_schedule_entry_lock_week_day_report_callback_t)(
+typedef void (*uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_enable_set_callback_t)(
     const dotdot_group_id_t group_id,
-    const uic_mqtt_dotdot_unify_schedule_entry_lock_command_schedule_entry_lock_week_day_report_fields_t *fields
+    const uic_mqtt_dotdot_unify_schedule_entry_lock_command_enable_set_fields_t *fields
 );
 
 /**
  * Setup handler to be called when a
- * ucl/by-group/+/UnifyScheduleEntryLock/schedule_entry_lock_week_day_report is received.
+ * ucl/by-group/+/UnifyScheduleEntryLock/enable_set is received.
  * Setting this callback will overwrite the previous set callback.
  *
  */
-void uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_schedule_entry_lock_week_day_report_callback_set(const uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_schedule_entry_lock_week_day_report_callback_t callback);
+void uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_enable_set_callback_set(const uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_enable_set_callback_t callback);
 
 /**
- * @brief Callback signature for by-group UnifyScheduleEntryLock::ScheduleEntryLockYearDayReport command.
+ * @brief Callback signature for by-group UnifyScheduleEntryLock::WeekDayReport command.
  */
-typedef void (*uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_schedule_entry_lock_year_day_report_callback_t)(
+typedef void (*uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_week_day_report_callback_t)(
     const dotdot_group_id_t group_id,
-    const uic_mqtt_dotdot_unify_schedule_entry_lock_command_schedule_entry_lock_year_day_report_fields_t *fields
+    const uic_mqtt_dotdot_unify_schedule_entry_lock_command_week_day_report_fields_t *fields
 );
 
 /**
  * Setup handler to be called when a
- * ucl/by-group/+/UnifyScheduleEntryLock/schedule_entry_lock_year_day_report is received.
+ * ucl/by-group/+/UnifyScheduleEntryLock/week_day_report is received.
  * Setting this callback will overwrite the previous set callback.
  *
  */
-void uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_schedule_entry_lock_year_day_report_callback_set(const uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_schedule_entry_lock_year_day_report_callback_t callback);
+void uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_week_day_report_callback_set(const uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_week_day_report_callback_t callback);
 
 /**
- * @brief Callback signature for by-group UnifyScheduleEntryLock::ScheduleEntryLockDailyRepeatingReport command.
+ * @brief Callback signature for by-group UnifyScheduleEntryLock::EnableAllSet command.
  */
-typedef void (*uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_schedule_entry_lock_daily_repeating_report_callback_t)(
+typedef void (*uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_enable_all_set_callback_t)(
     const dotdot_group_id_t group_id,
-    const uic_mqtt_dotdot_unify_schedule_entry_lock_command_schedule_entry_lock_daily_repeating_report_fields_t *fields
+    const uic_mqtt_dotdot_unify_schedule_entry_lock_command_enable_all_set_fields_t *fields
 );
 
 /**
  * Setup handler to be called when a
- * ucl/by-group/+/UnifyScheduleEntryLock/schedule_entry_lock_daily_repeating_report is received.
+ * ucl/by-group/+/UnifyScheduleEntryLock/enable_all_set is received.
  * Setting this callback will overwrite the previous set callback.
  *
  */
-void uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_schedule_entry_lock_daily_repeating_report_callback_set(const uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_schedule_entry_lock_daily_repeating_report_callback_t callback);
+void uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_enable_all_set_callback_set(const uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_enable_all_set_callback_t callback);
+
+/**
+ * @brief Callback signature for by-group UnifyScheduleEntryLock::YearDayReport command.
+ */
+typedef void (*uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_year_day_report_callback_t)(
+    const dotdot_group_id_t group_id,
+    const uic_mqtt_dotdot_unify_schedule_entry_lock_command_year_day_report_fields_t *fields
+);
+
+/**
+ * Setup handler to be called when a
+ * ucl/by-group/+/UnifyScheduleEntryLock/year_day_report is received.
+ * Setting this callback will overwrite the previous set callback.
+ *
+ */
+void uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_year_day_report_callback_set(const uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_year_day_report_callback_t callback);
+
+/**
+ * @brief Callback signature for by-group UnifyScheduleEntryLock::WeekDaySet command.
+ */
+typedef void (*uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_week_day_set_callback_t)(
+    const dotdot_group_id_t group_id,
+    const uic_mqtt_dotdot_unify_schedule_entry_lock_command_week_day_set_fields_t *fields
+);
+
+/**
+ * Setup handler to be called when a
+ * ucl/by-group/+/UnifyScheduleEntryLock/week_day_set is received.
+ * Setting this callback will overwrite the previous set callback.
+ *
+ */
+void uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_week_day_set_callback_set(const uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_week_day_set_callback_t callback);
+
+/**
+ * @brief Callback signature for by-group UnifyScheduleEntryLock::DailyRepeatingReport command.
+ */
+typedef void (*uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_daily_repeating_report_callback_t)(
+    const dotdot_group_id_t group_id,
+    const uic_mqtt_dotdot_unify_schedule_entry_lock_command_daily_repeating_report_fields_t *fields
+);
+
+/**
+ * Setup handler to be called when a
+ * ucl/by-group/+/UnifyScheduleEntryLock/daily_repeating_report is received.
+ * Setting this callback will overwrite the previous set callback.
+ *
+ */
+void uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_daily_repeating_report_callback_set(const uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_daily_repeating_report_callback_t callback);
+
+/**
+ * @brief Callback signature for by-group UnifyScheduleEntryLock::WeekDayGet command.
+ */
+typedef void (*uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_week_day_get_callback_t)(
+    const dotdot_group_id_t group_id,
+    const uic_mqtt_dotdot_unify_schedule_entry_lock_command_week_day_get_fields_t *fields
+);
+
+/**
+ * Setup handler to be called when a
+ * ucl/by-group/+/UnifyScheduleEntryLock/week_day_get is received.
+ * Setting this callback will overwrite the previous set callback.
+ *
+ */
+void uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_week_day_get_callback_set(const uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_week_day_get_callback_t callback);
+
+/**
+ * @brief Callback signature for by-group UnifyScheduleEntryLock::YearDaySet command.
+ */
+typedef void (*uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_year_day_set_callback_t)(
+    const dotdot_group_id_t group_id,
+    const uic_mqtt_dotdot_unify_schedule_entry_lock_command_year_day_set_fields_t *fields
+);
+
+/**
+ * Setup handler to be called when a
+ * ucl/by-group/+/UnifyScheduleEntryLock/year_day_set is received.
+ * Setting this callback will overwrite the previous set callback.
+ *
+ */
+void uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_year_day_set_callback_set(const uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_year_day_set_callback_t callback);
+
+/**
+ * @brief Callback signature for by-group UnifyScheduleEntryLock::YearDayGet command.
+ */
+typedef void (*uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_year_day_get_callback_t)(
+    const dotdot_group_id_t group_id,
+    const uic_mqtt_dotdot_unify_schedule_entry_lock_command_year_day_get_fields_t *fields
+);
+
+/**
+ * Setup handler to be called when a
+ * ucl/by-group/+/UnifyScheduleEntryLock/year_day_get is received.
+ * Setting this callback will overwrite the previous set callback.
+ *
+ */
+void uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_year_day_get_callback_set(const uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_year_day_get_callback_t callback);
+
+/**
+ * @brief Callback signature for by-group UnifyScheduleEntryLock::DailyRepeatingSet command.
+ */
+typedef void (*uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_daily_repeating_set_callback_t)(
+    const dotdot_group_id_t group_id,
+    const uic_mqtt_dotdot_unify_schedule_entry_lock_command_daily_repeating_set_fields_t *fields
+);
+
+/**
+ * Setup handler to be called when a
+ * ucl/by-group/+/UnifyScheduleEntryLock/daily_repeating_set is received.
+ * Setting this callback will overwrite the previous set callback.
+ *
+ */
+void uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_daily_repeating_set_callback_set(const uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_daily_repeating_set_callback_t callback);
+
+/**
+ * @brief Callback signature for by-group UnifyScheduleEntryLock::DailyRepeatingGet command.
+ */
+typedef void (*uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_daily_repeating_get_callback_t)(
+    const dotdot_group_id_t group_id,
+    const uic_mqtt_dotdot_unify_schedule_entry_lock_command_daily_repeating_get_fields_t *fields
+);
+
+/**
+ * Setup handler to be called when a
+ * ucl/by-group/+/UnifyScheduleEntryLock/daily_repeating_get is received.
+ * Setting this callback will overwrite the previous set callback.
+ *
+ */
+void uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_daily_repeating_get_callback_set(const uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_daily_repeating_get_callback_t callback);
 
 typedef void (*uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_write_attributes_callback_t)(
     const dotdot_group_id_t group_id,

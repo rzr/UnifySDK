@@ -14523,9 +14523,59 @@ void uic_mqtt_dotdot_parse_unify_thermostat_write_attributes(
 }
 
 
-std::string get_json_payload_for_unify_schedule_entry_lock_schedule_entry_lock_week_day_report_command(
+std::string get_json_payload_for_unify_schedule_entry_lock_enable_set_command(
   
-  const uic_mqtt_dotdot_unify_schedule_entry_lock_command_schedule_entry_lock_week_day_report_fields_t *fields
+  const uic_mqtt_dotdot_unify_schedule_entry_lock_command_enable_set_fields_t *fields
+  
+){
+  bool command_with_no_fields = true;
+
+  // Create a JSON payload from all the parameters
+  nlohmann::json json_payload;
+  command_with_no_fields = false;
+  // Single Value
+  // Non-enum and non-bitmask (struct, string or scalar)
+  json_payload["UserIdentifier"] = nlohmann::json(fields->user_identifier);
+  command_with_no_fields = false;
+  // Single Value
+  // Non-enum and non-bitmask (struct, string or scalar)
+  json_payload["Enabled"] = nlohmann::json(fields->enabled);
+
+  // Get the string
+  if (command_with_no_fields == true) {
+    return std::string("{}");
+  }
+  // Payload may contain data from end nodes, which we cannot control, thus we handle if there are non-utf8 characters
+  return json_payload.dump(-1, ' ', false, nlohmann::detail::error_handler_t::replace);
+}
+
+
+void uic_mqtt_dotdot_parse_unify_schedule_entry_lock_enable_set(
+  nlohmann::json &jsn,
+  uint8_t &user_identifier,
+  
+  uint8_t &enabled
+  
+) {
+
+  if (jsn.at("UserIdentifier").is_null()) {
+    sl_log_debug(LOG_TAG, "Ignoring JSON Null object");
+    return;
+  }
+        
+  user_identifier = jsn.at("UserIdentifier").get< uint8_t >();
+      if (jsn.at("Enabled").is_null()) {
+    sl_log_debug(LOG_TAG, "Ignoring JSON Null object");
+    return;
+  }
+        
+  enabled = jsn.at("Enabled").get< uint8_t >();
+    }
+
+
+std::string get_json_payload_for_unify_schedule_entry_lock_week_day_report_command(
+  
+  const uic_mqtt_dotdot_unify_schedule_entry_lock_command_week_day_report_fields_t *fields
   
 ){
   bool command_with_no_fields = true;
@@ -14570,7 +14620,7 @@ std::string get_json_payload_for_unify_schedule_entry_lock_schedule_entry_lock_w
 }
 
 
-void uic_mqtt_dotdot_parse_unify_schedule_entry_lock_schedule_entry_lock_week_day_report(
+void uic_mqtt_dotdot_parse_unify_schedule_entry_lock_week_day_report(
   nlohmann::json &jsn,
   uint8_t &user_identifier,
   
@@ -14633,9 +14683,9 @@ void uic_mqtt_dotdot_parse_unify_schedule_entry_lock_schedule_entry_lock_week_da
     }
 
 
-std::string get_json_payload_for_unify_schedule_entry_lock_schedule_entry_lock_year_day_report_command(
+std::string get_json_payload_for_unify_schedule_entry_lock_enable_all_set_command(
   
-  const uic_mqtt_dotdot_unify_schedule_entry_lock_command_schedule_entry_lock_year_day_report_fields_t *fields
+  const uic_mqtt_dotdot_unify_schedule_entry_lock_command_enable_all_set_fields_t *fields
   
 ){
   bool command_with_no_fields = true;
@@ -14645,7 +14695,41 @@ std::string get_json_payload_for_unify_schedule_entry_lock_schedule_entry_lock_y
   command_with_no_fields = false;
   // Single Value
   // Non-enum and non-bitmask (struct, string or scalar)
-  json_payload["SetAction"] = nlohmann::json(fields->set_action);
+  json_payload["Enabled"] = nlohmann::json(fields->enabled);
+
+  // Get the string
+  if (command_with_no_fields == true) {
+    return std::string("{}");
+  }
+  // Payload may contain data from end nodes, which we cannot control, thus we handle if there are non-utf8 characters
+  return json_payload.dump(-1, ' ', false, nlohmann::detail::error_handler_t::replace);
+}
+
+
+void uic_mqtt_dotdot_parse_unify_schedule_entry_lock_enable_all_set(
+  nlohmann::json &jsn,
+  uint8_t &enabled
+  
+) {
+
+  if (jsn.at("Enabled").is_null()) {
+    sl_log_debug(LOG_TAG, "Ignoring JSON Null object");
+    return;
+  }
+        
+  enabled = jsn.at("Enabled").get< uint8_t >();
+    }
+
+
+std::string get_json_payload_for_unify_schedule_entry_lock_year_day_report_command(
+  
+  const uic_mqtt_dotdot_unify_schedule_entry_lock_command_year_day_report_fields_t *fields
+  
+){
+  bool command_with_no_fields = true;
+
+  // Create a JSON payload from all the parameters
+  nlohmann::json json_payload;
   command_with_no_fields = false;
   // Single Value
   // Non-enum and non-bitmask (struct, string or scalar)
@@ -14704,10 +14788,8 @@ std::string get_json_payload_for_unify_schedule_entry_lock_schedule_entry_lock_y
 }
 
 
-void uic_mqtt_dotdot_parse_unify_schedule_entry_lock_schedule_entry_lock_year_day_report(
+void uic_mqtt_dotdot_parse_unify_schedule_entry_lock_year_day_report(
   nlohmann::json &jsn,
-  uint8_t &set_action,
-  
   uint8_t &user_identifier,
   
   uint8_t &schedule_slotid,
@@ -14734,13 +14816,7 @@ void uic_mqtt_dotdot_parse_unify_schedule_entry_lock_schedule_entry_lock_year_da
   
 ) {
 
-  if (jsn.at("SetAction").is_null()) {
-    sl_log_debug(LOG_TAG, "Ignoring JSON Null object");
-    return;
-  }
-        
-  set_action = jsn.at("SetAction").get< uint8_t >();
-      if (jsn.at("UserIdentifier").is_null()) {
+  if (jsn.at("UserIdentifier").is_null()) {
     sl_log_debug(LOG_TAG, "Ignoring JSON Null object");
     return;
   }
@@ -14815,9 +14891,523 @@ void uic_mqtt_dotdot_parse_unify_schedule_entry_lock_schedule_entry_lock_year_da
     }
 
 
-std::string get_json_payload_for_unify_schedule_entry_lock_schedule_entry_lock_daily_repeating_report_command(
+std::string get_json_payload_for_unify_schedule_entry_lock_week_day_set_command(
   
-  const uic_mqtt_dotdot_unify_schedule_entry_lock_command_schedule_entry_lock_daily_repeating_report_fields_t *fields
+  const uic_mqtt_dotdot_unify_schedule_entry_lock_command_week_day_set_fields_t *fields
+  
+){
+  bool command_with_no_fields = true;
+
+  // Create a JSON payload from all the parameters
+  nlohmann::json json_payload;
+  command_with_no_fields = false;
+  // Single Value
+  // Non-enum and non-bitmask (struct, string or scalar)
+  json_payload["SetAction"] = nlohmann::json(fields->set_action);
+  command_with_no_fields = false;
+  // Single Value
+  // Non-enum and non-bitmask (struct, string or scalar)
+  json_payload["UserIdentifier"] = nlohmann::json(fields->user_identifier);
+  command_with_no_fields = false;
+  // Single Value
+  // Non-enum and non-bitmask (struct, string or scalar)
+  json_payload["ScheduleSlotID"] = nlohmann::json(fields->schedule_slotid);
+  command_with_no_fields = false;
+  // Single Value
+  // Non-enum and non-bitmask (struct, string or scalar)
+  json_payload["DayOfWeek"] = nlohmann::json(fields->day_of_week);
+  command_with_no_fields = false;
+  // Single Value
+  // Non-enum and non-bitmask (struct, string or scalar)
+  json_payload["StartHour"] = nlohmann::json(fields->start_hour);
+  command_with_no_fields = false;
+  // Single Value
+  // Non-enum and non-bitmask (struct, string or scalar)
+  json_payload["StartMinute"] = nlohmann::json(fields->start_minute);
+  command_with_no_fields = false;
+  // Single Value
+  // Non-enum and non-bitmask (struct, string or scalar)
+  json_payload["StopHour"] = nlohmann::json(fields->stop_hour);
+  command_with_no_fields = false;
+  // Single Value
+  // Non-enum and non-bitmask (struct, string or scalar)
+  json_payload["StopMinute"] = nlohmann::json(fields->stop_minute);
+
+  // Get the string
+  if (command_with_no_fields == true) {
+    return std::string("{}");
+  }
+  // Payload may contain data from end nodes, which we cannot control, thus we handle if there are non-utf8 characters
+  return json_payload.dump(-1, ' ', false, nlohmann::detail::error_handler_t::replace);
+}
+
+
+void uic_mqtt_dotdot_parse_unify_schedule_entry_lock_week_day_set(
+  nlohmann::json &jsn,
+  uint8_t &set_action,
+  
+  uint8_t &user_identifier,
+  
+  uint8_t &schedule_slotid,
+  
+  uint8_t &day_of_week,
+  
+  uint8_t &start_hour,
+  
+  uint8_t &start_minute,
+  
+  uint8_t &stop_hour,
+  
+  uint8_t &stop_minute
+  
+) {
+
+  if (jsn.at("SetAction").is_null()) {
+    sl_log_debug(LOG_TAG, "Ignoring JSON Null object");
+    return;
+  }
+        
+  set_action = jsn.at("SetAction").get< uint8_t >();
+      if (jsn.at("UserIdentifier").is_null()) {
+    sl_log_debug(LOG_TAG, "Ignoring JSON Null object");
+    return;
+  }
+        
+  user_identifier = jsn.at("UserIdentifier").get< uint8_t >();
+      if (jsn.at("ScheduleSlotID").is_null()) {
+    sl_log_debug(LOG_TAG, "Ignoring JSON Null object");
+    return;
+  }
+        
+  schedule_slotid = jsn.at("ScheduleSlotID").get< uint8_t >();
+      if (jsn.at("DayOfWeek").is_null()) {
+    sl_log_debug(LOG_TAG, "Ignoring JSON Null object");
+    return;
+  }
+        
+  day_of_week = jsn.at("DayOfWeek").get< uint8_t >();
+      if (jsn.at("StartHour").is_null()) {
+    sl_log_debug(LOG_TAG, "Ignoring JSON Null object");
+    return;
+  }
+        
+  start_hour = jsn.at("StartHour").get< uint8_t >();
+      if (jsn.at("StartMinute").is_null()) {
+    sl_log_debug(LOG_TAG, "Ignoring JSON Null object");
+    return;
+  }
+        
+  start_minute = jsn.at("StartMinute").get< uint8_t >();
+      if (jsn.at("StopHour").is_null()) {
+    sl_log_debug(LOG_TAG, "Ignoring JSON Null object");
+    return;
+  }
+        
+  stop_hour = jsn.at("StopHour").get< uint8_t >();
+      if (jsn.at("StopMinute").is_null()) {
+    sl_log_debug(LOG_TAG, "Ignoring JSON Null object");
+    return;
+  }
+        
+  stop_minute = jsn.at("StopMinute").get< uint8_t >();
+    }
+
+
+std::string get_json_payload_for_unify_schedule_entry_lock_daily_repeating_report_command(
+  
+  const uic_mqtt_dotdot_unify_schedule_entry_lock_command_daily_repeating_report_fields_t *fields
+  
+){
+  bool command_with_no_fields = true;
+
+  // Create a JSON payload from all the parameters
+  nlohmann::json json_payload;
+  command_with_no_fields = false;
+  // Single Value
+  // Non-enum and non-bitmask (struct, string or scalar)
+  json_payload["UserIdentifier"] = nlohmann::json(fields->user_identifier);
+  command_with_no_fields = false;
+  // Single Value
+  // Non-enum and non-bitmask (struct, string or scalar)
+  json_payload["ScheduleSlotID"] = nlohmann::json(fields->schedule_slotid);
+  command_with_no_fields = false;
+  // Single Value
+  // Non-enum and non-bitmask (struct, string or scalar)
+  json_payload["WeekDayBitmask"] = nlohmann::json(fields->week_day_bitmask);
+  command_with_no_fields = false;
+  // Single Value
+  // Non-enum and non-bitmask (struct, string or scalar)
+  json_payload["StartHour"] = nlohmann::json(fields->start_hour);
+  command_with_no_fields = false;
+  // Single Value
+  // Non-enum and non-bitmask (struct, string or scalar)
+  json_payload["StartMinute"] = nlohmann::json(fields->start_minute);
+  command_with_no_fields = false;
+  // Single Value
+  // Non-enum and non-bitmask (struct, string or scalar)
+  json_payload["DurationHour"] = nlohmann::json(fields->duration_hour);
+  command_with_no_fields = false;
+  // Single Value
+  // Non-enum and non-bitmask (struct, string or scalar)
+  json_payload["DurationMinute"] = nlohmann::json(fields->duration_minute);
+
+  // Get the string
+  if (command_with_no_fields == true) {
+    return std::string("{}");
+  }
+  // Payload may contain data from end nodes, which we cannot control, thus we handle if there are non-utf8 characters
+  return json_payload.dump(-1, ' ', false, nlohmann::detail::error_handler_t::replace);
+}
+
+
+void uic_mqtt_dotdot_parse_unify_schedule_entry_lock_daily_repeating_report(
+  nlohmann::json &jsn,
+  uint8_t &user_identifier,
+  
+  uint8_t &schedule_slotid,
+  
+  uint8_t &week_day_bitmask,
+  
+  uint8_t &start_hour,
+  
+  uint8_t &start_minute,
+  
+  uint8_t &duration_hour,
+  
+  uint8_t &duration_minute
+  
+) {
+
+  if (jsn.at("UserIdentifier").is_null()) {
+    sl_log_debug(LOG_TAG, "Ignoring JSON Null object");
+    return;
+  }
+        
+  user_identifier = jsn.at("UserIdentifier").get< uint8_t >();
+      if (jsn.at("ScheduleSlotID").is_null()) {
+    sl_log_debug(LOG_TAG, "Ignoring JSON Null object");
+    return;
+  }
+        
+  schedule_slotid = jsn.at("ScheduleSlotID").get< uint8_t >();
+      if (jsn.at("WeekDayBitmask").is_null()) {
+    sl_log_debug(LOG_TAG, "Ignoring JSON Null object");
+    return;
+  }
+        
+  week_day_bitmask = jsn.at("WeekDayBitmask").get< uint8_t >();
+      if (jsn.at("StartHour").is_null()) {
+    sl_log_debug(LOG_TAG, "Ignoring JSON Null object");
+    return;
+  }
+        
+  start_hour = jsn.at("StartHour").get< uint8_t >();
+      if (jsn.at("StartMinute").is_null()) {
+    sl_log_debug(LOG_TAG, "Ignoring JSON Null object");
+    return;
+  }
+        
+  start_minute = jsn.at("StartMinute").get< uint8_t >();
+      if (jsn.at("DurationHour").is_null()) {
+    sl_log_debug(LOG_TAG, "Ignoring JSON Null object");
+    return;
+  }
+        
+  duration_hour = jsn.at("DurationHour").get< uint8_t >();
+      if (jsn.at("DurationMinute").is_null()) {
+    sl_log_debug(LOG_TAG, "Ignoring JSON Null object");
+    return;
+  }
+        
+  duration_minute = jsn.at("DurationMinute").get< uint8_t >();
+    }
+
+
+std::string get_json_payload_for_unify_schedule_entry_lock_week_day_get_command(
+  
+  const uic_mqtt_dotdot_unify_schedule_entry_lock_command_week_day_get_fields_t *fields
+  
+){
+  bool command_with_no_fields = true;
+
+  // Create a JSON payload from all the parameters
+  nlohmann::json json_payload;
+  command_with_no_fields = false;
+  // Single Value
+  // Non-enum and non-bitmask (struct, string or scalar)
+  json_payload["UserIdentifier"] = nlohmann::json(fields->user_identifier);
+  command_with_no_fields = false;
+  // Single Value
+  // Non-enum and non-bitmask (struct, string or scalar)
+  json_payload["ScheduleSlotID"] = nlohmann::json(fields->schedule_slotid);
+
+  // Get the string
+  if (command_with_no_fields == true) {
+    return std::string("{}");
+  }
+  // Payload may contain data from end nodes, which we cannot control, thus we handle if there are non-utf8 characters
+  return json_payload.dump(-1, ' ', false, nlohmann::detail::error_handler_t::replace);
+}
+
+
+void uic_mqtt_dotdot_parse_unify_schedule_entry_lock_week_day_get(
+  nlohmann::json &jsn,
+  uint8_t &user_identifier,
+  
+  uint8_t &schedule_slotid
+  
+) {
+
+  if (jsn.at("UserIdentifier").is_null()) {
+    sl_log_debug(LOG_TAG, "Ignoring JSON Null object");
+    return;
+  }
+        
+  user_identifier = jsn.at("UserIdentifier").get< uint8_t >();
+      if (jsn.at("ScheduleSlotID").is_null()) {
+    sl_log_debug(LOG_TAG, "Ignoring JSON Null object");
+    return;
+  }
+        
+  schedule_slotid = jsn.at("ScheduleSlotID").get< uint8_t >();
+    }
+
+
+std::string get_json_payload_for_unify_schedule_entry_lock_year_day_set_command(
+  
+  const uic_mqtt_dotdot_unify_schedule_entry_lock_command_year_day_set_fields_t *fields
+  
+){
+  bool command_with_no_fields = true;
+
+  // Create a JSON payload from all the parameters
+  nlohmann::json json_payload;
+  command_with_no_fields = false;
+  // Single Value
+  // Non-enum and non-bitmask (struct, string or scalar)
+  json_payload["SetAction"] = nlohmann::json(fields->set_action);
+  command_with_no_fields = false;
+  // Single Value
+  // Non-enum and non-bitmask (struct, string or scalar)
+  json_payload["UserIdentifier"] = nlohmann::json(fields->user_identifier);
+  command_with_no_fields = false;
+  // Single Value
+  // Non-enum and non-bitmask (struct, string or scalar)
+  json_payload["ScheduleSlotID"] = nlohmann::json(fields->schedule_slotid);
+  command_with_no_fields = false;
+  // Single Value
+  // Non-enum and non-bitmask (struct, string or scalar)
+  json_payload["StartYear"] = nlohmann::json(fields->start_year);
+  command_with_no_fields = false;
+  // Single Value
+  // Non-enum and non-bitmask (struct, string or scalar)
+  json_payload["StartDay"] = nlohmann::json(fields->start_day);
+  command_with_no_fields = false;
+  // Single Value
+  // Non-enum and non-bitmask (struct, string or scalar)
+  json_payload["StartHour"] = nlohmann::json(fields->start_hour);
+  command_with_no_fields = false;
+  // Single Value
+  // Non-enum and non-bitmask (struct, string or scalar)
+  json_payload["StartMonth"] = nlohmann::json(fields->start_month);
+  command_with_no_fields = false;
+  // Single Value
+  // Non-enum and non-bitmask (struct, string or scalar)
+  json_payload["StartMinute"] = nlohmann::json(fields->start_minute);
+  command_with_no_fields = false;
+  // Single Value
+  // Non-enum and non-bitmask (struct, string or scalar)
+  json_payload["StopYear"] = nlohmann::json(fields->stop_year);
+  command_with_no_fields = false;
+  // Single Value
+  // Non-enum and non-bitmask (struct, string or scalar)
+  json_payload["StopMonth"] = nlohmann::json(fields->stop_month);
+  command_with_no_fields = false;
+  // Single Value
+  // Non-enum and non-bitmask (struct, string or scalar)
+  json_payload["StopDay"] = nlohmann::json(fields->stop_day);
+  command_with_no_fields = false;
+  // Single Value
+  // Non-enum and non-bitmask (struct, string or scalar)
+  json_payload["StopHour"] = nlohmann::json(fields->stop_hour);
+  command_with_no_fields = false;
+  // Single Value
+  // Non-enum and non-bitmask (struct, string or scalar)
+  json_payload["StopMinute"] = nlohmann::json(fields->stop_minute);
+
+  // Get the string
+  if (command_with_no_fields == true) {
+    return std::string("{}");
+  }
+  // Payload may contain data from end nodes, which we cannot control, thus we handle if there are non-utf8 characters
+  return json_payload.dump(-1, ' ', false, nlohmann::detail::error_handler_t::replace);
+}
+
+
+void uic_mqtt_dotdot_parse_unify_schedule_entry_lock_year_day_set(
+  nlohmann::json &jsn,
+  uint8_t &set_action,
+  
+  uint8_t &user_identifier,
+  
+  uint8_t &schedule_slotid,
+  
+  uint8_t &start_year,
+  
+  uint8_t &start_day,
+  
+  uint8_t &start_hour,
+  
+  uint8_t &start_month,
+  
+  uint8_t &start_minute,
+  
+  uint8_t &stop_year,
+  
+  uint8_t &stop_month,
+  
+  uint8_t &stop_day,
+  
+  uint8_t &stop_hour,
+  
+  uint8_t &stop_minute
+  
+) {
+
+  if (jsn.at("SetAction").is_null()) {
+    sl_log_debug(LOG_TAG, "Ignoring JSON Null object");
+    return;
+  }
+        
+  set_action = jsn.at("SetAction").get< uint8_t >();
+      if (jsn.at("UserIdentifier").is_null()) {
+    sl_log_debug(LOG_TAG, "Ignoring JSON Null object");
+    return;
+  }
+        
+  user_identifier = jsn.at("UserIdentifier").get< uint8_t >();
+      if (jsn.at("ScheduleSlotID").is_null()) {
+    sl_log_debug(LOG_TAG, "Ignoring JSON Null object");
+    return;
+  }
+        
+  schedule_slotid = jsn.at("ScheduleSlotID").get< uint8_t >();
+      if (jsn.at("StartYear").is_null()) {
+    sl_log_debug(LOG_TAG, "Ignoring JSON Null object");
+    return;
+  }
+        
+  start_year = jsn.at("StartYear").get< uint8_t >();
+      if (jsn.at("StartDay").is_null()) {
+    sl_log_debug(LOG_TAG, "Ignoring JSON Null object");
+    return;
+  }
+        
+  start_day = jsn.at("StartDay").get< uint8_t >();
+      if (jsn.at("StartHour").is_null()) {
+    sl_log_debug(LOG_TAG, "Ignoring JSON Null object");
+    return;
+  }
+        
+  start_hour = jsn.at("StartHour").get< uint8_t >();
+      if (jsn.at("StartMonth").is_null()) {
+    sl_log_debug(LOG_TAG, "Ignoring JSON Null object");
+    return;
+  }
+        
+  start_month = jsn.at("StartMonth").get< uint8_t >();
+      if (jsn.at("StartMinute").is_null()) {
+    sl_log_debug(LOG_TAG, "Ignoring JSON Null object");
+    return;
+  }
+        
+  start_minute = jsn.at("StartMinute").get< uint8_t >();
+      if (jsn.at("StopYear").is_null()) {
+    sl_log_debug(LOG_TAG, "Ignoring JSON Null object");
+    return;
+  }
+        
+  stop_year = jsn.at("StopYear").get< uint8_t >();
+      if (jsn.at("StopMonth").is_null()) {
+    sl_log_debug(LOG_TAG, "Ignoring JSON Null object");
+    return;
+  }
+        
+  stop_month = jsn.at("StopMonth").get< uint8_t >();
+      if (jsn.at("StopDay").is_null()) {
+    sl_log_debug(LOG_TAG, "Ignoring JSON Null object");
+    return;
+  }
+        
+  stop_day = jsn.at("StopDay").get< uint8_t >();
+      if (jsn.at("StopHour").is_null()) {
+    sl_log_debug(LOG_TAG, "Ignoring JSON Null object");
+    return;
+  }
+        
+  stop_hour = jsn.at("StopHour").get< uint8_t >();
+      if (jsn.at("StopMinute").is_null()) {
+    sl_log_debug(LOG_TAG, "Ignoring JSON Null object");
+    return;
+  }
+        
+  stop_minute = jsn.at("StopMinute").get< uint8_t >();
+    }
+
+
+std::string get_json_payload_for_unify_schedule_entry_lock_year_day_get_command(
+  
+  const uic_mqtt_dotdot_unify_schedule_entry_lock_command_year_day_get_fields_t *fields
+  
+){
+  bool command_with_no_fields = true;
+
+  // Create a JSON payload from all the parameters
+  nlohmann::json json_payload;
+  command_with_no_fields = false;
+  // Single Value
+  // Non-enum and non-bitmask (struct, string or scalar)
+  json_payload["UserIdentifier"] = nlohmann::json(fields->user_identifier);
+  command_with_no_fields = false;
+  // Single Value
+  // Non-enum and non-bitmask (struct, string or scalar)
+  json_payload["ScheduleSlotID"] = nlohmann::json(fields->schedule_slotid);
+
+  // Get the string
+  if (command_with_no_fields == true) {
+    return std::string("{}");
+  }
+  // Payload may contain data from end nodes, which we cannot control, thus we handle if there are non-utf8 characters
+  return json_payload.dump(-1, ' ', false, nlohmann::detail::error_handler_t::replace);
+}
+
+
+void uic_mqtt_dotdot_parse_unify_schedule_entry_lock_year_day_get(
+  nlohmann::json &jsn,
+  uint8_t &user_identifier,
+  
+  uint8_t &schedule_slotid
+  
+) {
+
+  if (jsn.at("UserIdentifier").is_null()) {
+    sl_log_debug(LOG_TAG, "Ignoring JSON Null object");
+    return;
+  }
+        
+  user_identifier = jsn.at("UserIdentifier").get< uint8_t >();
+      if (jsn.at("ScheduleSlotID").is_null()) {
+    sl_log_debug(LOG_TAG, "Ignoring JSON Null object");
+    return;
+  }
+        
+  schedule_slotid = jsn.at("ScheduleSlotID").get< uint8_t >();
+    }
+
+
+std::string get_json_payload_for_unify_schedule_entry_lock_daily_repeating_set_command(
+  
+  const uic_mqtt_dotdot_unify_schedule_entry_lock_command_daily_repeating_set_fields_t *fields
   
 ){
   bool command_with_no_fields = true;
@@ -14847,10 +15437,6 @@ std::string get_json_payload_for_unify_schedule_entry_lock_schedule_entry_lock_d
   command_with_no_fields = false;
   // Single Value
   // Non-enum and non-bitmask (struct, string or scalar)
-  json_payload["StartMonth"] = nlohmann::json(fields->start_month);
-  command_with_no_fields = false;
-  // Single Value
-  // Non-enum and non-bitmask (struct, string or scalar)
   json_payload["StartMinute"] = nlohmann::json(fields->start_minute);
   command_with_no_fields = false;
   // Single Value
@@ -14870,7 +15456,7 @@ std::string get_json_payload_for_unify_schedule_entry_lock_schedule_entry_lock_d
 }
 
 
-void uic_mqtt_dotdot_parse_unify_schedule_entry_lock_schedule_entry_lock_daily_repeating_report(
+void uic_mqtt_dotdot_parse_unify_schedule_entry_lock_daily_repeating_set(
   nlohmann::json &jsn,
   uint8_t &set_action,
   
@@ -14920,12 +15506,6 @@ void uic_mqtt_dotdot_parse_unify_schedule_entry_lock_schedule_entry_lock_daily_r
   }
         
   start_hour = jsn.at("StartHour").get< uint8_t >();
-      if (jsn.at("StartMonth").is_null()) {
-    sl_log_debug(LOG_TAG, "Ignoring JSON Null object");
-    return;
-  }
-        
-  start_month = jsn.at("StartMonth").get< uint8_t >();
       if (jsn.at("StartMinute").is_null()) {
     sl_log_debug(LOG_TAG, "Ignoring JSON Null object");
     return;
@@ -14944,6 +15524,56 @@ void uic_mqtt_dotdot_parse_unify_schedule_entry_lock_schedule_entry_lock_daily_r
   }
         
   duration_minute = jsn.at("DurationMinute").get< uint8_t >();
+    }
+
+
+std::string get_json_payload_for_unify_schedule_entry_lock_daily_repeating_get_command(
+  
+  const uic_mqtt_dotdot_unify_schedule_entry_lock_command_daily_repeating_get_fields_t *fields
+  
+){
+  bool command_with_no_fields = true;
+
+  // Create a JSON payload from all the parameters
+  nlohmann::json json_payload;
+  command_with_no_fields = false;
+  // Single Value
+  // Non-enum and non-bitmask (struct, string or scalar)
+  json_payload["UserIdentifier"] = nlohmann::json(fields->user_identifier);
+  command_with_no_fields = false;
+  // Single Value
+  // Non-enum and non-bitmask (struct, string or scalar)
+  json_payload["ScheduleSlotID"] = nlohmann::json(fields->schedule_slotid);
+
+  // Get the string
+  if (command_with_no_fields == true) {
+    return std::string("{}");
+  }
+  // Payload may contain data from end nodes, which we cannot control, thus we handle if there are non-utf8 characters
+  return json_payload.dump(-1, ' ', false, nlohmann::detail::error_handler_t::replace);
+}
+
+
+void uic_mqtt_dotdot_parse_unify_schedule_entry_lock_daily_repeating_get(
+  nlohmann::json &jsn,
+  uint8_t &user_identifier,
+  
+  uint8_t &schedule_slotid
+  
+) {
+
+  if (jsn.at("UserIdentifier").is_null()) {
+    sl_log_debug(LOG_TAG, "Ignoring JSON Null object");
+    return;
+  }
+        
+  user_identifier = jsn.at("UserIdentifier").get< uint8_t >();
+      if (jsn.at("ScheduleSlotID").is_null()) {
+    sl_log_debug(LOG_TAG, "Ignoring JSON Null object");
+    return;
+  }
+        
+  schedule_slotid = jsn.at("ScheduleSlotID").get< uint8_t >();
     }
 
 

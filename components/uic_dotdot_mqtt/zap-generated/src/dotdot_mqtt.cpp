@@ -93962,114 +93962,394 @@ sl_status_t uic_mqtt_dotdot_unify_thermostat_init()
 }
 
 // Callbacks pointers
-static std::set<uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_week_day_report_callback_t> uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_week_day_report_callback;
-static std::set<uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_week_day_report_callback_t> uic_mqtt_dotdot_unify_schedule_entry_lock_generated_schedule_entry_lock_week_day_report_callback;
-static std::set<uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_year_day_report_callback_t> uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_year_day_report_callback;
-static std::set<uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_year_day_report_callback_t> uic_mqtt_dotdot_unify_schedule_entry_lock_generated_schedule_entry_lock_year_day_report_callback;
-static std::set<uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_daily_repeating_report_callback_t> uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_daily_repeating_report_callback;
-static std::set<uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_daily_repeating_report_callback_t> uic_mqtt_dotdot_unify_schedule_entry_lock_generated_schedule_entry_lock_daily_repeating_report_callback;
+static std::set<uic_mqtt_dotdot_unify_schedule_entry_lock_enable_set_callback_t> uic_mqtt_dotdot_unify_schedule_entry_lock_enable_set_callback;
+static std::set<uic_mqtt_dotdot_unify_schedule_entry_lock_enable_set_callback_t> uic_mqtt_dotdot_unify_schedule_entry_lock_generated_enable_set_callback;
+static std::set<uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_report_callback_t> uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_report_callback;
+static std::set<uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_report_callback_t> uic_mqtt_dotdot_unify_schedule_entry_lock_generated_week_day_report_callback;
+static std::set<uic_mqtt_dotdot_unify_schedule_entry_lock_enable_all_set_callback_t> uic_mqtt_dotdot_unify_schedule_entry_lock_enable_all_set_callback;
+static std::set<uic_mqtt_dotdot_unify_schedule_entry_lock_enable_all_set_callback_t> uic_mqtt_dotdot_unify_schedule_entry_lock_generated_enable_all_set_callback;
+static std::set<uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_report_callback_t> uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_report_callback;
+static std::set<uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_report_callback_t> uic_mqtt_dotdot_unify_schedule_entry_lock_generated_year_day_report_callback;
+static std::set<uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_set_callback_t> uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_set_callback;
+static std::set<uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_set_callback_t> uic_mqtt_dotdot_unify_schedule_entry_lock_generated_week_day_set_callback;
+static std::set<uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_report_callback_t> uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_report_callback;
+static std::set<uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_report_callback_t> uic_mqtt_dotdot_unify_schedule_entry_lock_generated_daily_repeating_report_callback;
+static std::set<uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_get_callback_t> uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_get_callback;
+static std::set<uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_get_callback_t> uic_mqtt_dotdot_unify_schedule_entry_lock_generated_week_day_get_callback;
+static std::set<uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_set_callback_t> uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_set_callback;
+static std::set<uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_set_callback_t> uic_mqtt_dotdot_unify_schedule_entry_lock_generated_year_day_set_callback;
+static std::set<uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_get_callback_t> uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_get_callback;
+static std::set<uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_get_callback_t> uic_mqtt_dotdot_unify_schedule_entry_lock_generated_year_day_get_callback;
+static std::set<uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_set_callback_t> uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_set_callback;
+static std::set<uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_set_callback_t> uic_mqtt_dotdot_unify_schedule_entry_lock_generated_daily_repeating_set_callback;
+static std::set<uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_get_callback_t> uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_get_callback;
+static std::set<uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_get_callback_t> uic_mqtt_dotdot_unify_schedule_entry_lock_generated_daily_repeating_get_callback;
 static std::set<uic_mqtt_dotdot_unify_schedule_entry_lock_write_attributes_callback_t> uic_mqtt_dotdot_unify_schedule_entry_lock_write_attributes_callback;
 static std::set<uic_mqtt_dotdot_unify_schedule_entry_lock_force_read_attributes_callback_t> uic_mqtt_dotdot_unify_schedule_entry_lock_force_read_attributes_callback;
 
 // Callbacks setters
-void uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_week_day_report_callback_set(const uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_week_day_report_callback_t callback)
+void uic_mqtt_dotdot_unify_schedule_entry_lock_enable_set_callback_set(const uic_mqtt_dotdot_unify_schedule_entry_lock_enable_set_callback_t callback)
 {
   if (callback != nullptr) {
-    uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_week_day_report_callback.insert(callback);
+    uic_mqtt_dotdot_unify_schedule_entry_lock_enable_set_callback.insert(callback);
   }
 }
-void uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_week_day_report_callback_unset(const uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_week_day_report_callback_t callback)
+void uic_mqtt_dotdot_unify_schedule_entry_lock_enable_set_callback_unset(const uic_mqtt_dotdot_unify_schedule_entry_lock_enable_set_callback_t callback)
 {
-  uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_week_day_report_callback.erase(callback);
+  uic_mqtt_dotdot_unify_schedule_entry_lock_enable_set_callback.erase(callback);
 }
-void uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_week_day_report_callback_clear()
+void uic_mqtt_dotdot_unify_schedule_entry_lock_enable_set_callback_clear()
 {
-  uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_week_day_report_callback.clear();
+  uic_mqtt_dotdot_unify_schedule_entry_lock_enable_set_callback.clear();
 }
-std::set<uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_week_day_report_callback_t>& get_uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_week_day_report_callback()
+std::set<uic_mqtt_dotdot_unify_schedule_entry_lock_enable_set_callback_t>& get_uic_mqtt_dotdot_unify_schedule_entry_lock_enable_set_callback()
 {
-  return uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_week_day_report_callback;
+  return uic_mqtt_dotdot_unify_schedule_entry_lock_enable_set_callback;
 }
 
-void uic_mqtt_dotdot_unify_schedule_entry_lock_generated_schedule_entry_lock_week_day_report_callback_set(const uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_week_day_report_callback_t callback)
+void uic_mqtt_dotdot_unify_schedule_entry_lock_generated_enable_set_callback_set(const uic_mqtt_dotdot_unify_schedule_entry_lock_enable_set_callback_t callback)
 {
   if (callback != nullptr) {
-    uic_mqtt_dotdot_unify_schedule_entry_lock_generated_schedule_entry_lock_week_day_report_callback.insert(callback);
+    uic_mqtt_dotdot_unify_schedule_entry_lock_generated_enable_set_callback.insert(callback);
   }
 }
-void uic_mqtt_dotdot_unify_schedule_entry_lock_generated_schedule_entry_lock_week_day_report_callback_unset(const uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_week_day_report_callback_t callback)
+void uic_mqtt_dotdot_unify_schedule_entry_lock_generated_enable_set_callback_unset(const uic_mqtt_dotdot_unify_schedule_entry_lock_enable_set_callback_t callback)
 {
-  uic_mqtt_dotdot_unify_schedule_entry_lock_generated_schedule_entry_lock_week_day_report_callback.erase(callback);
+  uic_mqtt_dotdot_unify_schedule_entry_lock_generated_enable_set_callback.erase(callback);
 }
-void uic_mqtt_dotdot_unify_schedule_entry_lock_generated_schedule_entry_lock_week_day_report_callback_clear()
+void uic_mqtt_dotdot_unify_schedule_entry_lock_generated_enable_set_callback_clear()
 {
-  uic_mqtt_dotdot_unify_schedule_entry_lock_generated_schedule_entry_lock_week_day_report_callback.clear();
+  uic_mqtt_dotdot_unify_schedule_entry_lock_generated_enable_set_callback.clear();
 }
-void uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_year_day_report_callback_set(const uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_year_day_report_callback_t callback)
+void uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_report_callback_set(const uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_report_callback_t callback)
 {
   if (callback != nullptr) {
-    uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_year_day_report_callback.insert(callback);
+    uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_report_callback.insert(callback);
   }
 }
-void uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_year_day_report_callback_unset(const uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_year_day_report_callback_t callback)
+void uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_report_callback_unset(const uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_report_callback_t callback)
 {
-  uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_year_day_report_callback.erase(callback);
+  uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_report_callback.erase(callback);
 }
-void uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_year_day_report_callback_clear()
+void uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_report_callback_clear()
 {
-  uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_year_day_report_callback.clear();
+  uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_report_callback.clear();
 }
-std::set<uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_year_day_report_callback_t>& get_uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_year_day_report_callback()
+std::set<uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_report_callback_t>& get_uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_report_callback()
 {
-  return uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_year_day_report_callback;
+  return uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_report_callback;
 }
 
-void uic_mqtt_dotdot_unify_schedule_entry_lock_generated_schedule_entry_lock_year_day_report_callback_set(const uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_year_day_report_callback_t callback)
+void uic_mqtt_dotdot_unify_schedule_entry_lock_generated_week_day_report_callback_set(const uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_report_callback_t callback)
 {
   if (callback != nullptr) {
-    uic_mqtt_dotdot_unify_schedule_entry_lock_generated_schedule_entry_lock_year_day_report_callback.insert(callback);
+    uic_mqtt_dotdot_unify_schedule_entry_lock_generated_week_day_report_callback.insert(callback);
   }
 }
-void uic_mqtt_dotdot_unify_schedule_entry_lock_generated_schedule_entry_lock_year_day_report_callback_unset(const uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_year_day_report_callback_t callback)
+void uic_mqtt_dotdot_unify_schedule_entry_lock_generated_week_day_report_callback_unset(const uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_report_callback_t callback)
 {
-  uic_mqtt_dotdot_unify_schedule_entry_lock_generated_schedule_entry_lock_year_day_report_callback.erase(callback);
+  uic_mqtt_dotdot_unify_schedule_entry_lock_generated_week_day_report_callback.erase(callback);
 }
-void uic_mqtt_dotdot_unify_schedule_entry_lock_generated_schedule_entry_lock_year_day_report_callback_clear()
+void uic_mqtt_dotdot_unify_schedule_entry_lock_generated_week_day_report_callback_clear()
 {
-  uic_mqtt_dotdot_unify_schedule_entry_lock_generated_schedule_entry_lock_year_day_report_callback.clear();
+  uic_mqtt_dotdot_unify_schedule_entry_lock_generated_week_day_report_callback.clear();
 }
-void uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_daily_repeating_report_callback_set(const uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_daily_repeating_report_callback_t callback)
+void uic_mqtt_dotdot_unify_schedule_entry_lock_enable_all_set_callback_set(const uic_mqtt_dotdot_unify_schedule_entry_lock_enable_all_set_callback_t callback)
 {
   if (callback != nullptr) {
-    uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_daily_repeating_report_callback.insert(callback);
+    uic_mqtt_dotdot_unify_schedule_entry_lock_enable_all_set_callback.insert(callback);
   }
 }
-void uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_daily_repeating_report_callback_unset(const uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_daily_repeating_report_callback_t callback)
+void uic_mqtt_dotdot_unify_schedule_entry_lock_enable_all_set_callback_unset(const uic_mqtt_dotdot_unify_schedule_entry_lock_enable_all_set_callback_t callback)
 {
-  uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_daily_repeating_report_callback.erase(callback);
+  uic_mqtt_dotdot_unify_schedule_entry_lock_enable_all_set_callback.erase(callback);
 }
-void uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_daily_repeating_report_callback_clear()
+void uic_mqtt_dotdot_unify_schedule_entry_lock_enable_all_set_callback_clear()
 {
-  uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_daily_repeating_report_callback.clear();
+  uic_mqtt_dotdot_unify_schedule_entry_lock_enable_all_set_callback.clear();
 }
-std::set<uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_daily_repeating_report_callback_t>& get_uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_daily_repeating_report_callback()
+std::set<uic_mqtt_dotdot_unify_schedule_entry_lock_enable_all_set_callback_t>& get_uic_mqtt_dotdot_unify_schedule_entry_lock_enable_all_set_callback()
 {
-  return uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_daily_repeating_report_callback;
+  return uic_mqtt_dotdot_unify_schedule_entry_lock_enable_all_set_callback;
 }
 
-void uic_mqtt_dotdot_unify_schedule_entry_lock_generated_schedule_entry_lock_daily_repeating_report_callback_set(const uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_daily_repeating_report_callback_t callback)
+void uic_mqtt_dotdot_unify_schedule_entry_lock_generated_enable_all_set_callback_set(const uic_mqtt_dotdot_unify_schedule_entry_lock_enable_all_set_callback_t callback)
 {
   if (callback != nullptr) {
-    uic_mqtt_dotdot_unify_schedule_entry_lock_generated_schedule_entry_lock_daily_repeating_report_callback.insert(callback);
+    uic_mqtt_dotdot_unify_schedule_entry_lock_generated_enable_all_set_callback.insert(callback);
   }
 }
-void uic_mqtt_dotdot_unify_schedule_entry_lock_generated_schedule_entry_lock_daily_repeating_report_callback_unset(const uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_daily_repeating_report_callback_t callback)
+void uic_mqtt_dotdot_unify_schedule_entry_lock_generated_enable_all_set_callback_unset(const uic_mqtt_dotdot_unify_schedule_entry_lock_enable_all_set_callback_t callback)
 {
-  uic_mqtt_dotdot_unify_schedule_entry_lock_generated_schedule_entry_lock_daily_repeating_report_callback.erase(callback);
+  uic_mqtt_dotdot_unify_schedule_entry_lock_generated_enable_all_set_callback.erase(callback);
 }
-void uic_mqtt_dotdot_unify_schedule_entry_lock_generated_schedule_entry_lock_daily_repeating_report_callback_clear()
+void uic_mqtt_dotdot_unify_schedule_entry_lock_generated_enable_all_set_callback_clear()
 {
-  uic_mqtt_dotdot_unify_schedule_entry_lock_generated_schedule_entry_lock_daily_repeating_report_callback.clear();
+  uic_mqtt_dotdot_unify_schedule_entry_lock_generated_enable_all_set_callback.clear();
+}
+void uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_report_callback_set(const uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_report_callback_t callback)
+{
+  if (callback != nullptr) {
+    uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_report_callback.insert(callback);
+  }
+}
+void uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_report_callback_unset(const uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_report_callback_t callback)
+{
+  uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_report_callback.erase(callback);
+}
+void uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_report_callback_clear()
+{
+  uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_report_callback.clear();
+}
+std::set<uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_report_callback_t>& get_uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_report_callback()
+{
+  return uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_report_callback;
+}
+
+void uic_mqtt_dotdot_unify_schedule_entry_lock_generated_year_day_report_callback_set(const uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_report_callback_t callback)
+{
+  if (callback != nullptr) {
+    uic_mqtt_dotdot_unify_schedule_entry_lock_generated_year_day_report_callback.insert(callback);
+  }
+}
+void uic_mqtt_dotdot_unify_schedule_entry_lock_generated_year_day_report_callback_unset(const uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_report_callback_t callback)
+{
+  uic_mqtt_dotdot_unify_schedule_entry_lock_generated_year_day_report_callback.erase(callback);
+}
+void uic_mqtt_dotdot_unify_schedule_entry_lock_generated_year_day_report_callback_clear()
+{
+  uic_mqtt_dotdot_unify_schedule_entry_lock_generated_year_day_report_callback.clear();
+}
+void uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_set_callback_set(const uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_set_callback_t callback)
+{
+  if (callback != nullptr) {
+    uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_set_callback.insert(callback);
+  }
+}
+void uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_set_callback_unset(const uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_set_callback_t callback)
+{
+  uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_set_callback.erase(callback);
+}
+void uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_set_callback_clear()
+{
+  uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_set_callback.clear();
+}
+std::set<uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_set_callback_t>& get_uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_set_callback()
+{
+  return uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_set_callback;
+}
+
+void uic_mqtt_dotdot_unify_schedule_entry_lock_generated_week_day_set_callback_set(const uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_set_callback_t callback)
+{
+  if (callback != nullptr) {
+    uic_mqtt_dotdot_unify_schedule_entry_lock_generated_week_day_set_callback.insert(callback);
+  }
+}
+void uic_mqtt_dotdot_unify_schedule_entry_lock_generated_week_day_set_callback_unset(const uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_set_callback_t callback)
+{
+  uic_mqtt_dotdot_unify_schedule_entry_lock_generated_week_day_set_callback.erase(callback);
+}
+void uic_mqtt_dotdot_unify_schedule_entry_lock_generated_week_day_set_callback_clear()
+{
+  uic_mqtt_dotdot_unify_schedule_entry_lock_generated_week_day_set_callback.clear();
+}
+void uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_report_callback_set(const uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_report_callback_t callback)
+{
+  if (callback != nullptr) {
+    uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_report_callback.insert(callback);
+  }
+}
+void uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_report_callback_unset(const uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_report_callback_t callback)
+{
+  uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_report_callback.erase(callback);
+}
+void uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_report_callback_clear()
+{
+  uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_report_callback.clear();
+}
+std::set<uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_report_callback_t>& get_uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_report_callback()
+{
+  return uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_report_callback;
+}
+
+void uic_mqtt_dotdot_unify_schedule_entry_lock_generated_daily_repeating_report_callback_set(const uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_report_callback_t callback)
+{
+  if (callback != nullptr) {
+    uic_mqtt_dotdot_unify_schedule_entry_lock_generated_daily_repeating_report_callback.insert(callback);
+  }
+}
+void uic_mqtt_dotdot_unify_schedule_entry_lock_generated_daily_repeating_report_callback_unset(const uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_report_callback_t callback)
+{
+  uic_mqtt_dotdot_unify_schedule_entry_lock_generated_daily_repeating_report_callback.erase(callback);
+}
+void uic_mqtt_dotdot_unify_schedule_entry_lock_generated_daily_repeating_report_callback_clear()
+{
+  uic_mqtt_dotdot_unify_schedule_entry_lock_generated_daily_repeating_report_callback.clear();
+}
+void uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_get_callback_set(const uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_get_callback_t callback)
+{
+  if (callback != nullptr) {
+    uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_get_callback.insert(callback);
+  }
+}
+void uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_get_callback_unset(const uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_get_callback_t callback)
+{
+  uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_get_callback.erase(callback);
+}
+void uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_get_callback_clear()
+{
+  uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_get_callback.clear();
+}
+std::set<uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_get_callback_t>& get_uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_get_callback()
+{
+  return uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_get_callback;
+}
+
+void uic_mqtt_dotdot_unify_schedule_entry_lock_generated_week_day_get_callback_set(const uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_get_callback_t callback)
+{
+  if (callback != nullptr) {
+    uic_mqtt_dotdot_unify_schedule_entry_lock_generated_week_day_get_callback.insert(callback);
+  }
+}
+void uic_mqtt_dotdot_unify_schedule_entry_lock_generated_week_day_get_callback_unset(const uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_get_callback_t callback)
+{
+  uic_mqtt_dotdot_unify_schedule_entry_lock_generated_week_day_get_callback.erase(callback);
+}
+void uic_mqtt_dotdot_unify_schedule_entry_lock_generated_week_day_get_callback_clear()
+{
+  uic_mqtt_dotdot_unify_schedule_entry_lock_generated_week_day_get_callback.clear();
+}
+void uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_set_callback_set(const uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_set_callback_t callback)
+{
+  if (callback != nullptr) {
+    uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_set_callback.insert(callback);
+  }
+}
+void uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_set_callback_unset(const uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_set_callback_t callback)
+{
+  uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_set_callback.erase(callback);
+}
+void uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_set_callback_clear()
+{
+  uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_set_callback.clear();
+}
+std::set<uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_set_callback_t>& get_uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_set_callback()
+{
+  return uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_set_callback;
+}
+
+void uic_mqtt_dotdot_unify_schedule_entry_lock_generated_year_day_set_callback_set(const uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_set_callback_t callback)
+{
+  if (callback != nullptr) {
+    uic_mqtt_dotdot_unify_schedule_entry_lock_generated_year_day_set_callback.insert(callback);
+  }
+}
+void uic_mqtt_dotdot_unify_schedule_entry_lock_generated_year_day_set_callback_unset(const uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_set_callback_t callback)
+{
+  uic_mqtt_dotdot_unify_schedule_entry_lock_generated_year_day_set_callback.erase(callback);
+}
+void uic_mqtt_dotdot_unify_schedule_entry_lock_generated_year_day_set_callback_clear()
+{
+  uic_mqtt_dotdot_unify_schedule_entry_lock_generated_year_day_set_callback.clear();
+}
+void uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_get_callback_set(const uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_get_callback_t callback)
+{
+  if (callback != nullptr) {
+    uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_get_callback.insert(callback);
+  }
+}
+void uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_get_callback_unset(const uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_get_callback_t callback)
+{
+  uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_get_callback.erase(callback);
+}
+void uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_get_callback_clear()
+{
+  uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_get_callback.clear();
+}
+std::set<uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_get_callback_t>& get_uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_get_callback()
+{
+  return uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_get_callback;
+}
+
+void uic_mqtt_dotdot_unify_schedule_entry_lock_generated_year_day_get_callback_set(const uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_get_callback_t callback)
+{
+  if (callback != nullptr) {
+    uic_mqtt_dotdot_unify_schedule_entry_lock_generated_year_day_get_callback.insert(callback);
+  }
+}
+void uic_mqtt_dotdot_unify_schedule_entry_lock_generated_year_day_get_callback_unset(const uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_get_callback_t callback)
+{
+  uic_mqtt_dotdot_unify_schedule_entry_lock_generated_year_day_get_callback.erase(callback);
+}
+void uic_mqtt_dotdot_unify_schedule_entry_lock_generated_year_day_get_callback_clear()
+{
+  uic_mqtt_dotdot_unify_schedule_entry_lock_generated_year_day_get_callback.clear();
+}
+void uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_set_callback_set(const uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_set_callback_t callback)
+{
+  if (callback != nullptr) {
+    uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_set_callback.insert(callback);
+  }
+}
+void uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_set_callback_unset(const uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_set_callback_t callback)
+{
+  uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_set_callback.erase(callback);
+}
+void uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_set_callback_clear()
+{
+  uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_set_callback.clear();
+}
+std::set<uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_set_callback_t>& get_uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_set_callback()
+{
+  return uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_set_callback;
+}
+
+void uic_mqtt_dotdot_unify_schedule_entry_lock_generated_daily_repeating_set_callback_set(const uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_set_callback_t callback)
+{
+  if (callback != nullptr) {
+    uic_mqtt_dotdot_unify_schedule_entry_lock_generated_daily_repeating_set_callback.insert(callback);
+  }
+}
+void uic_mqtt_dotdot_unify_schedule_entry_lock_generated_daily_repeating_set_callback_unset(const uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_set_callback_t callback)
+{
+  uic_mqtt_dotdot_unify_schedule_entry_lock_generated_daily_repeating_set_callback.erase(callback);
+}
+void uic_mqtt_dotdot_unify_schedule_entry_lock_generated_daily_repeating_set_callback_clear()
+{
+  uic_mqtt_dotdot_unify_schedule_entry_lock_generated_daily_repeating_set_callback.clear();
+}
+void uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_get_callback_set(const uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_get_callback_t callback)
+{
+  if (callback != nullptr) {
+    uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_get_callback.insert(callback);
+  }
+}
+void uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_get_callback_unset(const uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_get_callback_t callback)
+{
+  uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_get_callback.erase(callback);
+}
+void uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_get_callback_clear()
+{
+  uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_get_callback.clear();
+}
+std::set<uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_get_callback_t>& get_uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_get_callback()
+{
+  return uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_get_callback;
+}
+
+void uic_mqtt_dotdot_unify_schedule_entry_lock_generated_daily_repeating_get_callback_set(const uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_get_callback_t callback)
+{
+  if (callback != nullptr) {
+    uic_mqtt_dotdot_unify_schedule_entry_lock_generated_daily_repeating_get_callback.insert(callback);
+  }
+}
+void uic_mqtt_dotdot_unify_schedule_entry_lock_generated_daily_repeating_get_callback_unset(const uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_get_callback_t callback)
+{
+  uic_mqtt_dotdot_unify_schedule_entry_lock_generated_daily_repeating_get_callback.erase(callback);
+}
+void uic_mqtt_dotdot_unify_schedule_entry_lock_generated_daily_repeating_get_callback_clear()
+{
+  uic_mqtt_dotdot_unify_schedule_entry_lock_generated_daily_repeating_get_callback.clear();
 }
 
 void uic_mqtt_dotdot_set_unify_schedule_entry_lock_write_attributes_callback(
@@ -94111,13 +94391,142 @@ void uic_mqtt_dotdot_clear_unify_schedule_entry_lock_force_read_attributes_callb
 }
 
 
-// Callback function for incoming publications on ucl/by-unid/+/+/UnifyScheduleEntryLock/Commands/ScheduleEntryLockWeekDayReport
-void uic_mqtt_dotdot_on_unify_schedule_entry_lock_schedule_entry_lock_week_day_report(
+// Callback function for incoming publications on ucl/by-unid/+/+/UnifyScheduleEntryLock/Commands/EnableSet
+void uic_mqtt_dotdot_on_unify_schedule_entry_lock_enable_set(
   const char *topic,
   const char *message,
   const size_t message_length)
 {
-  if (message_length == 0 || (uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_week_day_report_callback.empty())) {
+  if (message_length == 0 || (uic_mqtt_dotdot_unify_schedule_entry_lock_enable_set_callback.empty())) {
+    return;
+  }
+
+  std::string unid;
+  uint8_t endpoint = 0; // Default value for endpoint-less topics.
+  if(! uic_dotdot_mqtt::parse_topic(topic,unid,endpoint)) {
+    sl_log_debug(LOG_TAG,
+                "Error parsing UNID / Endpoint ID from topic %s. Ignoring",
+                topic);
+    return;
+  }
+
+  uint8_t user_identifier = {};
+  uint8_t enabled = {};
+
+
+  nlohmann::json jsn;
+  try {
+    jsn = nlohmann::json::parse(std::string(message));
+
+  
+    uic_mqtt_dotdot_parse_unify_schedule_entry_lock_enable_set(
+      jsn,
+      user_identifier,
+
+      enabled
+      );
+
+  } catch (const nlohmann::json::parse_error& e) {
+    // Catch JSON object field parsing errors
+    sl_log_debug(LOG_TAG, LOG_FMT_JSON_PARSE_FAIL, "UnifyScheduleEntryLock", "EnableSet");
+    return;
+  } catch (const nlohmann::json::exception& e) {
+    // Catch JSON object field parsing errors
+    sl_log_debug(LOG_TAG, LOG_FMT_JSON_ERROR, "UnifyScheduleEntryLock", "EnableSet", e.what());
+    return;
+  } catch (const std::exception& e) {
+    sl_log_debug(LOG_TAG, LOG_FMT_JSON_ERROR, "UnifyScheduleEntryLock", "EnableSet", "");
+    return;
+  }
+
+
+
+  for (const auto& callback: uic_mqtt_dotdot_unify_schedule_entry_lock_enable_set_callback){
+    callback(
+      static_cast<dotdot_unid_t>(unid.c_str()),
+      endpoint,
+      UIC_MQTT_DOTDOT_CALLBACK_TYPE_NORMAL,
+      user_identifier,
+  
+      enabled
+  
+    );
+  }
+
+}
+
+// Callback function for incoming publications on ucl/by-unid/+/+/UnifyScheduleEntryLock/GeneratedCommands/EnableSet
+static void uic_mqtt_dotdot_on_generated_unify_schedule_entry_lock_enable_set(
+  const char *topic,
+  const char *message,
+  const size_t message_length)
+{
+  if (message_length == 0 || (uic_mqtt_dotdot_unify_schedule_entry_lock_generated_enable_set_callback.empty())) {
+    return;
+  }
+
+  std::string unid;
+  uint8_t endpoint = 0; // Default value for endpoint-less topics.
+  if(! uic_dotdot_mqtt::parse_topic(topic,unid,endpoint)) {
+    sl_log_debug(LOG_TAG,
+                "Error parsing UNID / Endpoint ID from topic %s. Ignoring",
+                topic);
+    return;
+  }
+
+  uint8_t user_identifier = {};
+  uint8_t enabled = {};
+
+
+  nlohmann::json jsn;
+  try {
+    jsn = nlohmann::json::parse(std::string(message));
+
+  
+    uic_mqtt_dotdot_parse_unify_schedule_entry_lock_enable_set(
+      jsn,
+      user_identifier,
+
+      enabled
+      );
+
+  } catch (const nlohmann::json::parse_error& e) {
+    // Catch JSON object field parsing errors
+    sl_log_debug(LOG_TAG, LOG_FMT_JSON_PARSE_FAIL, "UnifyScheduleEntryLock", "EnableSet");
+    return;
+  } catch (const nlohmann::json::exception& e) {
+    // Catch JSON object field parsing errors
+    sl_log_debug(LOG_TAG, LOG_FMT_JSON_ERROR, "UnifyScheduleEntryLock", "EnableSet", e.what());
+    return;
+  } catch (const std::exception& e) {
+    sl_log_debug(LOG_TAG, LOG_FMT_JSON_ERROR, "UnifyScheduleEntryLock", "EnableSet", "");
+    return;
+  }
+
+
+
+
+  for (const auto& callback: uic_mqtt_dotdot_unify_schedule_entry_lock_generated_enable_set_callback){
+    callback(
+      static_cast<dotdot_unid_t>(unid.c_str()),
+      endpoint,
+      UIC_MQTT_DOTDOT_CALLBACK_TYPE_NORMAL,
+      user_identifier,
+  
+      enabled
+  
+    );
+  }
+}
+
+
+// Callback function for incoming publications on ucl/by-unid/+/+/UnifyScheduleEntryLock/Commands/WeekDayReport
+void uic_mqtt_dotdot_on_unify_schedule_entry_lock_week_day_report(
+  const char *topic,
+  const char *message,
+  const size_t message_length)
+{
+  if (message_length == 0 || (uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_report_callback.empty())) {
     return;
   }
 
@@ -94144,7 +94553,7 @@ void uic_mqtt_dotdot_on_unify_schedule_entry_lock_schedule_entry_lock_week_day_r
     jsn = nlohmann::json::parse(std::string(message));
 
   
-    uic_mqtt_dotdot_parse_unify_schedule_entry_lock_schedule_entry_lock_week_day_report(
+    uic_mqtt_dotdot_parse_unify_schedule_entry_lock_week_day_report(
       jsn,
       user_identifier,
 
@@ -94163,20 +94572,20 @@ void uic_mqtt_dotdot_on_unify_schedule_entry_lock_schedule_entry_lock_week_day_r
 
   } catch (const nlohmann::json::parse_error& e) {
     // Catch JSON object field parsing errors
-    sl_log_debug(LOG_TAG, LOG_FMT_JSON_PARSE_FAIL, "UnifyScheduleEntryLock", "ScheduleEntryLockWeekDayReport");
+    sl_log_debug(LOG_TAG, LOG_FMT_JSON_PARSE_FAIL, "UnifyScheduleEntryLock", "WeekDayReport");
     return;
   } catch (const nlohmann::json::exception& e) {
     // Catch JSON object field parsing errors
-    sl_log_debug(LOG_TAG, LOG_FMT_JSON_ERROR, "UnifyScheduleEntryLock", "ScheduleEntryLockWeekDayReport", e.what());
+    sl_log_debug(LOG_TAG, LOG_FMT_JSON_ERROR, "UnifyScheduleEntryLock", "WeekDayReport", e.what());
     return;
   } catch (const std::exception& e) {
-    sl_log_debug(LOG_TAG, LOG_FMT_JSON_ERROR, "UnifyScheduleEntryLock", "ScheduleEntryLockWeekDayReport", "");
+    sl_log_debug(LOG_TAG, LOG_FMT_JSON_ERROR, "UnifyScheduleEntryLock", "WeekDayReport", "");
     return;
   }
 
 
 
-  for (const auto& callback: uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_week_day_report_callback){
+  for (const auto& callback: uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_report_callback){
     callback(
       static_cast<dotdot_unid_t>(unid.c_str()),
       endpoint,
@@ -94200,13 +94609,13 @@ void uic_mqtt_dotdot_on_unify_schedule_entry_lock_schedule_entry_lock_week_day_r
 
 }
 
-// Callback function for incoming publications on ucl/by-unid/+/+/UnifyScheduleEntryLock/GeneratedCommands/ScheduleEntryLockWeekDayReport
-static void uic_mqtt_dotdot_on_generated_unify_schedule_entry_lock_schedule_entry_lock_week_day_report(
+// Callback function for incoming publications on ucl/by-unid/+/+/UnifyScheduleEntryLock/GeneratedCommands/WeekDayReport
+static void uic_mqtt_dotdot_on_generated_unify_schedule_entry_lock_week_day_report(
   const char *topic,
   const char *message,
   const size_t message_length)
 {
-  if (message_length == 0 || (uic_mqtt_dotdot_unify_schedule_entry_lock_generated_schedule_entry_lock_week_day_report_callback.empty())) {
+  if (message_length == 0 || (uic_mqtt_dotdot_unify_schedule_entry_lock_generated_week_day_report_callback.empty())) {
     return;
   }
 
@@ -94233,7 +94642,7 @@ static void uic_mqtt_dotdot_on_generated_unify_schedule_entry_lock_schedule_entr
     jsn = nlohmann::json::parse(std::string(message));
 
   
-    uic_mqtt_dotdot_parse_unify_schedule_entry_lock_schedule_entry_lock_week_day_report(
+    uic_mqtt_dotdot_parse_unify_schedule_entry_lock_week_day_report(
       jsn,
       user_identifier,
 
@@ -94252,21 +94661,21 @@ static void uic_mqtt_dotdot_on_generated_unify_schedule_entry_lock_schedule_entr
 
   } catch (const nlohmann::json::parse_error& e) {
     // Catch JSON object field parsing errors
-    sl_log_debug(LOG_TAG, LOG_FMT_JSON_PARSE_FAIL, "UnifyScheduleEntryLock", "ScheduleEntryLockWeekDayReport");
+    sl_log_debug(LOG_TAG, LOG_FMT_JSON_PARSE_FAIL, "UnifyScheduleEntryLock", "WeekDayReport");
     return;
   } catch (const nlohmann::json::exception& e) {
     // Catch JSON object field parsing errors
-    sl_log_debug(LOG_TAG, LOG_FMT_JSON_ERROR, "UnifyScheduleEntryLock", "ScheduleEntryLockWeekDayReport", e.what());
+    sl_log_debug(LOG_TAG, LOG_FMT_JSON_ERROR, "UnifyScheduleEntryLock", "WeekDayReport", e.what());
     return;
   } catch (const std::exception& e) {
-    sl_log_debug(LOG_TAG, LOG_FMT_JSON_ERROR, "UnifyScheduleEntryLock", "ScheduleEntryLockWeekDayReport", "");
+    sl_log_debug(LOG_TAG, LOG_FMT_JSON_ERROR, "UnifyScheduleEntryLock", "WeekDayReport", "");
     return;
   }
 
 
 
 
-  for (const auto& callback: uic_mqtt_dotdot_unify_schedule_entry_lock_generated_schedule_entry_lock_week_day_report_callback){
+  for (const auto& callback: uic_mqtt_dotdot_unify_schedule_entry_lock_generated_week_day_report_callback){
     callback(
       static_cast<dotdot_unid_t>(unid.c_str()),
       endpoint,
@@ -94290,13 +94699,13 @@ static void uic_mqtt_dotdot_on_generated_unify_schedule_entry_lock_schedule_entr
 }
 
 
-// Callback function for incoming publications on ucl/by-unid/+/+/UnifyScheduleEntryLock/Commands/ScheduleEntryLockYearDayReport
-void uic_mqtt_dotdot_on_unify_schedule_entry_lock_schedule_entry_lock_year_day_report(
+// Callback function for incoming publications on ucl/by-unid/+/+/UnifyScheduleEntryLock/Commands/EnableAllSet
+void uic_mqtt_dotdot_on_unify_schedule_entry_lock_enable_all_set(
   const char *topic,
   const char *message,
   const size_t message_length)
 {
-  if (message_length == 0 || (uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_year_day_report_callback.empty())) {
+  if (message_length == 0 || (uic_mqtt_dotdot_unify_schedule_entry_lock_enable_all_set_callback.empty())) {
     return;
   }
 
@@ -94309,7 +94718,125 @@ void uic_mqtt_dotdot_on_unify_schedule_entry_lock_schedule_entry_lock_year_day_r
     return;
   }
 
-  uint8_t set_action = {};
+  uint8_t enabled = {};
+
+
+  nlohmann::json jsn;
+  try {
+    jsn = nlohmann::json::parse(std::string(message));
+
+  
+    uic_mqtt_dotdot_parse_unify_schedule_entry_lock_enable_all_set(
+      jsn,
+      enabled
+      );
+
+  } catch (const nlohmann::json::parse_error& e) {
+    // Catch JSON object field parsing errors
+    sl_log_debug(LOG_TAG, LOG_FMT_JSON_PARSE_FAIL, "UnifyScheduleEntryLock", "EnableAllSet");
+    return;
+  } catch (const nlohmann::json::exception& e) {
+    // Catch JSON object field parsing errors
+    sl_log_debug(LOG_TAG, LOG_FMT_JSON_ERROR, "UnifyScheduleEntryLock", "EnableAllSet", e.what());
+    return;
+  } catch (const std::exception& e) {
+    sl_log_debug(LOG_TAG, LOG_FMT_JSON_ERROR, "UnifyScheduleEntryLock", "EnableAllSet", "");
+    return;
+  }
+
+
+
+  for (const auto& callback: uic_mqtt_dotdot_unify_schedule_entry_lock_enable_all_set_callback){
+    callback(
+      static_cast<dotdot_unid_t>(unid.c_str()),
+      endpoint,
+      UIC_MQTT_DOTDOT_CALLBACK_TYPE_NORMAL,
+      enabled
+  
+    );
+  }
+
+}
+
+// Callback function for incoming publications on ucl/by-unid/+/+/UnifyScheduleEntryLock/GeneratedCommands/EnableAllSet
+static void uic_mqtt_dotdot_on_generated_unify_schedule_entry_lock_enable_all_set(
+  const char *topic,
+  const char *message,
+  const size_t message_length)
+{
+  if (message_length == 0 || (uic_mqtt_dotdot_unify_schedule_entry_lock_generated_enable_all_set_callback.empty())) {
+    return;
+  }
+
+  std::string unid;
+  uint8_t endpoint = 0; // Default value for endpoint-less topics.
+  if(! uic_dotdot_mqtt::parse_topic(topic,unid,endpoint)) {
+    sl_log_debug(LOG_TAG,
+                "Error parsing UNID / Endpoint ID from topic %s. Ignoring",
+                topic);
+    return;
+  }
+
+  uint8_t enabled = {};
+
+
+  nlohmann::json jsn;
+  try {
+    jsn = nlohmann::json::parse(std::string(message));
+
+  
+    uic_mqtt_dotdot_parse_unify_schedule_entry_lock_enable_all_set(
+      jsn,
+      enabled
+      );
+
+  } catch (const nlohmann::json::parse_error& e) {
+    // Catch JSON object field parsing errors
+    sl_log_debug(LOG_TAG, LOG_FMT_JSON_PARSE_FAIL, "UnifyScheduleEntryLock", "EnableAllSet");
+    return;
+  } catch (const nlohmann::json::exception& e) {
+    // Catch JSON object field parsing errors
+    sl_log_debug(LOG_TAG, LOG_FMT_JSON_ERROR, "UnifyScheduleEntryLock", "EnableAllSet", e.what());
+    return;
+  } catch (const std::exception& e) {
+    sl_log_debug(LOG_TAG, LOG_FMT_JSON_ERROR, "UnifyScheduleEntryLock", "EnableAllSet", "");
+    return;
+  }
+
+
+
+
+  for (const auto& callback: uic_mqtt_dotdot_unify_schedule_entry_lock_generated_enable_all_set_callback){
+    callback(
+      static_cast<dotdot_unid_t>(unid.c_str()),
+      endpoint,
+      UIC_MQTT_DOTDOT_CALLBACK_TYPE_NORMAL,
+      enabled
+  
+    );
+  }
+}
+
+
+// Callback function for incoming publications on ucl/by-unid/+/+/UnifyScheduleEntryLock/Commands/YearDayReport
+void uic_mqtt_dotdot_on_unify_schedule_entry_lock_year_day_report(
+  const char *topic,
+  const char *message,
+  const size_t message_length)
+{
+  if (message_length == 0 || (uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_report_callback.empty())) {
+    return;
+  }
+
+  std::string unid;
+  uint8_t endpoint = 0; // Default value for endpoint-less topics.
+  if(! uic_dotdot_mqtt::parse_topic(topic,unid,endpoint)) {
+    sl_log_debug(LOG_TAG,
+                "Error parsing UNID / Endpoint ID from topic %s. Ignoring",
+                topic);
+    return;
+  }
+
   uint8_t user_identifier = {};
   uint8_t schedule_slotid = {};
   uint8_t start_year = {};
@@ -94329,10 +94856,8 @@ void uic_mqtt_dotdot_on_unify_schedule_entry_lock_schedule_entry_lock_year_day_r
     jsn = nlohmann::json::parse(std::string(message));
 
   
-    uic_mqtt_dotdot_parse_unify_schedule_entry_lock_schedule_entry_lock_year_day_report(
+    uic_mqtt_dotdot_parse_unify_schedule_entry_lock_year_day_report(
       jsn,
-      set_action,
-
       user_identifier,
 
       schedule_slotid,
@@ -94360,26 +94885,24 @@ void uic_mqtt_dotdot_on_unify_schedule_entry_lock_schedule_entry_lock_year_day_r
 
   } catch (const nlohmann::json::parse_error& e) {
     // Catch JSON object field parsing errors
-    sl_log_debug(LOG_TAG, LOG_FMT_JSON_PARSE_FAIL, "UnifyScheduleEntryLock", "ScheduleEntryLockYearDayReport");
+    sl_log_debug(LOG_TAG, LOG_FMT_JSON_PARSE_FAIL, "UnifyScheduleEntryLock", "YearDayReport");
     return;
   } catch (const nlohmann::json::exception& e) {
     // Catch JSON object field parsing errors
-    sl_log_debug(LOG_TAG, LOG_FMT_JSON_ERROR, "UnifyScheduleEntryLock", "ScheduleEntryLockYearDayReport", e.what());
+    sl_log_debug(LOG_TAG, LOG_FMT_JSON_ERROR, "UnifyScheduleEntryLock", "YearDayReport", e.what());
     return;
   } catch (const std::exception& e) {
-    sl_log_debug(LOG_TAG, LOG_FMT_JSON_ERROR, "UnifyScheduleEntryLock", "ScheduleEntryLockYearDayReport", "");
+    sl_log_debug(LOG_TAG, LOG_FMT_JSON_ERROR, "UnifyScheduleEntryLock", "YearDayReport", "");
     return;
   }
 
 
 
-  for (const auto& callback: uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_year_day_report_callback){
+  for (const auto& callback: uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_report_callback){
     callback(
       static_cast<dotdot_unid_t>(unid.c_str()),
       endpoint,
       UIC_MQTT_DOTDOT_CALLBACK_TYPE_NORMAL,
-      set_action,
-  
       user_identifier,
   
       schedule_slotid,
@@ -94409,13 +94932,13 @@ void uic_mqtt_dotdot_on_unify_schedule_entry_lock_schedule_entry_lock_year_day_r
 
 }
 
-// Callback function for incoming publications on ucl/by-unid/+/+/UnifyScheduleEntryLock/GeneratedCommands/ScheduleEntryLockYearDayReport
-static void uic_mqtt_dotdot_on_generated_unify_schedule_entry_lock_schedule_entry_lock_year_day_report(
+// Callback function for incoming publications on ucl/by-unid/+/+/UnifyScheduleEntryLock/GeneratedCommands/YearDayReport
+static void uic_mqtt_dotdot_on_generated_unify_schedule_entry_lock_year_day_report(
   const char *topic,
   const char *message,
   const size_t message_length)
 {
-  if (message_length == 0 || (uic_mqtt_dotdot_unify_schedule_entry_lock_generated_schedule_entry_lock_year_day_report_callback.empty())) {
+  if (message_length == 0 || (uic_mqtt_dotdot_unify_schedule_entry_lock_generated_year_day_report_callback.empty())) {
     return;
   }
 
@@ -94428,7 +94951,6 @@ static void uic_mqtt_dotdot_on_generated_unify_schedule_entry_lock_schedule_entr
     return;
   }
 
-  uint8_t set_action = {};
   uint8_t user_identifier = {};
   uint8_t schedule_slotid = {};
   uint8_t start_year = {};
@@ -94448,10 +94970,8 @@ static void uic_mqtt_dotdot_on_generated_unify_schedule_entry_lock_schedule_entr
     jsn = nlohmann::json::parse(std::string(message));
 
   
-    uic_mqtt_dotdot_parse_unify_schedule_entry_lock_schedule_entry_lock_year_day_report(
+    uic_mqtt_dotdot_parse_unify_schedule_entry_lock_year_day_report(
       jsn,
-      set_action,
-
       user_identifier,
 
       schedule_slotid,
@@ -94479,27 +94999,25 @@ static void uic_mqtt_dotdot_on_generated_unify_schedule_entry_lock_schedule_entr
 
   } catch (const nlohmann::json::parse_error& e) {
     // Catch JSON object field parsing errors
-    sl_log_debug(LOG_TAG, LOG_FMT_JSON_PARSE_FAIL, "UnifyScheduleEntryLock", "ScheduleEntryLockYearDayReport");
+    sl_log_debug(LOG_TAG, LOG_FMT_JSON_PARSE_FAIL, "UnifyScheduleEntryLock", "YearDayReport");
     return;
   } catch (const nlohmann::json::exception& e) {
     // Catch JSON object field parsing errors
-    sl_log_debug(LOG_TAG, LOG_FMT_JSON_ERROR, "UnifyScheduleEntryLock", "ScheduleEntryLockYearDayReport", e.what());
+    sl_log_debug(LOG_TAG, LOG_FMT_JSON_ERROR, "UnifyScheduleEntryLock", "YearDayReport", e.what());
     return;
   } catch (const std::exception& e) {
-    sl_log_debug(LOG_TAG, LOG_FMT_JSON_ERROR, "UnifyScheduleEntryLock", "ScheduleEntryLockYearDayReport", "");
+    sl_log_debug(LOG_TAG, LOG_FMT_JSON_ERROR, "UnifyScheduleEntryLock", "YearDayReport", "");
     return;
   }
 
 
 
 
-  for (const auto& callback: uic_mqtt_dotdot_unify_schedule_entry_lock_generated_schedule_entry_lock_year_day_report_callback){
+  for (const auto& callback: uic_mqtt_dotdot_unify_schedule_entry_lock_generated_year_day_report_callback){
     callback(
       static_cast<dotdot_unid_t>(unid.c_str()),
       endpoint,
       UIC_MQTT_DOTDOT_CALLBACK_TYPE_NORMAL,
-      set_action,
-  
       user_identifier,
   
       schedule_slotid,
@@ -94529,13 +95047,878 @@ static void uic_mqtt_dotdot_on_generated_unify_schedule_entry_lock_schedule_entr
 }
 
 
-// Callback function for incoming publications on ucl/by-unid/+/+/UnifyScheduleEntryLock/Commands/ScheduleEntryLockDailyRepeatingReport
-void uic_mqtt_dotdot_on_unify_schedule_entry_lock_schedule_entry_lock_daily_repeating_report(
+// Callback function for incoming publications on ucl/by-unid/+/+/UnifyScheduleEntryLock/Commands/WeekDaySet
+void uic_mqtt_dotdot_on_unify_schedule_entry_lock_week_day_set(
   const char *topic,
   const char *message,
   const size_t message_length)
 {
-  if (message_length == 0 || (uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_daily_repeating_report_callback.empty())) {
+  if (message_length == 0 || (uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_set_callback.empty())) {
+    return;
+  }
+
+  std::string unid;
+  uint8_t endpoint = 0; // Default value for endpoint-less topics.
+  if(! uic_dotdot_mqtt::parse_topic(topic,unid,endpoint)) {
+    sl_log_debug(LOG_TAG,
+                "Error parsing UNID / Endpoint ID from topic %s. Ignoring",
+                topic);
+    return;
+  }
+
+  uint8_t set_action = {};
+  uint8_t user_identifier = {};
+  uint8_t schedule_slotid = {};
+  uint8_t day_of_week = {};
+  uint8_t start_hour = {};
+  uint8_t start_minute = {};
+  uint8_t stop_hour = {};
+  uint8_t stop_minute = {};
+
+
+  nlohmann::json jsn;
+  try {
+    jsn = nlohmann::json::parse(std::string(message));
+
+  
+    uic_mqtt_dotdot_parse_unify_schedule_entry_lock_week_day_set(
+      jsn,
+      set_action,
+
+      user_identifier,
+
+      schedule_slotid,
+
+      day_of_week,
+
+      start_hour,
+
+      start_minute,
+
+      stop_hour,
+
+      stop_minute
+      );
+
+  } catch (const nlohmann::json::parse_error& e) {
+    // Catch JSON object field parsing errors
+    sl_log_debug(LOG_TAG, LOG_FMT_JSON_PARSE_FAIL, "UnifyScheduleEntryLock", "WeekDaySet");
+    return;
+  } catch (const nlohmann::json::exception& e) {
+    // Catch JSON object field parsing errors
+    sl_log_debug(LOG_TAG, LOG_FMT_JSON_ERROR, "UnifyScheduleEntryLock", "WeekDaySet", e.what());
+    return;
+  } catch (const std::exception& e) {
+    sl_log_debug(LOG_TAG, LOG_FMT_JSON_ERROR, "UnifyScheduleEntryLock", "WeekDaySet", "");
+    return;
+  }
+
+
+
+  for (const auto& callback: uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_set_callback){
+    callback(
+      static_cast<dotdot_unid_t>(unid.c_str()),
+      endpoint,
+      UIC_MQTT_DOTDOT_CALLBACK_TYPE_NORMAL,
+      set_action,
+  
+      user_identifier,
+  
+      schedule_slotid,
+  
+      day_of_week,
+  
+      start_hour,
+  
+      start_minute,
+  
+      stop_hour,
+  
+      stop_minute
+  
+    );
+  }
+
+}
+
+// Callback function for incoming publications on ucl/by-unid/+/+/UnifyScheduleEntryLock/GeneratedCommands/WeekDaySet
+static void uic_mqtt_dotdot_on_generated_unify_schedule_entry_lock_week_day_set(
+  const char *topic,
+  const char *message,
+  const size_t message_length)
+{
+  if (message_length == 0 || (uic_mqtt_dotdot_unify_schedule_entry_lock_generated_week_day_set_callback.empty())) {
+    return;
+  }
+
+  std::string unid;
+  uint8_t endpoint = 0; // Default value for endpoint-less topics.
+  if(! uic_dotdot_mqtt::parse_topic(topic,unid,endpoint)) {
+    sl_log_debug(LOG_TAG,
+                "Error parsing UNID / Endpoint ID from topic %s. Ignoring",
+                topic);
+    return;
+  }
+
+  uint8_t set_action = {};
+  uint8_t user_identifier = {};
+  uint8_t schedule_slotid = {};
+  uint8_t day_of_week = {};
+  uint8_t start_hour = {};
+  uint8_t start_minute = {};
+  uint8_t stop_hour = {};
+  uint8_t stop_minute = {};
+
+
+  nlohmann::json jsn;
+  try {
+    jsn = nlohmann::json::parse(std::string(message));
+
+  
+    uic_mqtt_dotdot_parse_unify_schedule_entry_lock_week_day_set(
+      jsn,
+      set_action,
+
+      user_identifier,
+
+      schedule_slotid,
+
+      day_of_week,
+
+      start_hour,
+
+      start_minute,
+
+      stop_hour,
+
+      stop_minute
+      );
+
+  } catch (const nlohmann::json::parse_error& e) {
+    // Catch JSON object field parsing errors
+    sl_log_debug(LOG_TAG, LOG_FMT_JSON_PARSE_FAIL, "UnifyScheduleEntryLock", "WeekDaySet");
+    return;
+  } catch (const nlohmann::json::exception& e) {
+    // Catch JSON object field parsing errors
+    sl_log_debug(LOG_TAG, LOG_FMT_JSON_ERROR, "UnifyScheduleEntryLock", "WeekDaySet", e.what());
+    return;
+  } catch (const std::exception& e) {
+    sl_log_debug(LOG_TAG, LOG_FMT_JSON_ERROR, "UnifyScheduleEntryLock", "WeekDaySet", "");
+    return;
+  }
+
+
+
+
+  for (const auto& callback: uic_mqtt_dotdot_unify_schedule_entry_lock_generated_week_day_set_callback){
+    callback(
+      static_cast<dotdot_unid_t>(unid.c_str()),
+      endpoint,
+      UIC_MQTT_DOTDOT_CALLBACK_TYPE_NORMAL,
+      set_action,
+  
+      user_identifier,
+  
+      schedule_slotid,
+  
+      day_of_week,
+  
+      start_hour,
+  
+      start_minute,
+  
+      stop_hour,
+  
+      stop_minute
+  
+    );
+  }
+}
+
+
+// Callback function for incoming publications on ucl/by-unid/+/+/UnifyScheduleEntryLock/Commands/DailyRepeatingReport
+void uic_mqtt_dotdot_on_unify_schedule_entry_lock_daily_repeating_report(
+  const char *topic,
+  const char *message,
+  const size_t message_length)
+{
+  if (message_length == 0 || (uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_report_callback.empty())) {
+    return;
+  }
+
+  std::string unid;
+  uint8_t endpoint = 0; // Default value for endpoint-less topics.
+  if(! uic_dotdot_mqtt::parse_topic(topic,unid,endpoint)) {
+    sl_log_debug(LOG_TAG,
+                "Error parsing UNID / Endpoint ID from topic %s. Ignoring",
+                topic);
+    return;
+  }
+
+  uint8_t user_identifier = {};
+  uint8_t schedule_slotid = {};
+  uint8_t week_day_bitmask = {};
+  uint8_t start_hour = {};
+  uint8_t start_minute = {};
+  uint8_t duration_hour = {};
+  uint8_t duration_minute = {};
+
+
+  nlohmann::json jsn;
+  try {
+    jsn = nlohmann::json::parse(std::string(message));
+
+  
+    uic_mqtt_dotdot_parse_unify_schedule_entry_lock_daily_repeating_report(
+      jsn,
+      user_identifier,
+
+      schedule_slotid,
+
+      week_day_bitmask,
+
+      start_hour,
+
+      start_minute,
+
+      duration_hour,
+
+      duration_minute
+      );
+
+  } catch (const nlohmann::json::parse_error& e) {
+    // Catch JSON object field parsing errors
+    sl_log_debug(LOG_TAG, LOG_FMT_JSON_PARSE_FAIL, "UnifyScheduleEntryLock", "DailyRepeatingReport");
+    return;
+  } catch (const nlohmann::json::exception& e) {
+    // Catch JSON object field parsing errors
+    sl_log_debug(LOG_TAG, LOG_FMT_JSON_ERROR, "UnifyScheduleEntryLock", "DailyRepeatingReport", e.what());
+    return;
+  } catch (const std::exception& e) {
+    sl_log_debug(LOG_TAG, LOG_FMT_JSON_ERROR, "UnifyScheduleEntryLock", "DailyRepeatingReport", "");
+    return;
+  }
+
+
+
+  for (const auto& callback: uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_report_callback){
+    callback(
+      static_cast<dotdot_unid_t>(unid.c_str()),
+      endpoint,
+      UIC_MQTT_DOTDOT_CALLBACK_TYPE_NORMAL,
+      user_identifier,
+  
+      schedule_slotid,
+  
+      week_day_bitmask,
+  
+      start_hour,
+  
+      start_minute,
+  
+      duration_hour,
+  
+      duration_minute
+  
+    );
+  }
+
+}
+
+// Callback function for incoming publications on ucl/by-unid/+/+/UnifyScheduleEntryLock/GeneratedCommands/DailyRepeatingReport
+static void uic_mqtt_dotdot_on_generated_unify_schedule_entry_lock_daily_repeating_report(
+  const char *topic,
+  const char *message,
+  const size_t message_length)
+{
+  if (message_length == 0 || (uic_mqtt_dotdot_unify_schedule_entry_lock_generated_daily_repeating_report_callback.empty())) {
+    return;
+  }
+
+  std::string unid;
+  uint8_t endpoint = 0; // Default value for endpoint-less topics.
+  if(! uic_dotdot_mqtt::parse_topic(topic,unid,endpoint)) {
+    sl_log_debug(LOG_TAG,
+                "Error parsing UNID / Endpoint ID from topic %s. Ignoring",
+                topic);
+    return;
+  }
+
+  uint8_t user_identifier = {};
+  uint8_t schedule_slotid = {};
+  uint8_t week_day_bitmask = {};
+  uint8_t start_hour = {};
+  uint8_t start_minute = {};
+  uint8_t duration_hour = {};
+  uint8_t duration_minute = {};
+
+
+  nlohmann::json jsn;
+  try {
+    jsn = nlohmann::json::parse(std::string(message));
+
+  
+    uic_mqtt_dotdot_parse_unify_schedule_entry_lock_daily_repeating_report(
+      jsn,
+      user_identifier,
+
+      schedule_slotid,
+
+      week_day_bitmask,
+
+      start_hour,
+
+      start_minute,
+
+      duration_hour,
+
+      duration_minute
+      );
+
+  } catch (const nlohmann::json::parse_error& e) {
+    // Catch JSON object field parsing errors
+    sl_log_debug(LOG_TAG, LOG_FMT_JSON_PARSE_FAIL, "UnifyScheduleEntryLock", "DailyRepeatingReport");
+    return;
+  } catch (const nlohmann::json::exception& e) {
+    // Catch JSON object field parsing errors
+    sl_log_debug(LOG_TAG, LOG_FMT_JSON_ERROR, "UnifyScheduleEntryLock", "DailyRepeatingReport", e.what());
+    return;
+  } catch (const std::exception& e) {
+    sl_log_debug(LOG_TAG, LOG_FMT_JSON_ERROR, "UnifyScheduleEntryLock", "DailyRepeatingReport", "");
+    return;
+  }
+
+
+
+
+  for (const auto& callback: uic_mqtt_dotdot_unify_schedule_entry_lock_generated_daily_repeating_report_callback){
+    callback(
+      static_cast<dotdot_unid_t>(unid.c_str()),
+      endpoint,
+      UIC_MQTT_DOTDOT_CALLBACK_TYPE_NORMAL,
+      user_identifier,
+  
+      schedule_slotid,
+  
+      week_day_bitmask,
+  
+      start_hour,
+  
+      start_minute,
+  
+      duration_hour,
+  
+      duration_minute
+  
+    );
+  }
+}
+
+
+// Callback function for incoming publications on ucl/by-unid/+/+/UnifyScheduleEntryLock/Commands/WeekDayGet
+void uic_mqtt_dotdot_on_unify_schedule_entry_lock_week_day_get(
+  const char *topic,
+  const char *message,
+  const size_t message_length)
+{
+  if (message_length == 0 || (uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_get_callback.empty())) {
+    return;
+  }
+
+  std::string unid;
+  uint8_t endpoint = 0; // Default value for endpoint-less topics.
+  if(! uic_dotdot_mqtt::parse_topic(topic,unid,endpoint)) {
+    sl_log_debug(LOG_TAG,
+                "Error parsing UNID / Endpoint ID from topic %s. Ignoring",
+                topic);
+    return;
+  }
+
+  uint8_t user_identifier = {};
+  uint8_t schedule_slotid = {};
+
+
+  nlohmann::json jsn;
+  try {
+    jsn = nlohmann::json::parse(std::string(message));
+
+  
+    uic_mqtt_dotdot_parse_unify_schedule_entry_lock_week_day_get(
+      jsn,
+      user_identifier,
+
+      schedule_slotid
+      );
+
+  } catch (const nlohmann::json::parse_error& e) {
+    // Catch JSON object field parsing errors
+    sl_log_debug(LOG_TAG, LOG_FMT_JSON_PARSE_FAIL, "UnifyScheduleEntryLock", "WeekDayGet");
+    return;
+  } catch (const nlohmann::json::exception& e) {
+    // Catch JSON object field parsing errors
+    sl_log_debug(LOG_TAG, LOG_FMT_JSON_ERROR, "UnifyScheduleEntryLock", "WeekDayGet", e.what());
+    return;
+  } catch (const std::exception& e) {
+    sl_log_debug(LOG_TAG, LOG_FMT_JSON_ERROR, "UnifyScheduleEntryLock", "WeekDayGet", "");
+    return;
+  }
+
+
+
+  for (const auto& callback: uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_get_callback){
+    callback(
+      static_cast<dotdot_unid_t>(unid.c_str()),
+      endpoint,
+      UIC_MQTT_DOTDOT_CALLBACK_TYPE_NORMAL,
+      user_identifier,
+  
+      schedule_slotid
+  
+    );
+  }
+
+}
+
+// Callback function for incoming publications on ucl/by-unid/+/+/UnifyScheduleEntryLock/GeneratedCommands/WeekDayGet
+static void uic_mqtt_dotdot_on_generated_unify_schedule_entry_lock_week_day_get(
+  const char *topic,
+  const char *message,
+  const size_t message_length)
+{
+  if (message_length == 0 || (uic_mqtt_dotdot_unify_schedule_entry_lock_generated_week_day_get_callback.empty())) {
+    return;
+  }
+
+  std::string unid;
+  uint8_t endpoint = 0; // Default value for endpoint-less topics.
+  if(! uic_dotdot_mqtt::parse_topic(topic,unid,endpoint)) {
+    sl_log_debug(LOG_TAG,
+                "Error parsing UNID / Endpoint ID from topic %s. Ignoring",
+                topic);
+    return;
+  }
+
+  uint8_t user_identifier = {};
+  uint8_t schedule_slotid = {};
+
+
+  nlohmann::json jsn;
+  try {
+    jsn = nlohmann::json::parse(std::string(message));
+
+  
+    uic_mqtt_dotdot_parse_unify_schedule_entry_lock_week_day_get(
+      jsn,
+      user_identifier,
+
+      schedule_slotid
+      );
+
+  } catch (const nlohmann::json::parse_error& e) {
+    // Catch JSON object field parsing errors
+    sl_log_debug(LOG_TAG, LOG_FMT_JSON_PARSE_FAIL, "UnifyScheduleEntryLock", "WeekDayGet");
+    return;
+  } catch (const nlohmann::json::exception& e) {
+    // Catch JSON object field parsing errors
+    sl_log_debug(LOG_TAG, LOG_FMT_JSON_ERROR, "UnifyScheduleEntryLock", "WeekDayGet", e.what());
+    return;
+  } catch (const std::exception& e) {
+    sl_log_debug(LOG_TAG, LOG_FMT_JSON_ERROR, "UnifyScheduleEntryLock", "WeekDayGet", "");
+    return;
+  }
+
+
+
+
+  for (const auto& callback: uic_mqtt_dotdot_unify_schedule_entry_lock_generated_week_day_get_callback){
+    callback(
+      static_cast<dotdot_unid_t>(unid.c_str()),
+      endpoint,
+      UIC_MQTT_DOTDOT_CALLBACK_TYPE_NORMAL,
+      user_identifier,
+  
+      schedule_slotid
+  
+    );
+  }
+}
+
+
+// Callback function for incoming publications on ucl/by-unid/+/+/UnifyScheduleEntryLock/Commands/YearDaySet
+void uic_mqtt_dotdot_on_unify_schedule_entry_lock_year_day_set(
+  const char *topic,
+  const char *message,
+  const size_t message_length)
+{
+  if (message_length == 0 || (uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_set_callback.empty())) {
+    return;
+  }
+
+  std::string unid;
+  uint8_t endpoint = 0; // Default value for endpoint-less topics.
+  if(! uic_dotdot_mqtt::parse_topic(topic,unid,endpoint)) {
+    sl_log_debug(LOG_TAG,
+                "Error parsing UNID / Endpoint ID from topic %s. Ignoring",
+                topic);
+    return;
+  }
+
+  uint8_t set_action = {};
+  uint8_t user_identifier = {};
+  uint8_t schedule_slotid = {};
+  uint8_t start_year = {};
+  uint8_t start_day = {};
+  uint8_t start_hour = {};
+  uint8_t start_month = {};
+  uint8_t start_minute = {};
+  uint8_t stop_year = {};
+  uint8_t stop_month = {};
+  uint8_t stop_day = {};
+  uint8_t stop_hour = {};
+  uint8_t stop_minute = {};
+
+
+  nlohmann::json jsn;
+  try {
+    jsn = nlohmann::json::parse(std::string(message));
+
+  
+    uic_mqtt_dotdot_parse_unify_schedule_entry_lock_year_day_set(
+      jsn,
+      set_action,
+
+      user_identifier,
+
+      schedule_slotid,
+
+      start_year,
+
+      start_day,
+
+      start_hour,
+
+      start_month,
+
+      start_minute,
+
+      stop_year,
+
+      stop_month,
+
+      stop_day,
+
+      stop_hour,
+
+      stop_minute
+      );
+
+  } catch (const nlohmann::json::parse_error& e) {
+    // Catch JSON object field parsing errors
+    sl_log_debug(LOG_TAG, LOG_FMT_JSON_PARSE_FAIL, "UnifyScheduleEntryLock", "YearDaySet");
+    return;
+  } catch (const nlohmann::json::exception& e) {
+    // Catch JSON object field parsing errors
+    sl_log_debug(LOG_TAG, LOG_FMT_JSON_ERROR, "UnifyScheduleEntryLock", "YearDaySet", e.what());
+    return;
+  } catch (const std::exception& e) {
+    sl_log_debug(LOG_TAG, LOG_FMT_JSON_ERROR, "UnifyScheduleEntryLock", "YearDaySet", "");
+    return;
+  }
+
+
+
+  for (const auto& callback: uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_set_callback){
+    callback(
+      static_cast<dotdot_unid_t>(unid.c_str()),
+      endpoint,
+      UIC_MQTT_DOTDOT_CALLBACK_TYPE_NORMAL,
+      set_action,
+  
+      user_identifier,
+  
+      schedule_slotid,
+  
+      start_year,
+  
+      start_day,
+  
+      start_hour,
+  
+      start_month,
+  
+      start_minute,
+  
+      stop_year,
+  
+      stop_month,
+  
+      stop_day,
+  
+      stop_hour,
+  
+      stop_minute
+  
+    );
+  }
+
+}
+
+// Callback function for incoming publications on ucl/by-unid/+/+/UnifyScheduleEntryLock/GeneratedCommands/YearDaySet
+static void uic_mqtt_dotdot_on_generated_unify_schedule_entry_lock_year_day_set(
+  const char *topic,
+  const char *message,
+  const size_t message_length)
+{
+  if (message_length == 0 || (uic_mqtt_dotdot_unify_schedule_entry_lock_generated_year_day_set_callback.empty())) {
+    return;
+  }
+
+  std::string unid;
+  uint8_t endpoint = 0; // Default value for endpoint-less topics.
+  if(! uic_dotdot_mqtt::parse_topic(topic,unid,endpoint)) {
+    sl_log_debug(LOG_TAG,
+                "Error parsing UNID / Endpoint ID from topic %s. Ignoring",
+                topic);
+    return;
+  }
+
+  uint8_t set_action = {};
+  uint8_t user_identifier = {};
+  uint8_t schedule_slotid = {};
+  uint8_t start_year = {};
+  uint8_t start_day = {};
+  uint8_t start_hour = {};
+  uint8_t start_month = {};
+  uint8_t start_minute = {};
+  uint8_t stop_year = {};
+  uint8_t stop_month = {};
+  uint8_t stop_day = {};
+  uint8_t stop_hour = {};
+  uint8_t stop_minute = {};
+
+
+  nlohmann::json jsn;
+  try {
+    jsn = nlohmann::json::parse(std::string(message));
+
+  
+    uic_mqtt_dotdot_parse_unify_schedule_entry_lock_year_day_set(
+      jsn,
+      set_action,
+
+      user_identifier,
+
+      schedule_slotid,
+
+      start_year,
+
+      start_day,
+
+      start_hour,
+
+      start_month,
+
+      start_minute,
+
+      stop_year,
+
+      stop_month,
+
+      stop_day,
+
+      stop_hour,
+
+      stop_minute
+      );
+
+  } catch (const nlohmann::json::parse_error& e) {
+    // Catch JSON object field parsing errors
+    sl_log_debug(LOG_TAG, LOG_FMT_JSON_PARSE_FAIL, "UnifyScheduleEntryLock", "YearDaySet");
+    return;
+  } catch (const nlohmann::json::exception& e) {
+    // Catch JSON object field parsing errors
+    sl_log_debug(LOG_TAG, LOG_FMT_JSON_ERROR, "UnifyScheduleEntryLock", "YearDaySet", e.what());
+    return;
+  } catch (const std::exception& e) {
+    sl_log_debug(LOG_TAG, LOG_FMT_JSON_ERROR, "UnifyScheduleEntryLock", "YearDaySet", "");
+    return;
+  }
+
+
+
+
+  for (const auto& callback: uic_mqtt_dotdot_unify_schedule_entry_lock_generated_year_day_set_callback){
+    callback(
+      static_cast<dotdot_unid_t>(unid.c_str()),
+      endpoint,
+      UIC_MQTT_DOTDOT_CALLBACK_TYPE_NORMAL,
+      set_action,
+  
+      user_identifier,
+  
+      schedule_slotid,
+  
+      start_year,
+  
+      start_day,
+  
+      start_hour,
+  
+      start_month,
+  
+      start_minute,
+  
+      stop_year,
+  
+      stop_month,
+  
+      stop_day,
+  
+      stop_hour,
+  
+      stop_minute
+  
+    );
+  }
+}
+
+
+// Callback function for incoming publications on ucl/by-unid/+/+/UnifyScheduleEntryLock/Commands/YearDayGet
+void uic_mqtt_dotdot_on_unify_schedule_entry_lock_year_day_get(
+  const char *topic,
+  const char *message,
+  const size_t message_length)
+{
+  if (message_length == 0 || (uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_get_callback.empty())) {
+    return;
+  }
+
+  std::string unid;
+  uint8_t endpoint = 0; // Default value for endpoint-less topics.
+  if(! uic_dotdot_mqtt::parse_topic(topic,unid,endpoint)) {
+    sl_log_debug(LOG_TAG,
+                "Error parsing UNID / Endpoint ID from topic %s. Ignoring",
+                topic);
+    return;
+  }
+
+  uint8_t user_identifier = {};
+  uint8_t schedule_slotid = {};
+
+
+  nlohmann::json jsn;
+  try {
+    jsn = nlohmann::json::parse(std::string(message));
+
+  
+    uic_mqtt_dotdot_parse_unify_schedule_entry_lock_year_day_get(
+      jsn,
+      user_identifier,
+
+      schedule_slotid
+      );
+
+  } catch (const nlohmann::json::parse_error& e) {
+    // Catch JSON object field parsing errors
+    sl_log_debug(LOG_TAG, LOG_FMT_JSON_PARSE_FAIL, "UnifyScheduleEntryLock", "YearDayGet");
+    return;
+  } catch (const nlohmann::json::exception& e) {
+    // Catch JSON object field parsing errors
+    sl_log_debug(LOG_TAG, LOG_FMT_JSON_ERROR, "UnifyScheduleEntryLock", "YearDayGet", e.what());
+    return;
+  } catch (const std::exception& e) {
+    sl_log_debug(LOG_TAG, LOG_FMT_JSON_ERROR, "UnifyScheduleEntryLock", "YearDayGet", "");
+    return;
+  }
+
+
+
+  for (const auto& callback: uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_get_callback){
+    callback(
+      static_cast<dotdot_unid_t>(unid.c_str()),
+      endpoint,
+      UIC_MQTT_DOTDOT_CALLBACK_TYPE_NORMAL,
+      user_identifier,
+  
+      schedule_slotid
+  
+    );
+  }
+
+}
+
+// Callback function for incoming publications on ucl/by-unid/+/+/UnifyScheduleEntryLock/GeneratedCommands/YearDayGet
+static void uic_mqtt_dotdot_on_generated_unify_schedule_entry_lock_year_day_get(
+  const char *topic,
+  const char *message,
+  const size_t message_length)
+{
+  if (message_length == 0 || (uic_mqtt_dotdot_unify_schedule_entry_lock_generated_year_day_get_callback.empty())) {
+    return;
+  }
+
+  std::string unid;
+  uint8_t endpoint = 0; // Default value for endpoint-less topics.
+  if(! uic_dotdot_mqtt::parse_topic(topic,unid,endpoint)) {
+    sl_log_debug(LOG_TAG,
+                "Error parsing UNID / Endpoint ID from topic %s. Ignoring",
+                topic);
+    return;
+  }
+
+  uint8_t user_identifier = {};
+  uint8_t schedule_slotid = {};
+
+
+  nlohmann::json jsn;
+  try {
+    jsn = nlohmann::json::parse(std::string(message));
+
+  
+    uic_mqtt_dotdot_parse_unify_schedule_entry_lock_year_day_get(
+      jsn,
+      user_identifier,
+
+      schedule_slotid
+      );
+
+  } catch (const nlohmann::json::parse_error& e) {
+    // Catch JSON object field parsing errors
+    sl_log_debug(LOG_TAG, LOG_FMT_JSON_PARSE_FAIL, "UnifyScheduleEntryLock", "YearDayGet");
+    return;
+  } catch (const nlohmann::json::exception& e) {
+    // Catch JSON object field parsing errors
+    sl_log_debug(LOG_TAG, LOG_FMT_JSON_ERROR, "UnifyScheduleEntryLock", "YearDayGet", e.what());
+    return;
+  } catch (const std::exception& e) {
+    sl_log_debug(LOG_TAG, LOG_FMT_JSON_ERROR, "UnifyScheduleEntryLock", "YearDayGet", "");
+    return;
+  }
+
+
+
+
+  for (const auto& callback: uic_mqtt_dotdot_unify_schedule_entry_lock_generated_year_day_get_callback){
+    callback(
+      static_cast<dotdot_unid_t>(unid.c_str()),
+      endpoint,
+      UIC_MQTT_DOTDOT_CALLBACK_TYPE_NORMAL,
+      user_identifier,
+  
+      schedule_slotid
+  
+    );
+  }
+}
+
+
+// Callback function for incoming publications on ucl/by-unid/+/+/UnifyScheduleEntryLock/Commands/DailyRepeatingSet
+void uic_mqtt_dotdot_on_unify_schedule_entry_lock_daily_repeating_set(
+  const char *topic,
+  const char *message,
+  const size_t message_length)
+{
+  if (message_length == 0 || (uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_set_callback.empty())) {
     return;
   }
 
@@ -94563,7 +95946,7 @@ void uic_mqtt_dotdot_on_unify_schedule_entry_lock_schedule_entry_lock_daily_repe
     jsn = nlohmann::json::parse(std::string(message));
 
   
-    uic_mqtt_dotdot_parse_unify_schedule_entry_lock_schedule_entry_lock_daily_repeating_report(
+    uic_mqtt_dotdot_parse_unify_schedule_entry_lock_daily_repeating_set(
       jsn,
       set_action,
 
@@ -94584,20 +95967,20 @@ void uic_mqtt_dotdot_on_unify_schedule_entry_lock_schedule_entry_lock_daily_repe
 
   } catch (const nlohmann::json::parse_error& e) {
     // Catch JSON object field parsing errors
-    sl_log_debug(LOG_TAG, LOG_FMT_JSON_PARSE_FAIL, "UnifyScheduleEntryLock", "ScheduleEntryLockDailyRepeatingReport");
+    sl_log_debug(LOG_TAG, LOG_FMT_JSON_PARSE_FAIL, "UnifyScheduleEntryLock", "DailyRepeatingSet");
     return;
   } catch (const nlohmann::json::exception& e) {
     // Catch JSON object field parsing errors
-    sl_log_debug(LOG_TAG, LOG_FMT_JSON_ERROR, "UnifyScheduleEntryLock", "ScheduleEntryLockDailyRepeatingReport", e.what());
+    sl_log_debug(LOG_TAG, LOG_FMT_JSON_ERROR, "UnifyScheduleEntryLock", "DailyRepeatingSet", e.what());
     return;
   } catch (const std::exception& e) {
-    sl_log_debug(LOG_TAG, LOG_FMT_JSON_ERROR, "UnifyScheduleEntryLock", "ScheduleEntryLockDailyRepeatingReport", "");
+    sl_log_debug(LOG_TAG, LOG_FMT_JSON_ERROR, "UnifyScheduleEntryLock", "DailyRepeatingSet", "");
     return;
   }
 
 
 
-  for (const auto& callback: uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_daily_repeating_report_callback){
+  for (const auto& callback: uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_set_callback){
     callback(
       static_cast<dotdot_unid_t>(unid.c_str()),
       endpoint,
@@ -94623,13 +96006,13 @@ void uic_mqtt_dotdot_on_unify_schedule_entry_lock_schedule_entry_lock_daily_repe
 
 }
 
-// Callback function for incoming publications on ucl/by-unid/+/+/UnifyScheduleEntryLock/GeneratedCommands/ScheduleEntryLockDailyRepeatingReport
-static void uic_mqtt_dotdot_on_generated_unify_schedule_entry_lock_schedule_entry_lock_daily_repeating_report(
+// Callback function for incoming publications on ucl/by-unid/+/+/UnifyScheduleEntryLock/GeneratedCommands/DailyRepeatingSet
+static void uic_mqtt_dotdot_on_generated_unify_schedule_entry_lock_daily_repeating_set(
   const char *topic,
   const char *message,
   const size_t message_length)
 {
-  if (message_length == 0 || (uic_mqtt_dotdot_unify_schedule_entry_lock_generated_schedule_entry_lock_daily_repeating_report_callback.empty())) {
+  if (message_length == 0 || (uic_mqtt_dotdot_unify_schedule_entry_lock_generated_daily_repeating_set_callback.empty())) {
     return;
   }
 
@@ -94657,7 +96040,7 @@ static void uic_mqtt_dotdot_on_generated_unify_schedule_entry_lock_schedule_entr
     jsn = nlohmann::json::parse(std::string(message));
 
   
-    uic_mqtt_dotdot_parse_unify_schedule_entry_lock_schedule_entry_lock_daily_repeating_report(
+    uic_mqtt_dotdot_parse_unify_schedule_entry_lock_daily_repeating_set(
       jsn,
       set_action,
 
@@ -94678,21 +96061,21 @@ static void uic_mqtt_dotdot_on_generated_unify_schedule_entry_lock_schedule_entr
 
   } catch (const nlohmann::json::parse_error& e) {
     // Catch JSON object field parsing errors
-    sl_log_debug(LOG_TAG, LOG_FMT_JSON_PARSE_FAIL, "UnifyScheduleEntryLock", "ScheduleEntryLockDailyRepeatingReport");
+    sl_log_debug(LOG_TAG, LOG_FMT_JSON_PARSE_FAIL, "UnifyScheduleEntryLock", "DailyRepeatingSet");
     return;
   } catch (const nlohmann::json::exception& e) {
     // Catch JSON object field parsing errors
-    sl_log_debug(LOG_TAG, LOG_FMT_JSON_ERROR, "UnifyScheduleEntryLock", "ScheduleEntryLockDailyRepeatingReport", e.what());
+    sl_log_debug(LOG_TAG, LOG_FMT_JSON_ERROR, "UnifyScheduleEntryLock", "DailyRepeatingSet", e.what());
     return;
   } catch (const std::exception& e) {
-    sl_log_debug(LOG_TAG, LOG_FMT_JSON_ERROR, "UnifyScheduleEntryLock", "ScheduleEntryLockDailyRepeatingReport", "");
+    sl_log_debug(LOG_TAG, LOG_FMT_JSON_ERROR, "UnifyScheduleEntryLock", "DailyRepeatingSet", "");
     return;
   }
 
 
 
 
-  for (const auto& callback: uic_mqtt_dotdot_unify_schedule_entry_lock_generated_schedule_entry_lock_daily_repeating_report_callback){
+  for (const auto& callback: uic_mqtt_dotdot_unify_schedule_entry_lock_generated_daily_repeating_set_callback){
     callback(
       static_cast<dotdot_unid_t>(unid.c_str()),
       endpoint,
@@ -94712,6 +96095,135 @@ static void uic_mqtt_dotdot_on_generated_unify_schedule_entry_lock_schedule_entr
       duration_hour,
   
       duration_minute
+  
+    );
+  }
+}
+
+
+// Callback function for incoming publications on ucl/by-unid/+/+/UnifyScheduleEntryLock/Commands/DailyRepeatingGet
+void uic_mqtt_dotdot_on_unify_schedule_entry_lock_daily_repeating_get(
+  const char *topic,
+  const char *message,
+  const size_t message_length)
+{
+  if (message_length == 0 || (uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_get_callback.empty())) {
+    return;
+  }
+
+  std::string unid;
+  uint8_t endpoint = 0; // Default value for endpoint-less topics.
+  if(! uic_dotdot_mqtt::parse_topic(topic,unid,endpoint)) {
+    sl_log_debug(LOG_TAG,
+                "Error parsing UNID / Endpoint ID from topic %s. Ignoring",
+                topic);
+    return;
+  }
+
+  uint8_t user_identifier = {};
+  uint8_t schedule_slotid = {};
+
+
+  nlohmann::json jsn;
+  try {
+    jsn = nlohmann::json::parse(std::string(message));
+
+  
+    uic_mqtt_dotdot_parse_unify_schedule_entry_lock_daily_repeating_get(
+      jsn,
+      user_identifier,
+
+      schedule_slotid
+      );
+
+  } catch (const nlohmann::json::parse_error& e) {
+    // Catch JSON object field parsing errors
+    sl_log_debug(LOG_TAG, LOG_FMT_JSON_PARSE_FAIL, "UnifyScheduleEntryLock", "DailyRepeatingGet");
+    return;
+  } catch (const nlohmann::json::exception& e) {
+    // Catch JSON object field parsing errors
+    sl_log_debug(LOG_TAG, LOG_FMT_JSON_ERROR, "UnifyScheduleEntryLock", "DailyRepeatingGet", e.what());
+    return;
+  } catch (const std::exception& e) {
+    sl_log_debug(LOG_TAG, LOG_FMT_JSON_ERROR, "UnifyScheduleEntryLock", "DailyRepeatingGet", "");
+    return;
+  }
+
+
+
+  for (const auto& callback: uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_get_callback){
+    callback(
+      static_cast<dotdot_unid_t>(unid.c_str()),
+      endpoint,
+      UIC_MQTT_DOTDOT_CALLBACK_TYPE_NORMAL,
+      user_identifier,
+  
+      schedule_slotid
+  
+    );
+  }
+
+}
+
+// Callback function for incoming publications on ucl/by-unid/+/+/UnifyScheduleEntryLock/GeneratedCommands/DailyRepeatingGet
+static void uic_mqtt_dotdot_on_generated_unify_schedule_entry_lock_daily_repeating_get(
+  const char *topic,
+  const char *message,
+  const size_t message_length)
+{
+  if (message_length == 0 || (uic_mqtt_dotdot_unify_schedule_entry_lock_generated_daily_repeating_get_callback.empty())) {
+    return;
+  }
+
+  std::string unid;
+  uint8_t endpoint = 0; // Default value for endpoint-less topics.
+  if(! uic_dotdot_mqtt::parse_topic(topic,unid,endpoint)) {
+    sl_log_debug(LOG_TAG,
+                "Error parsing UNID / Endpoint ID from topic %s. Ignoring",
+                topic);
+    return;
+  }
+
+  uint8_t user_identifier = {};
+  uint8_t schedule_slotid = {};
+
+
+  nlohmann::json jsn;
+  try {
+    jsn = nlohmann::json::parse(std::string(message));
+
+  
+    uic_mqtt_dotdot_parse_unify_schedule_entry_lock_daily_repeating_get(
+      jsn,
+      user_identifier,
+
+      schedule_slotid
+      );
+
+  } catch (const nlohmann::json::parse_error& e) {
+    // Catch JSON object field parsing errors
+    sl_log_debug(LOG_TAG, LOG_FMT_JSON_PARSE_FAIL, "UnifyScheduleEntryLock", "DailyRepeatingGet");
+    return;
+  } catch (const nlohmann::json::exception& e) {
+    // Catch JSON object field parsing errors
+    sl_log_debug(LOG_TAG, LOG_FMT_JSON_ERROR, "UnifyScheduleEntryLock", "DailyRepeatingGet", e.what());
+    return;
+  } catch (const std::exception& e) {
+    sl_log_debug(LOG_TAG, LOG_FMT_JSON_ERROR, "UnifyScheduleEntryLock", "DailyRepeatingGet", "");
+    return;
+  }
+
+
+
+
+  for (const auto& callback: uic_mqtt_dotdot_unify_schedule_entry_lock_generated_daily_repeating_get_callback){
+    callback(
+      static_cast<dotdot_unid_t>(unid.c_str()),
+      endpoint,
+      UIC_MQTT_DOTDOT_CALLBACK_TYPE_NORMAL,
+      user_identifier,
+  
+      schedule_slotid
   
     );
   }
@@ -95428,29 +96940,93 @@ sl_status_t uic_mqtt_dotdot_unify_schedule_entry_lock_init()
     subscription_topic = base_topic + "UnifyScheduleEntryLock/Commands/ForceReadAttributes";
     uic_mqtt_subscribe(subscription_topic.c_str(), uic_mqtt_dotdot_on_unify_schedule_entry_lock_force_read_attributes);
   }
-  if (!uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_week_day_report_callback.empty()) {
-    subscription_topic = base_topic + "UnifyScheduleEntryLock/Commands/ScheduleEntryLockWeekDayReport";
-    uic_mqtt_subscribe(subscription_topic.c_str(), uic_mqtt_dotdot_on_unify_schedule_entry_lock_schedule_entry_lock_week_day_report);
+  if (!uic_mqtt_dotdot_unify_schedule_entry_lock_enable_set_callback.empty()) {
+    subscription_topic = base_topic + "UnifyScheduleEntryLock/Commands/EnableSet";
+    uic_mqtt_subscribe(subscription_topic.c_str(), uic_mqtt_dotdot_on_unify_schedule_entry_lock_enable_set);
   }
-  if (!uic_mqtt_dotdot_unify_schedule_entry_lock_generated_schedule_entry_lock_week_day_report_callback.empty()) {
-    subscription_topic = base_topic + "UnifyScheduleEntryLock/GeneratedCommands/ScheduleEntryLockWeekDayReport";
-    uic_mqtt_subscribe(subscription_topic.c_str(), uic_mqtt_dotdot_on_generated_unify_schedule_entry_lock_schedule_entry_lock_week_day_report);
+  if (!uic_mqtt_dotdot_unify_schedule_entry_lock_generated_enable_set_callback.empty()) {
+    subscription_topic = base_topic + "UnifyScheduleEntryLock/GeneratedCommands/EnableSet";
+    uic_mqtt_subscribe(subscription_topic.c_str(), uic_mqtt_dotdot_on_generated_unify_schedule_entry_lock_enable_set);
   }
-  if (!uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_year_day_report_callback.empty()) {
-    subscription_topic = base_topic + "UnifyScheduleEntryLock/Commands/ScheduleEntryLockYearDayReport";
-    uic_mqtt_subscribe(subscription_topic.c_str(), uic_mqtt_dotdot_on_unify_schedule_entry_lock_schedule_entry_lock_year_day_report);
+  if (!uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_report_callback.empty()) {
+    subscription_topic = base_topic + "UnifyScheduleEntryLock/Commands/WeekDayReport";
+    uic_mqtt_subscribe(subscription_topic.c_str(), uic_mqtt_dotdot_on_unify_schedule_entry_lock_week_day_report);
   }
-  if (!uic_mqtt_dotdot_unify_schedule_entry_lock_generated_schedule_entry_lock_year_day_report_callback.empty()) {
-    subscription_topic = base_topic + "UnifyScheduleEntryLock/GeneratedCommands/ScheduleEntryLockYearDayReport";
-    uic_mqtt_subscribe(subscription_topic.c_str(), uic_mqtt_dotdot_on_generated_unify_schedule_entry_lock_schedule_entry_lock_year_day_report);
+  if (!uic_mqtt_dotdot_unify_schedule_entry_lock_generated_week_day_report_callback.empty()) {
+    subscription_topic = base_topic + "UnifyScheduleEntryLock/GeneratedCommands/WeekDayReport";
+    uic_mqtt_subscribe(subscription_topic.c_str(), uic_mqtt_dotdot_on_generated_unify_schedule_entry_lock_week_day_report);
   }
-  if (!uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_daily_repeating_report_callback.empty()) {
-    subscription_topic = base_topic + "UnifyScheduleEntryLock/Commands/ScheduleEntryLockDailyRepeatingReport";
-    uic_mqtt_subscribe(subscription_topic.c_str(), uic_mqtt_dotdot_on_unify_schedule_entry_lock_schedule_entry_lock_daily_repeating_report);
+  if (!uic_mqtt_dotdot_unify_schedule_entry_lock_enable_all_set_callback.empty()) {
+    subscription_topic = base_topic + "UnifyScheduleEntryLock/Commands/EnableAllSet";
+    uic_mqtt_subscribe(subscription_topic.c_str(), uic_mqtt_dotdot_on_unify_schedule_entry_lock_enable_all_set);
   }
-  if (!uic_mqtt_dotdot_unify_schedule_entry_lock_generated_schedule_entry_lock_daily_repeating_report_callback.empty()) {
-    subscription_topic = base_topic + "UnifyScheduleEntryLock/GeneratedCommands/ScheduleEntryLockDailyRepeatingReport";
-    uic_mqtt_subscribe(subscription_topic.c_str(), uic_mqtt_dotdot_on_generated_unify_schedule_entry_lock_schedule_entry_lock_daily_repeating_report);
+  if (!uic_mqtt_dotdot_unify_schedule_entry_lock_generated_enable_all_set_callback.empty()) {
+    subscription_topic = base_topic + "UnifyScheduleEntryLock/GeneratedCommands/EnableAllSet";
+    uic_mqtt_subscribe(subscription_topic.c_str(), uic_mqtt_dotdot_on_generated_unify_schedule_entry_lock_enable_all_set);
+  }
+  if (!uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_report_callback.empty()) {
+    subscription_topic = base_topic + "UnifyScheduleEntryLock/Commands/YearDayReport";
+    uic_mqtt_subscribe(subscription_topic.c_str(), uic_mqtt_dotdot_on_unify_schedule_entry_lock_year_day_report);
+  }
+  if (!uic_mqtt_dotdot_unify_schedule_entry_lock_generated_year_day_report_callback.empty()) {
+    subscription_topic = base_topic + "UnifyScheduleEntryLock/GeneratedCommands/YearDayReport";
+    uic_mqtt_subscribe(subscription_topic.c_str(), uic_mqtt_dotdot_on_generated_unify_schedule_entry_lock_year_day_report);
+  }
+  if (!uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_set_callback.empty()) {
+    subscription_topic = base_topic + "UnifyScheduleEntryLock/Commands/WeekDaySet";
+    uic_mqtt_subscribe(subscription_topic.c_str(), uic_mqtt_dotdot_on_unify_schedule_entry_lock_week_day_set);
+  }
+  if (!uic_mqtt_dotdot_unify_schedule_entry_lock_generated_week_day_set_callback.empty()) {
+    subscription_topic = base_topic + "UnifyScheduleEntryLock/GeneratedCommands/WeekDaySet";
+    uic_mqtt_subscribe(subscription_topic.c_str(), uic_mqtt_dotdot_on_generated_unify_schedule_entry_lock_week_day_set);
+  }
+  if (!uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_report_callback.empty()) {
+    subscription_topic = base_topic + "UnifyScheduleEntryLock/Commands/DailyRepeatingReport";
+    uic_mqtt_subscribe(subscription_topic.c_str(), uic_mqtt_dotdot_on_unify_schedule_entry_lock_daily_repeating_report);
+  }
+  if (!uic_mqtt_dotdot_unify_schedule_entry_lock_generated_daily_repeating_report_callback.empty()) {
+    subscription_topic = base_topic + "UnifyScheduleEntryLock/GeneratedCommands/DailyRepeatingReport";
+    uic_mqtt_subscribe(subscription_topic.c_str(), uic_mqtt_dotdot_on_generated_unify_schedule_entry_lock_daily_repeating_report);
+  }
+  if (!uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_get_callback.empty()) {
+    subscription_topic = base_topic + "UnifyScheduleEntryLock/Commands/WeekDayGet";
+    uic_mqtt_subscribe(subscription_topic.c_str(), uic_mqtt_dotdot_on_unify_schedule_entry_lock_week_day_get);
+  }
+  if (!uic_mqtt_dotdot_unify_schedule_entry_lock_generated_week_day_get_callback.empty()) {
+    subscription_topic = base_topic + "UnifyScheduleEntryLock/GeneratedCommands/WeekDayGet";
+    uic_mqtt_subscribe(subscription_topic.c_str(), uic_mqtt_dotdot_on_generated_unify_schedule_entry_lock_week_day_get);
+  }
+  if (!uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_set_callback.empty()) {
+    subscription_topic = base_topic + "UnifyScheduleEntryLock/Commands/YearDaySet";
+    uic_mqtt_subscribe(subscription_topic.c_str(), uic_mqtt_dotdot_on_unify_schedule_entry_lock_year_day_set);
+  }
+  if (!uic_mqtt_dotdot_unify_schedule_entry_lock_generated_year_day_set_callback.empty()) {
+    subscription_topic = base_topic + "UnifyScheduleEntryLock/GeneratedCommands/YearDaySet";
+    uic_mqtt_subscribe(subscription_topic.c_str(), uic_mqtt_dotdot_on_generated_unify_schedule_entry_lock_year_day_set);
+  }
+  if (!uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_get_callback.empty()) {
+    subscription_topic = base_topic + "UnifyScheduleEntryLock/Commands/YearDayGet";
+    uic_mqtt_subscribe(subscription_topic.c_str(), uic_mqtt_dotdot_on_unify_schedule_entry_lock_year_day_get);
+  }
+  if (!uic_mqtt_dotdot_unify_schedule_entry_lock_generated_year_day_get_callback.empty()) {
+    subscription_topic = base_topic + "UnifyScheduleEntryLock/GeneratedCommands/YearDayGet";
+    uic_mqtt_subscribe(subscription_topic.c_str(), uic_mqtt_dotdot_on_generated_unify_schedule_entry_lock_year_day_get);
+  }
+  if (!uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_set_callback.empty()) {
+    subscription_topic = base_topic + "UnifyScheduleEntryLock/Commands/DailyRepeatingSet";
+    uic_mqtt_subscribe(subscription_topic.c_str(), uic_mqtt_dotdot_on_unify_schedule_entry_lock_daily_repeating_set);
+  }
+  if (!uic_mqtt_dotdot_unify_schedule_entry_lock_generated_daily_repeating_set_callback.empty()) {
+    subscription_topic = base_topic + "UnifyScheduleEntryLock/GeneratedCommands/DailyRepeatingSet";
+    uic_mqtt_subscribe(subscription_topic.c_str(), uic_mqtt_dotdot_on_generated_unify_schedule_entry_lock_daily_repeating_set);
+  }
+  if (!uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_get_callback.empty()) {
+    subscription_topic = base_topic + "UnifyScheduleEntryLock/Commands/DailyRepeatingGet";
+    uic_mqtt_subscribe(subscription_topic.c_str(), uic_mqtt_dotdot_on_unify_schedule_entry_lock_daily_repeating_get);
+  }
+  if (!uic_mqtt_dotdot_unify_schedule_entry_lock_generated_daily_repeating_get_callback.empty()) {
+    subscription_topic = base_topic + "UnifyScheduleEntryLock/GeneratedCommands/DailyRepeatingGet";
+    uic_mqtt_subscribe(subscription_topic.c_str(), uic_mqtt_dotdot_on_generated_unify_schedule_entry_lock_daily_repeating_get);
   }
 
   // Init the attributes for that cluster
@@ -111334,7 +112910,29 @@ void uic_mqtt_dotdot_unify_schedule_entry_lock_unretain_cluster_revision(const c
   // clang-format off
 }
 
-static inline bool uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_week_day_report_is_supported(
+static inline bool uic_mqtt_dotdot_unify_schedule_entry_lock_enable_set_is_supported(
+  const dotdot_unid_t unid,
+  dotdot_endpoint_id_t endpoint_id)
+{
+    uint8_t user_identifier_value;
+    memset(&user_identifier_value, 0x00, sizeof(user_identifier_value));
+    uint8_t enabled_value;
+    memset(&enabled_value, 0x00, sizeof(enabled_value));
+    for (const auto& callback: uic_mqtt_dotdot_unify_schedule_entry_lock_enable_set_callback) {
+      if (callback( unid, endpoint_id, UIC_MQTT_DOTDOT_CALLBACK_TYPE_SUPPORT_CHECK
+    ,
+        user_identifier_value,
+    
+        enabled_value
+    
+        ) == SL_STATUS_OK) {
+      return true;
+    }
+  }
+
+  return false;
+}
+static inline bool uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_report_is_supported(
   const dotdot_unid_t unid,
   dotdot_endpoint_id_t endpoint_id)
 {
@@ -111352,7 +112950,7 @@ static inline bool uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock
     memset(&stop_hour_value, 0x00, sizeof(stop_hour_value));
     uint8_t stop_minute_value;
     memset(&stop_minute_value, 0x00, sizeof(stop_minute_value));
-    for (const auto& callback: uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_week_day_report_callback) {
+    for (const auto& callback: uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_report_callback) {
       if (callback( unid, endpoint_id, UIC_MQTT_DOTDOT_CALLBACK_TYPE_SUPPORT_CHECK
     ,
         user_identifier_value,
@@ -111376,12 +112974,28 @@ static inline bool uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock
 
   return false;
 }
-static inline bool uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_year_day_report_is_supported(
+static inline bool uic_mqtt_dotdot_unify_schedule_entry_lock_enable_all_set_is_supported(
   const dotdot_unid_t unid,
   dotdot_endpoint_id_t endpoint_id)
 {
-    uint8_t set_action_value;
-    memset(&set_action_value, 0x00, sizeof(set_action_value));
+    uint8_t enabled_value;
+    memset(&enabled_value, 0x00, sizeof(enabled_value));
+    for (const auto& callback: uic_mqtt_dotdot_unify_schedule_entry_lock_enable_all_set_callback) {
+      if (callback( unid, endpoint_id, UIC_MQTT_DOTDOT_CALLBACK_TYPE_SUPPORT_CHECK
+    ,
+        enabled_value
+    
+        ) == SL_STATUS_OK) {
+      return true;
+    }
+  }
+
+  return false;
+}
+static inline bool uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_report_is_supported(
+  const dotdot_unid_t unid,
+  dotdot_endpoint_id_t endpoint_id)
+{
     uint8_t user_identifier_value;
     memset(&user_identifier_value, 0x00, sizeof(user_identifier_value));
     uint8_t schedule_slotid_value;
@@ -111406,11 +113020,9 @@ static inline bool uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock
     memset(&stop_hour_value, 0x00, sizeof(stop_hour_value));
     uint8_t stop_minute_value;
     memset(&stop_minute_value, 0x00, sizeof(stop_minute_value));
-    for (const auto& callback: uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_year_day_report_callback) {
+    for (const auto& callback: uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_report_callback) {
       if (callback( unid, endpoint_id, UIC_MQTT_DOTDOT_CALLBACK_TYPE_SUPPORT_CHECK
     ,
-        set_action_value,
-    
         user_identifier_value,
     
         schedule_slotid_value,
@@ -111442,7 +113054,205 @@ static inline bool uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock
 
   return false;
 }
-static inline bool uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_daily_repeating_report_is_supported(
+static inline bool uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_set_is_supported(
+  const dotdot_unid_t unid,
+  dotdot_endpoint_id_t endpoint_id)
+{
+    uint8_t set_action_value;
+    memset(&set_action_value, 0x00, sizeof(set_action_value));
+    uint8_t user_identifier_value;
+    memset(&user_identifier_value, 0x00, sizeof(user_identifier_value));
+    uint8_t schedule_slotid_value;
+    memset(&schedule_slotid_value, 0x00, sizeof(schedule_slotid_value));
+    uint8_t day_of_week_value;
+    memset(&day_of_week_value, 0x00, sizeof(day_of_week_value));
+    uint8_t start_hour_value;
+    memset(&start_hour_value, 0x00, sizeof(start_hour_value));
+    uint8_t start_minute_value;
+    memset(&start_minute_value, 0x00, sizeof(start_minute_value));
+    uint8_t stop_hour_value;
+    memset(&stop_hour_value, 0x00, sizeof(stop_hour_value));
+    uint8_t stop_minute_value;
+    memset(&stop_minute_value, 0x00, sizeof(stop_minute_value));
+    for (const auto& callback: uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_set_callback) {
+      if (callback( unid, endpoint_id, UIC_MQTT_DOTDOT_CALLBACK_TYPE_SUPPORT_CHECK
+    ,
+        set_action_value,
+    
+        user_identifier_value,
+    
+        schedule_slotid_value,
+    
+        day_of_week_value,
+    
+        start_hour_value,
+    
+        start_minute_value,
+    
+        stop_hour_value,
+    
+        stop_minute_value
+    
+        ) == SL_STATUS_OK) {
+      return true;
+    }
+  }
+
+  return false;
+}
+static inline bool uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_report_is_supported(
+  const dotdot_unid_t unid,
+  dotdot_endpoint_id_t endpoint_id)
+{
+    uint8_t user_identifier_value;
+    memset(&user_identifier_value, 0x00, sizeof(user_identifier_value));
+    uint8_t schedule_slotid_value;
+    memset(&schedule_slotid_value, 0x00, sizeof(schedule_slotid_value));
+    uint8_t week_day_bitmask_value;
+    memset(&week_day_bitmask_value, 0x00, sizeof(week_day_bitmask_value));
+    uint8_t start_hour_value;
+    memset(&start_hour_value, 0x00, sizeof(start_hour_value));
+    uint8_t start_minute_value;
+    memset(&start_minute_value, 0x00, sizeof(start_minute_value));
+    uint8_t duration_hour_value;
+    memset(&duration_hour_value, 0x00, sizeof(duration_hour_value));
+    uint8_t duration_minute_value;
+    memset(&duration_minute_value, 0x00, sizeof(duration_minute_value));
+    for (const auto& callback: uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_report_callback) {
+      if (callback( unid, endpoint_id, UIC_MQTT_DOTDOT_CALLBACK_TYPE_SUPPORT_CHECK
+    ,
+        user_identifier_value,
+    
+        schedule_slotid_value,
+    
+        week_day_bitmask_value,
+    
+        start_hour_value,
+    
+        start_minute_value,
+    
+        duration_hour_value,
+    
+        duration_minute_value
+    
+        ) == SL_STATUS_OK) {
+      return true;
+    }
+  }
+
+  return false;
+}
+static inline bool uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_get_is_supported(
+  const dotdot_unid_t unid,
+  dotdot_endpoint_id_t endpoint_id)
+{
+    uint8_t user_identifier_value;
+    memset(&user_identifier_value, 0x00, sizeof(user_identifier_value));
+    uint8_t schedule_slotid_value;
+    memset(&schedule_slotid_value, 0x00, sizeof(schedule_slotid_value));
+    for (const auto& callback: uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_get_callback) {
+      if (callback( unid, endpoint_id, UIC_MQTT_DOTDOT_CALLBACK_TYPE_SUPPORT_CHECK
+    ,
+        user_identifier_value,
+    
+        schedule_slotid_value
+    
+        ) == SL_STATUS_OK) {
+      return true;
+    }
+  }
+
+  return false;
+}
+static inline bool uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_set_is_supported(
+  const dotdot_unid_t unid,
+  dotdot_endpoint_id_t endpoint_id)
+{
+    uint8_t set_action_value;
+    memset(&set_action_value, 0x00, sizeof(set_action_value));
+    uint8_t user_identifier_value;
+    memset(&user_identifier_value, 0x00, sizeof(user_identifier_value));
+    uint8_t schedule_slotid_value;
+    memset(&schedule_slotid_value, 0x00, sizeof(schedule_slotid_value));
+    uint8_t start_year_value;
+    memset(&start_year_value, 0x00, sizeof(start_year_value));
+    uint8_t start_day_value;
+    memset(&start_day_value, 0x00, sizeof(start_day_value));
+    uint8_t start_hour_value;
+    memset(&start_hour_value, 0x00, sizeof(start_hour_value));
+    uint8_t start_month_value;
+    memset(&start_month_value, 0x00, sizeof(start_month_value));
+    uint8_t start_minute_value;
+    memset(&start_minute_value, 0x00, sizeof(start_minute_value));
+    uint8_t stop_year_value;
+    memset(&stop_year_value, 0x00, sizeof(stop_year_value));
+    uint8_t stop_month_value;
+    memset(&stop_month_value, 0x00, sizeof(stop_month_value));
+    uint8_t stop_day_value;
+    memset(&stop_day_value, 0x00, sizeof(stop_day_value));
+    uint8_t stop_hour_value;
+    memset(&stop_hour_value, 0x00, sizeof(stop_hour_value));
+    uint8_t stop_minute_value;
+    memset(&stop_minute_value, 0x00, sizeof(stop_minute_value));
+    for (const auto& callback: uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_set_callback) {
+      if (callback( unid, endpoint_id, UIC_MQTT_DOTDOT_CALLBACK_TYPE_SUPPORT_CHECK
+    ,
+        set_action_value,
+    
+        user_identifier_value,
+    
+        schedule_slotid_value,
+    
+        start_year_value,
+    
+        start_day_value,
+    
+        start_hour_value,
+    
+        start_month_value,
+    
+        start_minute_value,
+    
+        stop_year_value,
+    
+        stop_month_value,
+    
+        stop_day_value,
+    
+        stop_hour_value,
+    
+        stop_minute_value
+    
+        ) == SL_STATUS_OK) {
+      return true;
+    }
+  }
+
+  return false;
+}
+static inline bool uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_get_is_supported(
+  const dotdot_unid_t unid,
+  dotdot_endpoint_id_t endpoint_id)
+{
+    uint8_t user_identifier_value;
+    memset(&user_identifier_value, 0x00, sizeof(user_identifier_value));
+    uint8_t schedule_slotid_value;
+    memset(&schedule_slotid_value, 0x00, sizeof(schedule_slotid_value));
+    for (const auto& callback: uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_get_callback) {
+      if (callback( unid, endpoint_id, UIC_MQTT_DOTDOT_CALLBACK_TYPE_SUPPORT_CHECK
+    ,
+        user_identifier_value,
+    
+        schedule_slotid_value
+    
+        ) == SL_STATUS_OK) {
+      return true;
+    }
+  }
+
+  return false;
+}
+static inline bool uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_set_is_supported(
   const dotdot_unid_t unid,
   dotdot_endpoint_id_t endpoint_id)
 {
@@ -111462,7 +113272,7 @@ static inline bool uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock
     memset(&duration_hour_value, 0x00, sizeof(duration_hour_value));
     uint8_t duration_minute_value;
     memset(&duration_minute_value, 0x00, sizeof(duration_minute_value));
-    for (const auto& callback: uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_daily_repeating_report_callback) {
+    for (const auto& callback: uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_set_callback) {
       if (callback( unid, endpoint_id, UIC_MQTT_DOTDOT_CALLBACK_TYPE_SUPPORT_CHECK
     ,
         set_action_value,
@@ -111480,6 +113290,28 @@ static inline bool uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock
         duration_hour_value,
     
         duration_minute_value
+    
+        ) == SL_STATUS_OK) {
+      return true;
+    }
+  }
+
+  return false;
+}
+static inline bool uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_get_is_supported(
+  const dotdot_unid_t unid,
+  dotdot_endpoint_id_t endpoint_id)
+{
+    uint8_t user_identifier_value;
+    memset(&user_identifier_value, 0x00, sizeof(user_identifier_value));
+    uint8_t schedule_slotid_value;
+    memset(&schedule_slotid_value, 0x00, sizeof(schedule_slotid_value));
+    for (const auto& callback: uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_get_callback) {
+      if (callback( unid, endpoint_id, UIC_MQTT_DOTDOT_CALLBACK_TYPE_SUPPORT_CHECK
+    ,
+        user_identifier_value,
+    
+        schedule_slotid_value
     
         ) == SL_STATUS_OK) {
       return true;
@@ -111538,26 +113370,82 @@ void uic_mqtt_dotdot_unify_schedule_entry_lock_publish_supported_commands(
   ss.str("");
 
   // check if there is callback for each command
-  if (uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_week_day_report_is_supported(unid, endpoint_id)) {
+  if (uic_mqtt_dotdot_unify_schedule_entry_lock_enable_set_is_supported(unid, endpoint_id)) {
     if (first_command == false) {
       ss << ", ";
     }
     first_command = false;
-    ss << R"("ScheduleEntryLockWeekDayReport")";
+    ss << R"("EnableSet")";
   }
-  if (uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_year_day_report_is_supported(unid, endpoint_id)) {
+  if (uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_report_is_supported(unid, endpoint_id)) {
     if (first_command == false) {
       ss << ", ";
     }
     first_command = false;
-    ss << R"("ScheduleEntryLockYearDayReport")";
+    ss << R"("WeekDayReport")";
   }
-  if (uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_daily_repeating_report_is_supported(unid, endpoint_id)) {
+  if (uic_mqtt_dotdot_unify_schedule_entry_lock_enable_all_set_is_supported(unid, endpoint_id)) {
     if (first_command == false) {
       ss << ", ";
     }
     first_command = false;
-    ss << R"("ScheduleEntryLockDailyRepeatingReport")";
+    ss << R"("EnableAllSet")";
+  }
+  if (uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_report_is_supported(unid, endpoint_id)) {
+    if (first_command == false) {
+      ss << ", ";
+    }
+    first_command = false;
+    ss << R"("YearDayReport")";
+  }
+  if (uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_set_is_supported(unid, endpoint_id)) {
+    if (first_command == false) {
+      ss << ", ";
+    }
+    first_command = false;
+    ss << R"("WeekDaySet")";
+  }
+  if (uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_report_is_supported(unid, endpoint_id)) {
+    if (first_command == false) {
+      ss << ", ";
+    }
+    first_command = false;
+    ss << R"("DailyRepeatingReport")";
+  }
+  if (uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_get_is_supported(unid, endpoint_id)) {
+    if (first_command == false) {
+      ss << ", ";
+    }
+    first_command = false;
+    ss << R"("WeekDayGet")";
+  }
+  if (uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_set_is_supported(unid, endpoint_id)) {
+    if (first_command == false) {
+      ss << ", ";
+    }
+    first_command = false;
+    ss << R"("YearDaySet")";
+  }
+  if (uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_get_is_supported(unid, endpoint_id)) {
+    if (first_command == false) {
+      ss << ", ";
+    }
+    first_command = false;
+    ss << R"("YearDayGet")";
+  }
+  if (uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_set_is_supported(unid, endpoint_id)) {
+    if (first_command == false) {
+      ss << ", ";
+    }
+    first_command = false;
+    ss << R"("DailyRepeatingSet")";
+  }
+  if (uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_get_is_supported(unid, endpoint_id)) {
+    if (first_command == false) {
+      ss << ", ";
+    }
+    first_command = false;
+    ss << R"("DailyRepeatingGet")";
   }
 
   // Check for a WriteAttributes Callback
@@ -118468,11 +120356,11 @@ void uic_mqtt_dotdot_unify_fan_control_publish_generated_turn_off_command(
                     false);
 }
 /**
- * @brief Publishes an incoming/generated ScheduleEntryLockWeekDayReport command for
+ * @brief Publishes an incoming/generated EnableSet command for
  * the UnifyScheduleEntryLock cluster.
  *
  * Publication will be made at the following topic
- * ucl/by-unid/UNID/epID/UnifyScheduleEntryLock/GeneratedCommands/ScheduleEntryLockWeekDayReport
+ * ucl/by-unid/UNID/epID/UnifyScheduleEntryLock/GeneratedCommands/EnableSet
  *
  * @param unid      The UNID of the node that sent us the command.
  * 
@@ -118482,19 +120370,19 @@ void uic_mqtt_dotdot_unify_fan_control_publish_generated_turn_off_command(
  * @param fields                Struct pointer with the fields value of the command
  * 
  */
-void uic_mqtt_dotdot_unify_schedule_entry_lock_publish_generated_schedule_entry_lock_week_day_report_command(
+void uic_mqtt_dotdot_unify_schedule_entry_lock_publish_generated_enable_set_command(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint,
-  const uic_mqtt_dotdot_unify_schedule_entry_lock_command_schedule_entry_lock_week_day_report_fields_t *fields
+  const uic_mqtt_dotdot_unify_schedule_entry_lock_command_enable_set_fields_t *fields
   
 ) {
   // Create the topic
   std::string topic = "ucl/by-unid/"+ std::string(unid) + "/ep" +
                       std::to_string(endpoint) + "/";
-  topic += "UnifyScheduleEntryLock/GeneratedCommands/ScheduleEntryLockWeekDayReport";
+  topic += "UnifyScheduleEntryLock/GeneratedCommands/EnableSet";
 
   std::string payload =
-    get_json_payload_for_unify_schedule_entry_lock_schedule_entry_lock_week_day_report_command(
+    get_json_payload_for_unify_schedule_entry_lock_enable_set_command(
     fields);
 
   // Publish our command
@@ -118504,11 +120392,11 @@ void uic_mqtt_dotdot_unify_schedule_entry_lock_publish_generated_schedule_entry_
                     false);
 }
 /**
- * @brief Publishes an incoming/generated ScheduleEntryLockYearDayReport command for
+ * @brief Publishes an incoming/generated WeekDayReport command for
  * the UnifyScheduleEntryLock cluster.
  *
  * Publication will be made at the following topic
- * ucl/by-unid/UNID/epID/UnifyScheduleEntryLock/GeneratedCommands/ScheduleEntryLockYearDayReport
+ * ucl/by-unid/UNID/epID/UnifyScheduleEntryLock/GeneratedCommands/WeekDayReport
  *
  * @param unid      The UNID of the node that sent us the command.
  * 
@@ -118518,19 +120406,19 @@ void uic_mqtt_dotdot_unify_schedule_entry_lock_publish_generated_schedule_entry_
  * @param fields                Struct pointer with the fields value of the command
  * 
  */
-void uic_mqtt_dotdot_unify_schedule_entry_lock_publish_generated_schedule_entry_lock_year_day_report_command(
+void uic_mqtt_dotdot_unify_schedule_entry_lock_publish_generated_week_day_report_command(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint,
-  const uic_mqtt_dotdot_unify_schedule_entry_lock_command_schedule_entry_lock_year_day_report_fields_t *fields
+  const uic_mqtt_dotdot_unify_schedule_entry_lock_command_week_day_report_fields_t *fields
   
 ) {
   // Create the topic
   std::string topic = "ucl/by-unid/"+ std::string(unid) + "/ep" +
                       std::to_string(endpoint) + "/";
-  topic += "UnifyScheduleEntryLock/GeneratedCommands/ScheduleEntryLockYearDayReport";
+  topic += "UnifyScheduleEntryLock/GeneratedCommands/WeekDayReport";
 
   std::string payload =
-    get_json_payload_for_unify_schedule_entry_lock_schedule_entry_lock_year_day_report_command(
+    get_json_payload_for_unify_schedule_entry_lock_week_day_report_command(
     fields);
 
   // Publish our command
@@ -118540,11 +120428,11 @@ void uic_mqtt_dotdot_unify_schedule_entry_lock_publish_generated_schedule_entry_
                     false);
 }
 /**
- * @brief Publishes an incoming/generated ScheduleEntryLockDailyRepeatingReport command for
+ * @brief Publishes an incoming/generated EnableAllSet command for
  * the UnifyScheduleEntryLock cluster.
  *
  * Publication will be made at the following topic
- * ucl/by-unid/UNID/epID/UnifyScheduleEntryLock/GeneratedCommands/ScheduleEntryLockDailyRepeatingReport
+ * ucl/by-unid/UNID/epID/UnifyScheduleEntryLock/GeneratedCommands/EnableAllSet
  *
  * @param unid      The UNID of the node that sent us the command.
  * 
@@ -118554,19 +120442,307 @@ void uic_mqtt_dotdot_unify_schedule_entry_lock_publish_generated_schedule_entry_
  * @param fields                Struct pointer with the fields value of the command
  * 
  */
-void uic_mqtt_dotdot_unify_schedule_entry_lock_publish_generated_schedule_entry_lock_daily_repeating_report_command(
+void uic_mqtt_dotdot_unify_schedule_entry_lock_publish_generated_enable_all_set_command(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint,
-  const uic_mqtt_dotdot_unify_schedule_entry_lock_command_schedule_entry_lock_daily_repeating_report_fields_t *fields
+  const uic_mqtt_dotdot_unify_schedule_entry_lock_command_enable_all_set_fields_t *fields
   
 ) {
   // Create the topic
   std::string topic = "ucl/by-unid/"+ std::string(unid) + "/ep" +
                       std::to_string(endpoint) + "/";
-  topic += "UnifyScheduleEntryLock/GeneratedCommands/ScheduleEntryLockDailyRepeatingReport";
+  topic += "UnifyScheduleEntryLock/GeneratedCommands/EnableAllSet";
 
   std::string payload =
-    get_json_payload_for_unify_schedule_entry_lock_schedule_entry_lock_daily_repeating_report_command(
+    get_json_payload_for_unify_schedule_entry_lock_enable_all_set_command(
+    fields);
+
+  // Publish our command
+  uic_mqtt_publish(topic.c_str(),
+                    payload.c_str(),
+                    payload.size(),
+                    false);
+}
+/**
+ * @brief Publishes an incoming/generated YearDayReport command for
+ * the UnifyScheduleEntryLock cluster.
+ *
+ * Publication will be made at the following topic
+ * ucl/by-unid/UNID/epID/UnifyScheduleEntryLock/GeneratedCommands/YearDayReport
+ *
+ * @param unid      The UNID of the node that sent us the command.
+ * 
+ * @param endpoint  The Endpoint ID of the node that sent us the command.
+ * 
+ * 
+ * @param fields                Struct pointer with the fields value of the command
+ * 
+ */
+void uic_mqtt_dotdot_unify_schedule_entry_lock_publish_generated_year_day_report_command(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint,
+  const uic_mqtt_dotdot_unify_schedule_entry_lock_command_year_day_report_fields_t *fields
+  
+) {
+  // Create the topic
+  std::string topic = "ucl/by-unid/"+ std::string(unid) + "/ep" +
+                      std::to_string(endpoint) + "/";
+  topic += "UnifyScheduleEntryLock/GeneratedCommands/YearDayReport";
+
+  std::string payload =
+    get_json_payload_for_unify_schedule_entry_lock_year_day_report_command(
+    fields);
+
+  // Publish our command
+  uic_mqtt_publish(topic.c_str(),
+                    payload.c_str(),
+                    payload.size(),
+                    false);
+}
+/**
+ * @brief Publishes an incoming/generated WeekDaySet command for
+ * the UnifyScheduleEntryLock cluster.
+ *
+ * Publication will be made at the following topic
+ * ucl/by-unid/UNID/epID/UnifyScheduleEntryLock/GeneratedCommands/WeekDaySet
+ *
+ * @param unid      The UNID of the node that sent us the command.
+ * 
+ * @param endpoint  The Endpoint ID of the node that sent us the command.
+ * 
+ * 
+ * @param fields                Struct pointer with the fields value of the command
+ * 
+ */
+void uic_mqtt_dotdot_unify_schedule_entry_lock_publish_generated_week_day_set_command(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint,
+  const uic_mqtt_dotdot_unify_schedule_entry_lock_command_week_day_set_fields_t *fields
+  
+) {
+  // Create the topic
+  std::string topic = "ucl/by-unid/"+ std::string(unid) + "/ep" +
+                      std::to_string(endpoint) + "/";
+  topic += "UnifyScheduleEntryLock/GeneratedCommands/WeekDaySet";
+
+  std::string payload =
+    get_json_payload_for_unify_schedule_entry_lock_week_day_set_command(
+    fields);
+
+  // Publish our command
+  uic_mqtt_publish(topic.c_str(),
+                    payload.c_str(),
+                    payload.size(),
+                    false);
+}
+/**
+ * @brief Publishes an incoming/generated DailyRepeatingReport command for
+ * the UnifyScheduleEntryLock cluster.
+ *
+ * Publication will be made at the following topic
+ * ucl/by-unid/UNID/epID/UnifyScheduleEntryLock/GeneratedCommands/DailyRepeatingReport
+ *
+ * @param unid      The UNID of the node that sent us the command.
+ * 
+ * @param endpoint  The Endpoint ID of the node that sent us the command.
+ * 
+ * 
+ * @param fields                Struct pointer with the fields value of the command
+ * 
+ */
+void uic_mqtt_dotdot_unify_schedule_entry_lock_publish_generated_daily_repeating_report_command(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint,
+  const uic_mqtt_dotdot_unify_schedule_entry_lock_command_daily_repeating_report_fields_t *fields
+  
+) {
+  // Create the topic
+  std::string topic = "ucl/by-unid/"+ std::string(unid) + "/ep" +
+                      std::to_string(endpoint) + "/";
+  topic += "UnifyScheduleEntryLock/GeneratedCommands/DailyRepeatingReport";
+
+  std::string payload =
+    get_json_payload_for_unify_schedule_entry_lock_daily_repeating_report_command(
+    fields);
+
+  // Publish our command
+  uic_mqtt_publish(topic.c_str(),
+                    payload.c_str(),
+                    payload.size(),
+                    false);
+}
+/**
+ * @brief Publishes an incoming/generated WeekDayGet command for
+ * the UnifyScheduleEntryLock cluster.
+ *
+ * Publication will be made at the following topic
+ * ucl/by-unid/UNID/epID/UnifyScheduleEntryLock/GeneratedCommands/WeekDayGet
+ *
+ * @param unid      The UNID of the node that sent us the command.
+ * 
+ * @param endpoint  The Endpoint ID of the node that sent us the command.
+ * 
+ * 
+ * @param fields                Struct pointer with the fields value of the command
+ * 
+ */
+void uic_mqtt_dotdot_unify_schedule_entry_lock_publish_generated_week_day_get_command(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint,
+  const uic_mqtt_dotdot_unify_schedule_entry_lock_command_week_day_get_fields_t *fields
+  
+) {
+  // Create the topic
+  std::string topic = "ucl/by-unid/"+ std::string(unid) + "/ep" +
+                      std::to_string(endpoint) + "/";
+  topic += "UnifyScheduleEntryLock/GeneratedCommands/WeekDayGet";
+
+  std::string payload =
+    get_json_payload_for_unify_schedule_entry_lock_week_day_get_command(
+    fields);
+
+  // Publish our command
+  uic_mqtt_publish(topic.c_str(),
+                    payload.c_str(),
+                    payload.size(),
+                    false);
+}
+/**
+ * @brief Publishes an incoming/generated YearDaySet command for
+ * the UnifyScheduleEntryLock cluster.
+ *
+ * Publication will be made at the following topic
+ * ucl/by-unid/UNID/epID/UnifyScheduleEntryLock/GeneratedCommands/YearDaySet
+ *
+ * @param unid      The UNID of the node that sent us the command.
+ * 
+ * @param endpoint  The Endpoint ID of the node that sent us the command.
+ * 
+ * 
+ * @param fields                Struct pointer with the fields value of the command
+ * 
+ */
+void uic_mqtt_dotdot_unify_schedule_entry_lock_publish_generated_year_day_set_command(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint,
+  const uic_mqtt_dotdot_unify_schedule_entry_lock_command_year_day_set_fields_t *fields
+  
+) {
+  // Create the topic
+  std::string topic = "ucl/by-unid/"+ std::string(unid) + "/ep" +
+                      std::to_string(endpoint) + "/";
+  topic += "UnifyScheduleEntryLock/GeneratedCommands/YearDaySet";
+
+  std::string payload =
+    get_json_payload_for_unify_schedule_entry_lock_year_day_set_command(
+    fields);
+
+  // Publish our command
+  uic_mqtt_publish(topic.c_str(),
+                    payload.c_str(),
+                    payload.size(),
+                    false);
+}
+/**
+ * @brief Publishes an incoming/generated YearDayGet command for
+ * the UnifyScheduleEntryLock cluster.
+ *
+ * Publication will be made at the following topic
+ * ucl/by-unid/UNID/epID/UnifyScheduleEntryLock/GeneratedCommands/YearDayGet
+ *
+ * @param unid      The UNID of the node that sent us the command.
+ * 
+ * @param endpoint  The Endpoint ID of the node that sent us the command.
+ * 
+ * 
+ * @param fields                Struct pointer with the fields value of the command
+ * 
+ */
+void uic_mqtt_dotdot_unify_schedule_entry_lock_publish_generated_year_day_get_command(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint,
+  const uic_mqtt_dotdot_unify_schedule_entry_lock_command_year_day_get_fields_t *fields
+  
+) {
+  // Create the topic
+  std::string topic = "ucl/by-unid/"+ std::string(unid) + "/ep" +
+                      std::to_string(endpoint) + "/";
+  topic += "UnifyScheduleEntryLock/GeneratedCommands/YearDayGet";
+
+  std::string payload =
+    get_json_payload_for_unify_schedule_entry_lock_year_day_get_command(
+    fields);
+
+  // Publish our command
+  uic_mqtt_publish(topic.c_str(),
+                    payload.c_str(),
+                    payload.size(),
+                    false);
+}
+/**
+ * @brief Publishes an incoming/generated DailyRepeatingSet command for
+ * the UnifyScheduleEntryLock cluster.
+ *
+ * Publication will be made at the following topic
+ * ucl/by-unid/UNID/epID/UnifyScheduleEntryLock/GeneratedCommands/DailyRepeatingSet
+ *
+ * @param unid      The UNID of the node that sent us the command.
+ * 
+ * @param endpoint  The Endpoint ID of the node that sent us the command.
+ * 
+ * 
+ * @param fields                Struct pointer with the fields value of the command
+ * 
+ */
+void uic_mqtt_dotdot_unify_schedule_entry_lock_publish_generated_daily_repeating_set_command(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint,
+  const uic_mqtt_dotdot_unify_schedule_entry_lock_command_daily_repeating_set_fields_t *fields
+  
+) {
+  // Create the topic
+  std::string topic = "ucl/by-unid/"+ std::string(unid) + "/ep" +
+                      std::to_string(endpoint) + "/";
+  topic += "UnifyScheduleEntryLock/GeneratedCommands/DailyRepeatingSet";
+
+  std::string payload =
+    get_json_payload_for_unify_schedule_entry_lock_daily_repeating_set_command(
+    fields);
+
+  // Publish our command
+  uic_mqtt_publish(topic.c_str(),
+                    payload.c_str(),
+                    payload.size(),
+                    false);
+}
+/**
+ * @brief Publishes an incoming/generated DailyRepeatingGet command for
+ * the UnifyScheduleEntryLock cluster.
+ *
+ * Publication will be made at the following topic
+ * ucl/by-unid/UNID/epID/UnifyScheduleEntryLock/GeneratedCommands/DailyRepeatingGet
+ *
+ * @param unid      The UNID of the node that sent us the command.
+ * 
+ * @param endpoint  The Endpoint ID of the node that sent us the command.
+ * 
+ * 
+ * @param fields                Struct pointer with the fields value of the command
+ * 
+ */
+void uic_mqtt_dotdot_unify_schedule_entry_lock_publish_generated_daily_repeating_get_command(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint,
+  const uic_mqtt_dotdot_unify_schedule_entry_lock_command_daily_repeating_get_fields_t *fields
+  
+) {
+  // Create the topic
+  std::string topic = "ucl/by-unid/"+ std::string(unid) + "/ep" +
+                      std::to_string(endpoint) + "/";
+  topic += "UnifyScheduleEntryLock/GeneratedCommands/DailyRepeatingGet";
+
+  std::string payload =
+    get_json_payload_for_unify_schedule_entry_lock_daily_repeating_get_command(
     fields);
 
   // Publish our command

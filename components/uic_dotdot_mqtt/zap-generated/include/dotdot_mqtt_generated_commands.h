@@ -4998,11 +4998,11 @@ void uic_mqtt_dotdot_unify_thermostat_publish_generated_write_attributes_command
 );
 
 /**
- * @brief Publishes an incoming/generated ScheduleEntryLockWeekDayReport command for
+ * @brief Publishes an incoming/generated EnableSet command for
  * the UnifyScheduleEntryLock cluster.
  *
  * Publication will be made at the following topic
- * ucl/by-unid/UNID/epID/UnifyScheduleEntryLock/GeneratedCommands/ScheduleEntryLockWeekDayReport
+ * ucl/by-unid/UNID/epID/UnifyScheduleEntryLock/GeneratedCommands/EnableSet
  *
  * @param unid      The UNID of the node that sent us the command.
  * 
@@ -5012,18 +5012,18 @@ void uic_mqtt_dotdot_unify_thermostat_publish_generated_write_attributes_command
  * @param fields                Struct pointer with the fields value of the command
  * 
  */
-void uic_mqtt_dotdot_unify_schedule_entry_lock_publish_generated_schedule_entry_lock_week_day_report_command(
+void uic_mqtt_dotdot_unify_schedule_entry_lock_publish_generated_enable_set_command(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint,
-  const uic_mqtt_dotdot_unify_schedule_entry_lock_command_schedule_entry_lock_week_day_report_fields_t *fields
+  const uic_mqtt_dotdot_unify_schedule_entry_lock_command_enable_set_fields_t *fields
   
 );
 /**
- * @brief Publishes an incoming/generated ScheduleEntryLockYearDayReport command for
+ * @brief Publishes an incoming/generated WeekDayReport command for
  * the UnifyScheduleEntryLock cluster.
  *
  * Publication will be made at the following topic
- * ucl/by-unid/UNID/epID/UnifyScheduleEntryLock/GeneratedCommands/ScheduleEntryLockYearDayReport
+ * ucl/by-unid/UNID/epID/UnifyScheduleEntryLock/GeneratedCommands/WeekDayReport
  *
  * @param unid      The UNID of the node that sent us the command.
  * 
@@ -5033,18 +5033,18 @@ void uic_mqtt_dotdot_unify_schedule_entry_lock_publish_generated_schedule_entry_
  * @param fields                Struct pointer with the fields value of the command
  * 
  */
-void uic_mqtt_dotdot_unify_schedule_entry_lock_publish_generated_schedule_entry_lock_year_day_report_command(
+void uic_mqtt_dotdot_unify_schedule_entry_lock_publish_generated_week_day_report_command(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint,
-  const uic_mqtt_dotdot_unify_schedule_entry_lock_command_schedule_entry_lock_year_day_report_fields_t *fields
+  const uic_mqtt_dotdot_unify_schedule_entry_lock_command_week_day_report_fields_t *fields
   
 );
 /**
- * @brief Publishes an incoming/generated ScheduleEntryLockDailyRepeatingReport command for
+ * @brief Publishes an incoming/generated EnableAllSet command for
  * the UnifyScheduleEntryLock cluster.
  *
  * Publication will be made at the following topic
- * ucl/by-unid/UNID/epID/UnifyScheduleEntryLock/GeneratedCommands/ScheduleEntryLockDailyRepeatingReport
+ * ucl/by-unid/UNID/epID/UnifyScheduleEntryLock/GeneratedCommands/EnableAllSet
  *
  * @param unid      The UNID of the node that sent us the command.
  * 
@@ -5054,10 +5054,178 @@ void uic_mqtt_dotdot_unify_schedule_entry_lock_publish_generated_schedule_entry_
  * @param fields                Struct pointer with the fields value of the command
  * 
  */
-void uic_mqtt_dotdot_unify_schedule_entry_lock_publish_generated_schedule_entry_lock_daily_repeating_report_command(
+void uic_mqtt_dotdot_unify_schedule_entry_lock_publish_generated_enable_all_set_command(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint,
-  const uic_mqtt_dotdot_unify_schedule_entry_lock_command_schedule_entry_lock_daily_repeating_report_fields_t *fields
+  const uic_mqtt_dotdot_unify_schedule_entry_lock_command_enable_all_set_fields_t *fields
+  
+);
+/**
+ * @brief Publishes an incoming/generated YearDayReport command for
+ * the UnifyScheduleEntryLock cluster.
+ *
+ * Publication will be made at the following topic
+ * ucl/by-unid/UNID/epID/UnifyScheduleEntryLock/GeneratedCommands/YearDayReport
+ *
+ * @param unid      The UNID of the node that sent us the command.
+ * 
+ * @param endpoint  The Endpoint ID of the node that sent us the command.
+ * 
+ * 
+ * @param fields                Struct pointer with the fields value of the command
+ * 
+ */
+void uic_mqtt_dotdot_unify_schedule_entry_lock_publish_generated_year_day_report_command(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint,
+  const uic_mqtt_dotdot_unify_schedule_entry_lock_command_year_day_report_fields_t *fields
+  
+);
+/**
+ * @brief Publishes an incoming/generated WeekDaySet command for
+ * the UnifyScheduleEntryLock cluster.
+ *
+ * Publication will be made at the following topic
+ * ucl/by-unid/UNID/epID/UnifyScheduleEntryLock/GeneratedCommands/WeekDaySet
+ *
+ * @param unid      The UNID of the node that sent us the command.
+ * 
+ * @param endpoint  The Endpoint ID of the node that sent us the command.
+ * 
+ * 
+ * @param fields                Struct pointer with the fields value of the command
+ * 
+ */
+void uic_mqtt_dotdot_unify_schedule_entry_lock_publish_generated_week_day_set_command(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint,
+  const uic_mqtt_dotdot_unify_schedule_entry_lock_command_week_day_set_fields_t *fields
+  
+);
+/**
+ * @brief Publishes an incoming/generated DailyRepeatingReport command for
+ * the UnifyScheduleEntryLock cluster.
+ *
+ * Publication will be made at the following topic
+ * ucl/by-unid/UNID/epID/UnifyScheduleEntryLock/GeneratedCommands/DailyRepeatingReport
+ *
+ * @param unid      The UNID of the node that sent us the command.
+ * 
+ * @param endpoint  The Endpoint ID of the node that sent us the command.
+ * 
+ * 
+ * @param fields                Struct pointer with the fields value of the command
+ * 
+ */
+void uic_mqtt_dotdot_unify_schedule_entry_lock_publish_generated_daily_repeating_report_command(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint,
+  const uic_mqtt_dotdot_unify_schedule_entry_lock_command_daily_repeating_report_fields_t *fields
+  
+);
+/**
+ * @brief Publishes an incoming/generated WeekDayGet command for
+ * the UnifyScheduleEntryLock cluster.
+ *
+ * Publication will be made at the following topic
+ * ucl/by-unid/UNID/epID/UnifyScheduleEntryLock/GeneratedCommands/WeekDayGet
+ *
+ * @param unid      The UNID of the node that sent us the command.
+ * 
+ * @param endpoint  The Endpoint ID of the node that sent us the command.
+ * 
+ * 
+ * @param fields                Struct pointer with the fields value of the command
+ * 
+ */
+void uic_mqtt_dotdot_unify_schedule_entry_lock_publish_generated_week_day_get_command(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint,
+  const uic_mqtt_dotdot_unify_schedule_entry_lock_command_week_day_get_fields_t *fields
+  
+);
+/**
+ * @brief Publishes an incoming/generated YearDaySet command for
+ * the UnifyScheduleEntryLock cluster.
+ *
+ * Publication will be made at the following topic
+ * ucl/by-unid/UNID/epID/UnifyScheduleEntryLock/GeneratedCommands/YearDaySet
+ *
+ * @param unid      The UNID of the node that sent us the command.
+ * 
+ * @param endpoint  The Endpoint ID of the node that sent us the command.
+ * 
+ * 
+ * @param fields                Struct pointer with the fields value of the command
+ * 
+ */
+void uic_mqtt_dotdot_unify_schedule_entry_lock_publish_generated_year_day_set_command(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint,
+  const uic_mqtt_dotdot_unify_schedule_entry_lock_command_year_day_set_fields_t *fields
+  
+);
+/**
+ * @brief Publishes an incoming/generated YearDayGet command for
+ * the UnifyScheduleEntryLock cluster.
+ *
+ * Publication will be made at the following topic
+ * ucl/by-unid/UNID/epID/UnifyScheduleEntryLock/GeneratedCommands/YearDayGet
+ *
+ * @param unid      The UNID of the node that sent us the command.
+ * 
+ * @param endpoint  The Endpoint ID of the node that sent us the command.
+ * 
+ * 
+ * @param fields                Struct pointer with the fields value of the command
+ * 
+ */
+void uic_mqtt_dotdot_unify_schedule_entry_lock_publish_generated_year_day_get_command(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint,
+  const uic_mqtt_dotdot_unify_schedule_entry_lock_command_year_day_get_fields_t *fields
+  
+);
+/**
+ * @brief Publishes an incoming/generated DailyRepeatingSet command for
+ * the UnifyScheduleEntryLock cluster.
+ *
+ * Publication will be made at the following topic
+ * ucl/by-unid/UNID/epID/UnifyScheduleEntryLock/GeneratedCommands/DailyRepeatingSet
+ *
+ * @param unid      The UNID of the node that sent us the command.
+ * 
+ * @param endpoint  The Endpoint ID of the node that sent us the command.
+ * 
+ * 
+ * @param fields                Struct pointer with the fields value of the command
+ * 
+ */
+void uic_mqtt_dotdot_unify_schedule_entry_lock_publish_generated_daily_repeating_set_command(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint,
+  const uic_mqtt_dotdot_unify_schedule_entry_lock_command_daily_repeating_set_fields_t *fields
+  
+);
+/**
+ * @brief Publishes an incoming/generated DailyRepeatingGet command for
+ * the UnifyScheduleEntryLock cluster.
+ *
+ * Publication will be made at the following topic
+ * ucl/by-unid/UNID/epID/UnifyScheduleEntryLock/GeneratedCommands/DailyRepeatingGet
+ *
+ * @param unid      The UNID of the node that sent us the command.
+ * 
+ * @param endpoint  The Endpoint ID of the node that sent us the command.
+ * 
+ * 
+ * @param fields                Struct pointer with the fields value of the command
+ * 
+ */
+void uic_mqtt_dotdot_unify_schedule_entry_lock_publish_generated_daily_repeating_get_command(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint,
+  const uic_mqtt_dotdot_unify_schedule_entry_lock_command_daily_repeating_get_fields_t *fields
   
 );
 

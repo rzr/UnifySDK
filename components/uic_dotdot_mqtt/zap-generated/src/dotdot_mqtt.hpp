@@ -5073,19 +5073,40 @@ void uic_mqtt_dotdot_on_unify_fan_control_WriteAttributes(
 // clang-format on
 
 /**
- * @brief Retrieves the container with callbacks pointer for
- * by-unid UnifyScheduleEntryLock/Commands/ScheduleEntryLockWeekDayReport messages
+ * @brief Retrieves the container with callback pointers for by-unid
+ * /Commands/WriteAttributes messages
  *
  * @returns std::set of callbacks.
  */
-std::set<uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_week_day_report_callback_t> &get_uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_week_day_report_callback();
+std::set<uic_mqtt_dotdot_unify_thermostat_write_attributes_callback_t> & get_uic_mqtt_dotdot_unify_thermostat_write_attributes_callback();
 
 /**
  * @brief MQTT Subscribe handler for incoming publications on:
- * ucl/by-unid/+/+/UnifyScheduleEntryLock/Commands/ScheduleEntryLockWeekDayReport
+ * ucl/by-unid/+/+/UnifyThermostat/Commands/WriteAttributes
  */
 // clang-format off
-void uic_mqtt_dotdot_on_unify_schedule_entry_lock_schedule_entry_lock_week_day_report(
+void uic_mqtt_dotdot_on_unify_thermostat_WriteAttributes(
+  const char *topic,
+  const char *message,
+  const size_t message_length);
+
+
+// clang-format on
+
+/**
+ * @brief Retrieves the container with callbacks pointer for
+ * by-unid UnifyScheduleEntryLock/Commands/EnableSet messages
+ *
+ * @returns std::set of callbacks.
+ */
+std::set<uic_mqtt_dotdot_unify_schedule_entry_lock_enable_set_callback_t> &get_uic_mqtt_dotdot_unify_schedule_entry_lock_enable_set_callback();
+
+/**
+ * @brief MQTT Subscribe handler for incoming publications on:
+ * ucl/by-unid/+/+/UnifyScheduleEntryLock/Commands/EnableSet
+ */
+// clang-format off
+void uic_mqtt_dotdot_on_unify_schedule_entry_lock_enable_set(
   const char *topic,
   const char *message,
   const size_t message_length);
@@ -5093,18 +5114,18 @@ void uic_mqtt_dotdot_on_unify_schedule_entry_lock_schedule_entry_lock_week_day_r
 
 /**
  * @brief Retrieves the container with callbacks pointer for
- * by-unid UnifyScheduleEntryLock/Commands/ScheduleEntryLockYearDayReport messages
+ * by-unid UnifyScheduleEntryLock/Commands/WeekDayReport messages
  *
  * @returns std::set of callbacks.
  */
-std::set<uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_year_day_report_callback_t> &get_uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_year_day_report_callback();
+std::set<uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_report_callback_t> &get_uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_report_callback();
 
 /**
  * @brief MQTT Subscribe handler for incoming publications on:
- * ucl/by-unid/+/+/UnifyScheduleEntryLock/Commands/ScheduleEntryLockYearDayReport
+ * ucl/by-unid/+/+/UnifyScheduleEntryLock/Commands/WeekDayReport
  */
 // clang-format off
-void uic_mqtt_dotdot_on_unify_schedule_entry_lock_schedule_entry_lock_year_day_report(
+void uic_mqtt_dotdot_on_unify_schedule_entry_lock_week_day_report(
   const char *topic,
   const char *message,
   const size_t message_length);
@@ -5112,18 +5133,170 @@ void uic_mqtt_dotdot_on_unify_schedule_entry_lock_schedule_entry_lock_year_day_r
 
 /**
  * @brief Retrieves the container with callbacks pointer for
- * by-unid UnifyScheduleEntryLock/Commands/ScheduleEntryLockDailyRepeatingReport messages
+ * by-unid UnifyScheduleEntryLock/Commands/EnableAllSet messages
  *
  * @returns std::set of callbacks.
  */
-std::set<uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_daily_repeating_report_callback_t> &get_uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_daily_repeating_report_callback();
+std::set<uic_mqtt_dotdot_unify_schedule_entry_lock_enable_all_set_callback_t> &get_uic_mqtt_dotdot_unify_schedule_entry_lock_enable_all_set_callback();
 
 /**
  * @brief MQTT Subscribe handler for incoming publications on:
- * ucl/by-unid/+/+/UnifyScheduleEntryLock/Commands/ScheduleEntryLockDailyRepeatingReport
+ * ucl/by-unid/+/+/UnifyScheduleEntryLock/Commands/EnableAllSet
  */
 // clang-format off
-void uic_mqtt_dotdot_on_unify_schedule_entry_lock_schedule_entry_lock_daily_repeating_report(
+void uic_mqtt_dotdot_on_unify_schedule_entry_lock_enable_all_set(
+  const char *topic,
+  const char *message,
+  const size_t message_length);
+// clang-format on
+
+/**
+ * @brief Retrieves the container with callbacks pointer for
+ * by-unid UnifyScheduleEntryLock/Commands/YearDayReport messages
+ *
+ * @returns std::set of callbacks.
+ */
+std::set<uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_report_callback_t> &get_uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_report_callback();
+
+/**
+ * @brief MQTT Subscribe handler for incoming publications on:
+ * ucl/by-unid/+/+/UnifyScheduleEntryLock/Commands/YearDayReport
+ */
+// clang-format off
+void uic_mqtt_dotdot_on_unify_schedule_entry_lock_year_day_report(
+  const char *topic,
+  const char *message,
+  const size_t message_length);
+// clang-format on
+
+/**
+ * @brief Retrieves the container with callbacks pointer for
+ * by-unid UnifyScheduleEntryLock/Commands/WeekDaySet messages
+ *
+ * @returns std::set of callbacks.
+ */
+std::set<uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_set_callback_t> &get_uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_set_callback();
+
+/**
+ * @brief MQTT Subscribe handler for incoming publications on:
+ * ucl/by-unid/+/+/UnifyScheduleEntryLock/Commands/WeekDaySet
+ */
+// clang-format off
+void uic_mqtt_dotdot_on_unify_schedule_entry_lock_week_day_set(
+  const char *topic,
+  const char *message,
+  const size_t message_length);
+// clang-format on
+
+/**
+ * @brief Retrieves the container with callbacks pointer for
+ * by-unid UnifyScheduleEntryLock/Commands/DailyRepeatingReport messages
+ *
+ * @returns std::set of callbacks.
+ */
+std::set<uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_report_callback_t> &get_uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_report_callback();
+
+/**
+ * @brief MQTT Subscribe handler for incoming publications on:
+ * ucl/by-unid/+/+/UnifyScheduleEntryLock/Commands/DailyRepeatingReport
+ */
+// clang-format off
+void uic_mqtt_dotdot_on_unify_schedule_entry_lock_daily_repeating_report(
+  const char *topic,
+  const char *message,
+  const size_t message_length);
+// clang-format on
+
+/**
+ * @brief Retrieves the container with callbacks pointer for
+ * by-unid UnifyScheduleEntryLock/Commands/WeekDayGet messages
+ *
+ * @returns std::set of callbacks.
+ */
+std::set<uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_get_callback_t> &get_uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_get_callback();
+
+/**
+ * @brief MQTT Subscribe handler for incoming publications on:
+ * ucl/by-unid/+/+/UnifyScheduleEntryLock/Commands/WeekDayGet
+ */
+// clang-format off
+void uic_mqtt_dotdot_on_unify_schedule_entry_lock_week_day_get(
+  const char *topic,
+  const char *message,
+  const size_t message_length);
+// clang-format on
+
+/**
+ * @brief Retrieves the container with callbacks pointer for
+ * by-unid UnifyScheduleEntryLock/Commands/YearDaySet messages
+ *
+ * @returns std::set of callbacks.
+ */
+std::set<uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_set_callback_t> &get_uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_set_callback();
+
+/**
+ * @brief MQTT Subscribe handler for incoming publications on:
+ * ucl/by-unid/+/+/UnifyScheduleEntryLock/Commands/YearDaySet
+ */
+// clang-format off
+void uic_mqtt_dotdot_on_unify_schedule_entry_lock_year_day_set(
+  const char *topic,
+  const char *message,
+  const size_t message_length);
+// clang-format on
+
+/**
+ * @brief Retrieves the container with callbacks pointer for
+ * by-unid UnifyScheduleEntryLock/Commands/YearDayGet messages
+ *
+ * @returns std::set of callbacks.
+ */
+std::set<uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_get_callback_t> &get_uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_get_callback();
+
+/**
+ * @brief MQTT Subscribe handler for incoming publications on:
+ * ucl/by-unid/+/+/UnifyScheduleEntryLock/Commands/YearDayGet
+ */
+// clang-format off
+void uic_mqtt_dotdot_on_unify_schedule_entry_lock_year_day_get(
+  const char *topic,
+  const char *message,
+  const size_t message_length);
+// clang-format on
+
+/**
+ * @brief Retrieves the container with callbacks pointer for
+ * by-unid UnifyScheduleEntryLock/Commands/DailyRepeatingSet messages
+ *
+ * @returns std::set of callbacks.
+ */
+std::set<uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_set_callback_t> &get_uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_set_callback();
+
+/**
+ * @brief MQTT Subscribe handler for incoming publications on:
+ * ucl/by-unid/+/+/UnifyScheduleEntryLock/Commands/DailyRepeatingSet
+ */
+// clang-format off
+void uic_mqtt_dotdot_on_unify_schedule_entry_lock_daily_repeating_set(
+  const char *topic,
+  const char *message,
+  const size_t message_length);
+// clang-format on
+
+/**
+ * @brief Retrieves the container with callbacks pointer for
+ * by-unid UnifyScheduleEntryLock/Commands/DailyRepeatingGet messages
+ *
+ * @returns std::set of callbacks.
+ */
+std::set<uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_get_callback_t> &get_uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_get_callback();
+
+/**
+ * @brief MQTT Subscribe handler for incoming publications on:
+ * ucl/by-unid/+/+/UnifyScheduleEntryLock/Commands/DailyRepeatingGet
+ */
+// clang-format off
+void uic_mqtt_dotdot_on_unify_schedule_entry_lock_daily_repeating_get(
   const char *topic,
   const char *message,
   const size_t message_length);
@@ -5143,27 +5316,6 @@ std::set<uic_mqtt_dotdot_unify_schedule_entry_lock_write_attributes_callback_t> 
  */
 // clang-format off
 void uic_mqtt_dotdot_on_unify_schedule_entry_lock_WriteAttributes(
-  const char *topic,
-  const char *message,
-  const size_t message_length);
-
-
-// clang-format on
-
-/**
- * @brief Retrieves the container with callback pointers for by-unid
- * /Commands/WriteAttributes messages
- *
- * @returns std::set of callbacks.
- */
-std::set<uic_mqtt_dotdot_unify_thermostat_write_attributes_callback_t> & get_uic_mqtt_dotdot_unify_thermostat_write_attributes_callback();
-
-/**
- * @brief MQTT Subscribe handler for incoming publications on:
- * ucl/by-unid/+/+/UnifyThermostat/Commands/WriteAttributes
- */
-// clang-format off
-void uic_mqtt_dotdot_on_unify_thermostat_WriteAttributes(
   const char *topic,
   const char *message,
   const size_t message_length);

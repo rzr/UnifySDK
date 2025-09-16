@@ -53573,6 +53573,1307 @@ mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/UnifyThermostat/Commands/ForceReadAttr
 <!-- NEW Page Cluster Support -->
 <!-- -->
 <!-- -->
+\page unify_schedule_entry_lock UnifyScheduleEntryLock Cluster
+The following commands and attributes are accepted as JSON payloads for the
+UnifyScheduleEntryLock cluster.
+
+<br><br>
+
+<!-- -->
+<!--  START OF UnifyScheduleEntryLock Attributes Section -->
+<!-- -->
+\section unify_schedule_entry_lock_attrs UnifyScheduleEntryLock Attributes
+The following attribute topics are used to retrieve the UnifyScheduleEntryLock cluster state.
+
+<br>
+
+\subsection unify_schedule_entry_lock_attr_slots_week_day UnifyScheduleEntryLock/SlotsWeekDay Attribute
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/UnifyScheduleEntryLock/Attributes/SlotsWeekDay/Reported
+[PREFIX]/UnifyScheduleEntryLock/Attributes/SlotsWeekDay/Desired
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UnifyScheduleEntryLock Cluster SlotsWeekDay Attribute Properties",
+  "type": "object",
+  "properties": {
+    "value": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "value"
+  ]
+}
+```
+
+
+**Example Mosquitto CLI Tool Usage**
+
+To see desired/reported value for SlotsWeekDay attribute under the by-unid topic space:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/+/+/UnifyScheduleEntryLock/Attributes/SlotsWeekDay/+'
+
+# Example output
+
+ucl/by-unid/<UNID>/ep0/UnifyScheduleEntryLock/Attributes/SlotsWeekDay/Desired { "value": <DESIRED_SLOTS_WEEK_DAY>}
+ucl/by-unid/<UNID>/ep0/UnifyScheduleEntryLock/Attributes/SlotsWeekDay/Reported { "value": <REPORTED_SLOTS_WEEK_DAY>}
+
+```
+
+<br><br>
+
+\subsection unify_schedule_entry_lock_attr_slots_year_day UnifyScheduleEntryLock/SlotsYearDay Attribute
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/UnifyScheduleEntryLock/Attributes/SlotsYearDay/Reported
+[PREFIX]/UnifyScheduleEntryLock/Attributes/SlotsYearDay/Desired
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UnifyScheduleEntryLock Cluster SlotsYearDay Attribute Properties",
+  "type": "object",
+  "properties": {
+    "value": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "value"
+  ]
+}
+```
+
+
+**Example Mosquitto CLI Tool Usage**
+
+To see desired/reported value for SlotsYearDay attribute under the by-unid topic space:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/+/+/UnifyScheduleEntryLock/Attributes/SlotsYearDay/+'
+
+# Example output
+
+ucl/by-unid/<UNID>/ep0/UnifyScheduleEntryLock/Attributes/SlotsYearDay/Desired { "value": <DESIRED_SLOTS_YEAR_DAY>}
+ucl/by-unid/<UNID>/ep0/UnifyScheduleEntryLock/Attributes/SlotsYearDay/Reported { "value": <REPORTED_SLOTS_YEAR_DAY>}
+
+```
+
+<br><br>
+
+\subsection unify_schedule_entry_lock_attr_signtzo UnifyScheduleEntryLock/SignTZO Attribute
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/UnifyScheduleEntryLock/Attributes/SignTZO/Reported
+[PREFIX]/UnifyScheduleEntryLock/Attributes/SignTZO/Desired
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UnifyScheduleEntryLock Cluster SignTZO Attribute Properties",
+  "type": "object",
+  "properties": {
+    "value": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "value"
+  ]
+}
+```
+
+
+**Example Mosquitto CLI Tool Usage**
+
+To see desired/reported value for SignTZO attribute under the by-unid topic space:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/+/+/UnifyScheduleEntryLock/Attributes/SignTZO/+'
+
+# Example output
+
+ucl/by-unid/<UNID>/ep0/UnifyScheduleEntryLock/Attributes/SignTZO/Desired { "value": <DESIRED_SIGNTZO>}
+ucl/by-unid/<UNID>/ep0/UnifyScheduleEntryLock/Attributes/SignTZO/Reported { "value": <REPORTED_SIGNTZO>}
+
+```
+
+<br><br>
+
+\subsection unify_schedule_entry_lock_attr_hourtzo UnifyScheduleEntryLock/HourTZO Attribute
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/UnifyScheduleEntryLock/Attributes/HourTZO/Reported
+[PREFIX]/UnifyScheduleEntryLock/Attributes/HourTZO/Desired
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UnifyScheduleEntryLock Cluster HourTZO Attribute Properties",
+  "type": "object",
+  "properties": {
+    "value": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "value"
+  ]
+}
+```
+
+
+**Example Mosquitto CLI Tool Usage**
+
+To see desired/reported value for HourTZO attribute under the by-unid topic space:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/+/+/UnifyScheduleEntryLock/Attributes/HourTZO/+'
+
+# Example output
+
+ucl/by-unid/<UNID>/ep0/UnifyScheduleEntryLock/Attributes/HourTZO/Desired { "value": <DESIRED_HOURTZO>}
+ucl/by-unid/<UNID>/ep0/UnifyScheduleEntryLock/Attributes/HourTZO/Reported { "value": <REPORTED_HOURTZO>}
+
+```
+
+<br><br>
+
+\subsection unify_schedule_entry_lock_attr_minutetzo UnifyScheduleEntryLock/MinuteTZO Attribute
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/UnifyScheduleEntryLock/Attributes/MinuteTZO/Reported
+[PREFIX]/UnifyScheduleEntryLock/Attributes/MinuteTZO/Desired
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UnifyScheduleEntryLock Cluster MinuteTZO Attribute Properties",
+  "type": "object",
+  "properties": {
+    "value": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "value"
+  ]
+}
+```
+
+
+**Example Mosquitto CLI Tool Usage**
+
+To see desired/reported value for MinuteTZO attribute under the by-unid topic space:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/+/+/UnifyScheduleEntryLock/Attributes/MinuteTZO/+'
+
+# Example output
+
+ucl/by-unid/<UNID>/ep0/UnifyScheduleEntryLock/Attributes/MinuteTZO/Desired { "value": <DESIRED_MINUTETZO>}
+ucl/by-unid/<UNID>/ep0/UnifyScheduleEntryLock/Attributes/MinuteTZO/Reported { "value": <REPORTED_MINUTETZO>}
+
+```
+
+<br><br>
+
+\subsection unify_schedule_entry_lock_attr_dst_offset_sign UnifyScheduleEntryLock/DSTOffsetSign Attribute
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/UnifyScheduleEntryLock/Attributes/DSTOffsetSign/Reported
+[PREFIX]/UnifyScheduleEntryLock/Attributes/DSTOffsetSign/Desired
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UnifyScheduleEntryLock Cluster DSTOffsetSign Attribute Properties",
+  "type": "object",
+  "properties": {
+    "value": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "value"
+  ]
+}
+```
+
+
+**Example Mosquitto CLI Tool Usage**
+
+To see desired/reported value for DSTOffsetSign attribute under the by-unid topic space:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/+/+/UnifyScheduleEntryLock/Attributes/DSTOffsetSign/+'
+
+# Example output
+
+ucl/by-unid/<UNID>/ep0/UnifyScheduleEntryLock/Attributes/DSTOffsetSign/Desired { "value": <DESIRED_DST_OFFSET_SIGN>}
+ucl/by-unid/<UNID>/ep0/UnifyScheduleEntryLock/Attributes/DSTOffsetSign/Reported { "value": <REPORTED_DST_OFFSET_SIGN>}
+
+```
+
+<br><br>
+
+\subsection unify_schedule_entry_lock_attr_dst_offset_minute UnifyScheduleEntryLock/DSTOffsetMinute Attribute
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/UnifyScheduleEntryLock/Attributes/DSTOffsetMinute/Reported
+[PREFIX]/UnifyScheduleEntryLock/Attributes/DSTOffsetMinute/Desired
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UnifyScheduleEntryLock Cluster DSTOffsetMinute Attribute Properties",
+  "type": "object",
+  "properties": {
+    "value": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "value"
+  ]
+}
+```
+
+
+**Example Mosquitto CLI Tool Usage**
+
+To see desired/reported value for DSTOffsetMinute attribute under the by-unid topic space:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/+/+/UnifyScheduleEntryLock/Attributes/DSTOffsetMinute/+'
+
+# Example output
+
+ucl/by-unid/<UNID>/ep0/UnifyScheduleEntryLock/Attributes/DSTOffsetMinute/Desired { "value": <DESIRED_DST_OFFSET_MINUTE>}
+ucl/by-unid/<UNID>/ep0/UnifyScheduleEntryLock/Attributes/DSTOffsetMinute/Reported { "value": <REPORTED_DST_OFFSET_MINUTE>}
+
+```
+
+<br><br>
+
+\subsection unify_schedule_entry_lock_attr_number_of_slots_daily_repeating UnifyScheduleEntryLock/NumberOfSlotsDailyRepeating Attribute
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/UnifyScheduleEntryLock/Attributes/NumberOfSlotsDailyRepeating/Reported
+[PREFIX]/UnifyScheduleEntryLock/Attributes/NumberOfSlotsDailyRepeating/Desired
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UnifyScheduleEntryLock Cluster NumberOfSlotsDailyRepeating Attribute Properties",
+  "type": "object",
+  "properties": {
+    "value": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "value"
+  ]
+}
+```
+
+
+**Example Mosquitto CLI Tool Usage**
+
+To see desired/reported value for NumberOfSlotsDailyRepeating attribute under the by-unid topic space:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/+/+/UnifyScheduleEntryLock/Attributes/NumberOfSlotsDailyRepeating/+'
+
+# Example output
+
+ucl/by-unid/<UNID>/ep0/UnifyScheduleEntryLock/Attributes/NumberOfSlotsDailyRepeating/Desired { "value": <DESIRED_NUMBER_OF_SLOTS_DAILY_REPEATING>}
+ucl/by-unid/<UNID>/ep0/UnifyScheduleEntryLock/Attributes/NumberOfSlotsDailyRepeating/Reported { "value": <REPORTED_NUMBER_OF_SLOTS_DAILY_REPEATING>}
+
+```
+
+<br><br>
+
+
+\subsection unify_schedule_entry_lock_attr_cluster_revision UnifyScheduleEntryLock/ClusterRevision Attribute
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/UnifyScheduleEntryLock/Attributes/ClusterRevision/Reported
+[PREFIX]/UnifyScheduleEntryLock/Attributes/ClusterRevision/Desired
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UnifyScheduleEntryLock Cluster ClusterRevision Attribute Properties",
+  "type": "object",
+  "properties": {
+    "value": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "value"
+  ]
+}
+```
+
+**Example Mosquitto CLI Tool Usage**
+
+To see desired/reported value for ClusterRevision attribute under the by-unid topic space:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/<UNID>/<EP>/UnifyScheduleEntryLock/Attributes/ClusterRevision/+'
+# Example output
+ucl/by-unid/<UNID>/<EP>/UnifyScheduleEntryLock/Attributes/ClusterRevision/Desired { "value": <DESIRED_CLUSTER_REVISION> }
+ucl/by-unid/<UNID>/<EP>/UnifyScheduleEntryLock/Attributes/ClusterRevision/Reported { "value": <REPORTED_CLUSTER_REVISION> }
+```
+
+<!-- -->
+<!--  END OF UnifyScheduleEntryLock Attributes Section -->
+<!-- -->
+
+<br><br>
+
+<!-- -->
+<!-- START OF UnifyScheduleEntryLock Supported Commands Section -->
+<!-- -->
+\section unify_schedule_entry_lock_recv_cmd_support UnifyScheduleEntryLock Command Support
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/UnifyScheduleEntryLock/SupportedCommands
+[PREFIX]/UnifyScheduleEntryLock/SupportedGeneratedCommands
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UnifyScheduleEntryLock Command Support Properties",
+  "type": "object",
+  "properties": {
+      "value": {
+          "type": "array",
+          "items" : {
+            "type": "string",
+            "enum": [
+              "EnableSet",
+              "WeekDayReport",
+              "EnableAllSet",
+              "YearDayReport",
+              "WeekDaySet",
+              "DailyRepeatingReport",
+              "WeekDayGet",
+              "YearDaySet",
+              "YearDayGet",
+              "DailyRepeatingSet",
+              "DailyRepeatingGet",
+              "WriteAttributes",
+              "ForceReadAttributes"
+            ]
+          }
+        }
+      }
+  },
+  "required": [
+    "value"
+  ]
+}
+```
+
+**Example Mosquitto CLI Tool Usage**
+
+To see supported commands for UnifyScheduleEntryLock cluster under the by-unid topic space:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/<UNID>/<EP>/UnifyScheduleEntryLock/SupportedCommands'
+# Example output
+ucl/by-unid/<UNID>/<EP>/UnifyScheduleEntryLock/SupportedCommands { "value": ["EnableSet","EnableAllSet","WeekDaySet","WeekDayGet","YearDaySet","YearDayGet","DailyRepeatingSet","DailyRepeatingGet","WriteAttributes", "ForceReadAttributes"] }
+```
+
+To see supported generated commands for UnifyScheduleEntryLock cluster under the by-unid topic space:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/<UNID>/<EP>/UnifyScheduleEntryLock/SupportedGeneratedCommands'
+# Example output
+ucl/by-unid/<UNID>/<EP>/UnifyScheduleEntryLock/SupportedGeneratedCommands { "value": ["WeekDayReport","YearDayReport","DailyRepeatingReport",] }
+```
+
+<!-- -->
+<!-- END OF UnifyScheduleEntryLock Supported Commands Section -->
+<!-- -->
+
+<br><br>
+
+<!-- -->
+<!-- START OF UnifyScheduleEntryLock Commands Section -->
+<!-- -->
+\section unify_schedule_entry_lock_cmds UnifyScheduleEntryLock Commands
+
+<br><br>
+
+\subsection unify_schedule_entry_lock_enable_set_cmd UnifyScheduleEntryLock/EnableSet Command
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/UnifyScheduleEntryLock/Commands/EnableSet
+[PREFIX]/UnifyScheduleEntryLock/GeneratedCommands/EnableSet
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UnifyScheduleEntryLock Cluster EnableSet Command Properties",
+  "type": "object",
+  "properties": {
+    "UserIdentifier": {
+      "type": "integer"
+    },
+    "Enabled": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "UserIdentifier",
+    "Enabled"
+  ]
+}
+```
+
+**Example Mosquitto CLI Tool Usage**
+
+To send a UnifyScheduleEntryLock/EnableSet command under the by-unid topic space:
+
+```console
+mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/UnifyScheduleEntryLock/Commands/EnableSet' -m  '{ "UserIdentifier": <USER_IDENTIFIER_VALUE>,"Enabled": <ENABLED_VALUE> }'
+```
+
+To receive a UnifyScheduleEntryLock/EnableSet generated command from a UNID/endpoint:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/<UNID>/<EP>/UnifyScheduleEntryLock/GeneratedCommands/EnableSet'
+```
+
+<br><br>
+
+\subsection unify_schedule_entry_lock_week_day_report_cmd UnifyScheduleEntryLock/WeekDayReport Command
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/UnifyScheduleEntryLock/Commands/WeekDayReport
+[PREFIX]/UnifyScheduleEntryLock/GeneratedCommands/WeekDayReport
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UnifyScheduleEntryLock Cluster WeekDayReport Command Properties",
+  "type": "object",
+  "properties": {
+    "UserIdentifier": {
+      "type": "integer"
+    },
+    "ScheduleSlotID": {
+      "type": "integer"
+    },
+    "DayOfWeek": {
+      "type": "integer"
+    },
+    "StartHour": {
+      "type": "integer"
+    },
+    "StartMinute": {
+      "type": "integer"
+    },
+    "StopHour": {
+      "type": "integer"
+    },
+    "StopMinute": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "UserIdentifier",
+    "ScheduleSlotID",
+    "DayOfWeek",
+    "StartHour",
+    "StartMinute",
+    "StopHour",
+    "StopMinute"
+  ]
+}
+```
+
+**Example Mosquitto CLI Tool Usage**
+
+To send a UnifyScheduleEntryLock/WeekDayReport command under the by-unid topic space:
+
+```console
+mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/UnifyScheduleEntryLock/Commands/WeekDayReport' -m  '{ "UserIdentifier": <USER_IDENTIFIER_VALUE>,"ScheduleSlotID": <SCHEDULE_SLOTID_VALUE>,"DayOfWeek": <DAY_OF_WEEK_VALUE>,"StartHour": <START_HOUR_VALUE>,"StartMinute": <START_MINUTE_VALUE>,"StopHour": <STOP_HOUR_VALUE>,"StopMinute": <STOP_MINUTE_VALUE> }'
+```
+
+To receive a UnifyScheduleEntryLock/WeekDayReport generated command from a UNID/endpoint:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/<UNID>/<EP>/UnifyScheduleEntryLock/GeneratedCommands/WeekDayReport'
+```
+
+<br><br>
+
+\subsection unify_schedule_entry_lock_enable_all_set_cmd UnifyScheduleEntryLock/EnableAllSet Command
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/UnifyScheduleEntryLock/Commands/EnableAllSet
+[PREFIX]/UnifyScheduleEntryLock/GeneratedCommands/EnableAllSet
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UnifyScheduleEntryLock Cluster EnableAllSet Command Properties",
+  "type": "object",
+  "properties": {
+    "Enabled": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "Enabled"
+  ]
+}
+```
+
+**Example Mosquitto CLI Tool Usage**
+
+To send a UnifyScheduleEntryLock/EnableAllSet command under the by-unid topic space:
+
+```console
+mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/UnifyScheduleEntryLock/Commands/EnableAllSet' -m  '{ "Enabled": <ENABLED_VALUE> }'
+```
+
+To receive a UnifyScheduleEntryLock/EnableAllSet generated command from a UNID/endpoint:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/<UNID>/<EP>/UnifyScheduleEntryLock/GeneratedCommands/EnableAllSet'
+```
+
+<br><br>
+
+\subsection unify_schedule_entry_lock_year_day_report_cmd UnifyScheduleEntryLock/YearDayReport Command
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/UnifyScheduleEntryLock/Commands/YearDayReport
+[PREFIX]/UnifyScheduleEntryLock/GeneratedCommands/YearDayReport
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UnifyScheduleEntryLock Cluster YearDayReport Command Properties",
+  "type": "object",
+  "properties": {
+    "UserIdentifier": {
+      "type": "integer"
+    },
+    "ScheduleSlotID": {
+      "type": "integer"
+    },
+    "StartYear": {
+      "type": "integer"
+    },
+    "StartMonth": {
+      "type": "integer"
+    },
+    "StartDay": {
+      "type": "integer"
+    },
+    "StartHour": {
+      "type": "integer"
+    },
+    "StartMinute": {
+      "type": "integer"
+    },
+    "StopYear": {
+      "type": "integer"
+    },
+    "StopMonth": {
+      "type": "integer"
+    },
+    "StopDay": {
+      "type": "integer"
+    },
+    "StopHour": {
+      "type": "integer"
+    },
+    "StopMinute": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "UserIdentifier",
+    "ScheduleSlotID",
+    "StartYear",
+    "StartMonth",
+    "StartDay",
+    "StartHour",
+    "StartMinute",
+    "StopYear",
+    "StopMonth",
+    "StopDay",
+    "StopHour",
+    "StopMinute"
+  ]
+}
+```
+
+**Example Mosquitto CLI Tool Usage**
+
+To send a UnifyScheduleEntryLock/YearDayReport command under the by-unid topic space:
+
+```console
+mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/UnifyScheduleEntryLock/Commands/YearDayReport' -m  '{ "UserIdentifier": <USER_IDENTIFIER_VALUE>,"ScheduleSlotID": <SCHEDULE_SLOTID_VALUE>,"StartYear": <START_YEAR_VALUE>,"StartMonth": <START_MONTH_VALUE>,"StartDay": <START_DAY_VALUE>,"StartHour": <START_HOUR_VALUE>,"StartMinute": <START_MINUTE_VALUE>,"StopYear": <STOP_YEAR_VALUE>,"StopMonth": <STOP_MONTH_VALUE>,"StopDay": <STOP_DAY_VALUE>,"StopHour": <STOP_HOUR_VALUE>,"StopMinute": <STOP_MINUTE_VALUE> }'
+```
+
+To receive a UnifyScheduleEntryLock/YearDayReport generated command from a UNID/endpoint:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/<UNID>/<EP>/UnifyScheduleEntryLock/GeneratedCommands/YearDayReport'
+```
+
+<br><br>
+
+\subsection unify_schedule_entry_lock_week_day_set_cmd UnifyScheduleEntryLock/WeekDaySet Command
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/UnifyScheduleEntryLock/Commands/WeekDaySet
+[PREFIX]/UnifyScheduleEntryLock/GeneratedCommands/WeekDaySet
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UnifyScheduleEntryLock Cluster WeekDaySet Command Properties",
+  "type": "object",
+  "properties": {
+    "SetAction": {
+      "type": "integer"
+    },
+    "UserIdentifier": {
+      "type": "integer"
+    },
+    "ScheduleSlotID": {
+      "type": "integer"
+    },
+    "DayOfWeek": {
+      "type": "integer"
+    },
+    "StartHour": {
+      "type": "integer"
+    },
+    "StartMinute": {
+      "type": "integer"
+    },
+    "StopHour": {
+      "type": "integer"
+    },
+    "StopMinute": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "SetAction",
+    "UserIdentifier",
+    "ScheduleSlotID",
+    "DayOfWeek",
+    "StartHour",
+    "StartMinute",
+    "StopHour",
+    "StopMinute"
+  ]
+}
+```
+
+**Example Mosquitto CLI Tool Usage**
+
+To send a UnifyScheduleEntryLock/WeekDaySet command under the by-unid topic space:
+
+```console
+mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/UnifyScheduleEntryLock/Commands/WeekDaySet' -m  '{ "SetAction": <SET_ACTION_VALUE>,"UserIdentifier": <USER_IDENTIFIER_VALUE>,"ScheduleSlotID": <SCHEDULE_SLOTID_VALUE>,"DayOfWeek": <DAY_OF_WEEK_VALUE>,"StartHour": <START_HOUR_VALUE>,"StartMinute": <START_MINUTE_VALUE>,"StopHour": <STOP_HOUR_VALUE>,"StopMinute": <STOP_MINUTE_VALUE> }'
+```
+
+To receive a UnifyScheduleEntryLock/WeekDaySet generated command from a UNID/endpoint:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/<UNID>/<EP>/UnifyScheduleEntryLock/GeneratedCommands/WeekDaySet'
+```
+
+<br><br>
+
+\subsection unify_schedule_entry_lock_daily_repeating_report_cmd UnifyScheduleEntryLock/DailyRepeatingReport Command
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/UnifyScheduleEntryLock/Commands/DailyRepeatingReport
+[PREFIX]/UnifyScheduleEntryLock/GeneratedCommands/DailyRepeatingReport
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UnifyScheduleEntryLock Cluster DailyRepeatingReport Command Properties",
+  "type": "object",
+  "properties": {
+    "UserIdentifier": {
+      "type": "integer"
+    },
+    "ScheduleSlotID": {
+      "type": "integer"
+    },
+    "WeekDayBitmask": {
+      "type": "integer"
+    },
+    "StartHour": {
+      "type": "integer"
+    },
+    "StartMinute": {
+      "type": "integer"
+    },
+    "DurationHour": {
+      "type": "integer"
+    },
+    "DurationMinute": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "UserIdentifier",
+    "ScheduleSlotID",
+    "WeekDayBitmask",
+    "StartHour",
+    "StartMinute",
+    "DurationHour",
+    "DurationMinute"
+  ]
+}
+```
+
+**Example Mosquitto CLI Tool Usage**
+
+To send a UnifyScheduleEntryLock/DailyRepeatingReport command under the by-unid topic space:
+
+```console
+mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/UnifyScheduleEntryLock/Commands/DailyRepeatingReport' -m  '{ "UserIdentifier": <USER_IDENTIFIER_VALUE>,"ScheduleSlotID": <SCHEDULE_SLOTID_VALUE>,"WeekDayBitmask": <WEEK_DAY_BITMASK_VALUE>,"StartHour": <START_HOUR_VALUE>,"StartMinute": <START_MINUTE_VALUE>,"DurationHour": <DURATION_HOUR_VALUE>,"DurationMinute": <DURATION_MINUTE_VALUE> }'
+```
+
+To receive a UnifyScheduleEntryLock/DailyRepeatingReport generated command from a UNID/endpoint:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/<UNID>/<EP>/UnifyScheduleEntryLock/GeneratedCommands/DailyRepeatingReport'
+```
+
+<br><br>
+
+\subsection unify_schedule_entry_lock_week_day_get_cmd UnifyScheduleEntryLock/WeekDayGet Command
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/UnifyScheduleEntryLock/Commands/WeekDayGet
+[PREFIX]/UnifyScheduleEntryLock/GeneratedCommands/WeekDayGet
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UnifyScheduleEntryLock Cluster WeekDayGet Command Properties",
+  "type": "object",
+  "properties": {
+    "UserIdentifier": {
+      "type": "integer"
+    },
+    "ScheduleSlotID": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "UserIdentifier",
+    "ScheduleSlotID"
+  ]
+}
+```
+
+**Example Mosquitto CLI Tool Usage**
+
+To send a UnifyScheduleEntryLock/WeekDayGet command under the by-unid topic space:
+
+```console
+mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/UnifyScheduleEntryLock/Commands/WeekDayGet' -m  '{ "UserIdentifier": <USER_IDENTIFIER_VALUE>,"ScheduleSlotID": <SCHEDULE_SLOTID_VALUE> }'
+```
+
+To receive a UnifyScheduleEntryLock/WeekDayGet generated command from a UNID/endpoint:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/<UNID>/<EP>/UnifyScheduleEntryLock/GeneratedCommands/WeekDayGet'
+```
+
+<br><br>
+
+\subsection unify_schedule_entry_lock_year_day_set_cmd UnifyScheduleEntryLock/YearDaySet Command
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/UnifyScheduleEntryLock/Commands/YearDaySet
+[PREFIX]/UnifyScheduleEntryLock/GeneratedCommands/YearDaySet
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UnifyScheduleEntryLock Cluster YearDaySet Command Properties",
+  "type": "object",
+  "properties": {
+    "SetAction": {
+      "type": "integer"
+    },
+    "UserIdentifier": {
+      "type": "integer"
+    },
+    "ScheduleSlotID": {
+      "type": "integer"
+    },
+    "StartYear": {
+      "type": "integer"
+    },
+    "StartDay": {
+      "type": "integer"
+    },
+    "StartHour": {
+      "type": "integer"
+    },
+    "StartMonth": {
+      "type": "integer"
+    },
+    "StartMinute": {
+      "type": "integer"
+    },
+    "StopYear": {
+      "type": "integer"
+    },
+    "StopMonth": {
+      "type": "integer"
+    },
+    "StopDay": {
+      "type": "integer"
+    },
+    "StopHour": {
+      "type": "integer"
+    },
+    "StopMinute": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "SetAction",
+    "UserIdentifier",
+    "ScheduleSlotID",
+    "StartYear",
+    "StartDay",
+    "StartHour",
+    "StartMonth",
+    "StartMinute",
+    "StopYear",
+    "StopMonth",
+    "StopDay",
+    "StopHour",
+    "StopMinute"
+  ]
+}
+```
+
+**Example Mosquitto CLI Tool Usage**
+
+To send a UnifyScheduleEntryLock/YearDaySet command under the by-unid topic space:
+
+```console
+mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/UnifyScheduleEntryLock/Commands/YearDaySet' -m  '{ "SetAction": <SET_ACTION_VALUE>,"UserIdentifier": <USER_IDENTIFIER_VALUE>,"ScheduleSlotID": <SCHEDULE_SLOTID_VALUE>,"StartYear": <START_YEAR_VALUE>,"StartDay": <START_DAY_VALUE>,"StartHour": <START_HOUR_VALUE>,"StartMonth": <START_MONTH_VALUE>,"StartMinute": <START_MINUTE_VALUE>,"StopYear": <STOP_YEAR_VALUE>,"StopMonth": <STOP_MONTH_VALUE>,"StopDay": <STOP_DAY_VALUE>,"StopHour": <STOP_HOUR_VALUE>,"StopMinute": <STOP_MINUTE_VALUE> }'
+```
+
+To receive a UnifyScheduleEntryLock/YearDaySet generated command from a UNID/endpoint:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/<UNID>/<EP>/UnifyScheduleEntryLock/GeneratedCommands/YearDaySet'
+```
+
+<br><br>
+
+\subsection unify_schedule_entry_lock_year_day_get_cmd UnifyScheduleEntryLock/YearDayGet Command
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/UnifyScheduleEntryLock/Commands/YearDayGet
+[PREFIX]/UnifyScheduleEntryLock/GeneratedCommands/YearDayGet
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UnifyScheduleEntryLock Cluster YearDayGet Command Properties",
+  "type": "object",
+  "properties": {
+    "UserIdentifier": {
+      "type": "integer"
+    },
+    "ScheduleSlotID": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "UserIdentifier",
+    "ScheduleSlotID"
+  ]
+}
+```
+
+**Example Mosquitto CLI Tool Usage**
+
+To send a UnifyScheduleEntryLock/YearDayGet command under the by-unid topic space:
+
+```console
+mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/UnifyScheduleEntryLock/Commands/YearDayGet' -m  '{ "UserIdentifier": <USER_IDENTIFIER_VALUE>,"ScheduleSlotID": <SCHEDULE_SLOTID_VALUE> }'
+```
+
+To receive a UnifyScheduleEntryLock/YearDayGet generated command from a UNID/endpoint:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/<UNID>/<EP>/UnifyScheduleEntryLock/GeneratedCommands/YearDayGet'
+```
+
+<br><br>
+
+\subsection unify_schedule_entry_lock_daily_repeating_set_cmd UnifyScheduleEntryLock/DailyRepeatingSet Command
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/UnifyScheduleEntryLock/Commands/DailyRepeatingSet
+[PREFIX]/UnifyScheduleEntryLock/GeneratedCommands/DailyRepeatingSet
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UnifyScheduleEntryLock Cluster DailyRepeatingSet Command Properties",
+  "type": "object",
+  "properties": {
+    "SetAction": {
+      "type": "integer"
+    },
+    "UserIdentifier": {
+      "type": "integer"
+    },
+    "ScheduleSlotID": {
+      "type": "integer"
+    },
+    "WeekDayBitmask": {
+      "type": "integer"
+    },
+    "StartHour": {
+      "type": "integer"
+    },
+    "StartMinute": {
+      "type": "integer"
+    },
+    "DurationHour": {
+      "type": "integer"
+    },
+    "DurationMinute": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "SetAction",
+    "UserIdentifier",
+    "ScheduleSlotID",
+    "WeekDayBitmask",
+    "StartHour",
+    "StartMinute",
+    "DurationHour",
+    "DurationMinute"
+  ]
+}
+```
+
+**Example Mosquitto CLI Tool Usage**
+
+To send a UnifyScheduleEntryLock/DailyRepeatingSet command under the by-unid topic space:
+
+```console
+mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/UnifyScheduleEntryLock/Commands/DailyRepeatingSet' -m  '{ "SetAction": <SET_ACTION_VALUE>,"UserIdentifier": <USER_IDENTIFIER_VALUE>,"ScheduleSlotID": <SCHEDULE_SLOTID_VALUE>,"WeekDayBitmask": <WEEK_DAY_BITMASK_VALUE>,"StartHour": <START_HOUR_VALUE>,"StartMinute": <START_MINUTE_VALUE>,"DurationHour": <DURATION_HOUR_VALUE>,"DurationMinute": <DURATION_MINUTE_VALUE> }'
+```
+
+To receive a UnifyScheduleEntryLock/DailyRepeatingSet generated command from a UNID/endpoint:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/<UNID>/<EP>/UnifyScheduleEntryLock/GeneratedCommands/DailyRepeatingSet'
+```
+
+<br><br>
+
+\subsection unify_schedule_entry_lock_daily_repeating_get_cmd UnifyScheduleEntryLock/DailyRepeatingGet Command
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/UnifyScheduleEntryLock/Commands/DailyRepeatingGet
+[PREFIX]/UnifyScheduleEntryLock/GeneratedCommands/DailyRepeatingGet
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UnifyScheduleEntryLock Cluster DailyRepeatingGet Command Properties",
+  "type": "object",
+  "properties": {
+    "UserIdentifier": {
+      "type": "integer"
+    },
+    "ScheduleSlotID": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "UserIdentifier",
+    "ScheduleSlotID"
+  ]
+}
+```
+
+**Example Mosquitto CLI Tool Usage**
+
+To send a UnifyScheduleEntryLock/DailyRepeatingGet command under the by-unid topic space:
+
+```console
+mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/UnifyScheduleEntryLock/Commands/DailyRepeatingGet' -m  '{ "UserIdentifier": <USER_IDENTIFIER_VALUE>,"ScheduleSlotID": <SCHEDULE_SLOTID_VALUE> }'
+```
+
+To receive a UnifyScheduleEntryLock/DailyRepeatingGet generated command from a UNID/endpoint:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/<UNID>/<EP>/UnifyScheduleEntryLock/GeneratedCommands/DailyRepeatingGet'
+```
+
+<br><br>
+
+\subsection unify_schedule_entry_lock_write_attr_cmd UnifyScheduleEntryLock/WriteAttributes Command
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/UnifyScheduleEntryLock/Commands/WriteAttributes
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UnifyScheduleEntryLock Cluster WriteAttributes Command Properties",
+  "type": "object",
+  "properties": {
+    "SlotsWeekDay": {
+      "type": "integer"
+    },
+    "SlotsYearDay": {
+      "type": "integer"
+    },
+    "SignTZO": {
+      "type": "integer"
+    },
+    "HourTZO": {
+      "type": "integer"
+    },
+    "MinuteTZO": {
+      "type": "integer"
+    },
+    "DSTOffsetSign": {
+      "type": "integer"
+    },
+    "DSTOffsetMinute": {
+      "type": "integer"
+    },
+    "NumberOfSlotsDailyRepeating": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "value"
+  ]
+}
+```
+
+**Example Mosquitto CLI Tool Usage**
+
+To update all UnifyScheduleEntryLock attributes under the by-unid topic space:
+
+```console
+mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/UnifyScheduleEntryLock/Commands/WriteAttributes' -m  '{ "SlotsWeekDay": <SLOTS_WEEK_DAY_VALUE> ,"SlotsYearDay": <SLOTS_YEAR_DAY_VALUE> ,"SignTZO": <SIGNTZO_VALUE> ,"HourTZO": <HOURTZO_VALUE> ,"MinuteTZO": <MINUTETZO_VALUE> ,"DSTOffsetSign": <DST_OFFSET_SIGN_VALUE> ,"DSTOffsetMinute": <DST_OFFSET_MINUTE_VALUE> ,"NumberOfSlotsDailyRepeating": <NUMBER_OF_SLOTS_DAILY_REPEATING_VALUE>  }'
+```
+
+> NOTE: Specify only the list of attributes to write in this command.
+> Unspecified attributes will not be updated.
+
+<br><br>
+
+\subsection unify_schedule_entry_lock_force_read_attr_cmd UnifyScheduleEntryLock/ForceReadAttributes Command
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/UnifyScheduleEntryLock/Commands/ForceReadAttributes
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UnifyScheduleEntryLock Cluster ForceReadAttributes Command Properties",
+  "type": "object",
+  "properties": {
+    "value": {
+      "type": "array"
+      "items": {
+        "type": "string",
+        "enum": [
+          "SlotsWeekDay",
+          "SlotsYearDay",
+          "SignTZO",
+          "HourTZO",
+          "MinuteTZO",
+          "DSTOffsetSign",
+          "DSTOffsetMinute",
+          "NumberOfSlotsDailyRepeating"
+        ]
+      }
+    }
+  },
+  "required": [
+    "value"
+  ]
+}
+```
+
+**Example Mosquitto CLI Tool Usage**
+
+To force read all UnifyScheduleEntryLock attributes under the by-unid topic space (by sending an empty array):
+
+```console
+mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/UnifyScheduleEntryLock/Commands/ForceReadAttributes' -m  '{ "value": [] }'
+```
+
+To force read one of the UnifyScheduleEntryLock attributes under the by-unid topic space:
+
+```console
+mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/UnifyScheduleEntryLock/Commands/ForceReadAttributes' -m  '{ "value": ["SlotsWeekDay"] }'
+```
+
+<!-- -->
+<!-- END OF UnifyScheduleEntryLock Commands Section -->
+<!-- -->
+
+<br><br><br>
+
+
+<!-- -->
+<!-- -->
+<!-- NEW Page Cluster Support -->
+<!-- -->
+<!-- -->
 \page unify_humidity_control UnifyHumidityControl Cluster
 The following commands and attributes are accepted as JSON payloads for the
 UnifyHumidityControl cluster.

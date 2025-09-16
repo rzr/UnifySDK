@@ -1696,9 +1696,17 @@ void uic_mqtt_dotdot_unify_thermostat_publish_supported_generated_commands(
  * @brief Struct containing the list of commands for UnifyScheduleEntryLock
  */
 typedef struct _uic_mqtt_dotdot_unify_schedule_entry_lock_supported_commands_ {
-  bool schedule_entry_lock_week_day_report;
-  bool schedule_entry_lock_year_day_report;
-  bool schedule_entry_lock_daily_repeating_report;
+  bool enable_set;
+  bool week_day_report;
+  bool enable_all_set;
+  bool year_day_report;
+  bool week_day_set;
+  bool daily_repeating_report;
+  bool week_day_get;
+  bool year_day_set;
+  bool year_day_get;
+  bool daily_repeating_set;
+  bool daily_repeating_get;
   bool write_attributes;
 } uic_mqtt_dotdot_unify_schedule_entry_lock_supported_commands_t;
 

@@ -2725,6 +2725,38 @@ sl_status_t eed_attribute_store_clusters_init()
     DESIRED_ATTRIBUTE);
   attribute_store_register_callback_by_type_and_state(
     &on_zcl_desired_value_update,
+    DOTDOT_ATTRIBUTE_ID_UNIFY_SCHEDULE_ENTRY_LOCK_SLOTS_WEEK_DAY,
+    DESIRED_ATTRIBUTE);
+  attribute_store_register_callback_by_type_and_state(
+    &on_zcl_desired_value_update,
+    DOTDOT_ATTRIBUTE_ID_UNIFY_SCHEDULE_ENTRY_LOCK_SLOTS_YEAR_DAY,
+    DESIRED_ATTRIBUTE);
+  attribute_store_register_callback_by_type_and_state(
+    &on_zcl_desired_value_update,
+    DOTDOT_ATTRIBUTE_ID_UNIFY_SCHEDULE_ENTRY_LOCK_SIGNTZO,
+    DESIRED_ATTRIBUTE);
+  attribute_store_register_callback_by_type_and_state(
+    &on_zcl_desired_value_update,
+    DOTDOT_ATTRIBUTE_ID_UNIFY_SCHEDULE_ENTRY_LOCK_HOURTZO,
+    DESIRED_ATTRIBUTE);
+  attribute_store_register_callback_by_type_and_state(
+    &on_zcl_desired_value_update,
+    DOTDOT_ATTRIBUTE_ID_UNIFY_SCHEDULE_ENTRY_LOCK_MINUTETZO,
+    DESIRED_ATTRIBUTE);
+  attribute_store_register_callback_by_type_and_state(
+    &on_zcl_desired_value_update,
+    DOTDOT_ATTRIBUTE_ID_UNIFY_SCHEDULE_ENTRY_LOCK_DST_OFFSET_SIGN,
+    DESIRED_ATTRIBUTE);
+  attribute_store_register_callback_by_type_and_state(
+    &on_zcl_desired_value_update,
+    DOTDOT_ATTRIBUTE_ID_UNIFY_SCHEDULE_ENTRY_LOCK_DST_OFFSET_MINUTE,
+    DESIRED_ATTRIBUTE);
+  attribute_store_register_callback_by_type_and_state(
+    &on_zcl_desired_value_update,
+    DOTDOT_ATTRIBUTE_ID_UNIFY_SCHEDULE_ENTRY_LOCK_NUMBER_OF_SLOTS_DAILY_REPEATING,
+    DESIRED_ATTRIBUTE);
+  attribute_store_register_callback_by_type_and_state(
+    &on_zcl_desired_value_update,
     DOTDOT_ATTRIBUTE_ID_UNIFY_HUMIDITY_CONTROL_REPORTING_MODE,
     DESIRED_ATTRIBUTE);
   attribute_store_register_callback_by_type_and_state(

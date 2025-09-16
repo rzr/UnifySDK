@@ -7109,11 +7109,11 @@ void uic_mqtt_dotdot_unify_fan_control_publish_turn_off_command_to_group(
   uint16_t destination_group_id
 );
 /**
- * @brief Sends/Publishes a ScheduleEntryLockWeekDayReport command for
+ * @brief Sends/Publishes a EnableSet command for
  * the UnifyScheduleEntryLock cluster to a destination.
  *
  * Publication will be made at the following topic
- * ucl/by-unid/UNID/epID/UnifyScheduleEntryLock/Commands/ScheduleEntryLockWeekDayReport
+ * ucl/by-unid/UNID/epID/UnifyScheduleEntryLock/Commands/EnableSet
  *
  * @param destination_unid      The UNID of the node that should receive the command.
  * 
@@ -7123,36 +7123,36 @@ void uic_mqtt_dotdot_unify_fan_control_publish_turn_off_command_to_group(
  * @param fields                Struct pointer with the fields value of the command
  * 
  */
-void uic_mqtt_dotdot_unify_schedule_entry_lock_publish_schedule_entry_lock_week_day_report_command(
+void uic_mqtt_dotdot_unify_schedule_entry_lock_publish_enable_set_command(
   const dotdot_unid_t destination_unid,
   const dotdot_endpoint_id_t destination_endpoint,
-  const uic_mqtt_dotdot_unify_schedule_entry_lock_command_schedule_entry_lock_week_day_report_fields_t *fields
+  const uic_mqtt_dotdot_unify_schedule_entry_lock_command_enable_set_fields_t *fields
   
 );
 
 /**
- * @brief Sends/Publishes a ScheduleEntryLockWeekDayReport command for
+ * @brief Sends/Publishes a EnableSet command for
  * the UnifyScheduleEntryLock cluster to a group.
  *
  * Publication will be made at the following topic
- * ucl/by-group/GroupID/UnifyScheduleEntryLock/Commands/ScheduleEntryLockWeekDayReport
+ * ucl/by-group/GroupID/UnifyScheduleEntryLock/Commands/EnableSet
  *
  * @param destination_group_id  The GroupID that should receive the command.
  * 
  * @param fields                Struct pointer with the fields value of the command
  * 
  */
-void uic_mqtt_dotdot_unify_schedule_entry_lock_publish_schedule_entry_lock_week_day_report_command_to_group(
+void uic_mqtt_dotdot_unify_schedule_entry_lock_publish_enable_set_command_to_group(
   uint16_t destination_group_id,
-  const uic_mqtt_dotdot_unify_schedule_entry_lock_command_schedule_entry_lock_week_day_report_fields_t *fields
+  const uic_mqtt_dotdot_unify_schedule_entry_lock_command_enable_set_fields_t *fields
   
 );
 /**
- * @brief Sends/Publishes a ScheduleEntryLockYearDayReport command for
+ * @brief Sends/Publishes a WeekDayReport command for
  * the UnifyScheduleEntryLock cluster to a destination.
  *
  * Publication will be made at the following topic
- * ucl/by-unid/UNID/epID/UnifyScheduleEntryLock/Commands/ScheduleEntryLockYearDayReport
+ * ucl/by-unid/UNID/epID/UnifyScheduleEntryLock/Commands/WeekDayReport
  *
  * @param destination_unid      The UNID of the node that should receive the command.
  * 
@@ -7162,36 +7162,36 @@ void uic_mqtt_dotdot_unify_schedule_entry_lock_publish_schedule_entry_lock_week_
  * @param fields                Struct pointer with the fields value of the command
  * 
  */
-void uic_mqtt_dotdot_unify_schedule_entry_lock_publish_schedule_entry_lock_year_day_report_command(
+void uic_mqtt_dotdot_unify_schedule_entry_lock_publish_week_day_report_command(
   const dotdot_unid_t destination_unid,
   const dotdot_endpoint_id_t destination_endpoint,
-  const uic_mqtt_dotdot_unify_schedule_entry_lock_command_schedule_entry_lock_year_day_report_fields_t *fields
+  const uic_mqtt_dotdot_unify_schedule_entry_lock_command_week_day_report_fields_t *fields
   
 );
 
 /**
- * @brief Sends/Publishes a ScheduleEntryLockYearDayReport command for
+ * @brief Sends/Publishes a WeekDayReport command for
  * the UnifyScheduleEntryLock cluster to a group.
  *
  * Publication will be made at the following topic
- * ucl/by-group/GroupID/UnifyScheduleEntryLock/Commands/ScheduleEntryLockYearDayReport
+ * ucl/by-group/GroupID/UnifyScheduleEntryLock/Commands/WeekDayReport
  *
  * @param destination_group_id  The GroupID that should receive the command.
  * 
  * @param fields                Struct pointer with the fields value of the command
  * 
  */
-void uic_mqtt_dotdot_unify_schedule_entry_lock_publish_schedule_entry_lock_year_day_report_command_to_group(
+void uic_mqtt_dotdot_unify_schedule_entry_lock_publish_week_day_report_command_to_group(
   uint16_t destination_group_id,
-  const uic_mqtt_dotdot_unify_schedule_entry_lock_command_schedule_entry_lock_year_day_report_fields_t *fields
+  const uic_mqtt_dotdot_unify_schedule_entry_lock_command_week_day_report_fields_t *fields
   
 );
 /**
- * @brief Sends/Publishes a ScheduleEntryLockDailyRepeatingReport command for
+ * @brief Sends/Publishes a EnableAllSet command for
  * the UnifyScheduleEntryLock cluster to a destination.
  *
  * Publication will be made at the following topic
- * ucl/by-unid/UNID/epID/UnifyScheduleEntryLock/Commands/ScheduleEntryLockDailyRepeatingReport
+ * ucl/by-unid/UNID/epID/UnifyScheduleEntryLock/Commands/EnableAllSet
  *
  * @param destination_unid      The UNID of the node that should receive the command.
  * 
@@ -7201,28 +7201,340 @@ void uic_mqtt_dotdot_unify_schedule_entry_lock_publish_schedule_entry_lock_year_
  * @param fields                Struct pointer with the fields value of the command
  * 
  */
-void uic_mqtt_dotdot_unify_schedule_entry_lock_publish_schedule_entry_lock_daily_repeating_report_command(
+void uic_mqtt_dotdot_unify_schedule_entry_lock_publish_enable_all_set_command(
   const dotdot_unid_t destination_unid,
   const dotdot_endpoint_id_t destination_endpoint,
-  const uic_mqtt_dotdot_unify_schedule_entry_lock_command_schedule_entry_lock_daily_repeating_report_fields_t *fields
+  const uic_mqtt_dotdot_unify_schedule_entry_lock_command_enable_all_set_fields_t *fields
   
 );
 
 /**
- * @brief Sends/Publishes a ScheduleEntryLockDailyRepeatingReport command for
+ * @brief Sends/Publishes a EnableAllSet command for
  * the UnifyScheduleEntryLock cluster to a group.
  *
  * Publication will be made at the following topic
- * ucl/by-group/GroupID/UnifyScheduleEntryLock/Commands/ScheduleEntryLockDailyRepeatingReport
+ * ucl/by-group/GroupID/UnifyScheduleEntryLock/Commands/EnableAllSet
  *
  * @param destination_group_id  The GroupID that should receive the command.
  * 
  * @param fields                Struct pointer with the fields value of the command
  * 
  */
-void uic_mqtt_dotdot_unify_schedule_entry_lock_publish_schedule_entry_lock_daily_repeating_report_command_to_group(
+void uic_mqtt_dotdot_unify_schedule_entry_lock_publish_enable_all_set_command_to_group(
   uint16_t destination_group_id,
-  const uic_mqtt_dotdot_unify_schedule_entry_lock_command_schedule_entry_lock_daily_repeating_report_fields_t *fields
+  const uic_mqtt_dotdot_unify_schedule_entry_lock_command_enable_all_set_fields_t *fields
+  
+);
+/**
+ * @brief Sends/Publishes a YearDayReport command for
+ * the UnifyScheduleEntryLock cluster to a destination.
+ *
+ * Publication will be made at the following topic
+ * ucl/by-unid/UNID/epID/UnifyScheduleEntryLock/Commands/YearDayReport
+ *
+ * @param destination_unid      The UNID of the node that should receive the command.
+ * 
+ * @param destination_endpoint  The Endpoint ID of the node that should receive the command.
+ * 
+ * 
+ * @param fields                Struct pointer with the fields value of the command
+ * 
+ */
+void uic_mqtt_dotdot_unify_schedule_entry_lock_publish_year_day_report_command(
+  const dotdot_unid_t destination_unid,
+  const dotdot_endpoint_id_t destination_endpoint,
+  const uic_mqtt_dotdot_unify_schedule_entry_lock_command_year_day_report_fields_t *fields
+  
+);
+
+/**
+ * @brief Sends/Publishes a YearDayReport command for
+ * the UnifyScheduleEntryLock cluster to a group.
+ *
+ * Publication will be made at the following topic
+ * ucl/by-group/GroupID/UnifyScheduleEntryLock/Commands/YearDayReport
+ *
+ * @param destination_group_id  The GroupID that should receive the command.
+ * 
+ * @param fields                Struct pointer with the fields value of the command
+ * 
+ */
+void uic_mqtt_dotdot_unify_schedule_entry_lock_publish_year_day_report_command_to_group(
+  uint16_t destination_group_id,
+  const uic_mqtt_dotdot_unify_schedule_entry_lock_command_year_day_report_fields_t *fields
+  
+);
+/**
+ * @brief Sends/Publishes a WeekDaySet command for
+ * the UnifyScheduleEntryLock cluster to a destination.
+ *
+ * Publication will be made at the following topic
+ * ucl/by-unid/UNID/epID/UnifyScheduleEntryLock/Commands/WeekDaySet
+ *
+ * @param destination_unid      The UNID of the node that should receive the command.
+ * 
+ * @param destination_endpoint  The Endpoint ID of the node that should receive the command.
+ * 
+ * 
+ * @param fields                Struct pointer with the fields value of the command
+ * 
+ */
+void uic_mqtt_dotdot_unify_schedule_entry_lock_publish_week_day_set_command(
+  const dotdot_unid_t destination_unid,
+  const dotdot_endpoint_id_t destination_endpoint,
+  const uic_mqtt_dotdot_unify_schedule_entry_lock_command_week_day_set_fields_t *fields
+  
+);
+
+/**
+ * @brief Sends/Publishes a WeekDaySet command for
+ * the UnifyScheduleEntryLock cluster to a group.
+ *
+ * Publication will be made at the following topic
+ * ucl/by-group/GroupID/UnifyScheduleEntryLock/Commands/WeekDaySet
+ *
+ * @param destination_group_id  The GroupID that should receive the command.
+ * 
+ * @param fields                Struct pointer with the fields value of the command
+ * 
+ */
+void uic_mqtt_dotdot_unify_schedule_entry_lock_publish_week_day_set_command_to_group(
+  uint16_t destination_group_id,
+  const uic_mqtt_dotdot_unify_schedule_entry_lock_command_week_day_set_fields_t *fields
+  
+);
+/**
+ * @brief Sends/Publishes a DailyRepeatingReport command for
+ * the UnifyScheduleEntryLock cluster to a destination.
+ *
+ * Publication will be made at the following topic
+ * ucl/by-unid/UNID/epID/UnifyScheduleEntryLock/Commands/DailyRepeatingReport
+ *
+ * @param destination_unid      The UNID of the node that should receive the command.
+ * 
+ * @param destination_endpoint  The Endpoint ID of the node that should receive the command.
+ * 
+ * 
+ * @param fields                Struct pointer with the fields value of the command
+ * 
+ */
+void uic_mqtt_dotdot_unify_schedule_entry_lock_publish_daily_repeating_report_command(
+  const dotdot_unid_t destination_unid,
+  const dotdot_endpoint_id_t destination_endpoint,
+  const uic_mqtt_dotdot_unify_schedule_entry_lock_command_daily_repeating_report_fields_t *fields
+  
+);
+
+/**
+ * @brief Sends/Publishes a DailyRepeatingReport command for
+ * the UnifyScheduleEntryLock cluster to a group.
+ *
+ * Publication will be made at the following topic
+ * ucl/by-group/GroupID/UnifyScheduleEntryLock/Commands/DailyRepeatingReport
+ *
+ * @param destination_group_id  The GroupID that should receive the command.
+ * 
+ * @param fields                Struct pointer with the fields value of the command
+ * 
+ */
+void uic_mqtt_dotdot_unify_schedule_entry_lock_publish_daily_repeating_report_command_to_group(
+  uint16_t destination_group_id,
+  const uic_mqtt_dotdot_unify_schedule_entry_lock_command_daily_repeating_report_fields_t *fields
+  
+);
+/**
+ * @brief Sends/Publishes a WeekDayGet command for
+ * the UnifyScheduleEntryLock cluster to a destination.
+ *
+ * Publication will be made at the following topic
+ * ucl/by-unid/UNID/epID/UnifyScheduleEntryLock/Commands/WeekDayGet
+ *
+ * @param destination_unid      The UNID of the node that should receive the command.
+ * 
+ * @param destination_endpoint  The Endpoint ID of the node that should receive the command.
+ * 
+ * 
+ * @param fields                Struct pointer with the fields value of the command
+ * 
+ */
+void uic_mqtt_dotdot_unify_schedule_entry_lock_publish_week_day_get_command(
+  const dotdot_unid_t destination_unid,
+  const dotdot_endpoint_id_t destination_endpoint,
+  const uic_mqtt_dotdot_unify_schedule_entry_lock_command_week_day_get_fields_t *fields
+  
+);
+
+/**
+ * @brief Sends/Publishes a WeekDayGet command for
+ * the UnifyScheduleEntryLock cluster to a group.
+ *
+ * Publication will be made at the following topic
+ * ucl/by-group/GroupID/UnifyScheduleEntryLock/Commands/WeekDayGet
+ *
+ * @param destination_group_id  The GroupID that should receive the command.
+ * 
+ * @param fields                Struct pointer with the fields value of the command
+ * 
+ */
+void uic_mqtt_dotdot_unify_schedule_entry_lock_publish_week_day_get_command_to_group(
+  uint16_t destination_group_id,
+  const uic_mqtt_dotdot_unify_schedule_entry_lock_command_week_day_get_fields_t *fields
+  
+);
+/**
+ * @brief Sends/Publishes a YearDaySet command for
+ * the UnifyScheduleEntryLock cluster to a destination.
+ *
+ * Publication will be made at the following topic
+ * ucl/by-unid/UNID/epID/UnifyScheduleEntryLock/Commands/YearDaySet
+ *
+ * @param destination_unid      The UNID of the node that should receive the command.
+ * 
+ * @param destination_endpoint  The Endpoint ID of the node that should receive the command.
+ * 
+ * 
+ * @param fields                Struct pointer with the fields value of the command
+ * 
+ */
+void uic_mqtt_dotdot_unify_schedule_entry_lock_publish_year_day_set_command(
+  const dotdot_unid_t destination_unid,
+  const dotdot_endpoint_id_t destination_endpoint,
+  const uic_mqtt_dotdot_unify_schedule_entry_lock_command_year_day_set_fields_t *fields
+  
+);
+
+/**
+ * @brief Sends/Publishes a YearDaySet command for
+ * the UnifyScheduleEntryLock cluster to a group.
+ *
+ * Publication will be made at the following topic
+ * ucl/by-group/GroupID/UnifyScheduleEntryLock/Commands/YearDaySet
+ *
+ * @param destination_group_id  The GroupID that should receive the command.
+ * 
+ * @param fields                Struct pointer with the fields value of the command
+ * 
+ */
+void uic_mqtt_dotdot_unify_schedule_entry_lock_publish_year_day_set_command_to_group(
+  uint16_t destination_group_id,
+  const uic_mqtt_dotdot_unify_schedule_entry_lock_command_year_day_set_fields_t *fields
+  
+);
+/**
+ * @brief Sends/Publishes a YearDayGet command for
+ * the UnifyScheduleEntryLock cluster to a destination.
+ *
+ * Publication will be made at the following topic
+ * ucl/by-unid/UNID/epID/UnifyScheduleEntryLock/Commands/YearDayGet
+ *
+ * @param destination_unid      The UNID of the node that should receive the command.
+ * 
+ * @param destination_endpoint  The Endpoint ID of the node that should receive the command.
+ * 
+ * 
+ * @param fields                Struct pointer with the fields value of the command
+ * 
+ */
+void uic_mqtt_dotdot_unify_schedule_entry_lock_publish_year_day_get_command(
+  const dotdot_unid_t destination_unid,
+  const dotdot_endpoint_id_t destination_endpoint,
+  const uic_mqtt_dotdot_unify_schedule_entry_lock_command_year_day_get_fields_t *fields
+  
+);
+
+/**
+ * @brief Sends/Publishes a YearDayGet command for
+ * the UnifyScheduleEntryLock cluster to a group.
+ *
+ * Publication will be made at the following topic
+ * ucl/by-group/GroupID/UnifyScheduleEntryLock/Commands/YearDayGet
+ *
+ * @param destination_group_id  The GroupID that should receive the command.
+ * 
+ * @param fields                Struct pointer with the fields value of the command
+ * 
+ */
+void uic_mqtt_dotdot_unify_schedule_entry_lock_publish_year_day_get_command_to_group(
+  uint16_t destination_group_id,
+  const uic_mqtt_dotdot_unify_schedule_entry_lock_command_year_day_get_fields_t *fields
+  
+);
+/**
+ * @brief Sends/Publishes a DailyRepeatingSet command for
+ * the UnifyScheduleEntryLock cluster to a destination.
+ *
+ * Publication will be made at the following topic
+ * ucl/by-unid/UNID/epID/UnifyScheduleEntryLock/Commands/DailyRepeatingSet
+ *
+ * @param destination_unid      The UNID of the node that should receive the command.
+ * 
+ * @param destination_endpoint  The Endpoint ID of the node that should receive the command.
+ * 
+ * 
+ * @param fields                Struct pointer with the fields value of the command
+ * 
+ */
+void uic_mqtt_dotdot_unify_schedule_entry_lock_publish_daily_repeating_set_command(
+  const dotdot_unid_t destination_unid,
+  const dotdot_endpoint_id_t destination_endpoint,
+  const uic_mqtt_dotdot_unify_schedule_entry_lock_command_daily_repeating_set_fields_t *fields
+  
+);
+
+/**
+ * @brief Sends/Publishes a DailyRepeatingSet command for
+ * the UnifyScheduleEntryLock cluster to a group.
+ *
+ * Publication will be made at the following topic
+ * ucl/by-group/GroupID/UnifyScheduleEntryLock/Commands/DailyRepeatingSet
+ *
+ * @param destination_group_id  The GroupID that should receive the command.
+ * 
+ * @param fields                Struct pointer with the fields value of the command
+ * 
+ */
+void uic_mqtt_dotdot_unify_schedule_entry_lock_publish_daily_repeating_set_command_to_group(
+  uint16_t destination_group_id,
+  const uic_mqtt_dotdot_unify_schedule_entry_lock_command_daily_repeating_set_fields_t *fields
+  
+);
+/**
+ * @brief Sends/Publishes a DailyRepeatingGet command for
+ * the UnifyScheduleEntryLock cluster to a destination.
+ *
+ * Publication will be made at the following topic
+ * ucl/by-unid/UNID/epID/UnifyScheduleEntryLock/Commands/DailyRepeatingGet
+ *
+ * @param destination_unid      The UNID of the node that should receive the command.
+ * 
+ * @param destination_endpoint  The Endpoint ID of the node that should receive the command.
+ * 
+ * 
+ * @param fields                Struct pointer with the fields value of the command
+ * 
+ */
+void uic_mqtt_dotdot_unify_schedule_entry_lock_publish_daily_repeating_get_command(
+  const dotdot_unid_t destination_unid,
+  const dotdot_endpoint_id_t destination_endpoint,
+  const uic_mqtt_dotdot_unify_schedule_entry_lock_command_daily_repeating_get_fields_t *fields
+  
+);
+
+/**
+ * @brief Sends/Publishes a DailyRepeatingGet command for
+ * the UnifyScheduleEntryLock cluster to a group.
+ *
+ * Publication will be made at the following topic
+ * ucl/by-group/GroupID/UnifyScheduleEntryLock/Commands/DailyRepeatingGet
+ *
+ * @param destination_group_id  The GroupID that should receive the command.
+ * 
+ * @param fields                Struct pointer with the fields value of the command
+ * 
+ */
+void uic_mqtt_dotdot_unify_schedule_entry_lock_publish_daily_repeating_get_command_to_group(
+  uint16_t destination_group_id,
+  const uic_mqtt_dotdot_unify_schedule_entry_lock_command_daily_repeating_get_fields_t *fields
   
 );
 /**

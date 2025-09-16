@@ -2995,8 +2995,23 @@ static sl_status_t uic_mqtt_dotdot_unify_fan_control_turn_off_callback_func(
   return SL_STATUS_OK;
 }
 
-static unsigned int uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_week_day_report_callback_count;
-static sl_status_t uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_week_day_report_callback_func(
+static unsigned int uic_mqtt_dotdot_unify_schedule_entry_lock_enable_set_callback_count;
+static sl_status_t uic_mqtt_dotdot_unify_schedule_entry_lock_enable_set_callback_func(
+    dotdot_unid_t unid,
+    dotdot_endpoint_id_t endpoint,
+    uic_mqtt_dotdot_callback_call_type_t callback_type,
+    uint8_t user_identifier,
+
+    uint8_t enabled
+
+) {
+  uic_mqtt_dotdot_unify_schedule_entry_lock_enable_set_callback_count++;
+  num_command_callbacks++;
+  return SL_STATUS_OK;
+}
+
+static unsigned int uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_report_callback_count;
+static sl_status_t uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_report_callback_func(
     dotdot_unid_t unid,
     dotdot_endpoint_id_t endpoint,
     uic_mqtt_dotdot_callback_call_type_t callback_type,
@@ -3015,18 +3030,29 @@ static sl_status_t uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock
     uint8_t stop_minute
 
 ) {
-  uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_week_day_report_callback_count++;
+  uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_report_callback_count++;
   num_command_callbacks++;
   return SL_STATUS_OK;
 }
 
-static unsigned int uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_year_day_report_callback_count;
-static sl_status_t uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_year_day_report_callback_func(
+static unsigned int uic_mqtt_dotdot_unify_schedule_entry_lock_enable_all_set_callback_count;
+static sl_status_t uic_mqtt_dotdot_unify_schedule_entry_lock_enable_all_set_callback_func(
     dotdot_unid_t unid,
     dotdot_endpoint_id_t endpoint,
     uic_mqtt_dotdot_callback_call_type_t callback_type,
-    uint8_t set_action,
+    uint8_t enabled
 
+) {
+  uic_mqtt_dotdot_unify_schedule_entry_lock_enable_all_set_callback_count++;
+  num_command_callbacks++;
+  return SL_STATUS_OK;
+}
+
+static unsigned int uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_report_callback_count;
+static sl_status_t uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_report_callback_func(
+    dotdot_unid_t unid,
+    dotdot_endpoint_id_t endpoint,
+    uic_mqtt_dotdot_callback_call_type_t callback_type,
     uint8_t user_identifier,
 
     uint8_t schedule_slotid,
@@ -3052,13 +3078,132 @@ static sl_status_t uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock
     uint8_t stop_minute
 
 ) {
-  uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_year_day_report_callback_count++;
+  uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_report_callback_count++;
   num_command_callbacks++;
   return SL_STATUS_OK;
 }
 
-static unsigned int uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_daily_repeating_report_callback_count;
-static sl_status_t uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_daily_repeating_report_callback_func(
+static unsigned int uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_set_callback_count;
+static sl_status_t uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_set_callback_func(
+    dotdot_unid_t unid,
+    dotdot_endpoint_id_t endpoint,
+    uic_mqtt_dotdot_callback_call_type_t callback_type,
+    uint8_t set_action,
+
+    uint8_t user_identifier,
+
+    uint8_t schedule_slotid,
+
+    uint8_t day_of_week,
+
+    uint8_t start_hour,
+
+    uint8_t start_minute,
+
+    uint8_t stop_hour,
+
+    uint8_t stop_minute
+
+) {
+  uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_set_callback_count++;
+  num_command_callbacks++;
+  return SL_STATUS_OK;
+}
+
+static unsigned int uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_report_callback_count;
+static sl_status_t uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_report_callback_func(
+    dotdot_unid_t unid,
+    dotdot_endpoint_id_t endpoint,
+    uic_mqtt_dotdot_callback_call_type_t callback_type,
+    uint8_t user_identifier,
+
+    uint8_t schedule_slotid,
+
+    uint8_t week_day_bitmask,
+
+    uint8_t start_hour,
+
+    uint8_t start_minute,
+
+    uint8_t duration_hour,
+
+    uint8_t duration_minute
+
+) {
+  uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_report_callback_count++;
+  num_command_callbacks++;
+  return SL_STATUS_OK;
+}
+
+static unsigned int uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_get_callback_count;
+static sl_status_t uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_get_callback_func(
+    dotdot_unid_t unid,
+    dotdot_endpoint_id_t endpoint,
+    uic_mqtt_dotdot_callback_call_type_t callback_type,
+    uint8_t user_identifier,
+
+    uint8_t schedule_slotid
+
+) {
+  uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_get_callback_count++;
+  num_command_callbacks++;
+  return SL_STATUS_OK;
+}
+
+static unsigned int uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_set_callback_count;
+static sl_status_t uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_set_callback_func(
+    dotdot_unid_t unid,
+    dotdot_endpoint_id_t endpoint,
+    uic_mqtt_dotdot_callback_call_type_t callback_type,
+    uint8_t set_action,
+
+    uint8_t user_identifier,
+
+    uint8_t schedule_slotid,
+
+    uint8_t start_year,
+
+    uint8_t start_day,
+
+    uint8_t start_hour,
+
+    uint8_t start_month,
+
+    uint8_t start_minute,
+
+    uint8_t stop_year,
+
+    uint8_t stop_month,
+
+    uint8_t stop_day,
+
+    uint8_t stop_hour,
+
+    uint8_t stop_minute
+
+) {
+  uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_set_callback_count++;
+  num_command_callbacks++;
+  return SL_STATUS_OK;
+}
+
+static unsigned int uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_get_callback_count;
+static sl_status_t uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_get_callback_func(
+    dotdot_unid_t unid,
+    dotdot_endpoint_id_t endpoint,
+    uic_mqtt_dotdot_callback_call_type_t callback_type,
+    uint8_t user_identifier,
+
+    uint8_t schedule_slotid
+
+) {
+  uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_get_callback_count++;
+  num_command_callbacks++;
+  return SL_STATUS_OK;
+}
+
+static unsigned int uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_set_callback_count;
+static sl_status_t uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_set_callback_func(
     dotdot_unid_t unid,
     dotdot_endpoint_id_t endpoint,
     uic_mqtt_dotdot_callback_call_type_t callback_type,
@@ -3079,7 +3224,22 @@ static sl_status_t uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock
     uint8_t duration_minute
 
 ) {
-  uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_daily_repeating_report_callback_count++;
+  uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_set_callback_count++;
+  num_command_callbacks++;
+  return SL_STATUS_OK;
+}
+
+static unsigned int uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_get_callback_count;
+static sl_status_t uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_get_callback_func(
+    dotdot_unid_t unid,
+    dotdot_endpoint_id_t endpoint,
+    uic_mqtt_dotdot_callback_call_type_t callback_type,
+    uint8_t user_identifier,
+
+    uint8_t schedule_slotid
+
+) {
+  uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_get_callback_count++;
   num_command_callbacks++;
   return SL_STATUS_OK;
 }
@@ -3498,11 +3658,27 @@ static unsigned int set_all_callbacks()
   num_callbacks++;
   uic_mqtt_dotdot_unify_fan_control_turn_off_callback_set(&uic_mqtt_dotdot_unify_fan_control_turn_off_callback_func);
   num_callbacks++;
-  uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_week_day_report_callback_set(&uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_week_day_report_callback_func);
+  uic_mqtt_dotdot_unify_schedule_entry_lock_enable_set_callback_set(&uic_mqtt_dotdot_unify_schedule_entry_lock_enable_set_callback_func);
   num_callbacks++;
-  uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_year_day_report_callback_set(&uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_year_day_report_callback_func);
+  uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_report_callback_set(&uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_report_callback_func);
   num_callbacks++;
-  uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_daily_repeating_report_callback_set(&uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_daily_repeating_report_callback_func);
+  uic_mqtt_dotdot_unify_schedule_entry_lock_enable_all_set_callback_set(&uic_mqtt_dotdot_unify_schedule_entry_lock_enable_all_set_callback_func);
+  num_callbacks++;
+  uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_report_callback_set(&uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_report_callback_func);
+  num_callbacks++;
+  uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_set_callback_set(&uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_set_callback_func);
+  num_callbacks++;
+  uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_report_callback_set(&uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_report_callback_func);
+  num_callbacks++;
+  uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_get_callback_set(&uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_get_callback_func);
+  num_callbacks++;
+  uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_set_callback_set(&uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_set_callback_func);
+  num_callbacks++;
+  uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_get_callback_set(&uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_get_callback_func);
+  num_callbacks++;
+  uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_set_callback_set(&uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_set_callback_func);
+  num_callbacks++;
+  uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_get_callback_set(&uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_get_callback_func);
   num_callbacks++;
   uic_mqtt_dotdot_unify_humidity_control_mode_set_callback_set(&uic_mqtt_dotdot_unify_humidity_control_mode_set_callback_func);
   num_callbacks++;
@@ -3756,9 +3932,17 @@ static void unset_all_callbacks()
   uic_mqtt_dotdot_unify_fan_control_turn_off_callback_clear();
   uic_mqtt_dotdot_clear_unify_fan_control_write_attributes_callbacks();
   uic_mqtt_dotdot_clear_unify_thermostat_write_attributes_callbacks();
-  uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_week_day_report_callback_clear();
-  uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_year_day_report_callback_clear();
-  uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_daily_repeating_report_callback_clear();
+  uic_mqtt_dotdot_unify_schedule_entry_lock_enable_set_callback_clear();
+  uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_report_callback_clear();
+  uic_mqtt_dotdot_unify_schedule_entry_lock_enable_all_set_callback_clear();
+  uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_report_callback_clear();
+  uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_set_callback_clear();
+  uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_report_callback_clear();
+  uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_get_callback_clear();
+  uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_set_callback_clear();
+  uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_get_callback_clear();
+  uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_set_callback_clear();
+  uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_get_callback_clear();
   uic_mqtt_dotdot_clear_unify_schedule_entry_lock_write_attributes_callbacks();
   uic_mqtt_dotdot_unify_humidity_control_mode_set_callback_clear();
   uic_mqtt_dotdot_unify_humidity_control_setpoint_set_callback_clear();
@@ -3957,9 +4141,17 @@ static void reset_callback_counters()
   uic_mqtt_dotdot_protocol_controller_network_management_write_callback_count = 0;
   uic_mqtt_dotdot_unify_fan_control_set_fan_mode_callback_count = 0;
   uic_mqtt_dotdot_unify_fan_control_turn_off_callback_count = 0;
-  uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_week_day_report_callback_count = 0;
-  uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_year_day_report_callback_count = 0;
-  uic_mqtt_dotdot_unify_schedule_entry_lock_schedule_entry_lock_daily_repeating_report_callback_count = 0;
+  uic_mqtt_dotdot_unify_schedule_entry_lock_enable_set_callback_count = 0;
+  uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_report_callback_count = 0;
+  uic_mqtt_dotdot_unify_schedule_entry_lock_enable_all_set_callback_count = 0;
+  uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_report_callback_count = 0;
+  uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_set_callback_count = 0;
+  uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_report_callback_count = 0;
+  uic_mqtt_dotdot_unify_schedule_entry_lock_week_day_get_callback_count = 0;
+  uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_set_callback_count = 0;
+  uic_mqtt_dotdot_unify_schedule_entry_lock_year_day_get_callback_count = 0;
+  uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_set_callback_count = 0;
+  uic_mqtt_dotdot_unify_schedule_entry_lock_daily_repeating_get_callback_count = 0;
   uic_mqtt_dotdot_unify_humidity_control_mode_set_callback_count = 0;
   uic_mqtt_dotdot_unify_humidity_control_setpoint_set_callback_count = 0;
 }

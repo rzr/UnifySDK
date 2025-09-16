@@ -2881,14 +2881,38 @@ void uic_mqtt_dotdot_unify_schedule_entry_lock_publish_supported_generated_comma
 
   // Assemble of vector of strings for the Supported Commands:
   std::vector<std::string> command_vector;
-  if (command_list->schedule_entry_lock_week_day_report == true) {
-    command_vector.emplace_back("ScheduleEntryLockWeekDayReport");
+  if (command_list->enable_set == true) {
+    command_vector.emplace_back("EnableSet");
   }
-  if (command_list->schedule_entry_lock_year_day_report == true) {
-    command_vector.emplace_back("ScheduleEntryLockYearDayReport");
+  if (command_list->week_day_report == true) {
+    command_vector.emplace_back("WeekDayReport");
   }
-  if (command_list->schedule_entry_lock_daily_repeating_report == true) {
-    command_vector.emplace_back("ScheduleEntryLockDailyRepeatingReport");
+  if (command_list->enable_all_set == true) {
+    command_vector.emplace_back("EnableAllSet");
+  }
+  if (command_list->year_day_report == true) {
+    command_vector.emplace_back("YearDayReport");
+  }
+  if (command_list->week_day_set == true) {
+    command_vector.emplace_back("WeekDaySet");
+  }
+  if (command_list->daily_repeating_report == true) {
+    command_vector.emplace_back("DailyRepeatingReport");
+  }
+  if (command_list->week_day_get == true) {
+    command_vector.emplace_back("WeekDayGet");
+  }
+  if (command_list->year_day_set == true) {
+    command_vector.emplace_back("YearDaySet");
+  }
+  if (command_list->year_day_get == true) {
+    command_vector.emplace_back("YearDayGet");
+  }
+  if (command_list->daily_repeating_set == true) {
+    command_vector.emplace_back("DailyRepeatingSet");
+  }
+  if (command_list->daily_repeating_get == true) {
+    command_vector.emplace_back("DailyRepeatingGet");
   }
   if (command_list->write_attributes == true) {
     command_vector.emplace_back("WriteAttributes");
