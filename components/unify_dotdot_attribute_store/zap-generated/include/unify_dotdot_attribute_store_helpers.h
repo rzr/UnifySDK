@@ -76497,6 +76497,246 @@ bool dotdot_is_any_unify_thermostat_writable_attribute_supported(
   const dotdot_endpoint_id_t endpoint_id);
 
 ////////////////////////////////////////////////////////////////////////////////
+// Start of cluster UnifySwitchAll
+////////////////////////////////////////////////////////////////////////////////
+// UnifySwitchAll Mode
+/**
+ * @brief Verifies if the DotDot UnifySwitchAll - Mode is supported
+ * under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ *
+ * @returns true if Mode is supported
+ * @returns false if Mode is not supported
+ */
+bool dotdot_is_supported_unify_switch_all_mode (
+              const dotdot_unid_t unid, const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Gets the DotDot UnifySwitchAll - Mode attribute value under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @param value_state   value state to get,
+ *                      see \ref attribute_store_get_node_attribute_value
+ * 
+ *
+ * @returns Mode attribute
+ */
+uint8_t dotdot_get_unify_switch_all_mode(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id,
+  attribute_store_node_value_state_t value_state);
+
+/**
+ * @brief Set the DotDot UnifySwitchAll - Mode attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @param value_state   value state to write for the node,
+ *                      see \ref attribute_store_set_node_attribute_value
+ * 
+ * @param new_mode new value to set
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_set_unify_switch_all_mode(
+  const dotdot_unid_t unid,
+  dotdot_endpoint_id_t endpoint_id,
+  attribute_store_node_value_state_t value_state,
+  uint8_t new_mode
+  );
+
+/**
+ * @brief Undefines the Reported value of the the DotDot UnifySwitchAll - Mode
+ * attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_unify_switch_all_mode_undefine_reported(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Undefines the Desired value of the DotDot
+ * UnifySwitchAll - Mode attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_unify_switch_all_mode_undefine_desired(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Checks if the reported value is defined for the DotDot
+ * UnifySwitchAll - Mode attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns true if defined, false is undefined or non-existent
+ */
+bool dotdot_unify_switch_all_mode_is_reported_defined(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Checks if the desired value is defined for the DotDot
+ * UnifySwitchAll - Mode attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns true if defined, false is undefined or non-existent
+ */
+bool dotdot_unify_switch_all_mode_is_desired_defined(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Creates a DotDot UnifySwitchAll - Mode attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_create_unify_switch_all_mode(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+// UnifySwitchAll OnOff
+/**
+ * @brief Verifies if the DotDot UnifySwitchAll - OnOff is supported
+ * under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ *
+ * @returns true if OnOff is supported
+ * @returns false if OnOff is not supported
+ */
+bool dotdot_is_supported_unify_switch_all_on_off (
+              const dotdot_unid_t unid, const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Gets the DotDot UnifySwitchAll - OnOff attribute value under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @param value_state   value state to get,
+ *                      see \ref attribute_store_get_node_attribute_value
+ * 
+ *
+ * @returns OnOff attribute
+ */
+uint8_t dotdot_get_unify_switch_all_on_off(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id,
+  attribute_store_node_value_state_t value_state);
+
+/**
+ * @brief Set the DotDot UnifySwitchAll - OnOff attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @param value_state   value state to write for the node,
+ *                      see \ref attribute_store_set_node_attribute_value
+ * 
+ * @param new_on_off new value to set
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_set_unify_switch_all_on_off(
+  const dotdot_unid_t unid,
+  dotdot_endpoint_id_t endpoint_id,
+  attribute_store_node_value_state_t value_state,
+  uint8_t new_on_off
+  );
+
+/**
+ * @brief Undefines the Reported value of the the DotDot UnifySwitchAll - OnOff
+ * attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_unify_switch_all_on_off_undefine_reported(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Undefines the Desired value of the DotDot
+ * UnifySwitchAll - OnOff attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_unify_switch_all_on_off_undefine_desired(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Checks if the reported value is defined for the DotDot
+ * UnifySwitchAll - OnOff attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns true if defined, false is undefined or non-existent
+ */
+bool dotdot_unify_switch_all_on_off_is_reported_defined(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Checks if the desired value is defined for the DotDot
+ * UnifySwitchAll - OnOff attribute under a UNID/EndpointID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns true if defined, false is undefined or non-existent
+ */
+bool dotdot_unify_switch_all_on_off_is_desired_defined(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Creates a DotDot UnifySwitchAll - OnOff attribute under a UNID/EndpoinID
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns sl_status_t SL_STATUS_OK on success
+ */
+sl_status_t dotdot_create_unify_switch_all_on_off(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Checks if a UNID/Endpoint supports any attribute for the UnifySwitchAll
+ * Cluster
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns true if at least 1 attribute in the Attribute Store, false otherwise
+ */
+bool dotdot_is_any_unify_switch_all_attribute_supported(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+/**
+ * @brief Checks if a UNID/Endpoint supports any writable attribute for the
+ * UnifySwitchAll Cluster
+ *
+ * @param unid          Node's UNID
+ * @param endpoint_id   Endpoint ID
+ * @returns true if at least 1 writable attribute in the Attribute Store, false otherwise
+ */
+bool dotdot_is_any_unify_switch_all_writable_attribute_supported(
+  const dotdot_unid_t unid,
+  const dotdot_endpoint_id_t endpoint_id);
+
+////////////////////////////////////////////////////////////////////////////////
 // Start of cluster UnifyScheduleEntryLock
 ////////////////////////////////////////////////////////////////////////////////
 // UnifyScheduleEntryLock SlotsWeekDay
@@ -77369,246 +77609,6 @@ bool dotdot_is_any_unify_schedule_entry_lock_attribute_supported(
  * @returns true if at least 1 writable attribute in the Attribute Store, false otherwise
  */
 bool dotdot_is_any_unify_schedule_entry_lock_writable_attribute_supported(
-  const dotdot_unid_t unid,
-  const dotdot_endpoint_id_t endpoint_id);
-
-////////////////////////////////////////////////////////////////////////////////
-// Start of cluster UnifySwitchAll
-////////////////////////////////////////////////////////////////////////////////
-// UnifySwitchAll Mode
-/**
- * @brief Verifies if the DotDot UnifySwitchAll - Mode is supported
- * under a UNID/EndpoinID
- *
- * @param unid          Node's UNID
- * @param endpoint_id   Endpoint ID
- *
- * @returns true if Mode is supported
- * @returns false if Mode is not supported
- */
-bool dotdot_is_supported_unify_switch_all_mode (
-              const dotdot_unid_t unid, const dotdot_endpoint_id_t endpoint_id);
-
-/**
- * @brief Gets the DotDot UnifySwitchAll - Mode attribute value under a UNID/EndpoinID
- *
- * @param unid          Node's UNID
- * @param endpoint_id   Endpoint ID
- * @param value_state   value state to get,
- *                      see \ref attribute_store_get_node_attribute_value
- * 
- *
- * @returns Mode attribute
- */
-uint8_t dotdot_get_unify_switch_all_mode(
-  const dotdot_unid_t unid,
-  const dotdot_endpoint_id_t endpoint_id,
-  attribute_store_node_value_state_t value_state);
-
-/**
- * @brief Set the DotDot UnifySwitchAll - Mode attribute under a UNID/EndpoinID
- *
- * @param unid          Node's UNID
- * @param endpoint_id   Endpoint ID
- * @param value_state   value state to write for the node,
- *                      see \ref attribute_store_set_node_attribute_value
- * 
- * @param new_mode new value to set
- * @returns sl_status_t SL_STATUS_OK on success
- */
-sl_status_t dotdot_set_unify_switch_all_mode(
-  const dotdot_unid_t unid,
-  dotdot_endpoint_id_t endpoint_id,
-  attribute_store_node_value_state_t value_state,
-  uint8_t new_mode
-  );
-
-/**
- * @brief Undefines the Reported value of the the DotDot UnifySwitchAll - Mode
- * attribute under a UNID/EndpoinID
- *
- * @param unid          Node's UNID
- * @param endpoint_id   Endpoint ID
- * @returns sl_status_t SL_STATUS_OK on success
- */
-sl_status_t dotdot_unify_switch_all_mode_undefine_reported(
-  const dotdot_unid_t unid,
-  const dotdot_endpoint_id_t endpoint_id);
-
-/**
- * @brief Undefines the Desired value of the DotDot
- * UnifySwitchAll - Mode attribute under a UNID/EndpointID
- *
- * @param unid          Node's UNID
- * @param endpoint_id   Endpoint ID
- * @returns sl_status_t SL_STATUS_OK on success
- */
-sl_status_t dotdot_unify_switch_all_mode_undefine_desired(
-  const dotdot_unid_t unid,
-  const dotdot_endpoint_id_t endpoint_id);
-
-/**
- * @brief Checks if the reported value is defined for the DotDot
- * UnifySwitchAll - Mode attribute under a UNID/EndpointID
- *
- * @param unid          Node's UNID
- * @param endpoint_id   Endpoint ID
- * @returns true if defined, false is undefined or non-existent
- */
-bool dotdot_unify_switch_all_mode_is_reported_defined(
-  const dotdot_unid_t unid,
-  const dotdot_endpoint_id_t endpoint_id);
-
-/**
- * @brief Checks if the desired value is defined for the DotDot
- * UnifySwitchAll - Mode attribute under a UNID/EndpointID
- *
- * @param unid          Node's UNID
- * @param endpoint_id   Endpoint ID
- * @returns true if defined, false is undefined or non-existent
- */
-bool dotdot_unify_switch_all_mode_is_desired_defined(
-  const dotdot_unid_t unid,
-  const dotdot_endpoint_id_t endpoint_id);
-
-/**
- * @brief Creates a DotDot UnifySwitchAll - Mode attribute under a UNID/EndpoinID
- *
- * @param unid          Node's UNID
- * @param endpoint_id   Endpoint ID
- * @returns sl_status_t SL_STATUS_OK on success
- */
-sl_status_t dotdot_create_unify_switch_all_mode(
-  const dotdot_unid_t unid,
-  const dotdot_endpoint_id_t endpoint_id);
-// UnifySwitchAll OnOff
-/**
- * @brief Verifies if the DotDot UnifySwitchAll - OnOff is supported
- * under a UNID/EndpoinID
- *
- * @param unid          Node's UNID
- * @param endpoint_id   Endpoint ID
- *
- * @returns true if OnOff is supported
- * @returns false if OnOff is not supported
- */
-bool dotdot_is_supported_unify_switch_all_on_off (
-              const dotdot_unid_t unid, const dotdot_endpoint_id_t endpoint_id);
-
-/**
- * @brief Gets the DotDot UnifySwitchAll - OnOff attribute value under a UNID/EndpoinID
- *
- * @param unid          Node's UNID
- * @param endpoint_id   Endpoint ID
- * @param value_state   value state to get,
- *                      see \ref attribute_store_get_node_attribute_value
- * 
- *
- * @returns OnOff attribute
- */
-uint8_t dotdot_get_unify_switch_all_on_off(
-  const dotdot_unid_t unid,
-  const dotdot_endpoint_id_t endpoint_id,
-  attribute_store_node_value_state_t value_state);
-
-/**
- * @brief Set the DotDot UnifySwitchAll - OnOff attribute under a UNID/EndpoinID
- *
- * @param unid          Node's UNID
- * @param endpoint_id   Endpoint ID
- * @param value_state   value state to write for the node,
- *                      see \ref attribute_store_set_node_attribute_value
- * 
- * @param new_on_off new value to set
- * @returns sl_status_t SL_STATUS_OK on success
- */
-sl_status_t dotdot_set_unify_switch_all_on_off(
-  const dotdot_unid_t unid,
-  dotdot_endpoint_id_t endpoint_id,
-  attribute_store_node_value_state_t value_state,
-  uint8_t new_on_off
-  );
-
-/**
- * @brief Undefines the Reported value of the the DotDot UnifySwitchAll - OnOff
- * attribute under a UNID/EndpoinID
- *
- * @param unid          Node's UNID
- * @param endpoint_id   Endpoint ID
- * @returns sl_status_t SL_STATUS_OK on success
- */
-sl_status_t dotdot_unify_switch_all_on_off_undefine_reported(
-  const dotdot_unid_t unid,
-  const dotdot_endpoint_id_t endpoint_id);
-
-/**
- * @brief Undefines the Desired value of the DotDot
- * UnifySwitchAll - OnOff attribute under a UNID/EndpointID
- *
- * @param unid          Node's UNID
- * @param endpoint_id   Endpoint ID
- * @returns sl_status_t SL_STATUS_OK on success
- */
-sl_status_t dotdot_unify_switch_all_on_off_undefine_desired(
-  const dotdot_unid_t unid,
-  const dotdot_endpoint_id_t endpoint_id);
-
-/**
- * @brief Checks if the reported value is defined for the DotDot
- * UnifySwitchAll - OnOff attribute under a UNID/EndpointID
- *
- * @param unid          Node's UNID
- * @param endpoint_id   Endpoint ID
- * @returns true if defined, false is undefined or non-existent
- */
-bool dotdot_unify_switch_all_on_off_is_reported_defined(
-  const dotdot_unid_t unid,
-  const dotdot_endpoint_id_t endpoint_id);
-
-/**
- * @brief Checks if the desired value is defined for the DotDot
- * UnifySwitchAll - OnOff attribute under a UNID/EndpointID
- *
- * @param unid          Node's UNID
- * @param endpoint_id   Endpoint ID
- * @returns true if defined, false is undefined or non-existent
- */
-bool dotdot_unify_switch_all_on_off_is_desired_defined(
-  const dotdot_unid_t unid,
-  const dotdot_endpoint_id_t endpoint_id);
-
-/**
- * @brief Creates a DotDot UnifySwitchAll - OnOff attribute under a UNID/EndpoinID
- *
- * @param unid          Node's UNID
- * @param endpoint_id   Endpoint ID
- * @returns sl_status_t SL_STATUS_OK on success
- */
-sl_status_t dotdot_create_unify_switch_all_on_off(
-  const dotdot_unid_t unid,
-  const dotdot_endpoint_id_t endpoint_id);
-
-/**
- * @brief Checks if a UNID/Endpoint supports any attribute for the UnifySwitchAll
- * Cluster
- *
- * @param unid          Node's UNID
- * @param endpoint_id   Endpoint ID
- * @returns true if at least 1 attribute in the Attribute Store, false otherwise
- */
-bool dotdot_is_any_unify_switch_all_attribute_supported(
-  const dotdot_unid_t unid,
-  const dotdot_endpoint_id_t endpoint_id);
-
-/**
- * @brief Checks if a UNID/Endpoint supports any writable attribute for the
- * UnifySwitchAll Cluster
- *
- * @param unid          Node's UNID
- * @param endpoint_id   Endpoint ID
- * @returns true if at least 1 writable attribute in the Attribute Store, false otherwise
- */
-bool dotdot_is_any_unify_switch_all_writable_attribute_supported(
   const dotdot_unid_t unid,
   const dotdot_endpoint_id_t endpoint_id);
 

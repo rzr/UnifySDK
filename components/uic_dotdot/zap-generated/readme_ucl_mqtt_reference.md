@@ -53573,6 +53573,321 @@ mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/UnifyThermostat/Commands/ForceReadAttr
 <!-- NEW Page Cluster Support -->
 <!-- -->
 <!-- -->
+\page unify_switch_all UnifySwitchAll Cluster
+The following commands and attributes are accepted as JSON payloads for the
+UnifySwitchAll cluster.
+
+<br><br>
+
+<!-- -->
+<!--  START OF UnifySwitchAll Attributes Section -->
+<!-- -->
+\section unify_switch_all_attrs UnifySwitchAll Attributes
+The following attribute topics are used to retrieve the UnifySwitchAll cluster state.
+
+<br>
+
+\subsection unify_switch_all_attr_mode UnifySwitchAll/Mode Attribute
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/UnifySwitchAll/Attributes/Mode/Reported
+[PREFIX]/UnifySwitchAll/Attributes/Mode/Desired
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UnifySwitchAll Cluster Mode Attribute Properties",
+  "type": "object",
+  "properties": {
+    "value": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "value"
+  ]
+}
+```
+
+
+**Example Mosquitto CLI Tool Usage**
+
+To see desired/reported value for Mode attribute under the by-unid topic space:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/+/+/UnifySwitchAll/Attributes/Mode/+'
+
+# Example output
+
+ucl/by-unid/<UNID>/ep0/UnifySwitchAll/Attributes/Mode/Desired { "value": <DESIRED_MODE>}
+ucl/by-unid/<UNID>/ep0/UnifySwitchAll/Attributes/Mode/Reported { "value": <REPORTED_MODE>}
+
+```
+
+<br><br>
+
+\subsection unify_switch_all_attr_on_off UnifySwitchAll/OnOff Attribute
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/UnifySwitchAll/Attributes/OnOff/Reported
+[PREFIX]/UnifySwitchAll/Attributes/OnOff/Desired
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UnifySwitchAll Cluster OnOff Attribute Properties",
+  "type": "object",
+  "properties": {
+    "value": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "value"
+  ]
+}
+```
+
+
+**Example Mosquitto CLI Tool Usage**
+
+To see desired/reported value for OnOff attribute under the by-unid topic space:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/+/+/UnifySwitchAll/Attributes/OnOff/+'
+
+# Example output
+
+ucl/by-unid/<UNID>/ep0/UnifySwitchAll/Attributes/OnOff/Desired { "value": <DESIRED_ON_OFF>}
+ucl/by-unid/<UNID>/ep0/UnifySwitchAll/Attributes/OnOff/Reported { "value": <REPORTED_ON_OFF>}
+
+```
+
+<br><br>
+
+
+\subsection unify_switch_all_attr_cluster_revision UnifySwitchAll/ClusterRevision Attribute
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/UnifySwitchAll/Attributes/ClusterRevision/Reported
+[PREFIX]/UnifySwitchAll/Attributes/ClusterRevision/Desired
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UnifySwitchAll Cluster ClusterRevision Attribute Properties",
+  "type": "object",
+  "properties": {
+    "value": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "value"
+  ]
+}
+```
+
+**Example Mosquitto CLI Tool Usage**
+
+To see desired/reported value for ClusterRevision attribute under the by-unid topic space:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/<UNID>/<EP>/UnifySwitchAll/Attributes/ClusterRevision/+'
+# Example output
+ucl/by-unid/<UNID>/<EP>/UnifySwitchAll/Attributes/ClusterRevision/Desired { "value": <DESIRED_CLUSTER_REVISION> }
+ucl/by-unid/<UNID>/<EP>/UnifySwitchAll/Attributes/ClusterRevision/Reported { "value": <REPORTED_CLUSTER_REVISION> }
+```
+
+<!-- -->
+<!--  END OF UnifySwitchAll Attributes Section -->
+<!-- -->
+
+<br><br>
+
+<!-- -->
+<!-- START OF UnifySwitchAll Supported Commands Section -->
+<!-- -->
+\section unify_switch_all_recv_cmd_support UnifySwitchAll Command Support
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/UnifySwitchAll/SupportedCommands
+[PREFIX]/UnifySwitchAll/SupportedGeneratedCommands
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UnifySwitchAll Command Support Properties",
+  "type": "object",
+  "properties": {
+      "value": {
+          "type": "array",
+          "items" : {
+            "type": "string",
+            "enum": [
+            ]
+          }
+        }
+      }
+  },
+  "required": [
+    "value"
+  ]
+}
+```
+
+**Example Mosquitto CLI Tool Usage**
+
+To see supported commands for UnifySwitchAll cluster under the by-unid topic space:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/<UNID>/<EP>/UnifySwitchAll/SupportedCommands'
+# Example output
+ucl/by-unid/<UNID>/<EP>/UnifySwitchAll/SupportedCommands { "value": [] }
+```
+
+To see supported generated commands for UnifySwitchAll cluster under the by-unid topic space:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/<UNID>/<EP>/UnifySwitchAll/SupportedGeneratedCommands'
+# Example output
+ucl/by-unid/<UNID>/<EP>/UnifySwitchAll/SupportedGeneratedCommands { "value": [] }
+```
+
+<!-- -->
+<!-- END OF UnifySwitchAll Supported Commands Section -->
+<!-- -->
+
+<br><br>
+
+<!-- -->
+<!-- START OF UnifySwitchAll Commands Section -->
+<!-- -->
+\section unify_switch_all_cmds UnifySwitchAll Commands
+
+<br><br>
+
+\subsection unify_switch_all_write_attr_cmd UnifySwitchAll/WriteAttributes Command
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/UnifySwitchAll/Commands/WriteAttributes
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UnifySwitchAll Cluster WriteAttributes Command Properties",
+  "type": "object",
+  "properties": {
+    "Mode": {
+      "type": "integer"
+    },
+    "OnOff": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "value"
+  ]
+}
+```
+
+**Example Mosquitto CLI Tool Usage**
+
+To update all UnifySwitchAll attributes under the by-unid topic space:
+
+```console
+mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/UnifySwitchAll/Commands/WriteAttributes' -m  '{ "Mode": <MODE_VALUE> ,"OnOff": <ON_OFF_VALUE>  }'
+```
+
+> NOTE: Specify only the list of attributes to write in this command.
+> Unspecified attributes will not be updated.
+
+<br><br>
+
+\subsection unify_switch_all_force_read_attr_cmd UnifySwitchAll/ForceReadAttributes Command
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/UnifySwitchAll/Commands/ForceReadAttributes
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UnifySwitchAll Cluster ForceReadAttributes Command Properties",
+  "type": "object",
+  "properties": {
+    "value": {
+      "type": "array"
+      "items": {
+        "type": "string",
+        "enum": [
+          "Mode",
+          "OnOff"
+        ]
+      }
+    }
+  },
+  "required": [
+    "value"
+  ]
+}
+```
+
+**Example Mosquitto CLI Tool Usage**
+
+To force read all UnifySwitchAll attributes under the by-unid topic space (by sending an empty array):
+
+```console
+mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/UnifySwitchAll/Commands/ForceReadAttributes' -m  '{ "value": [] }'
+```
+
+To force read one of the UnifySwitchAll attributes under the by-unid topic space:
+
+```console
+mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/UnifySwitchAll/Commands/ForceReadAttributes' -m  '{ "value": ["Mode"] }'
+```
+
+<!-- -->
+<!-- END OF UnifySwitchAll Commands Section -->
+<!-- -->
+
+<br><br><br>
+
+
+<!-- -->
+<!-- -->
+<!-- NEW Page Cluster Support -->
+<!-- -->
+<!-- -->
 \page unify_schedule_entry_lock UnifyScheduleEntryLock Cluster
 The following commands and attributes are accepted as JSON payloads for the
 UnifyScheduleEntryLock cluster.

@@ -266,6 +266,10 @@
 #define DOTDOT_UNIFY_THERMOSTAT_CLUSTER_ID ((dotdot_cluster_id_t)0xFD15)
 
 
+// Definitions for cluster: UnifySwitchAll
+#define DOTDOT_UNIFY_SWITCH_ALL_CLUSTER_ID ((dotdot_cluster_id_t)0xFD20)
+
+
 // Definitions for cluster: UnifyScheduleEntryLock
 #define DOTDOT_UNIFY_SCHEDULE_ENTRY_LOCK_CLUSTER_ID ((dotdot_cluster_id_t)0xFD21)
 

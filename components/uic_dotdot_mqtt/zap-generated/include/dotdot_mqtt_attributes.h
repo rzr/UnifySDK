@@ -5054,6 +5054,21 @@ typedef sl_status_t (*uic_mqtt_dotdot_unify_thermostat_attribute_operating_state
   uic_mqtt_dotdot_attribute_update_type_t update_type,
   uint8_t operating_state
 );
+// Callback types used by the unify_switch_all cluster
+typedef sl_status_t (*uic_mqtt_dotdot_unify_switch_all_attribute_mode_callback_t)(
+  dotdot_unid_t unid,
+  dotdot_endpoint_id_t endpoint,
+  bool unretained,
+  uic_mqtt_dotdot_attribute_update_type_t update_type,
+  uint8_t mode
+);
+typedef sl_status_t (*uic_mqtt_dotdot_unify_switch_all_attribute_on_off_callback_t)(
+  dotdot_unid_t unid,
+  dotdot_endpoint_id_t endpoint,
+  bool unretained,
+  uic_mqtt_dotdot_attribute_update_type_t update_type,
+  uint8_t on_off
+);
 // Callback types used by the unify_schedule_entry_lock cluster
 typedef sl_status_t (*uic_mqtt_dotdot_unify_schedule_entry_lock_attribute_slots_week_day_callback_t)(
   dotdot_unid_t unid,
@@ -9931,6 +9946,26 @@ void uic_mqtt_dotdot_unify_thermostat_attribute_supported_thermostat_mode_callba
  * this callback will overwrite the previous set callback
  */
 void uic_mqtt_dotdot_unify_thermostat_attribute_operating_state_callback_set(const uic_mqtt_dotdot_unify_thermostat_attribute_operating_state_callback_t callback);
+
+
+/**
+ *  Initializes the attributes features for the UnifySwitchAll cluster,
+ *  allowing to receive attribute updates from other UNIDs.
+ */
+sl_status_t uic_mqtt_dotdot_unify_switch_all_attributes_init();
+
+/**
+ * Setup callback to be called when a
+ * UnifySwitchAll/Attributes/mode/# is received. Setting
+ * this callback will overwrite the previous set callback
+ */
+void uic_mqtt_dotdot_unify_switch_all_attribute_mode_callback_set(const uic_mqtt_dotdot_unify_switch_all_attribute_mode_callback_t callback);
+/**
+ * Setup callback to be called when a
+ * UnifySwitchAll/Attributes/on_off/# is received. Setting
+ * this callback will overwrite the previous set callback
+ */
+void uic_mqtt_dotdot_unify_switch_all_attribute_on_off_callback_set(const uic_mqtt_dotdot_unify_switch_all_attribute_on_off_callback_t callback);
 
 
 /**

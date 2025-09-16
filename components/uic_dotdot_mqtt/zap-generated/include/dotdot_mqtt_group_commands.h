@@ -3709,6 +3709,23 @@ void uic_mqtt_dotdot_by_group_unify_thermostat_write_attributes_callback_set(
 
 
 
+typedef void (*uic_mqtt_dotdot_by_group_unify_switch_all_write_attributes_callback_t)(
+    const dotdot_group_id_t group_id,
+    uic_mqtt_dotdot_unify_switch_all_state_t,
+    uic_mqtt_dotdot_unify_switch_all_updated_state_t
+);
+
+/**
+ * Setup a callback for WriteAttribute to be called when a
+ * ucl/by-group/+/unify_switch_all/Commands/WriteAttributes is received.
+ * Setting this callback will overwrite any previously set callback.
+ */
+void uic_mqtt_dotdot_by_group_unify_switch_all_write_attributes_callback_set(
+  const uic_mqtt_dotdot_by_group_unify_switch_all_write_attributes_callback_t callback
+);
+
+
+
 /**
  * @brief Callback signature for by-group UnifyScheduleEntryLock::EnableSet command.
  */
@@ -3898,23 +3915,6 @@ typedef void (*uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_write_attribut
  */
 void uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_write_attributes_callback_set(
   const uic_mqtt_dotdot_by_group_unify_schedule_entry_lock_write_attributes_callback_t callback
-);
-
-
-
-typedef void (*uic_mqtt_dotdot_by_group_unify_switch_all_write_attributes_callback_t)(
-    const dotdot_group_id_t group_id,
-    uic_mqtt_dotdot_unify_switch_all_state_t,
-    uic_mqtt_dotdot_unify_switch_all_updated_state_t
-);
-
-/**
- * Setup a callback for WriteAttribute to be called when a
- * ucl/by-group/+/unify_switch_all/Commands/WriteAttributes is received.
- * Setting this callback will overwrite any previously set callback.
- */
-void uic_mqtt_dotdot_by_group_unify_switch_all_write_attributes_callback_set(
-  const uic_mqtt_dotdot_by_group_unify_switch_all_write_attributes_callback_t callback
 );
 
 

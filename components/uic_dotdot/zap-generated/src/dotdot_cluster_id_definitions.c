@@ -134,6 +134,8 @@ const char* uic_dotdot_get_cluster_name(dotdot_cluster_id_t cluster_id) {
     return "UnifyFanControl";
   case DOTDOT_UNIFY_THERMOSTAT_CLUSTER_ID:
     return "UnifyThermostat";
+  case DOTDOT_UNIFY_SWITCH_ALL_CLUSTER_ID:
+    return "UnifySwitchAll";
   case DOTDOT_UNIFY_SCHEDULE_ENTRY_LOCK_CLUSTER_ID:
     return "UnifyScheduleEntryLock";
   case DOTDOT_UNIFY_HUMIDITY_CONTROL_CLUSTER_ID:
@@ -319,6 +321,9 @@ dotdot_cluster_id_t uic_dotdot_get_cluster_id(const char* cluster_name) {
  }
  if (strcmp ("UnifyThermostat", cluster_name) == 0) {
    return DOTDOT_UNIFY_THERMOSTAT_CLUSTER_ID;
+ }
+ if (strcmp ("UnifySwitchAll", cluster_name) == 0) {
+   return DOTDOT_UNIFY_SWITCH_ALL_CLUSTER_ID;
  }
  if (strcmp ("UnifyScheduleEntryLock", cluster_name) == 0) {
    return DOTDOT_UNIFY_SCHEDULE_ENTRY_LOCK_CLUSTER_ID;

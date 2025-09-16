@@ -867,6 +867,9 @@ typedef enum {
 #define DOTDOT_UNIFY_THERMOSTAT_THERMOSTAT_MODE_ATTRIBUTE_ID ((dotdot_attribute_id_t)0x1)
 #define DOTDOT_UNIFY_THERMOSTAT_SUPPORTED_THERMOSTAT_MODE_ATTRIBUTE_ID ((dotdot_attribute_id_t)0x2)
 #define DOTDOT_UNIFY_THERMOSTAT_OPERATING_STATE_ATTRIBUTE_ID ((dotdot_attribute_id_t)0x3)
+// Definitions for cluster: UnifySwitchAll
+#define DOTDOT_UNIFY_SWITCH_ALL_MODE_ATTRIBUTE_ID ((dotdot_attribute_id_t)0x0)
+#define DOTDOT_UNIFY_SWITCH_ALL_ON_OFF_ATTRIBUTE_ID ((dotdot_attribute_id_t)0x1)
 // Definitions for cluster: UnifyScheduleEntryLock
 #define DOTDOT_UNIFY_SCHEDULE_ENTRY_LOCK_SLOTS_WEEK_DAY_ATTRIBUTE_ID ((dotdot_attribute_id_t)0x1)
 #define DOTDOT_UNIFY_SCHEDULE_ENTRY_LOCK_SLOTS_YEAR_DAY_ATTRIBUTE_ID ((dotdot_attribute_id_t)0x2)

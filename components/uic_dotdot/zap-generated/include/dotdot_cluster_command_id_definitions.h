@@ -373,6 +373,8 @@
 
 // Commands for cluster: UnifyThermostat
 
+// Commands for cluster: UnifySwitchAll
+
 // Commands for cluster: UnifyScheduleEntryLock
 #define DOTDOT_UNIFY_SCHEDULE_ENTRY_LOCK_ENABLE_SET_COMMAND_ID (0x1)
 #define DOTDOT_UNIFY_SCHEDULE_ENTRY_LOCK_WEEK_DAY_REPORT_COMMAND_ID (0x1)
