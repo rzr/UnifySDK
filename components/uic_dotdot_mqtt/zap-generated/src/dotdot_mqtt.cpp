@@ -99660,6 +99660,7 @@ void uic_mqtt_dotdot_publish_supported_commands(
   uic_mqtt_dotdot_unify_thermostat_publish_supported_commands(unid, endpoint_id);
   uic_mqtt_dotdot_unify_schedule_entry_lock_publish_supported_commands(unid, endpoint_id);
   uic_mqtt_dotdot_unify_humidity_control_publish_supported_commands(unid, endpoint_id);
+  uic_mqtt_dotdot_application_status_publish_supported_commands(unid, endpoint_id);
 }
 
 void uic_mqtt_dotdot_publish_empty_supported_commands(
@@ -99721,6 +99722,7 @@ void uic_mqtt_dotdot_publish_empty_supported_commands(
   uic_mqtt_dotdot_unify_thermostat_publish_empty_supported_commands(unid, endpoint_id);
   uic_mqtt_dotdot_unify_schedule_entry_lock_publish_empty_supported_commands(unid, endpoint_id);
   uic_mqtt_dotdot_unify_humidity_control_publish_empty_supported_commands(unid, endpoint_id);
+  uic_mqtt_dotdot_application_status_publish_empty_supported_commands(unid, endpoint_id);
 }
 
 // Publishing Cluster Revision for Basic Cluster

@@ -201,6 +201,13 @@ typedef enum {
   ZCL_AO_X_LOCATOR_REPORTING_MODE_ANGLE_REPORT = 1,
 } AoXLocatorReportingMode;
 
+// Enum for ApplicationStatusBusyStatus
+typedef enum {
+  ZCL_APPLICATION_STATUS_BUSY_STATUS_TRY_AGAIN_LATER = 0,
+  ZCL_APPLICATION_STATUS_BUSY_STATUS_TRY_AGAIN_IN_WAIT_TIME_SECONDS = 1,
+  ZCL_APPLICATION_STATUS_BUSY_STATUS_REQUEST_QUEUED = 2,
+} ApplicationStatusBusyStatus;
+
 // Enum for ArmArmMode
 typedef enum {
   ZCL_ARM_ARM_MODE_DISARM = 0,

@@ -14388,22 +14388,6 @@ void uic_mqtt_dotdot_parse_descriptor_write_attributes(
 }
 
 
-/**
- * @brief JSON parser for ::WriteAttributes command arguments.
- *
- * Parse incoming JSON object to populate command arguments passed in by reference.
- */
-void uic_mqtt_dotdot_parse_application_status_write_attributes(
-  nlohmann::json &jsn,
-  uic_mqtt_dotdot_application_status_state_t &new_state,
-  uic_mqtt_dotdot_application_status_updated_state_t &new_updated_state
-) {
-
-
-
-}
-
-
 std::string get_json_payload_for_unify_fan_control_set_fan_mode_command(
   
   const uic_mqtt_dotdot_unify_fan_control_command_set_fan_mode_fields_t *fields
@@ -15818,6 +15802,22 @@ void uic_mqtt_dotdot_parse_unify_humidity_control_write_attributes(
   nlohmann::json &jsn,
   uic_mqtt_dotdot_unify_humidity_control_state_t &new_state,
   uic_mqtt_dotdot_unify_humidity_control_updated_state_t &new_updated_state
+) {
+
+
+
+}
+
+
+/**
+ * @brief JSON parser for ::WriteAttributes command arguments.
+ *
+ * Parse incoming JSON object to populate command arguments passed in by reference.
+ */
+void uic_mqtt_dotdot_parse_application_status_write_attributes(
+  nlohmann::json &jsn,
+  uic_mqtt_dotdot_application_status_state_t &new_state,
+  uic_mqtt_dotdot_application_status_updated_state_t &new_updated_state
 ) {
 
 

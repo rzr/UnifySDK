@@ -2831,6 +2831,18 @@ sl_status_t eed_attribute_store_clusters_init()
     &on_zcl_desired_value_update,
     DOTDOT_ATTRIBUTE_ID_UNIFY_HUMIDITY_CONTROL_AUTO_SETPOINT_PRECISION,
     DESIRED_ATTRIBUTE);
+  attribute_store_register_callback_by_type_and_state(
+    &on_zcl_desired_value_update,
+    DOTDOT_ATTRIBUTE_ID_APPLICATION_STATUS_BUSY_STATUS,
+    DESIRED_ATTRIBUTE);
+  attribute_store_register_callback_by_type_and_state(
+    &on_zcl_desired_value_update,
+    DOTDOT_ATTRIBUTE_ID_APPLICATION_STATUS_WAIT_TIME,
+    DESIRED_ATTRIBUTE);
+  attribute_store_register_callback_by_type_and_state(
+    &on_zcl_desired_value_update,
+    DOTDOT_ATTRIBUTE_ID_APPLICATION_STATUS_REJECT_STATUS,
+    DESIRED_ATTRIBUTE);
   // clang-format on
   return SL_STATUS_OK;
 }

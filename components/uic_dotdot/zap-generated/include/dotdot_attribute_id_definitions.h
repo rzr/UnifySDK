@@ -896,6 +896,10 @@ typedef enum {
 #define DOTDOT_UNIFY_HUMIDITY_CONTROL_AUTO_SETPOINT_ATTRIBUTE_ID ((dotdot_attribute_id_t)0x11)
 #define DOTDOT_UNIFY_HUMIDITY_CONTROL_AUTO_SETPOINT_SCALE_ATTRIBUTE_ID ((dotdot_attribute_id_t)0x12)
 #define DOTDOT_UNIFY_HUMIDITY_CONTROL_AUTO_SETPOINT_PRECISION_ATTRIBUTE_ID ((dotdot_attribute_id_t)0x13)
+// Definitions for cluster: ApplicationStatus
+#define DOTDOT_APPLICATION_STATUS_BUSY_STATUS_ATTRIBUTE_ID ((dotdot_attribute_id_t)0x0)
+#define DOTDOT_APPLICATION_STATUS_WAIT_TIME_ATTRIBUTE_ID ((dotdot_attribute_id_t)0x1)
+#define DOTDOT_APPLICATION_STATUS_REJECT_STATUS_ATTRIBUTE_ID ((dotdot_attribute_id_t)0x2)
 
 // clang-format on
 
