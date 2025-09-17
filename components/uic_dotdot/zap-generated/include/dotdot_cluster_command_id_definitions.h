@@ -390,6 +390,10 @@
 #define DOTDOT_UNIFY_HUMIDITY_CONTROL_MODE_SET_COMMAND_ID (0x1)
 #define DOTDOT_UNIFY_HUMIDITY_CONTROL_SETPOINT_SET_COMMAND_ID (0x2)
 
+// Commands for cluster: UnifySwitchColor
+#define DOTDOT_UNIFY_SWITCH_COLOR_SET_COLOR_COMMAND_ID (0x0)
+#define DOTDOT_UNIFY_SWITCH_COLOR_START_STOP_CHANGE_COMMAND_ID (0x1)
+
 // Commands for cluster: ApplicationStatus
 
 #ifdef __cplusplus

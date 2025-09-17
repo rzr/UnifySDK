@@ -274,6 +274,10 @@
 #define DOTDOT_UNIFY_HUMIDITY_CONTROL_CLUSTER_ID ((dotdot_cluster_id_t)0xFDA0)
 
 
+// Definitions for cluster: UnifySwitchColor
+#define DOTDOT_UNIFY_SWITCH_COLOR_CLUSTER_ID ((dotdot_cluster_id_t)0xFFA1)
+
+
 // Definitions for cluster: ApplicationStatus
 #define DOTDOT_APPLICATION_STATUS_CLUSTER_ID ((dotdot_cluster_id_t)0xFFA2)
 

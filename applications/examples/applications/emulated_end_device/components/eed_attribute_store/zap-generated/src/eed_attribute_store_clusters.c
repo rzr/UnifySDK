@@ -2833,6 +2833,38 @@ sl_status_t eed_attribute_store_clusters_init()
     DESIRED_ATTRIBUTE);
   attribute_store_register_callback_by_type_and_state(
     &on_zcl_desired_value_update,
+    DOTDOT_ATTRIBUTE_ID_UNIFY_SWITCH_COLOR_WARM_WHITE,
+    DESIRED_ATTRIBUTE);
+  attribute_store_register_callback_by_type_and_state(
+    &on_zcl_desired_value_update,
+    DOTDOT_ATTRIBUTE_ID_UNIFY_SWITCH_COLOR_COLD_WHITE,
+    DESIRED_ATTRIBUTE);
+  attribute_store_register_callback_by_type_and_state(
+    &on_zcl_desired_value_update,
+    DOTDOT_ATTRIBUTE_ID_UNIFY_SWITCH_COLOR_RED,
+    DESIRED_ATTRIBUTE);
+  attribute_store_register_callback_by_type_and_state(
+    &on_zcl_desired_value_update,
+    DOTDOT_ATTRIBUTE_ID_UNIFY_SWITCH_COLOR_GREEN,
+    DESIRED_ATTRIBUTE);
+  attribute_store_register_callback_by_type_and_state(
+    &on_zcl_desired_value_update,
+    DOTDOT_ATTRIBUTE_ID_UNIFY_SWITCH_COLOR_BLUE,
+    DESIRED_ATTRIBUTE);
+  attribute_store_register_callback_by_type_and_state(
+    &on_zcl_desired_value_update,
+    DOTDOT_ATTRIBUTE_ID_UNIFY_SWITCH_COLOR_AMBER,
+    DESIRED_ATTRIBUTE);
+  attribute_store_register_callback_by_type_and_state(
+    &on_zcl_desired_value_update,
+    DOTDOT_ATTRIBUTE_ID_UNIFY_SWITCH_COLOR_CYAN,
+    DESIRED_ATTRIBUTE);
+  attribute_store_register_callback_by_type_and_state(
+    &on_zcl_desired_value_update,
+    DOTDOT_ATTRIBUTE_ID_UNIFY_SWITCH_COLOR_PURPLE,
+    DESIRED_ATTRIBUTE);
+  attribute_store_register_callback_by_type_and_state(
+    &on_zcl_desired_value_update,
     DOTDOT_ATTRIBUTE_ID_APPLICATION_STATUS_BUSY_STATUS,
     DESIRED_ATTRIBUTE);
   attribute_store_register_callback_by_type_and_state(
