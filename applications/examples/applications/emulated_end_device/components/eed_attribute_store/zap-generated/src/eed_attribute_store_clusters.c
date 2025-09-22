@@ -2717,6 +2717,14 @@ sl_status_t eed_attribute_store_clusters_init()
     DESIRED_ATTRIBUTE);
   attribute_store_register_callback_by_type_and_state(
     &on_zcl_desired_value_update,
+    DOTDOT_ATTRIBUTE_ID_UNIFY_SWITCH_ALL_MODE,
+    DESIRED_ATTRIBUTE);
+  attribute_store_register_callback_by_type_and_state(
+    &on_zcl_desired_value_update,
+    DOTDOT_ATTRIBUTE_ID_UNIFY_SWITCH_ALL_ON_OFF,
+    DESIRED_ATTRIBUTE);
+  attribute_store_register_callback_by_type_and_state(
+    &on_zcl_desired_value_update,
     DOTDOT_ATTRIBUTE_ID_UNIFY_HUMIDITY_CONTROL_REPORTING_MODE,
     DESIRED_ATTRIBUTE);
   attribute_store_register_callback_by_type_and_state(

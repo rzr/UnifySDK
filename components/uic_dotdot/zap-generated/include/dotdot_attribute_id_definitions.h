@@ -864,6 +864,9 @@ typedef enum {
 #define DOTDOT_UNIFY_THERMOSTAT_THERMOSTAT_MODE_ATTRIBUTE_ID ((dotdot_attribute_id_t)0x1)
 #define DOTDOT_UNIFY_THERMOSTAT_SUPPORTED_THERMOSTAT_MODE_ATTRIBUTE_ID ((dotdot_attribute_id_t)0x2)
 #define DOTDOT_UNIFY_THERMOSTAT_OPERATING_STATE_ATTRIBUTE_ID ((dotdot_attribute_id_t)0x3)
+// Definitions for cluster: UnifySwitchAll
+#define DOTDOT_UNIFY_SWITCH_ALL_MODE_ATTRIBUTE_ID ((dotdot_attribute_id_t)0x0)
+#define DOTDOT_UNIFY_SWITCH_ALL_ON_OFF_ATTRIBUTE_ID ((dotdot_attribute_id_t)0x1)
 // Definitions for cluster: UnifyHumidityControl
 #define DOTDOT_UNIFY_HUMIDITY_CONTROL_REPORTING_MODE_ATTRIBUTE_ID ((dotdot_attribute_id_t)0x1)
 #define DOTDOT_UNIFY_HUMIDITY_CONTROL_SUPPORTED_REPORTING_MODE_ATTRIBUTE_ID ((dotdot_attribute_id_t)0x2)

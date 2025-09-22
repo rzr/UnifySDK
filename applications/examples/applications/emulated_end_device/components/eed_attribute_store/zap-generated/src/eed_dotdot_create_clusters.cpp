@@ -4040,6 +4040,21 @@ void dotdot_create_unify_thermostat_wrapper(const dotdot_unid_t unid, const dotd
 
 }
 
+void dotdot_create_unify_switch_all_wrapper(const dotdot_unid_t unid, const dotdot_endpoint_id_t endpoint_id){
+    // Create and set a default value if undefined.
+    dotdot_create_unify_switch_all_mode(unid,endpoint_id);
+    if (false == dotdot_unify_switch_all_mode_is_reported_defined(unid,endpoint_id)){
+    dotdot_set_unify_switch_all_mode(unid,endpoint_id,REPORTED_ATTRIBUTE, static_cast<uint8_t>(0));
+        }
+
+    // Create and set a default value if undefined.
+    dotdot_create_unify_switch_all_on_off(unid,endpoint_id);
+    if (false == dotdot_unify_switch_all_on_off_is_reported_defined(unid,endpoint_id)){
+    dotdot_set_unify_switch_all_on_off(unid,endpoint_id,REPORTED_ATTRIBUTE, static_cast<uint8_t>(0));
+        }
+
+}
+
 void dotdot_create_unify_humidity_control_wrapper(const dotdot_unid_t unid, const dotdot_endpoint_id_t endpoint_id){
     // Create and set a default value if undefined.
     dotdot_create_unify_humidity_control_reporting_mode(unid,endpoint_id);
@@ -6566,6 +6581,22 @@ void dotdot_unretain_unify_thermostat_wrapper(const dotdot_unid_t unid, const do
     uic_mqtt_dotdot_unify_thermostat_publish_empty_supported_commands(unid, endpoint_id);
 }
 
+void dotdot_unretain_unify_switch_all_wrapper(const dotdot_unid_t unid, const dotdot_endpoint_id_t endpoint_id){
+    char base_topic[256];
+    snprintf(base_topic, sizeof(base_topic), "ucl/by-unid/%s/ep%d", unid, endpoint_id);
+    attribute_store::attribute ep_node = eed_attribute_store_get_endpoint_node(unid, endpoint_id);
+
+    uic_mqtt_dotdot_unify_switch_all_mode_unretain(base_topic,UCL_MQTT_PUBLISH_TYPE_ALL);
+    ep_node.child_by_type(DOTDOT_ATTRIBUTE_ID_UNIFY_SWITCH_ALL_MODE).delete_node();
+
+    uic_mqtt_dotdot_unify_switch_all_on_off_unretain(base_topic,UCL_MQTT_PUBLISH_TYPE_ALL);
+    ep_node.child_by_type(DOTDOT_ATTRIBUTE_ID_UNIFY_SWITCH_ALL_ON_OFF).delete_node();
+
+
+    uic_mqtt_dotdot_unify_switch_all_unretain_cluster_revision(base_topic);
+    uic_mqtt_dotdot_unify_switch_all_publish_empty_supported_commands(unid, endpoint_id);
+}
+
 void dotdot_unretain_unify_humidity_control_wrapper(const dotdot_unid_t unid, const dotdot_endpoint_id_t endpoint_id){
     char base_topic[256];
     snprintf(base_topic, sizeof(base_topic), "ucl/by-unid/%s/ep%d", unid, endpoint_id);
@@ -6710,6 +6741,7 @@ std::map<std::string, eed_cluster_attribute_wrapper> CreateClusterMap = {
 { "Descriptor", dotdot_create_descriptor_wrapper },
 { "UnifyFanControl", dotdot_create_unify_fan_control_wrapper },
 { "UnifyThermostat", dotdot_create_unify_thermostat_wrapper },
+{ "UnifySwitchAll", dotdot_create_unify_switch_all_wrapper },
 { "UnifyHumidityControl", dotdot_create_unify_humidity_control_wrapper },
 };
 
@@ -6761,5 +6793,6 @@ std::map<std::string, eed_cluster_attribute_wrapper> CreateUnretainMap = {
 { "Descriptor", dotdot_unretain_descriptor_wrapper },
 { "UnifyFanControl", dotdot_unretain_unify_fan_control_wrapper },
 { "UnifyThermostat", dotdot_unretain_unify_thermostat_wrapper },
+{ "UnifySwitchAll", dotdot_unretain_unify_switch_all_wrapper },
 { "UnifyHumidityControl", dotdot_unretain_unify_humidity_control_wrapper },
 };

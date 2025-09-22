@@ -5050,14 +5050,14 @@ void uic_mqtt_dotdot_on_unify_fan_control_WriteAttributes(
  *
  * @returns std::set of callbacks.
  */
-std::set<uic_mqtt_dotdot_unify_switch_all_write_attributes_callback_t> & get_uic_mqtt_dotdot_unify_switch_all_write_attributes_callback();
+std::set<uic_mqtt_dotdot_unify_thermostat_write_attributes_callback_t> & get_uic_mqtt_dotdot_unify_thermostat_write_attributes_callback();
 
 /**
  * @brief MQTT Subscribe handler for incoming publications on:
- * ucl/by-unid/+/+/UnifySwitchAll/Commands/WriteAttributes
+ * ucl/by-unid/+/+/UnifyThermostat/Commands/WriteAttributes
  */
 // clang-format off
-void uic_mqtt_dotdot_on_unify_switch_all_WriteAttributes(
+void uic_mqtt_dotdot_on_unify_thermostat_WriteAttributes(
   const char *topic,
   const char *message,
   const size_t message_length);
@@ -5071,14 +5071,14 @@ void uic_mqtt_dotdot_on_unify_switch_all_WriteAttributes(
  *
  * @returns std::set of callbacks.
  */
-std::set<uic_mqtt_dotdot_unify_thermostat_write_attributes_callback_t> & get_uic_mqtt_dotdot_unify_thermostat_write_attributes_callback();
+std::set<uic_mqtt_dotdot_unify_switch_all_write_attributes_callback_t> & get_uic_mqtt_dotdot_unify_switch_all_write_attributes_callback();
 
 /**
  * @brief MQTT Subscribe handler for incoming publications on:
- * ucl/by-unid/+/+/UnifyThermostat/Commands/WriteAttributes
+ * ucl/by-unid/+/+/UnifySwitchAll/Commands/WriteAttributes
  */
 // clang-format off
-void uic_mqtt_dotdot_on_unify_thermostat_WriteAttributes(
+void uic_mqtt_dotdot_on_unify_switch_all_WriteAttributes(
   const char *topic,
   const char *message,
   const size_t message_length);

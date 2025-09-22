@@ -371,6 +371,8 @@
 
 // Commands for cluster: UnifyThermostat
 
+// Commands for cluster: UnifySwitchAll
+
 // Commands for cluster: UnifyHumidityControl
 #define DOTDOT_UNIFY_HUMIDITY_CONTROL_MODE_SET_COMMAND_ID (0x1)
 #define DOTDOT_UNIFY_HUMIDITY_CONTROL_SETPOINT_SET_COMMAND_ID (0x2)
