@@ -2102,6 +2102,21 @@ const char *uic_dotdot_get_attribute_name(dotdot_cluster_id_t cluster_id,
           return "Unknown";
       }
       // clang-format off
+    case DOTDOT_APPLICATION_STATUS_CLUSTER_ID:
+      // clang-format on
+      switch (attribute_id) {
+        // clang-format off
+        case DOTDOT_APPLICATION_STATUS_BUSY_STATUS_ATTRIBUTE_ID:
+          return "BusyStatus";
+        case DOTDOT_APPLICATION_STATUS_WAIT_TIME_ATTRIBUTE_ID:
+          return "WaitTime";
+        case DOTDOT_APPLICATION_STATUS_REJECT_STATUS_ATTRIBUTE_ID:
+          return "RejectStatus";
+          // clang-format on
+        default:
+          return "Unknown";
+      }
+      // clang-format off
       // clang-format on
     default:
       return "Unknown";
@@ -4567,6 +4582,17 @@ dotdot_attribute_id_t
         return DOTDOT_UNIFY_HUMIDITY_CONTROL_AUTO_SETPOINT_PRECISION_ATTRIBUTE_ID;
       }
     break;
+    case DOTDOT_APPLICATION_STATUS_CLUSTER_ID:
+      if (strcmp ("BusyStatus", attribute_name) == 0) {
+        return DOTDOT_APPLICATION_STATUS_BUSY_STATUS_ATTRIBUTE_ID;
+      }
+      if (strcmp ("WaitTime", attribute_name) == 0) {
+        return DOTDOT_APPLICATION_STATUS_WAIT_TIME_ATTRIBUTE_ID;
+      }
+      if (strcmp ("RejectStatus", attribute_name) == 0) {
+        return DOTDOT_APPLICATION_STATUS_REJECT_STATUS_ATTRIBUTE_ID;
+      }
+    break;
     default:
     return DOTDOT_INVALID_ATTRIBUTE_ID;
   }
@@ -6661,6 +6687,21 @@ dotdot_attribute_json_type_t
           return JSON_TYPE_UNKNOWN;
       }
       // clang-format off
+    case DOTDOT_APPLICATION_STATUS_CLUSTER_ID:
+      // clang-format on
+      switch (attribute_id) {
+        // clang-format off
+        case DOTDOT_APPLICATION_STATUS_BUSY_STATUS_ATTRIBUTE_ID:
+          return JSON_TYPE_NUMBER;
+                case DOTDOT_APPLICATION_STATUS_WAIT_TIME_ATTRIBUTE_ID:
+          return JSON_TYPE_NUMBER;
+                case DOTDOT_APPLICATION_STATUS_REJECT_STATUS_ATTRIBUTE_ID:
+          return JSON_TYPE_BOOL;
+          // clang-format on
+        default:
+          return JSON_TYPE_UNKNOWN;
+      }
+      // clang-format off
       // clang-format on
     default:
       return JSON_TYPE_UNKNOWN;
@@ -7020,6 +7061,12 @@ bool uic_dotdot_attribute_is_enum(dotdot_cluster_id_t cluster_id,
       return true;
     }
     if (18 == attribute_id) {
+      return true;
+    }
+  }
+
+  if (65442 == cluster_id) {
+    if (0 == attribute_id) {
       return true;
     }
   }

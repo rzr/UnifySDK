@@ -54432,6 +54432,360 @@ mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/UnifyHumidityControl/Commands/ForceRea
 <!-- END OF UnifyHumidityControl Commands Section -->
 <!-- -->
 
+<br><br><br>
+
+
+<!-- -->
+<!-- -->
+<!-- NEW Page Cluster Support -->
+<!-- -->
+<!-- -->
+\page application_status ApplicationStatus Cluster
+The following commands and attributes are accepted as JSON payloads for the
+ApplicationStatus cluster.
+
+<br><br>
+
+<!-- -->
+<!--  START OF ApplicationStatus Attributes Section -->
+<!-- -->
+\section application_status_attrs ApplicationStatus Attributes
+The following attribute topics are used to retrieve the ApplicationStatus cluster state.
+
+<br>
+
+\subsection application_status_attr_busy_status ApplicationStatus/BusyStatus Attribute
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/ApplicationStatus/Attributes/BusyStatus/Reported
+[PREFIX]/ApplicationStatus/Attributes/BusyStatus/Desired
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ApplicationStatus Cluster BusyStatus Attribute Properties",
+  "type": "object",
+  "properties": {
+    "value": {
+      "type": "ApplicationStatusBusyStatus"
+    }
+  },
+  "required": [
+    "value"
+  ]
+}
+```
+
+
+**Example Mosquitto CLI Tool Usage**
+
+To see desired/reported value for BusyStatus attribute under the by-unid topic space:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/+/+/ApplicationStatus/Attributes/BusyStatus/+'
+
+# Example output
+
+ucl/by-unid/<UNID>/ep0/ApplicationStatus/Attributes/BusyStatus/Desired { "value": <DESIRED_BUSY_STATUS>}
+ucl/by-unid/<UNID>/ep0/ApplicationStatus/Attributes/BusyStatus/Reported { "value": <REPORTED_BUSY_STATUS>}
+
+```
+
+<br><br>
+
+\subsection application_status_attr_wait_time ApplicationStatus/WaitTime Attribute
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/ApplicationStatus/Attributes/WaitTime/Reported
+[PREFIX]/ApplicationStatus/Attributes/WaitTime/Desired
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ApplicationStatus Cluster WaitTime Attribute Properties",
+  "type": "object",
+  "properties": {
+    "value": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "value"
+  ]
+}
+```
+
+
+**Example Mosquitto CLI Tool Usage**
+
+To see desired/reported value for WaitTime attribute under the by-unid topic space:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/+/+/ApplicationStatus/Attributes/WaitTime/+'
+
+# Example output
+
+ucl/by-unid/<UNID>/ep0/ApplicationStatus/Attributes/WaitTime/Desired { "value": <DESIRED_WAIT_TIME>}
+ucl/by-unid/<UNID>/ep0/ApplicationStatus/Attributes/WaitTime/Reported { "value": <REPORTED_WAIT_TIME>}
+
+```
+
+<br><br>
+
+\subsection application_status_attr_reject_status ApplicationStatus/RejectStatus Attribute
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/ApplicationStatus/Attributes/RejectStatus/Reported
+[PREFIX]/ApplicationStatus/Attributes/RejectStatus/Desired
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ApplicationStatus Cluster RejectStatus Attribute Properties",
+  "type": "object",
+  "properties": {
+    "value": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "value"
+  ]
+}
+```
+
+
+**Example Mosquitto CLI Tool Usage**
+
+To see desired/reported value for RejectStatus attribute under the by-unid topic space:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/+/+/ApplicationStatus/Attributes/RejectStatus/+'
+
+# Example output
+
+ucl/by-unid/<UNID>/ep0/ApplicationStatus/Attributes/RejectStatus/Desired { "value": <DESIRED_REJECT_STATUS>}
+ucl/by-unid/<UNID>/ep0/ApplicationStatus/Attributes/RejectStatus/Reported { "value": <REPORTED_REJECT_STATUS>}
+
+```
+
+<br><br>
+
+
+\subsection application_status_attr_cluster_revision ApplicationStatus/ClusterRevision Attribute
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/ApplicationStatus/Attributes/ClusterRevision/Reported
+[PREFIX]/ApplicationStatus/Attributes/ClusterRevision/Desired
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ApplicationStatus Cluster ClusterRevision Attribute Properties",
+  "type": "object",
+  "properties": {
+    "value": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "value"
+  ]
+}
+```
+
+**Example Mosquitto CLI Tool Usage**
+
+To see desired/reported value for ClusterRevision attribute under the by-unid topic space:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/<UNID>/<EP>/ApplicationStatus/Attributes/ClusterRevision/+'
+# Example output
+ucl/by-unid/<UNID>/<EP>/ApplicationStatus/Attributes/ClusterRevision/Desired { "value": <DESIRED_CLUSTER_REVISION> }
+ucl/by-unid/<UNID>/<EP>/ApplicationStatus/Attributes/ClusterRevision/Reported { "value": <REPORTED_CLUSTER_REVISION> }
+```
+
+<!-- -->
+<!--  END OF ApplicationStatus Attributes Section -->
+<!-- -->
+
+<br><br>
+
+<!-- -->
+<!-- START OF ApplicationStatus Supported Commands Section -->
+<!-- -->
+\section application_status_recv_cmd_support ApplicationStatus Command Support
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/ApplicationStatus/SupportedCommands
+[PREFIX]/ApplicationStatus/SupportedGeneratedCommands
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ApplicationStatus Command Support Properties",
+  "type": "object",
+  "properties": {
+      "value": {
+          "type": "array",
+          "items" : {
+            "type": "string",
+            "enum": [
+            ]
+          }
+        }
+      }
+  },
+  "required": [
+    "value"
+  ]
+}
+```
+
+**Example Mosquitto CLI Tool Usage**
+
+To see supported commands for ApplicationStatus cluster under the by-unid topic space:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/<UNID>/<EP>/ApplicationStatus/SupportedCommands'
+# Example output
+ucl/by-unid/<UNID>/<EP>/ApplicationStatus/SupportedCommands { "value": [] }
+```
+
+To see supported generated commands for ApplicationStatus cluster under the by-unid topic space:
+
+```console
+mosquitto_sub -t 'ucl/by-unid/<UNID>/<EP>/ApplicationStatus/SupportedGeneratedCommands'
+# Example output
+ucl/by-unid/<UNID>/<EP>/ApplicationStatus/SupportedGeneratedCommands { "value": [] }
+```
+
+<!-- -->
+<!-- END OF ApplicationStatus Supported Commands Section -->
+<!-- -->
+
+<br><br>
+
+<!-- -->
+<!-- START OF ApplicationStatus Commands Section -->
+<!-- -->
+\section application_status_cmds ApplicationStatus Commands
+
+<br><br>
+
+\subsection application_status_write_attr_cmd ApplicationStatus/WriteAttributes Command
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/ApplicationStatus/Commands/WriteAttributes
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ApplicationStatus Cluster WriteAttributes Command Properties",
+  "type": "object",
+  "properties": {
+  },
+  "required": [
+    "value"
+  ]
+}
+```
+
+**Example Mosquitto CLI Tool Usage**
+
+To update all ApplicationStatus attributes under the by-unid topic space:
+
+```console
+mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/ApplicationStatus/Commands/WriteAttributes' -m  '{  }'
+```
+
+> NOTE: Specify only the list of attributes to write in this command.
+> Unspecified attributes will not be updated.
+
+<br><br>
+
+\subsection application_status_force_read_attr_cmd ApplicationStatus/ForceReadAttributes Command
+
+**MQTT Topic Pattern:**
+
+```
+[PREFIX]/ApplicationStatus/Commands/ForceReadAttributes
+```
+
+**MQTT Payload JSON Schema:**
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ApplicationStatus Cluster ForceReadAttributes Command Properties",
+  "type": "object",
+  "properties": {
+    "value": {
+      "type": "array"
+      "items": {
+        "type": "string",
+        "enum": [
+          "BusyStatus",
+          "WaitTime",
+          "RejectStatus"
+        ]
+      }
+    }
+  },
+  "required": [
+    "value"
+  ]
+}
+```
+
+**Example Mosquitto CLI Tool Usage**
+
+To force read all ApplicationStatus attributes under the by-unid topic space (by sending an empty array):
+
+```console
+mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/ApplicationStatus/Commands/ForceReadAttributes' -m  '{ "value": [] }'
+```
+
+To force read one of the ApplicationStatus attributes under the by-unid topic space:
+
+```console
+mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/ApplicationStatus/Commands/ForceReadAttributes' -m  '{ "value": ["BusyStatus"] }'
+```
+
+<!-- -->
+<!-- END OF ApplicationStatus Commands Section -->
+<!-- -->
+
 
 <br><br><br>
 
@@ -55110,6 +55464,30 @@ mosquitto_pub -t 'ucl/by-unid/<UNID>/<EP>/UnifyHumidityControl/Commands/ForceRea
 
 <!-- -->
 <!-- END OF Enum AoXLocatorReportingMode Section -->
+<!-- -->
+
+<br><br>
+
+<!-- -->
+<!-- START OF Enum ApplicationStatusBusyStatus Section -->
+<!-- -->
+\section enum_application_status_busy_status ApplicationStatusBusyStatus Enum
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ApplicationStatusBusyStatus Enum Properties",
+  "type": "string",
+  "enum": [
+    "Try again later",
+    "Try again in WaitTime seconds",
+    "Request queued"
+  ]
+}
+```
+
+<!-- -->
+<!-- END OF Enum ApplicationStatusBusyStatus Section -->
 <!-- -->
 
 <br><br>
